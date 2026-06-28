@@ -138,8 +138,10 @@ while IFS= read -r f; do [ -f "$f" ] && echo "✓ $f" || echo "✗ MISSING: $f";
 - Exclude session dumps (`request_dump*.json`, `*.jsonl`, `_run_journal/`, `_turn_journal/`)
 - Exclude `.hermes_history`, `.hermes_data/.hermes_history` — conversation history
 - Exclude docs (`.md`) that just reference secret patterns in examples
-- Exclude `freellmapi` — not a secret file by name alone
+- Exclude `freellmapi` — not a secret file by name alone (but DO include it if it contains literal credentials)
 - Exclude `*.log`, `*.lock`, `*_check`, `auth.json.corrupt`
+- **`.hermes_data/config.yaml`** — Hermes config may contain API keys set via `hermes config set`. Include in sensitive.txt if it contains literal credentials (cloudflare.apiKey, etc.)
+- **`.hermes_data/webui/sessions/`** — session logs capture ALL conversation content including secrets mentioned in chat. Always exclude from git (add to .gitignore) and include the directory in sensitive.txt
 
 ## Handling Already-Tracked Files
 
@@ -159,3 +161,15 @@ cd /home/runner/workspace && git check-ignore credentials/.pat
 ## User Preference: mail.txt Tracking
 
 The user explicitly wants `credentials/mail.txt` to remain tracked in git (not ignored). When updating `.gitignore` and `sensitive.txt`, do NOT include `mail.txt` unless the user explicitly asks. If a file was previously gitignored and the user wants it tracked, use `git add -f` to force-stage it.
+
+## GitHub Push Protection
+
+When pushing to a repo with GitHub Push Protection enabled, commits containing secrets will be rejected. See `references/push-protection-history-rewrite.md` for the full workflow.
+
+Key points:
+- Push protection reveals secrets iteratively — filter → push → discover next → repeat
+- Use `git filter-branch --index-filter 'git rm --cached --ignore-unmatch <files>'` to remove from history
+- If filter-branch fails with "unstaged changes" (running process writing logs), use `git update-index --assume-unchanged <files>` first
+- After filter-branch: delete `refs/original/`, `git reflog expire --expire=now --all`, `git gc --prune=now --aggressive`
+- Add offending files to `.gitignore` to prevent re-commitment
+- Force push with PAT: `git push --force https://user:${PAT}@github.com/org/repo.git main`

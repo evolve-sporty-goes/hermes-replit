@@ -162,6 +162,11 @@ When moving multiple files with globs, verify each source file exists first. A g
 9. **Update `sensitive.txt`** — all paths must point to new locations (sync.sh iterates over this)
 10. Run verification script to confirm no broken references remain
 
+## Related Skills
+
+- **`sensitive`** — for scanning the workspace for secrets/tokens/credentials, auto-generating `sensitive.txt`, and keeping `.gitignore` in sync. Use after completing workspace reorganization to re-scan sensitive credentials.
+- **`github-repo-management`** — for pushing to GitHub when push protection blocks due to secrets in git history (bundled skill — has cross-reference to `sensitive/references/push-protection-history-rewrite.md`).
+
 ## Reference
 
 - `references/replit-reorganization-example.md` — full session example with file mapping table and chain-effect documentation

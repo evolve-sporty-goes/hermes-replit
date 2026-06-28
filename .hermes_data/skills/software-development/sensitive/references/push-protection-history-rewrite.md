@@ -1,0 +1,136 @@
+# GitHub Push Protection & History Rewrite
+
+When pushing to a repo with GitHub Push Protection enabled, commits containing secrets (API keys, tokens) will be rejected. This guide covers removing secrets from git history.
+
+## Pattern: Filter → Push → Discover → Repeat
+
+Push protection reveals secrets iteratively. Each push attempt exposes the next file/location:
+
+```
+1. git filter-branch to remove obvious secret files
+2. git push --force
+3. GitHub blocks again with new location
+4. Add that file pattern to the filter
+5. Repeat until push succeeds
+```
+
+## Step-by-Step History Rewrite
+
+### 1. Identify the offending files/chunks
+
+GitHub push protection error will list:
+- Commit SHA
+- File path + line number
+- Secret type (e.g., "Cloudflare User API Token")
+
+### 2. Rewrite history to remove secrets
+
+```bash
+# Remove specific files from ALL commits
+FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --force --index-filter '
+  git rm --cached --ignore-unmatch <file1> <file2> ...
+' --prune-empty --tag-name-filter cat -- --all
+```
+
+### 3. Clean up after filter-branch
+
+```bash
+# Delete old refs backed up by filter-branch
+for ref in $(git for-each-ref --format='%(refname)' refs/original/); do
+  git update-ref -d "$ref"
+done
+
+# Expire reflogs and garbage collect to truly erase the old commits
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive
+```
+
+### 4. Prevent re-commitment
+
+Add files to `.gitignore` so they don't get re-added:
+
+```bash
+echo "<file_pattern>" >> .gitignore
+git add .gitignore && git commit -m "chore: prevent secrets in git history"
+```
+
+### 5. Force push
+
+```bash
+PAT=$(cat credentials/.pat)
+git push --force https://username:${PAT}@github.com/org/repo.git main
+```
+
+## Solving the "unstaged changes" Problem
+
+If filter-branch fails with *"Cannot rewrite branches: You have unstaged changes"*, it's often because a running process (like Hermes agent) keeps writing to log/session files.
+
+**Fix — use `git update-index --assume-unchanged`:**
+
+```bash
+# Tell git to ignore ongoing writes to these files
+git update-index --assume-unchanged .hermes_data/logs/agent.log
+git update-index --assume-unchanged .hermes_data/logs/errors.log
+git update-index --assume-unchanged .hermes_data/webui/sessions/*.json
+git update-index --assume-unchanged .hermes_data/webui/sessions/_run_journal/*/*.jsonl
+
+# Now run filter-branch
+FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --force --index-filter '
+  git rm --cached --ignore-unmatch <files>
+' --prune-empty --tag-name-filter cat -- --all
+
+# Restore normal tracking when done
+git update-index --no-assume-unchanged <files>
+```
+
+## Common Files Containing Secrets
+
+From this workspace's experience:
+
+| File | Secret Type | Why |
+|------|-------------|-----|
+| `freellmapi` | Cloudflare API Token + frellmapi key | Hardcoded script with credentials |
+| `.hermes_data/config.yaml` | Cloudflare API Token | `hermes config set cloudflare.apiKey "..."` |
+| `.hermes_data/webui/sessions/**` | Any secrets mentioned in conversation | Session logs capture all agent/user conversation |
+
+**Add all of these to `.gitignore`:**
+
+```gitignore
+# Never commit secrets
+freellmapi
+.hermes_data/config.yaml
+.hermes_data/webui/sessions/
+```
+
+## Filtering Edits Inside Files (not just removing files)
+
+If a secret is embedded inside a tracked config file (e.g., `config.yaml` has 600+ lines but only 2 lines contain secrets), use `git filter-branch` with `--tree-filter` to edit:
+
+```bash
+# Remove lines containing a pattern from a file across all commits
+FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --force --tree-filter '
+  if [ -f .hermes_data/config.yaml ]; then
+    sed -i "/cloudflare.apiKey/d" .hermes_data/config.yaml
+  fi
+' --prune-empty --tag-name-filter cat -- --all
+```
+
+**Warning**: `--tree-filter` checks out each commit, so it's much slower than `--index-filter`. Use `--tree-filter` only when you need to edit file contents (not just remove files).
+
+## Alternative BFG Repo Cleaner (when filter-branch is too slow)
+
+For large repos, the [BFG Repo Cleaner](https://rtyley.github.io/bfg-repo-cleaner/) is faster:
+
+```bash
+# Remove specific files
+java -jar bfg.jar --delete-files freellmapi
+
+# Remove secrets by pattern (replaces with ***REMOVED***)
+java -jar bfg.jar --replace-text passwords.txt
+
+# Then clean up
+git reflog expire --expire=now --all
+git gc --prune=now
+```
+
+BFG may not be available on Replit NixOS (no custom Java packages). `git filter-branch` is usually sufficient for small repos (<50 commits).

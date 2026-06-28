@@ -1,4 +1,30 @@
 {
+  "github-pr-workflow": {
+    "archived_at": null,
+    "created_at": "2026-06-28T20:06:57.660506+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-06-28T20:06:57.670799+00:00",
+    "last_viewed_at": "2026-06-28T20:06:57.660519+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
+  },
+  "github-repo-management": {
+    "archived_at": null,
+    "created_at": "2026-06-28T20:07:02.079736+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-06-28T20:07:46.317717+00:00",
+    "last_viewed_at": "2026-06-28T20:07:46.313646+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 2,
+    "view_count": 2
+  },
   "hermes-agent": {
     "archived_at": null,
     "created_at": "2026-06-28T19:49:40.899043+00:00",
@@ -16,14 +42,14 @@
     "archived_at": null,
     "created_at": "2026-06-28T20:00:15.196693+00:00",
     "created_by": null,
-    "last_patched_at": "2026-06-28T20:00:57.380868+00:00",
-    "last_used_at": "2026-06-28T20:00:15.207046+00:00",
-    "last_viewed_at": "2026-06-28T20:00:15.196708+00:00",
-    "patch_count": 2,
+    "last_patched_at": "2026-06-28T20:09:05.632366+00:00",
+    "last_used_at": "2026-06-28T20:08:58.285016+00:00",
+    "last_viewed_at": "2026-06-28T20:08:58.278379+00:00",
+    "patch_count": 5,
     "pinned": false,
     "state": "active",
-    "use_count": 1,
-    "view_count": 1
+    "use_count": 5,
+    "view_count": 5
   },
   "software-development:workspace-organization": {
     "archived_at": null,
@@ -42,13 +68,13 @@
     "archived_at": null,
     "created_at": "2026-06-28T18:39:48.100419+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-06-28T20:01:36.921488+00:00",
-    "last_used_at": "2026-06-28T20:00:09.698753+00:00",
-    "last_viewed_at": "2026-06-28T20:00:09.678920+00:00",
-    "patch_count": 9,
+    "last_patched_at": "2026-06-28T20:08:52.663281+00:00",
+    "last_used_at": "2026-06-28T20:08:42.213526+00:00",
+    "last_viewed_at": "2026-06-28T20:08:42.209601+00:00",
+    "patch_count": 10,
     "pinned": false,
     "state": "active",
-    "use_count": 6,
-    "view_count": 6
+    "use_count": 7,
+    "view_count": 7
   }
 }

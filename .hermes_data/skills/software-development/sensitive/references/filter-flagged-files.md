@@ -29,7 +29,7 @@ After running the grep/find commands, filter the raw output using this list of k
 | `scripts/firecrawl_gen.py` | extracts `fc-` keys at runtime | No — browser automation script |
 | `scripts/openrouter_signup.py` | extracts `sk-or-v1-` keys | No — browser automation script |
 | `docs/*.md` | documents secret patterns | No — documentation |
-| `freellmapi` | matches `*key*` pattern | No — project name only |
+| `freellmapi` | matches `*key*` pattern | **YES** — contains Cloudflare API Token + frellmapi key as literals |
 | `.hermes_data/fc_search.mjs` | references API patterns | No — internal search script |
 
 ## True positive patterns (always include)
