@@ -70,14 +70,26 @@ grep -rIl -E '(-----BEGIN |supabase|eyJ[A-Za-z0-9_-]{50,})' \
   2>/dev/null
 ```
 
-### 2. Deduplicate and Filter
+### 2. Cross-Reference .gitignore Sensitive Section
+
+Before finalizing the list, read the sensitive-files section from `.gitignore` and ensure every entry that exists on disk is included in `sensitive.txt`. Files may be gitignored without being listed in sensitive.txt (e.g. `scripts/email.sh`, `freellmapi`, `.hermes_data/webui/sessions/`).
+
+```bash
+# Extract non-comment, non-blank, non-whitelist entries from .gitignore sensitive section
+grep -A 100 '# Sensitive' /home/runner/workspace/.gitignore | grep -v '^#' | grep -v '^$'
+```
+
+For each entry: resolve to absolute path, verify it exists on disk (`[ -e "$path" ]`), and add to the candidate list if not already present. Skip entries that no longer exist (historical .gitignore entries for removed files/directories).
+
+### 3. Deduplicate and Filter
 
 - Remove duplicates from combined results
 - Exclude system/framework files that contain placeholder/example values
 - Exclude documentation files (.md) that reference secrets as examples
 - Include `.sh`, `.py`, `.txt`, `.env*`, `.json`, `.yaml`, `.yml`, `.toml`, and config files
+- **Always include** `.hermes_data/webui/sessions/` — session logs capture full conversation content including secrets mentioned in chat
 
-### 3. Write sensitive.txt
+### 4. Write sensitive.txt
 
 Write all dediscovered sensitive file paths (absolute) to `~/workspace/sensitive.txt`:
 
@@ -90,7 +102,7 @@ Write all dediscovered sensitive file paths (absolute) to `~/workspace/sensitive
 ...
 ```
 
-### 4. Update .gitignore
+### 5. Update .gitignore
 
 Replace or update the sensitive-files section in `.gitignore`:
 
@@ -113,16 +125,18 @@ Rules:
 - Preserve the `*env`, `*shm`, `*wal` patterns
 - Comment the section clearly
 
-### 5. Verify
+### 6. Verify
 
 Run verification:
 ```bash
 echo "=== sensitive.txt ==="
 wc -l ~/workspace/sensitive.txt
 echo "=== .gitignore sensitive section ==="
-grep -v '^#' ~/workspace/.gitignore | grep -v '^$' | grep -v '!'
-echo "=== Verify all sensitive.txt files exist ==="
-while IFS= read -r f; do [ -f "$f" ] && echo "✓ $f" || echo "✗ MISSING: $f"; done < ~/workspace/sensitive.txt
+grep -v '^#' ~/.gitignore | grep -v '^$' | grep -v '!'
+echo "=== Verify all sensitive.txt paths exist ==="
+while IFS= read -r f; do [[ "$f" =~ ^# ]] || [[ -z "$f" ]] && continue; [ -e "$f" ] && echo "OK  $f" || echo "MISSING: $f"; done < ~/workspace/sensitive.txt
+echo "=== Check .gitignore entries covered by sensitive.txt ==="
+# Extract .gitignore sensitive entries, verify each exists OR is already in sensitive.txt
 ```
 
 ## Pitfalls
@@ -138,7 +152,7 @@ while IFS= read -r f; do [ -f "$f" ] && echo "✓ $f" || echo "✗ MISSING: $f";
 - Exclude session dumps (`request_dump*.json`, `*.jsonl`, `_run_journal/`, `_turn_journal/`)
 - Exclude `.hermes_history`, `.hermes_data/.hermes_history` — conversation history
 - Exclude docs (`.md`) that just reference secret patterns in examples
-- Exclude `freellmapi` — not a secret file by name alone (but DO include it if it contains literal credentials)
+- `freellmapi` — check contents; if it contains literal API keys or tokens, include it (it is not a secret by name alone, but in practice it often stores credential data)
 - Exclude `*.log`, `*.lock`, `*_check`, `auth.json.corrupt`
 - **`.hermes_data/config.yaml`** — Hermes config may contain API keys set via `hermes config set`. Include in sensitive.txt if it contains literal credentials (cloudflare.apiKey, etc.)
 - **`.hermes_data/webui/sessions/`** — session logs capture ALL conversation content including secrets mentioned in chat. Always exclude from git (add to .gitignore) and include the directory in sensitive.txt

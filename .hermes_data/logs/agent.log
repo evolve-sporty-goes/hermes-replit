@@ -11956,3 +11956,1407 @@ openai.BadRequestError: Error code: 400 - {'error': {'message': '@cf/moonshotai/
 2026-06-28 20:10:00,912 DEBUG [20260628_194634_91a01c] tools.browser_tool: No active session found for task_id: 20260628_194634_91a01c
 2026-06-28 20:10:00,912 WARNING [20260628_194634_91a01c] run_agent: Session DB append_message failed: constraint failed
 2026-06-28 20:10:00,912 INFO [20260628_194634_91a01c] agent.conversation_loop: Turn ended: reason=interrupted_during_api_call model=owl-alpha api_calls=1/90 budget=1/90 tool_turns=15 last_msg_role=user response_len=65 session=20260628_194634_91a01c
+2026-06-28 20:10:13,058 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-28 20:10:13,060 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-28 20:10:13,061 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-28 20:10:13,196 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-28 20:10:13,198 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-28 20:10:13,199 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-28 20:10:13,200 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-28 20:10:13,201 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-28 20:10:13,201 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-28 20:10:13,204 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-28 20:10:13,235 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-28 20:10:13,237 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-28 20:10:13,241 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-28 20:10:13,242 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-28 20:10:13,244 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-28 20:10:13,246 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-28 20:10:13,248 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-28 20:10:13,249 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-28 20:10:13,250 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-28 20:10:13,252 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-28 20:10:13,801 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-28 20:10:15,269 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 20:10:15,276 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 20:10:15,984 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 20:10:16,039 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 20:10:16,041 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 20:10:16,042 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 20:10:24,961 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:10:24,972 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:11:23,528 INFO run_agent: Loaded environment variables from /home/runner/workspace/.hermes_data/.env
+2026-06-28 20:11:23,605 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-3 (process_loop):139923852093120 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:11:23,631 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 20:11:23,805 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 20:11:23,829 DEBUG agent.auxiliary_client: Auxiliary client: OpenRouter via pool
+2026-06-28 20:11:23,855 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 20:11:23,914 DEBUG hermes_plugins.image_gen__openrouter: nous runtime resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 20:11:23,918 DEBUG agent.auxiliary_client: Could not read Codex auth for auxiliary client: No Codex credentials stored. Run `hermes auth` to authenticate.
+2026-06-28 20:11:23,943 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 20:11:23,947 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 20:11:23,948 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 20:11:23,972 DEBUG agent.auxiliary_client: Auxiliary client: OpenRouter via pool
+2026-06-28 20:11:24,382 INFO [20260628_193431_5b6d0a] agent.turn_context: conversation turn: session=20260628_193431_5b6d0a model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=cli history=0 msg='update sensitive.txt'
+2026-06-28 20:11:25,121 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:11:25,124 DEBUG [20260628_193431_5b6d0a] agent.auxiliary_client: Omitting temperature for Kimi model '@cf/moonshotai/kimi-k2.7-code' (server-managed)
+2026-06-28 20:11:25,144 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:11:25,164 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-36 (_call):139923986273984 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:11:25,537 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 400 - {'error': {'message': '@cf/moonshotai/kimi-k2.7-code is not a valid model ID', 'code': 400}, 'user_id': 'user_3FfUhRRRXZqyMrxoj5dzH0sXBNC'}
+2026-06-28 20:11:25,537 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-36 (_call):139923986273984 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:11:25,538 DEBUG [20260628_193431_5b6d0a] agent.conversation_loop: Error classified: reason=model_not_found status=400 retryable=False compress=False rotate=False fallback=True
+2026-06-28 20:11:25,539 WARNING [20260628_193431_5b6d0a] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-35 (run_agent):139923810129600 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 400: @cf/moonshotai/kimi-k2.7-code is not a valid model ID
+2026-06-28 20:11:25,543 DEBUG [20260628_193431_5b6d0a] agent.auxiliary_client: Auxiliary client: OpenRouter via pool
+2026-06-28 20:11:25,554 INFO [20260628_193431_5b6d0a] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-28 20:11:25,664 INFO [20260628_193431_5b6d0a] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-28 20:11:25,670 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:11:25,676 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-37 (_call):139923986273984 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:11:28,292 DEBUG api.background_process: SessionChannel reaper collected: ['20260628_200142_1bdee0']
+2026-06-28 20:11:28,538 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:11:29,970 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-37 (_call):139923986273984 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:11:29,971 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=19293 out=57 total=19350 latency=4.8s cache=2688/19293 (14%)
+2026-06-28 20:11:29,977 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:11:29,984 INFO tools.file_tools: Creating new local environment for task default...
+2026-06-28 20:11:30,114 INFO tools.environments.base: Session snapshot created (session=69b7e4c07ee2, cwd=/home/runner/workspace)
+2026-06-28 20:11:30,115 INFO tools.file_tools: local environment ready for task default
+2026-06-28 20:11:30,250 INFO agent.tool_executor: tool read_file completed (0.27s, 658 chars)
+2026-06-28 20:11:30,286 INFO agent.tool_executor: tool search_files completed (0.31s, 18 chars)
+2026-06-28 20:11:30,288 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:11:30,289 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:11:30,320 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:11:30,328 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-48 (_call):139923318372032 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:11:32,764 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:11:34,345 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-48 (_call):139923318372032 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:11:34,346 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=19576 out=55 total=19631 latency=4.1s cache=19200/19576 (98%)
+2026-06-28 20:11:34,355 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: cleanup_browser called for task_id: 20260628_193431_5b6d0a
+2026-06-28 20:11:34,356 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: Active sessions: []
+2026-06-28 20:11:34,356 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: No active session found for task_id: 20260628_193431_5b6d0a
+2026-06-28 20:11:34,356 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:11:34,356 INFO [20260628_193431_5b6d0a] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=2/90 budget=2/90 tool_turns=1 last_msg_role=assistant response_len=246 session=20260628_193431_5b6d0a
+2026-06-28 20:11:34,577 INFO agent.auxiliary_client: Auxiliary auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-28 20:11:34,577 INFO agent.auxiliary_client: Auxiliary title_generation: using auto (@cf/moonshotai/kimi-k2.7-code)
+2026-06-28 20:11:34,577 DEBUG agent.auxiliary_client: Omitting temperature for Kimi model '@cf/moonshotai/kimi-k2.7-code' (server-managed)
+2026-06-28 20:11:34,657 WARNING agent.title_generator: Title generation failed: Error code: 400 - {'error': {'message': '@cf/moonshotai/kimi-k2.7-code is not a valid model ID', 'code': 400}, 'user_id': 'user_3FfUhRRRXZqyMrxoj5dzH0sXBNC'}
+2026-06-28 20:11:34,658 DEBUG agent.title_generator: Title generation traceback
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/agent/title_generator.py", line 82, in generate_title
+    response = call_llm(
+               ^^^^^^^^^
+  File "/home/runner/hermes-agent/agent/auxiliary_client.py", line 5770, in call_llm
+    client.chat.completions.create(**kwargs), task)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1204, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': '@cf/moonshotai/kimi-k2.7-code is not a valid model ID', 'code': 400}, 'user_id': 'user_3FfUhRRRXZqyMrxoj5dzH0sXBNC'}
+2026-06-28 20:11:51,622 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
+2026-06-28 20:12:05,787 INFO [20260628_193431_5b6d0a] run_agent: OpenAI client created (restore_primary, shared=True) thread=Thread-49 (run_agent):139923318372032 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:12:05,810 INFO [20260628_193431_5b6d0a] run_agent: OpenAI client created (credential_rotation, shared=True) thread=Thread-49 (run_agent):139923318372032 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:12:05,810 INFO [20260628_193431_5b6d0a] run_agent: OpenAI client closed (replace:credential_rotation, shared=True, tcp_force_closed=0) thread=Thread-49 (run_agent):139923318372032 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:12:05,810 INFO [20260628_193431_5b6d0a] agent.agent_runtime_helpers: Restore re-selected pool entry 1c5bd4 (OPENROUTER_API_KEY)
+2026-06-28 20:12:05,811 INFO [20260628_193431_5b6d0a] agent.agent_runtime_helpers: Primary runtime restored for new turn: @cf/moonshotai/kimi-k2.7-code (custom)
+2026-06-28 20:12:05,811 INFO [20260628_193431_5b6d0a] agent.turn_context: conversation turn: session=20260628_193431_5b6d0a model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=cli history=5 msg='regenerate'
+2026-06-28 20:12:05,812 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:05,813 DEBUG [20260628_193431_5b6d0a] agent.auxiliary_client: Omitting temperature for Kimi model '@cf/moonshotai/kimi-k2.7-code' (server-managed)
+2026-06-28 20:12:05,835 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:12:05,839 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-50 (_call):139923986273984 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:12:05,913 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 400 - {'error': {'message': '@cf/moonshotai/kimi-k2.7-code is not a valid model ID', 'code': 400}, 'user_id': 'user_3FfUhRRRXZqyMrxoj5dzH0sXBNC'}
+2026-06-28 20:12:05,914 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-50 (_call):139923986273984 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:12:05,914 DEBUG [20260628_193431_5b6d0a] agent.conversation_loop: Error classified: reason=model_not_found status=400 retryable=False compress=False rotate=False fallback=True
+2026-06-28 20:12:05,915 WARNING [20260628_193431_5b6d0a] run_agent: Credential pool provider mismatch: pool=openrouter, agent=custom — skipping pool mutation to avoid cross-provider contamination
+2026-06-28 20:12:05,915 WARNING [20260628_193431_5b6d0a] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-49 (run_agent):139923318372032 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 400: @cf/moonshotai/kimi-k2.7-code is not a valid model ID
+2026-06-28 20:12:05,923 DEBUG [20260628_193431_5b6d0a] agent.auxiliary_client: Auxiliary client: OpenRouter via pool
+2026-06-28 20:12:06,048 INFO [20260628_193431_5b6d0a] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-28 20:12:06,059 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:12:06,067 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-51 (_call):139923986273984 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:12:11,937 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:12:12,545 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-51 (_call):139923986273984 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:12:12,546 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=19643 out=16 total=19659 latency=6.7s cache=19456/19643 (99%)
+2026-06-28 20:12:12,578 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:12,633 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool skill_view completed (0.05s, 9003 chars)
+2026-06-28 20:12:12,637 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:12,658 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:12:12,663 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-52 (_call):139923986273984 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:12:14,520 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:12:24,966 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:12:24,976 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:12:25,054 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-52 (_call):139923986273984 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:12:25,055 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #4: model=owl-alpha provider=openrouter in=22070 out=561 total=22631 latency=12.4s cache=19584/22070 (89%)
+2026-06-28 20:12:25,060 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:25,409 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.35s, 473 chars)
+2026-06-28 20:12:25,417 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:26,669 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.25s, 7780 chars)
+2026-06-28 20:12:26,676 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:27,874 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.20s, 2757 chars)
+2026-06-28 20:12:27,881 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:27,889 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:12:27,903 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-56 (_call):139923986273984 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:12:31,011 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:12:45,899 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-56 (_call):139923986273984 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:12:45,900 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #5: model=owl-alpha provider=openrouter in=26391 out=656 total=27047 latency=18.0s cache=22016/26391 (83%)
+2026-06-28 20:12:45,937 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:46,128 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.19s, 45 chars)
+2026-06-28 20:12:46,138 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:47,246 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.11s, 45 chars)
+2026-06-28 20:12:47,248 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:48,338 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.09s, 76 chars)
+2026-06-28 20:12:48,342 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:48,351 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:12:48,355 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-60 (_call):139923986273984 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:12:58,457 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:13:06,333 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-60 (_call):139923986273984 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:13:06,334 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #6: model=owl-alpha provider=openrouter in=27144 out=140 total=27284 latency=18.0s cache=26368/27144 (97%)
+2026-06-28 20:13:06,341 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:06,450 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.11s, 242 chars)
+2026-06-28 20:13:06,457 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:06,467 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:13:06,471 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-62 (_call):139923986273984 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:13:08,757 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:13:17,419 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-62 (_call):139923986273984 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:13:17,423 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #7: model=owl-alpha provider=openrouter in=27397 out=367 total=27764 latency=11.0s cache=27136/27397 (99%)
+2026-06-28 20:13:17,434 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:17,680 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool write_file completed (0.24s, 231 chars)
+2026-06-28 20:13:17,681 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:17,702 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:13:17,710 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-69 (_call):139923283752640 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:13:19,519 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:13:22,416 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-69 (_call):139923283752640 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:13:22,417 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #8: model=owl-alpha provider=openrouter in=27851 out=129 total=27980 latency=4.7s cache=27392/27851 (98%)
+2026-06-28 20:13:22,421 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:22,500 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.08s, 1030 chars)
+2026-06-28 20:13:22,501 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:22,524 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:13:22,528 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-71 (_call):139923283752640 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:13:25,707 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:13:31,761 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-71 (_call):139923283752640 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:13:31,762 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #9: model=owl-alpha provider=openrouter in=28263 out=247 total=28510 latency=9.3s cache=27776/28263 (98%)
+2026-06-28 20:13:31,769 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: cleanup_browser called for task_id: 20260628_193431_5b6d0a
+2026-06-28 20:13:31,770 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: Active sessions: []
+2026-06-28 20:13:31,770 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: No active session found for task_id: 20260628_193431_5b6d0a
+2026-06-28 20:13:31,771 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:31,771 INFO [20260628_193431_5b6d0a] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=7/90 budget=7/90 tool_turns=7 last_msg_role=assistant response_len=996 session=20260628_193431_5b6d0a
+2026-06-28 20:13:31,980 INFO agent.auxiliary_client: Auxiliary title_generation: using auto (@cf/moonshotai/kimi-k2.7-code)
+2026-06-28 20:13:31,980 DEBUG agent.auxiliary_client: Omitting temperature for Kimi model '@cf/moonshotai/kimi-k2.7-code' (server-managed)
+2026-06-28 20:13:32,046 WARNING agent.title_generator: Title generation failed: Error code: 400 - {'error': {'message': '@cf/moonshotai/kimi-k2.7-code is not a valid model ID', 'code': 400}, 'user_id': 'user_3FfUhRRRXZqyMrxoj5dzH0sXBNC'}
+2026-06-28 20:13:32,046 DEBUG agent.title_generator: Title generation traceback
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/agent/title_generator.py", line 82, in generate_title
+    response = call_llm(
+               ^^^^^^^^^
+  File "/home/runner/hermes-agent/agent/auxiliary_client.py", line 5770, in call_llm
+    client.chat.completions.create(**kwargs), task)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1204, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': '@cf/moonshotai/kimi-k2.7-code is not a valid model ID', 'code': 400}, 'user_id': 'user_3FfUhRRRXZqyMrxoj5dzH0sXBNC'}
+2026-06-28 20:14:24,961 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:14:24,971 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:15:01,054 INFO [20260628_193431_5b6d0a] run_agent: OpenAI client created (restore_primary, shared=True) thread=Thread-87 (run_agent):139923275359936 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:15:01,066 INFO [20260628_193431_5b6d0a] run_agent: OpenAI client created (credential_rotation, shared=True) thread=Thread-87 (run_agent):139923275359936 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:15:01,066 INFO [20260628_193431_5b6d0a] run_agent: OpenAI client closed (replace:credential_rotation, shared=True, tcp_force_closed=0) thread=Thread-87 (run_agent):139923275359936 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:15:01,066 INFO [20260628_193431_5b6d0a] agent.agent_runtime_helpers: Restore re-selected pool entry 1c5bd4 (OPENROUTER_API_KEY)
+2026-06-28 20:15:01,067 INFO [20260628_193431_5b6d0a] agent.agent_runtime_helpers: Primary runtime restored for new turn: @cf/moonshotai/kimi-k2.7-code (custom)
+2026-06-28 20:15:01,067 INFO [20260628_193431_5b6d0a] agent.turn_context: conversation turn: session=20260628_193431_5b6d0a model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=cli history=23 msg='also add files added in .gitignore under sensitive section to sensitive.txt'
+2026-06-28 20:15:01,068 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:01,074 DEBUG [20260628_193431_5b6d0a] agent.auxiliary_client: Omitting temperature for Kimi model '@cf/moonshotai/kimi-k2.7-code' (server-managed)
+2026-06-28 20:15:01,081 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:15:01,088 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-88 (_call):139923266967232 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:15:01,245 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 400 - {'error': {'message': '@cf/moonshotai/kimi-k2.7-code is not a valid model ID', 'code': 400}, 'user_id': 'user_3FfUhRRRXZqyMrxoj5dzH0sXBNC'}
+2026-06-28 20:15:01,246 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-88 (_call):139923266967232 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:15:01,246 DEBUG [20260628_193431_5b6d0a] agent.conversation_loop: Error classified: reason=model_not_found status=400 retryable=False compress=False rotate=False fallback=True
+2026-06-28 20:15:01,247 WARNING [20260628_193431_5b6d0a] run_agent: Credential pool provider mismatch: pool=openrouter, agent=custom — skipping pool mutation to avoid cross-provider contamination
+2026-06-28 20:15:01,247 WARNING [20260628_193431_5b6d0a] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-87 (run_agent):139923275359936 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 400: @cf/moonshotai/kimi-k2.7-code is not a valid model ID
+2026-06-28 20:15:01,260 DEBUG [20260628_193431_5b6d0a] agent.auxiliary_client: Auxiliary client: OpenRouter via pool
+2026-06-28 20:15:01,371 INFO [20260628_193431_5b6d0a] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-28 20:15:01,394 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:15:01,399 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-89 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:04,543 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:15:06,061 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-89 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:06,061 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #10: model=owl-alpha provider=openrouter in=28533 out=53 total=28586 latency=5.0s cache=28160/28533 (99%)
+2026-06-28 20:15:06,095 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:06,202 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.11s, 365 chars)
+2026-06-28 20:15:06,203 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:06,229 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:15:06,236 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-91 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:10,215 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:15:18,191 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-91 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:18,192 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #11: model=owl-alpha provider=openrouter in=28706 out=367 total=29073 latency=12.0s cache=28416/28706 (99%)
+2026-06-28 20:15:18,199 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:18,203 DEBUG [20260628_193431_5b6d0a] tools.code_execution_tool: execute_code: dropped 4 non-allowlisted HERMES_* var(s) from the sandbox child env (HERMES_INTERACTIVE, HERMES_KANBAN_BOARD, HERMES_QUIET, HERMES_SESSION_ID). This is intentional hardening (#27303); if a sandbox script legitimately needs one, declare it via env_passthrough in the skill/config so it passes by explicit opt-in.
+2026-06-28 20:15:18,304 DEBUG tools.code_execution_tool: RPC listener socket error: [Errno 9] Bad file descriptor
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/code_execution_tool.py", line 488, in _rpc_server_loop
+    conn, _ = server_sock.accept()
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 295, in accept
+    fd, addr = self._accept()
+               ^^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+2026-06-28 20:15:18,312 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool execute_code completed (0.11s, 407 chars)
+2026-06-28 20:15:18,316 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:18,346 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:15:18,351 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-95 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:22,216 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:15:25,638 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-95 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:25,638 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #12: model=owl-alpha provider=openrouter in=29222 out=151 total=29373 latency=7.3s cache=28672/29222 (98%)
+2026-06-28 20:15:25,647 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:25,785 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.14s, 374 chars)
+2026-06-28 20:15:25,789 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:25,805 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:15:25,809 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-97 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:27,467 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:15:29,580 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-97 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:29,580 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #13: model=owl-alpha provider=openrouter in=29595 out=94 total=29689 latency=3.8s cache=29184/29595 (99%)
+2026-06-28 20:15:29,585 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:29,730 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.14s, 48 chars)
+2026-06-28 20:15:29,739 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:29,749 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:15:29,753 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-99 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:31,596 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:15:33,805 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-99 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:33,805 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #14: model=owl-alpha provider=openrouter in=29729 out=84 total=29813 latency=4.1s cache=29568/29729 (99%)
+2026-06-28 20:15:33,812 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:33,967 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.15s, 61 chars)
+2026-06-28 20:15:33,976 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:34,000 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:15:34,005 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-101 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:36,581 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:15:39,868 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-101 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:39,868 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #15: model=owl-alpha provider=openrouter in=29858 out=110 total=29968 latency=5.9s cache=29696/29858 (99%)
+2026-06-28 20:15:39,873 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:40,059 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.18s, 74 chars)
+2026-06-28 20:15:40,062 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:40,081 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:15:40,087 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-103 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:41,897 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:15:44,346 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-103 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:44,347 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #16: model=owl-alpha provider=openrouter in=30015 out=102 total=30117 latency=4.3s cache=29824/30015 (99%)
+2026-06-28 20:15:44,351 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:45,008 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.66s, 97 chars)
+2026-06-28 20:15:45,012 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:45,032 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:15:45,036 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-105 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:47,481 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:15:48,458 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-105 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:48,459 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #17: model=owl-alpha provider=openrouter in=30167 out=36 total=30203 latency=3.4s cache=29952/30167 (99%)
+2026-06-28 20:15:48,504 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:48,593 WARNING [20260628_193431_5b6d0a] agent.tool_executor: Tool terminal returned error (0.09s): {"output": "ls: cannot access '/home/runner/workspace/.hermes_data/config.yaml': No such file or directory", "exit_code": 2, "error": null}
+2026-06-28 20:15:48,594 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:48,622 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:15:48,630 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-107 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:51,165 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:15:53,691 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-107 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:53,692 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #18: model=owl-alpha provider=openrouter in=30264 out=98 total=30362 latency=5.1s cache=30080/30264 (99%)
+2026-06-28 20:15:53,696 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:54,164 WARNING [20260628_193431_5b6d0a] agent.tool_executor: Tool terminal returned error (0.47s): {"output": "===", "exit_code": 1, "error": null, "exit_code_meaning": "No matches found (not an error)"}
+2026-06-28 20:15:54,166 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:54,194 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:15:54,202 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-109 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:15:56,130 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:16:02,909 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-109 (_call):139923266967232 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:02,909 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #19: model=owl-alpha provider=openrouter in=30418 out=307 total=30725 latency=8.7s cache=30208/30418 (99%)
+2026-06-28 20:16:02,914 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:16:03,112 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool write_file completed (0.20s, 231 chars)
+2026-06-28 20:16:03,113 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:16:03,138 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:16:03,143 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-116 (_call):139922920961728 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:05,037 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:16:07,410 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-116 (_call):139922920961728 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:07,411 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #20: model=owl-alpha provider=openrouter in=30809 out=103 total=30912 latency=4.3s cache=30336/30809 (98%)
+2026-06-28 20:16:07,416 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:16:07,490 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool terminal completed (0.07s, 614 chars)
+2026-06-28 20:16:07,491 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:16:07,500 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:16:07,505 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-118 (_call):139922920961728 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:09,299 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:16:11,891 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-118 (_call):139922920961728 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:11,891 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #21: model=owl-alpha provider=openrouter in=31107 out=103 total=31210 latency=4.4s cache=30720/31107 (99%)
+2026-06-28 20:16:11,926 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: cleanup_browser called for task_id: 20260628_193431_5b6d0a
+2026-06-28 20:16:11,926 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: Active sessions: []
+2026-06-28 20:16:11,926 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: No active session found for task_id: 20260628_193431_5b6d0a
+2026-06-28 20:16:11,927 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:16:11,927 INFO [20260628_193431_5b6d0a] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=12/90 budget=11/90 tool_turns=18 last_msg_role=assistant response_len=372 session=20260628_193431_5b6d0a
+2026-06-28 20:16:11,950 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=bg-review:139922920961728 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:12,069 INFO [20260628_193431_5b6d0a] agent.turn_context: conversation turn: session=20260628_193431_5b6d0a model=owl-alpha provider=openrouter platform=cli history=47 msg='Review the conversation above and update the skill library. Be ACTIVE — most ses...'
+2026-06-28 20:16:12,097 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:16:12,102 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-119 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:14,192 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:16:19,054 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-119 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:19,054 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=32541 out=178 total=32719 latency=7.0s cache=31104/32541 (96%)
+2026-06-28 20:16:19,100 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool skill_view completed (0.04s, 9003 chars)
+2026-06-28 20:16:19,115 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:16:19,119 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-120 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:21,697 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:16:30,506 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-120 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:30,507 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=35130 out=413 total=35543 latency=11.4s cache=32512/35130 (93%)
+2026-06-28 20:16:30,530 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool skill_manage completed (0.02s, 529 chars)
+2026-06-28 20:16:30,550 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:16:30,560 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-121 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:34,971 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:16:37,065 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-121 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:37,066 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=35684 out=84 total=35768 latency=6.5s cache=35072/35684 (98%)
+2026-06-28 20:16:37,085 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool skill_manage completed (0.02s, 173 chars)
+2026-06-28 20:16:37,100 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:16:37,107 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-122 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:40,037 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:16:41,328 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-122 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:41,329 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #4: model=owl-alpha provider=openrouter in=35839 out=55 total=35894 latency=4.2s cache=35584/35839 (99%)
+2026-06-28 20:16:41,343 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool skill_manage completed (0.01s, 169 chars)
+2026-06-28 20:16:41,362 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:16:41,368 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-123 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:41,952 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:16:41,962 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:16:43,390 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:16:44,628 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-123 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:44,628 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #5: model=owl-alpha provider=openrouter in=35965 out=51 total=36016 latency=3.3s cache=35712/35965 (99%)
+2026-06-28 20:16:44,646 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool skill_manage completed (0.02s, 147 chars)
+2026-06-28 20:16:44,666 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:16:44,673 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-124 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:48,218 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:16:49,317 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:16:49,325 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:16:55,789 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-124 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:55,790 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #6: model=owl-alpha provider=openrouter in=36082 out=326 total=36408 latency=11.1s cache=35840/36082 (99%)
+2026-06-28 20:16:55,811 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool skill_manage completed (0.02s, 543 chars)
+2026-06-28 20:16:55,843 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:16:55,853 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-125 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:16:58,139 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:17:01,894 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-125 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:17:01,894 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #7: model=owl-alpha provider=openrouter in=36584 out=143 total=36727 latency=6.1s cache=35968/36584 (98%)
+2026-06-28 20:17:01,927 INFO [20260628_193431_5b6d0a] agent.tool_executor: tool skill_manage completed (0.03s, 402 chars)
+2026-06-28 20:17:01,950 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
+2026-06-28 20:17:01,962 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-126 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:17:04,550 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:17:09,934 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-126 (_call):139923275359936 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:17:09,934 INFO [20260628_193431_5b6d0a] agent.conversation_loop: API call #8: model=owl-alpha provider=openrouter in=36853 out=218 total=37071 latency=8.0s cache=36480/36853 (99%)
+2026-06-28 20:17:09,940 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: cleanup_browser called for task_id: 05066bc2-1080-4293-8f7b-83fd31737108
+2026-06-28 20:17:09,940 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: Active sessions: []
+2026-06-28 20:17:09,941 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: No active session found for task_id: 05066bc2-1080-4293-8f7b-83fd31737108
+2026-06-28 20:17:09,941 INFO [20260628_193431_5b6d0a] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=8/16 budget=8/16 tool_turns=25 last_msg_role=assistant response_len=813 session=20260628_193431_5b6d0a
+2026-06-28 20:17:09,949 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: cleanup_browser called for task_id: 20260628_193431_5b6d0a
+2026-06-28 20:17:09,950 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: Active sessions: []
+2026-06-28 20:17:09,950 DEBUG [20260628_193431_5b6d0a] tools.browser_tool: No active session found for task_id: 20260628_193431_5b6d0a
+2026-06-28 20:17:09,950 INFO [20260628_193431_5b6d0a] run_agent: OpenAI client closed (agent_close, shared=True, tcp_force_closed=0) thread=bg-review:139922920961728 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:18:28,294 DEBUG api.background_process: SessionChannel reaper collected: ['20260628_200142_1bdee0']
+2026-06-28 20:18:41,988 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:18:42,000 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:18:45,185 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:18:45,881 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:18:48,640 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:18:48,651 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:18:49,429 DEBUG api.config: models memory cache rejected: source_fingerprint={'config_yaml': {'path': '/home/runner/workspace/.hermes_data/config.yaml', 'missing': True}, 'auth_json': {'path': '/home/runner/workspace/.hermes_data/auth.json', 'semantic_sha256': '5c37d3dd0ca87ef7188020d1b8901efa96ce829147638e9ab6c8fa75d0d8fb7d'}, 'catalog': {'provider_catalog_sha256': 'c78b4580f32777a81923975cb53e8b76f43c14a51cb5c95ea1b222150d670f8d', 'codex_models_cache': {'path': '/home/runner/.codex/models_cache.json', 'missing': True}}} vs runtime={'config_yaml': {'path': '/home/runner/workspace/.hermes_data/config.yaml', 'mtime_ns': 1782677921770556105, 'size': 2468}, 'auth_json': {'path': '/home/runner/workspace/.hermes_data/auth.json', 'semantic_sha256': '5c37d3dd0ca87ef7188020d1b8901efa96ce829147638e9ab6c8fa75d0d8fb7d'}, 'catalog': {'provider_catalog_sha256': 'c78b4580f32777a81923975cb53e8b76f43c14a51cb5c95ea1b222150d670f8d', 'codex_models_cache': {'path': '/home/runner/.codex/models_cache.json', 'missing': True}}}
+2026-06-28 20:18:49,445 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:18:50,087 DEBUG botocore.hooks: Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+2026-06-28 20:18:50,089 DEBUG botocore.hooks: Changing event name from before-call.apigateway to before-call.api-gateway
+2026-06-28 20:18:50,090 DEBUG botocore.hooks: Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+2026-06-28 20:18:50,090 DEBUG botocore.hooks: Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+2026-06-28 20:18:50,090 DEBUG botocore.hooks: Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+2026-06-28 20:18:50,091 DEBUG botocore.hooks: Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+2026-06-28 20:18:50,091 DEBUG botocore.hooks: Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+2026-06-28 20:18:50,097 DEBUG botocore.hooks: Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+2026-06-28 20:18:50,097 DEBUG botocore.hooks: Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+2026-06-28 20:18:50,097 DEBUG botocore.hooks: Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+2026-06-28 20:18:50,097 DEBUG botocore.hooks: Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+2026-06-28 20:18:50,099 DEBUG botocore.utils: IMDS ENDPOINT: http://169.254.169.254/
+2026-06-28 20:18:50,100 DEBUG botocore.credentials: Looking for credentials via: env
+2026-06-28 20:18:50,100 DEBUG botocore.credentials: Looking for credentials via: assume-role
+2026-06-28 20:18:50,100 DEBUG botocore.credentials: Looking for credentials via: assume-role-with-web-identity
+2026-06-28 20:18:50,100 DEBUG botocore.credentials: Looking for credentials via: sso
+2026-06-28 20:18:50,100 DEBUG botocore.credentials: Looking for credentials via: shared-credentials-file
+2026-06-28 20:18:50,100 DEBUG botocore.credentials: Looking for credentials via: login
+2026-06-28 20:18:50,100 DEBUG botocore.credentials: Looking for credentials via: custom-process
+2026-06-28 20:18:50,100 DEBUG botocore.credentials: Looking for credentials via: config-file
+2026-06-28 20:18:50,100 DEBUG botocore.credentials: Looking for credentials via: ec2-credentials-file
+2026-06-28 20:18:50,100 DEBUG botocore.credentials: Looking for credentials via: boto-config
+2026-06-28 20:18:50,101 DEBUG botocore.credentials: Looking for credentials via: container-role
+2026-06-28 20:18:50,101 DEBUG botocore.credentials: Looking for credentials via: iam-role
+2026-06-28 20:18:50,103 DEBUG botocore.utils: Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/api/token: Could not connect to the endpoint URL: "http://169.254.169.254/latest/api/token"
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/httpsession.py", line 477, in send
+    urllib_response = conn.urlopen(
+                      ^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 473, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: AWSHTTPConnection(host='169.254.169.254', port=80): Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/utils.py", line 480, in _fetch_metadata_token
+    response = self._session.send(request.prepare())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/httpsession.py", line 506, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "http://169.254.169.254/latest/api/token"
+2026-06-28 20:18:50,123 DEBUG botocore.utils: Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/meta-data/iam/security-credentials/: Could not connect to the endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/httpsession.py", line 477, in send
+    urllib_response = conn.urlopen(
+                      ^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 473, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: AWSHTTPConnection(host='169.254.169.254', port=80): Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/utils.py", line 535, in _get_request
+    response = self._session.send(request.prepare())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/httpsession.py", line 506, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+2026-06-28 20:18:50,126 DEBUG botocore.utils: Max number of attempts exceeded (1) when attempting to retrieve data from metadata service.
+2026-06-28 20:18:50,127 DEBUG botocore.hooks: Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+2026-06-28 20:18:50,132 DEBUG botocore.hooks: Changing event name from before-call.apigateway to before-call.api-gateway
+2026-06-28 20:18:50,132 DEBUG botocore.hooks: Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+2026-06-28 20:18:50,133 DEBUG botocore.hooks: Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+2026-06-28 20:18:50,133 DEBUG botocore.hooks: Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+2026-06-28 20:18:50,134 DEBUG botocore.hooks: Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+2026-06-28 20:18:50,134 DEBUG botocore.hooks: Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+2026-06-28 20:18:50,137 DEBUG botocore.hooks: Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+2026-06-28 20:18:50,138 DEBUG botocore.hooks: Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+2026-06-28 20:18:50,138 DEBUG botocore.hooks: Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+2026-06-28 20:18:50,138 DEBUG botocore.hooks: Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+2026-06-28 20:18:50,139 DEBUG botocore.utils: IMDS ENDPOINT: http://169.254.169.254/
+2026-06-28 20:18:50,140 DEBUG botocore.credentials: Looking for credentials via: env
+2026-06-28 20:18:50,140 DEBUG botocore.credentials: Looking for credentials via: assume-role
+2026-06-28 20:18:50,140 DEBUG botocore.credentials: Looking for credentials via: assume-role-with-web-identity
+2026-06-28 20:18:50,140 DEBUG botocore.credentials: Looking for credentials via: sso
+2026-06-28 20:18:50,140 DEBUG botocore.credentials: Looking for credentials via: shared-credentials-file
+2026-06-28 20:18:50,141 DEBUG botocore.credentials: Looking for credentials via: login
+2026-06-28 20:18:50,141 DEBUG botocore.credentials: Looking for credentials via: custom-process
+2026-06-28 20:18:50,141 DEBUG botocore.credentials: Looking for credentials via: config-file
+2026-06-28 20:18:50,141 DEBUG botocore.credentials: Looking for credentials via: ec2-credentials-file
+2026-06-28 20:18:50,141 DEBUG botocore.credentials: Looking for credentials via: boto-config
+2026-06-28 20:18:50,141 DEBUG botocore.credentials: Looking for credentials via: container-role
+2026-06-28 20:18:50,141 DEBUG botocore.credentials: Looking for credentials via: iam-role
+2026-06-28 20:18:50,142 DEBUG botocore.utils: Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/api/token: Could not connect to the endpoint URL: "http://169.254.169.254/latest/api/token"
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/httpsession.py", line 477, in send
+    urllib_response = conn.urlopen(
+                      ^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 473, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: AWSHTTPConnection(host='169.254.169.254', port=80): Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/utils.py", line 480, in _fetch_metadata_token
+    response = self._session.send(request.prepare())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/httpsession.py", line 506, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "http://169.254.169.254/latest/api/token"
+2026-06-28 20:18:50,148 DEBUG botocore.utils: Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/meta-data/iam/security-credentials/: Could not connect to the endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/httpsession.py", line 477, in send
+    urllib_response = conn.urlopen(
+                      ^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 473, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/awsrequest.py", line 96, in request
+    rval = super().request(method, url, body, headers, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 500, in request
+    self.endheaders()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/awsrequest.py", line 123, in _send_output
+    self.send(msg)
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/awsrequest.py", line 223, in send
+    return super().send(str)
+           ^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 331, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 219, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: AWSHTTPConnection(host='169.254.169.254', port=80): Failed to establish a new connection: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/utils.py", line 535, in _get_request
+    response = self._session.send(request.prepare())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/botocore/httpsession.py", line 506, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+2026-06-28 20:18:50,151 DEBUG botocore.utils: Max number of attempts exceeded (1) when attempting to retrieve data from metadata service.
+2026-06-28 20:18:50,219 DEBUG api.config: Custom endpoint models fetch failed for provider custom:api.cloudflare.com: {'kind': 'http', 'code': 405, 'message': 'Models endpoint returned 405 for api.cloudflare.com; see logs.'}
+2026-06-28 20:18:50,338 DEBUG api.config: Custom endpoint models fetch failed for provider custom:api.cloudflare.com: {'kind': 'http', 'code': 405, 'message': 'Models endpoint returned 405 for api.cloudflare.com; see logs.'}
+2026-06-28 20:18:50,608 DEBUG agent.model_metadata: Failed to fetch model metadata from https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1/models: 404 Client Error: Not Found for url: https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/models
+2026-06-28 20:18:50,760 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-28 20:18:50,760 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-28 20:18:50,982 DEBUG api.routes: Live fetch from custom provider failed: HTTP Error 405: Method Not Allowed
+2026-06-28 20:18:52,127 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:19:01,318 DEBUG tools.mcp_tool: No MCP servers configured
+2026-06-28 20:19:01,330 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-28 20:19:01,438 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-422 (_run_agent_streaming):140548882024128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:19:01,464 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 20:19:01,479 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 20:19:01,501 DEBUG agent.auxiliary_client: Auxiliary client: OpenRouter via pool
+2026-06-28 20:19:01,514 INFO agent.auxiliary_client: Vision auto-detect: using main provider openrouter (@cf/moonshotai/kimi-k2.7-code)
+2026-06-28 20:19:01,520 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 20:19:01,558 DEBUG hermes_plugins.image_gen__openrouter: nous runtime resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 20:19:01,560 DEBUG agent.auxiliary_client: Could not read Codex auth for auxiliary client: No Codex credentials stored. Run `hermes auth` to authenticate.
+2026-06-28 20:19:01,574 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 20:19:01,575 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 20:19:01,576 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 20:19:01,602 DEBUG agent.auxiliary_client: Auxiliary client: OpenRouter via pool
+2026-06-28 20:19:01,612 INFO agent.auxiliary_client: Vision auto-detect: using main provider openrouter (@cf/moonshotai/kimi-k2.7-code)
+2026-06-28 20:19:01,703 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:19:01,825 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-28 20:19:01,825 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-28 20:19:01,825 DEBUG api.streaming: [webui] Created new agent for session 20260628_200142_1bdee0
+2026-06-28 20:19:01,826 DEBUG api.models: Compressed context for session 20260628_200142_1bdee0 has an unverifiable compression anchor; using context_messages only
+2026-06-28 20:19:01,894 INFO [20260628_200142_1bdee0] agent.turn_context: conversation turn: session=20260628_200142_1bdee0 model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=175 msg='[Workspace::v1: /home/runner/workspace] Why did you delete config.yml?'
+2026-06-28 20:19:01,895 INFO [20260628_200142_1bdee0] agent.conversation_loop: Stored system prompt for session 20260628_200142_1bdee0 has stale runtime identity; rebuilding for model=@cf/moonshotai/kimi-k2.7-code provider=custom.
+2026-06-28 20:19:02,015 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:19:02,018 INFO [20260628_200142_1bdee0] agent.conversation_loop: Repaired 2 message-alternation violations before request (session=20260628_200142_1bdee0)
+2026-06-28 20:19:02,025 DEBUG [20260628_200142_1bdee0] agent.auxiliary_client: Omitting temperature for Kimi model '@cf/moonshotai/kimi-k2.7-code' (server-managed)
+2026-06-28 20:19:02,032 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 240s to match stale-stream detector
+2026-06-28 20:19:02,039 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-426 (_call):140548474132160 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:19:02,274 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (549e2b7e-8243-4c98-82d2-f4d49eb79923)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-28 20:19:02,275 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-426 (_call):140548474132160 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:19:02,276 DEBUG [20260628_200142_1bdee0] agent.conversation_loop: Error classified: reason=rate_limit status=429 retryable=True compress=False rotate=True fallback=True
+2026-06-28 20:19:02,276 WARNING [20260628_200142_1bdee0] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-422 (_run_agent_streaming):140548882024128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (549e2b7e-8243-4c98-82d2-f4d49eb79923)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-28 20:19:02,278 WARNING [20260628_200142_1bdee0] agent.conversation_loop: Retrying API call in 2.9443653369215808s (attempt 1/3) thread=Thread-422 (_run_agent_streaming):140548882024128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code policy=default error=Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (549e2b7e-8243-4c98-82d2-f4d49eb79923)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-28 20:19:05,281 DEBUG [20260628_200142_1bdee0] agent.auxiliary_client: Omitting temperature for Kimi model '@cf/moonshotai/kimi-k2.7-code' (server-managed)
+2026-06-28 20:19:05,288 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 240s to match stale-stream detector
+2026-06-28 20:19:05,292 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-427 (_call):140548474132160 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:19:05,515 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (450033d3-1353-4cc7-a6d1-cf8d41921c07)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-28 20:19:05,516 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-427 (_call):140548474132160 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:19:05,516 DEBUG [20260628_200142_1bdee0] agent.conversation_loop: Error classified: reason=rate_limit status=429 retryable=True compress=False rotate=True fallback=True
+2026-06-28 20:19:05,517 WARNING [20260628_200142_1bdee0] agent.conversation_loop: API call failed (attempt 2/3) error_type=RateLimitError thread=Thread-422 (_run_agent_streaming):140548882024128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (450033d3-1353-4cc7-a6d1-cf8d41921c07)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-28 20:19:05,518 WARNING [20260628_200142_1bdee0] agent.conversation_loop: Retrying API call in 5.333581381928509s (attempt 2/3) thread=Thread-422 (_run_agent_streaming):140548882024128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code policy=default error=Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (450033d3-1353-4cc7-a6d1-cf8d41921c07)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-28 20:19:10,922 DEBUG [20260628_200142_1bdee0] agent.auxiliary_client: Omitting temperature for Kimi model '@cf/moonshotai/kimi-k2.7-code' (server-managed)
+2026-06-28 20:19:10,936 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 240s to match stale-stream detector
+2026-06-28 20:19:10,950 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-428 (_call):140548474132160 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:19:11,146 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (23210d29-d4fb-4148-88e7-9b3adecf3fe5)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-28 20:19:11,146 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-428 (_call):140548474132160 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-28 20:19:11,147 DEBUG [20260628_200142_1bdee0] agent.conversation_loop: Error classified: reason=rate_limit status=429 retryable=True compress=False rotate=True fallback=True
+2026-06-28 20:19:11,148 WARNING [20260628_200142_1bdee0] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-422 (_run_agent_streaming):140548882024128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (23210d29-d4fb-4148-88e7-9b3adecf3fe5)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-28 20:19:11,154 ERROR [20260628_200142_1bdee0] agent.conversation_loop: API call failed after 3 retries. HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (23210d29-d4fb-4148-88e7-9b3adecf3fe5)","code":4006}],"success":false,"result":{},"messages":[]} | provider=custom model=@cf/moonshotai/kimi-k2.7-code msgs=175 tokens=~73,100
+2026-06-28 20:19:12,194 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:19:14,150 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-28 20:19:14,151 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-28 20:19:15,192 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:20:48,976 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:20:48,985 DEBUG api.dashboard_probe: official Hermes dashboard probe failed
+Traceback (most recent call last):
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1093, in _send_output
+    self.send(msg)
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1037, in send
+    self.connect()
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/http/client.py", line 1003, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 865, in create_connection
+    raise exceptions[0]
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/socket.py", line 850, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/hermes-webui/api/dashboard_probe.py", line 136, in probe_official_dashboard
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/urllib/request.py", line 1347, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
+2026-06-28 20:21:28,297 DEBUG api.background_process: SessionChannel reaper collected: ['20260628_200142_1bdee0']
+2026-06-28 20:21:30,224 INFO tools.terminal_tool: Cleaned up inactive environment for task: default

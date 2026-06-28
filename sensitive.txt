@@ -8,3 +8,6 @@
 /home/runner/workspace/credentials/torbox_credentials.txt
 /home/runner/workspace/.hermes_data/.env
 /home/runner/workspace/.hermes_data/auth.json
+/home/runner/workspace/scripts/email.sh
+/home/runner/workspace/freellmapi
+/home/runner/workspace/.hermes_data/webui/sessions

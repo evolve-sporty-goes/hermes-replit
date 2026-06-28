@@ -4105,3 +4105,93 @@ RuntimeError: No LLM provider configured for task=vision provider=auto. Run: her
 2026-06-28 20:10:00,757 WARNING run_agent: Session DB append_message failed: constraint failed
 2026-06-28 20:10:00,911 WARNING [20260628_194634_91a01c] run_agent: Session DB append_message failed: constraint failed
 2026-06-28 20:10:00,912 WARNING [20260628_194634_91a01c] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:10:15,269 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 20:10:15,276 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 20:10:15,984 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 20:10:16,039 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 20:10:16,041 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 20:10:16,042 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 20:11:23,631 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 20:11:23,805 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 20:11:23,855 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 20:11:23,943 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 20:11:23,947 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 20:11:23,948 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 20:11:25,121 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:11:25,539 WARNING [20260628_193431_5b6d0a] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-35 (run_agent):139923810129600 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 400: @cf/moonshotai/kimi-k2.7-code is not a valid model ID
+2026-06-28 20:11:29,977 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:11:30,288 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:11:30,289 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:11:34,356 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:11:34,657 WARNING agent.title_generator: Title generation failed: Error code: 400 - {'error': {'message': '@cf/moonshotai/kimi-k2.7-code is not a valid model ID', 'code': 400}, 'user_id': 'user_3FfUhRRRXZqyMrxoj5dzH0sXBNC'}
+2026-06-28 20:12:05,812 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:05,915 WARNING [20260628_193431_5b6d0a] run_agent: Credential pool provider mismatch: pool=openrouter, agent=custom — skipping pool mutation to avoid cross-provider contamination
+2026-06-28 20:12:05,915 WARNING [20260628_193431_5b6d0a] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-49 (run_agent):139923318372032 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 400: @cf/moonshotai/kimi-k2.7-code is not a valid model ID
+2026-06-28 20:12:12,578 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:12,637 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:25,060 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:25,417 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:26,676 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:27,881 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:45,937 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:46,138 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:47,248 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:12:48,342 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:06,341 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:06,457 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:17,434 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:17,681 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:22,421 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:22,501 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:31,771 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:13:32,046 WARNING agent.title_generator: Title generation failed: Error code: 400 - {'error': {'message': '@cf/moonshotai/kimi-k2.7-code is not a valid model ID', 'code': 400}, 'user_id': 'user_3FfUhRRRXZqyMrxoj5dzH0sXBNC'}
+2026-06-28 20:15:01,068 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:01,247 WARNING [20260628_193431_5b6d0a] run_agent: Credential pool provider mismatch: pool=openrouter, agent=custom — skipping pool mutation to avoid cross-provider contamination
+2026-06-28 20:15:01,247 WARNING [20260628_193431_5b6d0a] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-87 (run_agent):139923275359936 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 400: @cf/moonshotai/kimi-k2.7-code is not a valid model ID
+2026-06-28 20:15:06,095 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:06,203 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:18,199 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:18,316 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:25,647 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:25,789 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:29,585 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:29,739 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:33,812 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:33,976 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:39,873 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:40,062 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:44,351 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:45,012 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:48,504 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:48,593 WARNING [20260628_193431_5b6d0a] agent.tool_executor: Tool terminal returned error (0.09s): {"output": "ls: cannot access '/home/runner/workspace/.hermes_data/config.yaml': No such file or directory", "exit_code": 2, "error": null}
+2026-06-28 20:15:48,594 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:53,696 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:15:54,164 WARNING [20260628_193431_5b6d0a] agent.tool_executor: Tool terminal returned error (0.47s): {"output": "===", "exit_code": 1, "error": null, "exit_code_meaning": "No matches found (not an error)"}
+2026-06-28 20:15:54,166 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:16:02,914 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:16:03,113 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:16:07,416 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:16:07,491 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:16:11,927 WARNING [20260628_193431_5b6d0a] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:16:49,317 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:16:49,325 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:18:45,185 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:18:45,881 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:18:49,445 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:18:52,127 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:19:01,464 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 20:19:01,479 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 20:19:01,520 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 20:19:01,574 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 20:19:01,575 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 20:19:01,576 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 20:19:01,703 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:19:02,015 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:19:02,276 WARNING [20260628_200142_1bdee0] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-422 (_run_agent_streaming):140548882024128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (549e2b7e-8243-4c98-82d2-f4d49eb79923)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-28 20:19:02,278 WARNING [20260628_200142_1bdee0] agent.conversation_loop: Retrying API call in 2.9443653369215808s (attempt 1/3) thread=Thread-422 (_run_agent_streaming):140548882024128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code policy=default error=Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (549e2b7e-8243-4c98-82d2-f4d49eb79923)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-28 20:19:05,517 WARNING [20260628_200142_1bdee0] agent.conversation_loop: API call failed (attempt 2/3) error_type=RateLimitError thread=Thread-422 (_run_agent_streaming):140548882024128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (450033d3-1353-4cc7-a6d1-cf8d41921c07)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-28 20:19:05,518 WARNING [20260628_200142_1bdee0] agent.conversation_loop: Retrying API call in 5.333581381928509s (attempt 2/3) thread=Thread-422 (_run_agent_streaming):140548882024128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code policy=default error=Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (450033d3-1353-4cc7-a6d1-cf8d41921c07)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-28 20:19:11,148 WARNING [20260628_200142_1bdee0] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-422 (_run_agent_streaming):140548882024128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/c4b644d7da7aebbae4e6cde3b441b576/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (23210d29-d4fb-4148-88e7-9b3adecf3fe5)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-28 20:19:11,154 ERROR [20260628_200142_1bdee0] agent.conversation_loop: API call failed after 3 retries. HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (23210d29-d4fb-4148-88e7-9b3adecf3fe5)","code":4006}],"success":false,"result":{},"messages":[]} | provider=custom model=@cf/moonshotai/kimi-k2.7-code msgs=175 tokens=~73,100
+2026-06-28 20:19:12,194 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:19:15,192 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed

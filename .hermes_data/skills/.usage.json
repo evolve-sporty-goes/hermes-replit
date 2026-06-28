@@ -42,14 +42,14 @@
     "archived_at": null,
     "created_at": "2026-06-28T20:00:15.196693+00:00",
     "created_by": null,
-    "last_patched_at": "2026-06-28T20:09:05.632366+00:00",
-    "last_used_at": "2026-06-28T20:08:58.285016+00:00",
-    "last_viewed_at": "2026-06-28T20:08:58.278379+00:00",
-    "patch_count": 5,
+    "last_patched_at": "2026-06-28T20:17:01.911444+00:00",
+    "last_used_at": "2026-06-28T20:16:19.095441+00:00",
+    "last_viewed_at": "2026-06-28T20:16:19.089733+00:00",
+    "patch_count": 11,
     "pinned": false,
     "state": "active",
-    "use_count": 5,
-    "view_count": 5
+    "use_count": 7,
+    "view_count": 7
   },
   "software-development:workspace-organization": {
     "archived_at": null,
