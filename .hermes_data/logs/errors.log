@@ -1333,3 +1333,241 @@ openai.NotFoundError: Error code: 404 - {'error': {'message': 'No endpoints foun
 2026-06-28 14:21:56,066 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
 2026-06-28 14:22:00,261 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
 2026-06-28 14:22:01,536 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:22:47,003 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:22:47,011 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:22:47,976 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:22:48,072 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:22:48,078 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:22:48,080 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:23:45,910 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:23:45,915 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:23:45,934 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:23:46,095 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:23:46,096 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:23:46,096 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:23:47,819 WARNING [12f8e508621e] agent.prompt_builder: ⚠️  Context file AGENTS.md TRUNCATED: 71265 chars exceeds limit of 62914 — trim the file, pin a larger context_file_max_chars, or use a larger-context model!
+2026-06-28 14:23:47,858 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:23:48,330 WARNING [12f8e508621e] agent.conversation_loop: API call failed (attempt 1/3) error_type=AuthenticationError thread=Thread-16 (_run_agent_streaming):140470705440448 provider=huggingface base_url=https://router.huggingface.co/v1 model=moonshotai/Kimi-K2.7-Code summary=HTTP 401: {"error":"User Access Token \"hf\" is expired"}
+2026-06-28 14:23:48,685 WARNING [12f8e508621e] agent.auxiliary_client: Auxiliary: marking openrouter unhealthy for 600s (payment / credit error). Subsequent auxiliary calls will skip it until 14:33:48.
+2026-06-28 14:23:48,697 WARNING [12f8e508621e] agent.auxiliary_client: Auxiliary vision (async): payment error on openrouter and all fallbacks exhausted (fallback_chain + main agent model). Raising original error.
+2026-06-28 14:23:48,697 ERROR [12f8e508621e] tools.vision_tools: Error analyzing image: Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/vision_tools.py", line 978, in vision_analyze_tool
+    response = await async_call_llm(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/agent/auxiliary_client.py", line 6295, in async_call_llm
+    await client.chat.completions.create(**kwargs), task)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2700, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402}}
+2026-06-28 14:23:53,767 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:23:55,277 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:24:16,640 WARNING [20260628_142246_def6d3] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:24:16,940 WARNING [20260628_142246_def6d3] agent.conversation_loop: API call failed (attempt 1/3) error_type=AuthenticationError thread=Thread-9 (run_agent):140561713452736 provider=huggingface base_url=https://router.huggingface.co/v1 model=moonshotai/Kimi-K2.7-Code summary=HTTP 401: {"error":"Invalid username or password."}
+2026-06-28 14:24:20,957 WARNING [20260628_142246_def6d3] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:24:21,044 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:24:21,729 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:24:44,637 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:24:44,693 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:24:44,855 ERROR [12f8e508621e] tools.vision_tools: Error analyzing image: Error code: 404 - {'error': {'message': 'No endpoints found that support image input', 'code': 404}}
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/vision_tools.py", line 978, in vision_analyze_tool
+    response = await async_call_llm(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/agent/auxiliary_client.py", line 6295, in async_call_llm
+    await client.chat.completions.create(**kwargs), task)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2700, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'No endpoints found that support image input', 'code': 404}}
+2026-06-28 14:24:47,589 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:24:48,297 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:24:55,074 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:24:55,081 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:24:55,083 WARNING [12f8e508621e] agent.tool_executor: Tool patch returned error (0.00s): {"error": "Refusing to write to Hermes config file: /home/runner/.hermes/config.yaml\nAgent cannot modify security-sensitive configuration. Edit ~/.hermes/config.yaml directly or use 'hermes config' i
+2026-06-28 14:24:55,084 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:25:00,387 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:25:02,788 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:25:35,142 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:25:35,478 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:25:51,287 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:25:51,292 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:25:51,307 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:25:51,331 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:25:51,332 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:25:51,332 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:25:51,587 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:25:51,608 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:25:51,796 ERROR [12f8e508621e] tools.vision_tools: Error analyzing image: Error code: 400 - {'error': {'message': 'zai-org/GLM-5.2 is not a valid model ID', 'code': 400}, 'user_id': 'user_3Fjh6nX1JzxeMGJjhbgbZpuYRin'}
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/vision_tools.py", line 978, in vision_analyze_tool
+    response = await async_call_llm(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/agent/auxiliary_client.py", line 6295, in async_call_llm
+    await client.chat.completions.create(**kwargs), task)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2700, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'zai-org/GLM-5.2 is not a valid model ID', 'code': 400}, 'user_id': 'user_3Fjh6nX1JzxeMGJjhbgbZpuYRin'}
+2026-06-28 14:25:51,919 WARNING [12f8e508621e] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-43 (_run_agent_streaming):140470722225856 provider=openrouter base_url=https://openrouter.ai/api/v1 model=zai-org/GLM-5.2 summary=HTTP 400: zai-org/GLM-5.2 is not a valid model ID
+2026-06-28 14:25:59,393 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:26:01,325 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:28:41,959 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:28:41,976 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:28:44,920 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:28:45,246 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:29:00,274 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:29:04,675 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:30:39,035 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:30:40,320 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:30:46,040 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:30:52,685 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:30:52,702 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:30:52,793 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:30:52,826 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:30:52,827 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:30:52,828 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:30:53,096 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:30:53,280 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:30:58,112 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:31:05,221 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:31:14,194 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:31:20,223 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:31:21,535 WARNING [8ed3f56cbcb2] agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:31:21,535 WARNING [8ed3f56cbcb2] agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:32:21.
+2026-06-28 14:31:22,274 WARNING [8ed3f56cbcb2] agent.auxiliary_client: Auxiliary auto-detect: no provider available (tried: openrouter (unhealthy), nous, local/custom, api-key). Compression, summarization, and memory flush will not work. Set OPENROUTER_API_KEY or configure a local model in config.yaml.
+2026-06-28 14:31:22,769 WARNING [8ed3f56cbcb2] agent.auxiliary_client: Auxiliary auto-detect: no provider available (tried: openrouter (unhealthy), nous (unhealthy), local/custom, api-key). Compression, summarization, and memory flush will not work. Set OPENROUTER_API_KEY or configure a local model in config.yaml.
+2026-06-28 14:31:22,770 WARNING [8ed3f56cbcb2] tools.web_tools: LLM processing requested but no auxiliary model available, returning raw content
+2026-06-28 14:31:22,782 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:31:34,927 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:31:39,639 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:31:39,957 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:37:11,784 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:37:12,533 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:37:14,512 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:39:18,628 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:39:19,455 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:39:22,417 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:39:24,932 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:39:59,011 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:39:59,377 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:40:05,832 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:40:09,908 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:40:19,932 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:40:34,933 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:40:48,491 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:40:48,951 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:40:53,791 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:40:57,170 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:40:59,406 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:41:00,840 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:41:09,911 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:41:16,168 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:41:16,169 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:41:19,933 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:41:23,278 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:41:34,936 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:41:49,931 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:42:01,905 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:42:20,107 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:42:22,229 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:42:22,900 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:42:26,161 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:42:27,875 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:42:38,893 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:42:39,368 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:42:43,888 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:42:49,937 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:43:04,917 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:43:14,939 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:43:29,928 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:43:40,210 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:43:40,835 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:43:50,257 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:43:57,357 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:44:00,338 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:44:14,935 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:44:19,555 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:44:19,983 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:46:54,897 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:46:55,220 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:46:58,158 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:49:29,455 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:49:30,928 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:49:35,738 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:49:41,038 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:49:41,230 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:49:47,369 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:49:52,936 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:49:55,633 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:50:07,015 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:50:21,989 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:50:37,933 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:50:41,592 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:50:41,593 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:50:46,594 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:50:47,791 WARNING [e3c117aeacb4] agent.tool_executor: Tool terminal returned error (1.20s): {"output": "/nix/store/smkzrg2vvp3lng3hq7v9svfni5mnqjh2-bash-interactive-5.2p37/bin/bash: line 3: go: command not found", "exit_code": 127, "error": null}
+2026-06-28 14:50:47,793 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:50:52,899 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:50:53,305 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:50:53,642 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:51:00,374 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:51:01,117 WARNING [e3c117aeacb4] agent.tool_executor: Tool terminal returned error (0.74s): {"output": "% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0   
+2026-06-28 14:51:01,120 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:51:07,214 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:51:07,406 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:51:07,983 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:51:13,529 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:51:17,937 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:51:32,778 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:51:33,472 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:51:42,938 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:51:51,130 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:51:58,764 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:52:12,763 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:52:22,925 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:52:32,968 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:52:47,990 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:53:41,984 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:54:42,630 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:55:19,041 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:55:32,917 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:55:47,948 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:55:56,765 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:55:58,783 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:55:59,307 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:56:11,978 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:56:13,632 WARNING [e3c117aeacb4] agent.tool_executor: Tool terminal returned error (300.10s): {"output": "", "exit_code": -1, "error": "BLOCKED: Command timed out without user response. The user has NOT consented to this action. Do NOT retry this command, do NOT rephrase it, and do NOT attempt
+2026-06-28 14:56:13,634 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:56:20,282 WARNING [e3c117aeacb4] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:56:22,942 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:56:32,962 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:56:47,919 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:56:57,940 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:57:12,911 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:57:41,959 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:57:43,520 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:57:52,009 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:58:00,338 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:58:03,244 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:58:13,286 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:58:23,943 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
