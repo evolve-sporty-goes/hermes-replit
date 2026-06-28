@@ -10926,3 +10926,30 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 2026-06-28 20:05:29,392 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-349 (_call):140548266501824 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
 2026-06-28 20:05:29,396 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #34: model=owl-alpha provider=openrouter in=97730 out=128 total=97858 latency=6.4s cache=73536/97730 (75%)
 2026-06-28 20:05:30,100 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:05:30,552 INFO [20260628_200142_1bdee0] agent.tool_executor: tool terminal completed (0.45s, 165 chars)
+2026-06-28 20:05:30,554 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:05:30,567 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 240s to match stale-stream detector
+2026-06-28 20:05:30,573 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-351 (_call):140548266501824 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:05:32,023 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:05:34,513 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:05:34,949 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-351 (_call):140548266501824 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:05:34,950 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #35: model=owl-alpha provider=openrouter in=97917 out=76 total=97993 latency=4.4s cache=97728/97917 (100%)
+2026-06-28 20:05:34,963 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:05:42,149 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:05:44,785 INFO [20260628_200142_1bdee0] agent.tool_executor: tool terminal completed (9.82s, 45 chars)
+2026-06-28 20:05:44,788 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:05:44,808 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 240s to match stale-stream detector
+2026-06-28 20:05:44,824 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-353 (_call):140548266501824 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:05:50,035 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:05:50,054 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-353 (_call):140548266501824 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:05:50,055 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #36: model=owl-alpha provider=openrouter in=98013 out=59 total=98072 latency=5.3s cache=97856/98013 (100%)
+2026-06-28 20:05:50,076 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:05:55,194 WARNING [20260628_200142_1bdee0] agent.tool_executor: Tool terminal returned error (5.12s): {"output": "remote: error: GH013: Repository rule violations found for refs/heads/main.        \nremote: \nremote: - GITHUB PUSH PROTECTION        \nremote:   —————————————————————————————————————————
+2026-06-28 20:05:55,197 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:05:55,214 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 240s to match stale-stream detector
+2026-06-28 20:05:55,225 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-355 (_call):140548266501824 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:05:57,109 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:05:59,092 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:06:00,083 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-355 (_call):140548266501824 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:06:00,083 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #37: model=owl-alpha provider=openrouter in=98614 out=123 total=98737 latency=4.9s cache=97984/98614 (99%)
+2026-06-28 20:06:00,210 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
