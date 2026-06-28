@@ -10,8 +10,8 @@
 #    all via the same FlareSolverr session (cookies preserved)
 set -euo pipefail
 
-CRED="/home/runner/workspace/torbox_credentials.txt"
-ANON_KEY=$(cat /home/runner/workspace/.supabase_anon_key)
+CRED="/home/runner/workspace/credentials/torbox_credentials.txt"
+ANON_KEY=$(cat /home/runner/workspace/credentials/.supabase_anon_key)
 CHROMIUM="/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
 PROTON_PROFILE="$HOME/proton_profile"
 FS_URL="http://127.0.0.1:8191/v1"

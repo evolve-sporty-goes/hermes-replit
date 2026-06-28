@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # TorBox signup: register, verify email, get free trial, extract API key
 set -euo pipefail
-CRED="/home/runner/workspace/torbox_credentials.txt"
-ANON=$(cat /home/runner/workspace/.supabase_anon_key)
+CRED="/home/runner/workspace/credentials/torbox_credentials.txt"
+ANON=$(cat /home/runner/workspace/credentials/.supabase_anon_key)
 
 # Step 1: Generate email + password
-EMAIL=$(bash /home/runner/workspace/email.sh)
+EMAIL=$(bash /home/runner/workspace/scripts/email.sh)
 PW=$(python3 -c "import secrets,string as s;print(secrets.choice(s.ascii_letters)+secrets.choice(s.digits)+secrets.choice('!@#%')+''.join(secrets.choice(s.ascii_letters+s.digits+'!@#\$%')for _ in range(12)))")
 echo "Email: $EMAIL"
 

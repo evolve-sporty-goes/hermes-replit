@@ -3,8 +3,8 @@
 # Fetches SOCKS5/HTTP proxies from ProxyScrape, tries each with Camoufox+geoip
 set -eo pipefail
 
-ANON_KEY=$(cat /home/runner/workspace/.supabase_anon_key)
-CRED="/home/runner/workspace/torbox_credentials.txt"
+ANON_KEY=$(cat /home/runner/workspace/credentials/.supabase_anon_key)
+CRED="/home/runner/workspace/credentials/torbox_credentials.txt"
 EMAIL_PREFIX="${1:-bavmin}"
 PASSWORD_DEFAULT='Satyana@1234'
 PASSWORD="${2:-$PASSWORD_DEFAULT}"

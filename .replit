@@ -21,7 +21,7 @@ outputType = "console"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "bash hermes.sh"
+args = "bash ~/workspace/scripts/hermes.sh"
 
 [[workflows.workflow]]
 name = "Project"

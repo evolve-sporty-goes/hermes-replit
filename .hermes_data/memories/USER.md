@@ -6,4 +6,6 @@ User prefers explicit command instructions ("tell me commands i will execute") o
 §
 User corrects approach explicitly. Agent must do full automation (never ask user to paste links). TorBox magic link: sometimes "generate only, don't click" — output URL without browser_navigate.
 §
-User on Replit prefers ALL ephemeral dirs symlinked (.cache, .pythonlibs, .local, .config) to ~/ to keep workspace lean. Include .pythonlibs in symlink loop — packages reinstalled by hermes.sh on reset anyway.
+User on Replit: ephemeral dirs symlinked (.cache, .pythonlibs, .local, .config) to ~/, .pythonlibs included in symlink loop. After file reorg, proactively suggest adding new dirs (e.g. credentials/) to .gitignore.
+§
+User wants unredacted output — no masking/API key redaction. Show full keys, tokens, URLs in results.

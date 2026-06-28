@@ -4,16 +4,18 @@
 set -euo pipefail
 
 FS_URL="http://127.0.0.1:8191/v1"
-PROXY="${1:...echo "Usage: $0 <get|post> <url> [json_body_file]"
-echo ""
-echo "Examples:"
-echo "  $0 get  https://db.torbox.app/auth/v1/signup"
-echo "  $0 post https://db.torbox.app/auth/v1/signup /tmp/body.json"
-echo ""
-echo "Persistent session: all requests share the same browser session,"
-echo "so CF cookies are kept across calls — no re-solving needed."
-exit 1
-}
+
+if [ $# -lt 2 ]; then
+  echo "Usage: $0 <get|post> <url> [json_body_file]"
+  echo ""
+  echo "Examples:"
+  echo "  $0 get  https://db.torbox.app/auth/v1/signup"
+  echo "  $0 post https://db.torbox.app/auth/v1/signup /tmp/body.json"
+  echo ""
+  echo "Persistent session: all requests share the same browser session,"
+  echo "so CF cookies are kept across calls — no re-solving needed."
+  exit 1
+fi
 
 METHOD="$1"
 URL="$2"

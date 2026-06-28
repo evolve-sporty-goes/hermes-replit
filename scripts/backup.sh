@@ -2,15 +2,15 @@
 # torbox-signup.sh — Create + verify TorBox account via Proton
 set -euo pipefail
 CRED="torbox_credentials.txt"
-ANON=$(cat /home/runner/workspace/.supabase_anon_key)
+ANON=$(cat /home/runner/workspace/credentials/.supabase_anon_key)
 
 # Step 1: Sign up
-EMAIL=$(bash /home/runner/workspace/email.sh)
+EMAIL=$(bash /home/runner/workspace/scripts/email.sh)
 PW=$(python3 -c "import sys,os;sys.path.insert(0,os.path.expanduser('~'));import config;print(config.TORBOX_PASSWORD)")
 echo "Signing up $EMAIL ..."
 B=$(curl -s -X POST "https://db.torbox.app/auth/v1/signup" \
   -H 'Content-Type: application/json' \
-  -H "apikey: $(cat /home/runner/workspace/.supabase_anon_key)" \
+  -H "apikey: $ANON" \
   -d "{\"email\":\"$EMAIL\",\"password\":\"$PW\"}")
 E=$(echo "$B"|python3 -c "import sys,json;d=json.load(sys.stdin);print(d.get('msg',d.get('error_description','')))" 2>/dev/null||true)
 [[ -n "$E" ]] && { echo "✗ $E"; exit 1; }

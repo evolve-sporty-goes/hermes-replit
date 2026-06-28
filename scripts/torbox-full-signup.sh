@@ -5,8 +5,8 @@
 #   Step 3: visit verify URL + extract API key via Playwright + Tor + FlareSolverr
 set -euo pipefail
 
-CRED="/home/runner/workspace/torbox_credentials.txt"
-ANON_KEY=$(cat /home/runner/workspace/.supabase_anon_key)
+CRED="/home/runner/workspace/credentials/torbox_credentials.txt"
+ANON_KEY=$(cat /home/runner/workspace/credentials/.supabase_anon_key)
 CH="/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
 PR="/home/runner/proton_profile"
 

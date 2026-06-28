@@ -3,7 +3,7 @@
 set -euo pipefail
 command -v playwright >/dev/null 2>&1  || pip install playwright
 CH="https://db.torbox.app"
-KEY=$(cat /home/runner/workspace/.supabase_anon_key)
+KEY=$(cat /home/runner/workspace/credentials/.supabase_anon_key)
 EMAIL="${1:?Usage: bash magiclink.sh <email>}"
 
 # Step 1: Request OTP (bypasses Cloudflare via Playwright browser fetch)

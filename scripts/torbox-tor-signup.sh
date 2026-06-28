@@ -2,7 +2,7 @@
 # TorBox signup via Tor + FlareSolverr (bypasses Cloudflare)
 set -euo pipefail
 
-ANON_KEY=$(cat /home/runner/workspace/.supabase_anon_key)
+ANON_KEY=$(cat /home/runner/workspace/credentials/.supabase_anon_key)
 EMAIL_PREFIX="${1:-bavmin}"
 PASSWORD="${2:-Satyana@1234}"
 EMAIL="${EMAIL_PREFIX}+${RANDOM}@proton.me"
@@ -100,7 +100,7 @@ echo "  User ID:  $ID"
 echo "  Confirm:  $CONF"
 
 # Step 5: Append credentials
-CRED="/home/runner/workspace/torbox_credentials.txt"
+CRED="/home/runner/workspace/credentials/torbox_credentials.txt"
 echo "email=$EMAIL"       >> "$CRED"
 echo "password=$PASSWORD" >> "$CRED"
 echo "user_id=$ID"        >> "$CRED"

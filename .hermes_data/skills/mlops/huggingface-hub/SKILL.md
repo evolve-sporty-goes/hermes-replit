@@ -16,10 +16,8 @@ The `hf` command is the modern command-line interface for interacting with the H
 
 ## Quick Start
 *   **Installation:** `curl -LsSf https://hf.co/cli/install.sh | bash -s`
-*   **Help:** Use `hf --help` to view all available functions and real-world examples. If `hf` is not found, the CLI is not installed — ask the user before running the install script (curl pipe commands get blocked on this machine without explicit consent).
+*   **Help:** Use `hf --help` to view all available functions and real-world examples.
 *   **Authentication:** Recommended via `HF_TOKEN` environment variable or the `--token` flag.
-*   **Authentication:** Recommended via `HF_TOKEN` environment variable or the `--token` flag.
-    - On this machine, `HF_TOKEN` and `HF_BASE_URL` are stored in `.env` files. Check `/home/runner/workspace/.hermes_data/.env` first — do NOT hardcode the token, just `source .env` then use it.
 
 ---
 
@@ -81,13 +79,3 @@ The `hf` command is the modern command-line interface for interacting with the H
 ### Extensions & Skills
 *   **Extensions:** Extend CLI functionality via GitHub repositories using `hf extensions install REPO_ID`.
 *   **Skills:** Manage AI assistant skills with `hf skills add`.
-
-## Hub REST/JSON APIs (no CLI required)
-
-For scripting without the `hf` CLI:
-- **Search models:** `GET https://huggingface.co/api/models?q=QUERY&sort=downloads&direction=-1&limit=N&filter=TAG`
-- **Search datasets:** `GET https://huggingface.co/api/datasets?q=QUERY&sort=downloads&direction=-1&limit=N`
-- **Full-text search:** `GET https://huggingface.co/api/search?q=QUERY`
-- **Model info:** `GET https://huggingface.co/api/models/REPO_ID`
-
-The model search endpoint supports: `q`, `sort` (downloads/likes/lastModified), `direction` (-1 desc), `limit`, `filter`, `search`, `author`.

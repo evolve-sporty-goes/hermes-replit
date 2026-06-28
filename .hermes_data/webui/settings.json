@@ -63,10 +63,10 @@
   "workspace_todos_tab": true,
   "api_redact_enabled": false,
   "dashboard_plugins": {},
-  "sidebar_density": "detailed",
+  "sidebar_density": "compact",
   "auto_title_refresh_every": "5",
-  "busy_input_mode": "queue",
+  "busy_input_mode": "steer",
   "password_hash": null,
   "auth_disabled_acknowledged": false,
-  "default_model_provider": "openrouter"
+  "default_model_provider": "custom"
 }
