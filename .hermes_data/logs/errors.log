@@ -829,3 +829,103 @@ OSError: [Errno 122] Disk quota exceeded: '/home/runner/workspace/.hermes_data/w
 2026-06-28 13:40:49,571 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:49.
 2026-06-28 13:40:49,590 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
 2026-06-28 13:40:49,591 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:49.
+2026-06-28 13:42:59,928 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 13:42:59,934 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 13:42:59,951 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:42:59,952 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:43:59.
+2026-06-28 13:42:59,961 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:42:59,961 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:43:59.
+2026-06-28 13:42:59,962 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 13:42:59,965 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 13:43:00,214 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 13:43:00,215 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 13:43:00,216 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 13:43:00,252 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:43:00,252 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:44:00.
+2026-06-28 13:43:00,259 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:43:00,259 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:44:00.
+2026-06-28 13:43:00,259 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 13:43:02,094 WARNING [57abe6e3750d] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 13:43:08,699 WARNING [57abe6e3750d] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 13:43:54,929 WARNING [57abe6e3750d] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 13:44:13,291 WARNING [57abe6e3750d] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 13:48:46,659 WARNING [028122b29807] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:48:46,886 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:48:58,907 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:49:05,313 WARNING [028122b29807] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:49:08,957 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:49:19,192 WARNING [028122b29807] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:49:23,912 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:49:38,995 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:50:09,852 WARNING [028122b29807] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:50:11,641 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:51:16,952 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:51:17,272 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:51:19,678 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:51:20,036 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:51:34,428 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:51:38,113 WARNING [8532032e65c2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 13:51:38,436 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:51:44,147 WARNING [8532032e65c2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 13:51:45,790 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:51:54,756 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:51:55,084 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:52:04,840 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:52:04,993 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:52:08,924 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:52:16,950 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:52:17,321 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:52:22,473 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:52:31,943 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:52:46,941 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:52:56,959 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:53:41,968 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:53:53,463 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:53:53,788 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:54:06,138 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:54:20,995 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:54:33,438 WARNING [042d30870459] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:54:33,625 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:54:37,371 WARNING [042d30870459] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:54:37,673 WARNING [042d30870459] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:54:37,675 WARNING [042d30870459] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:54:46,906 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:54:56,938 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:55:00,143 WARNING [042d30870459] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:55:00,601 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:55:00,604 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:55:01,990 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:55:07,812 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:55:11,727 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:55:16,922 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:55:18,441 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:55:19,150 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:55:23,676 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:55:23,952 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:55:26,939 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:55:28,190 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:55:28,398 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:55:41,963 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:56:14,313 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:56:14,334 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:56:21,708 WARNING [1411998dca83] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 13:56:41,973 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:57:53,184 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:57:53,520 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:58:29,594 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:58:29,913 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:59:10,299 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:59:10,624 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:59:35,977 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 13:59:36,308 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:00:13,415 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:00:13,885 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:00:34,589 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:00:48,923 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:00:49,242 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:01:18,615 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:01:20,454 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:02:51,470 WARNING hermes_cli.auth: auth: failed to parse /home/runner/workspace/.hermes_data/auth.json (Expecting value: line 1 column 1 (char 0)) — starting with empty store. Corrupt file preserved at /home/runner/workspace/.hermes_data/auth.json.corrupt
+2026-06-28 14:02:51,471 WARNING hermes_cli.auth: auth: failed to parse /home/runner/workspace/.hermes_data/auth.json (Expecting value: line 1 column 1 (char 0)) — starting with empty store. Corrupt file preserved at /home/runner/workspace/.hermes_data/auth.json.corrupt
+2026-06-28 14:02:51,472 WARNING hermes_cli.auth: auth: failed to parse /home/runner/workspace/.hermes_data/auth.json (Expecting value: line 1 column 1 (char 0)) — starting with empty store. Corrupt file preserved at /home/runner/workspace/.hermes_data/auth.json.corrupt
+2026-06-28 14:03:06,590 WARNING hermes_cli.auth: auth: failed to parse /home/runner/workspace/.hermes_data/auth.json (Expecting value: line 1 column 1 (char 0)) — starting with empty store. Corrupt file preserved at /home/runner/workspace/.hermes_data/auth.json.corrupt
