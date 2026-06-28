@@ -797,3 +797,35 @@ OSError: [Errno 122] Disk quota exceeded: '/home/runner/workspace/.hermes_data/w
 2026-06-28 13:26:03,624 WARNING [ae829de69afb] run_agent: Session DB append_message failed: constraint failed
 2026-06-28 13:26:09,630 WARNING [ae829de69afb] run_agent: Session DB append_message failed: constraint failed
 2026-06-28 13:26:11,348 WARNING [ae829de69afb] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 13:40:47,464 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:47,470 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:47,527 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:47,527 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:47.
+2026-06-28 13:40:47,537 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:47,537 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:47.
+2026-06-28 13:40:47,538 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:47,555 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:48,409 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:48,410 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:48,410 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:48,710 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:48,710 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:48.
+2026-06-28 13:40:48,717 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:48,717 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:48.
+2026-06-28 13:40:48,717 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:48,766 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:48,766 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:48.
+2026-06-28 13:40:48,774 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:48,774 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:48.
+2026-06-28 13:40:48,781 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:48,782 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:48.
+2026-06-28 13:40:48,788 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:48,788 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:48.
+2026-06-28 13:40:49,540 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:49,540 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:49.
+2026-06-28 13:40:49,554 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:49,554 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:49.
+2026-06-28 13:40:49,570 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:49,571 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:49.
+2026-06-28 13:40:49,590 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:49,591 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:49.

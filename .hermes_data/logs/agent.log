@@ -33681,3 +33681,342 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 2026-06-28 13:26:11,369 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 180s to match stale-stream detector
 2026-06-28 13:26:11,377 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-443 (_call):140031888971456 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
 2026-06-28 13:26:14,954 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 13:40:45,487 DEBUG hermes_cli.plugins: Scanning bundled plugins: /home/runner/hermes-agent/plugins
+2026-06-28 13:40:45,489 DEBUG hermes_cli.plugins: Parsed manifest: key=browser/browser_use name=browser-browser-use kind=backend source=bundled path=/home/runner/hermes-agent/plugins/browser/browser_use
+2026-06-28 13:40:45,489 DEBUG hermes_cli.plugins: Parsed manifest: key=browser/browserbase name=browser-browserbase kind=backend source=bundled path=/home/runner/hermes-agent/plugins/browser/browserbase
+2026-06-28 13:40:45,490 DEBUG hermes_cli.plugins: Parsed manifest: key=browser/firecrawl name=browser-firecrawl kind=backend source=bundled path=/home/runner/hermes-agent/plugins/browser/firecrawl
+2026-06-28 13:40:45,491 DEBUG hermes_cli.plugins: Parsed manifest: key=cron_providers/chronos name=chronos kind=standalone source=bundled path=/home/runner/hermes-agent/plugins/cron_providers/chronos
+2026-06-28 13:40:45,492 DEBUG hermes_cli.plugins: Parsed manifest: key=dashboard_auth/basic name=basic kind=backend source=bundled path=/home/runner/hermes-agent/plugins/dashboard_auth/basic
+2026-06-28 13:40:45,493 DEBUG hermes_cli.plugins: Parsed manifest: key=dashboard_auth/drain name=drain kind=backend source=bundled path=/home/runner/hermes-agent/plugins/dashboard_auth/drain
+2026-06-28 13:40:45,494 DEBUG hermes_cli.plugins: Parsed manifest: key=dashboard_auth/nous name=nous kind=backend source=bundled path=/home/runner/hermes-agent/plugins/dashboard_auth/nous
+2026-06-28 13:40:45,495 DEBUG hermes_cli.plugins: Parsed manifest: key=dashboard_auth/self_hosted name=self-hosted kind=backend source=bundled path=/home/runner/hermes-agent/plugins/dashboard_auth/self_hosted
+2026-06-28 13:40:45,496 DEBUG hermes_cli.plugins: Parsed manifest: key=disk-cleanup name=disk-cleanup kind=standalone source=bundled path=/home/runner/hermes-agent/plugins/disk-cleanup
+2026-06-28 13:40:45,497 DEBUG hermes_cli.plugins: Parsed manifest: key=google_meet name=google_meet kind=standalone source=bundled path=/home/runner/hermes-agent/plugins/google_meet
+2026-06-28 13:40:45,497 DEBUG hermes_cli.plugins: Skipping /home/runner/hermes-agent/plugins/hermes-achievements/dashboard (no plugin.yaml, depth cap reached)
+2026-06-28 13:40:45,498 DEBUG hermes_cli.plugins: Skipping /home/runner/hermes-agent/plugins/hermes-achievements/docs (no plugin.yaml, depth cap reached)
+2026-06-28 13:40:45,498 DEBUG hermes_cli.plugins: Skipping /home/runner/hermes-agent/plugins/hermes-achievements/tests (no plugin.yaml, depth cap reached)
+2026-06-28 13:40:45,498 DEBUG hermes_cli.plugins: Parsed manifest: key=image_gen/fal name=fal kind=backend source=bundled path=/home/runner/hermes-agent/plugins/image_gen/fal
+2026-06-28 13:40:45,499 DEBUG hermes_cli.plugins: Parsed manifest: key=image_gen/krea name=krea kind=backend source=bundled path=/home/runner/hermes-agent/plugins/image_gen/krea
+2026-06-28 13:40:45,500 DEBUG hermes_cli.plugins: Parsed manifest: key=image_gen/openai name=openai kind=backend source=bundled path=/home/runner/hermes-agent/plugins/image_gen/openai
+2026-06-28 13:40:45,500 DEBUG hermes_cli.plugins: Parsed manifest: key=image_gen/openai-codex name=openai-codex kind=backend source=bundled path=/home/runner/hermes-agent/plugins/image_gen/openai-codex
+2026-06-28 13:40:45,501 DEBUG hermes_cli.plugins: Parsed manifest: key=image_gen/openrouter name=openrouter kind=backend source=bundled path=/home/runner/hermes-agent/plugins/image_gen/openrouter
+2026-06-28 13:40:45,502 DEBUG hermes_cli.plugins: Parsed manifest: key=image_gen/xai name=xai kind=backend source=bundled path=/home/runner/hermes-agent/plugins/image_gen/xai
+2026-06-28 13:40:45,502 DEBUG hermes_cli.plugins: Skipping /home/runner/hermes-agent/plugins/kanban/dashboard (no plugin.yaml, depth cap reached)
+2026-06-28 13:40:45,502 DEBUG hermes_cli.plugins: Skipping /home/runner/hermes-agent/plugins/kanban/systemd (no plugin.yaml, depth cap reached)
+2026-06-28 13:40:45,503 DEBUG hermes_cli.plugins: Parsed manifest: key=observability/langfuse name=langfuse kind=standalone source=bundled path=/home/runner/hermes-agent/plugins/observability/langfuse
+2026-06-28 13:40:45,504 DEBUG hermes_cli.plugins: Parsed manifest: key=observability/nemo_relay name=nemo_relay kind=standalone source=bundled path=/home/runner/hermes-agent/plugins/observability/nemo_relay
+2026-06-28 13:40:45,505 DEBUG hermes_cli.plugins: Parsed manifest: key=security-guidance name=security-guidance kind=standalone source=bundled path=/home/runner/hermes-agent/plugins/security-guidance
+2026-06-28 13:40:45,506 DEBUG hermes_cli.plugins: Parsed manifest: key=spotify name=spotify kind=backend source=bundled path=/home/runner/hermes-agent/plugins/spotify
+2026-06-28 13:40:45,507 DEBUG hermes_cli.plugins: Parsed manifest: key=teams_pipeline name=teams_pipeline kind=standalone source=bundled path=/home/runner/hermes-agent/plugins/teams_pipeline
+2026-06-28 13:40:45,508 DEBUG hermes_cli.plugins: Parsed manifest: key=video_gen/fal name=fal kind=backend source=bundled path=/home/runner/hermes-agent/plugins/video_gen/fal
+2026-06-28 13:40:45,508 DEBUG hermes_cli.plugins: Parsed manifest: key=video_gen/xai name=xai kind=backend source=bundled path=/home/runner/hermes-agent/plugins/video_gen/xai
+2026-06-28 13:40:45,509 DEBUG hermes_cli.plugins: Skipping /home/runner/hermes-agent/plugins/web/__pycache__ (no plugin.yaml, depth cap reached)
+2026-06-28 13:40:45,509 DEBUG hermes_cli.plugins: Parsed manifest: key=web/brave_free name=web-brave-free kind=backend source=bundled path=/home/runner/hermes-agent/plugins/web/brave_free
+2026-06-28 13:40:45,510 DEBUG hermes_cli.plugins: Parsed manifest: key=web/ddgs name=web-ddgs kind=backend source=bundled path=/home/runner/hermes-agent/plugins/web/ddgs
+2026-06-28 13:40:45,511 DEBUG hermes_cli.plugins: Parsed manifest: key=web/exa name=web-exa kind=backend source=bundled path=/home/runner/hermes-agent/plugins/web/exa
+2026-06-28 13:40:45,511 DEBUG hermes_cli.plugins: Parsed manifest: key=web/firecrawl name=web-firecrawl kind=backend source=bundled path=/home/runner/hermes-agent/plugins/web/firecrawl
+2026-06-28 13:40:45,512 DEBUG hermes_cli.plugins: Parsed manifest: key=web/parallel name=web-parallel kind=backend source=bundled path=/home/runner/hermes-agent/plugins/web/parallel
+2026-06-28 13:40:45,513 DEBUG hermes_cli.plugins: Parsed manifest: key=web/searxng name=web-searxng kind=backend source=bundled path=/home/runner/hermes-agent/plugins/web/searxng
+2026-06-28 13:40:45,513 DEBUG hermes_cli.plugins: Parsed manifest: key=web/tavily name=web-tavily kind=backend source=bundled path=/home/runner/hermes-agent/plugins/web/tavily
+2026-06-28 13:40:45,514 DEBUG hermes_cli.plugins: Parsed manifest: key=web/xai name=web-xai kind=backend source=bundled path=/home/runner/hermes-agent/plugins/web/xai
+2026-06-28 13:40:45,514 DEBUG hermes_cli.plugins:   bundled (top-level): 31 manifest(s)
+2026-06-28 13:40:45,516 DEBUG hermes_cli.plugins: Parsed manifest: key=dingtalk-platform name=dingtalk-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/dingtalk
+2026-06-28 13:40:45,518 DEBUG hermes_cli.plugins: Parsed manifest: key=discord-platform name=discord-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/discord
+2026-06-28 13:40:45,520 DEBUG hermes_cli.plugins: Parsed manifest: key=email-platform name=email-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/email
+2026-06-28 13:40:45,523 DEBUG hermes_cli.plugins: Parsed manifest: key=feishu-platform name=feishu-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/feishu
+2026-06-28 13:40:45,525 DEBUG hermes_cli.plugins: Parsed manifest: key=google_chat-platform name=google_chat-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/google_chat
+2026-06-28 13:40:45,526 DEBUG hermes_cli.plugins: Parsed manifest: key=homeassistant-platform name=homeassistant-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/homeassistant
+2026-06-28 13:40:45,529 DEBUG hermes_cli.plugins: Parsed manifest: key=irc-platform name=irc-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/irc
+2026-06-28 13:40:45,532 DEBUG hermes_cli.plugins: Parsed manifest: key=line-platform name=line-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/line
+2026-06-28 13:40:45,535 DEBUG hermes_cli.plugins: Parsed manifest: key=matrix-platform name=matrix-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/matrix
+2026-06-28 13:40:45,537 DEBUG hermes_cli.plugins: Parsed manifest: key=mattermost-platform name=mattermost-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/mattermost
+2026-06-28 13:40:45,540 DEBUG hermes_cli.plugins: Parsed manifest: key=ntfy-platform name=ntfy-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/ntfy
+2026-06-28 13:40:45,545 DEBUG hermes_cli.plugins: Parsed manifest: key=photon-platform name=photon-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/photon
+2026-06-28 13:40:45,546 DEBUG hermes_cli.plugins: Parsed manifest: key=raft-platform name=raft-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/raft
+2026-06-28 13:40:45,549 DEBUG hermes_cli.plugins: Parsed manifest: key=simplex-platform name=simplex-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/simplex
+2026-06-28 13:40:45,551 DEBUG hermes_cli.plugins: Parsed manifest: key=slack-platform name=slack-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/slack
+2026-06-28 13:40:45,554 DEBUG hermes_cli.plugins: Parsed manifest: key=sms-platform name=sms-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/sms
+2026-06-28 13:40:45,556 DEBUG hermes_cli.plugins: Parsed manifest: key=teams-platform name=teams-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/teams
+2026-06-28 13:40:45,558 DEBUG hermes_cli.plugins: Parsed manifest: key=telegram-platform name=telegram-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/telegram
+2026-06-28 13:40:45,561 DEBUG hermes_cli.plugins: Parsed manifest: key=wecom-platform name=wecom-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/wecom
+2026-06-28 13:40:45,563 DEBUG hermes_cli.plugins: Parsed manifest: key=whatsapp-platform name=whatsapp-platform kind=platform source=bundled path=/home/runner/hermes-agent/plugins/platforms/whatsapp
+2026-06-28 13:40:45,563 DEBUG hermes_cli.plugins:   bundled/platforms: 20 manifest(s)
+2026-06-28 13:40:45,563 DEBUG hermes_cli.plugins: Scanning user plugins: /home/runner/workspace/.hermes_data/plugins
+2026-06-28 13:40:45,563 DEBUG hermes_cli.plugins:   user: 0 manifest(s)
+2026-06-28 13:40:45,563 DEBUG hermes_cli.plugins: Project plugins disabled (set HERMES_ENABLE_PROJECT_PLUGINS=1 to enable)
+2026-06-28 13:40:45,570 DEBUG hermes_cli.plugins:   entrypoints: 0 manifest(s)
+2026-06-28 13:40:45,603 DEBUG hermes_cli.plugins: Loading plugin 'browser/browser_use' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/browser/browser_use)
+2026-06-28 13:40:45,743 DEBUG agent.browser_registry: Registered browser provider 'browser-use' (BrowserUseBrowserProvider)
+2026-06-28 13:40:45,744 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-28 13:40:45,744 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,744 DEBUG hermes_cli.plugins: Loading plugin 'browser/browserbase' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/browser/browserbase)
+2026-06-28 13:40:45,744 DEBUG agent.browser_registry: Registered browser provider 'browserbase' (BrowserbaseBrowserProvider)
+2026-06-28 13:40:45,745 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-28 13:40:45,745 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,745 DEBUG hermes_cli.plugins: Loading plugin 'browser/firecrawl' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/browser/firecrawl)
+2026-06-28 13:40:45,745 DEBUG agent.browser_registry: Registered browser provider 'firecrawl' (FirecrawlBrowserProvider)
+2026-06-28 13:40:45,746 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-28 13:40:45,746 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,746 DEBUG hermes_cli.plugins: Skipping 'cron_providers/chronos' (not in plugins.enabled)
+2026-06-28 13:40:45,746 DEBUG hermes_cli.plugins: Loading plugin 'dashboard_auth/basic' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/dashboard_auth/basic)
+2026-06-28 13:40:45,786 DEBUG hermes_plugins.dashboard_auth__basic: dashboard-auth-basic: dashboard.basic_auth.username is not set (and HERMES_DASHBOARD_BASIC_AUTH_USERNAME is empty). Set a username and a password (or password_hash) under dashboard.basic_auth in config.yaml to enable username/password dashboard login, or use the OAuth provider, or pass --insecure to skip the auth gate.
+2026-06-28 13:40:45,786 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,786 DEBUG hermes_cli.plugins: Loading plugin 'dashboard_auth/drain' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/dashboard_auth/drain)
+2026-06-28 13:40:45,787 DEBUG hermes_plugins.dashboard_auth__drain: dashboard-auth-drain: HERMES_DASHBOARD_DRAIN_SECRET is not set. Set a per-agent >=256-bit secret (e.g. `python -c "import secrets; print(secrets.token_urlsafe(32))"`) to enable NAS-driven drain coordination; leave it unset to disable the drain endpoint.
+2026-06-28 13:40:45,789 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,789 DEBUG hermes_cli.plugins: Loading plugin 'dashboard_auth/nous' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/dashboard_auth/nous)
+2026-06-28 13:40:45,820 DEBUG hermes_plugins.dashboard_auth__nous: dashboard-auth-nous: HERMES_DASHBOARD_OAUTH_CLIENT_ID is not set (and dashboard.oauth.client_id in config.yaml is empty). The Nous Portal provisions this env var (shape 'agent:{instance_id}') when it deploys a Hermes Agent instance — set it to your provisioned client id (either as an env var or under dashboard.oauth.client_id in config.yaml), or pass --insecure to skip the OAuth gate entirely.
+2026-06-28 13:40:45,820 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,820 DEBUG hermes_cli.plugins: Loading plugin 'dashboard_auth/self_hosted' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/dashboard_auth/self_hosted)
+2026-06-28 13:40:45,821 DEBUG hermes_plugins.dashboard_auth__self_hosted: dashboard-auth-self-hosted: Self-hosted OIDC dashboard auth is not configured. Set both an issuer and a client_id — either as env vars (HERMES_DASHBOARD_OIDC_ISSUER + HERMES_DASHBOARD_OIDC_CLIENT_ID) or under dashboard.oauth.self_hosted.{issuer,client_id} in config.yaml — or pass --insecure to skip the OAuth gate entirely. (issuer set: False; client_id set: False)
+2026-06-28 13:40:45,822 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,822 DEBUG hermes_cli.plugins: Skipping 'disk-cleanup' (not in plugins.enabled)
+2026-06-28 13:40:45,822 DEBUG hermes_cli.plugins: Skipping 'google_meet' (not in plugins.enabled)
+2026-06-28 13:40:45,823 DEBUG hermes_cli.plugins: Loading plugin 'image_gen/fal' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/image_gen/fal)
+2026-06-28 13:40:45,824 DEBUG agent.image_gen_registry: Registered image gen provider 'fal' (FalImageGenProvider)
+2026-06-28 13:40:45,824 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-28 13:40:45,824 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,824 DEBUG hermes_cli.plugins: Loading plugin 'image_gen/krea' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/image_gen/krea)
+2026-06-28 13:40:45,827 DEBUG agent.image_gen_registry: Registered image gen provider 'krea' (KreaImageGenProvider)
+2026-06-28 13:40:45,827 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-28 13:40:45,827 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,827 DEBUG hermes_cli.plugins: Loading plugin 'image_gen/openai' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/image_gen/openai)
+2026-06-28 13:40:45,828 DEBUG agent.image_gen_registry: Registered image gen provider 'openai' (OpenAIImageGenProvider)
+2026-06-28 13:40:45,828 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-28 13:40:45,828 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,828 DEBUG hermes_cli.plugins: Loading plugin 'image_gen/openai-codex' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/image_gen/openai-codex)
+2026-06-28 13:40:45,829 DEBUG agent.image_gen_registry: Registered image gen provider 'openai-codex' (OpenAICodexImageGenProvider)
+2026-06-28 13:40:45,829 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-28 13:40:45,829 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,829 DEBUG hermes_cli.plugins: Loading plugin 'image_gen/openrouter' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/image_gen/openrouter)
+2026-06-28 13:40:45,830 DEBUG agent.image_gen_registry: Registered image gen provider 'openrouter' (OpenRouterCompatImageProvider)
+2026-06-28 13:40:45,830 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-28 13:40:45,830 DEBUG agent.image_gen_registry: Registered image gen provider 'nous' (OpenRouterCompatImageProvider)
+2026-06-28 13:40:45,830 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-28 13:40:45,830 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,830 DEBUG hermes_cli.plugins: Loading plugin 'image_gen/xai' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/image_gen/xai)
+2026-06-28 13:40:45,831 DEBUG agent.image_gen_registry: Registered image gen provider 'xai' (XAIImageGenProvider)
+2026-06-28 13:40:45,831 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-28 13:40:45,831 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,831 DEBUG hermes_cli.plugins: Skipping 'observability/langfuse' (not in plugins.enabled)
+2026-06-28 13:40:45,831 DEBUG hermes_cli.plugins: Skipping 'observability/nemo_relay' (not in plugins.enabled)
+2026-06-28 13:40:45,831 DEBUG hermes_cli.plugins: Skipping 'security-guidance' (not in plugins.enabled)
+2026-06-28 13:40:45,831 DEBUG hermes_cli.plugins: Loading plugin 'spotify' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/spotify)
+2026-06-28 13:40:45,838 DEBUG hermes_cli.plugins: Plugin spotify registered tool: spotify_playback
+2026-06-28 13:40:45,838 DEBUG hermes_cli.plugins: Plugin spotify registered tool: spotify_devices
+2026-06-28 13:40:45,838 DEBUG hermes_cli.plugins: Plugin spotify registered tool: spotify_queue
+2026-06-28 13:40:45,838 DEBUG hermes_cli.plugins: Plugin spotify registered tool: spotify_search
+2026-06-28 13:40:45,838 DEBUG hermes_cli.plugins: Plugin spotify registered tool: spotify_playlists
+2026-06-28 13:40:45,838 DEBUG hermes_cli.plugins: Plugin spotify registered tool: spotify_albums
+2026-06-28 13:40:45,838 DEBUG hermes_cli.plugins: Plugin spotify registered tool: spotify_library
+2026-06-28 13:40:45,838 DEBUG hermes_cli.plugins:   registered: 7 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,838 DEBUG hermes_cli.plugins: Skipping 'teams_pipeline' (not in plugins.enabled)
+2026-06-28 13:40:45,838 DEBUG hermes_cli.plugins: Loading plugin 'video_gen/fal' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/video_gen/fal)
+2026-06-28 13:40:45,839 DEBUG agent.video_gen_registry: Registered video gen provider 'fal' (FALVideoGenProvider)
+2026-06-28 13:40:45,839 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-28 13:40:45,839 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,839 DEBUG hermes_cli.plugins: Loading plugin 'video_gen/xai' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/video_gen/xai)
+2026-06-28 13:40:45,840 DEBUG agent.video_gen_registry: Registered video gen provider 'xai' (XAIVideoGenProvider)
+2026-06-28 13:40:45,840 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-28 13:40:45,840 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,840 DEBUG hermes_cli.plugins: Loading plugin 'web/brave_free' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/web/brave_free)
+2026-06-28 13:40:45,841 DEBUG agent.web_search_registry: Registered web provider 'brave-free' (BraveFreeWebSearchProvider)
+2026-06-28 13:40:45,841 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-28 13:40:45,842 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,842 DEBUG hermes_cli.plugins: Loading plugin 'web/ddgs' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/web/ddgs)
+2026-06-28 13:40:45,842 DEBUG agent.web_search_registry: Registered web provider 'ddgs' (DDGSWebSearchProvider)
+2026-06-28 13:40:45,842 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-28 13:40:45,842 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,842 DEBUG hermes_cli.plugins: Loading plugin 'web/exa' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/web/exa)
+2026-06-28 13:40:45,844 DEBUG agent.web_search_registry: Registered web provider 'exa' (ExaWebSearchProvider)
+2026-06-28 13:40:45,844 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-28 13:40:45,844 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,844 DEBUG hermes_cli.plugins: Loading plugin 'web/firecrawl' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/web/firecrawl)
+2026-06-28 13:40:45,845 DEBUG agent.web_search_registry: Registered web provider 'firecrawl' (FirecrawlWebSearchProvider)
+2026-06-28 13:40:45,845 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-28 13:40:45,845 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,845 DEBUG hermes_cli.plugins: Loading plugin 'web/parallel' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/web/parallel)
+2026-06-28 13:40:45,846 DEBUG agent.web_search_registry: Registered web provider 'parallel' (ParallelWebSearchProvider)
+2026-06-28 13:40:45,846 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-28 13:40:45,846 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,846 DEBUG hermes_cli.plugins: Loading plugin 'web/searxng' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/web/searxng)
+2026-06-28 13:40:45,847 DEBUG agent.web_search_registry: Registered web provider 'searxng' (SearXNGWebSearchProvider)
+2026-06-28 13:40:45,847 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-28 13:40:45,847 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,847 DEBUG hermes_cli.plugins: Loading plugin 'web/tavily' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/web/tavily)
+2026-06-28 13:40:45,848 DEBUG agent.web_search_registry: Registered web provider 'tavily' (TavilyWebSearchProvider)
+2026-06-28 13:40:45,848 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-28 13:40:45,848 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,848 DEBUG hermes_cli.plugins: Loading plugin 'web/xai' (source=bundled, kind=backend, path=/home/runner/hermes-agent/plugins/web/xai)
+2026-06-28 13:40:45,849 DEBUG agent.web_search_registry: Registered web provider 'xai' (XAIWebSearchProvider)
+2026-06-28 13:40:45,849 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-28 13:40:45,849 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,849 DEBUG hermes_cli.plugins: Loading plugin 'dingtalk-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/dingtalk)
+2026-06-28 13:40:45,864 DEBUG gateway.platform_registry: Registered platform adapter: dingtalk (plugin)
+2026-06-28 13:40:45,864 DEBUG hermes_cli.plugins: Plugin dingtalk-platform registered platform: dingtalk
+2026-06-28 13:40:45,864 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,864 DEBUG hermes_cli.plugins: Loading plugin 'discord-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/discord)
+2026-06-28 13:40:45,867 DEBUG gateway.platform_registry: Registered platform adapter: discord (plugin)
+2026-06-28 13:40:45,867 DEBUG hermes_cli.plugins: Plugin discord-platform registered platform: discord
+2026-06-28 13:40:45,868 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,868 DEBUG hermes_cli.plugins: Loading plugin 'email-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/email)
+2026-06-28 13:40:45,881 DEBUG gateway.platform_registry: Registered platform adapter: email (plugin)
+2026-06-28 13:40:45,881 DEBUG hermes_cli.plugins: Plugin email-platform registered platform: email
+2026-06-28 13:40:45,881 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,881 DEBUG hermes_cli.plugins: Loading plugin 'feishu-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/feishu)
+2026-06-28 13:40:45,969 DEBUG gateway.platform_registry: Registered platform adapter: feishu (plugin)
+2026-06-28 13:40:45,969 DEBUG hermes_cli.plugins: Plugin feishu-platform registered platform: feishu
+2026-06-28 13:40:45,969 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,969 DEBUG hermes_cli.plugins: Loading plugin 'google_chat-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/google_chat)
+2026-06-28 13:40:45,971 DEBUG gateway.platform_registry: Registered platform adapter: google_chat (plugin)
+2026-06-28 13:40:45,971 DEBUG hermes_cli.plugins: Plugin google_chat-platform registered platform: google_chat
+2026-06-28 13:40:45,971 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,972 DEBUG hermes_cli.plugins: Loading plugin 'homeassistant-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/homeassistant)
+2026-06-28 13:40:45,972 DEBUG gateway.platform_registry: Registered platform adapter: homeassistant (plugin)
+2026-06-28 13:40:45,972 DEBUG hermes_cli.plugins: Plugin homeassistant-platform registered platform: homeassistant
+2026-06-28 13:40:45,973 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,973 DEBUG hermes_cli.plugins: Loading plugin 'irc-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/irc)
+2026-06-28 13:40:45,973 DEBUG gateway.platform_registry: Registered platform adapter: irc (plugin)
+2026-06-28 13:40:45,974 DEBUG hermes_cli.plugins: Plugin irc-platform registered platform: irc
+2026-06-28 13:40:45,974 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,974 DEBUG hermes_cli.plugins: Loading plugin 'line-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/line)
+2026-06-28 13:40:45,976 DEBUG gateway.platform_registry: Registered platform adapter: line (plugin)
+2026-06-28 13:40:45,976 DEBUG hermes_cli.plugins: Plugin line-platform registered platform: line
+2026-06-28 13:40:45,976 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,976 DEBUG hermes_cli.plugins: Loading plugin 'matrix-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/matrix)
+2026-06-28 13:40:45,982 DEBUG gateway.platform_registry: Registered platform adapter: matrix (plugin)
+2026-06-28 13:40:45,982 DEBUG hermes_cli.plugins: Plugin matrix-platform registered platform: matrix
+2026-06-28 13:40:45,982 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,983 DEBUG hermes_cli.plugins: Loading plugin 'mattermost-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/mattermost)
+2026-06-28 13:40:45,983 DEBUG gateway.platform_registry: Registered platform adapter: mattermost (plugin)
+2026-06-28 13:40:45,984 DEBUG hermes_cli.plugins: Plugin mattermost-platform registered platform: mattermost
+2026-06-28 13:40:45,984 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,984 DEBUG hermes_cli.plugins: Loading plugin 'ntfy-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/ntfy)
+2026-06-28 13:40:45,984 DEBUG gateway.platform_registry: Registered platform adapter: ntfy (plugin)
+2026-06-28 13:40:45,985 DEBUG hermes_cli.plugins: Plugin ntfy-platform registered platform: ntfy
+2026-06-28 13:40:45,985 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,985 DEBUG hermes_cli.plugins: Loading plugin 'photon-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/photon)
+2026-06-28 13:40:45,987 DEBUG gateway.platform_registry: Registered platform adapter: photon (plugin)
+2026-06-28 13:40:45,988 DEBUG hermes_cli.plugins: Plugin photon-platform registered platform: photon
+2026-06-28 13:40:45,988 DEBUG hermes_cli.plugins: Plugin photon-platform registered CLI command: photon
+2026-06-28 13:40:45,988 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 1 CLI command(s)
+2026-06-28 13:40:45,988 DEBUG hermes_cli.plugins: Loading plugin 'raft-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/raft)
+2026-06-28 13:40:45,989 DEBUG gateway.platform_registry: Registered platform adapter: raft (plugin)
+2026-06-28 13:40:45,989 DEBUG hermes_cli.plugins: Plugin raft-platform registered platform: raft
+2026-06-28 13:40:45,989 DEBUG hermes_cli.plugins: Plugin raft-platform registered hook: on_session_start
+2026-06-28 13:40:45,989 DEBUG hermes_cli.plugins: Plugin raft-platform registered hook: pre_llm_call
+2026-06-28 13:40:45,989 DEBUG hermes_cli.plugins: Plugin raft-platform registered hook: pre_tool_call
+2026-06-28 13:40:45,989 DEBUG hermes_cli.plugins: Plugin raft-platform registered hook: post_tool_call
+2026-06-28 13:40:45,989 DEBUG hermes_cli.plugins: Plugin raft-platform registered hook: post_llm_call
+2026-06-28 13:40:45,989 DEBUG hermes_cli.plugins: Plugin raft-platform registered hook: on_session_end
+2026-06-28 13:40:45,989 DEBUG hermes_cli.plugins: Plugin raft-platform registered hook: on_session_finalize
+2026-06-28 13:40:45,989 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 7 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,989 DEBUG hermes_cli.plugins: Loading plugin 'simplex-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/simplex)
+2026-06-28 13:40:45,990 DEBUG gateway.platform_registry: Registered platform adapter: simplex (plugin)
+2026-06-28 13:40:45,990 DEBUG hermes_cli.plugins: Plugin simplex-platform registered platform: simplex
+2026-06-28 13:40:45,991 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,991 DEBUG hermes_cli.plugins: Loading plugin 'slack-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/slack)
+2026-06-28 13:40:45,993 DEBUG gateway.platform_registry: Registered platform adapter: slack (plugin)
+2026-06-28 13:40:45,993 DEBUG hermes_cli.plugins: Plugin slack-platform registered platform: slack
+2026-06-28 13:40:45,993 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,993 DEBUG hermes_cli.plugins: Loading plugin 'sms-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/sms)
+2026-06-28 13:40:45,994 DEBUG gateway.platform_registry: Registered platform adapter: sms (plugin)
+2026-06-28 13:40:45,994 DEBUG hermes_cli.plugins: Plugin sms-platform registered platform: sms
+2026-06-28 13:40:45,994 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,994 DEBUG hermes_cli.plugins: Loading plugin 'teams-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/teams)
+2026-06-28 13:40:45,995 DEBUG gateway.platform_registry: Registered platform adapter: teams (plugin)
+2026-06-28 13:40:45,995 DEBUG hermes_cli.plugins: Plugin teams-platform registered platform: teams
+2026-06-28 13:40:45,995 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:45,995 DEBUG hermes_cli.plugins: Loading plugin 'telegram-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/telegram)
+2026-06-28 13:40:46,003 DEBUG gateway.platform_registry: Registered platform adapter: telegram (plugin)
+2026-06-28 13:40:46,003 DEBUG hermes_cli.plugins: Plugin telegram-platform registered platform: telegram
+2026-06-28 13:40:46,003 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:46,003 DEBUG hermes_cli.plugins: Loading plugin 'wecom-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/wecom)
+2026-06-28 13:40:46,005 DEBUG gateway.platform_registry: Registered platform adapter: wecom (plugin)
+2026-06-28 13:40:46,005 DEBUG hermes_cli.plugins: Plugin wecom-platform registered platform: wecom
+2026-06-28 13:40:46,024 DEBUG gateway.platform_registry: Registered platform adapter: wecom_callback (plugin)
+2026-06-28 13:40:46,024 DEBUG hermes_cli.plugins: Plugin wecom-platform registered platform: wecom_callback
+2026-06-28 13:40:46,024 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:46,024 DEBUG hermes_cli.plugins: Loading plugin 'whatsapp-platform' (source=bundled, kind=platform, path=/home/runner/hermes-agent/plugins/platforms/whatsapp)
+2026-06-28 13:40:46,025 DEBUG gateway.platform_registry: Registered platform adapter: whatsapp (plugin)
+2026-06-28 13:40:46,025 DEBUG hermes_cli.plugins: Plugin whatsapp-platform registered platform: whatsapp
+2026-06-28 13:40:46,025 DEBUG hermes_cli.plugins:   registered: 0 tool(s), 0 hook(s), 0 middleware, 0 slash command(s), 0 CLI command(s)
+2026-06-28 13:40:46,025 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-28 13:40:47,464 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:47,470 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:47,518 DEBUG agent.models_dev: Loaded models.dev from fresh disk cache (145 providers, age=59s)
+2026-06-28 13:40:47,519 DEBUG agent.auxiliary_client: Vision auto-detect: skipping main provider openrouter (reports no vision capability) — falling through to aggregator chain
+2026-06-28 13:40:47,526 DEBUG agent.auxiliary_client: Auxiliary Nous runtime credential resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:47,527 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:47,527 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:47.
+2026-06-28 13:40:47,527 DEBUG agent.auxiliary_client: Auxiliary vision client: none available
+2026-06-28 13:40:47,532 DEBUG agent.auxiliary_client: Vision auto-detect: skipping main provider openrouter (reports no vision capability) — falling through to aggregator chain
+2026-06-28 13:40:47,537 DEBUG agent.auxiliary_client: Auxiliary Nous runtime credential resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:47,537 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:47,537 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:47.
+2026-06-28 13:40:47,538 DEBUG agent.auxiliary_client: Auxiliary vision client: none available
+2026-06-28 13:40:47,538 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:47,555 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:47,608 DEBUG hermes_plugins.image_gen__openrouter: nous runtime resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:48,409 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:48,410 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:48,410 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:48,417 INFO tools.lazy_deps: Lazy-installing edge-tts==7.2.7 for feature 'tts.edge'
+2026-06-28 13:40:48,641 INFO tools.lazy_deps: Lazy install complete for feature 'tts.edge'
+2026-06-28 13:40:48,707 DEBUG agent.auxiliary_client: Vision auto-detect: skipping main provider openrouter (reports no vision capability) — falling through to aggregator chain
+2026-06-28 13:40:48,710 DEBUG agent.auxiliary_client: Auxiliary Nous runtime credential resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:48,710 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:48,710 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:48.
+2026-06-28 13:40:48,711 DEBUG agent.auxiliary_client: Auxiliary vision client: none available
+2026-06-28 13:40:48,714 DEBUG agent.auxiliary_client: Vision auto-detect: skipping main provider openrouter (reports no vision capability) — falling through to aggregator chain
+2026-06-28 13:40:48,717 DEBUG agent.auxiliary_client: Auxiliary Nous runtime credential resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:48,717 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:48,717 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:48.
+2026-06-28 13:40:48,717 DEBUG agent.auxiliary_client: Auxiliary vision client: none available
+2026-06-28 13:40:48,717 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 13:40:48,751 DEBUG hermes_plugins.image_gen__openrouter: nous runtime resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:48,762 DEBUG agent.auxiliary_client: Vision auto-detect: skipping main provider openrouter (reports no vision capability) — falling through to aggregator chain
+2026-06-28 13:40:48,765 DEBUG agent.auxiliary_client: Auxiliary Nous runtime credential resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:48,766 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:48,766 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:48.
+2026-06-28 13:40:48,766 DEBUG agent.auxiliary_client: Auxiliary vision client: none available
+2026-06-28 13:40:48,769 DEBUG agent.auxiliary_client: Vision auto-detect: skipping main provider openrouter (reports no vision capability) — falling through to aggregator chain
+2026-06-28 13:40:48,774 DEBUG agent.auxiliary_client: Auxiliary Nous runtime credential resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:48,774 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:48,774 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:48.
+2026-06-28 13:40:48,775 DEBUG agent.auxiliary_client: Auxiliary vision client: none available
+2026-06-28 13:40:48,778 DEBUG agent.auxiliary_client: Vision auto-detect: skipping main provider openrouter (reports no vision capability) — falling through to aggregator chain
+2026-06-28 13:40:48,781 DEBUG agent.auxiliary_client: Auxiliary Nous runtime credential resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:48,781 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:48,782 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:48.
+2026-06-28 13:40:48,782 DEBUG agent.auxiliary_client: Auxiliary vision client: none available
+2026-06-28 13:40:48,785 DEBUG agent.auxiliary_client: Vision auto-detect: skipping main provider openrouter (reports no vision capability) — falling through to aggregator chain
+2026-06-28 13:40:48,788 DEBUG agent.auxiliary_client: Auxiliary Nous runtime credential resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:48,788 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:48,788 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:48.
+2026-06-28 13:40:48,788 DEBUG agent.auxiliary_client: Auxiliary vision client: none available
+2026-06-28 13:40:49,496 DEBUG hermes_plugins.image_gen__openrouter: nous runtime resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:49,531 DEBUG agent.auxiliary_client: Vision auto-detect: skipping main provider openrouter (reports no vision capability) — falling through to aggregator chain
+2026-06-28 13:40:49,537 DEBUG agent.auxiliary_client: Auxiliary Nous runtime credential resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:49,540 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:49,540 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:49.
+2026-06-28 13:40:49,540 DEBUG agent.auxiliary_client: Auxiliary vision client: none available
+2026-06-28 13:40:49,546 DEBUG agent.auxiliary_client: Vision auto-detect: skipping main provider openrouter (reports no vision capability) — falling through to aggregator chain
+2026-06-28 13:40:49,553 DEBUG agent.auxiliary_client: Auxiliary Nous runtime credential resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:49,554 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:49,554 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:49.
+2026-06-28 13:40:49,554 DEBUG agent.auxiliary_client: Auxiliary vision client: none available
+2026-06-28 13:40:49,559 DEBUG agent.auxiliary_client: Vision auto-detect: skipping main provider openrouter (reports no vision capability) — falling through to aggregator chain
+2026-06-28 13:40:49,570 DEBUG agent.auxiliary_client: Auxiliary Nous runtime credential resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:49,570 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:49,571 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:49.
+2026-06-28 13:40:49,571 DEBUG agent.auxiliary_client: Auxiliary vision client: none available
+2026-06-28 13:40:49,580 DEBUG agent.auxiliary_client: Vision auto-detect: skipping main provider openrouter (reports no vision capability) — falling through to aggregator chain
+2026-06-28 13:40:49,590 DEBUG agent.auxiliary_client: Auxiliary Nous runtime credential resolution failed: Hermes is not logged into Nous Portal.
+2026-06-28 13:40:49,590 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 13:40:49,591 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:49.
+2026-06-28 13:40:49,591 DEBUG agent.auxiliary_client: Auxiliary vision client: none available
+2026-06-28 13:40:49,772 DEBUG cli: Applied Vt100Parser bracketed-paste timeout patch (#16263)
+2026-06-28 13:40:51,009 DEBUG agent.credential_pool: Qwen OAuth token seed failed: Qwen CLI credentials not found. Run 'qwen auth qwen-oauth' first.
+2026-06-28 13:40:51,343 DEBUG agent.credential_pool: Qwen OAuth token seed failed: Qwen CLI credentials not found. Run 'qwen auth qwen-oauth' first.
+2026-06-28 13:40:51,482 DEBUG agent.credential_pool: Qwen OAuth token seed failed: Qwen CLI credentials not found. Run 'qwen auth qwen-oauth' first.
