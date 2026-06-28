@@ -1571,3 +1571,91 @@ openai.BadRequestError: Error code: 400 - {'error': {'message': 'zai-org/GLM-5.2
 2026-06-28 14:58:03,244 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
 2026-06-28 14:58:13,286 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
 2026-06-28 14:58:23,943 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:58:44,757 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:58:44,762 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:58:44,843 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:58:44,843 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:59:44.
+2026-06-28 14:58:44,851 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:58:44,851 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:59:44.
+2026-06-28 14:58:44,851 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:58:44,881 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:58:44,933 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:58:44,937 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:58:44,937 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:58:45,031 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:58:45,032 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:59:45.
+2026-06-28 14:58:45,053 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:58:45,054 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:59:45.
+2026-06-28 14:58:45,054 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:58:45,156 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:58:45,156 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:59:45.
+2026-06-28 14:58:45,170 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:58:45,170 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:59:45.
+2026-06-28 14:58:45,182 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:58:45,182 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:59:45.
+2026-06-28 14:58:45,195 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:58:45,195 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:59:45.
+2026-06-28 14:58:46,193 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:58:46,193 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:59:46.
+2026-06-28 14:58:46,205 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:58:46,205 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:59:46.
+2026-06-28 14:58:46,217 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:58:46,217 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:59:46.
+2026-06-28 14:58:46,234 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:58:46,234 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:59:46.
+2026-06-28 14:58:46,257 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-06-28 14:59:33,216 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:59:33,652 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:59:33,656 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:59:33,671 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:59:33,671 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:00:33.
+2026-06-28 14:59:33,681 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:59:33,681 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:00:33.
+2026-06-28 14:59:33,681 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:59:33,683 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:59:33,855 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:59:33,856 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:59:33,856 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:59:33,948 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:59:33,948 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:00:33.
+2026-06-28 14:59:33,959 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-28 14:59:33,959 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:00:33.
+2026-06-28 14:59:33,959 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:59:33,973 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-06-28 14:59:35,640 WARNING [8ed3f56cbcb2] agent.prompt_builder: ⚠️  Context file AGENTS.md TRUNCATED: 71265 chars exceeds limit of 62914 — trim the file, pin a larger context_file_max_chars, or use a larger-context model!
+2026-06-28 14:59:35,678 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:59:36,355 WARNING [8ed3f56cbcb2] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIStatusError thread=Thread-8 (_run_agent_streaming):140145923716800 provider=openrouter base_url=https://openrouter.ai/api/v1 model=moonshotai/kimi-k2.7-code summary=HTTP 402: Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits
+2026-06-28 14:59:44,292 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:59:46,341 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:59:48,504 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:03:54,431 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:03:54,573 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:11:16,779 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:11:17,289 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:11:22,240 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 8ed3f56cbcb2
+2026-06-28 15:11:22,341 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-06-28 15:11:22,607 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:11:22,652 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 15:11:22,844 WARNING [8ed3f56cbcb2] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIStatusError thread=Thread-26 (_run_agent_streaming):140146519303872 provider=openrouter base_url=https://openrouter.ai/api/v1 model=moonshotai/kimi-k2.7-code summary=HTTP 402: Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits
+2026-06-28 15:11:29,216 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 15:11:31,607 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:11:36,246 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 8ed3f56cbcb2
+2026-06-28 15:11:36,295 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-06-28 15:11:36,435 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 15:11:36,643 WARNING [8ed3f56cbcb2] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIStatusError thread=Thread-33 (_run_agent_streaming):140145655281344 provider=openrouter base_url=https://openrouter.ai/api/v1 model=moonshotai/kimi-k2.7-code summary=HTTP 402: Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits
+2026-06-28 15:11:37,300 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:11:41,409 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 15:11:43,086 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:11:58,225 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 8ed3f56cbcb2
+2026-06-28 15:11:58,271 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-06-28 15:11:58,427 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 15:11:58,641 WARNING [8ed3f56cbcb2] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIStatusError thread=Thread-39 (_run_agent_streaming):140145915324096 provider=openrouter base_url=https://openrouter.ai/api/v1 model=moonshotai/kimi-k2.7-code summary=HTTP 402: Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits
+2026-06-28 15:11:58,731 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:12:06,918 WARNING [8ed3f56cbcb2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 15:12:08,849 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:12:28,769 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:12:28,773 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:12:29,252 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:12:31,128 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:14:04,835 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 15:14:05,520 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
