@@ -1229,3 +1229,107 @@ Traceback (most recent call last):
 openai.NotFoundError: Error code: 404 - {'error': {'message': 'No endpoints found that support image input', 'code': 404}}
 2026-06-28 14:17:41,270 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
 2026-06-28 14:17:42,900 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:18:08,784 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:18:08,788 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:18:09,405 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:18:09,444 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:18:09,445 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:18:09,445 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:18:46,289 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:18:46,448 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:18:46,452 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-28 14:18:46,476 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:18:46,698 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:18:46,699 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-28 14:18:46,699 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-28 14:18:47,689 WARNING [8532032e65c2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:18:52,454 WARNING [8532032e65c2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:18:52,617 WARNING [8532032e65c2] agent.tool_executor: Tool skill_view returned error (0.06s): {"success": false, "error": "Skill 'curlhub' not found.", "available_skills": ["computer-use", "dogfood", "yuanbao", "claude-code", "codex", "hermes-agent", "hermes-webui", "opencode", "architecture-d
+2026-06-28 14:18:52,618 WARNING [8532032e65c2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:18:56,911 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:18:56,995 WARNING [8532032e65c2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:19:00,142 WARNING [8532032e65c2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:19:00,143 WARNING [8532032e65c2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:19:06,171 WARNING [8532032e65c2] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:19:07,252 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:19:41,999 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:19:42,331 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:20:03,783 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:20:03,786 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:20:04,426 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:20:18,279 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:20:18,432 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:20:18,485 ERROR [12f8e508621e] tools.vision_tools: Error analyzing image: Error code: 404 - {'error': {'message': 'No endpoints found that support image input', 'code': 404}}
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/vision_tools.py", line 978, in vision_analyze_tool
+    response = await async_call_llm(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/agent/auxiliary_client.py", line 6295, in async_call_llm
+    await client.chat.completions.create(**kwargs), task)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2700, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'No endpoints found that support image input', 'code': 404}}
+2026-06-28 14:20:21,714 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:20:23,532 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:20:38,608 WARNING [20260628_141808_eba5de] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:20:38,933 WARNING [20260628_141808_eba5de] agent.conversation_loop: API call failed (attempt 1/3) error_type=AuthenticationError thread=Thread-8 (run_agent):140007563896512 provider=huggingface base_url=https://router.huggingface.co/v1 model=qwen/qwen-2.5-72b-instruct summary=HTTP 401: {"error":"Invalid username or password."}
+2026-06-28 14:20:41,726 WARNING [20260628_141808_eba5de] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:20:54,238 WARNING [20260628_141808_eba5de] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:20:54,405 WARNING [20260628_141808_eba5de] run_agent: Credential pool provider mismatch: pool=openrouter, agent=huggingface — skipping pool mutation to avoid cross-provider contamination
+2026-06-28 14:20:54,405 WARNING [20260628_141808_eba5de] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIStatusError thread=Thread-11 (run_agent):140007310341824 provider=huggingface base_url=https://openrouter.ai/api/v1 model=qwen/qwen-2.5-72b-instruct summary=HTTP 402: Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits
+2026-06-28 14:20:56,908 WARNING [20260628_141808_eba5de] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 14:21:07,390 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:21:07,699 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:21:24,889 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:21:25,016 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:21:25,022 ERROR [12f8e508621e] tools.vision_tools: Error analyzing image: Error code: 404 - {'error': {'message': 'No endpoints found that support image input', 'code': 404}}
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/vision_tools.py", line 978, in vision_analyze_tool
+    response = await async_call_llm(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/agent/auxiliary_client.py", line 6295, in async_call_llm
+    await client.chat.completions.create(**kwargs), task)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2700, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'No endpoints found that support image input', 'code': 404}}
+2026-06-28 14:21:28,252 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:21:28,670 ERROR [12f8e508621e] tools.vision_tools: Error analyzing image: Error code: 404 - {'error': {'message': 'No endpoints found that support image input', 'code': 404}}
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/vision_tools.py", line 978, in vision_analyze_tool
+    response = await async_call_llm(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/agent/auxiliary_client.py", line 6295, in async_call_llm
+    await client.chat.completions.create(**kwargs), task)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2700, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'No endpoints found that support image input', 'code': 404}}
+2026-06-28 14:21:29,971 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:21:40,362 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:21:40,680 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:21:43,771 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:21:45,516 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:21:55,726 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:21:56,066 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 14:22:00,261 WARNING [12f8e508621e] run_agent: Session DB append_message failed: database disk image is malformed
+2026-06-28 14:22:01,536 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
