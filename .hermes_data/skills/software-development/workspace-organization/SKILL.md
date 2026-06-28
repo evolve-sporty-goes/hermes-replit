@@ -98,9 +98,52 @@ After fixing, run a verification script (see `references/verify-paths.py` templa
 4. Validates all expected files exist at their new locations
 5. Runs `git check-ignore` on each sensitive file to confirm `.gitignore` works
 
-## Pitfall: Accidental Directory Creation
+## Symlink vs Hard Link for PATH-accessible Scripts
 
-When moving files, `mkdir -p` can create directories that shadow or conflict with system-managed paths. Always verify the target directory is intended before creating it. If you accidentally create a directory at root that duplicates a system-managed name (e.g., `skills/`), remove it immediately with `rm -rf`.
+When making scripts in `scripts/` available in a PATH directory like `$HOME/workspace/.pythonlibs/bin`:
+
+### Symlink (preferred for most cases)
+```bash
+ln -sf $HOME/workspace/scripts/* "$BIN"
+```
+- ✅ Works across filesystems/mounts
+- ✅ Can link directories
+- ✅ `ln -sf` is idempotent (safe to re-run)
+- ❌ Dangling if original deleted
+- ❌ `chmod +x` must be re-run for new files
+
+### Hard link (when you need file identity)
+```bash
+for f in $HOME/workspace/scripts/*; do
+  [ -f "$f" ] && ln -f "$f" "$BIN/$(basename "$f")"
+done
+```
+- ✅ Survives original deletion (data persists until all links gone)
+- ✅ Same inode — no "which is real?" confusion
+- ✅ Directories are rejected (good when you don't want subdirs linked)
+- ❌ Must be same filesystem (fails on Replit if source/dest on different mounts)
+- ❌ Can't link directories
+
+### Auto-chmod new scripts
+Since `chmod +x` only affects files existing at execution time, use one of:
+1. **Re-run on every boot** (simplest for Replit — add to `hermes.sh`)
+2. **inotifywait watcher** (event-driven, zero CPU):
+   ```bash
+   inotifywait -m -e create -e moved_to --format '%w%f' \
+     $HOME/workspace/scripts/ | while read f; do chmod +x "$f"; done &
+   ```
+3. **Busy-wait loop** (not recommended — wastes CPU):
+   ```bash
+   while true; do chmod +x $HOME/workspace/scripts/*; sleep 5; done &
+   ```
+
+## Pitfall: Truncated Lines During Edits
+
+When using `patch` tool, if `old_string` is too short or ambiguous, it can produce truncated output (e.g., a curl `-H` line cut mid-string). Always:
+1. Read the full file after patching to verify line integrity
+2. Run `bash -n <script>` on all modified shell scripts
+3. Run `python3 -m py_compile <script>` on all modified Python scripts
+4. Check that multi-line commands (curl with `\`, heredocs) are complete
 
 ## Pitfall: `mv` with Globbing
 

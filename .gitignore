@@ -8,15 +8,15 @@
 *shm
 *wal
 *cache*
-# ^. Whitelisted / Ignore tracking rules (sensitive files git must NOT track)
-# Sync paths — https://gist.githubusercontent.com/jhajikv-mute/42d4ec5022a5602042d2319a180d176a/raw/ syncs these into hermes-secrets private repo
-scripts/email.sh
+# Sensitive files (auto-managed by sensitive skill — do not edit)
+# Synced to hermes-secrets repo via sync.sh
 credentials/.pat
-.hermes_data/.env
-.hermes_data/auth.json
+credentials/.supabase_anon_key
 credentials/openrouter_credentials.txt
 credentials/firecrawl_credentials.txt
 credentials/torbox_credentials.txt
-credentials/.supabase_anon_key
+scripts/email.sh
+.hermes_data/.env
+.hermes_data/auth.json
 
 brave-browser/
