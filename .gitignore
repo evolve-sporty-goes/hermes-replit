@@ -21,3 +21,7 @@ scripts/email.sh
 
 brave-browser/
 freellmapi
+
+# Session logs (contain secrets in conversation history)
+freellmapi
+.hermes_data/webui/sessions/
