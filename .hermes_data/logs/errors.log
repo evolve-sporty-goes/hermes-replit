@@ -3955,3 +3955,13 @@ RuntimeError: No LLM provider configured for task=vision provider=auto. Run: her
 2026-06-28 20:03:16,865 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
 2026-06-28 20:03:17,110 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
 2026-06-28 20:03:21,566 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:04:08,920 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:04:13,646 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:04:13,903 WARNING [20260628_200142_1bdee0] agent.tool_executor: Tool terminal returned error (0.26s): {"output": "Cannot rewrite branches: You have unstaged changes.", "exit_code": 1, "error": null, "exit_code_meaning": "Non-zero exit (often normal — e.g. 'git diff' returns 1 when files differ)"}
+
+[To
+2026-06-28 20:04:13,906 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:04:17,080 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-28 20:04:18,036 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:04:18,251 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:04:23,146 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
