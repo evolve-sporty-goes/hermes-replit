@@ -1,0 +1,121 @@
+#!/usr/bin/env bash
+# TorBox signup: register, verify email, get free trial, extract API key
+set -euo pipefail
+CRED="/home/runner/workspace/torbox_credentials.txt"
+ANON=$(cat /home/runner/workspace/.supabase_anon_key)
+
+# Step 1: Generate email + password
+EMAIL=$(bash /home/runner/workspace/email.sh)
+PW=$(python3 -c "import secrets,string as s;print(secrets.choice(s.ascii_letters)+secrets.choice(s.digits)+secrets.choice('!@#%')+''.join(secrets.choice(s.ascii_letters+s.digits+'!@#\$%')for _ in range(12)))")
+echo "Email: $EMAIL"
+
+# Step 2: Sign up via API
+B=$(curl -s -X POST "https://db.torbox.app/auth/v1/signup" \
+  -H 'Content-Type: application/json' -H "apikey: $ANON" \
+  -d "{\"email\":\"$EMAIL\",\"password\":\"$PW\"}")
+E=$(echo "$B"|python3 -c "import sys,json;d=json.load(sys.stdin);print(d.get('msg',d.get('error_description','')))" 2>/dev/null||true)
+[[ -n "$E" ]] && { echo "Signup failed: $E"; exit 1; }
+ID=$(echo "$B"|python3 -c "import sys,json;print(json.load(sys.stdin).get('id','?'))" 2>/dev/null||echo "?")
+echo "Signed up: $EMAIL | $ID"
+
+# Step 3: Get verify URL from Proton (Chromium)
+VERIFY_URL=$(python3 - "$EMAIL" << 'PYEOF'
+import sys,os,re;sys.path.insert(0,os.path.expanduser("~"))
+from playwright.sync_api import sync_playwright
+import importlib
+if "config" in sys.modules:del sys.modules["config"]
+C=importlib.import_module("config")
+email=sys.argv[1];CH="/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
+PR=os.path.expanduser("~/proton_profile");os.makedirs(PR,exist_ok=True);url="NOT_FOUND"
+with sync_playwright() as p:
+ ctx=p.chromium.launch_persistent_context(PR,executable_path=CH,headless=False,args=["--no-sandbox","--disable-gpu"])
+ pg=ctx.new_page();pg.goto("https://account.proton.me/login",timeout=60000);pg.wait_for_timeout(3000)
+ logged_in=False
+ try:
+  if pg.locator("a:has-text('Mail')").is_visible(timeout=3000):logged_in=True
+ except:pass
+ if not logged_in:
+  pg.locator("#username").fill(C.PROTON_USERNAME);pg.locator("#password").fill(C.PROTON_PASSWORD)
+  pg.locator("button[type='submit']").click();pg.wait_for_timeout(10000)
+ pg.goto("https://mail.proton.me/u/0/inbox",timeout=30000);pg.wait_for_load_state("networkidle");pg.wait_for_timeout(3000)
+ for _ in range(7):
+  try:
+   pg.keyboard.press("/");pg.wait_for_timeout(800);pg.keyboard.type(email,delay=20);pg.keyboard.press("Enter");pg.wait_for_timeout(4000)
+   items=pg.locator(".item-container,.message-item,[data-testid='message-item']")
+   if items.count()>0:items.first.click();pg.wait_for_timeout(2000);break
+   pg.reload();pg.wait_for_load_state("networkidle");pg.wait_for_timeout(2000)
+  except:
+   try:pg.keyboard.press("Escape")
+   except:pass
+   pg.wait_for_timeout(2000)
+ else:
+  print("NOT_FOUND",end="");ctx.close();sys.exit(0)
+ pg.wait_for_timeout(1500)
+ for frame in pg.frames:
+  try:
+   for href in frame.eval_on_selector_all("a[href]","els=>els.map(e=>e.href)"):
+    if("verify" in href.lower()or"confirm" in href.lower())and"torbox" in href.lower():url=href.replace("&amp;","&");break
+   if url!="NOT_FOUND":break
+  except:continue
+ if url=="NOT_FOUND":
+  html=""
+  for f in pg.frames:
+   try:html+=f.content()+"\n"
+   except:pass
+  m=re.search(r'https://db\.torbox\.app/auth/v1/verify[^\s"\'<>]*',html)
+  if m:url=m.group(0).replace("&amp;","&")
+ ctx.close()
+print(url,end="")
+PYEOF
+)
+
+if [[ "$VERIFY_URL" == "NOT_FOUND" ]]; then
+  echo "Verify link not found"
+  echo -e "email=$EMAIL\npassword=$PW\nuser_id=$ID\nverified=false\n" >> "$CRED"
+  exit 0
+fi
+
+# Step 4: Visit verify link + get free trial + extract API key (Camoufox)
+API_KEY=$(python3 - "$VERIFY_URL" "$EMAIL" "$PW" << 'PYEOF'
+import sys,os,tempfile,shutil,atexit
+sys.path.insert(0,"/home/runner");sys.path.insert(0,"/home/runner/workspace")
+from camoufox.sync_api import Camoufox
+verify_url,email,pw=sys.argv[1],sys.argv[2],sys.argv[3]
+td=tempfile.mkdtemp(prefix="camoufox-torbox-")
+atexit.register(lambda:shutil.rmtree(td,ignore_errors=True))
+key=None
+with Camoufox(headless=False,persistent_context=True,user_data_dir=td) as browser:
+ pg=browser.new_page();pg.goto(verify_url,timeout=60000);pg.wait_for_timeout(8000)
+ print(f"Verified: {pg.url}",file=sys.stderr);pg.close()
+ for _ in range(3):
+  pg=browser.new_page();pg.goto("https://torbox.app/dashboard",timeout=30000);pg.wait_for_timeout(3000)
+  if "login" in pg.url or pg.locator("#email-input").is_visible(timeout=2000):
+   pg.locator("#email-input").fill(email);pg.wait_for_timeout(500)
+   pg.locator("#password-input").fill(pw);pg.wait_for_timeout(500)
+   for fr in pg.frames:
+    if"cloudflare"in fr.url or"cloudflare"in fr.name.lower():
+     try:fr.locator("#challenge-stage,.ctp-checkbox,body").first.click();pg.wait_for_timeout(3000)
+     except:pass;break
+   pg.locator("button[type='submit']").click(force=True);pg.wait_for_url(lambda u:"login"not in u,timeout=15000);pg.wait_for_timeout(2000)
+  for sel in["a:has-text('Get your free demo now!')","button:has-text('Get your free demo now!')","text=Get your free demo now!"]:
+   try:
+    b=pg.locator(sel).first
+    if b.is_visible(timeout=2000):b.click();pg.wait_for_timeout(5000);break
+   except:pass
+  pg.goto("https://torbox.app/settings",timeout=30000);pg.wait_for_timeout(8000)
+  key=pg.evaluate("()=>{for(const i of document.querySelectorAll('input')){const v=(i.value||'').trim();if(v.length>20&&!v.includes(' ')&&!v.includes('@'))return v}return null}")
+  if key:print(key,end="");pg.close();break
+  pg.close()
+PYEOF
+)
+
+# Step 5: Append credentials
+{
+  echo "email=$EMAIL"
+  echo "password=$PW"
+  echo "user_id=$ID"
+  echo "verified=true"
+  [[ -n "$API_KEY" ]] && echo "api_key=$API_KEY"
+  echo ""
+} >> "$CRED"
+echo "Done — appended to $CRED"

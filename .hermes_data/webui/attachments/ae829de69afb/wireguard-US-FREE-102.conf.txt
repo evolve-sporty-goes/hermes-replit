@@ -1,0 +1,18 @@
+[Interface]
+# Key for wireguard
+# Bouncing = 1
+# NAT-PMP (Port Forwarding) = off
+# VPN Accelerator = on
+PrivateKey = gOCDqyj4jMGJPnykTSjLoDAXjd6bD0XBPc+VwRwIE0w=
+Address = 10.2.0.2/32, 2a07:b944::2:2/128
+DNS = 10.2.0.1, 2a07:b944::2:1
+
+[Peer]
+# US-FREE#102
+PublicKey = VZghTYxgyeiYtJ8HcBRaOFRnRjqSoNYmHVSoOQLz3gA=
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint = 149.88.18.238:51820
+
+# Uncomment the following line (delete the # symbol) to connect to Proton VPN using IPv6.
+# Endpoint = [2a02:6ea0:e20d:5489::10]:51820
+PersistentKeepalive = 25

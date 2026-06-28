@@ -1,0 +1,3 @@
+#!/bin/bash
+URL=$(curl -s "https://api.github.com/repos/brave/brave-browser/releases/latest" | python3 -c "import json,sys; d=json.load(sys.stdin); print([a['browser_download_url'] for a in d['assets'] if 'brave-browser-' in a['name'] and a['name'].endswith('-linux-amd64.zip')][0])")
+curl -L -o /tmp/brave.zip "$URL" && unzip -q -o /tmp/brave.zip -d /tmp/brave-browser && rm /tmp/brave.zip && /tmp/brave-browser/brave --no-sandbox --disable-gpu &

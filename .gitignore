@@ -1,0 +1,20 @@
+.*
+!.gitignore
+!.replit
+!.hermes_data/
+!.hermes_data/*
+!.hermes_data/**/*
+*env
+*shm
+*wal
+# Sensitive files (from sensitive.txt)
+email.sh
+.pat
+.hermes_data/.env
+.hermes_data/auth.json
+openrouter_credentials.txt
+firecrawl_credentials.txt
+torbox_credentials.txt
+.supabase_anon_key
+
+brave-browser/

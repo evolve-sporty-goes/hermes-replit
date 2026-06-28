@@ -1,0 +1,393 @@
+19:57:51 interrupt fired: msg='track full .hermes_data except .env', children=0, parent._interrupt=True
+19:57:51 ENTER: queued interrupt msg='track full .hermes_data except .env', agent_running=True
+20:07:34 ENTER: queued interrupt msg='keep updating session notes and refer to session notes for m', agent_running=True
+20:07:34 interrupt fired: msg='keep updating session notes and refer to session notes for m', children=0, parent._interrupt=True
+20:19:36 interrupt fired: msg='comit and push', children=0, parent._interrupt=True
+20:19:36 ENTER: queued interrupt msg='comit and push', agent_running=True
+20:44:12 ENTER: queued interrupt msg='set password yourself', agent_running=True
+20:44:12 interrupt fired: msg='set password yourself', children=0, parent._interrupt=True
+20:46:50 ENTER: queued interrupt msg='success if confirm email shows', agent_running=True
+20:46:50 interrupt fired: msg='success if confirm email shows', children=0, parent._interrupt=True
+21:06:37 interrupt fired: msg='use random as password , signup', children=0, parent._interrupt=True
+21:06:37 ENTER: queued interrupt msg='use random as password , signup', agent_running=True
+21:07:07 ENTER: queued interrupt msg='wait for confirm to be visible', agent_running=True
+21:07:07 interrupt fired: msg='wait for confirm to be visible', children=0, parent._interrupt=True
+21:07:36 ENTER: queued interrupt msg='verify email using email-verify py , config is in ~', agent_running=True
+21:07:36 interrupt fired: msg='verify email using email-verify py , config is in ~', children=0, parent._interrupt=True
+21:08:24 ENTER: queued interrupt msg='extract api', agent_running=True
+21:08:24 interrupt fired: msg='extract api', children=0, parent._interrupt=True
+21:25:25 ENTER: queued interrupt msg='run email verify not duckmail.py', agent_running=True
+21:25:25 interrupt fired: msg='run email verify not duckmail.py', children=0, parent._interrupt=True
+21:51:40 ENTER: queued interrupt msg='write all you have done in one script', agent_running=True
+21:51:40 interrupt fired: msg='write all you have done in one script', children=0, parent._interrupt=True
+21:52:41 ENTER: queued interrupt msg='.', agent_running=True
+21:52:41 interrupt fired: msg='.', children=0, parent._interrupt=True
+21:53:36 ENTER: queued interrupt msg='write', agent_running=True
+21:53:36 interrupt fired: msg='write', children=0, parent._interrupt=True
+23:04:36 ENTER: queued interrupt msg='# 1. Click the eye icon to reveal the key page.click("button', agent_running=True
+23:04:36 interrupt fired: msg='# 1. Click the eye icon to reveal the key page.click("button', children=0, parent._interrupt=True
+23:04:47 interrupt fired: msg='# 1. Click the eye icon to reveal the key page.click("button', children=0, parent._interrupt=True
+23:04:47 ENTER: queued interrupt msg='# 1. Click the eye icon to reveal the key page.click("button', agent_running=True
+04:50:43 ENTER: queued interrupt msg='its better to use firecrawl', agent_running=True
+04:50:43 interrupt fired: msg='its better to use firecrawl', children=0, parent._interrupt=True
+04:56:13 interrupt fired: msg='run headless=False', children=0, parent._interrupt=True
+04:56:13 ENTER: queued interrupt msg='run headless=False', agent_running=True
+05:09:14 interrupt fired: msg='read and modify openrouter*py', children=0, parent._interrupt=True
+05:09:14 ENTER: queued interrupt msg='read and modify openrouter*py', agent_running=True
+05:32:17 interrupt fired: msg='if hermes-browser can bypass captcha then code for that inst', children=0, parent._interrupt=True
+05:32:17 ENTER: queued interrupt msg='if hermes-browser can bypass captcha then code for that inst', agent_running=True
+05:54:02 ENTER: queued interrupt msg='for cloudflare verification just click on it', agent_running=True
+05:54:02 interrupt fired: msg='for cloudflare verification just click on it', children=0, parent._interrupt=True
+07:23:45 ENTER: queued interrupt msg='.', agent_running=True
+07:23:45 interrupt fired: msg='.', children=0, parent._interrupt=True
+07:27:34 interrupt fired: msg='.', children=0, parent._interrupt=True
+07:27:34 ENTER: queued interrupt msg='.', agent_running=True
+07:30:40 interrupt fired: msg='just use playwright for proton', children=0, parent._interrupt=True
+07:30:40 ENTER: queued interrupt msg='just use playwright for proton', agent_running=True
+08:27:54 ENTER: queued interrupt msg='6 digit do not involve in py', agent_running=True
+08:27:54 interrupt fired: msg='6 digit do not involve in py', children=0, parent._interrupt=True
+08:47:29 ENTER: queued interrupt msg='type email in search box and click latest mail', agent_running=True
+08:47:29 interrupt fired: msg='type email in search box and click latest mail', children=0, parent._interrupt=True
+08:57:55 ENTER: queued interrupt msg='after keyboard press / , type email', agent_running=True
+08:57:55 interrupt fired: msg='after keyboard press / , type email', children=0, parent._interrupt=True
+09:39:47 ENTER: queued interrupt msg='i do not want script, i want a rule that when heremes verifi', agent_running=True
+09:39:47 interrupt fired: msg='i do not want script, i want a rule that when heremes verifi', children=0, parent._interrupt=True
+10:33:06 ENTER: queued interrupt msg='+commit changes and push , also remove commit history of .gi', agent_running=True
+10:33:06 interrupt fired: msg='+commit changes and push , also remove commit history of .gi', children=0, parent._interrupt=True
+10:33:38 ENTER: queued interrupt msg='stop sync.sh before commit and push', agent_running=True
+10:33:38 interrupt fired: msg='stop sync.sh before commit and push', children=0, parent._interrupt=True
+11:12:31 ENTER: queued interrupt msg='dont change fcapi.py instead create firecrawl.py', agent_running=True
+11:12:31 interrupt fired: msg='dont change fcapi.py instead create firecrawl.py', children=0, parent._interrupt=True
+12:26:55 interrupt fired: msg='use camoufox tor proxy, geoip= True , run TOR', children=0, parent._interrupt=True
+12:26:55 ENTER: queued interrupt msg='use camoufox tor proxy, geoip= True , run TOR', agent_running=True
+12:39:31 ENTER: queued interrupt msg='run tor*py', agent_running=True
+12:39:31 interrupt fired: msg='run tor*py', children=0, parent._interrupt=True
+12:50:09 interrupt fired: msg='load a vpn addon camoufox', children=0, parent._interrupt=True
+12:50:09 ENTER: queued interrupt msg='load a vpn addon camoufox', agent_running=True
+13:16:09 ENTER: queued interrupt msg='visit ip.me for vpn test', agent_running=True
+13:16:09 interrupt fired: msg='visit ip.me for vpn test', children=0, parent._interrupt=True
+13:17:18 ENTER: queued interrupt msg='compare visible ip with machine ip', agent_running=True
+13:17:18 interrupt fired: msg='compare visible ip with machine ip', children=0, parent._interrupt=True
+13:26:26 ENTER: queued interrupt msg='remove addon', agent_running=True
+13:26:26 interrupt fired: msg='remove addon', children=0, parent._interrupt=True
+13:30:03 interrupt fired: msg='npx -y firecrawl-cli@latest init --all --browser', children=0, parent._interrupt=True
+13:30:03 ENTER: queued interrupt msg='npx -y firecrawl-cli@latest init --all --browser', agent_running=True
+13:32:57 ENTER: queued interrupt msg='i have api in .env', agent_running=True
+13:32:57 interrupt fired: msg='i have api in .env', children=0, parent._interrupt=True
+13:39:12 ENTER: queued interrupt msg='---', agent_running=True
+13:39:12 interrupt fired: msg='---', children=0, parent._interrupt=True
+13:39:12 ENTER: queued interrupt msg='name: firecrawl', agent_running=True
+13:39:12 ENTER: queued interrupt msg='description: |', agent_running=True
+13:39:12 ENTER: queued interrupt msg='Firecrawl gives AI agents and apps fast, reliable web contex', agent_running=True
+13:39:12 ENTER: queued interrupt msg='strong search, scraping, and interaction tools. One install ', agent_running=True
+13:39:12 ENTER: queued interrupt msg='sets up three skill segments: live CLI tools, app-integratio', agent_running=True
+13:39:12 ENTER: queued interrupt msg='skills, and outcome-focused workflow skills. Route the reade', agent_running=True
+13:39:12 ENTER: queued interrupt msg='right usage path after install.', agent_running=True
+13:39:12 ENTER: queued interrupt msg='---', agent_running=True
+13:39:12 ENTER: queued interrupt msg='# Firecrawl', agent_running=True
+13:39:12 ENTER: queued interrupt msg='Firecrawl helps agents search first, scrape clean content, i', agent_running=True
+13:39:12 ENTER: queued interrupt msg='with live pages when plain extraction is not enough, and pro', agent_running=True
+13:39:12 ENTER: queued interrupt msg='finished deliverables from web data.', agent_running=True
+13:39:12 ENTER: queued interrupt msg='## Install', agent_running=True
+13:39:12 ENTER: queued interrupt msg='One command installs everything — the Firecrawl CLI for live', agent_running=True
+13:39:12 ENTER: queued interrupt msg='the build skills for integrating Firecrawl into application ', agent_running=True
+13:39:12 ENTER: queued interrupt msg='the workflow skills for producing repeatable deliverables. I', agent_running=True
+13:39:12 ENTER: queued interrupt msg='browser auth so the human can sign in or create an account.', agent_running=True
+13:39:12 ENTER: queued interrupt msg='```bash', agent_running=True
+13:39:12 ENTER: queued interrupt msg='npx -y firecrawl-cli@latest init --all --browser', agent_running=True
+13:39:12 ENTER: queued interrupt msg='```', agent_running=True
+13:39:12 ENTER: queued interrupt msg='This gives you:', agent_running=True
+13:39:12 ENTER: queued interrupt msg='- **CLI tools** — `firecrawl search`, `firecrawl scrape`, `f', agent_running=True
+13:39:12 ENTER: queued interrupt msg='- **CLI skills** ([`firecrawl/cli`](https://github.com/firec', agent_running=True
+13:39:12 ENTER: queued interrupt msg='- **Build skills** ([`firecrawl/skills`](https://github.com/', agent_running=True
+13:39:12 ENTER: queued interrupt msg='- **Workflow skills** ([`firecrawl/firecrawl-workflows`](htt', agent_running=True
+13:39:12 ENTER: queued interrupt msg='- **Browser auth** — walks the human through sign-in or acco', agent_running=True
+13:39:12 ENTER: queued interrupt msg='The three skill segments map to three different jobs:', agent_running=True
+13:39:12 ENTER: queued interrupt msg='| Segment | Question it answers | Where the work runs |', agent_running=True
+13:39:12 interrupt fired: msg='- **CLI skills** ([`firecrawl/cli`](https://github.com/firec', children=0, parent._interrupt=True
+13:39:12 ENTER: queued interrupt msg='| ------- | ------------------- | ------------------- |', agent_running=True
+13:39:12 ENTER: queued interrupt msg='| CLI skills | "Which Firecrawl command should I run right n', agent_running=True
+13:39:12 ENTER: queued interrupt msg='| Build skills | "How do I add a Firecrawl API call to this ', agent_running=True
+13:39:12 ENTER: queued interrupt msg='| Workflow skills | "What\'s the finished deliverable and how', agent_running=True
+13:39:13 ENTER: queued interrupt msg='Before doing real work, verify the install:', agent_running=True
+13:39:13 ENTER: queued interrupt msg='```bash', agent_running=True
+13:39:13 ENTER: queued interrupt msg='mkdir -p .firecrawl', agent_running=True
+13:39:13 ENTER: queued interrupt msg='firecrawl --status', agent_running=True
+13:39:13 ENTER: queued interrupt msg='firecrawl scrape "https://firecrawl.dev" -o .firecrawl/insta', agent_running=True
+13:39:13 ENTER: queued interrupt msg='```', agent_running=True
+13:39:13 ENTER: queued interrupt msg='## Get Credentials', agent_running=True
+13:39:13 ENTER: queued interrupt msg='Firecrawl users can get an API key in two ways:', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- **Dashboard or CLI (default)** — browser sign-in, CLI `--b', agent_running=True
+13:39:13 ENTER: queued interrupt msg='install skills/MCP, or create an API key in the dashboard. C', agent_running=True
+13:39:13 ENTER: queued interrupt msg='with Path D below, or run the install command first.', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- **WorkOS ID-JAG (supported agent platforms only)** — if yo', agent_running=True
+13:39:13 interrupt fired: msg='install skills/MCP, or create an API key in the dashboard. C', children=0, parent._interrupt=True
+13:39:13 ENTER: queued interrupt msg='can mint a WorkOS ID-JAG identity assertion, fetch', agent_running=True
+13:39:13 ENTER: queued interrupt msg='`https://www.firecrawl.dev/auth.md` and follow it end-to-end', agent_running=True
+13:39:13 ENTER: queued interrupt msg='run the browser or CLI auth flow in Path D.', agent_running=True
+13:39:13 ENTER: queued interrupt msg='**Which should I use?** Stay on this page unless you know yo', agent_running=True
+13:39:13 ENTER: queued interrupt msg='supports WorkOS ID-JAG.', agent_running=True
+13:39:13 ENTER: queued interrupt msg='**How you might arrive:**', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- **Docs or website sent you here** — continue with Choose Y', agent_running=True
+13:39:13 ENTER: queued interrupt msg='below for CLI/skills/MCP onboarding.', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- **API `401` with discovery metadata** — if ID-JAG applies,', agent_running=True
+13:39:13 ENTER: queued interrupt msg='WorkOS ID-JAG option above. Everyone else: use Path D.', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- **Direct URL** — you are reading the right doc for browser', agent_running=True
+13:39:13 ENTER: queued interrupt msg='onboarding.', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- **Already have `FIRECRAWL_API_KEY`** — skip credential set', agent_running=True
+13:39:13 ENTER: queued interrupt msg='Path A–E below.', agent_running=True
+13:39:13 ENTER: queued interrupt msg='Human-readable overview:', agent_running=True
+13:39:13 ENTER: queued interrupt msg='https://docs.firecrawl.dev/ai-onboarding#get-credentials', agent_running=True
+13:39:13 ENTER: queued interrupt msg='## Choose Your Path', agent_running=True
+13:39:13 ENTER: queued interrupt msg='All paths use the same install above. The difference is what', agent_running=True
+13:39:13 ENTER: queued interrupt msg='next.', agent_running=True
+13:39:13 interrupt fired: msg='All paths use the same install above. The difference is what', children=0, parent._interrupt=True
+13:39:13 ENTER: queued interrupt msg='- **Need web data during this session** -> Path A (live tool', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- **Need to add Firecrawl to app code** -> Path B (app integ', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- **Need a finished deliverable from web data** -> Path C (w', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- **Need more than one of the above** -> do them in sequence', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- **Agent platform with WorkOS ID-JAG** -> see Get Credentia', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- **Need an account or API key (browser or CLI)** -> Path D', agent_running=True
+13:39:13 ENTER: queued interrupt msg="- **Don't want to install anything** -> Path E (REST API dir", agent_running=True
+13:39:13 ENTER: queued interrupt msg='- **No API key and the human cannot sign up right now** -> P', agent_running=True
+13:39:13 ENTER: queued interrupt msg='---', agent_running=True
+13:39:13 ENTER: queued interrupt msg='## Path A: Live Web Tools', agent_running=True
+13:39:13 ENTER: queued interrupt msg='Use this when you need web data during your work: searching ', agent_running=True
+13:39:13 ENTER: queued interrupt msg='scraping known URLs, interacting with live pages, crawling d', agent_running=True
+13:39:13 ENTER: queued interrupt msg='mapping a site.', agent_running=True
+13:39:13 ENTER: queued interrupt msg='After install, hand off to the CLI skill:', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- `firecrawl/cli` for the overall command workflow', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- `firecrawl-search` when you need search first', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- `firecrawl-scrape` when you already have a URL', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- `firecrawl-interact` when the page needs clicks, forms, or', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- `firecrawl-crawl` for bulk extraction', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- `firecrawl-map` for URL discovery', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- `firecrawl-ask` when a Firecrawl call fails or returns une', agent_running=True
+13:39:13 ENTER: queued interrupt msg='- `firecrawl-docs-search` for "how does Firecrawl handle X?"', agent_running=True
+13:39:13 ENTER: queued interrupt msg='Default flow for live web work:', agent_running=True
+13:39:13 ENTER: queued interrupt msg='1. start with search when you need discovery', agent_running=True
+13:39:13 ENTER: queued interrupt msg='2. move to scrape when you have a URL', agent_running=True
+13:39:13 ENTER: queued interrupt msg='3. use interact only when the page needs clicks, forms, or l', agent_running=True
+13:39:13 ENTER: queued interrupt msg='4. if any step fails or returns unexpected output, run `fire', agent_running=True
+13:39:13 ENTER: queued interrupt msg='If the task becomes "wire Firecrawl into product code," swit', agent_running=True
+13:39:13 ENTER: queued interrupt msg='---', agent_running=True
+13:39:13 ENTER: queued interrupt msg='## Path B: Integrate Firecrawl Into an App', agent_running=True
+13:39:13 ENTER: queued interrupt msg="Use this when you're building an application, agent, or work", agent_running=True
+13:39:14 ENTER: queued interrupt msg="inside the user's product (a web app, backend service, scrip", agent_running=True
+13:39:14 ENTER: queued interrupt msg="loop, or pipeline) rather than from the agent's own terminal", agent_running=True
+13:39:14 ENTER: queued interrupt msg='This is the key difference from Path A: Path A runs `firecra', agent_running=True
+13:39:14 ENTER: queued interrupt msg='commands during the current session to fetch data for the ag', agent_running=True
+13:39:14 ENTER: queued interrupt msg='Path B writes code that will keep running long after the age', agent_running=True
+13:39:14 ENTER: queued interrupt msg="using `FIRECRAWL_API_KEY` from the project's `.env` or runti", agent_running=True
+13:39:14 ENTER: queued interrupt msg="and the matching Firecrawl SDK in the project's language.", agent_running=True
+13:39:14 ENTER: queued interrupt msg='The build skills are already installed from the same command', agent_running=True
+13:39:14 ENTER: queued interrupt msg='separate install needed.', agent_running=True
+13:39:14 ENTER: queued interrupt msg='Choose the project mode before writing code:', agent_running=True
+13:39:14 ENTER: queued interrupt msg='- **Fresh project** -> pick the stack, install the SDK, add ', agent_running=True
+13:39:14 interrupt fired: msg="inside the user's product (a web app, backend service, scrip", children=0, parent._interrupt=True
+13:39:14 ENTER: queued interrupt msg='- **Existing project** -> inspect the repo first, then integ', agent_running=True
+13:39:14 ENTER: queued interrupt msg="If you already have a key, save it to the project's environm", agent_running=True
+13:39:14 ENTER: queued interrupt msg='```dotenv', agent_running=True
+13:39:14 ENTER: queued interrupt msg='FIRECRAWL_API_KEY=fc-...', agent_running=True
+13:39:14 ENTER: queued interrupt msg='```', agent_running=True
+13:39:14 ENTER: queued interrupt msg='Then hand off to the build skill that fits the step:', agent_running=True
+13:39:14 ENTER: queued interrupt msg='- `firecrawl-build` for the overall build workflow and endpo', agent_running=True
+13:39:14 ENTER: queued interrupt msg='- `firecrawl-build-onboarding` for auth and project setup (A', agent_running=True
+13:39:14 ENTER: queued interrupt msg='- `firecrawl-build-scrape` when the feature scrapes a known ', agent_running=True
+13:39:14 ENTER: queued interrupt msg='- `firecrawl-build-search` when the feature starts with a qu', agent_running=True
+13:39:14 ENTER: queued interrupt msg='- `firecrawl-build-interact` when the feature needs clicks, ', agent_running=True
+13:39:14 ENTER: queued interrupt msg='- `firecrawl-build-parse` when the feature parses local or n', agent_running=True
+13:39:14 ENTER: queued interrupt msg='The required question in the build path is:', agent_running=True
+13:39:14 ENTER: queued interrupt msg='- **What should Firecrawl do in the product?**', agent_running=True
+13:39:14 ENTER: queued interrupt msg='Use the answer to route to `/search`, `/scrape`, `/interact`', agent_running=True
+13:39:14 ENTER: queued interrupt msg='If you do not have a key yet, do Path D first.', agent_running=True
+13:39:14 ENTER: queued interrupt msg='---', agent_running=True
+13:39:14 ENTER: queued interrupt msg='## Path C: Repeatable Deliverables', agent_running=True
+13:39:14 ENTER: queued interrupt msg='Use this when the goal is a finished artifact powered by Fir', agent_running=True
+13:39:14 ENTER: queued interrupt msg='data — a research brief, SEO audit, QA report, lead list, kn', agent_running=True
+13:39:14 interrupt fired: msg='base, competitive intel digest, or a cloned design system — ', children=0, parent._interrupt=True
+13:39:14 ENTER: queued interrupt msg='base, competitive intel digest, or a cloned design system — ', agent_running=True
+13:39:14 ENTER: queued interrupt msg='extraction and not product-code integration.', agent_running=True
+13:39:14 ENTER: queued interrupt msg='Workflow skills infer from context first and only ask short ', agent_running=True
+13:39:14 ENTER: queued interrupt msg='questions when an input would block the work. They also call', agent_running=True
+13:39:14 ENTER: queued interrupt msg='independently parallelizable units so sub-agents can fan out', agent_running=True
+13:39:14 ENTER: queued interrupt msg='competitors, pages, or sources.', agent_running=True
+13:39:14 ENTER: queued interrupt msg='Start with the umbrella `firecrawl-workflows` skill — it ins', agent_running=True
+13:39:14 ENTER: queued interrupt msg="user's request and routes to the right workflow (research, S", agent_running=True
+13:39:14 ENTER: queued interrupt msg='gen, QA, knowledge base, design clone, and others). If the a', agent_running=True
+13:39:14 ENTER: queued interrupt msg='already knows which workflow to run, hand off to that workfl', agent_running=True
+13:39:14 ENTER: queued interrupt msg='directly.', agent_running=True
+13:39:14 ENTER: queued interrupt msg='The full skill list lives in the [workflows repo](https://gi', agent_running=True
+13:39:14 ENTER: queued interrupt msg='Default flow for workflow deliverables:', agent_running=True
+13:39:14 ENTER: queued interrupt msg='1. confirm the workflow and final artifact with the user', agent_running=True
+13:39:14 ENTER: queued interrupt msg='2. collect web evidence with Firecrawl through the CLI or eq', agent_running=True
+13:39:14 ENTER: queued interrupt msg='3. save or cite source evidence so claims are traceable', agent_running=True
+13:39:14 ENTER: queued interrupt msg='4. run independent research units in parallel when available', agent_running=True
+13:39:14 ENTER: queued interrupt msg='5. synthesize findings into the requested deliverable', agent_running=True
+13:39:14 ENTER: queued interrupt msg='6. include a short "rerun inputs" block when the workflow co', agent_running=True
+13:39:14 ENTER: queued interrupt msg='If the underlying web work fails or the request shifts to "w', agent_running=True
+13:39:14 ENTER: queued interrupt msg='---', agent_running=True
+13:39:14 ENTER: queued interrupt msg='## Path D: Account Authorization Or API Key', agent_running=True
+13:39:14 ENTER: queued interrupt msg='Use this when the human still needs to sign up, sign in, aut', agent_running=True
+13:39:14 ENTER: queued interrupt msg='access, or obtain an API key.', agent_running=True
+13:39:14 ENTER: queued interrupt msg='This is the default credential path for coding agents and', agent_running=True
+13:39:14 ENTER: queued interrupt msg='human-in-the-loop auth. If WorkOS ID-JAG applies, use Get Cr', agent_running=True
+13:39:14 ENTER: queued interrupt msg='above instead — do not run this section.', agent_running=True
+13:39:14 ENTER: queued interrupt msg='If you ran the install command above with `--browser`, the h', agent_running=True
+13:39:14 ENTER: queued interrupt msg='already prompted to sign in. Check if the key is available b', agent_running=True
+13:39:14 ENTER: queued interrupt msg='running this flow.', agent_running=True
+13:39:14 ENTER: queued interrupt msg='If you already have a valid `FIRECRAWL_API_KEY`, skip this p', agent_running=True
+13:39:14 ENTER: queued interrupt msg="If you're the human reading this in the browser, create an a", agent_running=True
+13:39:14 ENTER: queued interrupt msg='sign in at:', agent_running=True
+13:39:15 ENTER: queued interrupt msg='- https://www.firecrawl.dev/signin?view=signup&source=agent-', agent_running=True
+13:39:15 ENTER: queued interrupt msg="If you're an agent and need the human to authorize an API ke", agent_running=True
+13:39:15 ENTER: queued interrupt msg='flow:', agent_running=True
+13:39:15 interrupt fired: msg='**Step 1 — Generate auth parameters:**', children=0, parent._interrupt=True
+13:39:15 ENTER: queued interrupt msg='**Step 1 — Generate auth parameters:**', agent_running=True
+13:39:15 ENTER: queued interrupt msg='```bash', agent_running=True
+13:39:15 ENTER: queued interrupt msg='SESSION_ID=$(openssl rand -hex 32)', agent_running=True
+13:39:15 ENTER: queued interrupt msg="CODE_VERIFIER=$(openssl rand -base64 32 | tr '+/' '-_' | tr ", agent_running=True
+13:39:15 ENTER: queued interrupt msg='CODE_CHALLENGE=$(printf \'%s\' "$CODE_VERIFIER" | openssl dgst', agent_running=True
+13:39:15 ENTER: queued interrupt msg='```', agent_running=True
+13:39:15 ENTER: queued interrupt msg='**Step 2 — Ask the human to open this URL:**', agent_running=True
+13:39:15 ENTER: queued interrupt msg='```', agent_running=True
+13:39:15 ENTER: queued interrupt msg='https://www.firecrawl.dev/cli-auth?code_challenge=$CODE_CHAL', agent_running=True
+13:39:15 ENTER: queued interrupt msg='```', agent_running=True
+13:39:15 ENTER: queued interrupt msg="If they already have a Firecrawl account, they'll sign in an", agent_running=True
+13:39:15 ENTER: queued interrupt msg="If not, they'll create one first and then authorize. The API", agent_running=True
+13:39:15 ENTER: queued interrupt msg='back to you automatically after they click "Authorize."', agent_running=True
+13:39:15 interrupt fired: msg='https://www.firecrawl.dev/cli-auth?code_challenge=$CODE_CHAL', children=0, parent._interrupt=True
+13:39:15 ENTER: queued interrupt msg='**Step 3 — Poll for the API key:**', agent_running=True
+13:39:15 ENTER: queued interrupt msg='```bash', agent_running=True
+13:39:15 ENTER: queued interrupt msg='POST https://www.firecrawl.dev/api/auth/cli/status', agent_running=True
+13:39:15 ENTER: queued interrupt msg='Content-Type: application/json', agent_running=True
+13:39:15 ENTER: queued interrupt msg='{"session_id": "$SESSION_ID", "code_verifier": "$CODE_VERIFI', agent_running=True
+13:39:15 ENTER: queued interrupt msg='```', agent_running=True
+13:39:15 ENTER: queued interrupt msg='Poll every 3 seconds. Responses:', agent_running=True
+13:39:15 ENTER: queued interrupt msg='- `{"status": "pending"}` — keep polling', agent_running=True
+13:39:15 ENTER: queued interrupt msg='- `{"status": "complete", "apiKey": "fc-...", "teamName": ".', agent_running=True
+13:39:15 interrupt fired: msg='**Step 4 — Save the key and continue:**', children=0, parent._interrupt=True
+13:39:15 ENTER: queued interrupt msg='**Step 4 — Save the key and continue:**', agent_running=True
+13:39:15 ENTER: queued interrupt msg='```bash', agent_running=True
+13:39:15 ENTER: queued interrupt msg='echo "FIRECRAWL_API_KEY=fc-..." >> .env', agent_running=True
+13:39:15 ENTER: queued interrupt msg='```', agent_running=True
+13:39:15 ENTER: queued interrupt msg='---', agent_running=True
+13:39:15 ENTER: queued interrupt msg='## Path E: Use Firecrawl Without Installing Anything', agent_running=True
+13:39:15 ENTER: queued interrupt msg="Use this when you don't want to install a CLI or skills pack", agent_running=True
+13:39:15 ENTER: queued interrupt msg='works for both use cases:', agent_running=True
+13:39:15 ENTER: queued interrupt msg='- **Live web work** — an agent calling the API directly for ', agent_running=True
+13:39:15 ENTER: queued interrupt msg='scrape, or interact during a session', agent_running=True
+13:39:15 ENTER: queued interrupt msg='- **Building with Firecrawl** — integrating the REST API int', agent_running=True
+13:39:15 ENTER: queued interrupt msg='You still need an API key. Two ways to get one:', agent_running=True
+13:39:15 ENTER: queued interrupt msg='- **Human pastes it in** — if you already have a key, just s', agent_running=True
+13:39:15 ENTER: queued interrupt msg='`FIRECRAWL_API_KEY=fc-...` in your environment or pass it di', agent_running=True
+13:39:15 ENTER: queued interrupt msg='- **Automated flow** — do Path D to walk the human through b', agent_running=True
+13:39:15 ENTER: queued interrupt msg='and receive the key automatically', agent_running=True
+13:39:15 ENTER: queued interrupt msg='If WorkOS ID-JAG applies, see Get Credentials above instead ', agent_running=True
+13:39:15 ENTER: queued interrupt msg='If the human is completely unable to sign up or authorize a ', agent_running=True
+13:39:15 ENTER: queued interrupt msg='now, Path F covers search, scrape, and interact on the keyle', agent_running=True
+13:39:15 ENTER: queued interrupt msg='(rate-limited). Prefer getting a key whenever possible: an a', agent_running=True
+13:39:15 ENTER: queued interrupt msg='higher limits and the full set of endpoints, so move to one ', agent_running=True
+13:39:15 ENTER: queued interrupt msg='is available.', agent_running=True
+13:39:15 interrupt fired: msg='higher limits and the full set of endpoints, so move to one ', children=0, parent._interrupt=True
+13:39:16 ENTER: queued interrupt msg='**Base URL:** `https://api.firecrawl.dev/v2`', agent_running=True
+13:39:16 ENTER: queued interrupt msg='**Auth header:** `Authorization: Bearer fc-YOUR_API_KEY`', agent_running=True
+13:39:16 ENTER: queued interrupt msg='### Available endpoints', agent_running=True
+13:39:16 ENTER: queued interrupt msg='- `POST /search` — discover pages by query, returns results ', agent_running=True
+13:39:16 ENTER: queued interrupt msg='- `POST /scrape` — extract clean markdown from a single URL', agent_running=True
+13:39:16 ENTER: queued interrupt msg='- `POST /interact` — browser actions on live pages (clicks, ', agent_running=True
+13:39:16 ENTER: queued interrupt msg='- `POST /support/ask` — diagnose a failing Firecrawl call. P', agent_running=True
+13:39:16 ENTER: queued interrupt msg='- `POST /support/docs-search` — answer "how do I…" questions', agent_running=True
+13:39:16 ENTER: queued interrupt msg='### Documentation and references', agent_running=True
+13:39:16 ENTER: queued interrupt msg='The API docs are the source of truth for request/response sc', agent_running=True
+13:39:16 ENTER: queued interrupt msg='parameters, and SDKs:', agent_running=True
+13:39:16 ENTER: queued interrupt msg='- **API reference:** https://docs.firecrawl.dev', agent_running=True
+13:39:16 ENTER: queued interrupt msg='- **Skills repo** (for agent integration patterns): https://', agent_running=True
+13:39:16 interrupt fired: msg='- **Skills repo** (for agent integration patterns): https://', children=0, parent._interrupt=True
+13:39:16 ENTER: queued interrupt msg='---', agent_running=True
+13:39:16 ENTER: queued interrupt msg='## Path F: Keyless Free Tier (Fallback)', agent_running=True
+13:39:16 ENTER: queued interrupt msg='Use this when you need Firecrawl right now and cannot obtain', agent_running=True
+13:39:16 ENTER: queued interrupt msg='for example when the human is not available to sign up. The ', agent_running=True
+13:39:16 ENTER: queued interrupt msg='tier lets you search, scrape, and interact without an API ke', agent_running=True
+13:39:16 ENTER: queued interrupt msg='rate-limited, so use it as a fallback rather than the defaul', agent_running=True
+13:39:16 ENTER: queued interrupt msg='- **MCP**: point any MCP-compatible client at `https://mcp.f', agent_running=True
+13:39:16 ENTER: queued interrupt msg='- **CLI**: run `npx -y firecrawl-cli@latest` and use `scrape', agent_running=True
+13:39:16 ENTER: queued interrupt msg='- **API**: call the same REST endpoints without an `Authoriz', agent_running=True
+13:39:16 ENTER: queued interrupt msg='Search, scrape, and interact are available keyless. Crawl, m', agent_running=True
+13:39:16 ENTER: queued interrupt msg='and other endpoints still require an API key.', agent_running=True
+13:39:16 ENTER: queued interrupt msg='Prefer a free account when the human can sign up: do Path D ', agent_running=True
+13:39:16 ENTER: queued interrupt msg='account or API key, which unlocks higher limits and the full', agent_running=True
+13:39:16 ENTER: queued interrupt msg='endpoints. If you hit rate limits on the keyless free tier, ', agent_running=True
+13:39:16 ENTER: queued interrupt msg='to sign up at https://www.firecrawl.dev/signin.', agent_running=True
+13:39:16 ENTER: queued interrupt msg='---', agent_running=True
+13:39:16 ENTER: queued interrupt msg='## Session-specific auth', agent_running=True
+13:39:16 ENTER: queued interrupt msg='Use this API key for this onboarding session:', agent_running=True
+13:39:16 ENTER: queued interrupt msg='```dotenv', agent_running=True
+13:39:16 ENTER: queued interrupt msg='FIRECRAWL_API_KEY=fc-1f98556edb474305b63b3f2530ab9efb', agent_running=True
+13:39:16 ENTER: queued interrupt msg='```', agent_running=True
+14:07:16 interrupt fired: msg='make script short', children=0, parent._interrupt=True
+14:07:16 ENTER: queued interrupt msg='make script short', agent_running=True
+14:12:16 interrupt fired: msg='output in torbox_credentials.txt instead of .env', children=0, parent._interrupt=True
+14:12:16 ENTER: queued interrupt msg='output in torbox_credentials.txt instead of .env', agent_running=True
+14:15:31 ENTER: queued interrupt msg='make script crisp and short, generate password always', agent_running=True
+14:15:31 interrupt fired: msg='make script crisp and short, generate password always', children=0, parent._interrupt=True
+14:33:07 ENTER: queued interrupt msg='import ~/config.py', agent_running=True
+14:33:07 interrupt fired: msg='import ~/config.py', children=0, parent._interrupt=True
+14:34:17 ENTER: queued interrupt msg='merge verify and signup script', agent_running=True
+14:34:17 interrupt fired: msg='merge verify and signup script', children=0, parent._interrupt=True
+14:38:08 ENTER: queued interrupt msg='append to credentials not write to it', agent_running=True
+14:38:08 interrupt fired: msg='append to credentials not write to it', children=0, parent._interrupt=True
+14:43:42 ENTER: queued interrupt msg='use current email instead', agent_running=True
+14:43:42 interrupt fired: msg='use current email instead', children=0, parent._interrupt=True
+14:44:28 interrupt fired: msg='pg.keyboard.type("torbox",delay=30); pg.keyboard.press("Ente', children=0, parent._interrupt=True
+14:44:28 ENTER: queued interrupt msg='pg.keyboard.type("torbox",delay=30); pg.keyboard.press("Ente', agent_running=True
+15:26:11 ENTER: queued interrupt msg='keep it simple no base64', agent_running=True
+15:26:11 interrupt fired: msg='keep it simple no base64', children=0, parent._interrupt=True
+16:15:09 ENTER: queued interrupt msg='what are you doing', agent_running=True
+16:15:09 interrupt fired: msg='what are you doing', children=0, parent._interrupt=True
+16:47:04 ENTER: queued interrupt msg='dont take browser route you will not be able to bypass cloud', agent_running=True
+16:47:04 interrupt fired: msg='dont take browser route you will not be able to bypass cloud', children=0, parent._interrupt=True
+16:48:31 interrupt fired: msg='what are youdoing', children=0, parent._interrupt=True
+16:48:31 ENTER: queued interrupt msg='what are youdoing', agent_running=True
+17:05:26 interrupt fired: msg='merge in a short  sh script', children=0, parent._interrupt=True
+17:05:26 ENTER: queued interrupt msg='merge in a short  sh script', agent_running=True
+18:55:12 interrupt fired: msg='use .env suprabase token', children=0, parent._interrupt=True
+18:55:12 ENTER: queued interrupt msg='use .env suprabase token', agent_running=True
+19:01:55 ENTER: queued interrupt msg='use browser-agent', agent_running=True
+19:01:55 interrupt fired: msg='use browser-agent', children=0, parent._interrupt=True
+19:07:01 interrupt fired: msg='set full snapshot , no compact', children=0, parent._interrupt=True
+19:07:01 ENTER: queued interrupt msg='set full snapshot , no compact', agent_running=True
+19:11:44 ENTER: queued interrupt msg='config terminal beautiful, browser detailed logs', agent_running=True
+19:11:44 interrupt fired: msg='config terminal beautiful, browser detailed logs', children=0, parent._interrupt=True
+19:12:41 ENTER: queued interrupt msg='.', agent_running=True
+19:12:41 interrupt fired: msg='.', children=0, parent._interrupt=True
+19:13:02 ENTER: queued interrupt msg='.', agent_running=True
+19:13:02 interrupt fired: msg='.', children=0, parent._interrupt=True
+19:13:41 ENTER: queued interrupt msg='.', agent_running=True
+19:13:41 interrupt fired: msg='.', children=0, parent._interrupt=True
+19:24:32 ENTER: queued interrupt msg='firecrawl using credentials in torbox_credentials login torb', agent_running=True
+19:24:32 interrupt fired: msg='firecrawl using credentials in torbox_credentials login torb', children=0, parent._interrupt=True
+19:24:50 ENTER: queued interrupt msg='what?', agent_running=True
+19:24:50 interrupt fired: msg='what?', children=0, parent._interrupt=True
+19:27:03 interrupt fired: msg='.', children=0, parent._interrupt=True
+19:27:03 ENTER: queued interrupt msg='.', agent_running=True
+19:27:05 ENTER: queued interrupt msg='.', agent_running=True
+19:27:05 interrupt fired: msg='.', children=0, parent._interrupt=True
+19:27:07 ENTER: queued interrupt msg='.', agent_running=True
+19:27:07 interrupt fired: msg='.', children=0, parent._interrupt=True
+20:26:40 ENTER: queued interrupt msg='.', agent_running=True
+20:26:40 interrupt fired: msg='.', children=0, parent._interrupt=True
+20:38:50 ENTER: queued interrupt msg='change this habit of first creating script then testing it, ', agent_running=True
+20:38:50 interrupt fired: msg='change this habit of first creating script then testing it, ', children=0, parent._interrupt=True
+20:47:07 ENTER: queued interrupt msg='.', agent_running=True
+20:47:07 interrupt fired: msg='.', children=0, parent._interrupt=True
+20:58:27 ENTER: queued interrupt msg='use firecrawl search', agent_running=True
+20:58:27 interrupt fired: msg='use firecrawl search', children=0, parent._interrupt=True
+21:34:04 interrupt fired: msg='firecrawl search i used https://db.torbox.app/auth/v1/signup', children=0, parent._interrupt=True
+21:34:04 ENTER: queued interrupt msg='firecrawl search i used https://db.torbox.app/auth/v1/signup', agent_running=True
+23:01:56 ENTER: queued interrupt msg='https://api.torbox.app/v1/api/unifiedpayments/activetrial is', agent_running=True
+23:01:56 interrupt fired: msg='https://api.torbox.app/v1/api/unifiedpayments/activetrial is', children=0, parent._interrupt=True
+06:28:08 ENTER: queued interrupt msg='maybe ii does not know ~/workspace/.hermes_data is home for ', agent_running=True
+06:28:08 interrupt fired: msg='maybe ii does not know ~/workspace/.hermes_data is home for ', children=0, parent._interrupt=True
+06:43:01 interrupt fired: msg='warkspace/install.sh', children=0, parent._interrupt=True
+06:43:01 ENTER: queued interrupt msg='warkspace/install.sh', agent_running=True

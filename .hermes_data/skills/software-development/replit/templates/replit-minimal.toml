@@ -1,0 +1,12 @@
+# Minimal working .replit config for a Python project with install.sh
+# Place this file at your repo root as `.replit`
+
+modules = ["python-3.12"]
+
+[agent]
+expertMode = true
+
+run = "bash install.sh"
+
+[nix]
+channel = "stable-24_05"

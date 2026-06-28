@@ -1,0 +1,10 @@
+{
+  "provider": "openrouter",
+  "snapshots": [
+    {
+      "date": "2026-06-27",
+      "used": 0,
+      "limit": null
+    }
+  ]
+}

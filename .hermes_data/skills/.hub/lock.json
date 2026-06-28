@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "installed": {
+    "firecrawl-agent": {
+      "source": "skills.sh",
+      "identifier": "skills-sh/firecrawl/cli/firecrawl",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:e793d772bb79e8a8",
+      "install_path": "firecrawl-agent",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {},
+      "installed_at": "2026-06-25T00:45:02.186791+00:00",
+      "updated_at": "2026-06-25T00:45:02.186799+00:00"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+URL=$(curl -sI -L 'https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-GB' | grep -i '^location:' | sed 's/location: //i' | tr -d '\r') && curl -L -o /tmp/firefox-uk.tar.xz "$URL" && tar -xf /tmp/firefox-uk.tar.xz -C /tmp && /tmp/firefox/firefox &

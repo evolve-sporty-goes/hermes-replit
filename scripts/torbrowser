@@ -1,0 +1,1 @@
+LINK=$(curl -s "https://www.torproject.org/download/" | grep -oP 'href="[^"]+tor-browser-linux-x86_64-[^"]+tar.xz"' | grep -oP '/dist/torbrowser/[^"]+' | head -1) && curl -L -o /tmp/tor.tar.xz "https://www.torproject.org$LINK" && tar xf /tmp/tor.tar.xz -C /tmp && rm /tmp/tor.tar.xz && cd /tmp/tor-browser/ && ./start*
