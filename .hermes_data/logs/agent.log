@@ -10953,3 +10953,11 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 2026-06-28 20:06:00,083 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-355 (_call):140548266501824 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
 2026-06-28 20:06:00,083 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #37: model=owl-alpha provider=openrouter in=98614 out=123 total=98737 latency=4.9s cache=97984/98614 (99%)
 2026-06-28 20:06:00,210 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:06:04,491 INFO [20260628_200142_1bdee0] agent.tool_executor: tool terminal completed (4.28s, 958 chars)
+2026-06-28 20:06:04,494 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:06:04,518 DEBUG agent.chat_completion_helpers: Cloud reasoning stream — read timeout raised to 240s to match stale-stream detector
+2026-06-28 20:06:04,523 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-357 (_call):140548266501824 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:06:08,457 DEBUG run_agent: OpenRouter response cache MISS
+2026-06-28 20:06:08,498 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-357 (_call):140548266501824 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-28 20:06:08,499 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #38: model=owl-alpha provider=openrouter in=99114 out=54 total=99168 latency=4.0s cache=98560/99114 (99%)
+2026-06-28 20:06:08,512 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed

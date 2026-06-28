@@ -4005,3 +4005,5 @@ RuntimeError: No LLM provider configured for task=vision provider=auto. Run: her
 2026-06-28 20:05:55,197 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
 2026-06-28 20:05:57,109 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
 2026-06-28 20:06:00,210 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:06:04,494 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-28 20:06:08,512 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed

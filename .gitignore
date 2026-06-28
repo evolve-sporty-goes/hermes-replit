@@ -25,3 +25,4 @@ freellmapi
 # Session logs (contain secrets in conversation history)
 freellmapi
 .hermes_data/webui/sessions/
+.hermes_data/config.yaml
