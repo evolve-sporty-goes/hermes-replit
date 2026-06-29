@@ -4,3 +4,72 @@
 
 → Fetching updates...
 ✓ Already up to date!
+
+=== hermes update started 2026-06-29T08:05:54 ===
+⚕ Updating Hermes Agent...
+
+→ Fetching updates...
+→ Found 2 new commit(s)
+  ✓ Pre-update snapshot: 20260629-080554-pre-update
+→ Pulling updates...
+  ✓ Cleared 72 stale __pycache__ directories
+→ Updating Python dependencies...
+  → Installing managed uv into /home/runner/workspace/.hermes_data/bin ...
+  ✓ Managed uv installed (uv 0.11.25 (x86_64-unknown-linux-gnu))
+
+→ Refreshing 12 active lazy backend(s)...
+  ↑ 3 refreshed: stt.faster_whisper, platform.slack, platform.teams
+  ✓ 9 already current
+→ Updating Node.js dependencies...
+  ✓ repo root + ui-tui, web workspaces (desktop skipped)
+→ Building web UI...
+    
+    > web@0.0.0 build
+    > tsc -b && vite build
+    
+    vite v8.1.0 building client environment for production...
+    [2K
+    transforming...✓ 484 modules transformed.
+    rendering chunks...
+    computing gzip size...
+    ../hermes_cli/web_dist/index.html                                         0.51 kB │ gzip:   0.32 kB
+    ../hermes_cli/web_dist/assets/Mondwest-Regular-CWscgue7.woff2            23.82 kB
+    ../hermes_cli/web_dist/assets/RulesExpanded-Regular-l8uVympt.woff2       33.82 kB
+    ../hermes_cli/web_dist/assets/RulesExpanded-Bold-DZA7s8Pa.woff2          35.01 kB
+    ../hermes_cli/web_dist/assets/RulesCompressed-Regular-BSXFyF4x.woff2     37.76 kB
+    ../hermes_cli/web_dist/assets/RulesCompressed-Medium-CA76_CrB.woff2      38.84 kB
+    ../hermes_cli/web_dist/assets/Collapse-Bold-mgICk9-_.woff2               59.14 kB
+    ../hermes_cli/web_dist/assets/Collapse-Regular-DysayoTY.woff2            62.81 kB
+    ../hermes_cli/web_dist/assets/filler-bg0-DxMaWJpb.webp                  185.27 kB
+    ../hermes_cli/web_dist/assets/index-DQgACwf8.css                        110.74 kB │ gzip:  17.65 kB
+    ../hermes_cli/web_dist/assets/index-5WRgsENW.js                       1,931.72 kB │ gzip: 550.42 kB
+    
+    ✓ built in 1.14s
+    [plugin builtin:vite-reporter]
+    (!) Some chunks are larger than 500 kB after minification. Consider:
+    - Using dynamic import() to code-split the application
+    - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+    - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+    npm notice
+    npm notice New major version of npm available! 10.8.2 -> 11.17.0
+    npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.17.0
+    npm notice To update run: npm install -g npm@11.17.0
+    npm notice
+  ✓ Web UI built
+
+✓ Code updated!
+  ✓ Model catalog cache refreshed from checkout
+
+→ Syncing bundled skills...
+  ✓ Skills are up to date
+
+→ Syncing bundled skills to all profiles...
+  default: up to date
+
+→ Checking configuration for new options...
+  ✓ Configuration is up to date
+
+✓ Update complete!
+
+Tip: You can now select a provider and model:
+  hermes model              # Select provider and model

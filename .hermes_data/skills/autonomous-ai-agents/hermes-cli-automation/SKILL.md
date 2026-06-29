@@ -228,6 +228,8 @@ hermes config set model.default "${MODEL}"
 - **Glob pitfall**: `*$((RANDOM % N))` needs double `$((...))` arithmetic expansion. Single-layer `${POOL[RANDOM % N]}` is a syntax error in bash.
 - **`printf` format string mangling**: when writing scripts via `write_file`, the `%s` placeholders in `printf` format strings can get dropped or mangled by terminal/shell escaping layers. Always verify the written file with `bash -n` after creation. If broken, use `patch` to fix the specific line.
 - **Cloudflare URL convention**: endpoint format is `https://api.cloudflare.com/client/v4/accounts/<ACCOUNT_ID>/ai/v1`. Script should ask for `account_id` (not full URL) and construct the endpoint internally.
+- **Fallback models are managed at top level, not nested**: set `fallback_model.provider` and `fallback_model.model` via `hermes config set`, not under `custom_providers`. Verify with `hermes fallback list`.
+- **`hermes fallback add` is interactive** and reuses the same TUI picker as `hermes model`; in non-interactive contexts use direct `hermes config set fallback_model.*` commands instead.
 
 ## state.db Corruption Repair
 

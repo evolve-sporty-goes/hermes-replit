@@ -47,8 +47,9 @@ find "$BIN" -type l ! -exec test -e {} \; -delete
 ln -sf $HOME/workspace/scripts/* "$BIN" 2>/dev/null
 chmod +x $BIN/*
 
-script.sh &
+script.sh >/dev/null 2>&1 &
 sync 
 setcfapi.sh
 # 8. Launch hermes
+hermes update
 hermes

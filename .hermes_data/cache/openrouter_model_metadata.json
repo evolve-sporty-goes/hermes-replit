@@ -6558,7 +6558,7 @@
 },
 "moonshotai/kimi-k2-0905":{
 "context_length":262144,
-"max_completion_tokens":262144,
+"max_completion_tokens":100352,
 "name":"MoonshotAI: Kimi K2 0905",
 "pricing":{
 "prompt":"0.0000006",
@@ -6567,7 +6567,7 @@
 },
 "kimi-k2-0905":{
 "context_length":262144,
-"max_completion_tokens":262144,
+"max_completion_tokens":100352,
 "name":"MoonshotAI: Kimi K2 0905",
 "pricing":{
 "prompt":"0.0000006",
@@ -7284,7 +7284,7 @@
 },
 "moonshotai/kimi-k2":{
 "context_length":131072,
-"max_completion_tokens":32768,
+"max_completion_tokens":100352,
 "name":"MoonshotAI: Kimi K2 0711",
 "pricing":{
 "prompt":"0.00000057",
@@ -7293,7 +7293,7 @@
 },
 "kimi-k2":{
 "context_length":131072,
-"max_completion_tokens":32768,
+"max_completion_tokens":100352,
 "name":"MoonshotAI: Kimi K2 0711",
 "pricing":{
 "prompt":"0.00000057",

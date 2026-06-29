@@ -4,7 +4,6 @@
 !.hermes_data/
 !.hermes_data/*
 !.hermes_data/**/*
-*env
 *shm
 *wal
 *cache*
@@ -19,6 +18,7 @@ credentials/cloudflare.txt
 scripts/email.sh
 .hermes_data/.env
 .hermes_data/auth.json
+.hermes_data/.hermes_history
 .hermes_data/state.db
 brave-browser/
 freellmapi
