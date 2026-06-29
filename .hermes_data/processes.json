@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "session_id": "proc_8ea4ab8e7cd1",
+    "command": "cd /home/runner/workspace && ./scripts/sync 2>&1",
+    "pid": 4270,
+    "pid_scope": "host",
+    "host_start_time": 110085,
+    "cwd": "/home/runner/workspace",
+    "started_at": 1782732873.446229,
+    "task_id": "default",
+    "session_key": "bd3dda32973e",
+    "watcher_platform": "",
+    "watcher_chat_id": "",
+    "watcher_user_id": "",
+    "watcher_user_name": "",
+    "watcher_thread_id": "",
+    "watcher_message_id": "",
+    "watcher_interval": 0,
+    "notify_on_complete": false,
+    "watch_patterns": []
+  }
+]
