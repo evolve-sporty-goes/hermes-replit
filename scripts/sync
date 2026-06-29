@@ -42,14 +42,14 @@ sync_file_by_history() {
 
     # Case A: Handle Empty/Missing Files First
     if [ "$local_exists" -eq 0 ] && [ "$repo_exists" -eq 0 ]; then
-        echo "SKIP (A): $local_file — neither local nor repo has content"
+        echo "SKIP (A): $repo_file — neither local nor repo has content"
         return 0
     elif [ "$local_exists" -eq 0 ]; then
-        echo "PULL (A): $local_file ← bootstrapping from repo"
+        echo "PULL (A): $repo_file ← bootstrapping from repo"
         cp "$repo_file" "$local_file"
         return 0
     elif [ "$repo_exists" -eq 0 ]; then
-        echo "PUSH (A): $local_file → repo empty, staging local"
+        echo "PUSH (A): $repo_file → repo empty, staging local"
         cp "$local_file" "$repo_file"
         git add "$repo_file"
         return 1
@@ -57,7 +57,7 @@ sync_file_by_history() {
 
     # Case B: Both exist with same content
     if diff -q "$local_file" "$repo_file" >/dev/null 2>&1; then
-        echo "OK (B): $local_file — identical"
+        echo "OK (B): $repo_file — identical"
         return 0
     fi
 
@@ -67,12 +67,12 @@ sync_file_by_history() {
     repo_time=$(git log -1 --format=%ct -- "$repo_file" 2>/dev/null || echo 0)
 
     if [ "$local_time" -gt "$repo_time" ]; then
-        echo "PUSH (C): $local_file → local newer ($local_time > $repo_time)"
+        echo "PUSH (C): $repo_file → local newer ($local_time > $repo_time)"
         cp "$local_file" "$repo_file"
         git add "$repo_file"
         return 1
     else
-        echo "PULL (C): $local_file ← repo newer ($repo_time > $local_time)"
+        echo "PULL (C): $repo_file ← repo newer ($repo_time > $local_time)"
         cp "$repo_file" "$local_file"
         return 0
     fi
