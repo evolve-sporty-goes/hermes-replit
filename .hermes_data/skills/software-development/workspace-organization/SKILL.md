@@ -136,6 +136,18 @@ Since `chmod +x` only affects files existing at execution time, use one of:
    while true; do chmod +x $HOME/workspace/scripts/*; sleep 5; done &
    ```
 
+## Pitfall: awk Rule Ordering in .gitignore Parsers
+
+When extracting the sensitive block from `.gitignore` with `awk`, naive multi-rule patterns silently drop entries after comment lines. The compound-rule form with `substr`/`length` checks is required:
+
+```awk
+# CORRECT — single compound rule, no rule-ordering issues
+awk 'BEGIN{flag=0} /# Sensitive/{flag=1; next} flag==1{ if(substr($0,1,1)=="#") next; if(length($0)>0) print}'
+
+# BROKEN — rule ordering causes entries after comments to be lost
+awk '/# Sensitive/{flag=1; next} /^$/{flag=0} flag && !/^#/ && /\S/{print}'
+```
+
 ## Pitfall: Truncated Lines During Edits
 
 When using `patch` tool, if `old_string` is too short or ambiguous, it can produce truncated output (e.g., a curl `-H` line cut mid-string). Always:
