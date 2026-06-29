@@ -137,11 +137,17 @@ git config user.email "hermes@replit"
 git config user.name "hermes-replit"
 git pull origin main
 
-# Standard workspace tracking
+# Standard workspace tracking — commit per file with AI message
 git add -A
 if ! git diff --cached --quiet; then
-    git commit -m "auto-sync: $(ai_commit_msg)"
-    
+    staged=$(git diff --cached --name-only)
+    git reset -q
+    while IFS= read -r f; do
+        git add "$f"
+        m=$(ai_commit_msg)
+        git commit -m "$m" || true
+    done <<< "$staged"
+
     # Attempt push; if blocked by secret scanning, strip from history and force-push
     push_output=$(git push origin main 2>&1) || {
         echo "$push_output"
