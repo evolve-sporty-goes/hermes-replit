@@ -4336,3 +4336,10 @@ RuntimeError: No LLM provider configured for task=vision provider=auto. Run: her
 2026-06-29 04:39:26,937 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
 2026-06-29 04:40:03,199 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
 2026-06-29 04:40:03,558 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 04:40:47,974 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 04:40:47,981 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 04:40:48,693 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 04:40:48,698 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 04:40:48,730 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 04:40:48,731 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 04:40:48,732 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
