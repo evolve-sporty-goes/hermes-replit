@@ -17,13 +17,13 @@
     "created_at": "2026-06-28T20:07:02.079736+00:00",
     "created_by": null,
     "last_patched_at": null,
-    "last_used_at": "2026-06-28T20:07:46.317717+00:00",
-    "last_viewed_at": "2026-06-28T20:07:46.313646+00:00",
+    "last_used_at": "2026-06-29T09:24:33.844716+00:00",
+    "last_viewed_at": "2026-06-29T09:24:33.832188+00:00",
     "patch_count": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 2,
-    "view_count": 2
+    "use_count": 3,
+    "view_count": 3
   },
   "hermes-agent": {
     "archived_at": null,
@@ -55,14 +55,14 @@
     "archived_at": null,
     "created_at": "2026-06-28T20:00:15.196693+00:00",
     "created_by": null,
-    "last_patched_at": "2026-06-29T07:51:51.698524+00:00",
-    "last_used_at": "2026-06-29T07:51:46.196182+00:00",
-    "last_viewed_at": "2026-06-29T07:51:46.190700+00:00",
-    "patch_count": 28,
+    "last_patched_at": "2026-06-29T09:25:59.955415+00:00",
+    "last_used_at": "2026-06-29T09:24:56.997195+00:00",
+    "last_viewed_at": "2026-06-29T09:24:56.990710+00:00",
+    "patch_count": 29,
     "pinned": false,
     "state": "active",
-    "use_count": 17,
-    "view_count": 17
+    "use_count": 20,
+    "view_count": 20
   },
   "software-development:workspace-organization": {
     "archived_at": null,

@@ -2,6 +2,27 @@
 
 When pushing to a repo with GitHub Push Protection enabled, commits containing secrets (API keys, tokens) will be rejected. This guide covers removing secrets from git history.
 
+## Critical Pitfall: `git filter-repo` Removes the `origin` Remote
+
+After running `git filter-repo`, the `origin` remote is **deleted**. You must re-add it AND re-setup authentication before pushing:
+
+```bash
+# Re-add the remote
+git remote add origin https://github.com/org/repo.git
+
+# Re-setup HTTPS token auth (filter-repo does NOT preserve credential helpers)
+TMPDIR=$(mktemp -d); trap "rm -rf $TMPDIR" EXIT
+ASKPASS="$TMPDIR/git-askpass"
+printf '#!/bin/bash\n%s\n' "$(cat credentials/.pat)" > "$ASKPASS"
+chmod +x "$ASKPASS"
+export GIT_ASKPASS="$ASKPASS"
+
+# Now force-push
+git push --force origin main
+```
+
+Without `GIT_ASKPASS` set, the push will fail with `fatal: 'origin' does not appear to be a git repository` OR hang waiting for credentials.
+
 ## Pattern: Filter → Push → Discover → Repeat
 
 Push protection reveals secrets iteratively. Each push attempt exposes the next file/location:
@@ -42,35 +63,87 @@ git add -A && git commit -m "checkpoint: pre-filter"
 #### 4. Run filter-repo to remove files from all history
 
 ```bash
-git filter-repo --invert-paths --path <file1> --path <file2> --force
+git filter-repo --force --path <file1> --path <file2> --invert-paths
+```
+
+Or to remove an entire directory (recommended for state-snapshot dirs that always contain secrets):
+
+```bash
+git filter-repo --force --path ".hermes_data/state-snapshots" --invert-paths
 ```
 
 - `--invert-paths` = remove these paths (keep everything else)
 - `--path` = file or directory to remove (repeat for multiple)
 - `--force` = required if repo was not freshly cloned
 
-#### 5. Re-add remote (filter-repo removes it)
+#### 5. Re-add remote and re-setup auth (REQUIRED — filter-repo removes origin)
 
 ```bash
 git remote add origin https://github.com/org/repo.git
+
+# For HTTPS token auth:
+PAT=$(cat credentials/.pat)
+TMPDIR=$(mktemp -d); trap "rm -rf $TMPDIR" EXIT
+ASKPASS="$TMPDIR/git-askpass"
+printf '#!/bin/bash\n%s\n' "$PAT" > "$ASKPASS"
+chmod +x "$ASKPASS"
+export GIT_ASKPASS="$ASKPASS"
+
+# For SSH auth (alternative):
+# ssh-add ~/.ssh/id_ed25519
 ```
 
-#### 6. Force push
+#### 6. Stage .gitignore updates and commit
 
 ```bash
-PAT=$(cat credentials/.pat)
-ASKPASS=$(mktemp)
-printf '#!/bin/bash\necho %s\n' "$PAT" > "$ASKPASS"
-chmod +x "$ASKPASS"
-GIT_ASKPASS="$ASKPASS" git push origin main --force
-rm -f "$ASKPASS"
+git add .gitignore
+git commit -m "auto: add secret-blocked files to gitignore"
 ```
 
-#### 7. Verify
+#### 7. Force push
+
+```bash
+git push --force origin main
+```
+
+#### 8. Verify
 
 ```bash
 git log --all -- <file1> <file2>  # should return nothing
 ```
+
+## Sync Script Integration
+
+The `scripts/sync` workflow now uses `git filter-repo` automatically when push protection blocks:
+
+```bash
+push_output=$(git push origin main 2>&1) || {
+    blocked_files=$(echo "$push_output" | grep -oP 'path:\s+\K\S+' | cut -d: -f1 | sort -u)
+    
+    filter_args=()
+    while IFS= read -r blocked_file; do
+        rel_path="${blocked_file#$WORKSPACE/}"
+        filter_args+=(--path "$rel_path")
+        # Also add to .gitignore to prevent recurrence
+        echo "$rel_path" >> "$GITIGNORE"
+    done <<< "$blocked_files"
+    
+    # Strip entire state-snapshots dir (always contains secrets)
+    filter_args+=(--path ".hermes_data/state-snapshots" --invert-paths)
+    
+    git filter-repo --force "${filter_args[@]}"
+    
+    # CRITICAL: Re-add origin and re-setup auth
+    git remote add origin "https://github.com/org/repo.git"
+    # ... re-setup GIT_ASKPASS ...
+    
+    git add "$GITIGNORE"
+    git commit -m "auto: add secret-blocked files to gitignore"
+    git push --force origin main
+}
+```
+
+**Key insight from real-world usage:** The blocked files are often inside `.hermes_data/state-snapshots/<timestamp>-pre-update/` directories. These snapshot dirs contain full copies of config files at update time. Always add `--path ".hermes_data/state-snapshots" --invert-paths` to the filter to prevent the same issue from recurring with future snapshots.
 
 ## Fallback: `git filter-branch` (when filter-repo unavailable)
 
@@ -108,7 +181,7 @@ git add .gitignore && git commit -m "chore: prevent secrets in git history"
 
 ```bash
 PAT=$(cat credentials/.pat)
-git push --force https://username:${PAT}@github.com/org/repo.git main
+git push --force https://x-access-token:${PAT}@github.com/org/repo.git main
 ```
 
 ## Solving the "unstaged changes" Problem
@@ -139,6 +212,7 @@ From this workspace's experience:
 |------|-------------|-----|
 | `freellmapi` | Cloudflare API Token + frellmapi key | Hardcoded script with credentials |
 | `.hermes_data/config.yaml` | Cloudflare API Token | `hermes config set cloudflare.apiKey "..."` |
+| `.hermes_data/state-snapshots/**` | All of the above | Full config snapshots taken before updates |
 | `.hermes_data/webui/sessions/**` | Any secrets mentioned in conversation | Session logs capture all agent/user conversation |
 
 **Add all of these to `.gitignore`:**
@@ -147,6 +221,7 @@ From this workspace's experience:
 # Never commit secrets
 freellmapi
 .hermes_data/config.yaml
+.hermes_data/state-snapshots
 .hermes_data/webui/sessions/
 ```
 

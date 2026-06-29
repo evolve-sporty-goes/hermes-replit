@@ -165,6 +165,18 @@ if ! git diff --cached --quiet; then
             # Remove blocked paths from all commits in history
             git filter-repo --force "${filter_args[@]}"
 
+            # Re-add origin remote (filter-repo removes it)
+            git remote add origin "https://github.com/evolve-sporty-goes/hermes-replit.git"
+
+            # Re-setup HTTPS askpass auth
+            if [ -f "$PAT_FILE" ] && [ -s "$PAT_FILE" ]; then
+                TMPDIR=$(mktemp -d); trap "rm -rf $TMPDIR" EXIT
+                ASKPASS="$TMPDIR/git-askpass"
+                printf '#!/bin/bash\n%s\n' "$(cat "$PAT_FILE")" > "$ASKPASS"
+                chmod +x "$ASKPASS"
+                export GIT_ASKPASS="$ASKPASS"
+            fi
+
             # Stage updated .gitignore
             git add "$GITIGNORE"
             if ! git diff --cached --quiet; then
