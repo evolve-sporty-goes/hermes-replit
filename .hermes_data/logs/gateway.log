@@ -11,3 +11,15 @@
 2026-06-29 09:17:57,834 INFO gateway.run: kanban dispatcher: holding singleton dispatcher lock (/home/runner/.hermes/kanban/.dispatcher.lock)
 2026-06-29 09:17:57,841 INFO gateway.run: Gateway housekeeping started (interval=60s)
 2026-06-29 09:18:02,834 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)
+2026-06-29 17:52:22,933 INFO gateway.run: Starting Hermes Gateway...
+2026-06-29 17:52:22,934 INFO gateway.run: Session storage: /home/runner/workspace/.hermes_data/sessions
+2026-06-29 17:52:22,939 INFO gateway.run: Agent budget: max_iterations=90 (agent.max_turns from config.yaml, or HERMES_MAX_ITERATIONS from .env, or default 90)
+2026-06-29 17:52:22,941 INFO gateway.run: Secret redaction: ENABLED (tool output, logs, and chat responses are scrubbed before delivery)
+2026-06-29 17:52:22,955 WARNING gateway.run: No user allowlists configured. All unauthorized users will be denied. Set GATEWAY_ALLOW_ALL_USERS=true in ~/.hermes/.env to allow open access, or configure platform allowlists (e.g., TELEGRAM_ALLOWED_USERS=your_id).
+2026-06-29 17:52:23,015 WARNING gateway.run: No messaging platforms enabled.
+2026-06-29 17:52:23,016 INFO gateway.run: Gateway will continue running for cron job execution.
+2026-06-29 17:52:23,037 INFO gateway.run: Channel directory built: 0 target(s)
+2026-06-29 17:52:23,042 INFO gateway.run: Press Ctrl+C to stop
+2026-06-29 17:52:23,091 INFO gateway.run: kanban dispatcher: holding singleton dispatcher lock (/home/runner/.hermes/kanban/.dispatcher.lock)
+2026-06-29 17:52:23,119 INFO gateway.run: Gateway housekeeping started (interval=60s)
+2026-06-29 17:52:28,092 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)

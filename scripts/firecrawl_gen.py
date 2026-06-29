@@ -21,7 +21,7 @@ import importlib.util
 sys.path.insert(0, "/home/runner")
 sys.path.insert(0, "/home/runner/workspace")
 
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch, launch_persistent_context
 
 CRED_PATH = "/home/runner/workspace/credentials/firecrawl_credentials.txt"
 PROTON_PROFILE = os.path.expanduser("~/proton_profile")
@@ -30,18 +30,18 @@ PROTON_PROFILE = os.path.expanduser("~/proton_profile")
 # Args: PROTON_USER, PROTON_PASS, CHROMIUM, PROFILE_DIR, SIGNUP_EMAIL
 PROTON_FETCH_SCRIPT = r'''
 import sys, os, re, time
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch, launch_persistent_context
 
 PROTON_USER = sys.argv[1]
 PROTON_PASS = sys.argv[2]
 PROFILE_DIR = sys.argv[3]
 SIGNUP_EMAIL = sys.argv[4]
 
-with sync_playwright() as p:
-    context = p.chromium.launch_persistent_context(PROFILE_DIR)
-    page = context.pages[0] if context.pages else context.new_page()
 
-    # Go to Proton — may already be logged in via persistent profile
+context = launch_persistent_context(PROFILE_DIR, headless=False, humanize=True)
+page = context.pages[0] if context.pages else context.new_page()
+
+# Go to Proton — may already be logged in via persistent profile
     page.goto("https://account.proton.me/login", timeout=60000)
     page.wait_for_timeout(3000)
 
@@ -306,11 +306,11 @@ def main():
     print(f"Generated password: {password}")
 
     # Main retry loop: signup → check inbox → verify+key
-    with sync_playwright() as p:
-        context = p.chromium.launch_persistent_context(browser_tmpdir)
-        page = context.pages[0] if context.pages else context.new_page()
+    
+    context = launch_persistent_context(browser_tmpdir, headless=False, humanize=True)
+    page = context.pages[0] if context.pages else context.new_page()
 
-        for attempt in range(1, 4):
+    for attempt in range(1, 4):
             # Step 2: Sign up
             do_signup(page, email, password)
 
@@ -377,7 +377,7 @@ def main():
             print("\nDone!")
             return
 
-        context.close()
+    context.close()
 
     print("FAILED: 3 signup attempts exhausted.")
 

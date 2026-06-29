@@ -1,140 +1,214 @@
 ---
 name: anti-detect-browser-automation
 description: |
-  Browser automation for signup/login flows using Playwright + system Chromium.
-  Covers persistent-context launch patterns, proxy injection, Cloudflare
-  Turnstile handling, and common pitfalls when automating bot-sensitive
-  sites. Previously covered Camoufox (Firefox) — see migration note below.
-version: 2.0.0
+  Browser automation for signup/login flows using CloakBrowser.
+  Covers launch patterns, proxy injection, Cloudflare Turnstile auto-solve,
+  humanize behavior, persistent profiles, and common pitfalls when
+  automating bot-sensitive sites. CloakBrowser is a custom-compiled Chromium
+  with 58+ C++ source-level stealth patches — passes 30/30 bot detection tests.
+version: 4.0.0
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [playwright, chromium, browser-automation, bot-detection, signup-automation]
+    tags: [playwright, chromium, browser-automation, bot-detection, signup-automation, cloakbrowser]
     category: software-development
     related_skills: [computer-use]
 ---
 
-# Browser Automation (Playwright + Chromium)
+# Browser Automation (CloakBrowser)
 
-## Migration note (2026-06-29)
+## Migration history
 
-This workspace **migrated from Camoufox (Firefox) to Playwright + system Chromium** on Replit/NixOS.
-Camoufox (anti-fingerprint Firefox wrapper) was removed because:
-1. The `isMobile` CDP protocol error kept returning after every `pip install --upgrade playwright`
-2. The Camoufox binary download (~700MB) was heavy and slow on ephemeral containers
-3. System Chromium (already installed at `/nix/store/*-chromium-*/bin/chromium`) provides the same Playwright API without the compatibility layer
+1. **Camoufox (Firefox)** → removed 2026-06-29 (CDP `isMobile` errors, heavy binary).
+2. **Vanilla Playwright + bundled Chromium** → replaced 2026-07-01 by CloakBrowser.
+3. **CloakBrowser** (current) — custom-compiled Chromium with 58+ C++ source-level stealth patches. Passes 30/30 bot detection tests incl. Cloudflare Turnstile, FingerprintJS, reCAPTCHA v3 (0.9 score). Drop-in Playwright replacement.
 
-See `references/camoufox-playwright-cdp-compat.md` for the historical Camoufox notes including the `isMobile` patch.
+See `references/camoufox-playwright-cdp-compat.md` for historical Camoufox/Playwright migration notes.
 
-## Current approach: Playwright + system Chromium
+## Setup
 
-All signup/login scripts now use Playwright's `launch_persistent_context` with the system Chromium binary:
+```bash
+pip install cloakbrowser
+python3 -m cloakbrowser install      # Download stealth Chromium binary
+python3 -m cloakbrowser info         # Check install status
+```
+
+## Current approach: CloakBrowser
+
+CloakBrowser provides `launch()` and `launch_persistent_context()` as top-level
+functions — no `sync_playwright()` context manager needed. Returns standard
+Playwright objects; all Playwright methods work unchanged.
 
 ```python
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch, launch_persistent_context
 
-CHROMIUM_PATH = "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
+# Fresh profile per run
+import tempfile, shutil, atexit
+browser_tmpdir = tempfile.mkdtemp(prefix="browser-profile-")
+atexit.register(lambda: shutil.rmtree(browser_tmpdir, ignore_errors=True))
 
-with sync_playwright() as p:
-    context = p.chromium.launch_persistent_context(
-        user_data_dir,          # tmpdir per run (cleaned up on exit)
-        executable_path=CHROMIUM_PATH,
-        headless=False,
-        proxy={"server": "socks5://..."},  # optional
-    )
-    page = context.pages[0] if context.pages else context.new_page()
-    page.goto("https://example.com")
-    # ... interact ...
+context = launch_persistent_context(
+    browser_tmpdir,
+    headless=False,
+    humanize=True,    # human-like mouse curves, keyboard timing, scroll patterns
+    proxy="socks5://user:pass@proxy:1080",  # optional; inline credentials
+    geoip=True,       # auto-set timezone/locale from proxy IP (requires proxy)
+)
+page = context.pages[0] if context.pages else context.new_page()
+page.goto("https://example.com")
+# ... interact ...
+context.close()
 ```
 
 ### Key parameters
 
 | Parameter | Purpose |
 |---|---|
-| `user_data_dir` | Fresh tmpdir per run (or persistent profile for session-keeping) |
-| `executable_path=CHROMIUM_PATH` | Required on Replit/NixOS — system Chromium not auto-detected |
-| `headless=True` | **Always True** — `headless=False` hangs with no display server |
-| `proxy={"server": "socks5://..."}` | Per-browser SOCKS5/HTTP proxy |
-| `no_viewport=True` | Skip viewport sizing (Proton Mail needs this) |
+| `headless=False` | User preference for this workspace |
+| `humanize=True` | Human-like mouse curves, keyboard timing, scroll patterns — one flag |
+| `geoip=True` | Auto-derive timezone/locale from proxy IP (requires proxy) |
+| `proxy="socks5://..."` | HTTP or SOCKS5 with inline credentials (string, not dict) |
+| `license_key="cb_..."` | Pro tier (v148+ binaries). Free tier = v146 (goes stale within weeks) |
+
+### API surface
+
+CloakBrowser returns **standard Playwright objects** (`Browser`, `BrowserContext`, `Page`).
+
+| CloakBrowser function | Old Playwright pattern |
+|---|---|
+| `launch(headless=False, humanize=True)` | `sync_playwright() → p.chromium.launch()` + manual JS injection + humanize helpers |
+| `launch_persistent_context(dir, headless=False, humanize=True)` | `sync_playwright() → p.chromium.launch_persistent_context()` + manual JS injection |
+| `humanize=True` | Was: custom `human_type()` / `human_click()` helper functions |
+| `geoip=True` | Was: manual `timezone_id` / `locale` context options |
+| `proxy="socks5://..."` (string) | Was: `proxy={"server": "socks5://..."}` (dict) |
 
 ### Script patterns in this workspace
 
-**Pattern A — Fresh profile per run (signup scripts like openrouter_signup.py, firecrawl_gen.py):**
+**Pattern A — Fresh profile per run (openrouter_signup.py, firecrawl_gen.py):**
 ```python
+from cloakbrowser import launch_persistent_context
 import tempfile, shutil, atexit
+
 browser_tmpdir = tempfile.mkdtemp(prefix="browser-profile-")
 atexit.register(lambda: shutil.rmtree(browser_tmpdir, ignore_errors=True))
 
-with sync_playwright() as p:
-    context = p.chromium.launch_persistent_context(
-        browser_tmpdir,
-        executable_path=CHROMIUM_PATH,
-        headless=False,
-    )
-    page = context.pages[0] if context.pages else context.new_page()
-    # signup → verify → extract key all within one context
+context = launch_persistent_context(browser_tmpdir, headless=False, humanize=True)
+page = context.pages[0] if context.pages else context.new_page()
+# signup → verify → extract key all within one context
+# ...
+context.close()
 ```
 
 **Pattern B — Persistent profile (Proton Mail at ~/proton_profile):**
 ```python
-with sync_playwright() as p:
-    context = p.chromium.launch_persistent_context(
-        PROTON_PROFILE,
-        executable_path=CHROMIUM_PATH,
-        headless=False,
-        no_viewport=True,
-    )
-    page = context.pages[0] if context.pages else context.new_page()
-    # Already logged in from prior run
+from cloakbrowser import launch_persistent_context
+
+context = launch_persistent_context(
+    PROTON_PROFILE,
+    headless=False,
+)
+page = context.pages[0] if context.pages else context.new_page()
+# Already logged in from prior run
+# ...
+context.close()
 ```
 
-**Pattern C — Proxy rotation (torbox-signup.sh):**
+**Pattern C — Proxy with geoip:**
 ```python
-proxy_config = {"server": f"socks5://{proxy_addr}"} if proxy_addr else None
-context = p.chromium.launch_persistent_context(
-    td,
-    executable_path=CHROMIUM,
+context = launch_persistent_context(
+    browser_tmpdir,
     headless=False,
-    proxy=proxy_config,
+    humanize=True,
+    proxy="socks5://user:pass@proxy:1080",
+    geoip=True,   # timezone/locale auto-matched to proxy exit IP
 )
 ```
 
+**Pattern D — Subprocess (Proton fetch in openrouter_signup.py):**
+
+When launching a separate Python process that also needs CloakBrowser, the
+subprocess must `from cloakbrowser import launch_persistent_context` independently
+— it cannot share the parent's browser context across processes. The subprocess
+script is embedded as a string and passed to `sys.executable -c`.
+
+```python
+PROTON_FETCH_SCRIPT = r'''
+from cloakbrowser import launch_persistent_context
+# ... subprocess logic using launch_persistent_context(PROFILE_DIR, headless=False) ...
+'''
+# Run in subprocess
+subprocess.run([sys.executable, "-c", PROTON_FETCH_SCRIPT, ...])
+```
+
+## User preferences
+
+- **Automation/replacement scripts: use bash, not Python** — user explicitly said "No python use bash" for bulk file transforms and install scripts. Prefer `sed`/`awk` over Python one-liners.
+
+## Form handling: Clerk.js (OpenRouter, Firecrawl, etc.)
+
+Clerk.js intercepts form submissions and reads its own internal React state — **not the DOM**. Standard Playwright `.fill()` hits the DOM but Clerk never sees the change. The Continue button appears enabled but Clerk silently blocks the POST.
+
+**Checkbox fix** — `.check()` and `.click()` on `#legalAccepted-field` don't update Clerk's React state:
+```python
+# BROKEN: Clerk doesn't see this
+page.locator("#legalAccepted-field").check()
+
+# WORKS: dispatches React-compatible events
+page.evaluate("""() => {
+    const cb = document.querySelector('#legalAccepted-field');
+    cb.checked = true;
+    cb.dispatchEvent(new Event('change', { bubbles: true }));
+    cb.dispatchEvent(new Event('input', { bubbles: true }));
+}""")
+```
+
+**Alternative**: `page.locator('#legalAccepted-field').check(force=True)` also works
+because it bypasses Playwright's actionability checks and fires the native click event.
+
+**Text input**: `.fill()` usually works for Clerk email/password fields. If the form
+doesn't submit after fill + checkbox + Continue, try `.type(text, delay=80)` instead
+to simulate real keystroke events that Clerk's React listeners catch.
+
+**Detecting the silent block**: If clicking Continue produces zero Clerk POST requests
+but the page just resets to the empty form, Clerk is silently rejecting. Check with
+network listener: `page.on('request', lambda r: print(r.method, r.url) if 'clerk' in r.url else None)`.
+
+## Running on Replit/NixOS: xvfb-run
+
+CloakBrowser's `headless=True` crashes immediately on Replit/NixOS with
+`TargetClosedError: Page.goto: Target page, context or browser has been closed`.
+The free-tier v146 binary doesn't support headless mode on this platform.
+
+**Fix**: Use `headless=False` wrapped in `xvfb-run` (provides a virtual display):
+```bash
+xvfb-run python3 scripts/openrouter_signup.py
+```
+
+`xvfb-run` is available at `/nix/store/*/bin/xvfb-run`.
+Do NOT use `headless=True` with CloakBrowser on this system.
+
 ## Cloudflare handling
 
-Most signup targets (OpenRouter, Firecrawl, TorBox) use Cloudflare Turnstile. Patterns:
+CloakBrowser **auto-solves Cloudflare Turnstile** (both non-interactive and
+managed challenges) in most cases. No manual CF-click logic is needed.
 
-### Passive wait (Camoufox auto-solved, Chromium needs manual handling)
+**Important exception — Clerk-managed Turnstile (OpenRouter, Firecrawl):**
+Clerk renders Turnstile in invisible/managed mode AFTER form validation passes.
+The challenge iframe doesn't appear until Clerk's React state is properly synced
+(see Form handling section above). If you see `POST /sign-up` with empty body `[]`
+and zero Clerk POSTs, Clerk isn't submitting because it doesn't see the field values.
+Fix the form state first (dispatchEvent), then Turnstile will render and auto-solve.
+
+Fallback (only if a challenge frame still persists after page load):
 ```python
-def cf_solved(page):
-    """Check if page is past Cloudflare."""
-    try:
-        title = page.title()
-        if "Just a moment" in title or "Checking" in title:
-            return False
-    except:
-        pass
-    try:
-        if page.locator("iframe[src*='challenges.cloudflare.com']").is_visible(timeout=1000):
-            return False
-    except:
-        pass
-    return True
-
-def wait_for_cf(page, timeout=15):
-    for _ in range(timeout):
-        if cf_solved(page):
-            return True
-        page.wait_for_timeout(1000)
-    return False
-
 def handle_cf_turnstile(page):
-    """Click Cloudflare Turnstile checkbox if present."""
-    for fr in page.frames:
-        if "challenges.cloudflare" in fr.url or "cloudflare" in fr.name.lower():
+    """Fallback: click Cloudflare Turnstile checkbox if still present."""
+    for frame in page.frames:
+        if "challenges.cloudflare.com" in frame.url or "cloudflare" in frame.name.lower():
             try:
-                checkbox = fr.locator("input[type='checkbox'], .ctp-checkbox, #challenge-stage")
-                if checkbox.first.is_visible(timeout=2000):
-                    checkbox.first.click()
+                cb = frame.locator("input[type='checkbox'], .ctp-checkbox, #challenge-stage")
+                if cb.first.is_visible(timeout=2000):
+                    cb.first.click()
                     page.wait_for_timeout(5000)
                     return True
             except:
@@ -142,27 +216,49 @@ def handle_cf_turnstile(page):
     return False
 ```
 
-## Deep conversion pitfalls (Camoufox → Playwright)
+## Conversion pitfalls (Playwright → CloakBrowser)
 
-1. **`Camoufox()` → `sync_playwright() + chromium.launch_persistent_context()`**: The old `with Camoufox(...) as browser: page = browser.new_page()` pattern maps to `with sync_playwright() as p: context = p.chromium.launch_persistent_context(...); page = context.pages[0] or context.new_page()`
-2. **No `geoip=True`**: Playwright Chromium doesn't auto-derive timezone/locale from IP. If needed, set via context options.
-3. **No `humanize=True`**: Playwright Chromium doesn't add human-like mouse jitter. Add manually if needed.
-4. **`enable_cache=True`**: Not a Playwright option. Use `launch_persistent_context` for caching.
-5. **`executable_path` is mandatory** on Replit/NixOS because Playwright's bundled Chromium isn't in the Nix store system path.
-6. **`context.close()`** at the end of the `with sync_playwright()` block — the `with` block handles `p.stop()` but not `context.close()` explicitly if you exit early with `return`.
-7. **`headless=False` HANGS** when no real display server is active. On Replit/NixOS, `$DISPLAY` may be set (`:0`) but there is no running X server — Playwright will hang indefinitely trying to open a visible window. **Always use `headless=True`** with system Chromium. If you see a script timing out with no output, this is the first thing to check. Verify with: `python3 -c "from playwright.sync_api import sync_playwright; p=sync_playwright().start(); b=p.chromium.launch(headless=True, executable_path=CHROMIUM); b.close()"` — if `headless=True` works but `headless=False` hangs, it's a missing display server.
+1. **No `sync_playwright()` context manager** — CloakBrowser's `launch()` /
+   `launch_persistent_context()` are top-level functions. Remove the
+   `with sync_playwright() as p:` wrapper entirely. Just call `launch()` or
+   `launch_persistent_context()` directly.
+2. **`humanize=True` replaces manual helpers** — no need for custom
+   `human_type()` / `human_click()` functions with random delays. CloakBrowser
+   patches all Playwright interactions at the CDP level.
+3. **`geoip=True` replaces manual locale/timezone** — set it when using a
+   proxy and timezone/locale should match the exit IP.
+4. **`proxy` is a string**, not `{"server": "..."}` dict — CloakBrowser accepts
+   `"socks5://user:pass@host:port"` or `"http://user:pass@host:port"` directly.
+5. **No `executable_path` needed** — CloakBrowser bundles its own stealth
+   Chromium binary (auto-downloaded on first use via `python -m cloakbrowser install`).
+6. **`context.close()` is still required** — CloakBrowser returns real Playwright
+   objects; early `return` without closing leaks the browser process. Use
+   `try/finally` to ensure cleanup.
+7. **Free tier = v146** (previous Chromium), **Pro = v148+** (latest patches).
+   Free tier goes stale within weeks. Set `license_key` param or
+   `CLOAKBROWSER_LICENSE_KEY` env var for Pro.
+8. **Font warning on Linux** — `No Windows fonts found` message is cosmetic.
+   Suppress with `CLOAKBROWSER_SUPPRESS_FONT_WARNING=1`.
+9. **Subprocess scripts must import CloakBrowser independently** — embedded
+   script strings passed to `sys.executable -c` need their own
+   `from cloakbrowser import ...` import.
 
-## When browser scripts break: diagnostic checklist
+## Diagnostic checklist (when browser scripts break)
 
 1. **Syntax check**: `bash -n script.sh` / `python3 -m py_compile script.py`
-2. **Chromium path exists**: `ls /nix/store/*/bin/chromium`
-3. **Playwright installed**: `python3 -c "from playwright.sync_api import sync_playwright; print('OK')"`
-4. **Test minimal context**: `sync_playwright() → launch_persistent_context → new_page → goto example.com`
-5. **Proxy dead?**: `socksocket().connect(("target.app", 443))` test before launching browser
-6. **Cloudflare issue?**: Check title for "Just a moment", check for CF iframe
-7. **Script hanging with no output?** → `headless=False` is set but no display server. Change to `headless=True`. Verify: `python3 -c "from playwright.sync_api import sync_playwright; p=sync_playwright().start(); b=p.chromium.launch(headless=True, executable_path=CHROMIUM); b.close()"`
+2. **CloakBrowser installed**: `python3 -c "from cloakbrowser import launch; print('OK')"`
+3. **Binary downloaded**: `python3 -m cloakbrowser info`
+4. **Test minimal context**: `launch_persistent_context(tmpdir, headless=False) → new_page → goto example.com`
+5. **Proxy dead?**: Test connectivity before launching browser
+6. **Cloudflare issue?**: CloakBrowser should auto-solve; if not, check for CF iframe fallback
+7. **Script hanging?**: Check if `context.close()` is called on all exit paths (including error/early return)
+8. **License issues?**: Free tier v146 may be stale; check `python3 -m cloakbrowser update`
+9. **`headless=True` CRASHES on Replit/NixOS** — CloakBrowser v146 free tier closes the target immediately with `TargetClosedError` under `headless=True`. Use `headless=False` + `xvfb-run` instead: `xvfb-run python3 script.py`
+10. **Clerk.js form fields need `dispatchEvent`** — `.fill()` and `.check()` do NOT trigger Clerk's internal React state. The button appears enabled but Clerk never POSTs to its API. Fix: use JS `dispatchEvent` after setting values, or `check(force=True)` for checkboxes.
 
 ## Support files
 
-- `references/camoufox-playwright-cdp-compat.md` — historical Camoufox notes and the `isMobile` CDP patch
-- `scripts/patch-playwright-cdp.sh` — kept for reference but NOT needed after migration to Chromium
+- `references/camoufox-playwright-cdp-compat.md` — historical Camoufox notes, `isMobile` CDP patch (no longer needed with CloakBrowser)
+- `references/clerkjs-form-debugging.md` — Clerk.js form state issues, dispatchEvent workaround, network-level debugging recipe, Turnstile auto-solve flow
+- `references/firecrawl-cli.md` — Firecrawl CLI install, auth, and usage reference
+- `scripts/cloak_replace.sh` — Bulk sed script to migrate playwright→cloakbrowser in all workspace scripts

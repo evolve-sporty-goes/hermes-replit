@@ -175,7 +175,7 @@ echo "→ [2/4] Getting verify URL from Proton Mail ..."
 VERIFY_URL=$(python3 - "$EMAIL" << 'PYEOF'
 import sys, os, re
 sys.path.insert(0, os.path.expanduser("~"))
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch, launch_persistent_context
 import importlib
 
 if "config" in sys.modules: del sys.modules["config"]
@@ -186,8 +186,8 @@ PR = os.path.expanduser("~/proton_profile")
 os.makedirs(PR, exist_ok=True)
 url = "NOT_FOUND"
 
-with sync_playwright() as p:
-    ctx = p.chromium.launch_persistent_context(PR)
+
+    ctx = launch_persistent_context(PR, headless=True, humanize=True)
     pg = ctx.new_page()
     pg.goto("https://account.proton.me/login", timeout=60000)
     pg.wait_for_timeout(3000)
@@ -283,7 +283,7 @@ echo -n "$VERIFY_URL" > /tmp/tb_verify_url.txt
 
 API_KEY=$(python3 << 'PYEOF'
 import json, os, sys, time, tempfile, shutil, atexit
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch, launch_persistent_context
 
 with open('/tmp/tb_verify_url.txt') as f: verify_url = f.read().strip()
 with open('/tmp/tb_email.txt') as f:      email      = f.read().strip()
@@ -375,8 +375,8 @@ for proxy_idx, proxy_addr in enumerate(proxies[:MAX_PROXY_TRIES]):
     atexit.register(lambda d=td: shutil.rmtree(d, ignore_errors=True))
 
     try:
-        with sync_playwright() as p:
-            context = p.chromium.launch_persistent_context(
+        
+            context = launch_persistent_context(
                 td,
                 proxy=proxy_config,
             )

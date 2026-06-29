@@ -7,7 +7,6 @@ set -euo pipefail
 
 CRED="/home/runner/workspace/credentials/torbox_credentials.txt"
 ANON_KEY=$(cat /home/runner/workspace/credentials/.supabase_anon_key)
-CH="/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
 PR="/home/runner/proton_profile"
 
 EMAIL_PREFIX="${1:-bavmin}"
@@ -108,27 +107,15 @@ echo -n "$EMAIL" > /tmp/tb_verify_email.txt
 cat > /tmp/tb_step2_proton.py << 'PYEOF'
 import sys, os, re
 sys.path.insert(0, os.path.expanduser("~"))
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch, launch_persistent_context
 with open('/tmp/tb_email.txt') as f:      email      = f.read().strip()
 with open('/tmp/tb_password.txt') as f:   password   = f.read().strip()
 
-CH = "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
 PR = os.path.expanduser("~/proton_profile")
 url = "NOT_FOUND"
 
-with sync_playwright() as p:
-    # headless=False — visible browser if display available, else headless
-    try:
-        ctx = p.chromium.launch_persistent_context(
-            PR, executable_path=CH, headless=False,
-            args=["--no-sandbox", "--disable-gpu"]
-        )
-    except Exception:
-        ctx = p.chromium.launch_persistent_context(
-            PR, executable_path=CH, headless=True,
-            args=["--no-sandbox", "--disable-gpu"]
-        )
 
+    ctx = launch_persistent_context(PR, headless=True, humanize=True)
     pg = ctx.new_page()
     pg.goto("https://account.proton.me/login", timeout=60000)
     pg.wait_for_timeout(3000)
@@ -226,29 +213,20 @@ echo -n "$VERIFY_URL" > /tmp/tb_verify_url.txt
 
 cat > /tmp/tb_step3_verify_api.py << 'PYEOF'
 import sys, os, json, re
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch, launch_persistent_context
 
 with open("/tmp/tb_verify_url.txt") as f:  verify_url = f.read().strip()
 with open("/tmp/tb_email.txt") as f:       email      = f.read().strip()
 with open("/tmp/tb_password.txt") as f:    password   = f.read().strip()
 
-CH = "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
 PROXY = {"server": "socks5://127.0.0.1:9050"}
+PROTON_PROFILE="/home/runner/proton_profile"
 api_key = "NOT_FOUND"
 demo_info = {}
 
-with sync_playwright() as p:
-    # Launch with Tor proxy — try headless=False first
-    try:
-        browser = p.chromium.launch(
-            executable_path=CH, headless=False, proxy=PROXY,
-            args=["--no-sandbox", "--disable-gpu"]
-        )
-    except Exception:
-        browser = p.chromium.launch(
-            executable_path=CH, headless=True, proxy=PROXY,
-            args=["--no-sandbox", "--disable-gpu"]
-        )
+
+    # Launch with Tor proxy
+    browser = p.chromium.launch(proxy=PROXY)
 
     # 3a: Visit verify URL (Cloudflare challenge auto-solved by real browser)
     pg = browser.new_page()

@@ -14,6 +14,6 @@ Workspace organized: credentials/ docs/ scripts/ dirs created, system dirs (.her
 §
 Hermes non-interactive model config: `hermes model` is TUI-only, cannot be scripted. Set config.yaml directly via `hermes config set model.provider/base_url/api_key/api_compat/default/display_name`. For active config use `hermes config show | grep Model` — config.yaml grep shows stale creds.
 §
-scripts/sync v3 (2026-06-29): ~90 lines, no AI, no per-file commits, no set -e, no auto filter-repo. Single askpass both phases. Bash pitfalls: set -e+while EOF, fn def order, trap RETURN.
+Browser automation: CloakBrowser (2026-07-01). headless=True CRASHES on Replit/NixOS (TargetClosedError). Use headless=False + xvfb-run. humanize=True. proxy as string not dict. Clerk.js checkbox: JS dispatchEvent needed, .check() doesn't update React state. Free tier=v146, Pro=v148+.
 §
-Browser automation: Playwright + system Chromium (2026-06-29 migration from Camoufox). CRITICAL: headless=True always — headless=False HANGS (no real X server despite $DISPLAY=:0). Scripts use launch_persistent_context with Nix store Chromium.
+CloakBrowser headless=True crashes on Replit NixOS (TargetClosedError). Must use headless=False under xvfb-run.

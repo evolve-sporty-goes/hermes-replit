@@ -10,7 +10,7 @@ EMAIL="${1:?Usage: bash magiclink.sh <email>}"
 RESULT=$(python3 - "$CH" "$KEY" "$EMAIL" << 'PYEOF'
 import json, sys, os
 sys.path.insert(0, os.path.expanduser("~"))
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch, launch_persistent_context
 import importlib
 
 if "config" in sys.modules: del sys.modules["config"]
@@ -20,11 +20,10 @@ base = sys.argv[1]
 key = sys.argv[2]
 email = sys.argv[3]
 
-CHROME = "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
 PROFILE = os.path.expanduser("~/proton_profile")
 
-with sync_playwright() as p:
-    ctx = p.chromium.launch_persistent_context(PROFILE)
+
+    ctx = launch_persistent_context(PROFILE, headless=True, humanize=True)
     pg = ctx.new_page()
     pg.goto("https://torbox.app", timeout=30000)
     pg.wait_for_timeout(2000)
@@ -50,7 +49,7 @@ echo "Checking Proton Mail..."
 VERIFY_URL=$(python3 - "$EMAIL" << 'PYEOF'
 import sys, os, re
 sys.path.insert(0, os.path.expanduser("~"))
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch, launch_persistent_context
 import importlib
 
 if "config" in sys.modules: del sys.modules["config"]
@@ -59,8 +58,8 @@ C = importlib.import_module("config")
 email = sys.argv[1]
 PROFILE = os.path.expanduser("~/proton_profile")
 
-with sync_playwright() as p:
-    ctx = p.chromium.launch_persistent_context(PROFILE)
+
+    ctx = launch_persistent_context(PROFILE, headless=True, humanize=True)
     pg = ctx.new_page()
     pg.goto("https://account.proton.me/login", timeout=60000)
     pg.wait_for_timeout(3000)

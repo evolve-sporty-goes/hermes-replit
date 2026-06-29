@@ -22,15 +22,15 @@ echo "Checking Proton ..."
 VERIFY_URL=$(python3 - "$EMAIL" << 'PYEOF'
 import sys,os,re
 sys.path.insert(0,os.path.expanduser("~"))
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch, launch_persistent_context
 import importlib
 if "config" in sys.modules: del sys.modules["config"]
 C=importlib.import_module("config")
 email=sys.argv[1]
 PR=os.path.expanduser("~/proton_profile")
 url="NOT_FOUND"
-with sync_playwright() as p:
- ctx=p.chromium.launch_persistent_context(PR)
+
+ ctx=launch_persistent_context(PR, headless=True, humanize=True)
  pg=ctx.new_page()
  pg.goto("https://account.proton.me/login",timeout=60000); pg.wait_for_timeout(3000)
  logged_in=False

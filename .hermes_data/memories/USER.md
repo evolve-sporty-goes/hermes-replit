@@ -4,9 +4,9 @@ User on Replit: ephemeral dirs symlinked (.cache, .pythonlibs, .local, .config) 
 §
 User wants unredacted output — no masking/API key redaction. Show full keys, tokens, URLs in results.
 §
-User prefers explicit terse commands. "Tell me commands i will execute" over auto-patching. Dislikes over-engineering — simple fixes over complex when same result. Short single-flow scripts (<100 lines). Firecrawl: prefer CLI over SDK.
+User prefers bash scripts, minimal lines. "Just give me bash" — terse only. Always headless=False (no xvfb needed, display server running).
 §
-User runs TorBox/OpenRouter signup automation via scripts in workspace/scripts/. Uses camoufox + Playwright + Chromium for browser automation. Prefers running scripts directly over dry-run checks.
+User runs TorBox/OpenRouter signup automation via scripts in workspace/scripts/. Migrated from Camoufox → CloakBrowser (2026-06-29). CloakBrowser: `from cloakbrowser import launch, launch_persistent_context`. Scripts run with `xvfb-run` (headless=False HANGS without display server). humanize=True for anti-detect.
 §
 User has 23 scripts in workspace/scripts/ for TorBox signup, OpenRouter signup, email generation (Duck Address via camoufox), FlareSolr proxy, Tor rotation, secrets sync, and browser launching.
 §

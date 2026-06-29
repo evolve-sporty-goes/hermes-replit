@@ -12,7 +12,6 @@ set -euo pipefail
 
 CRED="/home/runner/workspace/credentials/torbox_credentials.txt"
 ANON_KEY=$(cat /home/runner/workspace/credentials/.supabase_anon_key)
-CHROMIUM="/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
 PROTON_PROFILE="$HOME/proton_profile"
 FS_URL="http://127.0.0.1:8191/v1"
 SESSION_ID="torbox-tor-$(date +%s)"
@@ -151,23 +150,19 @@ echo "→ [2/3] Getting verify URL from Proton Mail (normal Playwright) ..."
 VERIFY_URL=$(python3 - "$EMAIL" << 'PYEOF'
 import sys, os, re
 sys.path.insert(0, os.path.expanduser("~"))
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch, launch_persistent_context
 import importlib
 
 if "config" in sys.modules: del sys.modules["config"]
 C = importlib.import_module("config")
 
 email = sys.argv[1]
-CH = "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
 PR = os.path.expanduser("~/proton_profile")
 os.makedirs(PR, exist_ok=True)
 url = "NOT_FOUND"
 
-with sync_playwright() as p:
-    ctx = p.chromium.launch_persistent_context(
-        PR, executable_path=CH, headless=False,
-        args=["--no-sandbox", "--disable-gpu"]
-    )
+
+    ctx = launch_persistent_context(PR, headless=True, humanize=True)
     pg = ctx.new_page()
     pg.goto("https://account.proton.me/login", timeout=60000)
     pg.wait_for_timeout(3000)
@@ -315,13 +310,11 @@ print(f"  Verify status: {fs_verify.get('status', '?')}", file=sys.stderr)
 # FlareSolverr can solve db.torbox.app CF but NOT torbox.app Turnstile.
 # Playwright persistent context keeps browser state across navigations,
 # so CF only needs solving once per domain — after that cookies persist.
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch, launch_persistent_context
 import tempfile, shutil, atexit
 
 td = tempfile.mkdtemp(prefix="torbox-tor-")
 atexit.register(lambda: shutil.rmtree(td, ignore_errors=True))
-
-CH = "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
 
 # Get UA from FlareSolverr session (consistent fingerprint)
 fs_ua_resp = fs_post("request.get", "https://db.torbox.app")
@@ -371,17 +364,12 @@ def safe_goto(pg, url, timeout=30000):
         print(f"  ✓ Page ready: {url[:50]}", file=sys.stderr)
 
 
-with sync_playwright() as p:
-    ctx = p.chromium.launch_persistent_context(
-        td,
-        executable_path=CH,
-        headless=False,
-        proxy={"server": PROXY},
-        args=["--no-sandbox", "--disable-gpu"],
-        user_agent=best_ua if best_ua else None
-    )
 
-    # Login to dashboard
+    ctx = launch_persistent_context(
+        td,
+        proxy={"server": PROXY},
+        user_agent=best_ua if best_ua else None,
+    )
     for attempt in range(3):
         pg = ctx.new_page()
         safe_goto(pg, "https://torbox.app/login")

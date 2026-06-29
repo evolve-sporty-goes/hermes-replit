@@ -1,0 +1,678 @@
+[
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/sign-up"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/media/GeistMono_Variable.p.05wdprr-k~q7o.woff2?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/537s/"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0puvfppvifekr.css?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0ee7ozqbt_y2y.css?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0n0b_ubvaekqj.css?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/13esdo-g0nv2m.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0dxpkqx83t-ub.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/06opi3-59yyb7.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0gs9o4a4wh09l.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/021634qy~bt1e.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/148~lyx5~hcgo.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0kgz.mgt230~y.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0cz.ew~2y0r4r.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/04sm9-ou7ic0h.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0k5f8yeet62_9.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/12i5v0.~.6tsy.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/turbopack-0hwq9fk8o_wcb.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0wv39n1lzmqbk.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/153grzjsuznc-.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0fa2cgp-ebuyi.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/17a8he0kddr~e.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0ggfa.2ah35~6.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0ph9-w6xohrw-.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0q8s7uj7s_lys.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0gn9iw5-cq5xc.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/158c_fo6cj666.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/05z.r8z0z9cl5.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0_0qx0rgguqwe.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0lrg_i5wh3ais.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/07-~47zeqda-n.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0ln1juc~kz3k0.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0osxp2r1tn5vc.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0q~~o9swqg80v.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/168i01u4rpr5o.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/086ecmvjkz2ui.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0qfisigg~ufwe.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/184k1ljhdtud~.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0i_0t_nbi5..8.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0u9ga11825hmn.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0~0dyl_rbg.m4.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0v~afqjl0~kh0.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0xyyofua.9k86.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0zavaui~kvruc.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0fplvm97_d-ov.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0s.1.ony7yp8y.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0z.cp-~yb5l-d.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0sicxf3p~9d.~.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/11p8l24c3714_.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0_d1r9arwb9d5.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0wwq__rgrz4p9.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0n57rs5ada82v.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0yf-pnjgkxf20.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0uczhfk8yme62.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0.53fvk58ifp6.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/14r9qqqw~d.yb.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0-5siafhtngbx.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://clerk.openrouter.ai/npm/@clerk/clerk-js@5/dist/clerk.browser.js"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-R8YZRJS2XN"
+  },
+  {
+    "method": "GET",
+    "url": "https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/manifest.webmanifest"
+  },
+  {
+    "method": "GET",
+    "url": "https://clerk.openrouter.ai/npm/@clerk/clerk-js@5.127.0/dist/clerk.browser.js"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/ingest/array/phc_7ToS2jDeWBlMu4n2JoNzoA1FnArdKwFMFoHVnAqQ6O1/config.js"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/ingest/static/posthog-recorder.js?v=1.373.5"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/ingest/static/surveys.js?v=1.373.5"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/ingest/static/dead-clicks-autocapture.js?v=1.373.5"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/ingest/static/web-vitals.js?v=1.373.5"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/ingest/static/exception-autocapture.js?v=1.373.5"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.googletagmanager.com/gtag/js?id=G-R8YZRJS2XN&gtg_health=1"
+  },
+  {
+    "method": "POST",
+    "url": "https://openrouter.ai/537s/ag/g/c?v=2&tid=G-R8YZRJS2XN&gtm=45g92e66p0v9122632899za204zd9122632899&_p=1782753400802&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&gdid=dYzg1YT.dNzQzZD&_eu=AAAAAGA&_uip=%3A%3A&are=1&cid=730605571.1782753402&fp=1&frm=0&pscdl=noapi&rcb=9&sr=1920x1080&uaa=x86&uab=64&uafvl=Chromium%3",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-R8YZRJS2XN&cid=730605571.1782753402&gtm=45g92e66p0v9122632899za204zd9122632899&rcb=9&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938466~115938469~118395333~119027224~119576891~119576895",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://analytics.google.com/g/s/collect?_gsid=WJwlBqBfGN-x77-F8KEEzHBtHTnC9FZ0Pg&gtm=45g92e66p0v9122632899za204zd9122632899",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/ingest/api/surveys/?token=phc_7ToS2jDeWBlMu4n2JoNzoA1FnArdKwFMFoHVnAqQ6O1&ip=0&_=1782753402127&ver=1.373.5"
+  },
+  {
+    "method": "GET",
+    "url": "blob:https://openrouter.ai/58ab29a0-4861-4a5c-a595-303596fcc65b"
+  },
+  {
+    "method": "GET",
+    "url": "https://clerk.openrouter.ai/v1/environment?__clerk_api_version=2025-11-10&_clerk_js_version=5.127.0"
+  },
+  {
+    "method": "GET",
+    "url": "https://clerk.openrouter.ai/v1/client?__clerk_api_version=2025-11-10&_clerk_js_version=5.127.0"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/api/frontend/v1/catalog/models"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/api/frontend/all-providers"
+  },
+  {
+    "method": "POST",
+    "url": "https://openrouter.ai/api/frontend/v1/statsig/initialize?k=client-yNaYnqhQvc4txEdMwVYDYaNmHdIJSJ7fesWgJB1PGle&st=javascript-client-react&sv=3.33.0&t=1782753402606&sid=57f3e39a-58a1-45b7-8234-cfc1db95e9fb&se=1",
+    "post_data": "=0XfsxWdupjIsJXVrNWYixGbhZmIsIiYmlTZ1kjYkFzYmNWL0MjM40yNiVDNtETY4UTLhlzMlNjZ3UjI6ICRJ52bpN3clNnIsIyN1YTMkVWO2IjN0ITLwgjYh1SOwMDNtMDO3QWL2kDZmV2YyQmI6ICRJVGbiFGdzJCLiQ3YhVmctQnbllGbj1CdwlmcjNXY2FmaiojIlBXeUtGZzJCLiAjLzMjLzIiOi42bpNnclZ1akNnI7pjIhRXYkFGdl10ZpNHdhR3ciwCbsVnb6ISb1N3ajVGaj9FbsVnZiwSZzxWY"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/pricing?_rsc=n4HnGKIS6qAv4XlC"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/enterprise?_rsc=n4HnGKIS6qAv4XlC"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/apps?_rsc=n4HnGKIS6qAv4XlC"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/rankings?_rsc=n4HnGKIS6qAv4XlC"
+  },
+  {
+    "method": "GET",
+    "url": "blob:https://openrouter.ai/2d17e2dd-0863-470e-94bb-11cc25c1688a"
+  },
+  {
+    "method": "GET",
+    "url": "https://clerk.openrouter.ai/npm/@clerk/clerk-js@5.127.0/dist/framework_clerk.browser_636222_5.127.0.js"
+  },
+  {
+    "method": "GET",
+    "url": "https://clerk.openrouter.ai/npm/@clerk/clerk-js@5.127.0/dist/vendors_clerk.browser_636222_5.127.0.js"
+  },
+  {
+    "method": "GET",
+    "url": "https://clerk.openrouter.ai/npm/@clerk/clerk-js@5.127.0/dist/ui-common_clerk.browser_636222_5.127.0.js"
+  },
+  {
+    "method": "POST",
+    "url": "https://openrouter.ai/sign-up",
+    "post_data": "[]"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/fusion?_rsc=n4HnGKIS6qAv4XlC"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/models?_rsc=n4HnGKIS6qAv4XlC"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/?_rsc=n4HnGKIS6qAv4XlC"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/pricing?_rsc=kieEyf7AiSIrmSKe"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/pricing?_rsc=CXihuVqJcAmi8Uo_"
+  },
+  {
+    "method": "POST",
+    "url": "https://openrouter.ai/cdn-cgi/rum?",
+    "post_data": "{\"memory\":{\"totalJSHeapSize\":67440731,\"usedJSHeapSize\":58922283,\"jsHeapSizeLimit\":2248146944},\"resources\":[],\"referrer\":\"\",\"eventType\":1,\"firstPaint\":756,\"firstContentfulPaint\":992,\"startTime\":1782753400231.9,\"versions\":{\"fl\":\"2024.11.0\",\"js\":\"2026.5.0\",\"timings\":2},\"pageloadId\":\"a200a27c-731d-4379-"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/pricing?_rsc=4pT49kMFRSWzwc2H"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/pricing?_rsc=lfSqaocda4uE3wjH"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/01c5k528y94~7.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0btw.yq7ks~zw.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0no~apkh.pven.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0bpctb6yx_ygq.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/pricing?_rsc=myg18w9Je6VIcJaB"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/enterprise?_rsc=kieEyf7AiSIrmSKe"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/9484cf6ecde6707f/script.js"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/icon-pwa.png"
+  },
+  {
+    "method": "GET",
+    "url": "https://clerk.openrouter.ai/npm/@clerk/clerk-js@5.127.0/dist/subscriptionDetails_clerk.browser_636222_5.127.0.js"
+  },
+  {
+    "method": "GET",
+    "url": "https://clerk.openrouter.ai/npm/@clerk/clerk-js@5.127.0/dist/signup_clerk.browser_636222_5.127.0.js"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/enterprise?_rsc=HEuDU-jHjrUhzsSe"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/enterprise?_rsc=VJ_EXpG1AySrqIfH"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/apps?_rsc=kieEyf7AiSIrmSKe"
+  },
+  {
+    "method": "GET",
+    "url": "https://img.clerk.com/static/github.svg?width=80"
+  },
+  {
+    "method": "GET",
+    "url": "https://img.clerk.com/static/google.svg?width=80"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/apps?_rsc=6gJ9wXmNQjlrtYF0"
+  },
+  {
+    "method": "GET",
+    "url": "https://img.clerk.com/static/metamask.svg?width=80"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0ti6gowar-huv.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/apps?_rsc=xAQpzAdF6Ky9C3TZ"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/apps?_rsc=UyI7kvAux560rZtN"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/apps?_rsc=xXK8Rd9Gk5VD6qhF"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/rankings?_rsc=kieEyf7AiSIrmSKe"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0rnq2~r711wht.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/01orf2mmpwf9z.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0mdse-qct4v~..js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/rankings?_rsc=_X30cTOksil8Xop_"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/rankings?_rsc=u2matr1VgAT6ecMg"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/fusion?_rsc=kieEyf7AiSIrmSKe"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/fusion?_rsc=_RjRCHO5-8xPYBFG"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0.z_23htm8e_p.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/fusion?_rsc=9nILSSGU0Tmd7556"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/05g_7exa_w0ey.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/02xujz4q89if..js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0xwjznt~y8.e2.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/fusion?_rsc=XuDSVREg8mK0fwIE"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/models?_rsc=kieEyf7AiSIrmSKe"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/models?_rsc=dakKcD3vuXVlBJkw"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/00kvhes69khr1.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/04v2vrfpgs9ee.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/15pukpyfc2e5b.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0m52.r3e9u~0-.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0ff8gzm23.omk.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/11x3i2vno.uuy.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0jd4kyptsaje2.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0lw.uvca~uzt1.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/00p2ehglhybk-.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0jt3qa3~q2.29.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0jk0jts1mr~zs.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/10t0i932crmm0.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/13qel4kk7nsy4.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0ax5dwd39.3by.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/models?_rsc=cl_RLRyRo5akx1Vd"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/models?_rsc=8nhzsLHGkWW0-ixG"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/?_rsc=kieEyf7AiSIrmSKe"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/?_rsc=ZoSHjEh1Mf3K6VVh"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/01hdgp313tegh.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0r7bb35094fz9.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/03pl~wa2rko0_.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0emez64-_r9vf.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/0_e-4nys0-_gl.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "GET",
+    "url": "https://openrouter.ai/_next/static/chunks/13qxx0c._akx_.js?dpl=dpl_3fyB2W68DzEg2rQbwdvAg7YvQJsr"
+  },
+  {
+    "method": "POST",
+    "url": "https://openrouter.ai/ingest/i/v0/e/?ip=0&_=1782753404514&ver=1.373.5&compression=gzip-js"
+  },
+  {
+    "method": "POST",
+    "url": "https://openrouter.ai/537s/ag/g/c?v=2&tid=G-R8YZRJS2XN&gtm=45g92e66p0v9122632899za204zd9122632899&_p=1782753400802&gcd=13l3l3l3l1l1&npa=0&dma=0&gdid=dYzg1YT.dNzQzZD&_eu=AEAAAGQ&_uip=%3A%3A&ae=a&are=1&cid=730605571.1782753402&fp=1&frm=0&pscdl=noapi&rcb=9&sr=1920x1080&uaa=x86&uab=64&uafvl=Chromium%3B1",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://openrouter.ai/ingest/i/v0/e/?ip=0&_=1782753410286&ver=1.373.5&compression=gzip-js"
+  },
+  {
+    "method": "POST",
+    "url": "https://openrouter.ai/ingest/i/v0/e/?ip=0&_=1782753415013&ver=1.373.5&compression=gzip-js"
+  },
+  {
+    "method": "POST",
+    "url": "https://openrouter.ai/ingest/i/v0/e/?ip=0&_=1782753418399&ver=1.373.5&compression=gzip-js"
+  },
+  {
+    "method": "POST",
+    "url": "https://openrouter.ai/537s/ag/g/c?v=2&tid=G-R8YZRJS2XN&gtm=45g92e66p0v9122632899za204zd9122632899&_p=1782753400802&gcd=13l3l3l3l1l1&npa=0&dma=0&gdid=dYzg1YT.dNzQzZD&_eu=AEEAAGQ&_uip=%3A%3A&ae=a&are=1&cid=730605571.1782753402&fp=1&frm=0&pscdl=noapi&rcb=9&sr=1920x1080&uaa=x86&uab=64&uafvl=Chromium%3B1",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://openrouter.ai/ingest/i/v0/e/?ip=0&_=1782753424746&ver=1.373.5&compression=gzip-js"
+  },
+  {
+    "method": "POST",
+    "url": "https://openrouter.ai/ingest/i/v0/e/?ip=0&_=1782753425011&ver=1.373.5&compression=gzip-js"
+  },
+  {
+    "method": "POST",
+    "url": "https://openrouter.ai/ingest/i/v0/e/?ip=0&_=1782753430014&ver=1.373.5&compression=gzip-js"
+  }
+]

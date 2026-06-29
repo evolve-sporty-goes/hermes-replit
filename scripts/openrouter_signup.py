@@ -12,7 +12,7 @@ import atexit
 sys.path.insert(0, "/home/runner")
 sys.path.insert(0, "/home/runner/workspace")
 
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch, launch_persistent_context
 
 CRED_PATH = "/home/runner/workspace/credentials/openrouter_credentials.txt"
 PROTON_PROFILE = os.path.expanduser("~/proton_profile")
@@ -21,96 +21,95 @@ PROTON_PROFILE = os.path.expanduser("~/proton_profile")
 # Args: PROTON_USER, PROTON_PASS, CHROMIUM, PROFILE_DIR, SIGNUP_EMAIL
 PROTON_FETCH_SCRIPT = r'''
 import sys, os, re, time
-from playwright.sync_api import sync_playwright
+from cloakbrowser import launch_persistent_context
 
 PROTON_USER = sys.argv[1]
 PROTON_PASS = sys.argv[2]
 PROFILE_DIR = sys.argv[3]
 SIGNUP_EMAIL = sys.argv[4]
 
-with sync_playwright() as p:
-    context = p.chromium.launch_persistent_context(PROFILE_DIR,headless=False)
-    page = context.pages[0] if context.pages else context.new_page()
+context = launch_persistent_context(PROFILE_DIR, headless=False)
+page = context.pages[0] if context.pages else context.new_page()
 
-    # Go to Proton — may already be logged in via persistent profile
-    page.goto("https://account.proton.me/login", timeout=60000)
-    page.wait_for_timeout(3000)
+# Go to Proton — may already be logged in via persistent profile
+page.goto("https://account.proton.me/login", timeout=60000)
+page.wait_for_timeout(3000)
 
-    already_logged_in = False
+already_logged_in = False
+try:
+    mail_link = page.locator("a:has-text('Mail')")
+    if mail_link.is_visible(timeout=3000):
+        already_logged_in = True
+except:
+    pass
+
+if already_logged_in:
+    print("Already logged in to Proton — skipping credentials")
+else:
+    page.locator("#username").fill(PROTON_USER)
+    page.locator("#password").fill(PROTON_PASS)
+    page.locator("button[type='submit']").click()
+    page.wait_for_timeout(10000)
+
+page.locator("a:has-text('Mail')").first.click(timeout=0)
+page.wait_for_timeout(5000)
+
+# Use Proton's search box to find email sent to our signup address
+found = False
+for attempt in range(1, 6):
+    print(f"Inbox search attempt {attempt}/5 for {SIGNUP_EMAIL}")
     try:
-        mail_link = page.locator("a:has-text('Mail')")
-        if mail_link.is_visible(timeout=3000):
-            already_logged_in = True
+        # Open search with / shortcut, then type the email
+        page.keyboard.press("/")
+        page.wait_for_timeout(1000)
+        page.keyboard.type(SIGNUP_EMAIL, delay=50)
+        page.keyboard.press("Enter")
+        page.wait_for_timeout(5000)
+
+        # Click the latest (first) mail in results
+        latest_mail = page.locator(".item-container").first
+        if latest_mail.is_visible(timeout=5000):
+            latest_mail.click()
+            page.wait_for_timeout(5000)
+            found = True
+            break
     except:
         pass
 
-    if already_logged_in:
-        print("Already logged in to Proton — skipping credentials")
-    else:
-        page.locator("#username").fill(PROTON_USER)
-        page.locator("#password").fill(PROTON_PASS)
-        page.locator("button[type='submit']").click()
-        page.wait_for_timeout(10000)
+    if attempt < 5:
+        print("  Not found — clearing search and retrying...")
+        page.keyboard.press("Escape")
+        page.wait_for_timeout(3000)
 
-    page.locator("a:has-text('Mail')").first.click(timeout=0)
-    page.wait_for_timeout(5000)
-
-    # Use Proton's search box to find email sent to our signup address
-    found = False
-    for attempt in range(1, 6):
-        print(f"Inbox search attempt {attempt}/5 for {SIGNUP_EMAIL}")
-        try:
-            # Open search with / shortcut, then type the email
-            page.keyboard.press("/")
-            page.wait_for_timeout(1000)
-            page.keyboard.type(SIGNUP_EMAIL, delay=50)
-            page.keyboard.press("Enter")
-            page.wait_for_timeout(5000)
-
-            # Click the latest (first) mail in results
-            latest_mail = page.locator(".item-container").first
-            if latest_mail.is_visible(timeout=5000):
-                latest_mail.click()
-                page.wait_for_timeout(5000)
-                found = True
-                break
-        except:
-            pass
-
-        if attempt < 5:
-            print("  Not found — clearing search and retrying...")
-            page.keyboard.press("Escape")
-            page.wait_for_timeout(3000)
-
-    if not found:
-        print("VERIFY_URL:NOT_FOUND")
-        context.close()
-        sys.exit(0)
-
-    # Extract verification link from frames
-    verify_url = None
-    for frame in page.frames:
-        try:
-            html = frame.content()
-            if "verify" in html.lower() or "confirm" in html.lower():
-                matches = re.findall(r'https://clerk.openrouter.ai/v1/verify[^\s"\'<>]+', html)
-                if not matches:
-                    matches = re.findall(r'https://openrouter\.ai[^\s"\'<>]*(?:verify|confirm|token)[^\s"\'<>]+', html)
-                if matches:
-                    verify_url = matches[0].replace("&amp;", "&")
-                    break
-        except:
-            pass
-
-    if not verify_url:
-        links = page.query_selector_all("a[href]")
-        for link in links:
-            href = link.get_attribute("href")
-            if href and ("verify" in href or "confirm" in href) and "openrouter" in href:
-                verify_url = href
-                break
-
+if not found:
+    print("VERIFY_URL:NOT_FOUND")
     context.close()
+    sys.exit(0)
+
+# Extract verification link from frames
+verify_url = None
+for frame in page.frames:
+    try:
+        html = frame.content()
+        if "verify" in html.lower() or "confirm" in html.lower():
+            matches = re.findall(r'https://clerk.openrouter.ai/v1/verify[^\s"\'<>]+', html)
+            if not matches:
+                matches = re.findall(r'https://openrouter\.ai[^\s"\'<>]*(?:verify|confirm|token)[^\s"\'<>]+', html)
+            if matches:
+                verify_url = matches[0].replace("&amp;", "&")
+                break
+    except:
+        pass
+
+if not verify_url:
+    links = page.query_selector_all("a[href]")
+    for link in links:
+        href = link.get_attribute("href")
+        if href and ("verify" in href or "confirm" in href) and "openrouter" in href:
+            verify_url = href
+            break
+
+context.close()
 
 if verify_url:
     print("VERIFY_URL:" + verify_url)
@@ -131,23 +130,39 @@ def do_signup(page, email, password):
     page.locator("#emailAddress-field").wait_for(state="visible", timeout=30000)
     page.locator("#emailAddress-field").fill(email)
     page.locator("#password-field").fill(password)
-    page.locator("#legalAccepted-field").check()
+
+    # Checkbox — Clerk requires the input to be checked; use check(force=True)
+    legal = page.locator("#legalAccepted-field")
+    if not legal.is_checked():
+        legal.check(force=True)
+    page.wait_for_timeout(500)
+
     page.get_by_role("button", name="Continue").click()
-    page.wait_for_timeout(15000)
-
-    # Handle Cloudflare challenge
-    print("Checking for Cloudflare challenge...")
-    for frame in page.frames:
-        if "challenges.cloudflare.com" in frame.url or "cloudflare" in frame.name.lower():
-            try:
-                frame.locator("#challenge-stage, .ctp-checkbox, body").first.click()
-                page.wait_for_timeout(4000)
-                print("  Cloudflare challenge clicked — waiting for validation...")
-            except Exception:
-                pass
-            break
-    page.wait_for_timeout(4000)
-
+    page.wait_for_timeout(8000)
+    # Cloudflare Turnstile — poll up to 30s, clicking challenge if present
+    print("Checking for Cloudflare Turnstile...")
+    for _ in range(30):
+        turnstile = False
+        for frame in page.frames:
+            if "challenges.cloudflare.com" in frame.url or "cloudflare" in frame.name.lower():
+                turnstile = True
+                try:
+                    cb = frame.locator("input[type='checkbox'], .ctp-checkbox, #challenge-stage, body")
+                    if cb.first.is_visible(timeout=500):
+                        cb.first.click()
+                        print("  Turnstile clicked — waiting...")
+                except:
+                    pass
+                break
+        if not turnstile:
+            # No turnstile frame — check if we moved past the challenge
+            if "confirm-email" in page.url or "verification" in page.inner_text("body")[:300].lower():
+                break
+            if "sign-up" not in page.url and "openrouter.ai" in page.url:
+                break
+        page.wait_for_timeout(1000)
+    page.wait_for_timeout(3000)
+    
     body = page.inner_text("body")
     if "confirm-email" in page.url or "verification" in body.lower() or "check your" in body.lower():
         print("SUCCESS: Signup complete — confirm-email indicator visible")
@@ -291,15 +306,15 @@ def main():
     print(f"Generated password: {password}")
 
     # Main retry loop: signup → check inbox → verify+key
-    with sync_playwright() as p:
-        context = p.chromium.launch_persistent_context(browser_tmpdir,headless=False)
-        page = context.pages[0] if context.pages else context.new_page()
+    context = launch_persistent_context(browser_tmpdir, headless=False, humanize=True)
+    page = context.pages[0] if context.pages else context.new_page()
 
+    try:
         for attempt in range(1, 4):
             # Step 2: Sign up
             do_signup(page, email, password)
 
-            # Step 3: Check Proton Mail (Chromium subprocess, with inbox retry)
+            # Step 3: Check Proton Mail (subprocess with CloakBrowser)
             print("\n" + "=" * 60)
             print("STEP 3: Check Proton Mail for verification email")
             print("=" * 60)
@@ -367,6 +382,7 @@ def main():
             print("\nDone!")
             return
 
+    finally:
         context.close()
 
     print("FAILED: 3 signup attempts exhausted.")
