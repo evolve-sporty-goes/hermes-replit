@@ -22733,3 +22733,4 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 2026-06-29 17:55:39,096 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
 2026-06-29 17:55:39,097 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
 2026-06-29 17:55:39,107 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 18:00:54,414 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
