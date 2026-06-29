@@ -129,5 +129,42 @@ git pull origin main
 git add -A
 if ! git diff --cached --quiet; then
     git commit -m "auto-sync: $(date)"
-    git push origin main
+    
+    # Attempt push; if blocked by secret scanning, extract blocked files and add to .gitignore
+    push_output=$(git push origin main 2>&1) || {
+        echo "$push_output"
+        
+        # Extract file paths from push protection error (pattern: "path: <filepath>:<line>")
+        blocked_files=$(echo "$push_output" | grep -oP 'path:\s+\K\S+' | cut -d: -f1 | sort -u)
+        
+        if [ -n "$blocked_files" ]; then
+            echo "SECRET BLOCK detected. Adding to .gitignore sensitive block:"
+            
+            while IFS= read -r blocked_file; do
+                [ -z "$blocked_file" ] && continue
+                
+                # Get relative path from workspace root
+                rel_path="${blocked_file#$WORKSPACE/}"
+                
+                # Check if already in sensitive block
+                if grep -qF "$rel_path" "$GITIGNORE" 2>/dev/null; then
+                    echo "  SKIP (already present): $rel_path"
+                else
+                    # Append to sensitive block (before last line if EOF, or at end)
+                    echo "$rel_path" >> "$GITIGNORE"
+                    echo "  ADDED: $rel_path"
+                fi
+            done <<< "$blocked_files"
+            
+            # Stage the updated .gitignore and recommit
+            git add "$GITIGNORE"
+            git commit -m "auto: add secret-blocked files to gitignore"
+            
+            # Retry push
+            echo "Retrying push..."
+            git push origin main 2>&1 || echo "WARN: Push still failing after gitignore update."
+        else
+            echo "WARN: Push failed but no secret paths detected in output."
+        fi
+    }
 fi
