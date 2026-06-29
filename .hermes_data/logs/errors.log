@@ -5600,3 +5600,152 @@ RuntimeError: No LLM provider configured for task=vision provider=auto. Run: her
 2026-06-29 15:36:56,023 WARNING [0930078b188b] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-516 (_run_agent_streaming):139753769936576 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (4c63ff87-787d-4280-a096-76d091ce6cf7)","code":4006}],"success":false,"result":{},"messages":[]}
 2026-06-29 15:39:01,209 WARNING [0930078b188b] agent.tool_executor: Tool terminal returned error (120.77s): {"output": "[Command timed out after 120s]", "exit_code": 124, "error": null}
 2026-06-29 15:39:10,758 WARNING [0930078b188b] agent.tool_executor: Tool terminal returned error (1.32s): {"output": "Traceback (most recent call last):\n  File \"<string>\", line 10, in <module>\n  File \"/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/playwright/sync_api/_generated.py\",
+2026-06-29 15:40:37,691 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:40:37,698 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:40:38,883 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:40:38,897 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:40:38,921 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:40:38,921 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:40:38,922 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:41:54,240 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:41:54,243 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:41:54,514 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:41:54,516 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:41:54,640 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:41:54,650 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:41:54,651 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:41:56,938 WARNING [0930078b188b] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-31 (_run_agent_streaming):140597088216768 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d4d708e7-839b-41a5-944a-2f2b8a8ee128)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:43:03,797 WARNING [0930078b188b] agent.tool_executor: Tool terminal returned error (30.14s): {"output": "", "exit_code": 124, "error": null}
+2026-06-29 15:43:28,399 WARNING agent.lsp.servers: bash-language-server: shellcheck not found on PATH — diagnostics will be empty until shellcheck is installed (apt: shellcheck, brew: shellcheck, scoop: shellcheck).
+2026-06-29 15:43:35,791 WARNING [0930078b188b] agent.tool_executor: Tool patch returned error (0.01s): {"error": "Unknown mode: replace_all"}
+2026-06-29 15:43:35,809 WARNING [0930078b188b] agent.tool_executor: Tool patch returned error (0.01s): {"error": "Unknown mode: replace_all"}
+2026-06-29 15:45:26,604 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 0930078b188b
+2026-06-29 15:45:27,553 WARNING [0930078b188b] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-120 (_run_agent_streaming):140596754773696 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (8858d407-e43e-46e6-b008-d5acb2b79550)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:46:35,553 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:46:52,827 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 0930078b188b
+2026-06-29 15:46:53,957 WARNING [0930078b188b] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-183 (_run_agent_streaming):140596745332416 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ac582c0c-0d4a-49e7-8c57-cd3d66d4f400)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:48:27,823 WARNING [939e82d7a4d4] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-208 (_run_agent_streaming):140597079824064 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (bafa634b-8717-434a-abe9-c18b1197c2ea)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:48:32,755 WARNING [0930078b188b] agent.tool_executor: Tool memory returned error (0.00s): {"success": false, "error": "No entry matched 'Camoufox + Playwright CDP incompatibility: Browser.setDefaultViewport protocol error (isMobile property not in Firefox CDP scheme). Fix: patch coreBundle
+2026-06-29 15:48:49,198 WARNING [939e82d7a4d4] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-215 (_run_agent_streaming):140597071431360 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (c0c7dfc6-09b5-41b1-b673-4c12c354402c)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:49:01,410 WARNING [0930078b188b] agent.tool_executor: Tool memory returned error (0.00s): {"success": false, "error": "No entry matched 'Camoufox + Playwright CDP incompatibility: Browser.setDefaultViewport protocol error (isMobile property not in Firefox CDP scheme). Fix: patch coreBundle
+2026-06-29 15:49:23,169 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:49:31,472 WARNING [0930078b188b] agent.tool_executor: Tool memory returned error (0.00s): {"success": false, "error": "Memory at 2,188/2,200 chars. Adding this entry (174 chars) would exceed the limit. Consolidate now: use 'replace' to merge overlapping entries into shorter ones or 'remove
+2026-06-29 15:49:32,082 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:49:32,088 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:49:32,332 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:49:32,333 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:49:32,352 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:49:32,353 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:49:32,353 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:49:33,763 WARNING [cd5afd88b4c0] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-234 (_run_agent_streaming):140597088216768 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/4711b74d3cee06fbfe2381a4afb42a7d/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (26e8d9c1-0655-4488-9445-670bac209b9f)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:49:58,475 WARNING [0930078b188b] agent.tool_executor: Tool terminal returned error (180.50s): {"output": "[Command timed out after 180s]", "exit_code": 124, "error": null}
+2026-06-29 15:50:04,582 WARNING [cd5afd88b4c0] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-242 (_run_agent_streaming):140597587982016 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/4711b74d3cee06fbfe2381a4afb42a7d/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (87aa9fdc-b9b5-430b-8931-da8778ba738f)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:50:13,219 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:50:13,673 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:50:15,269 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:50:15,339 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:50:18,040 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:50:18,122 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:50:34,617 WARNING [0930078b188b] agent.tool_executor: Tool terminal returned error (30.58s): {"output": "", "exit_code": 124, "error": null}
+2026-06-29 15:50:37,227 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:51:03,806 WARNING [0930078b188b] agent.tool_executor: Tool terminal returned error (20.40s): {"output": "", "exit_code": 124, "error": null}
+
+[Tool loop warning: same_tool_failure_warning; count=3; terminal has failed 3 times this turn. This looks like a loop. Do not switch to text-only repli
+2026-06-29 15:51:51,165 WARNING [0930078b188b] agent.tool_executor: Tool terminal returned error (30.39s): {"output": "[Command timed out after 30s]", "exit_code": 124, "error": null}
+2026-06-29 15:52:19,648 WARNING [0930078b188b] agent.tool_executor: Tool terminal returned error (15.35s): {"output": "Traceback (most recent call last):\n  File \"<string>\", line 3, in <module>\n  File \"/nix/store/h097imm3w6dpx10qynrd2sz9fks2wbq8-python3-3.12.11/lib/python3.12/subprocess.py\", line 550,
+2026-06-29 15:52:45,544 WARNING [0930078b188b] agent.tool_executor: Tool terminal returned error (15.47s): {"output": "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium\n/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium-browser\n\n[Command timed
+2026-06-29 15:52:51,197 WARNING [0930078b188b] agent.tool_executor: Tool terminal returned error (1.49s): {"output": "playwright                   1.61.0\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nAttributeError: module 'playwright' has no attribute '__version__'", "exi
+2026-06-29 15:58:27,109 WARNING [0930078b188b] agent.tool_executor: Tool terminal returned error (60.68s): {"output": "", "exit_code": 124, "error": null}
+2026-06-29 16:01:42,708 WARNING [0930078b188b] agent.tool_executor: Tool terminal returned error (25.46s): {"output": "[Command interrupted]", "exit_code": 130, "error": null}
+2026-06-29 16:02:11,025 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 16:02:11,029 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 16:02:11,370 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 16:02:11,376 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 16:02:11,399 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 16:02:11,399 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 16:02:11,400 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 16:02:13,260 WARNING [0930078b188b] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-467 (_run_agent_streaming):140596745332416 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/4711b74d3cee06fbfe2381a4afb42a7d/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (02e3498d-ceae-47b9-9cc3-246d3233ece1)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 16:03:41,994 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 0930078b188b
+2026-06-29 16:03:43,217 WARNING [0930078b188b] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-525 (_run_agent_streaming):140596745332416 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/4711b74d3cee06fbfe2381a4afb42a7d/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5d84fed7-9c33-4bdb-8601-dd9bbb082487)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 16:06:10,349 WARNING [0930078b188b] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-525 (_run_agent_streaming):140596745332416 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 16:06:10,350 WARNING [0930078b188b] agent.conversation_loop: Retrying API call in 2.335742314587565s (attempt 1/3) thread=Thread-525 (_run_agent_streaming):140596745332416 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-stealth. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '1000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782777600000'}, 'provider_name': None}}, 'user_id': 'user_3FfUhRRRXZqyMrxoj5dzH0sXBNC'}
+2026-06-29 16:06:13,235 WARNING [0930078b188b] agent.conversation_loop: API call failed (attempt 2/3) error_type=RateLimitError thread=Thread-525 (_run_agent_streaming):140596745332416 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 16:06:13,235 WARNING [0930078b188b] agent.conversation_loop: Retrying API call in 4.734864176786341s (attempt 2/3) thread=Thread-525 (_run_agent_streaming):140596745332416 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-stealth. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '1000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782777600000'}, 'provider_name': None}}, 'user_id': 'user_3FfUhRRRXZqyMrxoj5dzH0sXBNC'}
+2026-06-29 16:06:18,568 WARNING [0930078b188b] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-525 (_run_agent_streaming):140596745332416 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 16:06:18,578 ERROR [0930078b188b] agent.conversation_loop: API call failed after 3 retries. HTTP 429: Rate limit exceeded: free-models-per-day-stealth.  | provider=openrouter model=owl-alpha msgs=347 tokens=~100,693
+2026-06-29 16:11:15,540 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 16:11:15,783 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 16:11:16,247 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 16:11:20,272 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 16:11:20,352 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 16:11:23,258 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 16:11:23,345 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 16:11:39,304 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 16:11:39,312 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 16:11:39,423 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 16:11:39,497 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 16:11:39,521 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 16:12:06,891 WARNING [0930078b188b] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-695 (_run_agent_streaming):140596732745408 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/4711b74d3cee06fbfe2381a4afb42a7d/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (5141cd49-1c76-4b20-831e-8c7411ba751b)","code":4006}],"success":false,"result":{},"messages":[]}

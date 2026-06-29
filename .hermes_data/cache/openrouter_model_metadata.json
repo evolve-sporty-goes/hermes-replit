@@ -2226,58 +2226,6 @@
 "input_cache_write_1h":"0.00001"
 }
 },
-"anthropic/claude-opus-4.6-fast":{
-"context_length":1000000,
-"max_completion_tokens":128000,
-"name":"Anthropic: Claude Opus 4.6 (Fast)",
-"pricing":{
-"prompt":"0.00003",
-"completion":"0.00015",
-"web_search":"0.01",
-"input_cache_read":"0.000003",
-"input_cache_write":"0.0000375",
-"input_cache_write_1h":"0.00006"
-}
-},
-"claude-opus-4.6-fast":{
-"context_length":1000000,
-"max_completion_tokens":128000,
-"name":"Anthropic: Claude Opus 4.6 (Fast)",
-"pricing":{
-"prompt":"0.00003",
-"completion":"0.00015",
-"web_search":"0.01",
-"input_cache_read":"0.000003",
-"input_cache_write":"0.0000375",
-"input_cache_write_1h":"0.00006"
-}
-},
-"anthropic/claude-4.6-opus-fast-20260407":{
-"context_length":1000000,
-"max_completion_tokens":128000,
-"name":"Anthropic: Claude Opus 4.6 (Fast)",
-"pricing":{
-"prompt":"0.00003",
-"completion":"0.00015",
-"web_search":"0.01",
-"input_cache_read":"0.000003",
-"input_cache_write":"0.0000375",
-"input_cache_write_1h":"0.00006"
-}
-},
-"claude-4.6-opus-fast-20260407":{
-"context_length":1000000,
-"max_completion_tokens":128000,
-"name":"Anthropic: Claude Opus 4.6 (Fast)",
-"pricing":{
-"prompt":"0.00003",
-"completion":"0.00015",
-"web_search":"0.01",
-"input_cache_read":"0.000003",
-"input_cache_write":"0.0000375",
-"input_cache_write_1h":"0.00006"
-}
-},
 "z-ai/glm-5.1":{
 "context_length":202752,
 "max_completion_tokens":null,
@@ -4115,22 +4063,20 @@
 },
 "stepfun/step-3.5-flash":{
 "context_length":262144,
-"max_completion_tokens":16384,
+"max_completion_tokens":65536,
 "name":"StepFun: Step 3.5 Flash",
 "pricing":{
-"prompt":"0.00000009",
-"completion":"0.0000003",
-"input_cache_read":"0.00000002"
+"prompt":"0.0000001",
+"completion":"0.0000003"
 }
 },
 "step-3.5-flash":{
 "context_length":262144,
-"max_completion_tokens":16384,
+"max_completion_tokens":65536,
 "name":"StepFun: Step 3.5 Flash",
 "pricing":{
-"prompt":"0.00000009",
-"completion":"0.0000003",
-"input_cache_read":"0.00000002"
+"prompt":"0.0000001",
+"completion":"0.0000003"
 }
 },
 "moonshotai/kimi-k2.5":{

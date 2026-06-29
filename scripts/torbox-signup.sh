@@ -12,7 +12,6 @@ set -euo pipefail
 
 CRED="/home/runner/workspace/credentials/torbox_credentials.txt"
 ANON_KEY=$(cat /home/runner/workspace/credentials/.supabase_anon_key)
-CHROMIUM="/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
 PROTON_PROFILE="$HOME/proton_profile"
 EMAIL_PREFIX="${1:-bavmin}"
 PASSWORD="Satyana@1234"
@@ -183,16 +182,12 @@ if "config" in sys.modules: del sys.modules["config"]
 C = importlib.import_module("config")
 
 email = sys.argv[1]
-CH = "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
 PR = os.path.expanduser("~/proton_profile")
 os.makedirs(PR, exist_ok=True)
 url = "NOT_FOUND"
 
 with sync_playwright() as p:
-    ctx = p.chromium.launch_persistent_context(
-        PR, executable_path=CH, headless=True,
-        args=["--no-sandbox", "--disable-gpu"]
-    )
+    ctx = p.chromium.launch_persistent_context(PR)
     pg = ctx.new_page()
     pg.goto("https://account.proton.me/login", timeout=60000)
     pg.wait_for_timeout(3000)
@@ -290,8 +285,6 @@ API_KEY=$(python3 << 'PYEOF'
 import json, os, sys, time, tempfile, shutil, atexit
 from playwright.sync_api import sync_playwright
 
-CHROMIUM = "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
-
 with open('/tmp/tb_verify_url.txt') as f: verify_url = f.read().strip()
 with open('/tmp/tb_email.txt') as f:      email      = f.read().strip()
 with open('/tmp/tb_password.txt') as f:   password   = f.read().strip()
@@ -385,8 +378,6 @@ for proxy_idx, proxy_addr in enumerate(proxies[:MAX_PROXY_TRIES]):
         with sync_playwright() as p:
             context = p.chromium.launch_persistent_context(
                 td,
-                executable_path=CHROMIUM,
-                headless=False,
                 proxy=proxy_config,
             )
             page = context.new_page()
@@ -408,7 +399,7 @@ for proxy_idx, proxy_addr in enumerate(proxies[:MAX_PROXY_TRIES]):
             page.close()
 
             # 3b: Login
-            page = browser.new_page()
+            page = context.new_page()
             success = False
 
             for attempt in range(MAX_CF_RETRIES):

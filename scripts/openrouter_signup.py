@@ -15,7 +15,6 @@ sys.path.insert(0, "/home/runner/workspace")
 from playwright.sync_api import sync_playwright
 
 CRED_PATH = "/home/runner/workspace/credentials/openrouter_credentials.txt"
-CHROMIUM_PATH = "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
 PROTON_PROFILE = os.path.expanduser("~/proton_profile")
 
 # Step 3 subprocess: search Proton inbox for OpenRouter verify email
@@ -26,17 +25,11 @@ from playwright.sync_api import sync_playwright
 
 PROTON_USER = sys.argv[1]
 PROTON_PASS = sys.argv[2]
-CHROMIUM = sys.argv[3]
-PROFILE_DIR = sys.argv[4]
-SIGNUP_EMAIL = sys.argv[5]
+PROFILE_DIR = sys.argv[3]
+SIGNUP_EMAIL = sys.argv[4]
 
 with sync_playwright() as p:
-    context = p.chromium.launch_persistent_context(
-        PROFILE_DIR,
-        executable_path=CHROMIUM,
-        headless=False,
-        no_viewport=True,
-    )
+    context = p.chromium.launch_persistent_context(PROFILE_DIR,headless=False)
     page = context.pages[0] if context.pages else context.new_page()
 
     # Go to Proton — may already be logged in via persistent profile
@@ -299,11 +292,7 @@ def main():
 
     # Main retry loop: signup → check inbox → verify+key
     with sync_playwright() as p:
-        context = p.chromium.launch_persistent_context(
-            browser_tmpdir,
-            executable_path=CHROMIUM_PATH,
-            headless=False,
-        )
+        context = p.chromium.launch_persistent_context(browser_tmpdir,headless=False)
         page = context.pages[0] if context.pages else context.new_page()
 
         for attempt in range(1, 4):
@@ -316,7 +305,7 @@ def main():
             print("=" * 60)
 
             result = subprocess.run(
-                [sys.executable, "-c", PROTON_FETCH_SCRIPT, PROTON_USER, PROTON_PASS, CHROMIUM_PATH, PROTON_PROFILE, email],
+                [sys.executable, "-c", PROTON_FETCH_SCRIPT, PROTON_USER, PROTON_PASS, PROTON_PROFILE, email],
                 capture_output=True, text=True, timeout=180,
             )
             for line in result.stdout.strip().split("\n"):

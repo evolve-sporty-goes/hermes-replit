@@ -16,4 +16,4 @@ Hermes non-interactive model config: `hermes model` is TUI-only, cannot be scrip
 §
 scripts/sync v3 (2026-06-29): ~90 lines, no AI, no per-file commits, no set -e, no auto filter-repo. Single askpass both phases. Bash pitfalls: set -e+while EOF, fn def order, trap RETURN.
 §
-All browser automation migrated from Camoufox to Playwright + system Chromium (2026-06-29). Camoufox removed due to recurring isMobile CDP bug after Playwright upgrades. Scripts use launch_persistent_context with Nix store Chromium path. Skills: anti-detect-browser-automation (v2), script-validation-and-execution.
+Browser automation: Playwright + system Chromium (2026-06-29 migration from Camoufox). CRITICAL: headless=True always — headless=False HANGS (no real X server despite $DISPLAY=:0). Scripts use launch_persistent_context with Nix store Chromium.

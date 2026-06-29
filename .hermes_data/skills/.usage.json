@@ -3,14 +3,14 @@
     "archived_at": null,
     "created_at": "2026-06-29T12:53:34.103264+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-06-29T15:36:44.228005+00:00",
-    "last_used_at": "2026-06-29T15:35:30.833645+00:00",
-    "last_viewed_at": "2026-06-29T15:35:30.798762+00:00",
-    "patch_count": 6,
+    "last_patched_at": "2026-06-29T15:47:49.816929+00:00",
+    "last_used_at": "2026-06-29T15:45:20.669723+00:00",
+    "last_viewed_at": "2026-06-29T15:45:20.657070+00:00",
+    "patch_count": 10,
     "pinned": false,
     "state": "active",
-    "use_count": 3,
-    "view_count": 3
+    "use_count": 5,
+    "view_count": 5
   },
   "computer-use": {
     "archived_at": null,

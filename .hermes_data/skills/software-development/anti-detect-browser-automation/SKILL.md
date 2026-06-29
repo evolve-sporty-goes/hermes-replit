@@ -53,7 +53,7 @@ with sync_playwright() as p:
 |---|---|
 | `user_data_dir` | Fresh tmpdir per run (or persistent profile for session-keeping) |
 | `executable_path=CHROMIUM_PATH` | Required on Replit/NixOS — system Chromium not auto-detected |
-| `headless=False` | Required for Cloudflare Turnstile sites |
+| `headless=True` | **Always True** — `headless=False` hangs with no display server |
 | `proxy={"server": "socks5://..."}` | Per-browser SOCKS5/HTTP proxy |
 | `no_viewport=True` | Skip viewport sizing (Proton Mail needs this) |
 
@@ -150,6 +150,7 @@ def handle_cf_turnstile(page):
 4. **`enable_cache=True`**: Not a Playwright option. Use `launch_persistent_context` for caching.
 5. **`executable_path` is mandatory** on Replit/NixOS because Playwright's bundled Chromium isn't in the Nix store system path.
 6. **`context.close()`** at the end of the `with sync_playwright()` block — the `with` block handles `p.stop()` but not `context.close()` explicitly if you exit early with `return`.
+7. **`headless=False` HANGS** when no real display server is active. On Replit/NixOS, `$DISPLAY` may be set (`:0`) but there is no running X server — Playwright will hang indefinitely trying to open a visible window. **Always use `headless=True`** with system Chromium. If you see a script timing out with no output, this is the first thing to check. Verify with: `python3 -c "from playwright.sync_api import sync_playwright; p=sync_playwright().start(); b=p.chromium.launch(headless=True, executable_path=CHROMIUM); b.close()"` — if `headless=True` works but `headless=False` hangs, it's a missing display server.
 
 ## When browser scripts break: diagnostic checklist
 
@@ -159,6 +160,7 @@ def handle_cf_turnstile(page):
 4. **Test minimal context**: `sync_playwright() → launch_persistent_context → new_page → goto example.com`
 5. **Proxy dead?**: `socksocket().connect(("target.app", 443))` test before launching browser
 6. **Cloudflare issue?**: Check title for "Just a moment", check for CF iframe
+7. **Script hanging with no output?** → `headless=False` is set but no display server. Change to `headless=True`. Verify: `python3 -c "from playwright.sync_api import sync_playwright; p=sync_playwright().start(); b=p.chromium.launch(headless=True, executable_path=CHROMIUM); b.close()"`
 
 ## Support files
 

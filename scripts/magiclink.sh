@@ -24,7 +24,7 @@ CHROME = "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bi
 PROFILE = os.path.expanduser("~/proton_profile")
 
 with sync_playwright() as p:
-    ctx = p.chromium.launch_persistent_context(PROFILE, executable_path=CHROME, headless=True, args=["--no-sandbox", "--disable-gpu"])
+    ctx = p.chromium.launch_persistent_context(PROFILE)
     pg = ctx.new_page()
     pg.goto("https://torbox.app", timeout=30000)
     pg.wait_for_timeout(2000)
@@ -57,11 +57,10 @@ if "config" in sys.modules: del sys.modules["config"]
 C = importlib.import_module("config")
 
 email = sys.argv[1]
-CHROME = "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
 PROFILE = os.path.expanduser("~/proton_profile")
 
 with sync_playwright() as p:
-    ctx = p.chromium.launch_persistent_context(PROFILE, executable_path=CHROME, headless=False, args=["--no-sandbox", "--disable-gpu"])
+    ctx = p.chromium.launch_persistent_context(PROFILE)
     pg = ctx.new_page()
     pg.goto("https://account.proton.me/login", timeout=60000)
     pg.wait_for_timeout(3000)
