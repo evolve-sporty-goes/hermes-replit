@@ -17887,3 +17887,17 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 2026-06-29 10:06:53,023 INFO [be6e53358f86] agent.conversation_loop: API call #5: model=owl-alpha provider=openrouter in=69779 out=841 total=70620 latency=36.8s cache=67200/69779 (96%)
 2026-06-29 10:06:53,234 INFO [be6e53358f86] agent.tool_executor: tool skill_manage completed (0.21s, 227 chars)
 2026-06-29 10:06:53,273 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-637 (_call):140124729874112 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 10:06:56,196 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 10:06:58,715 INFO [be6e53358f86] agent.tool_executor: tool terminal completed (7.86s, 1758 chars)
+2026-06-29 10:06:58,746 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-639 (_call):140124432094912 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 10:07:04,571 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-639 (_call):140124432094912 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 10:07:04,572 INFO [be6e53358f86] agent.conversation_loop: API call #5: model=owl-alpha provider=openrouter in=63500 out=44 total=63544 latency=5.8s cache=62720/63500 (99%)
+2026-06-29 10:07:04,575 INFO [be6e53358f86] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=5/90 budget=5/90 tool_turns=61 last_msg_role=assistant response_len=207 session=be6e53358f86
+2026-06-29 10:07:04,779 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=bg-review:140124432094912 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 10:07:04,894 INFO [be6e53358f86] agent.turn_context: conversation turn: session=be6e53358f86 model=owl-alpha provider=openrouter platform=webui history=164 msg='Review the conversation above and consider saving to memory if appropriate.  Foc...'
+2026-06-29 10:07:04,935 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-640 (_call):140124972115648 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 10:07:06,049 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 10:07:07,959 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 10:07:09,502 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/4711b74d3cee06fbfe2381a4afb42a7d/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 10:07:09,503 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 10:07:10,848 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error

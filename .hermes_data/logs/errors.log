@@ -5203,3 +5203,7 @@ RuntimeError: No LLM provider configured for task=vision provider=auto. Run: her
 2026-06-29 10:06:19,791 WARNING [be6e53358f86] agent.tool_executor: Tool terminal returned error (0.20s): {"output": "scripts/sync: line 19: unexpected EOF while looking for matching ``'", "exit_code": 2, "error": null}
 2026-06-29 10:06:25,412 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
 2026-06-29 10:06:41,196 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 10:06:56,196 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 10:07:06,049 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 10:07:07,959 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 10:07:10,848 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
