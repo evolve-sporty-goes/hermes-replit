@@ -82,6 +82,74 @@ grep -rl 'sync_playwright' scripts/ | xargs sed -i 's/from playwright.sync_api i
 - Un-indent the body that was inside the `with` block (4 spaces → 0)
 - Remove `p.stop()` lines
 
+## CRITICAL: `pipefail` + `grep` kills scripts silently
+
+With `set -eo pipefail`, if `grep` finds no matches the whole pipeline exits 1
+and the script dies. This is especially dangerous when capturing output:
+
+```bash
+# DANGEROUS: dies if grep finds nothing
+RESULT=$(python3 ~/helper.py | grep '^RESULT:' | head -1 | cut -d: -f2-)
+```
+
+**Fix 1**: Use `tail -1` instead of `head -1` (tail doesn't fail on empty input
+the same way), and `sed` instead of `cut` (URLs contain colons):
+
+```bash
+RESULT=$(python3 ~/helper.py 2>/dev/null | grep '^RESULT:' | tail -1 | sed 's/^RESULT://')
+```
+
+**Fix 2**: Use `if` instead of `&&` one-liner for the check:
+
+```bash
+# BAD: pipefail kills script if condition is false
+[ -z "$RESULT" ] && { echo "missing"; continue; }
+
+# GOOD: explicit if doesn't trigger pipefail
+if [ -z "$RESULT" ]; then echo "missing"; continue; fi
+```
+
+## CRITICAL: Python stdout flush before `sys.exit(0)` + `ctx.close()`
+
+When a Python helper prints a result then immediately closes the browser and exits,
+the pipe can be killed before stdout flushes. The bash capture gets empty string.
+
+```python
+# BAD: pipe may be killed before flush
+print(f"VERIFY_URL:{url}")
+ctx.close()
+sys.exit(0)
+
+# GOOD: flush explicitly, close, then exit
+print(f"VERIFY_URL:{url}", flush=True)
+sys.stdout.flush()
+ctx.close()
+sys.exit(0)
+```
+
+Also: break out of inner loops, set a variable, then print AFTER the loop — don't
+print+exit inside nested `for frame` loops where the break/close ordering matters.
+
+```python
+# BAD: print+exit inside nested loop
+for frame in page.frames:
+    if condition:
+        print(f"RESULT:{value}")
+        ctx.close(); sys.exit(0)
+
+# GOOD: break out, print after loop
+result = None
+for frame in page.frames:
+    if condition:
+        result = value
+        break
+if result:
+    print(f"RESULT:{result}", flush=True)
+    sys.stdout.flush()
+    ctx.close()
+    sys.exit(0)
+```
+
 ## bash syntax check
 
 Always validate before running:

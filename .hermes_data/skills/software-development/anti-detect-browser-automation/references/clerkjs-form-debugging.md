@@ -119,3 +119,9 @@ CloakBrowser auto-solves Turnstile on *most* sites. For Clerk-managed Turnstile
 
 If step 1 fails (Clerk doesn't see form values), Turnstile never renders.
 **Fix the form state first** (dispatchEvent), then Turnstile will auto-solve.
+
+**Manual fallback (rare):** If auto-solve doesn't work, launch CloakBrowser with
+`args=["--enable-blink-features=FakeShadowRoot"]` and use the JS shadow-DOM walker
+from the Cloudflare handling section of the main skill. This reaches inside
+Cloudflare's closed shadow root where the Turnstile checkbox lives — standard
+Playwright frame locators cannot penetrate it.

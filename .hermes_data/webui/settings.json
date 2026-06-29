@@ -18,7 +18,7 @@
   "ignore_agent_updates": false,
   "whats_new_summary_enabled": true,
   "theme": "dark",
-  "skin": "default",
+  "skin": "sienna",
   "font_size": "large",
   "session_jump_buttons": true,
   "render_user_markdown": false,

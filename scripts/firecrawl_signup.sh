@@ -3,7 +3,7 @@
 set -eo pipefail
 export DISPLAY=:1
 cd /home/runner/workspace
-mkdir -p ~/proton_profile credentials
+mkdir -p proton_profile credentials
 
 bash scripts/email.sh > /dev/null 2>&1
 EMAIL=$(bash scripts/email.sh 2>/dev/null | tail -1 | tr -d '[:space:]')
@@ -39,11 +39,13 @@ import sys, re, time
 from cloakbrowser import launch_persistent_context
 PROTON_USER, PROTON_PASS, SIGNUP_EMAIL = sys.argv[1], sys.argv[2], sys.argv[3]
 td = sys.argv[4] if len(sys.argv) > 4 else None
-ctx = launch_persistent_context(td, headless=False) if td else launch_persistent_context("/tmp/proton-tmp", headless=False)
+ctx = launch_persistent_context("/home/runner/workspace/proton_profile", headless=False) if td else launch_persistent_context("/home/runner/workspace/proton_profile", headless=False)
 page = ctx.pages[0] if ctx.pages else ctx.new_page()
 page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
 page.wait_for_timeout(5000)
-if "/login" in page.url:
+if "/login" not in page.url:
+    print("Already logged in")
+else:
     page.locator("#username").fill(PROTON_USER)
     page.locator("#password").fill(PROTON_PASS)
     page.locator("button[type='submit']").click()

@@ -242,23 +242,95 @@ The challenge iframe doesn't appear until Clerk's React state is properly synced
 and zero Clerk POSTs, Clerk isn't submitting because it doesn't see the field values.
 Fix the form state first (dispatchEvent), then Turnstile will render and auto-solve.
 
-If you still need a manual fallback (rare — only if CloakBrowser auto-solve
-fails on a non-Clerk site):
+**Turnstile detection pitfall — inline vs iframe:**
+Some sites (OpenRouter) embed Turnstile **inline on the main page** (`.cf-turnstile` div or `#challenge-stage`), NOT inside a detectable iframe with `challenges.cloudflare.com` in the URL. The old pattern of only checking `frame.url` for cloudflare misses these entirely.
+
 ```python
+# WRONG: only checks iframes — misses inline Turnstile
+for frame in p.frames:
+    if "challenges.cloudflare.com" in frame.url:
+        # ... click checkbox
+
+# CORRECT: check main page first, then frames
+# 1. Inline Turnstile on main page
+try:
+    turnstile = p.locator(".cf-turnstile, iframe[src*='challenges.cloudflare.com'], #challenge-stage")
+    if turnstile.first.is_visible(timeout=500):
+        cb = turnstile.first.locator("input[type='checkbox'], .ctp-checkbox, body").first
+        if cb.is_visible(timeout=300):
+            cb.click()
+except: pass
+# 2. Frame-based Turnstile (traditional)
+for frame in p.frames:
+    if "challenges.cloudflare.com" in frame.url or "cloudflare" in frame.name.lower():
+        try:
+            cb = frame.locator("input[type='checkbox'], .ctp-checkbox, #challenge-stage, body")
+            if cb.first.is_visible(timeout=500):
+                cb.first.click()
+        except: pass
+# 3. Success check — run EVERY iteration regardless of turnstile detection
+if "confirm-email" in p.url or "verification" in p.inner_text("body")[:300].lower():
+    break
+```
+
+**Key insight**: The success-condition check (`confirm-email` in URL/body) must run on **every** loop iteration, not be gated behind `if not turnstile`. Otherwise the script loops 30× waiting for a turnstile that already passed.
+
+**Manual fallback (rare):** If CloakBrowser auto-solve fails on a non-Clerk site,
+use the `FakeShadowRoot` method documented in the Cloudflare handling section above
+(`--enable-blink-features=FakeShadowRoot` launch arg + JS shadow-DOM walker).
+
+```python
+# Launch with FakeShadowRoot enabled (CloakBrowser-specific Blink feature)
+context = launch_persistent_context(
+    tmpdir,
+    headless=False,
+    humanize=True,
+    args=["--enable-blink-features=FakeShadowRoot"],
+)
+
+# JS: walk open + closed shadow roots to find the Turnstile checkbox
+_FIND_CHECKBOX_JS = """() => {
+  function find(root){
+    if(!root) return null;
+    const direct = root.querySelector && root.querySelector('input[type=checkbox]');
+    if(direct) return direct;
+    for(const el of (root.querySelectorAll ? root.querySelectorAll('*') : [])){
+      const sr = el.fakeShadowRoot || el.shadowRoot;
+      if(sr){ const r = find(sr); if(r) return r; }
+    }
+    return null;
+  }
+  const cb = find(document);
+  if(!cb) return {found:false};
+  const r = cb.getBoundingClientRect();
+  return {found:true, checked:cb.checked, x:r.x+r.width/2, y:r.y+r.height/2, w:r.width};
+}"""
+
 def handle_cf_turnstile(page):
-    """Fallback: click Cloudflare Turnstile checkbox if still present."""
+    """Fallback: click Turnstile checkbox via FakeShadowRoot (CloakBrowser only)."""
     for frame in page.frames:
-        if "challenges.cloudflare.com" in frame.url or "cloudflare" in frame.name.lower():
+        if "challenges.cloudflare" in (frame.url or ""):
             try:
-                cb = frame.locator("input[type='checkbox'], .ctp-checkbox, #challenge-stage")
-                if cb.first.is_visible(timeout=2000):
-                    cb.first.click()
-                    page.wait_for_timeout(5000)
-                    return True
+                info = frame.evaluate(_FIND_CHECKBOX_JS)
+                if not info.get("found") or info.get("checked"):
+                    return False
+                frame_el = frame.frame_element()
+                box = frame_el.bounding_box()
+                if not box:
+                    return False
+                # checkbox coords are iframe-relative; offset by iframe's page position
+                page.mouse.click(box["x"] + info["x"], box["y"] + info["y"])
+                page.wait_for_timeout(3000)
+                return True
             except:
                 pass
     return False
 ```
+
+**Why this works:** Cloudflare Turnstile renders its checkbox inside a **closed**
+shadow root. Standard Playwright frame locators can't penetrate it. CloakBrowser's
+`--enable-blink-features=FakeShadowRoot` flag exposes `el.fakeShadowRoot` natively,
+so the JS walker can find and click the checkbox without any external patches.
 
 ## Conversion pitfalls (Playwright → CloakBrowser)
 
@@ -307,15 +379,81 @@ def handle_cf_turnstile(page):
 8. **License issues?**: Free tier v146 may be stale; check `python3 -m cloakbrowser update`
 9. **`headless=True` CRASHES with CloakBrowser v146** — `TargetClosedError`. Always use `headless=False`. If no display server, wrap with `xvfb-run`.
 10. **Clerk.js form fields need `dispatchEvent`** — `.fill()` and `.check()` do NOT trigger Clerk's internal React state. The button appears enabled but Clerk never POSTs to its API. Fix: use JS `dispatchEvent` after setting values, or `check(force=True)` for checkboxes.
-11. **"Missing X server or $DISPLAY"** — subprocess Python doesn't inherit DISPLAY. Add `export DISPLAY=:1` (or correct display) at top of bash script.
-12. **`TypeError: rmtree() got an unexpected keyword argument 'ignore'`** — use `ignore_errors=True`, not `ignore=True`.
-13. **Nested heredoc in command substitution breaks** — `$(python3 << 'EOF')` fails with quote escaping. Generate `.py` files separately, then call them.
+14. **Turnstile inline vs iframe** — OpenRouter embeds Turnstile inline on the main page (`.cf-turnstile`), not in a detectable iframe. Check main page first, then frames. See Cloudflare handling section for the correct detection pattern.
+15. **Success check gated behind turnstile detection** — If your `confirm-email` URL check is inside `if not turnstile:`, it never runs after Turnstile passes. Always check success condition on every loop iteration.
+16. **`pipefail` + `grep` kills script** — With `set -eo pipefail`, `grep` with no matches causes silent script death. Use `tail -1` not `head -1`, `sed` not `cut` for URLs, and `if` not `&&` for the empty check.
+17. **Python stdout not flushed before `ctx.close()` + `sys.exit(0)`** — Pipe capture gets empty string. Always `flush=True` and `sys.stdout.flush()` before closing. Break out of nested loops and print after, not inside.
+18. **Common profile across signup+verify steps** — When a signup flow has multiple browser steps (signup → verify → extract), use the **same persistent profile** for all steps, not separate tmpdirs. Cloudflare challenge state and session cookies earned during signup must carry over to verify. Proton Mail gets its own separate profile. Example: `~/or_profile` shared between `or_signup.py` and `or_verify.py`.
+19. **`CloakBypasser` (CloudflareBypassForScraping) for CF-heavy flows** — When CloakBrowser's auto-solve isn't enough, use the `CloakBypasser` class from `cf_bypasser`. It's async, uses `get_or_generate_html()` to solve challenges, and you bridge to a persistent context by restoring cookies. Install: `pip install git+https://github.com/sarperavci/CloudflareBypassForScraping.git -i https://pypi.org/simple/`. See `references/openrouter-signup-flow.md` for the full two-phase pattern.
+
+## Cloudflare bypass flow (from sarperavci/CloudflareBypassForScraping)
+
+The reference implementation at
+[`sarperavci/CloudflareBypassForScraping`](https://github.com/sarperavci/CloudflareBypassForScraping)
+uses this flow (adapted for CloakBrowser's sync API):
+
+```python
+import asyncio
+from cloakbrowser import launch_persistent_context
+
+# 1. Launch with FakeShadowRoot enabled
+context = launch_persistent_context(
+    tmpdir,
+    headless=False,
+    humanize=True,
+    args=["--enable-blink-features=FakeShadowRoot"],
+    proxy="socks5://user:pass@proxy:1080",  # optional
+    geoip=True,  # auto timezone/locale from proxy IP
+)
+page = context.pages[0] if context.pages else context.new_page()
+
+# 2. Navigate and let challenge scripts load
+page.goto(url, timeout=60000)
+page.wait_for_timeout(5000)  # CHALLENGE_SETTLE_SECONDS
+
+# 3. Check if already bypassed
+async def is_bypassed(page):
+    title = page.title()
+    if "just a moment" in title.lower():
+        return False
+    html = page.content()
+    if "please complete the captcha" in html.lower():
+        return False
+    if any(m in html.lower() for m in ("you have been blocked", "error 1020", "access denied")):
+        return False
+    return True
+
+# 4. If CF detected, try auto-solve then manual click
+if not is_bypassed(page):
+    # Wait for auto-solve (non-interactive challenges resolve on their own)
+    for _ in range(10):
+        page.wait_for_timeout(2000)
+        if is_bypassed(page):
+            break
+    # If still blocked, try the FakeShadowRoot click
+    if not is_bypassed(page):
+        handle_cf_turnstile(page)  # uses the fallback from Cloudflare handling section
+
+# 5. Extract cookies for your own HTTP client
+cookies = context.cookies()  # list of {name, value, domain, ...}
+user_agent = page.evaluate("navigator.userAgent")
+```
+
+**Key differences from vanilla Playwright:**
+- `args=["--enable-blink-features=FakeShadowRoot"]` — CloakBrowser-specific Blink flag
+- `el.fakeShadowRoot` in JS — natively accesses closed shadow roots
+- `geoip=True` — auto-derives timezone/locale from proxy exit IP
+- Cookie + user-agent pair must be sent together or Cloudflare rejects the cookie
+
+**Alternative: FastAPI server** — For a managed bypass proxy with cookie caching and request mirroring, use the [CloudflareBypassForScraping](https://github.com/sarperavci/CloudflareBypassForScraping) server (`pip install -e . && python server.py`). See `references/cloudflare-bypass.md` for full setup.
 
 ## Support files
 
 - `references/camoufox-playwright-cdp-compat.md` — historical Camoufox notes, `isMobile` CDP patch (no longer needed with CloakBrowser)
 - `references/clerkjs-form-debugging.md` — Clerk.js form state issues, dispatchEvent workaround, network-level debugging recipe, Turnstile auto-solve flow
 - `references/firecrawl-cli.md` — Firecrawl CLI install, auth, and usage reference
-- `references/cloakbrowser-bash-pattern.md` — bash+python helper pattern, nested heredoc pitfall, DISPLAY env, sed migration one-liner
+- `references/cloakbrowser-bash-pattern.md` — bash+python helper pattern, nested heredoc pitfall, DISPLAY env, sed migration one-liner, pipefail+grep pitfall, stdout flush before exit
 - `references/proton-mail-automation.md` — Proton Mail inbox automation: persistent profile, search, extract verification links, bash integration
+- `references/cloudflare-bypass.md` — Full CloudflareBypassForScraping integration: server setup (FastAPI/Docker), API endpoints, request mirroring, FakeShadowRoot, solve flow, cookie extraction
+- `references/openrouter-signup-flow.md` — OpenRouter signup: Clerk.js form, inline Turnstile, Proton verification, API key extraction
 - `scripts/cloak_replace.sh` — One-liner bulk sed script to migrate playwright→cloakbrowser in all workspace scripts

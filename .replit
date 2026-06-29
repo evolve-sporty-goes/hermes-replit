@@ -33,16 +33,6 @@ task = "workflow.run"
 args = "Hermes"
 
 [[ports]]
-localPort = 9377
-externalPort = 3000
-exposeLocalhost = true
-
-[[ports]]
-localPort = 6080
-externalPort = 3001
-exposeLocalhost = true
-
-[[ports]]
 localPort = 3002
 externalPort = 3002
 exposeLocalhost = true
@@ -61,7 +51,21 @@ localPort = 5000
 externalPort = 5000
 
 [[ports]]
+localPort = 6080
+externalPort = 3001
+exposeLocalhost = true
+
+[[ports]]
+localPort = 8000
+externalPort = 8000
+
+[[ports]]
 localPort = 8787
 externalPort = 80
+exposeLocalhost = true
+
+[[ports]]
+localPort = 9377
+externalPort = 3000
 exposeLocalhost = true
 
