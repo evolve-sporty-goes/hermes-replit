@@ -16241,3 +16241,47 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 2026-06-29 07:49:56,940 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-934 (_call):140434120160960 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
 2026-06-29 07:50:02,335 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-934 (_call):140434120160960 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
 2026-06-29 07:50:02,336 INFO [6a996830d49d] agent.conversation_loop: API call #63: model=openrouter/owl-alpha provider=openrouter in=55541 out=43 total=55584 latency=5.4s cache=55296/55541 (100%)
+2026-06-29 07:50:05,979 INFO [6a996830d49d] agent.tool_executor: tool terminal completed (3.62s, 1514 chars)
+2026-06-29 07:50:06,021 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-936 (_call):140434120160960 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:50:11,515 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-936 (_call):140434120160960 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:50:11,516 INFO [6a996830d49d] agent.conversation_loop: API call #64: model=openrouter/owl-alpha provider=openrouter in=56223 out=67 total=56290 latency=5.5s cache=55424/56223 (99%)
+2026-06-29 07:50:11,972 INFO [6a996830d49d] agent.tool_executor: tool terminal completed (0.44s, 374 chars)
+2026-06-29 07:50:12,000 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-938 (_call):140434120160960 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:50:17,105 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-938 (_call):140434120160960 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:50:17,105 INFO [6a996830d49d] agent.conversation_loop: API call #65: model=openrouter/owl-alpha provider=openrouter in=56417 out=113 total=56530 latency=5.1s cache=56192/56417 (100%)
+2026-06-29 07:50:17,120 INFO [6a996830d49d] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=openrouter/owl-alpha api_calls=16/90 budget=16/90 tool_turns=52 last_msg_role=assistant response_len=502 session=6a996830d49d
+2026-06-29 07:50:17,186 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=bg-review:140434120160960 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:50:17,538 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 07:50:17,543 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 07:50:17,555 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 07:50:17,556 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 07:51:17.
+2026-06-29 07:50:17,563 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 07:50:17,563 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 07:51:17.
+2026-06-29 07:50:17,563 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 07:50:17,563 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 07:50:17,566 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 07:50:17,613 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 07:50:17,616 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 07:50:17,617 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 07:50:17,641 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 07:50:17,642 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 07:51:17.
+2026-06-29 07:50:17,654 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 07:50:17,655 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 07:51:17.
+2026-06-29 07:50:17,655 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 07:50:17,797 INFO [6a996830d49d] agent.turn_context: conversation turn: session=6a996830d49d model=openrouter/owl-alpha provider=openrouter platform=webui history=130 msg='Review the conversation above and update the skill library. Be ACTIVE — most ses...'
+2026-06-29 07:50:17,820 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-939 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:50:20,900 INFO api.streaming: title_status session=6a996830d49d status=refreshed reason=llm title='Clean Git History and Force Push' raw_preview=''
+2026-06-29 07:50:20,901 INFO api.streaming: Adaptive title refresh: session=6a996830d49d new_title='Clean Git History and Force Push'
+2026-06-29 07:50:21,702 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-939 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:50:21,703 INFO [6a996830d49d] agent.conversation_loop: API call #1: model=openrouter/owl-alpha provider=openrouter in=57269 out=16 total=57285 latency=3.9s cache=50944/57269 (89%)
+2026-06-29 07:50:21,744 INFO [6a996830d49d] agent.tool_executor: tool skill_view completed (0.04s, 11854 chars)
+2026-06-29 07:50:21,759 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-941 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:50:23,326 INFO agent.model_metadata: Could not detect context length for model 'openrouter/owl-alpha' at https://api.cloudflare.com/client/v4/accounts/59cec8e96c70ae69d4c4a2faf4e12eb2/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 07:50:26,759 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-941 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:50:26,760 INFO [6a996830d49d] agent.conversation_loop: API call #2: model=openrouter/owl-alpha provider=openrouter in=60398 out=76 total=60474 latency=5.0s cache=57216/60398 (95%)
+2026-06-29 07:50:26,794 INFO [6a996830d49d] agent.tool_executor: tool skill_view completed (0.03s, 2592 chars)
+2026-06-29 07:50:26,827 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-943 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:50:30,104 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-943 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:50:30,105 INFO [6a996830d49d] agent.conversation_loop: API call #3: model=openrouter/owl-alpha provider=openrouter in=61214 out=33 total=61247 latency=3.3s cache=60288/61214 (98%)
+2026-06-29 07:50:30,136 INFO [6a996830d49d] agent.tool_executor: tool skill_view completed (0.03s, 4782 chars)
+2026-06-29 07:50:30,160 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-944 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
