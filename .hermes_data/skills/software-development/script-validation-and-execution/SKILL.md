@@ -1,7 +1,7 @@
 ---
 name: script-validation-and-execution
-description: Validate, inspect, and safely execute user scripts in the workspace. Distinguish safe health checks from destructive or external-service automation.
-trigger: running scripts, checking scripts, executing .sh/.py files, validating script health, scripts folder, backup.sh, signup scripts
+description: Validate, inspect, and safely execute user scripts in the workspace. Distinguish safe health checks from destructive or external-service automation. Extract content from JS-rendered pages when standard tools fail.
+trigger: running scripts, checking scripts, executing .sh/.py files, validating script health, scripts folder, backup.sh, signup scripts, blogger extraction, dynamic content extraction, web_extract fallback
 version: 1
 ---
 
@@ -118,9 +118,32 @@ grep -R "bash .*scripts/\|source .*scripts/\|/home/runner/workspace/scripts/" /h
 
 This user prefers terse commands and explicit scripts they execute themselves. When in doubt, provide the command and let them run it.
 
+## Common Pitfall: Browser Automation Version Conflicts
+
+Scripts that auto-install `camoufox` + `playwright` via pip can fail with CDP protocol errors when the fetched browser binary doesn't match the library's expected schema. Error signature:
+
+```
+Protocol error (Browser.setDefaultViewport): ... "isMobile" ... not described in this scheme
+```
+
+Fix: pin a known-good camoufox version or use system Chromium directly (on NixOS: `/nix/store/*-chromium-*/bin/chromium`).
+
+## Common Pitfall: Mislabeled Scripts in This Workspace
+
+The user's `scripts/` directory is a mix of signup automation, browser launching, Tor/proxy infra, and credential syncing. Filenames are frequently misleading (`backup.sh` = TorBox signup, `Signup` = TorBox signup, `hermes.sh` = full agent install+launch). Always read before assuming.
+
+Known categories in `/home/runner/workspace/scripts/`:
+- **TorBox signup variants**: `backup.sh`, `Signup`, `torbox-*.sh`, `tor_signup.sh`, `magiclink.sh`, `torbox-signup.sh.bak`
+- **Browser launching**: `brave`, `firefox`, `torbrowser`
+- **Proxy/Tor/FlareSolvers**: `start-tor-flare.sh`, `flaresolverr-proxy.sh`, `torbox-proxy-rotate.sh`, `torbox-tor-rotate.sh`, `flaresolverr_session.py`
+- **Account automation**: `email.sh`, `firecrawl_gen.py`, `openrouter_signup.py`, `torbox-camoufox-signup.sh`, `torbox-full-signup.sh`, `torbox-full-tor-signup.sh`, `torbox-tor-signup.sh`
+- **Infrastructure**: `hermes.sh` (agent install+launch), `script.sh` (VNC+noVNC desktop), `sync` (secrets+workspace git push), `setcfapi.sh` (Cloudflare API rotation)
+
 ## Session References
 
 - `references/backup-sh-mislabel-case.md` — example of a script whose filename (`backup.sh`) concealed a TorBox signup + Proton Mail browser-automation workflow.
+- `references/camoufox-playwright-version-conflict.md` — camoufox 0.4.11 + Playwright 1.61.0 viewport protocol error on Replit NixOS.
+- `references/blogger-dynamic-content-extraction.md` — extracting Indic-language content from JS-rendered Blogger pages when `web_extract` only returns chrome.
 
 ## Related Skills
 

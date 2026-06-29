@@ -8,8 +8,6 @@ Sensitive files: bare paths in sensitive.txt, no labels. Hardcoded secrets=sensi
 §
 User prefers explicit scripts that they will execute themselves. Give file paths + chmod +x + run commands. Wants terse commands only, no preamble.
 §
-User prefers "edit only, don't execute" instructions. Likes comments explaining approach before running. TorBox signup workflow: Supabase auth at db.torbox.app, FlareSolverr for CF bypass via Tor SOCKS5, Proton Mail for verification.
-§
 When the user asks to modify Hermes config.yaml, provide the shell commands for them to run rather than editing the file directly — the patch tool blocks writes to the agent's own config. Use heredoc append or hermes config set commands.
 §
 Workspace organized: credentials/ docs/ scripts/ dirs created, system dirs (.hermes_data .git .cache .local .pythonlibs .config) must never be moved. subnet-proxy kept at root as standalone Go project.
@@ -17,3 +15,5 @@ Workspace organized: credentials/ docs/ scripts/ dirs created, system dirs (.her
 Hermes non-interactive model config: `hermes model` is TUI-only, cannot be scripted. Set config.yaml directly via `hermes config set model.provider/base_url/api_key/api_compat/default/display_name`. For active config use `hermes config show | grep Model` — config.yaml grep shows stale creds.
 §
 scripts/sync v3 (2026-06-29): ~90 lines, no AI, no per-file commits, no set -e, no auto filter-repo. Single askpass both phases. Bash pitfalls: set -e+while EOF, fn def order, trap RETURN.
+§
+Camoufox + Playwright CDP incompatibility: Browser.setDefaultViewport protocol error (isMobile property not in Firefox CDP scheme). Fix: patch coreBundle.js to strip isMobile from doUpdateDefaultViewport. Skill: anti-detect-browser-automation.
