@@ -6262,3 +6262,52 @@ openai.RateLimitError: Error code: 429 - {'errors': [{'message': "AiError: AiErr
 2026-06-29 22:13:32,642 WARNING [f9dca0438f24] agent.tool_executor: Tool vision_analyze returned error (2.95s): {
   "success": false,
   "error": "Error analyzing image: Error code: 429 - {'errors': [{'message': \"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to 
+2026-06-29 22:14:46,140 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:46,145 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:47,281 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:47,294 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:47,336 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:47,337 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:47,337 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:50,995 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 22:15:52,922 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:52,930 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:53,310 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:53,313 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:53,441 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:53,442 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:53,442 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:56,072 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-16 (_run_agent_streaming):140055662294720 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (02558582-c02f-451c-991d-1b64e97e38b4)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 22:16:03,415 ERROR [f9dca0438f24] tools.vision_tools: Error analyzing image: Invalid image source. Provide an HTTP/HTTPS URL or a valid local file path.
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/vision_tools.py", line 1023, in vision_analyze_tool
+    raise ValueError(
+ValueError: Invalid image source. Provide an HTTP/HTTPS URL or a valid local file path.
+2026-06-29 22:16:03,419 WARNING [f9dca0438f24] agent.tool_executor: Tool vision_analyze returned error (0.39s): {
+  "success": false,
+  "error": "Error analyzing image: Invalid image source. Provide an HTTP/HTTPS URL or a valid local file path.",
+  "analysis": "There was a problem with the request and the image
+2026-06-29 22:16:18,063 WARNING [f9dca0438f24] agent.auxiliary_client: Auxiliary vision (async): rate limit on custom and all fallbacks exhausted (fallback_chain + main agent model). Raising original error.
+2026-06-29 22:16:18,063 ERROR [f9dca0438f24] tools.vision_tools: Error analyzing image: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d803e002-01f5-4027-bf06-5146d70d3476)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/vision_tools.py", line 1116, in vision_analyze_tool
+    response = await async_call_llm(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/agent/auxiliary_client.py", line 6309, in async_call_llm
+    await client.chat.completions.create(**kwargs), task)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2700, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d803e002-01f5-4027-bf06-5146d70d3476)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 22:16:18,073 WARNING [f9dca0438f24] agent.tool_executor: Tool vision_analyze returned error (2.69s): {
+  "success": false,
+  "error": "Error analyzing image: Error code: 429 - {'errors': [{'message': \"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to 

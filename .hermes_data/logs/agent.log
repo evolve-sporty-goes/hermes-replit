@@ -25509,3 +25509,120 @@ openai.RateLimitError: Error code: 429 - {'errors': [{'message': "AiError: AiErr
 2026-06-29 22:13:46,928 INFO [f9dca0438f24] run_agent: OpenAI client aborted (stream_interrupt_abort, shared=False, tcp_force_closed=1, deferred_close=stranger_thread) thread=Thread-70 (_run_agent_streaming):140238914365120 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
 2026-06-29 22:13:46,933 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-274 (_call):140238533949120 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
 2026-06-29 22:13:47,186 INFO [f9dca0438f24] agent.conversation_loop: Turn ended: reason=interrupted_during_api_call model=owl-alpha api_calls=66/90 budget=66/90 tool_turns=91 last_msg_role=assistant response_len=65 session=f9dca0438f24
+2026-06-29 22:14:44,461 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 22:14:44,462 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 22:14:44,462 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 22:14:44,540 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 22:14:44,540 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 22:14:44,541 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 22:14:44,541 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 22:14:44,541 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 22:14:44,541 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 22:14:44,542 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 22:14:44,565 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 22:14:44,566 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 22:14:44,567 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 22:14:44,568 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 22:14:44,568 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 22:14:44,569 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 22:14:44,570 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 22:14:44,570 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 22:14:44,571 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 22:14:44,572 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 22:14:44,580 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 22:14:46,140 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:46,145 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:47,280 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 22:14:47,281 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:47,294 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:47,336 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:47,337 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:47,337 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:14:47,965 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 22:14:48,525 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 22:14:48,938 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 22:14:50,091 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 22:14:50,520 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 22:14:50,995 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 22:15:52,903 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-16 (_run_agent_streaming):140055662294720 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 22:15:52,922 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:52,930 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:53,309 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 22:15:53,310 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:53,313 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:53,441 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:53,442 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:53,442 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:15:53,984 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 22:15:54,365 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 22:15:54,365 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 22:15:55,241 INFO [f9dca0438f24] agent.turn_context: conversation turn: session=f9dca0438f24 model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=81 msg='[Workspace::v1: /home/runner/workspace] Continue vision'
+2026-06-29 22:15:55,422 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-19 (_call):140055606195904 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 22:15:56,070 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (02558582-c02f-451c-991d-1b64e97e38b4)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 22:15:56,070 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-19 (_call):140055606195904 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 22:15:56,072 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-16 (_run_agent_streaming):140055662294720 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (02558582-c02f-451c-991d-1b64e97e38b4)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 22:15:56,078 INFO [f9dca0438f24] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 22:15:56,091 INFO [f9dca0438f24] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 22:15:56,476 INFO [f9dca0438f24] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 22:15:56,486 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-20 (_call):140055606195904 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 22:16:02,809 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-20 (_call):140055606195904 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 22:16:02,810 INFO [f9dca0438f24] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=77652 out=84 total=77736 latency=7.5s cache=77568/77652 (100%)
+2026-06-29 22:16:03,414 INFO [f9dca0438f24] tools.vision_tools: Analyzing image: /home/runner/workspace/.hermes_data/cache/screenshots/2026-0
+2026-06-29 22:16:03,414 INFO [f9dca0438f24] tools.vision_tools: User prompt: Fully describe and explain everything about this image, then answer the following question:
+
+What do
+2026-06-29 22:16:03,415 ERROR [f9dca0438f24] tools.vision_tools: Error analyzing image: Invalid image source. Provide an HTTP/HTTPS URL or a valid local file path.
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/vision_tools.py", line 1023, in vision_analyze_tool
+    raise ValueError(
+ValueError: Invalid image source. Provide an HTTP/HTTPS URL or a valid local file path.
+2026-06-29 22:16:03,419 WARNING [f9dca0438f24] agent.tool_executor: Tool vision_analyze returned error (0.39s): {
+  "success": false,
+  "error": "Error analyzing image: Invalid image source. Provide an HTTP/HTTPS URL or a valid local file path.",
+  "analysis": "There was a problem with the request and the image
+2026-06-29 22:16:03,444 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-21 (_call):140055606195904 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 22:16:08,418 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-21 (_call):140055606195904 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 22:16:08,419 INFO [f9dca0438f24] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=77830 out=80 total=77910 latency=5.0s cache=77568/77830 (100%)
+2026-06-29 22:16:08,443 INFO [f9dca0438f24] tools.terminal_tool: Creating new local environment for task default...
+2026-06-29 22:16:08,517 INFO [f9dca0438f24] tools.environments.base: Session snapshot created (session=4f53f4359e50, cwd=/home/runner/hermes-agent)
+2026-06-29 22:16:08,518 INFO [f9dca0438f24] tools.terminal_tool: local environment ready for task default
+2026-06-29 22:16:09,150 INFO [f9dca0438f24] agent.tool_executor: tool terminal completed (0.71s, 100 chars)
+2026-06-29 22:16:09,178 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-25 (_call):140055389664960 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 22:16:15,348 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-25 (_call):140055389664960 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 22:16:15,349 INFO [f9dca0438f24] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=77978 out=91 total=78069 latency=6.2s cache=77824/77978 (100%)
+2026-06-29 22:16:15,751 INFO [f9dca0438f24] tools.vision_tools: Analyzing image: /home/runner/workspace/.hermes_data/cache/screenshots/browse
+2026-06-29 22:16:15,751 INFO [f9dca0438f24] tools.vision_tools: User prompt: Fully describe and explain everything about this image, then answer the following question:
+
+What do
+2026-06-29 22:16:15,751 INFO [f9dca0438f24] tools.vision_tools: Using local image file: /home/runner/workspace/.hermes_data/cache/screenshots/browser_screenshot_756967dce2dd482b89d82aeaeae1ccaf.png
+2026-06-29 22:16:15,751 INFO [f9dca0438f24] tools.vision_tools: Image ready (63.2 KB)
+2026-06-29 22:16:15,752 INFO [f9dca0438f24] tools.vision_tools: Converting image to base64...
+2026-06-29 22:16:15,752 INFO [f9dca0438f24] tools.vision_tools: Image converted to base64 (84.3 KB)
+2026-06-29 22:16:15,753 INFO [f9dca0438f24] tools.vision_tools: Processing image with vision model...
+2026-06-29 22:16:16,143 INFO [f9dca0438f24] agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 22:16:18,059 INFO [f9dca0438f24] agent.auxiliary_client: Auxiliary vision (async): rate limit on custom (Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d803e002-01f5-4027-bf06-5146d70d3476)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}), trying fallback
+2026-06-29 22:16:18,063 WARNING [f9dca0438f24] agent.auxiliary_client: Auxiliary vision (async): rate limit on custom and all fallbacks exhausted (fallback_chain + main agent model). Raising original error.
+2026-06-29 22:16:18,063 ERROR [f9dca0438f24] tools.vision_tools: Error analyzing image: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d803e002-01f5-4027-bf06-5146d70d3476)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/vision_tools.py", line 1116, in vision_analyze_tool
+    response = await async_call_llm(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/agent/auxiliary_client.py", line 6309, in async_call_llm
+    await client.chat.completions.create(**kwargs), task)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2700, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d803e002-01f5-4027-bf06-5146d70d3476)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 22:16:18,073 WARNING [f9dca0438f24] agent.tool_executor: Tool vision_analyze returned error (2.69s): {
+  "success": false,
+  "error": "Error analyzing image: Error code: 429 - {'errors': [{'message': \"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to 
+2026-06-29 22:16:18,099 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-26 (_call):140055370782400 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
