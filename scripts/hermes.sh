@@ -52,5 +52,4 @@ sync
 setcfapi.sh
 # 8. Launch hermes
 hermes update
-hermes doctor --fix
 hermes
