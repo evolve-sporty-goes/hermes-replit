@@ -7,32 +7,82 @@ When pushing to a repo with GitHub Push Protection enabled, commits containing s
 Push protection reveals secrets iteratively. Each push attempt exposes the next file/location:
 
 ```
-1. git filter-branch to remove obvious secret files
+1. git filter-repo to remove obvious secret files
 2. git push --force
 3. GitHub blocks again with new location
 4. Add that file pattern to the filter
 5. Repeat until push succeeds
 ```
 
-## Step-by-Step History Rewrite
+## Preferred: `git filter-repo` (fast, clean)
 
-### 1. Identify the offending files/chunks
+`git filter-repo` is available on Replit via pip and is dramatically faster and safer than `git filter-branch`. It removes files from ALL commits in one pass and auto-cleans.
+
+### Step-by-Step with filter-repo
+
+#### 1. Identify the offending files
 
 GitHub push protection error will list:
 - Commit SHA
 - File path + line number
 - Secret type (e.g., "Cloudflare User API Token")
 
-### 2. Rewrite history to remove secrets
+#### 2. Install filter-repo (if needed)
 
 ```bash
-# Remove specific files from ALL commits
+pip install git-filter-repo
+```
+
+#### 3. Commit any unstaged work first
+
+```bash
+git add -A && git commit -m "checkpoint: pre-filter"
+```
+
+#### 4. Run filter-repo to remove files from all history
+
+```bash
+git filter-repo --invert-paths --path <file1> --path <file2> --force
+```
+
+- `--invert-paths` = remove these paths (keep everything else)
+- `--path` = file or directory to remove (repeat for multiple)
+- `--force` = required if repo was not freshly cloned
+
+#### 5. Re-add remote (filter-repo removes it)
+
+```bash
+git remote add origin https://github.com/org/repo.git
+```
+
+#### 6. Force push
+
+```bash
+PAT=$(cat credentials/.pat)
+ASKPASS=$(mktemp)
+printf '#!/bin/bash\necho %s\n' "$PAT" > "$ASKPASS"
+chmod +x "$ASKPASS"
+GIT_ASKPASS="$ASKPASS" git push origin main --force
+rm -f "$ASKPASS"
+```
+
+#### 7. Verify
+
+```bash
+git log --all -- <file1> <file2>  # should return nothing
+```
+
+## Fallback: `git filter-branch` (when filter-repo unavailable)
+
+### 1. Rewrite history to remove secrets
+
+```bash
 FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --force --index-filter '
   git rm --cached --ignore-unmatch <file1> <file2> ...
 ' --prune-empty --tag-name-filter cat -- --all
 ```
 
-### 3. Clean up after filter-branch
+### 2. Clean up after filter-branch
 
 ```bash
 # Delete old refs backed up by filter-branch
@@ -45,7 +95,7 @@ git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 ```
 
-### 4. Prevent re-commitment
+### 3. Prevent re-commitment
 
 Add files to `.gitignore` so they don't get re-added:
 
@@ -54,7 +104,7 @@ echo "<file_pattern>" >> .gitignore
 git add .gitignore && git commit -m "chore: prevent secrets in git history"
 ```
 
-### 5. Force push
+### 4. Force push
 
 ```bash
 PAT=$(cat credentials/.pat)
@@ -82,8 +132,6 @@ FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --force --index-filter '
 # Restore normal tracking when done
 git update-index --no-assume-unchanged <files>
 ```
-
-## Common Files Containing Secrets
 
 From this workspace's experience:
 

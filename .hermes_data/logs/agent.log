@@ -16285,3 +16285,156 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 2026-06-29 07:50:30,105 INFO [6a996830d49d] agent.conversation_loop: API call #3: model=openrouter/owl-alpha provider=openrouter in=61214 out=33 total=61247 latency=3.3s cache=60288/61214 (98%)
 2026-06-29 07:50:30,136 INFO [6a996830d49d] agent.tool_executor: tool skill_view completed (0.03s, 4782 chars)
 2026-06-29 07:50:30,160 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-944 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:00,539 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-944 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:00,540 INFO [6a996830d49d] agent.conversation_loop: API call #4: model=openrouter/owl-alpha provider=openrouter in=62556 out=1316 total=63872 latency=30.4s cache=61184/62556 (98%)
+2026-06-29 07:51:00,560 INFO [6a996830d49d] agent.tool_executor: tool skill_manage completed (0.02s, 564 chars)
+2026-06-29 07:51:00,576 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-945 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:09,514 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-945 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:09,514 INFO [6a996830d49d] agent.conversation_loop: API call #5: model=openrouter/owl-alpha provider=openrouter in=64014 out=230 total=64244 latency=8.9s cache=62464/64014 (98%)
+2026-06-29 07:51:09,608 INFO [6a996830d49d] agent.tool_executor: tool skill_manage completed (0.09s, 523 chars)
+2026-06-29 07:51:09,624 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-946 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:22,545 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-946 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:22,545 INFO [6a996830d49d] agent.conversation_loop: API call #6: model=openrouter/owl-alpha provider=openrouter in=64384 out=496 total=64880 latency=12.9s cache=64000/64384 (99%)
+2026-06-29 07:51:22,572 INFO [6a996830d49d] agent.tool_executor: tool skill_manage completed (0.03s, 535 chars)
+2026-06-29 07:51:22,606 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-947 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:26,899 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-947 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:26,900 INFO [6a996830d49d] agent.conversation_loop: API call #7: model=openrouter/owl-alpha provider=openrouter in=65095 out=58 total=65153 latency=4.3s cache=64384/65095 (99%)
+2026-06-29 07:51:26,935 INFO [6a996830d49d] agent.tool_executor: tool skill_view completed (0.03s, 2427 chars)
+2026-06-29 07:51:26,952 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-948 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:41,016 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-948 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:41,017 INFO [6a996830d49d] agent.conversation_loop: API call #8: model=openrouter/owl-alpha provider=openrouter in=65808 out=566 total=66374 latency=14.1s cache=65024/65808 (99%)
+2026-06-29 07:51:41,030 INFO [6a996830d49d] agent.tool_executor: tool skill_manage completed (0.01s, 572 chars)
+2026-06-29 07:51:41,049 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-949 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:46,156 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-949 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:46,157 INFO [6a996830d49d] agent.conversation_loop: API call #9: model=openrouter/owl-alpha provider=openrouter in=66529 out=80 total=66609 latency=5.1s cache=65792/66529 (99%)
+2026-06-29 07:51:46,199 INFO [6a996830d49d] agent.tool_executor: tool skill_view completed (0.04s, 12065 chars)
+2026-06-29 07:51:46,226 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-950 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:51,683 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-950 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:51,684 INFO [6a996830d49d] agent.conversation_loop: API call #10: model=openrouter/owl-alpha provider=openrouter in=69771 out=74 total=69845 latency=5.5s cache=66432/69771 (95%)
+2026-06-29 07:51:51,702 INFO [6a996830d49d] agent.tool_executor: tool skill_manage completed (0.02s, 149 chars)
+2026-06-29 07:51:51,737 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-952 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:52,590 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 07:51:52,591 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 07:51:52,591 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 07:51:52,648 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 07:51:52,650 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 07:51:52,650 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 07:51:52,651 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 07:51:52,652 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 07:51:52,652 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 07:51:52,653 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 07:51:52,658 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 07:51:52,659 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 07:51:52,660 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 07:51:52,662 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 07:51:52,662 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 07:51:52,662 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 07:51:52,662 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 07:51:52,663 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 07:51:52,663 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 07:51:52,665 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 07:51:52,666 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 07:51:54,668 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 07:51:55,170 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 07:51:58,211 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-952 (_call):140432981866176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:51:58,212 INFO [6a996830d49d] agent.conversation_loop: API call #11: model=openrouter/owl-alpha provider=openrouter in=69921 out=172 total=70093 latency=6.5s cache=69760/69921 (100%)
+2026-06-29 07:51:58,217 INFO [6a996830d49d] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=openrouter/owl-alpha api_calls=11/16 budget=11/16 tool_turns=62 last_msg_role=assistant response_len=669 session=6a996830d49d
+2026-06-29 07:51:58,222 INFO [6a996830d49d] run_agent: OpenAI client closed (agent_close, shared=True, tcp_force_closed=0) thread=bg-review:140434120160960 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:52:53,385 INFO [6a996830d49d] agent.turn_context: conversation turn: session=6a996830d49d model=openrouter/owl-alpha provider=openrouter platform=webui history=130 msg='[Workspace::v1: /home/runner/workspace] Why is github token required for hermes'
+2026-06-29 07:52:53,404 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-960 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:52:53,708 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:52:56,349 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-960 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:52:56,350 INFO [6a996830d49d] agent.conversation_loop: API call #66: model=openrouter/owl-alpha provider=openrouter in=56548 out=32 total=56580 latency=3.0s cache=56320/56548 (100%)
+2026-06-29 07:52:56,560 INFO [6a996830d49d] agent.tool_executor: tool terminal completed (0.09s, 58 chars)
+2026-06-29 07:52:56,582 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-962 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:53:04,317 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:53:05,270 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-962 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:53:05,270 INFO [6a996830d49d] agent.conversation_loop: API call #67: model=openrouter/owl-alpha provider=openrouter in=56625 out=194 total=56819 latency=8.7s cache=56448/56625 (100%)
+2026-06-29 07:53:05,292 INFO [6a996830d49d] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=openrouter/owl-alpha api_calls=2/90 budget=2/90 tool_turns=53 last_msg_role=assistant response_len=778 session=6a996830d49d
+2026-06-29 07:53:08,173 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:53:29,335 INFO [6a996830d49d] agent.turn_context: conversation turn: session=6a996830d49d model=openrouter/owl-alpha provider=openrouter platform=webui history=134 msg='[Workspace::v1: /home/runner/workspace] No when i run hermes doctor it says gh t...'
+2026-06-29 07:53:29,381 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-967 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:53:29,628 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:53:32,454 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-967 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:53:32,455 INFO [6a996830d49d] agent.conversation_loop: API call #68: model=openrouter/owl-alpha provider=openrouter in=56841 out=29 total=56870 latency=3.1s cache=56576/56841 (100%)
+2026-06-29 07:53:34,330 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 07:53:34,331 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 07:53:34,331 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 07:53:34,459 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 07:53:34,459 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 07:53:34,460 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 07:53:34,460 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 07:53:34,460 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 07:53:34,460 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 07:53:34,461 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 07:53:34,462 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 07:53:34,463 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 07:53:34,463 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 07:53:34,464 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 07:53:34,464 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 07:53:34,464 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 07:53:34,464 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 07:53:34,464 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 07:53:34,465 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 07:53:34,465 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 07:53:34,467 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 07:53:35,109 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 07:53:35,603 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 07:53:35,916 INFO [6a996830d49d] agent.tool_executor: tool terminal completed (3.45s, 3855 chars)
+2026-06-29 07:53:35,947 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-969 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:53:40,101 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:53:43,281 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-969 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:53:43,282 INFO [6a996830d49d] agent.conversation_loop: API call #69: model=openrouter/owl-alpha provider=openrouter in=58017 out=131 total=58148 latency=7.3s cache=56832/58017 (98%)
+2026-06-29 07:53:43,299 INFO [6a996830d49d] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=openrouter/owl-alpha api_calls=2/90 budget=2/90 tool_turns=54 last_msg_role=assistant response_len=463 session=6a996830d49d
+2026-06-29 07:53:45,077 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:53:47,729 INFO agent.model_metadata: Could not detect context length for model 'openrouter/owl-alpha' at https://api.cloudflare.com/client/v4/accounts/59cec8e96c70ae69d4c4a2faf4e12eb2/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 07:53:49,227 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:54:11,282 INFO [6a996830d49d] agent.turn_context: conversation turn: session=6a996830d49d model=openrouter/owl-alpha provider=openrouter platform=webui history=138 msg='[Workspace::v1: /home/runner/workspace] Yes add it from .pat'
+2026-06-29 07:54:11,309 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-974 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:54:11,671 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:54:17,654 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-974 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:54:17,655 INFO [6a996830d49d] agent.conversation_loop: API call #70: model=openrouter/owl-alpha provider=openrouter in=58162 out=34 total=58196 latency=6.4s cache=57984/58162 (100%)
+2026-06-29 07:54:17,804 INFO [6a996830d49d] agent.tool_executor: tool terminal completed (0.11s, 468 chars)
+2026-06-29 07:54:17,826 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-976 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:54:22,165 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:54:23,163 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-976 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:54:23,163 INFO [6a996830d49d] agent.conversation_loop: API call #71: model=openrouter/owl-alpha provider=openrouter in=58411 out=58 total=58469 latency=5.3s cache=58112/58411 (99%)
+2026-06-29 07:54:24,176 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:54:31,351 INFO [6a996830d49d] agent.tool_executor: tool terminal completed (8.17s, 156 chars)
+2026-06-29 07:54:31,386 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-979 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:54:32,321 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:54:35,160 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-979 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:54:35,160 INFO [6a996830d49d] agent.conversation_loop: API call #72: model=openrouter/owl-alpha provider=openrouter in=58529 out=38 total=58567 latency=3.8s cache=58368/58529 (100%)
+2026-06-29 07:54:36,936 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 07:54:36,936 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 07:54:36,937 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 07:54:37,056 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 07:54:37,057 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 07:54:37,057 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 07:54:37,058 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 07:54:37,058 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 07:54:37,058 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 07:54:37,058 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 07:54:37,066 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 07:54:37,067 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 07:54:37,067 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 07:54:37,069 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 07:54:37,069 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 07:54:37,069 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 07:54:37,070 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 07:54:37,070 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 07:54:37,071 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 07:54:37,071 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 07:54:37,073 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 07:54:37,697 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 07:54:38,220 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 07:54:38,639 INFO [6a996830d49d] agent.tool_executor: tool terminal completed (3.43s, 135 chars)
+2026-06-29 07:54:38,662 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-981 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:54:42,220 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-981 (_call):140433736849088 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 07:54:42,220 INFO [6a996830d49d] agent.conversation_loop: API call #73: model=openrouter/owl-alpha provider=openrouter in=58631 out=33 total=58664 latency=3.6s cache=58496/58631 (100%)
+2026-06-29 07:54:42,245 INFO [6a996830d49d] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=openrouter/owl-alpha api_calls=4/90 budget=4/90 tool_turns=57 last_msg_role=assistant response_len=118 session=6a996830d49d
+2026-06-29 07:54:42,375 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:54:45,099 INFO agent.model_metadata: Could not detect context length for model 'openrouter/owl-alpha' at https://api.cloudflare.com/client/v4/accounts/59cec8e96c70ae69d4c4a2faf4e12eb2/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 07:54:45,905 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:55:29,840 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:55:30,155 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error

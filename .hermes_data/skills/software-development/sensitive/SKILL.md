@@ -1,7 +1,7 @@
 ---
 name: sensitive
 description: "Scan workspace for files containing secrets, tokens, API keys, and credentials. Update .gitignore sensitive block automatically. Sync script reads from .gitignore with auto-remediation for GitHub push protection blocks."
-version: 2.1.0
+version: 2.2.0
 author: Hermes Agent
 tags: [security, secrets, credentials, gitignore]
 ---
@@ -186,7 +186,7 @@ The sync script (`scripts/sync`) now has **automatic push protection remediation
 4. Append new entries to the end of the sensitive block
 5. Commit the updated `.gitignore` and retry the push
 
-**Important limitation:** `.gitignore` only prevents *future* tracking. If secrets are already in git **history** (previous commits), the push will still fail after adding to `.gitignore`. You must rewrite history to remove them. See `references/push-protection-history-rewrite.md` for the full workflow.
+**Important limitation:** `.gitignore` only prevents *future* tracking. If secrets are already in git **history** (previous commits), the push will still fail after adding to `.gitignore`. You must rewrite history to remove them. **Prefer `git filter-repo`** (install via `pip install git-filter-repo`) — it's dramatically faster and cleaner than `git filter-branch`. See `references/push-protection-history-rewrite.md` for the full workflow.
 
 ### Sync Script Output Format
 
@@ -200,6 +200,8 @@ WARN: '/home/runner/workspace/brave-browser' not found, skipping
 ```
 
 Format: `ACTION (Case): filename — details`
+
+User prefers basename (short filename) over full path in sync output.
 
 See also: `references/sync-gitignore-integration.md` for how `scripts/sync` reads `.gitignore` and resolves bare directory/file names to full paths.
 See also: `references/push-protection-auto-remediation.md` for the auto-remediation logic that catches GitHub push protection errors and appends blocked files to `.gitignore`.
