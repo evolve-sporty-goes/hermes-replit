@@ -209,9 +209,11 @@ hermes config set model.default "${MODEL}"
 - User prefers **file-based scripts** over inline commands. Write to disk first, then `chmod +x` and run.
 - User wants **terse commands only, no preamble**.
 - Credentials in **service-specific files**, never hardcoded inline in chat.
-- User dislikes **numbered variable patterns** (e.g. `ACCOUNT_ID_1`, `ACCOUNT_ID_2`) — prefer pools.
+- User dislikes **numbered variable patterns** (e.g. `ACCOUNT_ID_1`, `ACCOUNT_ID_2`) — prefer pools with auto-detected size.
 - User prefers **one file per service** holding all credential pairs (not one file per account).
+- For the single-file pool: pairs are consecutive lines (line 1+2, 3+4, …) selected by stepping through two lines at a time. Adding new entries = append two lines (`account_id`/`api_key`).
 - Keep scripts **short** (<30 lines), single-flow, no flags/options/menus/helper functions.
+- Cloudflare `account_id` is the key input — script asks for it (not the full URL), then builds `https://api.cloudflare.com/client/v4/accounts/<ACCOUNT_ID>/ai/v1`.
 
 ## Pitfalls
 
@@ -224,6 +226,8 @@ hermes config set model.default "${MODEL}"
 - **`hermes config set` writes to `~/.hermes/config.yaml** — no `hermes` restart needed for the config to take effect on next session start.
 - **Do not verify config from `config.yaml` directly**: always verify the active model via `hermes config show` — this reads the live resolved config Hermes will actually use. User explicitly corrected this.
 - **Glob pitfall**: `*$((RANDOM % N))` needs double `$((...))` arithmetic expansion. Single-layer `${POOL[RANDOM % N]}` is a syntax error in bash.
+- **`printf` format string mangling**: when writing scripts via `write_file`, the `%s` placeholders in `printf` format strings can get dropped or mangled by terminal/shell escaping layers. Always verify the written file with `bash -n` after creation. If broken, use `patch` to fix the specific line.
+- **Cloudflare URL convention**: endpoint format is `https://api.cloudflare.com/client/v4/accounts/<ACCOUNT_ID>/ai/v1`. Script should ask for `account_id` (not full URL) and construct the endpoint internally.
 
 ## state.db Corruption Repair
 
@@ -232,21 +236,18 @@ When `hermes sessions repair` and `hermes doctor --fix` both fail with:
 - `database disk image is malformed`
 - `state.db fails a write-health probe`
 
-The FTS full-text index pages are corrupt but the main data tables (sessions, messages, state_meta) are usually still readable. Recovery pattern:
+The FTS full-text index pages are corrupt but the main data tables (sessions, messages, state_meta) are usually still readable. Recovery:
 
-1. Connect via Python `sqlite3` (bypasses damaged page cache)
-2. Copy schema + data from all non-FTS tables
-3. Build a fresh state.db
-4. Drop the broken FTS tables — they get recreated on next session indexing
+Use `references/state-db-corruption-repair.py` — it connects via Python `sqlite3` (bypasses damaged page cache), copies schema + data from all non-FTS tables into a fresh `state.db.new`, drops broken FTS tables (Hermes rebuilds them on next session indexing), then swaps it in.
 
-See `references/state-db-corruption-repair.sh` for the full repair script.
+Hermes sessions are gated behind `hermes doctor --fix` success. Hermes itself won't start a new session with a corrupted FTS index.
 
-**Why this matters**: FTS corruption is not data loss. The sessions, messages, messages_fts, and state_meta tables live on different b-tree pages. Corrupt FTS pages block `hermes doctor` from passing while all your conversation history remains intact on healthy pages.
+**Why this matters**: FTS corruption is not data loss. The sessions/messages/state_meta tables live on different b-tree pages than the FTS index. Corrupt FTS pages block `hermes doctor` from passing while your conversation history remains intact on healthy pages.
 
 ## Reference
 
 - `references/cloudflare-ai-setup.sh` — single-account script template
 - `references/cloudflare-ai-pool.sh` — parallel-array pool script template
 - `references/cloudflare-file-pool.sh` — file-based credential pool (one file per account)
-- `references/cloudflare-single-file-pool.sh` — single file holding all credential pairs (user choice)
-- `references/state-db-corruption-repair.sh` — recover from FTS b-tree page corruption
+- `references/cloudflare-single-file-pool.sh` — single file holding all credential pairs (user's final choice)
+- `references/state-db-corruption-repair.py` — recover from FTS b-tree page corruption when `hermes sessions repair` fails

@@ -2,10 +2,12 @@
 set -euo pipefail
 
 CRED="${WORKSPACE:-$HOME/workspace}/credentials/cloudflare.txt"
+mkdir -p "$(dirname "$CRED")"
+touch "$CRED"
 
 # Add new credentials if args provided
 if [[ $# -ge 2 ]]; then
-  printf 'ACCOUNT_ID=%s\nAPI_KEY=***\n\n' "$1" "$2" >> "$CRED"
+  printf 'ACCOUNT_ID=%s\nAPI_KEY=%s\n\n' "$1" "$2" >> "$CRED"
   echo "Added: ${1:0:8}..."
 fi
 
