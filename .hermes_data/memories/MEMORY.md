@@ -16,4 +16,4 @@ Hermes non-interactive model config: `hermes model` is TUI-only, cannot be scrip
 §
 scripts/sync v3 (2026-06-29): ~90 lines, no AI, no per-file commits, no set -e, no auto filter-repo. Single askpass both phases. Bash pitfalls: set -e+while EOF, fn def order, trap RETURN.
 §
-Camoufox + Playwright CDP incompatibility: Browser.setDefaultViewport protocol error (isMobile property not in Firefox CDP scheme). Fix: patch coreBundle.js to strip isMobile from doUpdateDefaultViewport. Skill: anti-detect-browser-automation.
+All browser automation migrated from Camoufox to Playwright + system Chromium (2026-06-29). Camoufox removed due to recurring isMobile CDP bug after Playwright upgrades. Scripts use launch_persistent_context with Nix store Chromium path. Skills: anti-detect-browser-automation (v2), script-validation-and-execution.

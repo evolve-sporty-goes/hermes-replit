@@ -12,7 +12,7 @@ import atexit
 sys.path.insert(0, "/home/runner")
 sys.path.insert(0, "/home/runner/workspace")
 
-from camoufox.sync_api import Camoufox
+from playwright.sync_api import sync_playwright
 
 CRED_PATH = "/home/runner/workspace/credentials/openrouter_credentials.txt"
 CHROMIUM_PATH = "/nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium"
@@ -126,10 +126,8 @@ else:
 '''
 
 
-def do_signup(browser, email, password):
+def do_signup(page, email, password):
     """Step 2: Sign up on OpenRouter. Returns True if confirm-email shown."""
-    page = browser.new_page()
-
     print("\n" + "=" * 60)
     print("STEP 2: Sign up on OpenRouter")
     print("=" * 60)
@@ -167,10 +165,8 @@ def do_signup(browser, email, password):
         return False
 
 
-def do_verify_and_key(browser, verify_url, email, password):
+def do_verify_and_key(page, verify_url, email, password):
     """Steps 5+6: Verify email, sign in, extract API key."""
-    page = browser.new_page()
-
     print("\n" + "=" * 60)
     print("STEP 5: Verify email + sign in + get API key")
     print("=" * 60)
@@ -240,10 +236,10 @@ def do_verify_and_key(browser, verify_url, email, password):
 
 
 def main():
-    # Camoufox tmpdir (cleaned up on exit)
-    cam_tmpdir = tempfile.mkdtemp(prefix="camoufox-profile-")
-    print(f"Camoufox tmpdir: {cam_tmpdir}")
-    atexit.register(lambda: shutil.rmtree(cam_tmpdir, ignore_errors=True))
+    # Browser profile tmpdir (cleaned up on exit)
+    browser_tmpdir = tempfile.mkdtemp(prefix="browser-profile-")
+    print(f"Browser tmpdir: {browser_tmpdir}")
+    atexit.register(lambda: shutil.rmtree(browser_tmpdir, ignore_errors=True))
 
     os.makedirs(PROTON_PROFILE, exist_ok=True)
 
@@ -302,79 +298,87 @@ def main():
     print(f"Generated password: {password}")
 
     # Main retry loop: signup → check inbox → verify+key
-    for attempt in range(1, 4):
-        # Step 2: Sign up
-        with Camoufox(headless=False, persistent_context=True, user_data_dir=cam_tmpdir) as browser:
-            do_signup(browser, email, password)
-
-        # Step 3: Check Proton Mail (Chromium subprocess, with inbox retry)
-        print("\n" + "=" * 60)
-        print("STEP 3: Check Proton Mail for verification email")
-        print("=" * 60)
-
-        result = subprocess.run(
-            [sys.executable, "-c", PROTON_FETCH_SCRIPT, PROTON_USER, PROTON_PASS, CHROMIUM_PATH, PROTON_PROFILE, email],
-            capture_output=True, text=True, timeout=180,
+    with sync_playwright() as p:
+        context = p.chromium.launch_persistent_context(
+            browser_tmpdir,
+            executable_path=CHROMIUM_PATH,
+            headless=False,
         )
-        for line in result.stdout.strip().split("\n"):
-            if line.strip():
-                print(f"  {line}")
+        page = context.pages[0] if context.pages else context.new_page()
 
-        verify_url = None
-        for line in result.stdout.strip().split("\n"):
-            if line.startswith("VERIFY_URL:"):
-                url = line[len("VERIFY_URL:"):]
-                if url == "NOT_FOUND":
-                    print(f"Verification email not found (attempt {attempt}/3) — restarting signup...")
-                    break
-                verify_url = url
-                print(f"Found verification link: {verify_url[:60]}...")
-                break
+        for attempt in range(1, 4):
+            # Step 2: Sign up
+            do_signup(page, email, password)
 
-        if not verify_url:
-            # Generate fresh email for next attempt
-            print("Generating new email for retry...")
+            # Step 3: Check Proton Mail (Chromium subprocess, with inbox retry)
+            print("\n" + "=" * 60)
+            print("STEP 3: Check Proton Mail for verification email")
+            print("=" * 60)
+
             result = subprocess.run(
-                ["bash", "/home/runner/workspace/scripts/email.sh"],
-                capture_output=True, text=True, timeout=120,
-                cwd="/home/runner/workspace",
-                env={**os.environ, "PYTHONPATH": pythonlibs + ":/home/runner:/home/runner/workspace",
-                     "PATH": venv_bin + ":" + os.environ.get("PATH", ""),
-                     "VIRTUAL_ENV": venv_dir}
+                [sys.executable, "-c", PROTON_FETCH_SCRIPT, PROTON_USER, PROTON_PASS, CHROMIUM_PATH, PROTON_PROFILE, email],
+                capture_output=True, text=True, timeout=180,
             )
-            retry_lines = [l.strip() for l in result.stdout.strip().split("\n") if l.strip()]
-            retry_email = retry_lines[-1] if retry_lines else None
-            if retry_email and "@" in retry_email:
-                email = retry_email
-            password = (
-                secrets.choice(string.ascii_letters)
-                + secrets.choice(string.digits)
-                + secrets.choice("!@#%")
-                + "".join(secrets.choice(chars) for _ in range(12))
-            )
-            print(f"New email: {email}")
-            continue
+            for line in result.stdout.strip().split("\n"):
+                if line.strip():
+                    print(f"  {line}")
 
-        # Steps 5+6: Verify + get API key
-        with Camoufox(headless=False, humanize=True, enable_cache=True, persistent_context=True, user_data_dir=cam_tmpdir) as browser:
-            api_key = do_verify_and_key(browser, verify_url, email, password)
+            verify_url = None
+            for line in result.stdout.strip().split("\n"):
+                if line.startswith("VERIFY_URL:"):
+                    url = line[len("VERIFY_URL:"):]
+                    if url == "NOT_FOUND":
+                        print(f"Verification email not found (attempt {attempt}/3) — restarting signup...")
+                        break
+                    verify_url = url
+                    print(f"Found verification link: {verify_url[:60]}...")
+                    break
 
-        # Step 7: Save
-        print("\n" + "=" * 60)
-        print("STEP 7: Save credentials")
-        print("=" * 60)
+            if not verify_url:
+                # Generate fresh email for next attempt
+                print("Generating new email for retry...")
+                result = subprocess.run(
+                    ["bash", "/home/runner/workspace/scripts/email.sh"],
+                    capture_output=True, text=True, timeout=120,
+                    cwd="/home/runner/workspace",
+                    env={**os.environ, "PYTHONPATH": pythonlibs + ":/home/runner:/home/runner/workspace",
+                         "PATH": venv_bin + ":" + os.environ.get("PATH", ""),
+                         "VIRTUAL_ENV": venv_dir}
+                )
+                retry_lines = [l.strip() for l in result.stdout.strip().split("\n") if l.strip()]
+                retry_email = retry_lines[-1] if retry_lines else None
+                if retry_email and "@" in retry_email:
+                    email = retry_email
+                password = (
+                    secrets.choice(string.ascii_letters)
+                    + secrets.choice(string.digits)
+                    + secrets.choice("!@#%")
+                    + "".join(secrets.choice(chars) for _ in range(12))
+                )
+                print(f"New email: {email}")
+                continue
 
-        with open(CRED_PATH, "a") as f:
-            f.write(f"EMAIL={email}\n")
-            f.write(f"PASSWORD={password}\n")
-            f.write(f"API_KEY={api_key or 'NOT_FOUND'}\n")
+            # Steps 5+6: Verify + get API key
+            api_key = do_verify_and_key(page, verify_url, email, password)
 
-        print(f"Credentials saved to: {CRED_PATH}")
-        print(f"  Email:    {email}")
-        print(f"  Password: {password}")
-        print(f"  API Key:  {api_key or 'NOT_FOUND'}")
-        print("\nDone!")
-        return
+            # Step 7: Save
+            print("\n" + "=" * 60)
+            print("STEP 7: Save credentials")
+            print("=" * 60)
+
+            with open(CRED_PATH, "a") as f:
+                f.write(f"EMAIL={email}\n")
+                f.write(f"PASSWORD={password}\n")
+                f.write(f"API_KEY={api_key or 'NOT_FOUND'}\n")
+
+            print(f"Credentials saved to: {CRED_PATH}")
+            print(f"  Email:    {email}")
+            print(f"  Password: {password}")
+            print(f"  API Key:  {api_key or 'NOT_FOUND'}")
+            print("\nDone!")
+            return
+
+        context.close()
 
     print("FAILED: 3 signup attempts exhausted.")
 

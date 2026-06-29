@@ -6,20 +6,19 @@ Credentials output: openrouter_credentials.txt
 
 ARCHITECTURE
 ------------
-- Steps 2/5/6 (OpenRouter signup, verify, key extraction): Camoufox (anti-fingerprint Firefox)
+- All signup steps (signup, verify, key extraction): Playwright Chromium
   - Uses fresh tmpdir (tempfile.mkdtemp) per run, cleaned up on exit
-  - persistent_context=True with user_data_dir=tmpdir
+  - launch_persistent_context with user_data_dir=tmpdir
+  - Chromium path: /nix/store/.../chromium-138.0.7204.100/bin/chromium
 - Step 3 (Proton Mail verification link): Playwright Chromium subprocess
   - Uses persistent profile at ~/proton_profile (survives across runs)
   - If profile already has Proton logged in, skips credential entry
-  - Runs in subprocess to avoid Camoufox/Playwright Firefox event-loop crash
-    (coreBundle.js bug: pageError.location is undefined on Proton's JS errors)
 
 PREREQUISITES
 -------------
-1. camoufox + playwright installed: pip install camoufox playwright
+1. playwright installed: pip install playwright
 2. email.sh present at /home/runner/workspace/email.sh
-   - Generates Duck email via ~/duckmail.py (uses Camoufox)
+   - Generates Duck email via ~/duckmail.py (uses Playwright)
    - Prints email to stdout (captured by subprocess)
    - Also appends to mail.txt
    - Creates ~/config.py with PROTON_USERNAME, PROTON_PASSWORD, credential pools
@@ -35,11 +34,11 @@ STEP 1: Generate Duck Email
   - Subprocess env includes:
     - PATH: venv bin dir prepended (so python3 resolves to venv)
     - VIRTUAL_ENV: set to venv dir
-    - PYTHONPATH: includes .pythonlibs for camoufox access
+    - PYTHONPATH: includes .pythonlibs for package access
   - Imports ~/config.py fresh (deletes stale pyc cache, reloads module)
   - Generates random 15-char password (letters + digits + !@#$%)
 
-STEP 2: Sign Up on OpenRouter (Camoufox)
+STEP 2: Sign Up on OpenRouter (Playwright)
   - Navigates to https://openrouter.ai/sign-up
   - Waits for #emailAddress-field to be visible
   - Fills: email, password, checks Terms of Service checkbox (#legalAccepted-field)
@@ -49,7 +48,7 @@ STEP 2: Sign Up on OpenRouter (Camoufox)
   - Waits 8s, checks for confirm-email/verification indicator in URL or body
 
 STEP 3: Check Proton Mail for Verification Link (Chromium subprocess)
-  - Runs as subprocess (avoids Camoufox Firefox crash)
+  - Runs as subprocess (separate process for stability)
   - Uses Playwright Chromium with launch_persistent_context at ~/proton_profile
   - Login check: if "Mail" link visible, skips credentials (already logged in)
   - Otherwise fills #username and #password, submits
@@ -67,13 +66,13 @@ STEP 3: Check Proton Mail for Verification Link (Chromium subprocess)
     - Last fallback: searches anchor tags for verify/confirm + openrouter
   - Outputs: VERIFY_URL:<url> or VERIFY_URL:NOT_FOUND
 
-STEP 4: Verify Email + Sign In (Camoufox)
+STEP 4: Verify Email + Sign In (Playwright)
   - Navigates to verify_url from Step 3
   - If on openrouter.ai, clicks "Individual" (personal account selection)
   - Waits for login to settle (8s)
   - Verification link typically auto-logs in
 
-STEP 5: Extract API Key (Camoufox)
+STEP 5: Extract API key (Playwright)
   - Navigates to https://openrouter.ai/workspaces/default/keys
   - If "Create Key" button visible, clicks it to create a new key first
   - Key extraction (3 methods, tried in order):
@@ -100,7 +99,7 @@ NOTES
 -----
 - The 6-digit sign-in verification code (factor-two) is NOT handled automatically
   — OpenRouter sends this on sign-in and must be entered manually if prompted
-- Playwright coreBundle.js was patched to guard pageError.location before accessing .url
-  (fixes Firefox engine crash on Proton Mail JS errors)
+- Playwright coreBundle.js isosomorphic trace loader was patched to guard
+  pageError.location before accessing .url
 - email.sh subprocess needs venv PATH + VIRTUAL_ENV + PYTHONPATH set correctly
-  because duckmail.py uses camoufox which is in .pythonlibs, not system python
+  because duckmail.py uses playwright which is in .pythonlibs, not system python

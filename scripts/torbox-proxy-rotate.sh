@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # torbox-proxy-rotate.sh — TorBox signup with free proxy rotation
-# Fetches SOCKS5/HTTP proxies from ProxyScrape, tries each with Camoufox+geoip
+# Fetches SOCKS5/HTTP proxies from ProxyScrape, tries each with Playwright
 set -eo pipefail
 
 ANON_KEY=$(cat /home/runner/workspace/credentials/.supabase_anon_key)

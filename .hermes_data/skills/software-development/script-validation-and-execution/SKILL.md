@@ -120,13 +120,15 @@ This user prefers terse commands and explicit scripts they execute themselves. W
 
 ## Common Pitfall: Browser Automation Version Conflicts
 
-Scripts that auto-install `camoufox` + `playwright` via pip can fail with CDP protocol errors when the fetched browser binary doesn't match the library's expected schema. Error signature:
+~~Scripts that auto-install `camoufox` + `playwright`~~ **Migration (2026-06-29): Camoufox fully replaced with Playwright + system Chromium.**
 
+All browser automation scripts now use Playwright's `chromium.launch_persistent_context()` with the system Chromium binary. The old Camoufox approach (with its `isMobile` CDP bug and ~700MB binary download) was removed.
+
+Error symptom if a script still has Camoufox residue:
 ```
 Protocol error (Browser.setDefaultViewport): ... "isMobile" ... not described in this scheme
 ```
-
-Fix: pin a known-good camoufox version or use system Chromium directly (on NixOS: `/nix/store/*-chromium-*/bin/chromium`).
+Fix: convert to Playwright Chromium pattern (see `anti-detect-browser-automation` skill).
 
 ## Common Pitfall: Mislabeled Scripts in This Workspace
 
@@ -136,7 +138,7 @@ Known categories in `/home/runner/workspace/scripts/`:
 - **TorBox signup variants**: `backup.sh`, `Signup`, `torbox-*.sh`, `tor_signup.sh`, `magiclink.sh`, `torbox-signup.sh.bak`
 - **Browser launching**: `brave`, `firefox`, `torbrowser`
 - **Proxy/Tor/FlareSolvers**: `start-tor-flare.sh`, `flaresolverr-proxy.sh`, `torbox-proxy-rotate.sh`, `torbox-tor-rotate.sh`, `flaresolverr_session.py`
-- **Account automation**: `email.sh`, `firecrawl_gen.py`, `openrouter_signup.py`, `torbox-camoufox-signup.sh`, `torbox-full-signup.sh`, `torbox-full-tor-signup.sh`, `torbox-tor-signup.sh`
+- **Account automation**: `email.sh`, `firecrawl_gen.py`, `openrouter_signup.py`, `torbox-signup.sh`
 - **Infrastructure**: `hermes.sh` (agent install+launch), `script.sh` (VNC+noVNC desktop), `sync` (secrets+workspace git push), `setcfapi.sh` (Cloudflare API rotation)
 
 ## Session References
