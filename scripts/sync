@@ -15,7 +15,7 @@ ai_commit_msg() {
     [ -z "$key" ] && { git diff --cached --numstat | awk -F'	' '{a="updated";if($1>0&&$2==0)a="added";else if($2>0&&$1==0)a="removed";printf "%s %s, ",a,$3}' | sed 's/, $//'; return; }
     local msg; msg=$(curl -s --max-time 8 https://openrouter.ai/api/v1/chat/completions \
         -H "Authorization: Bearer $key" -H "Content-Type: application/json" \
-        -d "{\"model\":\"owl-alpha\",\"messages\":[{\"role\":\"user\",\"content\":\"Write a git commit message under 10 words for: $diffstat. Raw text only.\"}],\"max_tokens\":40}" \
+        -d "{\"model\":\"owl-alpha\",\"messages\":[{\"role\":\"user\",\"content\":\"Write a git commit message under 10 words for file $(basename $f): $diffstat. Raw text only.\"}],\"max_tokens\":40}" \
         2>/dev/null | python3 -c "import sys,json; t=json.load(sys.stdin)['choices'][0]['message']['content']; print(t.strip().strip(chr(34)).strip(chr(96)))")
     [ -n "$msg" ] && echo "$msg" || echo "$diffstat"
 }
@@ -145,7 +145,7 @@ if ! git diff --cached --quiet; then
     while IFS= read -r f; do
         git add "$f"
         m=$(ai_commit_msg)
-        git commit -m "$m" || true
+        git commit -m "$m" 2>/dev/null || git commit -m "update $(basename $f)"
     done <<< "$staged"
 
     # Attempt push; if blocked by secret scanning, strip from history and force-push
