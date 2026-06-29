@@ -15,6 +15,7 @@ credentials/.supabase_anon_key
 credentials/openrouter_credentials.txt
 credentials/firecrawl_credentials.txt
 credentials/torbox_credentials.txt
+credentials/cloudflare.txt
 scripts/email.sh
 .hermes_data/.env
 .hermes_data/auth.json
