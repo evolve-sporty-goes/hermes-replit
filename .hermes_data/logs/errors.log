@@ -5290,3 +5290,4 @@ RuntimeError: No LLM provider configured for task=vision provider=auto. Run: her
   → `copilot login` or `hermes model` to authenticate via OAuth
   → A fine-grained PAT (github_pat_*) with Copilot Requests permission
   → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 11:34:26,323 WARNING [bd3dda32973e] agent.tool_executor: Tool terminal returned error (20.72s): {"output": "[11:34:16] ═══ SYNC START ═══\n[11:34:16] Phase 1 — Secrets\n  OK: credentials/.pat\n  OK: credentials/.supabase_anon_key\n  OK: credentials/openrouter_credentials.txt\n  OK: credentials/f
