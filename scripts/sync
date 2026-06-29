@@ -1,244 +1,93 @@
 #!/bin/bash
-# =============================================================================
 # sync — bidirectional secrets sync + workspace commit/push
-#
-# Two phases:
-#   1. SECRETS: sync files listed under "# Sensitive" in .gitignore between
-#      the local workspace and the private `hermes-secrets` repo. Timestamp wins.
-#   2. WORKSPACE: commit every changed file in the workspace to `hermes-replit`
-#      (one commit per file, AI-generated message), pull first, push after.
-#
-# Usage: ./sync
-# =============================================================================
 set -uo pipefail
 
 WORKSPACE="${WORKSPACE:-/home/runner/workspace}"
 SECRETS_REPO="https://github.com/evolve-sporty-goes/hermes-secrets.git"
-REPO="https://github.com/evolve-sporty-goes/hermes-replit.git"
-LOCK_FILE="/tmp/sync.lock"
+LOG_TS() { echo "[$(date -u +%H:%M:%S)]"; }
 
-# --- prevent concurrent runs ---
-exec 200>"$LOCK_FILE"
-flock -n 200 || { echo "SKIP: another sync is running"; exit 1; }
-trap 'rm -f "$LOCK_FILE"' EXIT
+# --- lock (auto-released when FD closes on exit) ---
+exec 9>/tmp/sync.lock
+flock -n 9 || { echo "$(LOG_TS) SKIP: already running"; exit 1; }
 
-log() { echo "[$(date -u +%H:%M:%S)] $*"; }
+# --- auth (PAT is askpass for both phases) ---
+TOKEN=$(cat "$WORKSPACE/credentials/.pat" 2>/dev/null) || true
+[[ -z "$TOKEN" ]] && { echo "$(LOG_TS) ERROR: empty .pat"; exit 1; }
+ASKPASS=$(mktemp -u)
+printf '#!/bin/sh\necho %s\n' "$TOKEN" > "$ASKPASS"
+chmod +x "$ASKPASS"
+export GIT_ASKPASS="$ASKPASS"
+trap 'rm -f "$ASKPASS"' EXIT
 
-# ========================
-#  Phase 1 — Secrets Sync
-# ========================
-
-run_secrets_sync() {
-    local token
-    token=$(cat "$WORKSPACE/credentials/.pat" 2>/dev/null || true)
-    if [[ -z "$token" ]]; then
-        log "ERROR: no PAT in credentials/.pat"; return 1
-    fi
-
-    local tmpdir
-    tmpdir=$(mktemp -d)
-    # shellcheck disable=SC2064
-    trap "rm -rf '$tmpdir'" RETURN
-
-    local askpass="$tmpdir/git-askpass"
-    printf '#!/bin/bash\necho %s\n' "$token" > "$askpass"
-    chmod +x "$askpass"
-    export GIT_ASKPASS="$askpass"
-
-    if ! git clone --quiet --branch main "$SECRETS_REPO" "$tmpdir/s" 2>/dev/null; then
-        log "ERROR: clone hermes-secrets failed"; return 1
-    fi
-
-    cd "$tmpdir/s"
-    git config user.email "hermes@replit"
-    git config user.name  "hermes-replit"
-
-    local repo_changed=0
-
-    while IFS= read -r rel; do
-        [[ -z "$rel" ]] && continue
-        rel="${rel%/}"                        # strip optional trailing slash
-        local local_path="$WORKSPACE/$rel"
-
-        if [[ -d "$local_path" ]]; then
-            # directory entry — sync each non-dot child file
-            local f
-            while IFS= read -r -d '' f; do
-                local child_rel="${f#$WORKSPACE/}"
-                _sync_one "$f" "$child_rel" || repo_changed=1
-            done < <(find "$local_path" -maxdepth 1 -type f -name '[!.]*' -print0 2>/dev/null)
-        else
-            # file entry (even if it doesn't exist — may need bootstrap)
-            _sync_one "$local_path" "$rel" || repo_changed=1
-        fi
-    done < <(_sensitive_entries)
-
-    if (( repo_changed )); then
-        log "Committing secret updates…"
-        git commit -m "auto: secrets sync $(date -u +%Y-%m-%dT%H:%M:%SZ)" >/dev/null 2>&1 \
-            && git push --quiet origin main 2>/dev/null \
-            && log "OK: secrets pushed." \
-            || log "WARN: secrets push failed."
-    else
-        log "OK: secrets in sync."
-    fi
-}
+# --- secrets sync ---
+SECRETS_DIR=$(mktemp -d)
+trap 'rm -f "$ASKPASS"; rm -rf "$SECRETS_DIR"' EXIT
+git clone --quiet --branch main "$SECRETS_REPO" "$SECRETS_DIR/repo" 2>/dev/null \
+  || { echo "$(LOG_TS) ERROR: clone secrets"; exit 1; }
+cd "$SECRETS_DIR/repo"
+git config user.email "hermes@replit"
+git config user.name  "hermes-replit"
 
 _sync_one() {
-    local local_file="$1"   # absolute path in workspace
-    local repo_file="$2"    # relative path inside secrets repo
-
-    mkdir -p "$(dirname "$local_file")"
-    mkdir -p "$(dirname "$repo_file")"
-
-    local local_exists=0 repo_exists=0
-    [[ -s "$local_file" ]] && local_exists=1
-    [[ -s "$repo_file" ]]  && repo_exists=1
-
-    # Case A: missing/empty on both sides
-    if (( !local_exists && !repo_exists )); then
-        echo "  SKIP: $repo_file (nowhere)"
-        return 0
-    fi
-    # pull from repo
-    if (( !local_exists )); then
-        echo "  PULL ← $repo_file (bootstrapping)"
-        cp "$repo_file" "$local_file"
-        return 0
-    fi
-    # push to repo
-    if (( !repo_exists )); then
-        echo "  PUSH → $repo_file (new to repo)"
-        cp "$local_file" "$repo_file"
-        git add "$repo_file"
-        return 1   # signal repo_changed
-    fi
-
-    # Case B: identical
-    if diff -q "$local_file" "$repo_file" >/dev/null 2>&1; then
-        echo "  OK: $repo_file"
-        return 0
-    fi
-
-    # Case C: resolve by timestamp
-    local local_time repo_time
-    local_time=$(date -r "$local_file" +%s)
-    repo_time=$(git log -1 --format=%ct -- "$repo_file" 2>/dev/null || echo 0)
-
-    if (( local_time > repo_time )); then
-        echo "  PUSH → $repo_file (local newer)"
-        cp "$local_file" "$repo_file"
-        git add "$repo_file"
-        return 1
-    else
-        echo "  PULL ← $repo_file (repo newer)"
-        cp "$repo_file" "$local_file"
-        return 0
-    fi
+  local lf="$1" rf="$2"
+  mkdir -p "$(dirname "$lf")" "$(dirname "$rf")"
+  local le=0 re=0
+  [[ -s "$lf" ]] && le=1
+  [[ -s "$rf" ]] && re=1
+  (( !le && !re )) && { echo "  SKIP $rf"; return 0; }
+  if (( !le )); then echo "  PULL ← $rf"; cp "$rf" "$lf"; return 0; fi
+  if (( !re )); then echo "  PUSH → $rf"; cp "$lf" "$rf"; git add "$rf"; return 1; fi
+  diff -q "$lf" "$rf" >/dev/null 2>&1 && { echo "  OK $rf"; return 0; }
+  local lt rt; lt=$(date -r "$lf" +%s); rt=$(git log -1 --format=%ct -- "$rf" 2>/dev/null || echo 0)
+  if (( lt > rt )); then echo "  PUSH → $rf (newer)"; cp "$lf" "$rf"; git add "$rf"; return 1;
+  else echo "  PULL ← $rf (newer)"; cp "$rf" "$lf"; return 0; fi
 }
 
-_sensitive_entries() {
-    local gi="$WORKSPACE/.gitignore"
-    [[ -f "$gi" ]] || return 0
-    awk '
-        /^# Sensitive/ { flag=1; next }
-        flag && /^#/    { next }
-        flag && length  { print }
-    ' "$gi"
-    # normalise: strip everything after trailing " ---" comment lines and empty divider lines actually the awk already skips # lines
-}
+echo "$(LOG_TS) ═══ PHASE 1: secrets ═══"
+changed=0
+entries=$(awk '/^# Sensitive/{f=1;next} f&&/^#/{next} f&&/^---/{next} f&&length{print}' "$WORKSPACE/.gitignore")
+while IFS= read -r rel; do
+  [[ -z "$rel" ]] && continue
+  rel="${rel%/}"
+  local_path="$WORKSPACE/$rel"
+  if [[ -d "$local_path" ]]; then
+    while IFS= read -r -d '' f; do
+      child_rel="${f#$WORKSPACE/}"
+      _sync_one "$f" "$child_rel" || changed=1
+    done < <(find "$local_path" -maxdepth 1 -type f -name '[!.]*' -print0 2>/dev/null)
+  else
+    _sync_one "$local_path" "$rel" || changed=1
+  fi
+done <<< "$entries"
 
-# =========================
-#  Phase 2 — Workspace Push
-# =========================
+if (( changed )); then
+  git commit -m "auto: secrets sync $(date -u +%Y-%m-%dT%H:%M:%SZ)" --quiet \
+    && git push --quiet origin main 2>/dev/null \
+    && echo "$(LOG_TS) OK: secrets pushed" \
+    || echo "$(LOG_TS) WARN: secrets push failed"
+else
+  echo "$(LOG_TS) OK: secrets in sync"
+fi
 
-ai_commit_msg() {
-    local f="$1"
-    local diffstat
-    diffstat=$(git diff --cached --stat -- "$f" 2>/dev/null | tail -1)
-    local key
-    key=$(grep 'API_KEY' "$WORKSPACE/credentials/openrouter_credentials.txt" 2>/dev/null | tail -1 | cut -d= -f2)
-    [[ -z "$key" ]] && { _fallback_msg "$f"; return; }
+# --- workspace push ---
+echo "$(LOG_TS) ═══ PHASE 2: workspace ═══"
+cd "$WORKSPACE"
+git config user.email "hermes@replit"
+git config user.name  "hermes-replit"
+git pull --quiet --rebase origin main 2>/dev/null || true
 
-    local msg
-    msg=$(curl -s --max-time 10 "https://openrouter.ai/api/v1/chat/completions" \
-        -H "Authorization: Bearer $key" \
-        -H "Content-Type: application/json" \
-        -d "$(jq -nc --arg f "$(basename "$f")" --arg d "$diffstat" \
-            '{model:"owl-alpha",messages:[{role:"user",content:"Write a git commit message under 10 words for file \($f): \($d). Raw text only."}],max_tokens:40}')" \
-        2>/dev/null | python3 -c "
-import sys,json
-try:
-    t=json.load(sys.stdin)['choices'][0]['message']['content']
-    print(t.strip().strip('\"').strip('\`'))
-except Exception:
-    sys.exit(1)
-" 2>/dev/null) || msg=""
+git add -A
+if git diff --cached --quiet; then
+  echo "$(LOG_TS) OK: workspace clean"
+else
+  staged=$(git diff --cached --name-only)
+  git reset -q
+  msg="auto: $(date -u +%Y-%m-%dT%H:%M:%SZ) — $(echo "$staged" | wc -l) file(s): $(echo "$staged" | tr '\n' ' ')"
+  git add -A
+  git commit -m "$msg" --quiet \
+    && git push --quiet origin main 2>/dev/null \
+    && echo "$(LOG_TS) OK: workspace pushed" \
+    || echo "$(LOG_TS) WARN: push failed"
+fi
 
-    if [[ -n "$msg" ]]; then
-        echo "$msg"
-    else
-        _fallback_msg "$f"
-    fi
-}
-
-_fallback_msg() {
-    local f="$1"
-    git diff --cached --numstat -- "$f" 2>/dev/null \
-      | awk -F'\t' '{
-          a="updated";
-          if ($1>0 && $2==0) a="added";
-          else if ($2>0 && $1==0) a="removed";
-          printf "%s %s", a, $3
-        }'
-}
-
-run_workspace_sync() {
-    cd "$WORKSPACE"
-
-    git config user.email "hermes@replit"
-    git config user.name  "hermes-replit"
-
-    log "Pulling latest…"
-    git pull --quiet origin main 2>/dev/null || true
-
-    git add -A
-    if git diff --cached --quiet; then
-        log "OK: workspace clean, nothing to commit."
-        return 0
-    fi
-
-    local staged
-    staged=$(git diff --cached --name-only)
-    git reset -q
-
-    local f m
-    while IFS= read -r f; do
-        git add "$f"
-        m=$(ai_commit_msg "$f")
-        [[ -z "$m" ]] && m="update $(basename "$f")"
-        git commit -m "$m" --quiet 2>/dev/null || git commit -m "update $(basename "$f")" --quiet
-        log "  committed: $m"
-    done <<< "$staged"
-
-    log "Pushing to hermes-replit…"
-    if git push origin main 2>&1; then
-        log "OK: workspace pushed."
-    else
-        log "WARN: push failed (see above)."
-        return 1
-    fi
-}
-
-# ========================
-#  Main
-# ========================
-log "═══ SYNC START ═══"
-
-log "Phase 1 — Secrets"
-run_secrets_sync || true
-
-log "Phase 2 — Workspace"
-run_workspace_sync || true
-
-log "═══ SYNC DONE ═══"
+echo "$(LOG_TS) ═══ SYNC DONE ═══"
