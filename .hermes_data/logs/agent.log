@@ -18503,3 +18503,10 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 2026-06-29 11:45:16,229 INFO [bd3dda32973e] agent.conversation_loop: API call #5: model=owl-alpha provider=openrouter in=71289 out=69 total=71358 latency=13.8s cache=71168/71289 (100%)
 2026-06-29 11:45:16,372 INFO [bd3dda32973e] agent.tool_executor: tool terminal completed (0.09s, 147 chars)
 2026-06-29 11:45:16,432 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-264 (_call):140129856403136 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 11:45:22,247 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-264 (_call):140129856403136 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 11:45:22,247 INFO [bd3dda32973e] agent.conversation_loop: API call #6: model=owl-alpha provider=openrouter in=71425 out=43 total=71468 latency=5.8s cache=68736/71425 (96%)
+2026-06-29 11:45:23,081 INFO [bd3dda32973e] agent.tool_executor: tool process completed (0.82s, 1019 chars)
+2026-06-29 11:45:23,122 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-265 (_call):140129377031872 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 11:45:31,322 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-265 (_call):140129377031872 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 11:45:31,323 INFO [bd3dda32973e] agent.conversation_loop: API call #7: model=owl-alpha provider=openrouter in=71830 out=157 total=71987 latency=8.2s cache=71424/71830 (99%)
+2026-06-29 11:45:31,368 INFO [bd3dda32973e] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=6/90 budget=6/90 tool_turns=45 last_msg_role=assistant response_len=641 session=bd3dda32973e
