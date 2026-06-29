@@ -140,9 +140,49 @@ from cloakbrowser import launch_persistent_context
 subprocess.run([sys.executable, "-c", PROTON_FETCH_SCRIPT, ...])
 ```
 
+**Pattern E — Bash+Python helpers (email.sh / firecrawl_signup.sh style):**
+
+For complex signup flows, write standalone `.py` files to `~/` dir and call
+from bash. This is the **user's preferred pattern** for multi-step automation.
+
+**⚠️ CRITICAL: Do NOT use nested heredocs inside command substitution like
+`$(python3 << 'EOF')` — bash breaks with quote escaping.** Instead, generate
+the `.py` files once at the top of the bash script, then call them with
+`python3 ~/helper.py "$ARG"`:
+
+```bash
+# In bash: generate .py helpers, then call them
+cat > ~/fc_signup.py << 'PYEOF'
+from cloakbrowser import launch_persistent_context
+import sys, tempfile, atexit, shutil
+email, password = sys.argv[1], sys.argv[2]
+td = tempfile.mkdtemp()
+atexit.register(lambda: shutil.rmtree(td, ignore_errors=True))
+ctx = launch_persistent_context(td, headless=False, humanize=True)
+p = ctx.pages[0] if ctx.pages else ctx.new_page()
+p.goto("https://example.com/sign-up", timeout=60000)
+# ... fill form, submit ...
+ctx.close()
+PYEOF
+
+# Call from bash
+python3 ~/fc_signup.py "$EMAIL" "$PASSWORD"
+```
+
+Advantages: clean separation, no nested heredoc escaping, easy to debug
+individual steps.
+
+**DISPLAY env**: If subprocess Python fails with "Missing X server or $DISPLAY",
+add `export DISPLAY=:1` (or the correct display for this system) at the top
+of the bash script — subprocesses don't always inherit the parent's env.
+
 ## User preferences
 
-- **Automation/replacement scripts: use bash, not Python** — user explicitly said "No python use bash" for bulk file transforms and install scripts. Prefer `sed`/`awk` over Python one-liners.
+- **Automation/replacement scripts: bash, minimal lines** — user explicitly said "just give me bash, minimum lines". Prefer `sed`/`awk` one-liners over Python scripts. Single-line bash commands over multi-file solutions.
+- **No xvfb-run** — display server is running. `headless=False` works directly.
+- **Bash+Python pattern (email.sh style)** — for complex browser automation, write standalone `.py` helper files to `~/` directory (e.g. `~/duckmail.py`, `~/fc_signup.py`), then call them from a bash script with `python3 ~/helper.py "$ARG1" "$ARG2"`. No nested heredocs — they break with quote escaping.
+- **Always headless=False** with CloakBrowser on this system.
+- **DISPLAY export** — if subprocess Python scripts fail with "Missing X server or $DISPLAY", add `export DISPLAY=:1` (or whatever display the user specifies) at the top of the bash script.
 
 ## Form handling: Clerk.js (OpenRouter, Firecrawl, etc.)
 
@@ -173,19 +213,22 @@ to simulate real keystroke events that Clerk's React listeners catch.
 but the page just resets to the empty form, Clerk is silently rejecting. Check with
 network listener: `page.on('request', lambda r: print(r.method, r.url) if 'clerk' in r.url else None)`.
 
-## Running on Replit/NixOS: xvfb-run
+## Headless mode
 
-CloakBrowser's `headless=True` crashes immediately on Replit/NixOS with
-`TargetClosedError: Page.goto: Target page, context or browser has been closed`.
-The free-tier v146 binary doesn't support headless mode on this platform.
+**Always use `headless=False`** — the user has a running display server and
+`headless=True` crashes CloakBrowser v146 (free tier) on this system with
+`TargetClosedError: Target page, context or browser has been closed`.
 
-**Fix**: Use `headless=False` wrapped in `xvfb-run` (provides a virtual display):
+No `xvfb-run` needed — the display server is live. Run scripts directly:
 ```bash
-xvfb-run python3 scripts/openrouter_signup.py
+python3 scripts/openrouter_signup.py
 ```
 
-`xvfb-run` is available at `/nix/store/*/bin/xvfb-run`.
-Do NOT use `headless=True` with CloakBrowser on this system.
+If running on a headless machine without a display, wrap with `xvfb-run`
+(available at `/nix/store/*/bin/xvfb-run`):
+```bash
+xvfb-run python3 scripts/your_script.py
+```
 
 ## Cloudflare handling
 
@@ -199,7 +242,8 @@ The challenge iframe doesn't appear until Clerk's React state is properly synced
 and zero Clerk POSTs, Clerk isn't submitting because it doesn't see the field values.
 Fix the form state first (dispatchEvent), then Turnstile will render and auto-solve.
 
-Fallback (only if a challenge frame still persists after page load):
+If you still need a manual fallback (rare — only if CloakBrowser auto-solve
+fails on a non-Clerk site):
 ```python
 def handle_cf_turnstile(page):
     """Fallback: click Cloudflare Turnstile checkbox if still present."""
@@ -227,7 +271,7 @@ def handle_cf_turnstile(page):
    patches all Playwright interactions at the CDP level.
 3. **`geoip=True` replaces manual locale/timezone** — set it when using a
    proxy and timezone/locale should match the exit IP.
-4. **`proxy` is a string**, not `{"server": "..."}` dict — CloakBrowser accepts
+4. **`proxy` is a string`, not `{"server": "..."}` dict** — CloakBrowser accepts
    `"socks5://user:pass@host:port"` or `"http://user:pass@host:port"` directly.
 5. **No `executable_path` needed** — CloakBrowser bundles its own stealth
    Chromium binary (auto-downloaded on first use via `python -m cloakbrowser install`).
@@ -242,6 +286,14 @@ def handle_cf_turnstile(page):
 9. **Subprocess scripts must import CloakBrowser independently** — embedded
    script strings passed to `sys.executable -c` need their own
    `from cloakbrowser import ...` import.
+10. **`shutil.rmtree` uses `ignore_errors=True`**, NOT `ignore=True`** — common typo
+    when porting Python cleanup code. `ignore` is not a valid keyword argument.
+11. **Sed one-liner for bulk playwright→cloakbrowser replacement:**
+    ```bash
+    grep -rl 'sync_playwright' scripts/ | xargs sed -i 's/from playwright.sync_api import sync_playwright/from cloakbrowser import launch, launch_persistent_context/g; s/p\.chromium\.launch_persistent_context/launch_persistent_context/g; /^with sync_playwright() as p:$/d; /executable_path=/d; s/headless=False,/headless=False, humanize=True,/g'
+    ```
+    Note: after running sed, you must manually **un-indent** the body that was
+    inside the `with` block, and remove `p.stop()`.
 
 ## Diagnostic checklist (when browser scripts break)
 
@@ -253,12 +305,17 @@ def handle_cf_turnstile(page):
 6. **Cloudflare issue?**: CloakBrowser should auto-solve; if not, check for CF iframe fallback
 7. **Script hanging?**: Check if `context.close()` is called on all exit paths (including error/early return)
 8. **License issues?**: Free tier v146 may be stale; check `python3 -m cloakbrowser update`
-9. **`headless=True` CRASHES on Replit/NixOS** — CloakBrowser v146 free tier closes the target immediately with `TargetClosedError` under `headless=True`. Use `headless=False` + `xvfb-run` instead: `xvfb-run python3 script.py`
+9. **`headless=True` CRASHES with CloakBrowser v146** — `TargetClosedError`. Always use `headless=False`. If no display server, wrap with `xvfb-run`.
 10. **Clerk.js form fields need `dispatchEvent`** — `.fill()` and `.check()` do NOT trigger Clerk's internal React state. The button appears enabled but Clerk never POSTs to its API. Fix: use JS `dispatchEvent` after setting values, or `check(force=True)` for checkboxes.
+11. **"Missing X server or $DISPLAY"** — subprocess Python doesn't inherit DISPLAY. Add `export DISPLAY=:1` (or correct display) at top of bash script.
+12. **`TypeError: rmtree() got an unexpected keyword argument 'ignore'`** — use `ignore_errors=True`, not `ignore=True`.
+13. **Nested heredoc in command substitution breaks** — `$(python3 << 'EOF')` fails with quote escaping. Generate `.py` files separately, then call them.
 
 ## Support files
 
 - `references/camoufox-playwright-cdp-compat.md` — historical Camoufox notes, `isMobile` CDP patch (no longer needed with CloakBrowser)
 - `references/clerkjs-form-debugging.md` — Clerk.js form state issues, dispatchEvent workaround, network-level debugging recipe, Turnstile auto-solve flow
 - `references/firecrawl-cli.md` — Firecrawl CLI install, auth, and usage reference
-- `scripts/cloak_replace.sh` — Bulk sed script to migrate playwright→cloakbrowser in all workspace scripts
+- `references/cloakbrowser-bash-pattern.md` — bash+python helper pattern, nested heredoc pitfall, DISPLAY env, sed migration one-liner
+- `references/proton-mail-automation.md` — Proton Mail inbox automation: persistent profile, search, extract verification links, bash integration
+- `scripts/cloak_replace.sh` — One-liner bulk sed script to migrate playwright→cloakbrowser in all workspace scripts

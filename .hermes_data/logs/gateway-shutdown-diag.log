@@ -1,0 +1,30 @@
+=== shutdown diagnostic @ SIGTERM ===
+--- date ---
+2026-06-29T19:32:59Z
+--- ps auxf (top 60 by cpu) ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0 1820456 4580 ?        Ssl  15:35   0:00 /nix/store/45sz521slvpbvcpyzh5qnrw6kx081zfc-pid1-0.0.1/bin/pid0 -vsock-port=2000 -pid2-vsock-port=2001 -host-services-vsock-port=2002 -portauthority-vsock-port=2003 -setup-cgroups=true -manage-pseudo-fs=true -metrics-to-conman=false -pid2-pooling
+runner     13124  1.9  7.3 1332736 597812 ?      Ssl  16:13   3:59 /home/runner/hermes-agent/.venv/bin/python /home/runner/hermes-webui/server.py
+runner     47510 22.0  0.6  66220 55292 ?        S    19:32   0:00  \_ /home/runner/hermes-agent/.venv/bin/python -m hermes_cli.main gateway restart
+--- pstree of self ---
+--- /proc/loadavg ---
+0.54 0.16 0.30 2/399 47535
+--- recent dmesg (oom/killed) ---
+=== end ===
+=== shutdown diagnostic @ SIGTERM ===
+--- date ---
+2026-06-29T19:33:15Z
+--- ps auxf (top 60 by cpu) ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0 1820456 4580 ?        Ssl  15:35   0:00 /nix/store/45sz521slvpbvcpyzh5qnrw6kx081zfc-pid1-0.0.1/bin/pid0 -vsock-port=2000 -pid2-vsock-port=2001 -host-services-vsock-port=2002 -portauthority-vsock-port=2003 -setup-cgroups=true -manage-pseudo-fs=true -metrics-to-conman=false -pid2-pooling
+runner     13124  2.0  1.4 564312 116680 ?       Ssl  16:13   4:03 /home/runner/hermes-agent/.venv/bin/python /home/runner/hermes-webui/server.py
+runner     47605 79.2  0.6  68916 57008 ?        S    19:33   0:00  \_ /home/runner/hermes-agent/.venv/bin/python -m hermes_cli.main gateway restart
+runner     47510 20.4  1.5 583124 124500 ?       Rl   19:32   0:03  \_ /home/runner/hermes-agent/.venv/bin/python -m hermes_cli.main gateway restart
+runner     47612  0.0  0.0   8016  2580 ?        Ss   19:33   0:00      \_ timeout 5 bash -c echo '=== shutdown diagnostic @ SIGTERM ==='; echo '--- date ---'; date -u +%Y-%m-%dT%H:%M:%SZ; echo '--- ps auxf (top 60 by cpu) ---'; ps auxf --sort=-pcpu 2>/dev/null | head -60; echo '--- pstree of self ---'; pstree -plau 47510 2>/dev/null | head -40 || true; echo '--- /proc/loadavg ---'; cat /proc/loadavg 2>/dev/null || true; echo '--- recent dmesg (oom/killed) ---'; dmesg -T 2>/dev/null | tail -20 || journalctl --user -n 20 --no-pager 2>/dev/null | tail -20 || true; echo '=== end ==='
+runner     47613  0.0  0.0   8140  4120 ?        S    19:33   0:00          \_ /nix/store/smkzrg2vvp3lng3hq7v9svfni5mnqjh2-bash-interactive-5.2p37/bin/bash -rcfile /nix/store/lsgsb0ar7rdwa09d1z2dnfjh4188pddk-replit-bashrc/bashrc -c echo '=== shutdown diagnostic @ SIGTERM ==='; echo '--- date ---'; date -u +%Y-%m-%dT%H:%M:%SZ; echo '--- ps auxf (top 60 by cpu) ---'; ps auxf --sort=-pcpu 2>/dev/null | head -60; echo '--- pstree of self ---'; pstree -plau 47510 2>/dev/null | head -40 || true; echo '--- /proc/loadavg ---'; cat /proc/loadavg 2>/dev/null || true; echo '--- recent dmesg (oom/killed) ---'; dmesg -T 2>/dev/null | tail -20 || journalctl --user -n 20 --no-pager 2>/dev/null | tail -20 || true; echo '=== end ==='
+runner     47615  100  0.0  11204  5644 ?        R    19:33   0:00              \_ ps auxf --sort=-pcpu
+--- pstree of self ---
+--- /proc/loadavg ---
+0.78 0.24 0.32 5/383 47619
+--- recent dmesg (oom/killed) ---
+=== end ===

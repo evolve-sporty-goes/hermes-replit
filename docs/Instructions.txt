@@ -1,105 +1,152 @@
-OpenRouter Signup Automation — Detailed Instructions
-=====================================================
+CloakBrowser Automation Scripts — Detailed Instructions
+======================================================
 
-Script: openrouter_signup.py
-Credentials output: openrouter_credentials.txt
-
-ARCHITECTURE
-------------
-- All signup steps (signup, verify, key extraction): Playwright Chromium
-  - Uses fresh tmpdir (tempfile.mkdtemp) per run, cleaned up on exit
-  - launch_persistent_context with user_data_dir=tmpdir
-  - Chromium path: /nix/store/.../chromium-138.0.7204.100/bin/chromium
-- Step 3 (Proton Mail verification link): Playwright Chromium subprocess
-  - Uses persistent profile at ~/proton_profile (survives across runs)
-  - If profile already has Proton logged in, skips credential entry
+All scripts use CloakBrowser (anti-detect Chromium) instead of raw Playwright.
+headless=False always (headless=True crashes CloakBrowser on this system).
+No xvfb-run needed — display server is running (DISPLAY=:1).
 
 PREREQUISITES
 -------------
-1. playwright installed: pip install playwright
-2. email.sh present at /home/runner/workspace/email.sh
-   - Generates Duck email via ~/duckmail.py (uses Playwright)
-   - Prints email to stdout (captured by subprocess)
-   - Also appends to mail.txt
+1. cloakbrowser installed: pip install cloakbrowser
+2. email.sh present at scripts/email.sh
+   - Generates Duck Address email via ~/duckmail.py (CloakBrowser)
+   - Prints email to stdout (captured by calling scripts)
+   - Appends to credentials/mail.txt
    - Creates ~/config.py with PROTON_USERNAME, PROTON_PASSWORD, credential pools
-3. Chromium at: /nix/store/qa9cnw4v5xkxyip6mb9kxqfq1z4x2dx1-chromium-138.0.7204.100/bin/chromium
-4. Proton profile dir ~/proton_profile (auto-created)
+3. Proton profile dir ~/proton_profile (auto-created, persists login across runs)
+4. Python packages in .pythonlibs (auto-resolved via venv)
+
+RUN ANY SCRIPT WITH:
+  bash scripts/SCRIPT_NAME.sh
+(No xvfb-run needed — display server is running)
+
+=================================================================
+SCRIPT: firecrawl_signup.sh
+=================================================================
+Purpose: Firecrawl account signup + email verification + API key extraction
+Output: credentials/firecrawl_credentials.txt
+
+Architecture:
+- Generates ~/fc_signup.py, ~/fc_proton.py, ~/fc_verify.py at runtime
+  (same pattern as email.sh generating ~/duckmail.py)
+- Each .py helper is a standalone CloakBrowser script called via python3
+- Main bash orchestrates the flow with retry logic
 
 STEP-BY-STEP FLOW
-------------------
+-----------------
 
-STEP 1: Generate Duck Email
-  - Runs: bash email.sh
-  - Captures email address from stdout (last line with @)
-  - Subprocess env includes:
-    - PATH: venv bin dir prepended (so python3 resolves to venv)
-    - VIRTUAL_ENV: set to venv dir
-    - PYTHONPATH: includes .pythonlibs for package access
-  - Imports ~/config.py fresh (deletes stale pyc cache, reloads module)
-  - Generates random 15-char password (letters + digits + !@#$%)
+STEP 1: Generate Duck Email + Load Config
+  - Runs: bash scripts/email.sh
+  - Captures email from stdout (last line, whitespace stripped)
+  - Loads PROTON_USER, PROTON_PASS from ~/config.py via importlib
+  - Generates random 16-char password (letters + digits + !@#$%)
 
-STEP 2: Sign Up on OpenRouter (Playwright)
-  - Navigates to https://openrouter.ai/sign-up
-  - Waits for #emailAddress-field to be visible
-  - Fills: email, password, checks Terms of Service checkbox (#legalAccepted-field)
-  - Clicks "Continue" button
-  - Waits 15s, then checks for Cloudflare challenge frame
-    - If found, clicks #challenge-stage / .ctp-checkbox
-  - Waits 8s, checks for confirm-email/verification indicator in URL or body
+STEP 2: Sign Up on Firecrawl (fc_signup.py)
+  - Opens fresh tmpdir browser profile (CloakBrowser, headless=False, humanize=True)
+  - Navigates to https://www.firecrawl.dev/signin
+  - Clicks "Sign Up" tab
+  - Fills email + password
+  - Clicks "Create Account"
+  - Waits 10s, prints resulting URL
+  - Expects redirect to /signin/confirm-email
 
-STEP 3: Check Proton Mail for Verification Link (Chromium subprocess)
-  - Runs as subprocess (separate process for stability)
-  - Uses Playwright Chromium with launch_persistent_context at ~/proton_profile
-  - Login check: if "Mail" link visible, skips credentials (already logged in)
-  - Otherwise fills #username and #password, submits
-  - Clicks "Mail" link with timeout=0
-  - Inbox search (5 retries, 5s wait each):
-    - Presses "/" keyboard shortcut to open Proton search
-    - Types signup email address with keyboard.type()
-    - Presses Enter to search
-    - Clicks first .item-container result
-    - If not found, presses Escape and retries
-  - Extracts verification link from email frames:
-    - Primary: regex for https://clerk.openrouter.ai/v1/verify...
-    - Fallback: regex for https://openrouter.ai...verify/confirm/token...
-    - Decodes &amp; → &
-    - Last fallback: searches anchor tags for verify/confirm + openrouter
-  - Outputs: VERIFY_URL:<url> or VERIFY_URL:NOT_FOUND
+STEP 3: Check Proton Mail for Verification Link (fc_proton.py)
+  - Opens persistent profile at ~/proton_profile (headless=False)
+  - Navigates to https://mail.proton.me/u/0/inbox
+  - If redirected to /login, fills credentials and submits
+  - Search loop (up to 15 attempts):
+    - Waits 5s for inbox to load
+    - Presses "/" to open Proton search
+    - Types signup email, presses Enter
+    - Waits 5s for results
+    - If no results: navigates to inbox URL again (page.goto, not reload)
+    - If results found:
+      - Iterates through up to 5 emails (skips already-checked by subject)
+      - Clicks each email, searches frames + links for verify URL
+      - If verify link found: prints VERIFY_URL:<url> and exits
+      - If not found in any: clears checked set, navigates to inbox again
+  - If loop exhausts: prints VERIFY_URL:NOT_FOUND
 
-STEP 4: Verify Email + Sign In (Playwright)
-  - Navigates to verify_url from Step 3
-  - If on openrouter.ai, clicks "Individual" (personal account selection)
-  - Waits for login to settle (8s)
-  - Verification link typically auto-logs in
-
-STEP 5: Extract API key (Playwright)
-  - Navigates to https://openrouter.ai/workspaces/default/keys
-  - If "Create Key" button visible, clicks it to create a new key first
-  - Key extraction (3 methods, tried in order):
-    1. <code> block: page.locator("code").inner_text() + regex sk-or-v1-[a-zA-Z0-9]+
-    2. Copy button + clipboard: click "Copy" button, read navigator.clipboard.readText() + regex
-    3. HTML regex: scan full page HTML for sk-or-v1-[a-zA-Z0-9]{20,}
-
-STEP 6: Save Credentials
-  - Appends to openrouter_credentials.txt:
-    EMAIL=<email>
-    PASSWORD=<password>
-    API_KEY=<key or NOT_FOUND>
+STEP 4: Verify Email + Extract API Key (fc_verify.py)
+  - Opens fresh tmpdir browser profile
+  - Navigates to verify_url (PKCE token link)
+  - If new tab opened by redirect, switches to it
+  - Polls for page to land on firecrawl.dev (up to 40 iterations, 2s each)
+  - If lands on /signin or /login:
+    - Fills email + password, clicks "Sign In"
+    - Continues polling
+  - Once on dashboard: navigates to /api-keys
+  - API key extraction (3 methods, tried in order):
+    1. Click eye icon (button:has(.lucide-eye)), read revealed text
+    2. Click eye-off icon (button:has(.lucide-eye-off))
+    3. Click copy button + read clipboard
+    4. HTML regex: scan full page HTML for fc-[a-zA-Z0-9]{20,}
+  - Saves to credentials/firecrawl_credentials.txt
 
 RETRY LOGIC
 -----------
 - Main loop: 3 attempts
-- If Step 3 returns NOT_FOUND (verification email not found after 5 inbox retries):
-  - Generates fresh email via email.sh
-  - Generates new password
+- If Step 3 returns NOT_FOUND:
+  - Generates fresh email + password
   - Restarts from Step 2
-- After 3 failed attempts, prints "FAILED: 3 signup attempts exhausted."
+- After 3 failed attempts: prints "FAILED: 3 attempts exhausted"
 
-NOTES
------
-- The 6-digit sign-in verification code (factor-two) is NOT handled automatically
-  — OpenRouter sends this on sign-in and must be entered manually if prompted
-- Playwright coreBundle.js isosomorphic trace loader was patched to guard
-  pageError.location before accessing .url
-- email.sh subprocess needs venv PATH + VIRTUAL_ENV + PYTHONPATH set correctly
-  because duckmail.py uses playwright which is in .pythonlibs, not system python
+=================================================================
+SCRIPT: email.sh
+=================================================================
+Purpose: Generate a Duck Address email via Duck Login API
+Output: prints email to stdout, appends to credentials/mail.txt
+
+Flow:
+  - Checks if cloakbrowser is installed, installs if not
+  - Generates ~/config.py with credential pools (Duck + Proton + Firecrawl)
+  - Generates ~/duckmail.py (CloakBrowser script)
+  - Runs ~/duckmail.py:
+    - Opens Duck login page (ddgeep.vercel.app/login)
+    - Fills Duck username + access token (random pair from config)
+    - Clicks "Generate Private Duck Address"
+    - Reads generated email from page
+    - Prints email to stdout
+  - Appends email to credentials/mail.txt
+
+=================================================================
+CLOAKBROWSER PATTERNS
+=================================================================
+
+Launch (always use this):
+  from cloakbrowser import launch, launch_persistent_context
+  ctx = launch_persistent_context(tmpdir, headless=False, humanize=True)
+  p = ctx.pages[0] if ctx.pages else ctx.new_page()
+
+Cleanup:
+  import atexit, shutil
+  td = tempfile.mkdtemp()
+  atexit.register(lambda: shutil.rmtree(td, ignore_errors=True))
+
+Key differences from Playwright:
+- No executable_path needed (bundled Chromium v146)
+- humanize=True for natural mouse/anti-detect timing
+- headless=True CRASHES on this system — always use headless=False
+- No xvfb-run needed (display server running)
+- Stealth is built into the binary (no JS injection needed)
+
+=================================================================
+TROUBLESHOOTING
+=================================================================
+
+"Missing X server or $DISPLAY":
+  - Ensure DISPLAY is exported: export DISPLAY=:1
+  - firecrawl_signup.sh sets this automatically
+
+"TargetClosedError":
+  - Page/tab was closed (common with PKCE verify links)
+  - Scripts now catch this and check for new tabs
+
+Proton not finding email:
+  - Email may take 30-60s to arrive
+  - Script retries 15 times with 5s waits + inbox reloads
+  - Check ~/proton_profile is persisting login (first run needs valid creds)
+
+Checkbox not registering (Clerk/OpenRouter):
+  - Use .check(force=True) instead of .click()
+  - JS dispatchEvent doesn't update React/Clerk internal state

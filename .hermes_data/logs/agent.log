@@ -22734,3 +22734,871 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 2026-06-29 17:55:39,097 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
 2026-06-29 17:55:39,107 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
 2026-06-29 18:00:54,414 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
+2026-06-29 18:08:45,367 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 4c5d0bdcecfd
+2026-06-29 18:08:45,937 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-95 (_run_agent_streaming):140103482619584 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:08:45,963 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 18:08:45,970 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 18:08:46,483 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 18:08:46,484 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 18:08:46,491 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 18:08:46,563 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 18:08:46,567 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 18:08:46,568 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 18:08:46,841 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 18:08:47,226 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:08:47,227 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:08:47,870 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=254 msg='[Workspace::v1: /home/runner/workspace] Convert firecrawl_gen.py to bash'
+2026-06-29 18:08:47,917 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-98 (_call):140102705608384 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:08:48,790 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (28295fd2-be2a-4885-aba5-aca7065d0363)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 18:08:48,791 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-98 (_call):140102705608384 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:08:48,792 WARNING [4c5d0bdcecfd] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-95 (_run_agent_streaming):140103482619584 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (28295fd2-be2a-4885-aba5-aca7065d0363)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 18:08:48,796 INFO [4c5d0bdcecfd] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 18:08:48,815 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 18:08:49,083 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 18:08:49,109 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-99 (_call):140102705608384 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:08:52,100 INFO [4c5d0bdcecfd] run_agent: OpenAI client aborted (stream_interrupt_abort, shared=False, tcp_force_closed=1, deferred_close=stranger_thread) thread=Thread-95 (_run_agent_streaming):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:08:52,104 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=interrupted_during_api_call model=owl-alpha api_calls=1/90 budget=1/90 tool_turns=101 last_msg_role=user response_len=65 session=4c5d0bdcecfd
+2026-06-29 18:08:52,104 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-99 (_call):140102705608384 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:08:58,541 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 18:08:58,816 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:08:58,817 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:09:20,667 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 4c5d0bdcecfd
+2026-06-29 18:09:20,696 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-101 (_run_agent_streaming):140103119312576 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:09:20,780 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:09:20,780 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:09:21,431 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=255 msg='[Workspace::v1: /home/runner/workspace] Convert firecrawl_gen to bash using mini...'
+2026-06-29 18:09:21,446 INFO [4c5d0bdcecfd] agent.conversation_loop: Repaired 1 message-alternation violations before request (session=4c5d0bdcecfd)
+2026-06-29 18:09:21,469 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-103 (_call):140103160223424 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:09:21,725 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ffb214c2-64bc-437c-b9c2-555d22a61a9d)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 18:09:21,725 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-103 (_call):140103160223424 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:09:21,727 WARNING [4c5d0bdcecfd] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-101 (_run_agent_streaming):140103119312576 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ffb214c2-64bc-437c-b9c2-555d22a61a9d)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 18:09:21,731 INFO [4c5d0bdcecfd] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 18:09:21,749 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 18:09:21,934 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 18:09:21,951 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-104 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:09:40,046 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-104 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:09:40,047 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=116948 out=25 total=116973 latency=18.6s cache=2688/116948 (2%)
+2026-06-29 18:09:40,352 INFO [4c5d0bdcecfd] tools.file_tools: Creating new local environment for task default...
+2026-06-29 18:09:40,524 INFO [4c5d0bdcecfd] tools.environments.base: Session snapshot created (session=b2436c231b23, cwd=/home/runner/workspace)
+2026-06-29 18:09:40,525 INFO [4c5d0bdcecfd] tools.file_tools: local environment ready for task default
+2026-06-29 18:09:40,635 INFO [4c5d0bdcecfd] agent.tool_executor: tool read_file completed (0.29s, 15890 chars)
+2026-06-29 18:09:40,675 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-111 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:09:56,006 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 18:09:56,414 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 18:09:58,527 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 18:09:58,600 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 18:10:15,772 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-111 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:10:15,775 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=122299 out=1212 total=123511 latency=35.1s cache=2688/122299 (2%)
+2026-06-29 18:10:16,143 WARNING agent.lsp.servers: bash-language-server: shellcheck not found on PATH — diagnostics will be empty until shellcheck is installed (apt: shellcheck, brew: shellcheck, scoop: shellcheck).
+2026-06-29 18:10:17,142 INFO hermes.lint.lsp: lsp[bash-language-server] active for /home/runner/workspace
+2026-06-29 18:10:17,874 INFO [4c5d0bdcecfd] agent.tool_executor: tool write_file completed (2.01s, 259 chars)
+2026-06-29 18:10:17,946 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-119 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:10:28,354 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-119 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:10:28,355 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=123598 out=62 total=123660 latency=10.5s cache=116864/123598 (95%)
+2026-06-29 18:10:29,097 WARNING [4c5d0bdcecfd] agent.tool_executor: Tool terminal returned error (0.70s): {"output": "/home/runner/workspace/scripts/firecrawl_signup.sh: line 48: syntax error near unexpected token `do'\n/home/runner/workspace/scripts/firecrawl_signup.sh: line 48: `TIME for i in $(seq 1 3)
+2026-06-29 18:10:29,140 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-121 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:10:38,084 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-121 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:10:38,084 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #4: model=owl-alpha provider=openrouter in=123748 out=70 total=123818 latency=9.0s cache=123520/123748 (100%)
+2026-06-29 18:10:38,119 WARNING [4c5d0bdcecfd] agent.tool_executor: Tool patch returned error (0.00s): {"error": "old_string and new_string required"}
+2026-06-29 18:10:38,160 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-122 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:10:47,671 WARNING agent.message_sanitization: Repaired malformed tool_call arguments for patch: {"mode": "replace", "new_string": "for i in $(seq 1 3); do", "old_string": "TIME → {"mode": "replace", "new_string": "for i in $(seq 1 3); do", "old_string": "TIME
+2026-06-29 18:10:47,672 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-122 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:10:47,672 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #5: model=owl-alpha provider=openrouter in=123842 out=72 total=123914 latency=9.5s cache=123648/123842 (100%)
+2026-06-29 18:10:47,684 WARNING [4c5d0bdcecfd] agent.tool_executor: Tool patch returned error (0.00s): {"error": "path required"}
+2026-06-29 18:10:47,737 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-123 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:10:58,858 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-123 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:10:58,859 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #6: model=owl-alpha provider=openrouter in=123915 out=72 total=123987 latency=11.1s cache=122240/123915 (99%)
+2026-06-29 18:10:59,156 INFO [4c5d0bdcecfd] agent.tool_executor: tool patch completed (0.24s, 796 chars)
+2026-06-29 18:10:59,217 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-134 (_call):140103510914752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:11:08,305 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-134 (_call):140103510914752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:11:08,306 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #7: model=owl-alpha provider=openrouter in=124262 out=45 total=124307 latency=9.1s cache=123776/124262 (100%)
+2026-06-29 18:11:08,420 WARNING [4c5d0bdcecfd] agent.tool_executor: Tool terminal returned error (0.09s): {"output": "/home/runner/workspace/scripts/firecrawl_signup.sh: line 50: warning: command substitution: 1 unterminated here-document\n/home/runner/workspace/scripts/firecrawl_signup.sh: line 94: synta
+2026-06-29 18:11:08,452 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-136 (_call):140103510914752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:11:58,128 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-136 (_call):140103510914752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:11:58,128 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #8: model=owl-alpha provider=openrouter in=124392 out=1809 total=126201 latency=49.7s cache=123904/124392 (100%)
+2026-06-29 18:11:58,382 INFO [4c5d0bdcecfd] agent.tool_executor: tool write_file completed (0.23s, 259 chars)
+2026-06-29 18:11:58,439 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-142 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:12:05,747 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-142 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:12:05,748 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #9: model=owl-alpha provider=openrouter in=126280 out=42 total=126322 latency=7.3s cache=124160/126280 (98%)
+2026-06-29 18:12:05,905 WARNING [4c5d0bdcecfd] agent.tool_executor: Tool terminal returned error (0.10s): {"output": "/home/runner/workspace/scripts/firecrawl_signup.sh: line 130: syntax error near unexpected token `('\n/home/runner/workspace/scripts/firecrawl_signup.sh: line 130: `for sel in [\"button:ha
+2026-06-29 18:12:05,959 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-144 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:12:26,444 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-144 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:12:26,445 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #10: model=owl-alpha provider=openrouter in=126540 out=737 total=127277 latency=20.5s cache=126208/126540 (100%)
+2026-06-29 18:12:26,653 INFO [4c5d0bdcecfd] agent.tool_executor: tool write_file completed (0.18s, 259 chars)
+2026-06-29 18:12:26,658 INFO [4c5d0bdcecfd] run_agent: Delivered /steer to agent after tool batch (43 chars): Inspire from email.sh , do not use here doc
+2026-06-29 18:12:26,707 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-150 (_call):140103510914752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:12:33,347 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-150 (_call):140103510914752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:12:33,347 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #11: model=owl-alpha provider=openrouter in=127405 out=29 total=127434 latency=6.7s cache=124288/127405 (98%)
+2026-06-29 18:12:33,669 INFO [4c5d0bdcecfd] agent.tool_executor: tool session_search completed (0.27s, 134 chars)
+2026-06-29 18:12:33,739 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-151 (_call):140103510914752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:12:54,525 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-151 (_call):140103510914752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:12:54,526 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #12: model=owl-alpha provider=openrouter in=127491 out=782 total=128273 latency=20.8s cache=127360/127491 (100%)
+2026-06-29 18:12:54,835 INFO [4c5d0bdcecfd] agent.tool_executor: tool write_file completed (0.24s, 259 chars)
+2026-06-29 18:12:54,903 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-157 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:13:06,147 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-157 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:13:06,147 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #13: model=owl-alpha provider=openrouter in=128360 out=62 total=128422 latency=11.3s cache=126464/128360 (99%)
+2026-06-29 18:13:06,397 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.18s, 52 chars)
+2026-06-29 18:13:06,451 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-159 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:13:31,167 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-159 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:13:31,168 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #14: model=owl-alpha provider=openrouter in=128455 out=253 total=128708 latency=24.7s cache=127488/128455 (99%)
+2026-06-29 18:13:32,264 INFO [4c5d0bdcecfd] hermes.lint.lsp: lsp[pyright] 1 diags (/home/runner/workspace/scripts/_fc_signup.py)
+2026-06-29 18:13:32,332 INFO [4c5d0bdcecfd] agent.tool_executor: tool write_file completed (1.14s, 506 chars)
+2026-06-29 18:13:32,391 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-167 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:13:55,608 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-167 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:13:55,611 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #15: model=owl-alpha provider=openrouter in=128867 out=645 total=129512 latency=23.3s cache=128256/128867 (100%)
+2026-06-29 18:13:56,313 INFO [4c5d0bdcecfd] hermes.lint.lsp: lsp[pyright] 1 diags (/home/runner/workspace/scripts/_fc_proton.py)
+2026-06-29 18:13:56,325 INFO [4c5d0bdcecfd] agent.tool_executor: tool write_file completed (0.65s, 218 chars)
+2026-06-29 18:13:56,335 INFO [4c5d0bdcecfd] run_agent: Delivered /steer to agent after tool batch (37 chars): And let it create file in ~ directory
+2026-06-29 18:13:56,397 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-175 (_call):140103510914752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:14:43,498 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-175 (_call):140103510914752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:14:43,499 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #16: model=owl-alpha provider=openrouter in=129631 out=2054 total=131685 latency=47.2s cache=128384/129631 (99%)
+2026-06-29 18:14:43,778 INFO [4c5d0bdcecfd] agent.tool_executor: tool write_file completed (0.19s, 259 chars)
+2026-06-29 18:14:43,826 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-188 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:14:52,137 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-188 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:14:52,138 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #17: model=owl-alpha provider=openrouter in=131768 out=52 total=131820 latency=8.3s cache=129536/131768 (98%)
+2026-06-29 18:14:52,287 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.10s, 52 chars)
+2026-06-29 18:14:52,329 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-190 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:14:59,328 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-190 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:14:59,328 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #18: model=owl-alpha provider=openrouter in=131853 out=61 total=131914 latency=7.0s cache=131712/131853 (100%)
+2026-06-29 18:14:59,521 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.14s, 52 chars)
+2026-06-29 18:14:59,567 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-192 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:15:09,483 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-192 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:15:09,483 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #19: model=owl-alpha provider=openrouter in=131946 out=123 total=132069 latency=9.9s cache=131840/131946 (100%)
+2026-06-29 18:15:09,514 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=19/90 budget=19/90 tool_turns=119 last_msg_role=assistant response_len=403 session=4c5d0bdcecfd
+2026-06-29 18:15:10,099 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=bg-review:140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:15:10,262 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=owl-alpha provider=openrouter platform=webui history=292 msg='Review the conversation above and update the skill library. Be ACTIVE — most ses...'
+2026-06-29 18:15:10,343 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-193 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:15:24,781 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-193 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:15:24,781 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=124033 out=198 total=124231 latency=14.5s cache=2816/124033 (2%)
+2026-06-29 18:15:25,024 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_view completed (0.24s, 14243 chars)
+2026-06-29 18:15:25,050 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-194 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:15:36,325 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-194 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:15:36,326 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=127822 out=208 total=128030 latency=11.3s cache=124032/127822 (97%)
+2026-06-29 18:15:36,447 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_view completed (0.12s, 5773 chars)
+2026-06-29 18:15:36,494 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-195 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:15:42,104 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-195 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:15:42,105 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=129567 out=27 total=129594 latency=5.6s cache=127808/129567 (99%)
+2026-06-29 18:15:42,168 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_view completed (0.06s, 1288 chars)
+2026-06-29 18:15:42,235 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-196 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:15:48,190 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-196 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:15:48,191 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #4: model=owl-alpha provider=openrouter in=129958 out=28 total=129986 latency=6.0s cache=129536/129958 (100%)
+2026-06-29 18:15:48,252 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_view completed (0.06s, 1739 chars)
+2026-06-29 18:15:48,285 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-197 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:16:03,366 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-197 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:16:03,367 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #5: model=owl-alpha provider=openrouter in=130534 out=408 total=130942 latency=15.1s cache=129920/130534 (100%)
+2026-06-29 18:16:03,423 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.05s, 552 chars)
+2026-06-29 18:16:03,479 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-198 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:16:16,600 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-198 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:16:16,604 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #6: model=owl-alpha provider=openrouter in=131097 out=254 total=131351 latency=13.2s cache=130496/131097 (100%)
+2026-06-29 18:16:16,658 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.05s, 552 chars)
+2026-06-29 18:16:16,732 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-199 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:16:34,065 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-199 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:16:34,066 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #7: model=owl-alpha provider=openrouter in=131493 out=575 total=132068 latency=17.4s cache=131072/131493 (100%)
+2026-06-29 18:16:34,100 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.03s, 550 chars)
+2026-06-29 18:16:34,125 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-200 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:16:42,819 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 18:16:43,151 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:16:43,151 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:16:43,555 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-200 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:16:43,556 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #8: model=owl-alpha provider=openrouter in=132208 out=164 total=132372 latency=9.4s cache=131456/132208 (99%)
+2026-06-29 18:16:43,587 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.03s, 492 chars)
+2026-06-29 18:16:43,636 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-208 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:16:53,152 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-208 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:16:53,156 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #9: model=owl-alpha provider=openrouter in=132523 out=205 total=132728 latency=9.5s cache=132160/132523 (100%)
+2026-06-29 18:16:53,192 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.04s, 245 chars)
+2026-06-29 18:16:53,325 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-209 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:16:59,014 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 4c5d0bdcecfd
+2026-06-29 18:16:59,055 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-210 (_run_agent_streaming):140103160223424 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:16:59,135 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:16:59,135 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:16:59,707 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=293 msg='[Workspace::v1: /home/runner/workspace] Run to check'
+2026-06-29 18:16:59,758 INFO [4c5d0bdcecfd] agent.conversation_loop: Repaired 1 message-alternation violations before request (session=4c5d0bdcecfd)
+2026-06-29 18:16:59,801 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-212 (_call):140103119312576 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:17:00,187 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (b33691fa-00b3-42c3-b8fe-adb1fe6c8f00)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 18:17:00,188 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-212 (_call):140103119312576 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:17:00,189 WARNING [4c5d0bdcecfd] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-210 (_run_agent_streaming):140103160223424 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (b33691fa-00b3-42c3-b8fe-adb1fe6c8f00)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 18:17:00,194 INFO [4c5d0bdcecfd] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 18:17:00,209 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 18:17:00,360 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 18:17:00,379 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-213 (_call):140103119312576 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:17:13,597 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-213 (_call):140103119312576 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:17:13,597 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=131996 out=61 total=132057 latency=13.8s cache=2688/131996 (2%)
+2026-06-29 18:17:13,855 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.09s, 148 chars)
+2026-06-29 18:17:13,895 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-215 (_call):140103873468096 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:17:19,354 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-215 (_call):140103873468096 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:17:19,355 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=132126 out=16 total=132142 latency=5.5s cache=131968/132126 (100%)
+2026-06-29 18:17:19,383 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=2/90 budget=2/90 tool_turns=120 last_msg_role=assistant response_len=54 session=4c5d0bdcecfd
+2026-06-29 18:17:24,063 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-209 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:17:24,064 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #10: model=owl-alpha provider=openrouter in=132792 out=1155 total=133947 latency=30.8s cache=132480/132792 (100%)
+2026-06-29 18:17:24,096 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.03s, 269 chars)
+2026-06-29 18:17:24,137 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-218 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:17:32,660 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-218 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:17:32,660 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #11: model=owl-alpha provider=openrouter in=134016 out=100 total=134116 latency=8.5s cache=132736/134016 (99%)
+2026-06-29 18:17:32,836 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.17s, 364 chars)
+2026-06-29 18:17:32,865 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-219 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:17:38,104 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:17:38,105 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:17:46,696 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-219 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:17:46,696 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #12: model=owl-alpha provider=openrouter in=134209 out=327 total=134536 latency=13.8s cache=133952/134209 (100%)
+2026-06-29 18:17:46,754 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.06s, 548 chars)
+2026-06-29 18:17:46,794 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-225 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:17:58,840 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-225 (_call):140103482619584 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:17:58,840 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #13: model=owl-alpha provider=openrouter in=134668 out=247 total=134915 latency=12.1s cache=134208/134668 (100%)
+2026-06-29 18:17:58,845 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=13/16 budget=13/16 tool_turns=131 last_msg_role=assistant response_len=1004 session=4c5d0bdcecfd
+2026-06-29 18:17:58,851 INFO [4c5d0bdcecfd] run_agent: OpenAI client closed (agent_close, shared=True, tcp_force_closed=0) thread=bg-review:140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:18:05,405 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 4c5d0bdcecfd
+2026-06-29 18:18:05,519 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-230 (_run_agent_streaming):140103482619584 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:18:05,619 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:18:05,619 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:18:06,356 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:18:06,357 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:18:06,426 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=297 msg='[Workspace::v1: /home/runner/workspace] .'
+2026-06-29 18:18:06,635 INFO [4c5d0bdcecfd] agent.conversation_loop: Repaired 1 message-alternation violations before request (session=4c5d0bdcecfd)
+2026-06-29 18:18:06,663 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-232 (_call):140102680434368 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:18:06,990 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (8068b3ee-ca23-45f1-afd7-303a9fc9bae2)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 18:18:06,991 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-232 (_call):140102680434368 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:18:06,992 WARNING [4c5d0bdcecfd] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-230 (_run_agent_streaming):140103482619584 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (8068b3ee-ca23-45f1-afd7-303a9fc9bae2)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 18:18:07,001 INFO [4c5d0bdcecfd] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 18:18:07,023 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 18:18:07,318 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 18:18:07,350 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-233 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:18:15,255 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-233 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:18:15,256 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=132166 out=60 total=132226 latency=8.6s cache=132096/132166 (100%)
+2026-06-29 18:18:15,303 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=1/90 budget=1/90 tool_turns=120 last_msg_role=assistant response_len=200 session=4c5d0bdcecfd
+2026-06-29 18:18:15,645 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=bg-review:140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:18:15,826 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=owl-alpha provider=openrouter platform=webui history=298 msg='Review the conversation above and consider saving to memory if appropriate.  Foc...'
+2026-06-29 18:18:15,862 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-234 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:18:25,344 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-234 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:18:25,345 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=122950 out=177 total=123127 latency=9.5s cache=118336/122950 (96%)
+2026-06-29 18:18:25,361 INFO [4c5d0bdcecfd] agent.tool_executor: tool memory completed (0.02s, 201 chars)
+2026-06-29 18:18:25,406 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-235 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:18:31,157 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-235 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:18:31,159 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=123198 out=42 total=123240 latency=5.8s cache=122944/123198 (100%)
+2026-06-29 18:18:31,167 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=2/16 budget=2/16 tool_turns=121 last_msg_role=assistant response_len=176 session=4c5d0bdcecfd
+2026-06-29 18:18:31,169 INFO [4c5d0bdcecfd] run_agent: OpenAI client closed (agent_close, shared=True, tcp_force_closed=0) thread=bg-review:140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:18:31,661 INFO api.background_process: server-side wakeup turn started for session 4c5d0bdcecfd (stream_id=3f37d05deea64d47b9f4621d7ca4b786)
+2026-06-29 18:18:31,806 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 4c5d0bdcecfd
+2026-06-29 18:18:31,846 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-236 (_run_agent_streaming):140102680434368 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:18:31,944 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:18:31,944 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:18:32,463 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=299 msg='[Workspace::v1: /home/runner/workspace] [IMPORTANT: Background process proc_9274...'
+2026-06-29 18:18:32,489 INFO [4c5d0bdcecfd] agent.turn_context: Preflight compression: ~131,544 tokens >= 131,072 threshold (model @cf/moonshotai/kimi-k2.7-code, ctx 262,144)
+2026-06-29 18:18:32,498 INFO [4c5d0bdcecfd] agent.auxiliary_client: Auxiliary auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 18:18:32,592 INFO [4c5d0bdcecfd] agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1/ — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:18:32,592 INFO [4c5d0bdcecfd] agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:18:32,593 INFO [4c5d0bdcecfd] agent.conversation_compression: context compression started: session=4c5d0bdcecfd messages=300 tokens=~131,544 model=@cf/moonshotai/kimi-k2.7-code focus=None
+2026-06-29 18:18:32,626 INFO [4c5d0bdcecfd] agent.auxiliary_client: Auxiliary auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 18:18:32,628 INFO [4c5d0bdcecfd] agent.auxiliary_client: Auxiliary compression: using auto (@cf/moonshotai/kimi-k2.7-code) at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1/
+2026-06-29 18:18:32,768 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:18:32,768 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:18:34,125 INFO [4c5d0bdcecfd] agent.auxiliary_client: Auxiliary compression: rate limit on auto (Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (63c88ad5-b408-447a-9243-2d76d6fc0b0a)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}), trying fallback
+2026-06-29 18:18:34,133 INFO [4c5d0bdcecfd] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 18:18:34,141 INFO [4c5d0bdcecfd] agent.auxiliary_client: Auxiliary compression: rate limit on auto — main fallback chain to fallback_providers[0](openrouter) (owl-alpha)
+2026-06-29 18:18:37,250 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:18:37,250 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:19:30,637 INFO [4c5d0bdcecfd] agent.conversation_compression: context compression done: session=4c5d0bdcecfd messages=300->241 rough_tokens=~64,297 awaiting_real_usage=true
+2026-06-29 18:19:30,643 INFO [4c5d0bdcecfd] agent.conversation_loop: Repaired 2 message-alternation violations before request (session=4c5d0bdcecfd)
+2026-06-29 18:19:30,663 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-248 (_call):140103137146560 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:19:31,326 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (25155624-782a-47ee-b929-a2f5982e44c0)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 18:19:31,327 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-248 (_call):140103137146560 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:19:31,328 WARNING [4c5d0bdcecfd] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-236 (_run_agent_streaming):140102680434368 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (25155624-782a-47ee-b929-a2f5982e44c0)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 18:19:31,332 INFO [4c5d0bdcecfd] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 18:19:31,350 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 18:19:31,507 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 18:19:31,541 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-249 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:19:39,688 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-249 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:19:39,690 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=62054 out=125 total=62179 latency=9.0s cache=2688/62054 (4%)
+2026-06-29 18:19:40,393 INFO [4c5d0bdcecfd] agent.tool_executor: tool patch completed (0.64s, 1314 chars)
+2026-06-29 18:19:40,573 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-257 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:19:44,574 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-257 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:19:44,575 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=62590 out=69 total=62659 latency=4.1s cache=61952/62590 (99%)
+2026-06-29 18:19:45,101 WARNING [4c5d0bdcecfd] agent.tool_executor: Tool terminal returned error (0.50s): {"output": "", "exit_code": 1, "error": null, "exit_code_meaning": "No matches found (not an error)"}
+2026-06-29 18:19:45,137 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-259 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:19:49,556 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-259 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:19:49,557 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=62710 out=108 total=62818 latency=4.4s cache=62464/62710 (100%)
+2026-06-29 18:19:50,017 INFO [4c5d0bdcecfd] agent.tool_executor: tool patch completed (0.38s, 1034 chars)
+2026-06-29 18:19:50,100 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-267 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:19:55,292 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-267 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:19:55,293 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #4: model=owl-alpha provider=openrouter in=63147 out=110 total=63257 latency=5.2s cache=62592/63147 (99%)
+2026-06-29 18:19:55,487 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.15s, 285 chars)
+2026-06-29 18:19:55,523 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-269 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:20:01,553 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-269 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:20:01,554 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #5: model=owl-alpha provider=openrouter in=63401 out=99 total=63500 latency=6.0s cache=63104/63401 (100%)
+2026-06-29 18:20:01,743 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.09s, 186 chars)
+2026-06-29 18:20:01,791 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-275 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:20:07,858 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-275 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:20:07,861 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #6: model=owl-alpha provider=openrouter in=63573 out=47 total=63620 latency=6.1s cache=63360/63573 (100%)
+2026-06-29 18:20:25,071 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (17.14s, 1595 chars)
+2026-06-29 18:20:25,134 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-278 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:20:29,671 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-278 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:20:29,672 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #7: model=owl-alpha provider=openrouter in=64060 out=47 total=64107 latency=4.6s cache=63488/64060 (99%)
+2026-06-29 18:20:40,992 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (11.27s, 553 chars)
+2026-06-29 18:20:41,047 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-280 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:20:46,289 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-280 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:20:46,289 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #8: model=owl-alpha provider=openrouter in=64286 out=95 total=64381 latency=5.3s cache=64000/64286 (100%)
+2026-06-29 18:20:46,427 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.08s, 171 chars)
+2026-06-29 18:20:46,456 INFO [4c5d0bdcecfd] run_agent: Delivered /steer to agent after tool batch (31 chars): Echo DISPLAY=:1 at topof script
+2026-06-29 18:20:46,481 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-282 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:20:51,622 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-282 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:20:51,623 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #9: model=owl-alpha provider=openrouter in=64489 out=130 total=64619 latency=5.2s cache=64256/64489 (100%)
+2026-06-29 18:20:52,004 INFO [4c5d0bdcecfd] agent.tool_executor: tool patch completed (0.33s, 664 chars)
+2026-06-29 18:20:52,077 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-290 (_call):140103502522048 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:20:56,600 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-290 (_call):140103502522048 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:20:56,601 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #10: model=owl-alpha provider=openrouter in=64835 out=46 total=64881 latency=4.6s cache=64384/64835 (99%)
+2026-06-29 18:20:56,809 INFO [4c5d0bdcecfd] agent.tool_executor: tool read_file completed (0.15s, 475 chars)
+2026-06-29 18:20:56,858 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-295 (_call):140103502522048 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:02,897 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-295 (_call):140103502522048 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:02,898 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #11: model=owl-alpha provider=openrouter in=65076 out=151 total=65227 latency=6.1s cache=64768/65076 (100%)
+2026-06-29 18:21:03,551 INFO [4c5d0bdcecfd] agent.tool_executor: tool patch completed (0.57s, 758 chars)
+2026-06-29 18:21:03,660 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-303 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:10,710 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-303 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:10,711 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #12: model=owl-alpha provider=openrouter in=65457 out=163 total=65620 latency=7.1s cache=65024/65457 (99%)
+2026-06-29 18:21:10,797 WARNING [4c5d0bdcecfd] agent.tool_executor: Tool patch returned error (0.07s): {"success": false, "error": "Could not find a match for old_string in the file\n\nDid you mean one of these sections?\n   1| #!/bin/bash\n   2| # firecrawl_signup.sh — Firecrawl signup + verify + extr
+2026-06-29 18:21:10,848 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-305 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:14,781 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-305 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:14,781 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #13: model=owl-alpha provider=openrouter in=65784 out=41 total=65825 latency=4.0s cache=65408/65784 (99%)
+2026-06-29 18:21:14,944 INFO [4c5d0bdcecfd] agent.tool_executor: tool read_file completed (0.11s, 464 chars)
+2026-06-29 18:21:14,994 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-310 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:19,646 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-310 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:19,647 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #14: model=owl-alpha provider=openrouter in=66006 out=67 total=66073 latency=4.7s cache=65664/66006 (99%)
+2026-06-29 18:21:19,780 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.07s, 148 chars)
+2026-06-29 18:21:19,829 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-311 (_call):140103502522048 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:23,239 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-311 (_call):140103502522048 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:23,240 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #15: model=owl-alpha provider=openrouter in=66150 out=14 total=66164 latency=3.4s cache=65920/66150 (100%)
+2026-06-29 18:21:23,278 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=15/90 budget=15/90 tool_turns=111 last_msg_role=assistant response_len=60 session=4c5d0bdcecfd
+2026-06-29 18:21:23,380 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=bg-review:140103502522048 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:23,563 INFO [4c5d0bdcecfd] api.streaming: [ANCHOR-FALLBACK] session=4c5d0bdcecfd vis_before=190 anchor=189
+2026-06-29 18:21:23,616 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=owl-alpha provider=openrouter platform=webui history=268 msg='Review the conversation above and update the skill library. Be ACTIVE — most ses...'
+2026-06-29 18:21:23,708 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-312 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:31,073 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-312 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:31,074 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=66907 out=20 total=66927 latency=7.4s cache=2688/66907 (4%)
+2026-06-29 18:21:31,538 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_view completed (0.46s, 15675 chars)
+2026-06-29 18:21:31,599 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-313 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:44,088 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-313 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:21:44,088 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=71027 out=461 total=71488 latency=12.5s cache=66816/71027 (94%)
+2026-06-29 18:21:44,135 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.05s, 552 chars)
+2026-06-29 18:21:44,164 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-314 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:10,092 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-314 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:10,093 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=71647 out=1140 total=72787 latency=25.9s cache=70912/71647 (99%)
+2026-06-29 18:22:10,113 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.02s, 552 chars)
+2026-06-29 18:22:10,145 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-315 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:18,590 INFO api.background_process: server-side wakeup turn started for session 4c5d0bdcecfd (stream_id=b6d437d695be4f71b9eba62166cf22fa)
+2026-06-29 18:22:18,792 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 4c5d0bdcecfd
+2026-06-29 18:22:18,832 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-321 (_run_agent_streaming):140102705608384 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:22:19,092 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:22:19,092 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:22:19,688 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:22:19,688 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:22:19,815 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=268 msg='[Workspace::v1: /home/runner/workspace] [IMPORTANT: Background process proc_b218...'
+2026-06-29 18:22:19,867 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-324 (_call):140102670993088 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:22:20,140 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (557f4b7c-5085-494b-8e35-f90adc0e6bf1)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 18:22:20,141 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-324 (_call):140102670993088 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:22:20,141 WARNING [4c5d0bdcecfd] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-321 (_run_agent_streaming):140102705608384 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (557f4b7c-5085-494b-8e35-f90adc0e6bf1)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 18:22:20,144 INFO [4c5d0bdcecfd] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 18:22:20,151 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 18:22:20,306 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 18:22:20,334 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-325 (_call):140102670993088 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:27,156 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-315 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:27,157 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #4: model=owl-alpha provider=openrouter in=72960 out=695 total=73655 latency=17.0s cache=71552/72960 (98%)
+2026-06-29 18:22:27,192 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.03s, 550 chars)
+2026-06-29 18:22:27,225 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-332 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:27,352 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-325 (_call):140102670993088 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:27,353 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=66241 out=84 total=66325 latency=7.5s cache=19328/66241 (29%)
+2026-06-29 18:22:27,375 INFO [4c5d0bdcecfd] agent.tool_executor: tool process completed (0.00s, 364 chars)
+2026-06-29 18:22:27,416 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-333 (_call):140102670993088 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:35,893 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-333 (_call):140102670993088 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:35,894 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=66474 out=268 total=66742 latency=8.5s cache=66176/66474 (100%)
+2026-06-29 18:22:41,871 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (5.95s, 91 chars)
+2026-06-29 18:22:41,901 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-335 (_call):140102670993088 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:44,601 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-332 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:44,602 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #5: model=owl-alpha provider=openrouter in=73824 out=780 total=74604 latency=17.4s cache=72960/73824 (99%)
+2026-06-29 18:22:44,656 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.05s, 552 chars)
+2026-06-29 18:22:44,674 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-336 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:55,605 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-335 (_call):140102670993088 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:55,606 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=66793 out=491 total=67284 latency=13.7s cache=66432/66793 (99%)
+2026-06-29 18:22:55,974 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-336 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:22:55,975 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #6: model=owl-alpha provider=openrouter in=74778 out=347 total=75125 latency=11.3s cache=73728/74778 (99%)
+2026-06-29 18:22:56,010 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.03s, 550 chars)
+2026-06-29 18:22:56,045 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-337 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:23:04,017 WARNING [4c5d0bdcecfd] agent.tool_executor: Tool terminal returned error (8.36s): {"output": "", "exit_code": -1, "error": "BLOCKED: Command denied by user. The user has NOT consented to this action. Do NOT retry this command, do NOT rephrase it, and do NOT attempt the same outcome
+2026-06-29 18:23:04,083 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-338 (_call):140102670993088 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:23:17,431 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-338 (_call):140102670993088 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:23:17,432 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #4: model=owl-alpha provider=openrouter in=67386 out=374 total=67760 latency=13.4s cache=66688/67386 (99%)
+2026-06-29 18:23:21,301 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-337 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:23:21,302 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #7: model=owl-alpha provider=openrouter in=75303 out=728 total=76031 latency=25.3s cache=74752/75303 (99%)
+2026-06-29 18:23:21,337 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.03s, 275 chars)
+2026-06-29 18:23:21,367 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-341 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:23:29,947 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-341 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:23:29,951 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #8: model=owl-alpha provider=openrouter in=76119 out=152 total=76271 latency=8.6s cache=75264/76119 (99%)
+2026-06-29 18:23:29,959 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=8/16 budget=8/16 tool_turns=118 last_msg_role=assistant response_len=613 session=4c5d0bdcecfd
+2026-06-29 18:23:29,974 INFO [4c5d0bdcecfd] run_agent: OpenAI client closed (agent_close, shared=True, tcp_force_closed=0) thread=bg-review:140103502522048 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:23:49,029 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (31.57s, 602 chars)
+2026-06-29 18:23:49,074 INFO [4c5d0bdcecfd] run_agent: Delivered /steer to agent after tool batch (28 chars): It didnt even open for login
+2026-06-29 18:23:49,109 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-345 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:24:05,479 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-345 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:24:05,480 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #5: model=owl-alpha provider=openrouter in=68040 out=157 total=68197 latency=16.4s cache=67328/68040 (99%)
+2026-06-29 18:24:05,613 INFO [4c5d0bdcecfd] agent.tool_executor: tool read_file completed (0.11s, 2732 chars)
+2026-06-29 18:24:05,638 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-355 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:24:10,650 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-355 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:24:10,651 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #6: model=owl-alpha provider=openrouter in=69183 out=74 total=69257 latency=5.0s cache=67968/69183 (98%)
+2026-06-29 18:24:10,794 INFO [4c5d0bdcecfd] agent.tool_executor: tool read_file completed (0.11s, 7539 chars)
+2026-06-29 18:24:10,838 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-360 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:24:49,033 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-360 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:24:49,034 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #7: model=owl-alpha provider=openrouter in=72006 out=1954 total=73960 latency=38.2s cache=69120/72006 (96%)
+2026-06-29 18:24:49,326 INFO [4c5d0bdcecfd] agent.tool_executor: tool write_file completed (0.23s, 259 chars)
+2026-06-29 18:24:49,525 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-369 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:24:54,262 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-369 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:24:54,263 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #8: model=owl-alpha provider=openrouter in=74054 out=45 total=74099 latency=4.9s cache=71936/74054 (97%)
+2026-06-29 18:24:54,421 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.12s, 54 chars)
+2026-06-29 18:24:54,464 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-371 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:00,483 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-371 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:00,484 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #9: model=owl-alpha provider=openrouter in=74139 out=128 total=74267 latency=6.0s cache=73984/74139 (100%)
+2026-06-29 18:25:00,601 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.06s, 148 chars)
+2026-06-29 18:25:00,798 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-372 (_call):140102645814976 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:04,846 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-372 (_call):140102645814976 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:04,854 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #10: model=owl-alpha provider=openrouter in=74346 out=8 total=74354 latency=4.1s cache=74112/74346 (100%)
+2026-06-29 18:25:04,948 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=10/90 budget=10/90 tool_turns=120 last_msg_role=assistant response_len=35 session=4c5d0bdcecfd
+2026-06-29 18:25:05,149 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=bg-review:140102645814976 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:05,419 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=owl-alpha provider=openrouter platform=webui history=288 msg='Review the conversation above and update the skill library. Be ACTIVE — most ses...'
+2026-06-29 18:25:05,555 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-373 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:16,828 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-373 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:16,829 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=75097 out=219 total=75316 latency=11.4s cache=18816/75097 (25%)
+2026-06-29 18:25:16,893 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_view completed (0.06s, 17694 chars)
+2026-06-29 18:25:16,935 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-376 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:23,211 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-376 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:23,214 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=79942 out=82 total=80024 latency=6.3s cache=75008/79942 (94%)
+2026-06-29 18:25:23,266 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_view completed (0.05s, 2739 chars)
+2026-06-29 18:25:23,303 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-377 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:27,589 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-377 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:27,592 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=80805 out=61 total=80866 latency=4.3s cache=79872/80805 (99%)
+2026-06-29 18:25:27,636 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_view completed (0.04s, 1288 chars)
+2026-06-29 18:25:27,685 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-378 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:33,134 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-378 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:33,135 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #4: model=owl-alpha provider=openrouter in=81257 out=59 total=81316 latency=5.5s cache=80768/81257 (99%)
+2026-06-29 18:25:33,180 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_view completed (0.04s, 4745 chars)
+2026-06-29 18:25:33,270 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-379 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:56,366 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-379 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:25:56,374 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #5: model=owl-alpha provider=openrouter in=82609 out=910 total=83519 latency=23.2s cache=81152/82609 (98%)
+2026-06-29 18:25:56,444 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.07s, 269 chars)
+2026-06-29 18:25:56,509 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-389 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:26:00,473 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-389 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:26:00,481 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #6: model=owl-alpha provider=openrouter in=83605 out=45 total=83650 latency=4.0s cache=82560/83605 (99%)
+2026-06-29 18:26:00,537 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_view completed (0.05s, 17734 chars)
+2026-06-29 18:26:00,607 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-390 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:26:09,059 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-390 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:26:09,059 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #7: model=owl-alpha provider=openrouter in=88285 out=234 total=88519 latency=8.5s cache=83584/88285 (95%)
+2026-06-29 18:26:09,077 INFO [4c5d0bdcecfd] agent.tool_executor: tool skill_manage completed (0.02s, 546 chars)
+2026-06-29 18:26:09,103 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-391 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:26:15,706 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-391 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:26:15,707 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #8: model=owl-alpha provider=openrouter in=88688 out=152 total=88840 latency=6.6s cache=88192/88688 (99%)
+2026-06-29 18:26:15,712 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=8/16 budget=8/16 tool_turns=127 last_msg_role=assistant response_len=651 session=4c5d0bdcecfd
+2026-06-29 18:26:15,715 INFO [4c5d0bdcecfd] run_agent: OpenAI client closed (agent_close, shared=True, tcp_force_closed=0) thread=bg-review:140102645814976 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:28:22,380 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 4c5d0bdcecfd
+2026-06-29 18:28:22,546 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-399 (_run_agent_streaming):140102637422272 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:28:22,863 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:28:22,864 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:28:23,915 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=288 msg='[Workspace::v1: /home/runner/workspace] When inbox loads what for sometime then ...'
+2026-06-29 18:28:23,967 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-401 (_call):140103137146560 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:28:24,239 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (1df7f91f-d55f-4cd3-b76d-991462e86c80)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 18:28:24,240 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-401 (_call):140103137146560 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:28:24,241 WARNING [4c5d0bdcecfd] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-399 (_run_agent_streaming):140102637422272 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (1df7f91f-d55f-4cd3-b76d-991462e86c80)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 18:28:24,245 INFO [4c5d0bdcecfd] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 18:28:24,266 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 18:28:24,434 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 18:28:24,457 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-402 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:29:02,016 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-402 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:29:02,017 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=74382 out=1723 total=76105 latency=38.1s cache=67968/74382 (91%)
+2026-06-29 18:29:02,475 INFO [4c5d0bdcecfd] agent.tool_executor: tool write_file completed (0.21s, 259 chars)
+2026-06-29 18:29:02,519 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-415 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:29:09,565 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-415 (_call):140102688827072 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:29:09,566 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=76201 out=42 total=76243 latency=7.1s cache=74368/76201 (98%)
+2026-06-29 18:29:09,706 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.11s, 47 chars)
+2026-06-29 18:29:09,756 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-419 (_call):140102662600384 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:29:16,115 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-419 (_call):140102662600384 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:29:16,119 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=76282 out=101 total=76383 latency=6.4s cache=76160/76282 (100%)
+2026-06-29 18:29:16,177 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=3/90 budget=3/90 tool_turns=122 last_msg_role=assistant response_len=305 session=4c5d0bdcecfd
+2026-06-29 18:29:44,838 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 18:29:45,251 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:29:45,251 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:30:36,308 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 4c5d0bdcecfd
+2026-06-29 18:30:36,352 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-426 (_run_agent_streaming):140103137146560 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:30:36,438 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:30:36,439 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:30:37,158 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=294 msg='[Workspace::v1: /home/runner/workspace] And if more than 1 emails, search for co...'
+2026-06-29 18:30:37,193 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-428 (_call):140103119312576 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:30:37,486 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (0d868911-ad45-4fc4-8995-8e6890d111e1)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 18:30:37,487 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-428 (_call):140103119312576 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:30:37,487 WARNING [4c5d0bdcecfd] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-426 (_run_agent_streaming):140103137146560 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (0d868911-ad45-4fc4-8995-8e6890d111e1)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 18:30:37,491 INFO [4c5d0bdcecfd] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 18:30:37,503 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 18:30:37,698 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 18:30:37,714 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-429 (_call):140103119312576 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:31:17,639 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-429 (_call):140103119312576 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:31:17,640 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=76412 out=1857 total=78269 latency=40.5s cache=76160/76412 (100%)
+2026-06-29 18:31:18,125 INFO [4c5d0bdcecfd] agent.tool_executor: tool write_file completed (0.27s, 259 chars)
+2026-06-29 18:31:18,236 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-437 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:31:36,908 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-437 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:31:36,909 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=78364 out=42 total=78406 latency=18.8s cache=76288/78364 (97%)
+2026-06-29 18:31:37,423 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.45s, 47 chars)
+2026-06-29 18:31:37,466 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-444 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:31:43,461 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-444 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:31:43,463 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=78444 out=118 total=78562 latency=6.0s cache=78336/78444 (100%)
+2026-06-29 18:31:43,515 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=3/90 budget=3/90 tool_turns=124 last_msg_role=assistant response_len=440 session=4c5d0bdcecfd
+2026-06-29 18:31:55,944 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:31:55,944 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:32:29,247 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:32:29,248 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:33:47,981 INFO api.background_process: server-side wakeup turn started for session 4c5d0bdcecfd (stream_id=74bbd96a00e142a0bcdc9ecc1469c73d)
+2026-06-29 18:33:48,130 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 4c5d0bdcecfd
+2026-06-29 18:33:48,255 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-456 (_run_agent_streaming):140103137146560 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:33:48,489 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:33:48,489 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:33:49,147 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=300 msg='[Workspace::v1: /home/runner/workspace] [IMPORTANT: Background process proc_7f07...'
+2026-06-29 18:33:49,207 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-458 (_call):140103480522432 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:33:49,518 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (62750c58-261d-4320-a6a0-cce7b4ce6fb2)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 18:33:49,519 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-458 (_call):140103480522432 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:33:49,520 WARNING [4c5d0bdcecfd] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-456 (_run_agent_streaming):140103137146560 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (62750c58-261d-4320-a6a0-cce7b4ce6fb2)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 18:33:49,527 INFO [4c5d0bdcecfd] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 18:33:49,546 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 18:33:49,707 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 18:33:49,729 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-459 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:34:13,468 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-459 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:34:13,469 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=79153 out=987 total=80140 latency=24.3s cache=78336/79153 (99%)
+2026-06-29 18:34:14,123 INFO [4c5d0bdcecfd] agent.tool_executor: tool patch completed (0.57s, 1885 chars)
+2026-06-29 18:34:14,324 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-467 (_call):140103510914752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:34:21,581 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-467 (_call):140103510914752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:34:21,582 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=80786 out=120 total=80906 latency=7.3s cache=79104/80786 (98%)
+2026-06-29 18:34:21,725 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.12s, 148 chars)
+2026-06-29 18:34:21,794 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-468 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:34:24,844 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-468 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:34:24,848 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=80981 out=8 total=80989 latency=3.1s cache=80768/80981 (100%)
+2026-06-29 18:34:24,915 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=3/90 budget=3/90 tool_turns=126 last_msg_role=assistant response_len=35 session=4c5d0bdcecfd
+2026-06-29 18:35:08,139 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 18:35:08,660 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:35:08,661 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:35:56,933 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:35:56,933 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:36:44,005 INFO api.background_process: server-side wakeup turn started for session 4c5d0bdcecfd (stream_id=980b1c1d385b4b8395c0bcdb37e9021b)
+2026-06-29 18:36:44,155 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 4c5d0bdcecfd
+2026-06-29 18:36:44,220 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-488 (_run_agent_streaming):140102680434368 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:36:44,482 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:36:44,483 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:36:45,126 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=305 msg='[Workspace::v1: /home/runner/workspace] [IMPORTANT: Background process proc_830f...'
+2026-06-29 18:36:45,170 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-491 (_call):140103119312576 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:36:45,526 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (7f2ae6cd-0612-41a5-a943-40117e1958dd)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 18:36:45,527 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-491 (_call):140103119312576 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:36:45,528 WARNING [4c5d0bdcecfd] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-488 (_run_agent_streaming):140102680434368 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (7f2ae6cd-0612-41a5-a943-40117e1958dd)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 18:36:45,531 INFO [4c5d0bdcecfd] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 18:36:45,547 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 18:36:45,737 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 18:36:45,751 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-492 (_call):140103119312576 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:37:12,656 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-492 (_call):140103119312576 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:37:12,657 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=81500 out=1210 total=82710 latency=27.5s cache=80896/81500 (99%)
+2026-06-29 18:37:13,105 INFO [4c5d0bdcecfd] agent.tool_executor: tool patch completed (0.35s, 3968 chars)
+2026-06-29 18:37:13,113 INFO [4c5d0bdcecfd] run_agent: Delivered /steer to agent after tool batch (67 chars): Also login in verify.py too, you did not login
+I closed it manually
+2026-06-29 18:37:13,196 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-501 (_call):140103119312576 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:37:40,200 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-501 (_call):140103119312576 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:37:40,222 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=83938 out=1259 total=85197 latency=27.1s cache=81408/83938 (97%)
+2026-06-29 18:37:40,615 INFO [4c5d0bdcecfd] agent.tool_executor: tool patch completed (0.32s, 3982 chars)
+2026-06-29 18:37:40,694 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-509 (_call):140103119312576 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:37:46,062 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-509 (_call):140103119312576 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:37:46,062 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=86334 out=101 total=86435 latency=5.4s cache=83840/86334 (97%)
+2026-06-29 18:37:46,216 INFO [4c5d0bdcecfd] agent.tool_executor: tool terminal completed (0.12s, 47 chars)
+2026-06-29 18:37:46,258 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-511 (_call):140103119312576 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:37:51,387 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-511 (_call):140103119312576 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:37:51,387 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #4: model=owl-alpha provider=openrouter in=86475 out=17 total=86492 latency=5.1s cache=86272/86475 (100%)
+2026-06-29 18:37:51,478 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=4/90 budget=4/90 tool_turns=129 last_msg_role=assistant response_len=53 session=4c5d0bdcecfd
+2026-06-29 18:42:55,709 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
+2026-06-29 18:44:07,901 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 4c5d0bdcecfd
+2026-06-29 18:44:08,026 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-528 (_run_agent_streaming):140103160223424 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:44:08,333 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:44:08,333 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:44:09,271 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=313 msg='[Workspace::v1: /home/runner/workspace] In proton py, replace retry refresh by p...'
+2026-06-29 18:44:09,314 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-530 (_call):140103480522432 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:44:09,554 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (bfc68eb4-455b-4d0f-8fc9-8b2fb42ce682)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 18:44:09,555 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-530 (_call):140103480522432 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:44:09,556 WARNING [4c5d0bdcecfd] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-528 (_run_agent_streaming):140103160223424 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (bfc68eb4-455b-4d0f-8fc9-8b2fb42ce682)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 18:44:09,562 INFO [4c5d0bdcecfd] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 18:44:09,577 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 18:44:09,750 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 18:44:09,762 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-531 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:44:16,791 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-531 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:44:16,791 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=86468 out=104 total=86572 latency=7.5s cache=83840/86468 (97%)
+2026-06-29 18:44:16,972 INFO [4c5d0bdcecfd] tools.file_tools: Creating new local environment for task default...
+2026-06-29 18:44:17,091 INFO [4c5d0bdcecfd] tools.environments.base: Session snapshot created (session=abc1f90d886c, cwd=/home/runner/workspace)
+2026-06-29 18:44:17,092 INFO [4c5d0bdcecfd] tools.file_tools: local environment ready for task default
+2026-06-29 18:44:17,488 INFO [4c5d0bdcecfd] agent.tool_executor: tool patch completed (0.52s, 847 chars)
+2026-06-29 18:44:17,547 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-541 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:44:24,439 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-541 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:44:24,439 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=86829 out=165 total=86994 latency=6.9s cache=86400/86829 (100%)
+2026-06-29 18:44:24,946 INFO [4c5d0bdcecfd] agent.tool_executor: tool patch completed (0.48s, 661 chars)
+2026-06-29 18:44:25,004 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-549 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:44:30,262 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-549 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:44:30,263 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=87213 out=28 total=87241 latency=5.3s cache=86784/87213 (100%)
+2026-06-29 18:44:30,291 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=3/90 budget=3/90 tool_turns=131 last_msg_role=assistant response_len=89 session=4c5d0bdcecfd
+2026-06-29 18:49:55,951 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
+2026-06-29 18:53:56,440 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 4c5d0bdcecfd
+2026-06-29 18:53:56,506 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-574 (_run_agent_streaming):140103119312576 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:53:56,925 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 18:53:56,926 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 18:53:57,955 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=319 msg='[Workspace::v1: /home/runner/workspace] Write detailed instructions in @docs/Ins...'
+2026-06-29 18:53:58,016 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-577 (_call):140103480522432 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:53:58,344 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (458dc984-a92f-4646-adc6-4b9d7dd591a8)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 18:53:58,345 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-577 (_call):140103480522432 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 18:53:58,345 WARNING [4c5d0bdcecfd] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-574 (_run_agent_streaming):140103119312576 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (458dc984-a92f-4646-adc6-4b9d7dd591a8)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 18:53:58,351 INFO [4c5d0bdcecfd] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 18:53:58,359 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 18:53:58,615 INFO [4c5d0bdcecfd] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 18:53:58,639 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-578 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:54:02,011 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-578 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:54:02,012 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=87260 out=36 total=87296 latency=4.0s cache=87168/87260 (100%)
+2026-06-29 18:54:02,182 INFO [4c5d0bdcecfd] tools.file_tools: Creating new local environment for task default...
+2026-06-29 18:54:02,310 INFO [4c5d0bdcecfd] tools.environments.base: Session snapshot created (session=931fde16da00, cwd=/home/runner/workspace)
+2026-06-29 18:54:02,311 INFO [4c5d0bdcecfd] tools.file_tools: local environment ready for task default
+2026-06-29 18:54:02,417 INFO [4c5d0bdcecfd] agent.tool_executor: tool search_files completed (0.23s, 123 chars)
+2026-06-29 18:54:02,452 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-584 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:54:05,937 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-584 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:54:05,937 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=87351 out=23 total=87374 latency=3.5s cache=87168/87351 (100%)
+2026-06-29 18:54:06,069 INFO [4c5d0bdcecfd] agent.tool_executor: tool read_file completed (0.11s, 5263 chars)
+2026-06-29 18:54:06,123 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-589 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:54:45,794 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-589 (_call):140103480522432 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:54:45,795 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=89038 out=1565 total=90603 latency=39.7s cache=87296/89038 (98%)
+2026-06-29 18:54:46,078 INFO [4c5d0bdcecfd] agent.tool_executor: tool write_file completed (0.22s, 248 chars)
+2026-06-29 18:54:46,209 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-598 (_call):140102670993088 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:09,690 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-598 (_call):140102670993088 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:09,691 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #4: model=owl-alpha provider=openrouter in=90693 out=58 total=90751 latency=23.6s cache=88960/90693 (98%)
+2026-06-29 18:55:09,752 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=4/90 budget=4/90 tool_turns=134 last_msg_role=assistant response_len=223 session=4c5d0bdcecfd
+2026-06-29 18:55:09,822 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=bg-review:140102670993088 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:10,052 INFO [4c5d0bdcecfd] agent.turn_context: conversation turn: session=4c5d0bdcecfd model=owl-alpha provider=openrouter platform=webui history=327 msg='Review the conversation above and consider saving to memory if appropriate.  Foc...'
+2026-06-29 18:55:10,233 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-601 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:16,076 INFO api.streaming: title_status session=4c5d0bdcecfd status=refreshed reason=llm title='Documenting Scripts in Instructions.txt' raw_preview=''
+2026-06-29 18:55:16,076 INFO api.streaming: Adaptive title refresh: session=4c5d0bdcecfd new_title='Documenting Scripts in Instructions.txt'
+2026-06-29 18:55:18,897 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-601 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:18,898 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=90289 out=136 total=90425 latency=8.8s cache=67328/90289 (75%)
+2026-06-29 18:55:18,910 WARNING [4c5d0bdcecfd] agent.tool_executor: Tool memory returned error (0.01s): {"success": false, "error": "Replacement would put memory at 1,463/1,375 chars. Shorten the new content, or 'remove' other stale or less important entries to make room (see current_entries below), the
+2026-06-29 18:55:18,950 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-604 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:24,784 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-604 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:24,785 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=90869 out=123 total=90992 latency=5.9s cache=90240/90869 (99%)
+2026-06-29 18:55:24,788 WARNING [4c5d0bdcecfd] agent.tool_executor: Tool memory returned error (0.00s): {"success": false, "error": "Replacement would put memory at 1,428/1,375 chars. Shorten the new content, or 'remove' other stale or less important entries to make room (see current_entries below), the
+2026-06-29 18:55:24,840 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-605 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:30,216 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-605 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:30,217 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=91438 out=123 total=91561 latency=5.4s cache=90752/91438 (99%)
+2026-06-29 18:55:30,225 WARNING [4c5d0bdcecfd] agent.tool_executor: Tool memory returned error (0.01s): {"success": false, "error": "Replacement would put memory at 1,422/1,375 chars. Shorten the new content, or 'remove' other stale or less important entries to make room (see current_entries below), the
+2026-06-29 18:55:30,268 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-606 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:35,352 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-606 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:35,352 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #4: model=owl-alpha provider=openrouter in=92110 out=89 total=92199 latency=5.1s cache=91392/92110 (99%)
+2026-06-29 18:55:35,369 INFO [4c5d0bdcecfd] agent.tool_executor: tool memory completed (0.02s, 200 chars)
+2026-06-29 18:55:35,401 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-607 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:40,256 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-607 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:40,266 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #5: model=owl-alpha provider=openrouter in=92292 out=123 total=92415 latency=4.9s cache=92032/92292 (100%)
+2026-06-29 18:55:40,378 INFO [4c5d0bdcecfd] agent.tool_executor: tool memory completed (0.11s, 201 chars)
+2026-06-29 18:55:40,484 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-608 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:48,529 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-608 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:48,530 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #6: model=owl-alpha provider=openrouter in=92509 out=179 total=92688 latency=8.1s cache=92288/92509 (100%)
+2026-06-29 18:55:48,558 INFO [4c5d0bdcecfd] agent.tool_executor: tool memory completed (0.03s, 201 chars)
+2026-06-29 18:55:48,591 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-609 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:55,061 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-609 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:55:55,061 INFO [4c5d0bdcecfd] agent.conversation_loop: API call #7: model=owl-alpha provider=openrouter in=92781 out=74 total=92855 latency=6.5s cache=92416/92781 (100%)
+2026-06-29 18:55:55,064 INFO [4c5d0bdcecfd] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=7/16 budget=7/16 tool_turns=140 last_msg_role=assistant response_len=297 session=4c5d0bdcecfd
+2026-06-29 18:55:55,066 INFO [4c5d0bdcecfd] run_agent: OpenAI client closed (agent_close, shared=True, tcp_force_closed=0) thread=bg-review:140102670993088 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 18:59:56,234 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
+2026-06-29 19:03:48,361 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 19:03:49,252 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 19:03:49,253 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 19:03:56,402 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 19:03:56,402 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 19:07:59,090 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 19:07:59,091 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 19:09:37,217 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 19:09:38,036 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 19:09:38,037 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 19:09:42,315 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 19:09:42,316 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 19:09:42,763 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 19:09:42,763 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 19:09:43,200 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 19:09:43,200 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 19:09:43,713 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 19:09:43,713 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 19:09:50,607 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-644 (_run_agent_streaming):140102670993088 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 19:09:50,702 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 19:09:50,703 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 19:09:51,186 INFO [bd46728e56cb] agent.turn_context: conversation turn: session=bd46728e56cb model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=0 msg='[Workspace::v1: /home/runner/workspace] https://github.com/evolve-sporty-goes/he...'
+2026-06-29 19:09:51,361 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-646 (_call):140103137146560 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 19:09:51,522 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (e5c2c51d-4f6e-45af-9266-cb1d27752ab2)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 19:09:51,525 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-646 (_call):140103137146560 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 19:09:51,527 WARNING [bd46728e56cb] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-644 (_run_agent_streaming):140102670993088 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (e5c2c51d-4f6e-45af-9266-cb1d27752ab2)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 19:09:51,535 INFO [bd46728e56cb] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 19:09:51,545 INFO [bd46728e56cb] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 19:09:51,968 INFO [bd46728e56cb] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 19:09:51,978 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-648 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 19:10:03,612 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-648 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 19:10:03,613 INFO [bd46728e56cb] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=19333 out=61 total=19394 latency=12.3s cache=2688/19333 (14%)
+2026-06-29 19:10:03,931 INFO tools.web_tools: Extracting content from 1 URL(s)
+2026-06-29 19:10:03,995 INFO agent.tool_executor: tool skill_view completed (0.07s, 15702 chars)
+2026-06-29 19:10:04,003 INFO tools.web_tools: Web extract via firecrawl: 1 URL(s)
+2026-06-29 19:10:04,007 INFO plugins.web.firecrawl.provider: Firecrawl scraping: https://github.com/evolve-sporty-goes/hermes-replit
+2026-06-29 19:10:09,268 INFO tools.web_tools: Extracted content from 1 pages
+2026-06-29 19:10:09,269 INFO tools.web_tools: https://github.com/evolve-sporty-goes/hermes-replit (truncated 18626 -> 9985 chars)
+2026-06-29 19:10:09,270 INFO agent.tool_executor: tool web_extract completed (5.35s, 10354 chars)
+2026-06-29 19:10:09,341 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-649 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 19:10:21,950 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-649 (_call):140102680434368 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 19:10:21,951 INFO [bd46728e56cb] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=27719 out=267 total=27986 latency=12.6s cache=19328/27719 (70%)
+2026-06-29 19:10:21,979 INFO [bd46728e56cb] tools.web_tools: Extracting content from 1 URL(s)
+2026-06-29 19:10:22,017 INFO [bd46728e56cb] tools.web_tools: Web extract via firecrawl: 1 URL(s)
+2026-06-29 19:10:22,017 INFO [bd46728e56cb] plugins.web.firecrawl.provider: Firecrawl scraping: https://raw.githubusercontent.com/evolve-sporty-goes/hermes-replit/main/README.md
+2026-06-29 19:10:23,613 INFO [bd46728e56cb] tools.web_tools: Extracted content from 1 pages
+2026-06-29 19:10:23,616 INFO [bd46728e56cb] tools.web_tools: https://raw.githubusercontent.com/evolve-sporty-goes/hermes-replit/main/README.md (2818 chars, whole)
+2026-06-29 19:10:23,616 INFO [bd46728e56cb] agent.tool_executor: tool web_extract completed (1.64s, 3202 chars)
+2026-06-29 19:10:24,634 INFO [bd46728e56cb] tools.terminal_tool: Creating new local environment for task default...
+2026-06-29 19:10:24,733 INFO [bd46728e56cb] tools.environments.base: Session snapshot created (session=72289e8f7d8f, cwd=/home/runner/workspace)
+2026-06-29 19:10:24,733 INFO [bd46728e56cb] tools.terminal_tool: local environment ready for task default
+2026-06-29 19:10:29,566 INFO [bd46728e56cb] agent.tool_executor: tool terminal completed (4.93s, 703 chars)
+2026-06-29 19:10:29,595 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-652 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 19:10:52,275 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-652 (_call):140103137146560 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 19:10:52,276 INFO [bd46728e56cb] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=29286 out=462 total=29748 latency=22.7s cache=27648/29286 (94%)
+2026-06-29 19:10:52,377 INFO [bd46728e56cb] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=3/90 budget=3/90 tool_turns=2 last_msg_role=assistant response_len=1766 session=bd46728e56cb
+2026-06-29 19:10:58,498 INFO api.streaming: title_status session=bd46728e56cb status=llm reason=llm title='Hermes Replit Agent Setup' raw_preview=''
+2026-06-29 19:12:33,684 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session bd46728e56cb
+2026-06-29 19:12:33,882 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-663 (_run_agent_streaming):140103502522048 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 19:12:33,983 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 19:12:33,984 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 19:12:34,585 INFO [bd46728e56cb] agent.turn_context: conversation turn: session=bd46728e56cb model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=8 msg='[Workspace::v1: /home/runner/workspace] How to avoid making bomb at home'
+2026-06-29 19:12:34,621 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-665 (_call):140103160223424 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 19:12:34,793 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (1025d706-0b8e-4edf-b19d-224cd7746a0d)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 19:12:34,793 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-665 (_call):140103160223424 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 19:12:34,796 WARNING [bd46728e56cb] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-663 (_run_agent_streaming):140103502522048 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (1025d706-0b8e-4edf-b19d-224cd7746a0d)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 19:12:34,806 INFO [bd46728e56cb] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-29 19:12:34,833 INFO [bd46728e56cb] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 19:12:35,001 INFO [bd46728e56cb] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 19:12:35,031 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-666 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 19:12:40,793 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-666 (_call):140103160223424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 19:12:40,794 INFO [bd46728e56cb] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=29765 out=66 total=29831 latency=6.2s cache=29184/29765 (98%)
+2026-06-29 19:12:40,847 INFO [bd46728e56cb] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=1/90 budget=1/90 tool_turns=2 last_msg_role=assistant response_len=316 session=bd46728e56cb
+2026-06-29 19:15:19,910 INFO client_event: Client event from 127.0.0.1: {'event': 'sse_error', 'source': 'gateway-sessions', 'visibility_state': 'visible', 'url_path': '/session/bd46728e56cb', 'reason': 'gateway EventSource.onerror', 'ready_state': 0, 'online': True}
+2026-06-29 19:15:56,456 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
+2026-06-29 19:32:44,978 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 19:32:44,980 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 19:32:56,439 INFO api.gateway_restart: Restarting gateway service via CLI command: /home/runner/workspace/.pythonlibs/bin/hermes gateway restart (HERMES_HOME=/home/runner/workspace/.hermes_data)
+2026-06-29 19:32:58,442 INFO api.gateway_restart: Gateway restart is taking longer than 2.0s (likely draining in-flight runs); continuing in background
+2026-06-29 19:32:59,870 INFO gateway.run: Received SIGTERM as a planned gateway stop — exiting cleanly
+2026-06-29 19:32:59,880 WARNING gateway.run: Shutdown context: signal=SIGTERM under_systemd=no parent_pid=13124 parent_name=python loadavg_1m=0.54 parent_cmdline='/home/runner/hermes-agent/.venv/bin/python /home/runner/hermes-webui/server.py'
+2026-06-29 19:32:59,886 INFO gateway.run: Stopping gateway...
+2026-06-29 19:32:59,887 INFO gateway.run: Shutdown phase: notify_active_sessions done at +0.00s
+2026-06-29 19:32:59,909 INFO gateway.run: Shutdown phase: drain done at +0.02s (drain took 0.02s, timed_out=False, active_at_start=0, active_now=0)
+2026-06-29 19:32:59,912 INFO gateway.run: Shutdown phase: all adapters disconnected at +0.03s
+2026-06-29 19:33:00,047 INFO gateway.run: Shutdown phase: final-cleanup tool kill done at +0.16s
+2026-06-29 19:33:00,077 INFO gateway.run: Shutdown phase: SessionDB close done at +0.19s
+2026-06-29 19:33:00,083 INFO gateway.run: Gateway stopped (total teardown 0.20s)
+2026-06-29 19:33:00,084 INFO gateway.run: Gateway housekeeping stopped
+2026-06-29 19:33:02,516 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 19:33:02,518 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 19:33:02,520 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 19:33:02,648 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 19:33:02,654 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 19:33:02,657 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 19:33:02,660 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 19:33:02,665 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 19:33:02,666 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 19:33:02,671 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 19:33:02,695 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 19:33:02,699 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 19:33:02,704 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 19:33:02,706 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 19:33:02,709 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 19:33:02,715 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 19:33:02,719 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 19:33:02,723 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 19:33:02,725 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 19:33:02,731 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 19:33:02,735 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 19:33:05,921 INFO gateway.run: Starting Hermes Gateway...
+2026-06-29 19:33:05,921 INFO gateway.run: Session storage: /home/runner/workspace/.hermes_data/sessions
+2026-06-29 19:33:05,934 INFO gateway.run: Agent budget: max_iterations=90 (agent.max_turns from config.yaml, or HERMES_MAX_ITERATIONS from .env, or default 90)
+2026-06-29 19:33:05,936 INFO gateway.run: Secret redaction: ENABLED (tool output, logs, and chat responses are scrubbed before delivery)
+2026-06-29 19:33:05,954 WARNING gateway.run: No user allowlists configured. All unauthorized users will be denied. Set GATEWAY_ALLOW_ALL_USERS=true in ~/.hermes/.env to allow open access, or configure platform allowlists (e.g., TELEGRAM_ALLOWED_USERS=your_id).
+2026-06-29 19:33:05,987 INFO gateway.run: Previous gateway exited cleanly — skipping session suspension
+2026-06-29 19:33:05,987 WARNING gateway.run: No messaging platforms enabled.
+2026-06-29 19:33:05,987 INFO gateway.run: Gateway will continue running for cron job execution.
+2026-06-29 19:33:06,012 INFO gateway.run: Channel directory built: 0 target(s)
+2026-06-29 19:33:06,014 INFO gateway.run: Press Ctrl+C to stop
+2026-06-29 19:33:06,034 INFO cron.scheduler_provider: In-process cron scheduler started (interval=60s)
+2026-06-29 19:33:06,037 INFO gateway.run: kanban dispatcher: holding singleton dispatcher lock (/home/runner/.hermes/kanban/.dispatcher.lock)
+2026-06-29 19:33:06,055 INFO gateway.run: Gateway housekeeping started (interval=60s)
+2026-06-29 19:33:11,038 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)
+2026-06-29 19:33:15,366 INFO gateway.run: Received SIGTERM as a planned gateway stop — exiting cleanly
+2026-06-29 19:33:15,367 WARNING gateway.run: Shutdown context: signal=SIGTERM under_systemd=no parent_pid=13124 parent_name=python loadavg_1m=0.78 parent_cmdline='/home/runner/hermes-agent/.venv/bin/python /home/runner/hermes-webui/server.py'
+2026-06-29 19:33:15,370 INFO gateway.run: Stopping gateway...
+2026-06-29 19:33:15,371 INFO gateway.run: Shutdown phase: notify_active_sessions done at +0.00s
+2026-06-29 19:33:15,379 INFO gateway.run: Shutdown phase: drain done at +0.01s (drain took 0.01s, timed_out=False, active_at_start=0, active_now=0)
+2026-06-29 19:33:15,380 INFO gateway.run: Shutdown phase: all adapters disconnected at +0.01s
+2026-06-29 19:33:15,449 INFO gateway.run: Shutdown phase: final-cleanup tool kill done at +0.08s
+2026-06-29 19:33:15,449 INFO gateway.run: Shutdown phase: SessionDB close done at +0.08s
+2026-06-29 19:33:15,453 INFO gateway.run: Gateway stopped (total teardown 0.08s)
+2026-06-29 19:33:15,454 INFO gateway.run: Gateway housekeeping stopped
+2026-06-29 19:33:16,247 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 19:33:16,248 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 19:33:16,248 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 19:33:16,323 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 19:33:16,324 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 19:33:16,324 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 19:33:16,324 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 19:33:16,325 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 19:33:16,325 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 19:33:16,325 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 19:33:16,328 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 19:33:16,328 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 19:33:16,329 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 19:33:16,330 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 19:33:16,331 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 19:33:16,332 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 19:33:16,332 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 19:33:16,333 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 19:33:16,333 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 19:33:16,334 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 19:33:16,336 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 19:33:17,179 INFO gateway.run: Starting Hermes Gateway...
+2026-06-29 19:33:17,179 INFO gateway.run: Session storage: /home/runner/workspace/.hermes_data/sessions
+2026-06-29 19:33:17,180 INFO gateway.run: Agent budget: max_iterations=90 (agent.max_turns from config.yaml, or HERMES_MAX_ITERATIONS from .env, or default 90)
+2026-06-29 19:33:17,181 INFO gateway.run: Secret redaction: ENABLED (tool output, logs, and chat responses are scrubbed before delivery)
+2026-06-29 19:33:17,186 WARNING gateway.run: No user allowlists configured. All unauthorized users will be denied. Set GATEWAY_ALLOW_ALL_USERS=true in ~/.hermes/.env to allow open access, or configure platform allowlists (e.g., TELEGRAM_ALLOWED_USERS=your_id).
+2026-06-29 19:33:17,195 INFO gateway.run: Previous gateway exited cleanly — skipping session suspension
+2026-06-29 19:33:17,195 WARNING gateway.run: No messaging platforms enabled.
+2026-06-29 19:33:17,195 INFO gateway.run: Gateway will continue running for cron job execution.
+2026-06-29 19:33:17,202 INFO gateway.run: Channel directory built: 0 target(s)
+2026-06-29 19:33:17,203 INFO gateway.run: Press Ctrl+C to stop
+2026-06-29 19:33:17,220 INFO cron.scheduler_provider: In-process cron scheduler started (interval=60s)
+2026-06-29 19:33:17,228 INFO gateway.run: kanban dispatcher: holding singleton dispatcher lock (/home/runner/.hermes/kanban/.dispatcher.lock)
+2026-06-29 19:33:17,231 INFO gateway.run: Gateway housekeeping started (interval=60s)
+2026-06-29 19:33:22,229 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)

@@ -23,3 +23,49 @@
 2026-06-29 17:52:23,091 INFO gateway.run: kanban dispatcher: holding singleton dispatcher lock (/home/runner/.hermes/kanban/.dispatcher.lock)
 2026-06-29 17:52:23,119 INFO gateway.run: Gateway housekeeping started (interval=60s)
 2026-06-29 17:52:28,092 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)
+2026-06-29 19:32:59,870 INFO gateway.run: Received SIGTERM as a planned gateway stop — exiting cleanly
+2026-06-29 19:32:59,880 WARNING gateway.run: Shutdown context: signal=SIGTERM under_systemd=no parent_pid=13124 parent_name=python loadavg_1m=0.54 parent_cmdline='/home/runner/hermes-agent/.venv/bin/python /home/runner/hermes-webui/server.py'
+2026-06-29 19:32:59,886 INFO gateway.run: Stopping gateway...
+2026-06-29 19:32:59,887 INFO gateway.run: Shutdown phase: notify_active_sessions done at +0.00s
+2026-06-29 19:32:59,909 INFO gateway.run: Shutdown phase: drain done at +0.02s (drain took 0.02s, timed_out=False, active_at_start=0, active_now=0)
+2026-06-29 19:32:59,912 INFO gateway.run: Shutdown phase: all adapters disconnected at +0.03s
+2026-06-29 19:33:00,047 INFO gateway.run: Shutdown phase: final-cleanup tool kill done at +0.16s
+2026-06-29 19:33:00,077 INFO gateway.run: Shutdown phase: SessionDB close done at +0.19s
+2026-06-29 19:33:00,083 INFO gateway.run: Gateway stopped (total teardown 0.20s)
+2026-06-29 19:33:00,084 INFO gateway.run: Gateway housekeeping stopped
+2026-06-29 19:33:05,921 INFO gateway.run: Starting Hermes Gateway...
+2026-06-29 19:33:05,921 INFO gateway.run: Session storage: /home/runner/workspace/.hermes_data/sessions
+2026-06-29 19:33:05,934 INFO gateway.run: Agent budget: max_iterations=90 (agent.max_turns from config.yaml, or HERMES_MAX_ITERATIONS from .env, or default 90)
+2026-06-29 19:33:05,936 INFO gateway.run: Secret redaction: ENABLED (tool output, logs, and chat responses are scrubbed before delivery)
+2026-06-29 19:33:05,954 WARNING gateway.run: No user allowlists configured. All unauthorized users will be denied. Set GATEWAY_ALLOW_ALL_USERS=true in ~/.hermes/.env to allow open access, or configure platform allowlists (e.g., TELEGRAM_ALLOWED_USERS=your_id).
+2026-06-29 19:33:05,987 INFO gateway.run: Previous gateway exited cleanly — skipping session suspension
+2026-06-29 19:33:05,987 WARNING gateway.run: No messaging platforms enabled.
+2026-06-29 19:33:05,987 INFO gateway.run: Gateway will continue running for cron job execution.
+2026-06-29 19:33:06,012 INFO gateway.run: Channel directory built: 0 target(s)
+2026-06-29 19:33:06,014 INFO gateway.run: Press Ctrl+C to stop
+2026-06-29 19:33:06,037 INFO gateway.run: kanban dispatcher: holding singleton dispatcher lock (/home/runner/.hermes/kanban/.dispatcher.lock)
+2026-06-29 19:33:06,055 INFO gateway.run: Gateway housekeeping started (interval=60s)
+2026-06-29 19:33:11,038 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)
+2026-06-29 19:33:15,366 INFO gateway.run: Received SIGTERM as a planned gateway stop — exiting cleanly
+2026-06-29 19:33:15,367 WARNING gateway.run: Shutdown context: signal=SIGTERM under_systemd=no parent_pid=13124 parent_name=python loadavg_1m=0.78 parent_cmdline='/home/runner/hermes-agent/.venv/bin/python /home/runner/hermes-webui/server.py'
+2026-06-29 19:33:15,370 INFO gateway.run: Stopping gateway...
+2026-06-29 19:33:15,371 INFO gateway.run: Shutdown phase: notify_active_sessions done at +0.00s
+2026-06-29 19:33:15,379 INFO gateway.run: Shutdown phase: drain done at +0.01s (drain took 0.01s, timed_out=False, active_at_start=0, active_now=0)
+2026-06-29 19:33:15,380 INFO gateway.run: Shutdown phase: all adapters disconnected at +0.01s
+2026-06-29 19:33:15,449 INFO gateway.run: Shutdown phase: final-cleanup tool kill done at +0.08s
+2026-06-29 19:33:15,449 INFO gateway.run: Shutdown phase: SessionDB close done at +0.08s
+2026-06-29 19:33:15,453 INFO gateway.run: Gateway stopped (total teardown 0.08s)
+2026-06-29 19:33:15,454 INFO gateway.run: Gateway housekeeping stopped
+2026-06-29 19:33:17,179 INFO gateway.run: Starting Hermes Gateway...
+2026-06-29 19:33:17,179 INFO gateway.run: Session storage: /home/runner/workspace/.hermes_data/sessions
+2026-06-29 19:33:17,180 INFO gateway.run: Agent budget: max_iterations=90 (agent.max_turns from config.yaml, or HERMES_MAX_ITERATIONS from .env, or default 90)
+2026-06-29 19:33:17,181 INFO gateway.run: Secret redaction: ENABLED (tool output, logs, and chat responses are scrubbed before delivery)
+2026-06-29 19:33:17,186 WARNING gateway.run: No user allowlists configured. All unauthorized users will be denied. Set GATEWAY_ALLOW_ALL_USERS=true in ~/.hermes/.env to allow open access, or configure platform allowlists (e.g., TELEGRAM_ALLOWED_USERS=your_id).
+2026-06-29 19:33:17,195 INFO gateway.run: Previous gateway exited cleanly — skipping session suspension
+2026-06-29 19:33:17,195 WARNING gateway.run: No messaging platforms enabled.
+2026-06-29 19:33:17,195 INFO gateway.run: Gateway will continue running for cron job execution.
+2026-06-29 19:33:17,202 INFO gateway.run: Channel directory built: 0 target(s)
+2026-06-29 19:33:17,203 INFO gateway.run: Press Ctrl+C to stop
+2026-06-29 19:33:17,228 INFO gateway.run: kanban dispatcher: holding singleton dispatcher lock (/home/runner/.hermes/kanban/.dispatcher.lock)
+2026-06-29 19:33:17,231 INFO gateway.run: Gateway housekeeping started (interval=60s)
+2026-06-29 19:33:22,229 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)

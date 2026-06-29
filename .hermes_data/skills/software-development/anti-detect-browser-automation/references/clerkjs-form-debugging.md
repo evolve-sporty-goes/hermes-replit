@@ -1,13 +1,10 @@
-# Clerk.js Form Debugging (OpenRouter Signup)
-
-## Session: 2026-07-01
+# Clerk.js Form Debugging (OpenRouter, Firecrawl Signup)
 
 ## Problem
 
-OpenRouter signup at `/sign-up` uses Clerk.js for auth. After filling
-email, password, and checking the "I agree" checkbox, clicking
-"Continue" does nothing — no Clerk API POST, no navigation, just a
-silent form reset.
+Sites using Clerk.js for auth (OpenRouter `/sign-up`, Firecrawl `/signin`)
+have forms where clicking "Continue" after filling fields does nothing —
+no Clerk API POST, no navigation, just a silent form reset.
 
 ## Root cause
 
@@ -20,7 +17,7 @@ so Clerk never sees the values and silently blocks submission.
 
 ### Network requests after clicking Continue
 - ZERO POST requests to `clerk.openrouter.ai`
-- Only analytics/analytics POSTs (Google Analytics, PostHog)
+- Only analytics POSTs (Google Analytics, PostHog)
 - No Turnstile iframe rendered (Clerk never got far enough to trigger it)
 
 ### Request log (from `logs/requests.json`)
@@ -32,32 +29,16 @@ so Clerk never sees the values and silently blocks submission.
 - `.fill()` on email/password: DOM values updated, Clerk doesn't see them
 - `.check()` on legalAccepted: DOM checkbox stays unchecked, Clerk doesn't see it
 - `.check(force=True)`: DOM checkbox becomes checked, but Clerk still doesn't react
+- `.click(force=True)`: DOM checkbox becomes checked, `is_checked()` returns True
 - JS `dispatchEvent`: Both DOM + Clerk state update, Continue button becomes enabled
 
-### CloakBrowser + headless
-- `headless=True`: CloakBrowser v146 immediately closes with `TargetClosedError`
-- `headless=False` under `xvfb-run`: Works correctly
-- `headless=False` without xvfb-run: Hangs (no display server)
+## Working approaches
 
-## Working approach
-
+### Approach 1: dispatchEvent (most reliable)
 ```python
-from cloakbrowser import launch_persistent_context
-import tempfile, shutil, atexit
-
-td = tempfile.mkdtemp(prefix="browser-profile-")
-atexit.register(lambda: shutil.rmtree(td, ignore_errors=True))
-
-context = launch_persistent_context(td, headless=False, humanize=True)
-page = context.pages[0] if context.pages else context.new_page()
-page.goto("https://openrouter.ai/sign-up", timeout=60000)
-page.wait_for_timeout(3000)
-
-# Fill text fields (fill works for email/password)
 page.locator("#emailAddress-field").fill(email)
 page.locator("#password-field").fill(password)
 
-# Checkbox — MUST use dispatchEvent or check(force=True)
 page.evaluate("""() => {
     const cb = document.querySelector('#legalAccepted-field');
     cb.checked = true;
@@ -67,28 +48,22 @@ page.evaluate("""() => {
 
 page.wait_for_timeout(500)
 page.get_by_role("button", name="Continue").click()
-# Now Clerk should POST to /v1/client/sign_ups
 ```
 
-## Diagnostic commands
-
-```bash
-# Run with xvfb-run on Replit/NixOS
-xvfb-run python3 scripts/openrouter_signup.py
-
-# Check CloakBrowser install
-python3 -m cloakbrowser info
-
-# Test minimal context
-python3 -c "from cloakbrowser import launch_persistent_context; \
-  ctx=launch_persistent_context('/tmp/test-cb',headless=False); \
-  p=ctx.pages[0] if ctx.pages else ctx.new_page(); \
-  p.goto('https://example.com'); print('OK'); ctx.close()"
+### Approach 2: check(force=True) (simpler, works for checkbox)
+```python
+page.locator("#legalAccepted-field").check(force=True)
 ```
 
-## Network-level debugging recipe
+### Approach 3: type() with delay (for text fields that .fill() doesn't trigger)
+```python
+page.locator("#emailAddress-field").type(email, delay=80)
+```
 
-When a Clerk form appears to submit but nothing happens:
+## Detecting the silent block
+
+If clicking Continue produces zero Clerk POST requests but the page
+just resets to the empty form, Clerk is silently rejecting.
 
 1. **Log all network requests**:
 ```python
@@ -107,13 +82,7 @@ page.evaluate("document.querySelector('[name=cf-turnstile-response]')?.value || 
 ```
 If `none`, Clerk never triggered Turnstile rendering, confirming form state is broken.
 
-4. **Check Clerk globals**:
-```python
-page.evaluate("() => Object.keys(window).filter(k => k.toLowerCase().includes('clerk'))")
-# Should return: ['Clerk', '__clerk_publishable_key', ...]
-```
-
-5. **Full request logging to file** (for offline analysis):
+4. **Full request logging to file** (for offline analysis):
 ```python
 import json
 all_requests = []
