@@ -22712,3 +22712,24 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
   → `gh auth login` with the default device code flow (produces gho_* tokens)
 2026-06-29 17:55:20,488 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/386987bf102db6a13ae114455b3f3d79/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
 2026-06-29 17:55:20,488 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 17:55:38,957 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 17:55:38,958 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 17:55:38,959 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 17:55:39,059 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 17:55:39,059 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 17:55:39,060 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 17:55:39,061 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 17:55:39,061 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 17:55:39,061 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 17:55:39,062 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 17:55:39,090 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 17:55:39,090 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 17:55:39,092 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 17:55:39,092 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 17:55:39,093 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 17:55:39,094 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 17:55:39,095 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 17:55:39,096 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 17:55:39,096 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 17:55:39,097 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 17:55:39,107 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
