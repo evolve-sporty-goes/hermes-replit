@@ -87,48 +87,30 @@ sync_file_by_history() {
 # --- 4. Execute Decisions ---
 repo_changed=0
 
-# Parse sensitive block from .gitignore (lines between "# Sensitive files" and next non-indented/non-comment/non-blank line)
-# Resolves bare names/paths against workspace root; expands directories to individual files.
+# Extract file list from .gitignore sensitive block, resolve to absolute paths
 GITIGNORE="/home/runner/workspace/.gitignore"
 WORKSPACE=$(dirname "$GITIGNORE")
+
 if [ -f "$GITIGNORE" ]; then
-    in_block=0
-    while IFS= read -r line; do
-        if [ "$in_block" -eq 1 ]; then
-            # Stop at blank lines, non-comment, or unindented lines after block starts
-            [ -z "$line" ] && { in_block=0; continue; }
-            [[ "$line" =~ ^[^#] ]] && { in_block=0; continue; }
-            [[ "$line" =~ ^# ]] && continue  # skip comment-only lines within block
-            # Strip leading/trailing whitespace and trailing slash (directory marker)
-            path=$(echo "$line" | xargs)
-            path="${path%/}"
-            [ -z "$path" ] && continue
-
-            # Resolve against workspace root (handle both bare names and relative paths)
-            if [[ "$path" != /* ]]; then
-                full_path="$WORKSPACE/$path"
-            else
-                full_path="$path"
-            fi
-
-            if [ -d "$full_path" ]; then
-                # Expand directory: sync each file inside (non-recursive, skip hidden)
-                while IFS= read -r -d '' file; do
-                    repo_file=$(basename "$file")
-                    sync_file_by_history "$file" "$repo_file" && s=$? || s=$?
-                    [ "$s" -eq 1 ] && repo_changed=1
-                done < <(find "$full_path" -maxdepth 1 -type f -name "[!.]*" -print0)
-            elif [ -f "$full_path" ]; then
-                repo_file=$(basename "$full_path")
-                sync_file_by_history "$full_path" "$repo_file" && s=$? || s=$?
+    # Pull lines between "# Sensitive" and next empty line, strip comments/blanks, prepend workspace path
+    file_list=$(awk '/# Sensitive/{flag=1; next} /^$/{flag=0} flag && !/^#/ && /\S/{print}' "$GITIGNORE")
+    
+    while IFS= read -r entry; do
+        entry="${entry%/}"  # strip trailing slash
+        [[ "$entry" != /* ]] && entry="$WORKSPACE/$entry"
+        
+        if [ -d "$entry" ]; then
+            while IFS= read -r -d '' file; do
+                sync_file_by_history "$file" "$(basename "$file")" && s=$? || s=$?
                 [ "$s" -eq 1 ] && repo_changed=1
-            else
-                echo "WARN: '$full_path' not found, skipping"
-            fi
-        elif printf '%s\n' "$line" | grep -q "# Sensitive"; then
-            in_block=1
+            done < <(find "$entry" -maxdepth 1 -type f -name "[!.]*" -print0)
+        elif [ -f "$entry" ]; then
+            sync_file_by_history "$entry" "$(basename "$entry")" && s=$? || s=$?
+            [ "$s" -eq 1 ] && repo_changed=1
+        else
+            echo "WARN: '$entry' not found, skipping"
         fi
-    done < "$GITIGNORE"
+    done <<< "$file_list"
 else
     echo "WARN: .gitignore not found, skipping sensitive file sync"
 fi

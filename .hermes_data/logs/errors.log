@@ -4824,3 +4824,21 @@ RuntimeError: No LLM provider configured for task=vision provider=auto. Run: her
 2026-06-29 07:14:30,981 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 07:15:30.
 2026-06-29 07:14:30,981 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
 2026-06-29 07:19:41,581 WARNING [6a996830d49d] agent.tool_executor: Tool terminal returned error (7.44s): {"output": "OK: No remote repository updates required.\npushing changes to hermes-replit\nFrom https://github.com/evolve-sporty-goes/hermes-replit\n * branch            main       -> FETCH_HEAD\nAlrea
+2026-06-29 07:32:41,296 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 07:32:41,303 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 07:32:41,337 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 07:32:41,337 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 07:33:41.
+2026-06-29 07:32:41,358 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 07:32:41,359 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 07:33:41.
+2026-06-29 07:32:41,359 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 07:32:41,359 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 07:32:41,365 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 07:32:41,395 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 07:32:41,396 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 07:32:41,397 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 07:32:41,433 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 07:32:41,433 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 07:33:41.
+2026-06-29 07:32:41,442 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 07:32:41,442 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 07:33:41.
+2026-06-29 07:32:41,442 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 07:33:08,613 WARNING [6a996830d49d] agent.tool_executor: Tool skill_manage returned error (0.01s): {"success": false, "error": "old_string and new_string are identical", "file_preview": "---\nname: workspace-organization\ndescription: Organize user-created files into logical directory structures on

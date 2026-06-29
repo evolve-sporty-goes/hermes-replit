@@ -31,7 +31,7 @@ User-created files at workspace root:
 - Scripts (`*.sh`, `*.py`)
 - Documentation (`*.md`, `*.txt` instructions)
 - Project subdirectories (Go projects, etc.)
-- `sensitive.txt` — sync list for hermes-secrets repo
+- `.gitignore` sensitive block — lists files synced to hermes-secrets repo (parsed by `scripts/sync`)
 
 ## Recommended Structure
 
@@ -41,8 +41,7 @@ workspace/
 ├── docs/             # Reference docs, instructions
 ├── scripts/          # All automation scripts
 ├── <project>/        # Standalone projects (Go, etc.)
-├── sensitive.txt     # Keep at root (referenced by sync.sh)
-├── .gitignore        # Keep at root
+├── .gitignore        # Keep at root (contains sensitive block for sync)
 └── .replit/          # Keep at root (system-managed)
 ```
 
@@ -66,7 +65,7 @@ search_files(pattern="/home/runner/workspace/torbox_credentials.txt", path="/hom
 - Shell scripts: `cat /home/runner/workspace/.pat` → `cat /home/runner/workspace/credentials/.pat`
 - Python scripts: `CRED_PATH = "/home/runner/workspace/old.txt"` → `CRED_PATH = "/home/runner/workspace/credentials/old.txt"`
 - Subprocess calls: `["bash", "/home/runner/workspace/email.sh"]` → `["bash", "/home/runner/workspace/scripts/email.sh"]`
-- `sensitive.txt` — update ALL paths listed since sync.sh iterates over it
+- `.gitignore` sensitive block — update ALL paths listed since sync.sh parses this block
 - Nested references: scripts calling `email.sh` which itself references `mail.txt` — check full chain
 
 ### Substring False Positives

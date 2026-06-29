@@ -94,13 +94,13 @@
     "archived_at": null,
     "created_at": "2026-06-28T18:39:48.100419+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-06-28T20:08:52.663281+00:00",
-    "last_used_at": "2026-06-29T04:46:02.123599+00:00",
-    "last_viewed_at": "2026-06-29T04:46:02.098101+00:00",
-    "patch_count": 10,
+    "last_patched_at": "2026-06-29T07:33:16.591166+00:00",
+    "last_used_at": "2026-06-29T07:33:11.797873+00:00",
+    "last_viewed_at": "2026-06-29T07:33:11.784756+00:00",
+    "patch_count": 13,
     "pinned": false,
     "state": "active",
-    "use_count": 8,
-    "view_count": 8
+    "use_count": 10,
+    "view_count": 10
   }
 }
