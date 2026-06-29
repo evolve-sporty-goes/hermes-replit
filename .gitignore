@@ -20,7 +20,6 @@ scripts/email.sh
 .hermes_data/auth.json
 
 brave-browser/
-freellmapi
 
 freellmapi
 .hermes_data/webui/sessions/

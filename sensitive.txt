@@ -11,3 +11,4 @@
 /home/runner/workspace/scripts/email.sh
 /home/runner/workspace/freellmapi
 /home/runner/workspace/.hermes_data/webui/sessions
+/home/runner/workspace/.hermes_data/config.yaml
