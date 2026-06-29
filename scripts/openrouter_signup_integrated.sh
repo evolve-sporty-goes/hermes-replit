@@ -1,32 +1,15 @@
 #!/bin/bash
 # openrouter_signup_integrated.sh — OpenRouter signup with continuous CF bypass
-# Single persistent browser + shared bypass server = 1 Chromium, 1 CF cache
+# Single persistent browser + CloakBypasser for inline CF solving
 set -eo pipefail
 export DISPLAY=:1
 cd /home/runner/workspace
 mkdir -p logs
 
-# === Config ===
-CF_BYPASS_SERVER="${CF_BYPASS_SERVER:-http://localhost:8000}"
 CRED="/home/runner/workspace/credentials/openrouter_credentials.txt"
 PROFILE="/home/runner/workspace/or_profile"
 PROTON_PROFILE="/home/runner/workspace/proton_profile"
 mkdir -p "$PROFILE" "$PROTON_PROFILE"
-
-# === Wait for bypass server ===
-echo "Waiting for CloudflareBypass server at $CF_BYPASS_SERVER ..."
-for i in $(seq 1 30); do
-  if curl -sf "$CF_BYPASS_SERVER/cache/stats" > /dev/null 2>&1; then
-    echo "  Server ready."
-    break
-  fi
-  if [ "$i" -eq 30 ]; then
-    echo "ERROR: Server not responding. Start it first:"
-    echo "  cd /home/runner/workspace/CloudflareBypassForScraping && python server.py --port 8000"
-    exit 1
-  fi
-  sleep 1
-done
 
 # === Get credentials ===
 source <(python3 -c "import importlib.util; s=importlib.util.spec_from_file_location('c','$HOME/config.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); print(f'export PROTON_USER={m.PROTON_USERNAME}'); print(f'export PROTON_PASS={m.PROTON_PASSWORD}')")
@@ -34,29 +17,16 @@ EMAIL=$(bash scripts/email.sh 2>/dev/null | tail -1 | tr -d '[:space:]')
 PASSWORD=$(python3 -c "import secrets,string; c=string.ascii_letters+string.digits+'!@#%'; print(secrets.choice(string.ascii_letters)+secrets.choice(string.digits)+secrets.choice('!@#%')+''.join(secrets.choice(c) for _ in range(12)))")
 echo "Email: $EMAIL"
 
-# === Single Python script: one browser, all steps ===
+# === Single Python script: one browser, all steps, inline CF bypass ===
 cat > ~/or_integrated.py << 'PYEOF'
-import sys, re, time, asyncio, os, urllib.request, urllib.parse
+import sys, re, asyncio, os, json
 
-CF_SERVER = os.environ.get("CF_BYPASS_SERVER", "http://localhost:8000")
 EMAIL = sys.argv[1]
 PASSWORD = sys.argv[2]
 PROTON_USER = os.environ["PROTON_USER"]
 PROTON_PASS = os.environ["PROTON_PASS"]
 CRED_PATH = os.environ.get("CRED", "/home/runner/workspace/credentials/openrouter_credentials.txt")
 OR_PROFILE = os.environ.get("OR_PROFILE", "/home/runner/workspace/or_profile")
-
-def warm_cookies(hostname):
-    """Ask bypass server to warm cookies for a host (uses cache if available)."""
-    req = urllib.request.Request(f"{CF_SERVER}/")
-    req.add_header("x-hostname", hostname)
-    try:
-        resp = urllib.request.urlopen(req, timeout=60)
-        return resp.status
-    except urllib.error.HTTPError:
-        return 0
-    except:
-        return 0
 
 async def main():
     from cloakbrowser import launch_persistent_context_async
@@ -69,11 +39,20 @@ async def main():
     page.set_default_timeout(60000)
 
     # ============================================================
-    # STEP 1: Pre-warm CF cookies for OpenRouter
+    # STEP 1: Pre-warm by loading openrouter through CloakBypasser
+    # (solves CF challenge and caches cookies in the browser context)
     # ============================================================
-    print("\n=== STEP 1: Pre-warm CF cookies ===", flush=True)
-    warm_cookies("openrouter.ai")
-    await asyncio.sleep(2)
+    print("\n=== STEP 1: Pre-warm CF bypass ===", flush=True)
+    from cf_bypasser import CloakBypasser
+    b = CloakBypasser(max_retries=5, log=True)
+    result = await b.get_or_generate_html("https://openrouter.ai/sign-up")
+    if result and result.get("cookies"):
+        # Inject solved cookies into persistent context
+        await ctx.cookies([{"name": n, "value": v, "url": "https://openrouter.ai"}
+                           for n, v in result["cookies"].items()])
+        print(f"  Injected {len(result['cookies'])} cookies from bypass", flush=True)
+    else:
+        print("  WARNING: CF bypass failed, will handle inline", flush=True)
 
     # ============================================================
     # STEP 2: Signup on OpenRouter
@@ -85,41 +64,38 @@ async def main():
     # Handle challenge if still present
     title = await page.title()
     if "just a moment" in title.lower():
-        print("  Challenge detected — waiting...", flush=True)
-        for _ in range(6):
+        print("  Challenge detected — waiting for auto-resolution...", flush=True)
+        for _ in range(8):
             await page.wait_for_timeout(5000)
             title = await page.title()
             if "just a moment" not in title.lower():
                 break
-            # Try Turnstile click
-            for frame in page.frames:
-                if "challenges.cloudflare" in (frame.url or ""):
-                    try:
-                        info = await frame.evaluate("""() => {
-                            function find(root){
-                                if(!root) return null;
-                                const d = root.querySelector && root.querySelector('input[type=checkbox]');
-                                if(d) return d;
-                                for(const el of (root.querySelectorAll ? root.querySelectorAll('*') : [])){
-                                    const sr = el.fakeShadowRoot || el.shadowRoot;
-                                    if(sr){ const r = find(sr); if(r) return r; }
-                                }
-                                return null;
-                            }
-                            const cb = find(document);
-                            if(!cb) return {found:false};
-                            const r = cb.getBoundingClientRect();
-                            return {found:true, checked:cb.checked, x:r.x+r.width/2, y:r.y+r.height/2};
-                        }""")
-                        if info.get("found") and not info.get("checked"):
-                            el = await frame.frame_element()
-                            box = await el.bounding_box()
-                            if box:
-                                await page.mouse.click(box["x"]+info["x"], box["y"]+info["y"])
-                                print("  Turnstile clicked", flush=True)
-                    except:
-                        pass
-                    break
+            # Try Turnstile click via FakeShadowRoot
+            clicked = await page.evaluate("""() => {
+                function find(root) {
+                    if (!root) return null;
+                    const d = root.querySelector && root.querySelector('input[type=checkbox]');
+                    if (d) return d;
+                    for (const el of (root.querySelectorAll ? root.querySelectorAll('*') : [])) {
+                        const sr = el.fakeShadowRoot || el.shadowRoot;
+                        if (sr) { const r = find(sr); if (r) return r; }
+                    }
+                    return null;
+                }
+                const frames = document.querySelectorAll('iframe');
+                for (const iframe of frames) {
+                    try {
+                        const doc = iframe.contentDocument || iframe.contentWindow.document;
+                        const cb = find(doc);
+                        if (cb && !cb.checked) { cb.click(); return 'clicked_frame'; }
+                    } catch(e) {}
+                }
+                const cb = find(document);
+                if (cb && !cb.checked) { cb.click(); return 'clicked_main'; }
+                return null;
+            }""")
+            if clicked:
+                print(f"  Turnstile {clicked}", flush=True)
 
     # Fill form
     print("  Filling signup form...", flush=True)
@@ -127,29 +103,79 @@ async def main():
         await page.locator("#emailAddress-field").wait_for(state="visible", timeout=15000)
         await page.locator("#emailAddress-field").fill(EMAIL)
         await page.locator("#password-field").fill(PASSWORD)
-        legal = page.locator("#legalAccepted-field")
-        if not await legal.is_checked():
-            await legal.check(force=True)
-        await page.wait_for_timeout(300)
+
+        # Legal checkbox — pure JS to avoid clicking hyperlinks
+        print("  Checking legal checkbox...", flush=True)
+        for attempt in range(3):
+            cb_result = await page.evaluate("""() => {
+                const cb = document.querySelector('#legalAccepted-field');
+                if (!cb) return 'not_found';
+                if (cb.checked) return 'already_checked';
+                cb.checked = true;
+                cb.dispatchEvent(new Event('change', { bubbles: true }));
+                cb.dispatchEvent(new Event('input', { bubbles: true }));
+                cb.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+                return cb.checked ? 'checked' : 'failed';
+            }""")
+            print(f"  Checkbox attempt {attempt+1}: {cb_result}", flush=True)
+            if cb_result in ('checked', 'already_checked'):
+                break
+            await page.wait_for_timeout(300)
+
+        await page.wait_for_timeout(200)
+        print("  Clicking Continue...", flush=True)
         await page.get_by_role("button", name="Continue").click()
-        await page.wait_for_timeout(8000)
     except Exception as e:
         print(f"  Form issue: {e}", flush=True)
 
-    # Check signup result
-    await page.wait_for_timeout(3000)
-    cur_url = page.url
-    body_text = await page.inner_text("body")
-    signup_ok = ("confirm-email" in cur_url or "verification" in body_text.lower()
-                 or "check your" in body_text.lower())
-    if signup_ok:
-        print("  SUCCESS: Signup complete", flush=True)
-    else:
-        print(f"  URL: {cur_url}", flush=True)
-        print(f"  Body: {body_text[:300]}", flush=True)
+    # After Continue: wait for CF challenge or confirm-email
+    print("  Waiting for page to settle...", flush=True)
+    await page.wait_for_timeout(5000)
+
+    for _ in range(12):
+        cur_url = page.url
+        body = ""
+        try:
+            body = await page.inner_text("body")
+        except:
+            pass
+
+        if "confirm-email" in cur_url or "verification" in body.lower() or "check your" in body.lower():
+            print("  Signup confirmed!", flush=True)
+            break
+
+        # Try Turnstile
+        clicked = await page.evaluate("""() => {
+            function find(root) {
+                if (!root) return null;
+                const d = root.querySelector && root.querySelector('input[type=checkbox]');
+                if (d) return d;
+                for (const el of (root.querySelectorAll ? root.querySelectorAll('*') : [])) {
+                    const sr = el.fakeShadowRoot || el.shadowRoot;
+                    if (sr) { const r = find(sr); if (r) return r; }
+                }
+                return null;
+            }
+            const frames = document.querySelectorAll('iframe');
+            for (const iframe of frames) {
+                try {
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    const cb = find(doc);
+                    if (cb && !cb.checked) { cb.click(); return 'clicked_frame'; }
+                } catch(e) {}
+            }
+            const cb = find(document);
+            if (cb && !cb.checked) { cb.click(); return 'clicked_main'; }
+            return null;
+        }""")
+        if clicked:
+            print(f"  Turnstile {clicked}", flush=True)
+            await page.wait_for_timeout(3000)
+        else:
+            await page.wait_for_timeout(2000)
 
     # ============================================================
-    # STEP 3: Check Proton inbox (same browser, navigate)
+    # STEP 3: Check Proton inbox (same browser)
     # ============================================================
     print("\n=== STEP 3: Check Proton inbox ===", flush=True)
     await page.goto("https://account.proton.me/login", wait_until="domcontentloaded", timeout=60000)
@@ -158,7 +184,7 @@ async def main():
     # Login if needed
     already = False
     try:
-        if await page.locator("a:has-text('Mail')").is_visible(timeout=3000):
+        if page.locator("a:has-text('Mail')").is_visible(timeout=3000):
             already = True
     except:
         pass
@@ -194,6 +220,7 @@ async def main():
                 await latest.click()
                 await page.wait_for_timeout(5000)
                 # Extract verify link from frames
+                verify_url = None
                 for frame in page.frames:
                     try:
                         html = await frame.content()
@@ -206,7 +233,8 @@ async def main():
                     except:
                         pass
                 if not verify_url:
-                    for link in await page.query_selector_all("a[href]"):
+                    links = await page.query_selector_all("a[href]")
+                    for link in links:
                         href = await link.get_attribute("href")
                         if href and ("verify" in href or "confirm" in href) and "openrouter" in href:
                             verify_url = href
@@ -214,8 +242,8 @@ async def main():
                 if verify_url:
                     print(f"  FOUND: {verify_url[:60]}...", flush=True)
                     break
-        except:
-            pass
+        except Exception as e:
+            print(f"  Search error: {e}", flush=True)
         if attempt < 5:
             await page.keyboard.press("Escape")
             await page.wait_for_timeout(3000)
@@ -230,10 +258,15 @@ async def main():
     # ============================================================
     print("\n=== STEP 4: Verify email + get API key ===", flush=True)
 
-    # Pre-warm cookies for the verify domain
-    parsed = urllib.parse.urlparse(verify_url)
-    warm_cookies(parsed.netloc)
-    await asyncio.sleep(1)
+    # Pre-warm verify domain via CloakBypasser
+    from urllib.parse import urlparse
+    parsed = urlparse(verify_url)
+    print(f"  Pre-warming {parsed.netloc}...", flush=True)
+    vresult = await b.get_or_generate_html(verify_url)
+    if vresult and vresult.get("cookies"):
+        await ctx.cookies([{"name": n, "value": v, "url": verify_url}
+                           for n, v in vresult["cookies"].items()])
+        print(f"  Injected {len(vresult['cookies'])} cookies", flush=True)
 
     await page.goto(verify_url, wait_until="domcontentloaded", timeout=30000)
     await page.wait_for_timeout(5000)
@@ -242,25 +275,14 @@ async def main():
     if "openrouter.ai" in page.url:
         try:
             await page.get_by_text("Individual", exact=False).first.click()
-            await page.wait_for_timeout(5000)
+            await page.wait_for_timeout(3000)
         except:
             pass
 
-    # Wait longer for API key to render (it loads after auth + redirect)
-    await page.wait_for_timeout(10000)
+    await page.wait_for_timeout(8000)
 
-    # Debug: log current URL and body snippet
-    print(f"  Verify URL: {page.url}", flush=True)
-    try:
-        body_debug = await page.inner_text("body")
-        print(f"  Body (first 500): {body_debug[:500]}", flush=True)
-    except:
-        pass
-
-    # Extract API key — try multiple strategies
+    # Extract API key
     api_key = None
-
-    # Strategy 1: <code> block
     try:
         code_text = await page.locator("code").inner_text(timeout=5000)
         m = re.search(r"sk-or-v1-[a-zA-Z0-9]+", code_text)
@@ -269,7 +291,6 @@ async def main():
     except:
         pass
 
-    # Strategy 2: Copy button + clipboard
     if not api_key:
         try:
             await page.locator('button:has-text("Copy")').first.click()
@@ -281,47 +302,7 @@ async def main():
         except:
             pass
 
-    # Strategy 3: Full page HTML
     if not api_key:
-        content = await page.content()
-        m = re.search(r"sk-or-v1-[a-zA-Z0-9]{20,}", content)
-        if m:
-            api_key = m.group(0)
-
-    # Strategy 4: Look for the key pattern in any visible text
-    if not api_key:
-        try:
-            all_text = await page.inner_text("body")
-            m = re.search(r"sk-or-v1-[a-zA-Z0-9]{20,}", all_text)
-            if m:
-                api_key = m.group(0)
-        except:
-            pass
-
-    # Strategy 5: Check iframes for the key
-    if not api_key:
-        for frame in page.frames:
-            try:
-                frame_text = await frame.inner_text("body")
-                m = re.search(r"sk-or-v1-[a-zA-Z0-9]{20,}", frame_text)
-                if m:
-                    api_key = m.group(0)
-                    break
-            except:
-                pass
-
-    # If key not found, retry the verify page once
-    if not api_key:
-        print("  Key not found — retrying verify page...", flush=True)
-        await page.goto(verify_url, wait_until="domcontentloaded", timeout=30000)
-        await page.wait_for_timeout(15000)
-        if "openrouter.ai" in page.url:
-            try:
-                await page.get_by_text("Individual", exact=False).first.click()
-                await page.wait_for_timeout(5000)
-            except:
-                pass
-        await page.wait_for_timeout(10000)
         content = await page.content()
         m = re.search(r"sk-or-v1-[a-zA-Z0-9]{20,}", content)
         if m:
@@ -340,9 +321,8 @@ async def main():
 asyncio.run(main())
 PYEOF
 
-echo "Running integrated signup (single browser)..."
+echo "Running integrated signup (single browser + inline CF bypass)..."
 PROTON_USER="$PROTON_USER" PROTON_PASS="$PROTON_PASS" \
-CF_BYPASS_SERVER="$CF_BYPASS_SERVER" \
 OR_PROFILE="$OR_PROFILE" PROTON_PROFILE="$PROTON_PROFILE" \
 CRED="$CRED" \
 python3 ~/or_integrated.py "$EMAIL" "$PASSWORD"
