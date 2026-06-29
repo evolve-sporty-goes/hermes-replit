@@ -16,4 +16,4 @@ Workspace organized: credentials/ docs/ scripts/ dirs created, system dirs (.her
 §
 Hermes non-interactive model config: `hermes model` is TUI-only, cannot be scripted. Set config.yaml directly via `hermes config set model.provider/base_url/api_key/api_compat/default/display_name`. For active config use `hermes config show | grep Model` — config.yaml grep shows stale creds.
 §
-scripts/sync derives workspace root from dirname of .gitignore path, never hardcodes /home/runner/workspace. User explicitly requested this.
+scripts/sync derives workspace root from dirname of .gitignore path (never hardcodes). For secret-scan push blocks, fix via .gitignore + commit + retry — not filter-repo or force push.

@@ -6,7 +6,7 @@ exec 200>/tmp/sync.lock
 flock -n 200 || ( echo "Already running" ; exit 1 )
 
 SECRETS_REPO="https://github.com/evolve-sporty-goes/hermes-secrets.git"
-
+REPO="https://github.com/evolve-sporty-goes/hermes-replit.git"
 # --- 1. Bootstrap Authentication Token ---
 PAT_FILE="/home/runner/workspace/credentials/.pat"
 if [ -f "$PAT_FILE" ] && [ -s "$PAT_FILE" ]; then
@@ -130,7 +130,7 @@ git add -A
 if ! git diff --cached --quiet; then
     git commit -m "auto-sync: $(date)"
     
-    # Attempt push; if blocked by secret scanning, strip from history with git-filter-repo
+    # Attempt push; if blocked by secret scanning, strip from history and force-push
     push_output=$(git push origin main 2>&1) || {
         echo "$push_output"
 
@@ -138,53 +138,34 @@ if ! git diff --cached --quiet; then
         blocked_files=$(echo "$push_output" | grep -oP 'path:\s+\K\S+' | cut -d: -f1 | sort -u)
 
         if [ -n "$blocked_files" ]; then
-            echo "SECRET BLOCK detected. Stripping from history with git-filter-repo:"
+            echo "SECRET BLOCK detected. Stripping from history:"
 
-            # Build --path arguments and add to .gitignore to prevent recurrence
-            filter_args=()
+            filter_paths=()
             while IFS= read -r blocked_file; do
                 [ -z "$blocked_file" ] && continue
-
-                # Get relative path from workspace root
                 rel_path="${blocked_file#$WORKSPACE/}"
 
-                filter_args+=(--path "$rel_path")
-
-                # Check if already in sensitive block
-                if grep -qF "$rel_path" "$GITIGNORE" 2>/dev/null; then
-                    echo "  SKIP gitignore (already present): $rel_path"
-                else
+                # Add to .gitignore (prevent recurrence)
+                if ! grep -qF "$rel_path" "$GITIGNORE" 2>/dev/null; then
                     echo "$rel_path" >> "$GITIGNORE"
-                    echo "  ADDED to gitignore: $rel_path"
+                    echo "  + gitignore: $rel_path"
                 fi
+
+                filter_paths+=(--path "$rel_path")
             done <<< "$blocked_files"
 
-            # Also strip .hermes_data/state-snapshots entirely (always contains secrets)
-            filter_args+=(--path ".hermes_data/state-snapshots" --invert-paths)
+            # Strip all blocked paths from history in one pass
+            git filter-repo "${filter_paths[@]}" --invert-paths --force
 
-            # Remove blocked paths from all commits in history
-            git filter-repo --force "${filter_args[@]}"
+            # Re-add origin (filter-repo removes it)
+            git remote add origin "$REPO" 2>/dev/null || true
 
-            # Re-add origin remote (filter-repo removes it)
-            git remote add origin "https://github.com/evolve-sporty-goes/hermes-replit.git"
-
-            # Re-setup HTTPS askpass auth
-            if [ -f "$PAT_FILE" ] && [ -s "$PAT_FILE" ]; then
-                TMPDIR=$(mktemp -d); trap "rm -rf $TMPDIR" EXIT
-                ASKPASS="$TMPDIR/git-askpass"
-                printf '#!/bin/bash\n%s\n' "$(cat "$PAT_FILE")" > "$ASKPASS"
-                chmod +x "$ASKPASS"
-                export GIT_ASKPASS="$ASKPASS"
-            fi
-
-            # Stage updated .gitignore
+            # Stage .gitignore changes
             git add "$GITIGNORE"
-            if ! git diff --cached --quiet; then
-                git commit -m "auto: add secret-blocked files to gitignore"
-            fi
+            git diff --cached --quiet || git commit -m "auto: add secret-blocked files to gitignore"
 
             # Force-push rewritten history
-            echo "Force-pushing rewritten history..."
+            echo "Force-pushing..."
             git push --force origin main 2>&1 || echo "WARN: Force push failed."
         else
             echo "WARN: Push failed but no secret paths detected in output."
