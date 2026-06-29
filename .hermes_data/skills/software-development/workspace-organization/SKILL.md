@@ -93,7 +93,7 @@ Verify with `git check-ignore <path>` — exit code 0 means ignored, non-zero me
 After fixing, run a verification script (see `references/verify-paths.py` template) that:
 1. Reads each modified file and checks old paths are absent (line-exact, not substring)
 2. Checks new paths are present
-3. Validates all paths in `sensitive.txt` exist on disk
+3. Validates all paths in `.gitignore` sensitive block exist on disk
 4. Validates all expected files exist at their new locations
 5. Runs `git check-ignore` on each sensitive file to confirm `.gitignore` works
 
@@ -158,15 +158,16 @@ When moving multiple files with globs, verify each source file exists first. A g
 6. Verify no empty or duplicate directories remain
 7. **Update all path references** (see CRITICAL section above)
 8. **Update `.gitignore`** — replace bare-name ignore rules with explicit new paths (e.g., `email.sh` → `scripts/email.sh`)
-9. **Update `sensitive.txt`** — all paths must point to new locations (sync.sh iterates over this)
+9. **Update `.gitignore` sensitive block** — all paths must point to new locations (sync.sh parses this block)
 10. Run verification script to confirm no broken references remain
 
 ## Related Skills
 
-- **`sensitive`** — for scanning the workspace for secrets/tokens/credentials, auto-generating `sensitive.txt`, and keeping `.gitignore` in sync. Use after completing workspace reorganization to re-scan sensitive credentials.
+- **`sensitive`** — for scanning the workspace for secrets/tokens/credentials and keeping `.gitignore` sensitive block in sync. Use after completing workspace reorganization to re-scan sensitive credentials.
 - **`github-repo-management`** — for pushing to GitHub when push protection blocks due to secrets in git history (bundled skill — has cross-reference to `sensitive/references/push-protection-history-rewrite.md`).
 
 ## Reference
 
 - `references/replit-reorganization-example.md` — full session example with file mapping table and chain-effect documentation
-- `references/verify-paths.py` — reusable path-consistency verification script (checks old paths gone, new paths present, sensitive.txt validity, git check-ignore)
+- `references/verify-paths.py` — reusable path-consistency verification script (checks old paths gone, new paths present, .gitignore sensitive block validity, git check-ignore)
+- `references/gitignore-sensitive-block-sync.md` — how sync reads .gitignore sensitive block instead of sensitive.txt (parsing logic, format rules, design decisions)
