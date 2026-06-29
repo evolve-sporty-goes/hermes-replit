@@ -4419,3 +4419,95 @@ RuntimeError: No LLM provider configured for task=vision provider=auto. Run: her
 2026-06-29 04:45:55,870 WARNING [20260628_200142_1bdee0] agent.tool_executor: Tool skill_manage returned error (0.00s): {"success": false, "error": "Refusing background curator write_file for bundled skill 'hermes-agent'."}
 2026-06-29 04:46:12,847 WARNING [20260628_200142_1bdee0] agent.tool_executor: Tool skill_manage returned error (0.01s): {"error": "content is required for 'create'. Provide the full SKILL.md text (frontmatter + body).", "success": false}
 2026-06-29 04:47:05,486 WARNING [20260628_200142_1bdee0] agent.tool_executor: Tool memory returned error (0.01s): {"success": false, "error": "Memory at 2,194/2,200 chars. Adding this entry (267 chars) would exceed the limit. Consolidate now: use 'replace' to merge overlapping entries into shorter ones or 'remove
+2026-06-29 04:48:36,823 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 04:48:36,829 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 04:48:37,520 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 04:48:37,523 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 04:48:37,581 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 04:48:37,582 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 04:48:37,582 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 04:49:50,759 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 04:49:51,737 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:16:27,839 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:16:27,850 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:17:35,764 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:17:36,078 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:18:26,879 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:18:27,848 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:18:33,731 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:18:35,939 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:23:12,290 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:23:12,857 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:23:33,518 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:23:33,626 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:23:40,152 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:23:40,688 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:23:43,989 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:23:44,356 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:23:49,280 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:23:52,075 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:24:57,023 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:24:57,106 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:25:05,498 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:25:05,889 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:25:07,476 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:25:09,427 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:25:14,755 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:25:52,785 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:25:53,446 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:26:05,065 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,072 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,087 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:26:05,087 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:27:05.
+2026-06-29 05:26:05,096 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:26:05,096 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:27:05.
+2026-06-29 05:26:05,096 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,096 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,099 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,145 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,147 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,147 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,344 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:26:05,486 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:26:05,487 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:27:05.
+2026-06-29 05:26:05,504 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:26:05,504 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:27:05.
+2026-06-29 05:26:05,504 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,726 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:09,073 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:09,183 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:13,233 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:13,431 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:13,511 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:26:15,814 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:26:16,105 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:16,802 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:19,957 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:20,761 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:26:26,842 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:27:13,969 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:27:14,574 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:27:42,328 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,333 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,345 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:27:42,345 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:28:42.
+2026-06-29 05:27:42,354 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:27:42,354 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:28:42.
+2026-06-29 05:27:42,354 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,354 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,355 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,383 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,384 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,384 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,396 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:27:42,396 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:28:42.
+2026-06-29 05:27:42,403 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:27:42,404 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:28:42.
+2026-06-29 05:27:42,404 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,824 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:27:42,838 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:27:47,411 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:27:48,095 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:27:52,892 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:27:53,318 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:27:59,454 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed

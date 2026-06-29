@@ -14031,3 +14031,179 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 2026-06-29 04:48:34,944 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
 2026-06-29 04:48:34,945 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
 2026-06-29 04:48:34,946 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 04:48:35,114 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 04:48:35,115 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 04:48:35,116 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 04:48:35,117 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 04:48:35,118 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 04:48:35,118 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 04:48:35,120 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 04:48:35,150 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 04:48:35,151 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 04:48:35,153 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 04:48:35,154 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 04:48:35,156 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 04:48:35,158 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 04:48:35,159 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 04:48:35,160 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 04:48:35,161 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 04:48:35,163 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 04:48:35,188 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 04:48:36,823 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 04:48:36,829 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 04:48:37,519 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 04:48:37,520 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 04:48:37,523 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 04:48:37,581 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 04:48:37,582 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 04:48:37,582 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 04:48:37,851 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 04:48:37,943 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 04:48:37,969 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 04:49:50,759 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 04:49:51,737 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 04:51:12,736 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
+2026-06-29 05:16:27,839 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:16:27,850 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:17:35,764 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:17:36,078 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:18:26,879 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:18:27,848 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:18:33,731 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:18:35,077 INFO agent.model_metadata: Could not detect context length for model 'openrouter/owl-alpha' at https://api.cloudflare.com/client/v4/accounts/59cec8e96c70ae69d4c4a2faf4e12eb2/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 05:18:35,939 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:23:12,290 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:23:12,857 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:23:33,518 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:23:33,623 INFO [20260628_200142_1bdee0] agent.turn_context: conversation turn: session=20260628_200142_1bdee0 model=openrouter/owl-alpha provider=openrouter platform=webui history=51 msg='[Workspace::v1: /home/runner/workspace] Rewrite script, i am using custom endpoi...'
+2026-06-29 05:23:33,626 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:23:33,648 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-140 (_call):140121960609472 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:23:40,140 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-140 (_call):140121960609472 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:23:40,141 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #14: model=openrouter/owl-alpha provider=openrouter in=42269 out=314 total=42583 latency=6.5s cache=41984/42269 (99%)
+2026-06-29 05:23:40,152 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:23:40,270 INFO [20260628_200142_1bdee0] tools.file_tools: Creating new local environment for task default...
+2026-06-29 05:23:40,348 INFO [20260628_200142_1bdee0] tools.environments.base: Session snapshot created (session=c6f6cd2c15e8, cwd=/home/runner/workspace)
+2026-06-29 05:23:40,348 INFO [20260628_200142_1bdee0] tools.file_tools: local environment ready for task default
+2026-06-29 05:23:40,686 INFO [20260628_200142_1bdee0] agent.tool_executor: tool write_file completed (0.42s, 259 chars)
+2026-06-29 05:23:40,688 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:23:40,705 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-147 (_call):140121952216768 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:23:43,989 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:23:44,347 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-147 (_call):140121952216768 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:23:44,348 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #15: model=openrouter/owl-alpha provider=openrouter in=42675 out=75 total=42750 latency=3.7s cache=42240/42675 (99%)
+2026-06-29 05:23:44,356 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:23:44,356 INFO [20260628_200142_1bdee0] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=openrouter/owl-alpha api_calls=2/90 budget=2/90 tool_turns=20 last_msg_role=assistant response_len=291 session=20260628_200142_1bdee0
+2026-06-29 05:23:49,280 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:23:51,746 INFO agent.model_metadata: Could not detect context length for model 'openrouter/owl-alpha' at https://api.cloudflare.com/client/v4/accounts/59cec8e96c70ae69d4c4a2faf4e12eb2/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 05:23:52,075 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:24:57,023 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:24:57,103 INFO [20260628_200142_1bdee0] agent.turn_context: conversation turn: session=20260628_200142_1bdee0 model=openrouter/owl-alpha provider=openrouter platform=webui history=55 msg='[Workspace::v1: /home/runner/workspace] Enpoint url format https://api.cloudflar...'
+2026-06-29 05:24:57,106 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:24:57,135 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-153 (_call):140122558322368 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:25:05,465 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-153 (_call):140122558322368 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:25:05,466 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #16: model=openrouter/owl-alpha provider=openrouter in=42784 out=346 total=43130 latency=8.4s cache=42624/42784 (100%)
+2026-06-29 05:25:05,498 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:25:05,887 INFO [20260628_200142_1bdee0] agent.tool_executor: tool write_file completed (0.28s, 259 chars)
+2026-06-29 05:25:05,889 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:25:05,907 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-161 (_call):140121943824064 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:25:07,476 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:25:09,410 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-161 (_call):140121943824064 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:25:09,410 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #17: model=openrouter/owl-alpha provider=openrouter in=43220 out=98 total=43318 latency=3.5s cache=42752/43220 (99%)
+2026-06-29 05:25:09,427 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:25:09,428 INFO [20260628_200142_1bdee0] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=openrouter/owl-alpha api_calls=2/90 budget=2/90 tool_turns=21 last_msg_role=assistant response_len=340 session=20260628_200142_1bdee0
+2026-06-29 05:25:14,755 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:25:52,785 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:25:53,446 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:26:05,025 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-167 (_run_agent_streaming):140122204915392 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:26:05,065 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,072 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,087 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:26:05,087 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:27:05.
+2026-06-29 05:26:05,096 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:26:05,096 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:27:05.
+2026-06-29 05:26:05,096 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,096 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,099 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,145 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,147 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,147 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,344 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:26:05,486 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:26:05,487 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:27:05.
+2026-06-29 05:26:05,504 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:26:05,504 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:27:05.
+2026-06-29 05:26:05,504 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:26:05,725 INFO [20260628_200142_1bdee0] agent.turn_context: conversation turn: session=20260628_200142_1bdee0 model=openrouter/owl-alpha provider=openrouter platform=webui history=59 msg='[Workspace::v1: /home/runner/workspace] Syntax error'
+2026-06-29 05:26:05,726 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:05,747 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-169 (_call):140121960609472 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:26:09,056 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-169 (_call):140121960609472 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:26:09,057 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #1: model=openrouter/owl-alpha provider=openrouter in=42884 out=24 total=42908 latency=3.3s cache=38016/42884 (89%)
+2026-06-29 05:26:09,073 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:09,181 INFO [20260628_200142_1bdee0] agent.tool_executor: tool read_file completed (0.11s, 1446 chars)
+2026-06-29 05:26:09,183 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:09,206 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-174 (_call):140121960609472 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:26:13,224 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-174 (_call):140121960609472 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:26:13,224 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #2: model=openrouter/owl-alpha provider=openrouter in=43431 out=103 total=43534 latency=4.0s cache=42880/43431 (99%)
+2026-06-29 05:26:13,233 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:13,429 INFO [20260628_200142_1bdee0] agent.tool_executor: tool patch completed (0.20s, 671 chars)
+2026-06-29 05:26:13,431 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:13,445 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-184 (_call):140122196522688 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:26:13,511 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:26:15,814 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:26:16,099 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-184 (_call):140122196522688 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:26:16,100 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #3: model=openrouter/owl-alpha provider=openrouter in=43759 out=41 total=43800 latency=2.7s cache=43392/43759 (99%)
+2026-06-29 05:26:16,105 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:16,800 INFO [20260628_200142_1bdee0] agent.tool_executor: tool terminal completed (0.69s, 54 chars)
+2026-06-29 05:26:16,802 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:16,831 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-189 (_call):140122196522688 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:26:19,857 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-189 (_call):140122196522688 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:26:19,857 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #4: model=openrouter/owl-alpha provider=openrouter in=43840 out=43 total=43883 latency=3.1s cache=43648/43840 (100%)
+2026-06-29 05:26:19,957 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:26:19,957 INFO [20260628_200142_1bdee0] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=openrouter/owl-alpha api_calls=4/90 budget=4/90 tool_turns=24 last_msg_role=assistant response_len=155 session=20260628_200142_1bdee0
+2026-06-29 05:26:20,761 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:26:23,980 INFO api.streaming: title_status session=20260628_200142_1bdee0 status=refreshed reason=llm title='Fix Stray Backtick Syntax Error' raw_preview=''
+2026-06-29 05:26:23,980 INFO api.streaming: Adaptive title refresh: session=20260628_200142_1bdee0 new_title='Fix Stray Backtick Syntax Error'
+2026-06-29 05:26:26,842 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:27:13,969 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:27:14,574 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:27:42,314 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-205 (_run_agent_streaming):140122558322368 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:27:42,328 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,333 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,345 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:27:42,345 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:28:42.
+2026-06-29 05:27:42,354 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:27:42,354 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:28:42.
+2026-06-29 05:27:42,354 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,354 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,355 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,383 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,384 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,384 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,396 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:27:42,396 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:28:42.
+2026-06-29 05:27:42,403 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 05:27:42,404 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 05:28:42.
+2026-06-29 05:27:42,404 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 05:27:42,824 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:27:42,836 INFO [20260628_200142_1bdee0] agent.turn_context: conversation turn: session=20260628_200142_1bdee0 model=openrouter/owl-alpha provider=openrouter platform=webui history=67 msg='[Workspace::v1: /home/runner/workspace] And set that custom endpoint to default ...'
+2026-06-29 05:27:42,838 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:27:42,855 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-207 (_call):140122196522688 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:27:47,154 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-207 (_call):140122196522688 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:27:47,155 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #1: model=openrouter/owl-alpha provider=openrouter in=43902 out=106 total=44008 latency=4.3s cache=43776/43902 (100%)
+2026-06-29 05:27:47,411 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:27:48,093 INFO [20260628_200142_1bdee0] agent.tool_executor: tool terminal completed (0.68s, 398 chars)
+2026-06-29 05:27:48,095 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:27:48,118 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-210 (_call):140122196522688 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:27:52,871 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-210 (_call):140122196522688 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:27:52,871 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #2: model=openrouter/owl-alpha provider=openrouter in=44172 out=93 total=44265 latency=4.8s cache=43776/44172 (99%)
+2026-06-29 05:27:52,892 WARNING [20260628_200142_1bdee0] run_agent: Session DB append_message failed: constraint failed
+2026-06-29 05:27:52,892 INFO [20260628_200142_1bdee0] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=openrouter/owl-alpha api_calls=2/90 budget=2/90 tool_turns=25 last_msg_role=assistant response_len=387 session=20260628_200142_1bdee0
+2026-06-29 05:27:53,133 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=bg-review:140122196522688 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:27:53,236 INFO [20260628_200142_1bdee0] agent.turn_context: conversation turn: session=20260628_200142_1bdee0 model=openrouter/owl-alpha provider=openrouter platform=webui history=71 msg='Review the conversation above and consider saving to memory if appropriate.  Foc...'
+2026-06-29 05:27:53,252 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-211 (_call):140122223797952 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:27:53,318 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
+2026-06-29 05:27:56,292 INFO agent.model_metadata: Could not detect context length for model 'openrouter/owl-alpha' at https://api.cloudflare.com/client/v4/accounts/59cec8e96c70ae69d4c4a2faf4e12eb2/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 05:27:58,423 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-211 (_call):140122223797952 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:27:58,426 INFO [20260628_200142_1bdee0] agent.conversation_loop: API call #1: model=openrouter/owl-alpha provider=openrouter in=43586 out=5 total=43591 latency=5.2s cache=2560/43586 (6%)
+2026-06-29 05:27:58,432 INFO [20260628_200142_1bdee0] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=openrouter/owl-alpha api_calls=1/16 budget=1/16 tool_turns=25 last_msg_role=assistant response_len=16 session=20260628_200142_1bdee0
+2026-06-29 05:27:58,438 INFO [20260628_200142_1bdee0] run_agent: OpenAI client closed (agent_close, shared=True, tcp_force_closed=0) thread=bg-review:140122196522688 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha
+2026-06-29 05:27:59,454 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): database disk image is malformed
