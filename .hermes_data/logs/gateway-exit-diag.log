@@ -1,0 +1,1 @@
+{"ts": "2026-06-29T09:17:53.225191+00:00", "tag": "gateway.start", "pid": 41668, "python": "3.12.11", "platform": "linux", "replace": false, "argv": ["/home/runner/hermes-agent/hermes_cli/main.py", "gateway", "restart"], "stdin_is_tty": false, "absorb_windows_console_controls": false}
