@@ -24,3 +24,5 @@ brave-browser/
 freellmapi
 .hermes_data/webui/sessions/
 .hermes_data/config.yaml
+scripts/setup_cloudflare.sh
+scripts/setup_cloudflare.sh.bak
