@@ -130,39 +130,50 @@ git add -A
 if ! git diff --cached --quiet; then
     git commit -m "auto-sync: $(date)"
     
-    # Attempt push; if blocked by secret scanning, extract blocked files and add to .gitignore
+    # Attempt push; if blocked by secret scanning, strip from history with git-filter-repo
     push_output=$(git push origin main 2>&1) || {
         echo "$push_output"
-        
+
         # Extract file paths from push protection error (pattern: "path: <filepath>:<line>")
         blocked_files=$(echo "$push_output" | grep -oP 'path:\s+\K\S+' | cut -d: -f1 | sort -u)
-        
+
         if [ -n "$blocked_files" ]; then
-            echo "SECRET BLOCK detected. Adding to .gitignore sensitive block:"
-            
+            echo "SECRET BLOCK detected. Stripping from history with git-filter-repo:"
+
+            # Build --path arguments and add to .gitignore to prevent recurrence
+            filter_args=()
             while IFS= read -r blocked_file; do
                 [ -z "$blocked_file" ] && continue
-                
+
                 # Get relative path from workspace root
                 rel_path="${blocked_file#$WORKSPACE/}"
-                
+
+                filter_args+=(--path "$rel_path")
+
                 # Check if already in sensitive block
                 if grep -qF "$rel_path" "$GITIGNORE" 2>/dev/null; then
-                    echo "  SKIP (already present): $rel_path"
+                    echo "  SKIP gitignore (already present): $rel_path"
                 else
-                    # Append to sensitive block (before last line if EOF, or at end)
                     echo "$rel_path" >> "$GITIGNORE"
-                    echo "  ADDED: $rel_path"
+                    echo "  ADDED to gitignore: $rel_path"
                 fi
             done <<< "$blocked_files"
-            
-            # Stage the updated .gitignore and recommit
+
+            # Also strip .hermes_data/state-snapshots entirely (always contains secrets)
+            filter_args+=(--path ".hermes_data/state-snapshots" --invert-paths)
+
+            # Remove blocked paths from all commits in history
+            git filter-repo --force "${filter_args[@]}"
+
+            # Stage updated .gitignore
             git add "$GITIGNORE"
-            git commit -m "auto: add secret-blocked files to gitignore"
-            
-            # Retry push
-            echo "Retrying push..."
-            git push origin main 2>&1 || echo "WARN: Push still failing after gitignore update."
+            if ! git diff --cached --quiet; then
+                git commit -m "auto: add secret-blocked files to gitignore"
+            fi
+
+            # Force-push rewritten history
+            echo "Force-pushing rewritten history..."
+            git push --force origin main 2>&1 || echo "WARN: Force push failed."
         else
             echo "WARN: Push failed but no secret paths detected in output."
         fi
