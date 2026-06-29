@@ -21,13 +21,30 @@ brave-browser/
 - Entries use **relative paths** from workspace root
 - Directories use **trailing slash** (e.g. `brave-browser/`)
 
+### Extracting the Sensitive Block from .gitignore
+
+The sync script uses `awk` to extract entries from the sensitive block:
+
+```bash
+awk 'BEGIN{flag=0} /# Sensitive/{flag=1; next} flag==1{ if(substr($0,1,1)=="#") next; if(length($0)>0) print}' "$GITIGNORE"
+```
+
+This:
+- Sets `flag=1` after matching a line containing `# Sensitive`
+- Skips comment-only lines within the block (`substr($0,1,1)=="#"`)
+- Prints non-blank, non-comment lines
+- Runs to EOF (no blank-line terminator needed)
+
 ### Sync Script Resolution Logic
 
 1. Strip trailing slash from entry
-2. If path doesn't start with `/`, prepend `$WORKSPACE` (usually `/home/runner/workspace`)
-3. If resolved path is a **directory**: `find` all non-hidden files at depth 1, sync each individually
-4. If resolved path is a **file**: sync directly
-5. If path doesn't exist: warn and skip
+2. **Identify workspace root** via `dirname "$GITIGNORE"` (wherever `.gitignore` lives is the root)
+3. If path doesn't start with `/`, prepend `$WORKSPACE`
+4. If resolved path is a **directory**: `find` all non-hidden files at depth 1, sync each individually
+5. If resolved path is a **file**: sync directly
+6. If path doesn't exist: warn and skip
+
+**Key detail:** The workspace root is derived from `.gitignore`'s directory, NOT hardcoded as `/home/runner/workspace`. This makes the script portable.
 
 ### Sync Decision (per file)
 

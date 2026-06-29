@@ -1,7 +1,7 @@
 ---
 name: sensitive
-description: "Scan workspace for files containing secrets, tokens, API keys, and credentials. Update .gitignore sensitive block automatically. Sync script reads from .gitignore, not sensitive.txt."
-version: 2.0.0
+description: "Scan workspace for files containing secrets, tokens, API keys, and credentials. Update .gitignore sensitive block automatically. Sync script reads from .gitignore with auto-remediation for GitHub push protection blocks."
+version: 2.1.0
 author: Hermes Agent
 tags: [security, secrets, credentials, gitignore]
 ---
@@ -176,16 +176,30 @@ cd /home/runner/workspace && git check-ignore credentials/.pat
 
 The user explicitly wants `credentials/mail.txt` to remain tracked in git (not ignored). When updating `.gitignore`, do NOT include `mail.txt` unless the user explicitly asks. If a file was previously gitignored and the user wants it tracked, use `git add -f` to force-stage it.
 
-## GitHub Push Protection
+## GitHub Push Protection — Auto-Remediation in Sync Script
 
-When pushing to a repo with GitHub Push Protection enabled, commits containing secrets will be rejected. See `references/push-protection-history-rewrite.md` for the full workflow.
+The sync script (`scripts/sync`) now has **automatic push protection remediation** built into the workspace sync phase (Phase 2). When `git push` is rejected by GitHub secret scanning:
+
+1. Parse blocked file paths from the error output (pattern: `path: <filepath>:<line>`)
+2. Convert to relative paths from workspace root
+3. Check if each path is already in `.gitignore` sensitive block
+4. Append new entries to the end of the sensitive block
+5. Commit the updated `.gitignore` and retry the push
+
+**Important limitation:** `.gitignore` only prevents *future* tracking. If secrets are already in git **history** (previous commits), the push will still fail after adding to `.gitignore`. You must rewrite history to remove them. See `references/push-protection-history-rewrite.md` for the full workflow.
+
+### Sync Script Output Format
+
+The sync script uses **basename** (not full path) in its per-file output:
+```
+OK (B): .pat — identical
+PUSH (C): state.db → local newer (1782719097 > 1782718651)
+PULL (A): .env ← bootstrapping from repo
+SKIP (A): .pat — neither local nor repo has content
+WARN: '/home/runner/workspace/brave-browser' not found, skipping
+```
+
+Format: `ACTION (Case): filename — details`
 
 See also: `references/sync-gitignore-integration.md` for how `scripts/sync` reads `.gitignore` and resolves bare directory/file names to full paths.
-
-Key points:
-- Push protection reveals secrets iteratively — filter → push → discover next → repeat
-- Use `git filter-branch --index-filter 'git rm --cached --ignore-unmatch <files>'` to remove from history
-- If filter-branch fails with "unstaged changes" (running process writing logs), use `git update-index --assume-unchanged <files>` first
-- After filter-branch: delete `refs/original/`, `git reflog expire --expire=now --all`, `git gc --prune=now --aggressive`
-- Add offending files to `.gitignore` to prevent re-commitment
-- Force push with PAT: `git push --force https://user:${PAT}@github.com/org/repo.git main`
+See also: `references/push-protection-auto-remediation.md` for the auto-remediation logic that catches GitHub push protection errors and appends blocked files to `.gitignore`.
