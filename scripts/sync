@@ -10,15 +10,17 @@ REPO="https://github.com/evolve-sporty-goes/hermes-replit.git"
 
 # Generate commit message via AI (fallback to file list)
 ai_commit_msg() {
-    local diffstat; diffstat=$(git diff --cached --stat | tail -1)
+    local f="$1"
+    local diffstat; diffstat=$(git diff --cached --stat -- "$f" | tail -1)
     local key; key=$(grep 'API_KEY' /home/runner/workspace/credentials/openrouter_credentials.txt 2>/dev/null | tail -1 | cut -d= -f2)
-    [ -z "$key" ] && { git diff --cached --numstat | awk -F'	' '{a="updated";if($1>0&&$2==0)a="added";else if($2>0&&$1==0)a="removed";printf "%s %s, ",a,$3}' | sed 's/, $//'; return; }
+    [ -z "$key" ] && { git diff --cached --numstat -- "$f" | awk -F'\t' '{a="updated";if($1>0&&$2==0)a="added";else if($2>0&&$1==0)a="removed";printf "%s %s, ",a,$3}' | sed 's/, $//'; return; }
     local msg; msg=$(curl -s --max-time 8 https://openrouter.ai/api/v1/chat/completions \
         -H "Authorization: Bearer $key" -H "Content-Type: application/json" \
-        -d "{\"model\":\"owl-alpha\",\"messages\":[{\"role\":\"user\",\"content\":\"Write a git commit message under 10 words for file $(basename $f): $diffstat. Raw text only.\"}],\"max_tokens\":40}" \
+        -d "{\"model\":\"owl-alpha\",\"messages\":[{\"role\":\"user\",\"content\":\"Write a git commit message under 10 words for file $(basename "$f"): $diffstat. Raw text only.\"}],\"max_tokens\":40}" \
         2>/dev/null | python3 -c "import sys,json; t=json.load(sys.stdin)['choices'][0]['message']['content']; print(t.strip().strip(chr(34)).strip(chr(96)))")
     [ -n "$msg" ] && echo "$msg" || echo "$diffstat"
 }
+
 # --- 1. Bootstrap Authentication Token ---
 PAT_FILE="/home/runner/workspace/credentials/.pat"
 if [ -f "$PAT_FILE" ] && [ -s "$PAT_FILE" ]; then
@@ -34,7 +36,7 @@ ASKPASS="$TMPDIR/git-askpass"
 printf "#!/bin/bash\necho %s\n" "$TOKEN" > "$ASKPASS"
 chmod +x "$ASKPASS"; export GIT_ASKPASS="$ASKPASS"
 
-# Clone full history (no --depth 1) so we can extract accurate commit timestamps
+# Clone full history so we can extract accurate commit timestamps
 git clone --branch main "$SECRETS_REPO" "$TMPDIR/s" 2>/dev/null || { echo "ERROR: clone failed"; exit 1; }
 cd "$TMPDIR/s"
 
@@ -42,17 +44,20 @@ git config user.email "hermes@replit"
 git config user.name "hermes-replit"
 
 # --- 3. Sync Logic Function ---
-# Arguments: $1 = local_file_path, $2 = repo_file_name
 sync_file_by_history() {
     local local_file="$1"
     local repo_file="$2"
+
+    # CRITICAL REMOVE FLATTENING FIX: Ensure nested directories exist in both locations
+    mkdir -p "$(dirname "$local_file")"
+    mkdir -p "$(dirname "$repo_file")"
 
     local local_exists=0
     local repo_exists=0
     [ -f "$local_file" ] && [ -s "$local_file" ] && local_exists=1
     [ -f "$repo_file" ] && [ -s "$repo_file" ] && repo_exists=1
 
-    # Case A: Handle Empty/Missing Files First
+    # Case A: Handle Empty/Missing Files First (Bootstrapping Plan)
     if [ "$local_exists" -eq 0 ] && [ "$repo_exists" -eq 0 ]; then
         echo "SKIP (A): $repo_file — neither local nor repo has content"
         return 0
@@ -91,35 +96,44 @@ sync_file_by_history() {
 }
 
 # --- 4. Execute Decisions ---
-repo_changed=0
+run_secrets_sync() {
+    local GITIGNORE="/home/runner/workspace/.gitignore"
+    local WORKSPACE
+    WORKSPACE=$(dirname "$GITIGNORE")
+    local file_list
+    local entry
+    local s
 
-# Extract file list from .gitignore sensitive block, resolve to absolute paths
-GITIGNORE="/home/runner/workspace/.gitignore"
-WORKSPACE=$(dirname "$GITIGNORE")
+    if [ -f "$GITIGNORE" ]; then
+        file_list=$(awk 'BEGIN{flag=0} /# Sensitive/{flag=1; next} flag==1{ if(substr($0,1,1)=="#") next; if(length($0)>0) print}' "$GITIGNORE")
 
-if [ -f "$GITIGNORE" ]; then
-    # Extract entries from sensitive block: after "# Sensitive" line, skip comment lines, stop at EOF/blank
-    file_list=$(awk 'BEGIN{flag=0} /# Sensitive/{flag=1; next} flag==1{ if(substr($0,1,1)=="#") next; if(length($0)>0) print}' "$GITIGNORE")
-    
-    while IFS= read -r entry; do
-        entry="${entry%/}"  # strip trailing slash
-        [[ "$entry" != /* ]] && entry="$WORKSPACE/$entry"
-        
-        if [ -d "$entry" ]; then
-            while IFS= read -r -d '' file; do
-                sync_file_by_history "$file" "$(basename "$file")" && s=$? || s=$?
+        while IFS= read -r entry; do
+            [ -z "$entry" ] && continue
+            entry="${entry%/}"  
+            [[ "$entry" != /* ]] && entry="$WORKSPACE/$entry"
+
+            if [ -d "$entry" ]; then
+                while IFS= read -r -d '' file; do
+                    # REMOVE FLATTENING FIX: Kept relative path intact instead of replacing '/' with '_'
+                    local target_name; target_name="${file#$WORKSPACE/}"
+                    sync_file_by_history "$file" "$target_name" && s=$? || s=$?
+                    [ "$s" -eq 1 ] && repo_changed=1
+                done < <(find "$entry" -maxdepth 1 -type f -name "[!.]*" -print0)
+            else
+                # REMOVE FLATTENING FIX: Kept relative path intact instead of replacing '/' with '_'
+                local target_name; target_name="${entry#$WORKSPACE/}"
+                sync_file_by_history "$entry" "$target_name" && s=$? || s=$?
                 [ "$s" -eq 1 ] && repo_changed=1
-            done < <(find "$entry" -maxdepth 1 -type f -name "[!.]*" -print0)
-        elif [ -f "$entry" ]; then
-            sync_file_by_history "$entry" "$(basename "$entry")" && s=$? || s=$?
-            [ "$s" -eq 1 ] && repo_changed=1
-        else
-            echo "WARN: '$entry' not found, skipping"
-        fi
-    done <<< "$file_list"
-else
-    echo "WARN: .gitignore not found, skipping sensitive file sync"
-fi
+            fi
+        done <<< "$file_list"
+    else
+        echo "WARN: .gitignore not found, skipping sensitive file sync"
+    fi
+}
+
+# FIX: repo_changed MUST NOT be declared as 'local' inside the loop context to propagate changes back here
+repo_changed=0
+run_secrets_sync
 
 # --- 5. Push Secrets if Repo fell behind ---
 if [ "$repo_changed" -eq 1 ]; then
@@ -144,45 +158,34 @@ if ! git diff --cached --quiet; then
     git reset -q
     while IFS= read -r f; do
         git add "$f"
-        m=$(ai_commit_msg)
-        git commit -m "$m" 2>/dev/null || git commit -m "update $(basename $f)"
+        m=$(ai_commit_msg "$f") 
+        git commit -m "$m" 2>/dev/null || git commit -m "update $(basename "$f")"
     done <<< "$staged"
 
-    # Attempt push; if blocked by secret scanning, strip from history and force-push
+    WORKSPACE="/home/runner/workspace"
     push_output=$(git push origin main 2>&1) || {
         echo "$push_output"
-
-        # Extract file paths from push protection error (pattern: "path: <filepath>:<line>")
         blocked_files=$(echo "$push_output" | grep -oP 'path:\s+\K\S+' | cut -d: -f1 | sort -u)
 
         if [ -n "$blocked_files" ]; then
             echo "SECRET BLOCK detected. Stripping from history:"
-
             filter_paths=()
+            GITIGNORE="/home/runner/workspace/.gitignore"
             while IFS= read -r blocked_file; do
                 [ -z "$blocked_file" ] && continue
                 rel_path="${blocked_file#$WORKSPACE/}"
 
-                # Add to .gitignore (prevent recurrence)
                 if ! grep -qF "$rel_path" "$GITIGNORE" 2>/dev/null; then
                     echo "$rel_path" >> "$GITIGNORE"
                     echo "  + gitignore: $rel_path"
                 fi
-
                 filter_paths+=(--path "$rel_path")
             done <<< "$blocked_files"
 
-            # Strip all blocked paths from history in one pass
             git filter-repo "${filter_paths[@]}" --invert-paths --force
-
-            # Re-add origin (filter-repo removes it)
             git remote add origin "$REPO" 2>/dev/null || true
-
-            # Stage .gitignore changes
             git add "$GITIGNORE"
             git diff --cached --quiet || git commit -m "auto: add secret-blocked files to gitignore"
-
-            # Force-push rewritten history
             echo "Force-pushing..."
             git push --force origin main 2>&1 || echo "WARN: Force push failed."
         else
