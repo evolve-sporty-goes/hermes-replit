@@ -208,6 +208,7 @@ The sync script (`scripts/sync`) now has **automatic push protection remediation
 6. **Long-term prevention**: for secrets that are generated snapshots (Hermes state snapshots, config dumps, sessionlogs), add the **parent directory** to `.gitignore` (e.g. `.hermes_data/state-snapshots/`) rather than individual files. This prevents future commits from being blocked repeatedly.
 
 See `references/push-protection-history-rewrite.md` for the full workflow.
+See `references/sync-commit-message-ai.md` for AI-generated commit message integration in the sync script.
 
 ### Sync Script Output Format
 
