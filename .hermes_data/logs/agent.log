@@ -19313,3 +19313,142 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 2026-06-29 12:54:13,248 INFO [968021d34624] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=8/16 budget=8/16 tool_turns=48 last_msg_role=assistant response_len=937 session=968021d34624
 2026-06-29 12:54:13,250 INFO [968021d34624] run_agent: OpenAI client closed (agent_close, shared=True, tcp_force_closed=0) thread=bg-review:140007411021504 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
 2026-06-29 12:57:32,494 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
+2026-06-29 13:34:09,117 INFO tools.lazy_deps: Lazy-installing boto3==1.42.89 for feature 'provider.bedrock'
+2026-06-29 13:34:09,885 INFO tools.lazy_deps: Lazy install complete for feature 'provider.bedrock'
+2026-06-29 13:34:10,634 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 13:34:10,635 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 13:34:10,635 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 13:34:10,683 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 13:34:10,684 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 13:34:10,684 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 13:34:10,685 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 13:34:10,685 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 13:34:10,685 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 13:34:10,686 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 13:34:10,688 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 13:34:10,688 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 13:34:10,689 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 13:34:10,690 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 13:34:10,690 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 13:34:10,691 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 13:34:10,691 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 13:34:10,692 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 13:34:10,692 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 13:34:10,693 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 13:34:10,695 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 13:34:10,747 INFO tools.lazy_deps: Lazy-installing edge-tts==7.2.7 for feature 'tts.edge'
+2026-06-29 13:34:10,928 INFO tools.lazy_deps: Lazy install complete for feature 'tts.edge'
+2026-06-29 13:34:11,964 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 13:34:13,312 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 13:34:14,110 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 13:34:14,111 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 13:34:14,112 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 13:34:14,187 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 13:34:14,188 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 13:34:14,188 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 13:34:14,189 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 13:34:14,189 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 13:34:14,189 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 13:34:14,190 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 13:34:14,212 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 13:34:14,213 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 13:34:14,214 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 13:34:14,214 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 13:34:14,215 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 13:34:14,216 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 13:34:14,216 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 13:34:14,217 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 13:34:14,217 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 13:34:14,218 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 13:34:14,227 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 13:34:15,539 WARNING tools.registry: check_fn check_browser_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,540 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,541 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,542 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,542 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,543 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,560 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,561 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,561 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:16,633 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 13:34:17,210 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 13:34:17,726 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 13:34:18,877 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 13:34:19,449 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 13:34:19,791 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 13:37:21,119 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 13:37:21,120 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 13:37:21,120 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 13:37:21,170 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 13:37:21,170 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 13:37:21,171 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 13:37:21,171 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 13:37:21,172 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 13:37:21,172 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 13:37:21,172 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 13:37:21,173 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 13:37:21,174 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 13:37:21,175 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 13:37:21,175 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 13:37:21,176 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 13:37:21,176 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 13:37:21,176 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 13:37:21,176 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 13:37:21,176 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 13:37:21,177 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 13:37:21,180 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 13:37:21,816 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 13:37:22,325 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 13:38:09,423 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 13:38:09,424 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 13:38:09,424 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 13:38:09,470 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 13:38:09,470 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 13:38:09,471 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 13:38:09,471 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 13:38:09,472 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 13:38:09,472 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 13:38:09,472 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 13:38:09,474 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 13:38:09,475 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 13:38:09,477 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 13:38:09,478 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 13:38:09,478 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 13:38:09,478 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 13:38:09,478 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 13:38:09,479 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 13:38:09,480 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 13:38:09,480 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 13:38:09,482 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 13:38:10,196 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 13:38:10,734 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 13:39:49,893 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 13:39:49,894 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 13:39:49,894 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 13:39:49,940 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 13:39:49,940 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 13:39:49,941 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 13:39:49,941 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 13:39:49,942 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 13:39:49,942 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 13:39:49,943 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 13:39:49,944 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 13:39:49,945 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 13:39:49,946 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 13:39:49,948 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 13:39:49,948 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 13:39:49,949 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 13:39:49,950 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 13:39:49,951 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 13:39:49,951 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 13:39:49,952 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 13:39:49,953 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 13:40:17,902 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 13:40:17,903 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:17.
+2026-06-29 13:41:21,289 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 13:41:21,289 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:42:21.
+2026-06-29 13:41:26,788 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 13:41:26,788 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:42:26.

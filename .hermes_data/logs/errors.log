@@ -5394,3 +5394,22 @@ RuntimeError: No LLM provider configured for task=vision provider=auto. Run: her
 2026-06-29 12:51:35,804 WARNING [968021d34624] agent.tool_executor: Tool terminal returned error (3.69s): {"output": "Traceback (most recent call last):\n  File \"<string>\", line 5, in <module>\n  File \"/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/playwright/sync_api/_generated.py\", 
 2026-06-29 12:51:48,819 WARNING hermes.lint.lsp: lsp[typescript] spawn/initialize failed for /home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/playwright/driver/package: LSPProtocolError: server connection closed
 2026-06-29 12:52:55,717 WARNING [968021d34624] agent.tool_executor: Tool skill_manage returned error (0.00s): {"error": "content is required for 'create'. Provide the full SKILL.md text (frontmatter + body).", "success": false}
+2026-06-29 13:34:15,539 WARNING tools.registry: check_fn check_browser_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,540 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,541 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,542 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,542 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,543 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,560 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,561 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:15,561 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 13:34:19,791 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 13:40:17,902 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 13:40:17,903 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:41:17.
+2026-06-29 13:41:21,289 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 13:41:21,289 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:42:21.
+2026-06-29 13:41:26,788 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 13:41:26,788 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:42:26.
