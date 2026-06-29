@@ -7,6 +7,18 @@ flock -n 200 || ( echo "Already running" ; exit 1 )
 
 SECRETS_REPO="https://github.com/evolve-sporty-goes/hermes-secrets.git"
 REPO="https://github.com/evolve-sporty-goes/hermes-replit.git"
+
+# Generate commit message via AI (fallback to file list)
+ai_commit_msg() {
+    local diffstat; diffstat=$(git diff --cached --stat | tail -1)
+    local key; key=$(grep 'API_KEY' /home/runner/workspace/credentials/openrouter_credentials.txt 2>/dev/null | tail -1 | cut -d= -f2)
+    [ -z "$key" ] && { git diff --cached --numstat | awk -F'	' '{a="updated";if($1>0&&$2==0)a="added";else if($2>0&&$1==0)a="removed";printf "%s %s, ",a,$3}' | sed 's/, $//'; return; }
+    local msg; msg=$(curl -s --max-time 8 https://openrouter.ai/api/v1/chat/completions \
+        -H "Authorization: Bearer $key" -H "Content-Type: application/json" \
+        -d "{\"model\":\"owl-alpha\",\"messages\":[{\"role\":\"user\",\"content\":\"Write a git commit message under 10 words for: $diffstat. Raw text only.\"}],\"max_tokens\":40}" \
+        2>/dev/null | python3 -c "import sys,json; t=json.load(sys.stdin)['choices'][0]['message']['content']; print(t.strip().strip(chr(34)).strip(chr(96)))")
+    [ -n "$msg" ] && echo "$msg" || echo "$diffstat"
+}
 # --- 1. Bootstrap Authentication Token ---
 PAT_FILE="/home/runner/workspace/credentials/.pat"
 if [ -f "$PAT_FILE" ] && [ -s "$PAT_FILE" ]; then
@@ -128,7 +140,7 @@ git pull origin main
 # Standard workspace tracking
 git add -A
 if ! git diff --cached --quiet; then
-    git commit -m "auto-sync: $(git diff --cached --name-status | sed 's/^A/added /;s/^M/updated /;s/^D/removed /' | awk '{print $1" "$2}' | sed 's|.*/||' | tr '\n' ', ' | sed 's/, $//')"
+    git commit -m "auto-sync: $(ai_commit_msg)"
     
     # Attempt push; if blocked by secret scanning, strip from history and force-push
     push_output=$(git push origin main 2>&1) || {

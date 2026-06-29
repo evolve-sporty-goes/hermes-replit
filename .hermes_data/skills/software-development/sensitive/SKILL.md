@@ -186,7 +186,28 @@ The sync script (`scripts/sync`) now has **automatic push protection remediation
 4. Append new entries to the end of the sensitive block
 5. Commit the updated `.gitignore` and retry the push
 
-**Important limitation:** `.gitignore` only prevents *future* tracking. If secrets are already in git **history** (previous commits), the push will still fail after adding to `.gitignore`. You must rewrite history to remove them. **Prefer `git filter-repo`** (install via `pip install git-filter-repo`) — it's dramatically faster and cleaner than `git filter-branch`. See `references/push-protection-history-rewrite.md` for the full workflow.
+**Important limitation:** `.gitignore` only prevents *future* tracking. If secrets are already in git **history** (previous commits), the push will still fail after adding to `.gitignore`. You must rewrite history to remove them. **Prefer `git filter-repo`** (install via `pip install git-filter-repo`) — it's dramatically faster and cleaner than `git filter-branch`.
+
+### filter-repo Pitfalls Learned in Practice
+
+1. **`filter-repo` removes the `origin` remote.** After rewriting, you MUST re-add it before pushing:
+   ```bash
+   git remote add origin <REPO_URL>
+   ```
+
+2. **Run filter-repo ONCE with all paths collected.** Don't loop over blocked files calling filter-repo individually. Collect all `--path` args into an array then invoke once with `--invert-paths`:
+   ```bash
+   filter_args=(--path "file1" --path "dir1/" --invert-paths)
+   git filter-repo "${filter_args[@]}" --force
+   ```
+
+3. **Local files are preserved.** `git filter-repo --invert-paths` removes paths from **git history only**, never from the working directory.
+
+4. **Directories that always contain secrets** (e.g. `.hermes_data/state-snapshots/`) should use a single directory-level entry with trailing slash: `--path ".hermes_data/state-snapshots" --invert-paths`. That strips the entire tree from history and you should also add the directory to `.gitignore`5. **After force-push**, remind the user the next normal push will succeed since secrets are permanently gone from history.
+
+6. **Long-term prevention**: for secrets that are generated snapshots (Hermes state snapshots, config dumps, sessionlogs), add the **parent directory** to `.gitignore` (e.g. `.hermes_data/state-snapshots/`) rather than individual files. This prevents future commits from being blocked repeatedly.
+
+See `references/push-protection-history-rewrite.md` for the full workflow.
 
 ### Sync Script Output Format
 
