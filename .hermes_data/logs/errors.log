@@ -4876,3 +4876,4 @@ RuntimeError: No LLM provider configured for task=vision provider=auto. Run: her
 2026-06-29 07:54:45,905 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
 2026-06-29 07:55:29,840 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
 2026-06-29 07:55:30,155 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 07:57:10,243 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error

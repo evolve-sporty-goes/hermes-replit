@@ -47,10 +47,8 @@ find "$BIN" -type l ! -exec test -e {} \; -delete
 ln -sf $HOME/workspace/scripts/* "$BIN" 2>/dev/null
 chmod +x $BIN/*
 
-
-# 7. Run script.sh and sync.sh (foreground, not background)
-script.sh >/dev/null 2>&1 &
-sync >/dev/null 2>&1 &
-
+script.sh &
+sync 
+setcfapi.sh
 # 8. Launch hermes
 hermes
