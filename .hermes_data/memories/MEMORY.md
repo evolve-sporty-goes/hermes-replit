@@ -15,3 +15,5 @@ When the user asks to modify Hermes config.yaml, provide the shell commands for 
 Workspace organized: credentials/ docs/ scripts/ dirs created, system dirs (.hermes_data .git .cache .local .pythonlibs .config) must never be moved. subnet-proxy kept at root as standalone Go project.
 §
 Hermes non-interactive model config: `hermes model` is TUI-only, cannot be scripted. Set config.yaml directly via `hermes config set model.provider/base_url/api_key/api_compat/default/display_name`. For active config use `hermes config show | grep Model` — config.yaml grep shows stale creds.
+§
+scripts/sync derives workspace root from dirname of .gitignore path, never hardcodes /home/runner/workspace. User explicitly requested this.

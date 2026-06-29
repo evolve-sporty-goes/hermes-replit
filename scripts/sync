@@ -42,43 +42,37 @@ sync_file_by_history() {
 
     # Case A: Handle Empty/Missing Files First
     if [ "$local_exists" -eq 0 ] && [ "$repo_exists" -eq 0 ]; then
-        echo "LOG ($repo_file): Neither local nor repo file exists/has content. Skipping."
+        echo "SKIP (A): $local_file — neither local nor repo has content"
         return 0
     elif [ "$local_exists" -eq 0 ]; then
-        echo "LOG ($repo_file): Local is empty or missing. Bootstrapping from repo..."
+        echo "PULL (A): $local_file ← bootstrapping from repo"
         cp "$repo_file" "$local_file"
         return 0
     elif [ "$repo_exists" -eq 0 ]; then
-        echo "LOG ($repo_file): Repo is empty or missing. Preparing local version to push..."
+        echo "PUSH (A): $local_file → repo empty, staging local"
         cp "$local_file" "$repo_file"
         git add "$repo_file"
-        return 1 # Signal that repo changed
+        return 1
     fi
 
-    # Case B: Both exist. Compare actual contents before dealing with times.
+    # Case B: Both exist with same content
     if diff -q "$local_file" "$repo_file" >/dev/null 2>&1; then
-        echo "OK ($repo_file): Local and Repo match perfectly."
+        echo "OK (B): $local_file — identical"
         return 0
     fi
 
-    # Case C: Contents differ. Evaluate history timestamps.
-    # Get local file modification time (Unix epoch format)
-    local local_time
+    # Case C: Contents differ, compare timestamps
+    local local_time repo_time
     local_time=$(date -r "$local_file" +%s)
-
-    # Get repo file last commit time (Unix epoch format)
-    local repo_time
     repo_time=$(git log -1 --format=%ct -- "$repo_file" 2>/dev/null || echo 0)
 
-    echo "Evaluating $repo_file History -> Local: $local_time | Repo: $repo_time"
-
     if [ "$local_time" -gt "$repo_time" ]; then
-        echo "LOG ($repo_file): Local copy is newer. Updating repo..."
+        echo "PUSH (C): $local_file → local newer ($local_time > $repo_time)"
         cp "$local_file" "$repo_file"
         git add "$repo_file"
-        return 1 # Flag repo as changed
+        return 1
     else
-        echo "LOG ($repo_file): Repo copy is newer. Updating local workspace..."
+        echo "PULL (C): $local_file ← repo newer ($repo_time > $local_time)"
         cp "$repo_file" "$local_file"
         return 0
     fi
