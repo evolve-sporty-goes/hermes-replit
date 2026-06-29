@@ -128,7 +128,7 @@ git pull origin main
 # Standard workspace tracking
 git add -A
 if ! git diff --cached --quiet; then
-    git commit -m "auto-sync: $(date)"
+    git commit -m "auto-sync: $(git diff --cached --name-status | sed 's/^A/added /;s/^M/updated /;s/^D/removed /' | awk '{print $1" "$2}' | sed 's|.*/||' | tr '\n' ', ' | sed 's/, $//')"
     
     # Attempt push; if blocked by secret scanning, strip from history and force-push
     push_output=$(git push origin main 2>&1) || {
