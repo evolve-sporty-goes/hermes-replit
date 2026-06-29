@@ -5468,3 +5468,82 @@ RuntimeError: No LLM provider configured for task=vision provider=auto. Run: her
   → `copilot login` or `hermes model` to authenticate via OAuth
   → A fine-grained PAT (github_pat_*) with Copilot Requests permission
   → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:07:18,927 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:18,931 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:19,241 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:19,243 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:19,352 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:19,353 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:19,392 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:54,715 WARNING [66431e09668e] tools.environments.docker: Docker storage driver does not support per-container disk limits (requires overlay2 on XFS with pquota). Container will run without disk quota.
+2026-06-29 15:07:56,121 WARNING [66431e09668e] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-24 (_run_agent_streaming):140286214780608 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d3853eda-4e7c-461e-8061-b23ee32da976)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:08:20,947 WARNING [0930078b188b] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-35 (_run_agent_streaming):140285749806784 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (44e9b013-077a-4aca-a103-57b736a0e1f8)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:08:48,390 WARNING [20260629_150612_fc775b] tools.environments.docker: Docker storage driver does not support per-container disk limits (requires overlay2 on XFS with pquota). Container will run without disk quota.
+2026-06-29 15:08:49,283 WARNING [20260629_150612_fc775b] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-5 (run_agent):139654592448192 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (416b0581-9c06-48c5-9d75-e2274fb3602b)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:09:42,353 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 66431e09668e
+2026-06-29 15:09:43,225 WARNING [66431e09668e] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-57 (_run_agent_streaming):140285749806784 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d3f48aea-17ae-412d-915b-5a8cf7e2b985)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:10:54,629 WARNING [20260629_150612_fc775b] run_agent: Credential pool provider mismatch: pool=openrouter, agent=custom — skipping pool mutation to avoid cross-provider contamination
+2026-06-29 15:10:54,630 WARNING [20260629_150612_fc775b] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-11 (run_agent):139654584055488 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 400: @cf/moonshotai/kimi-k2.7-code is not a valid model ID
+2026-06-29 15:11:07,971 WARNING [20260629_150612_fc775b] tools.environments.docker: Docker storage driver does not support per-container disk limits (requires overlay2 on XFS with pquota). Container will run without disk quota.
+2026-06-29 15:11:08,680 WARNING [20260629_150612_fc775b] agent.tool_executor: Tool terminal returned error (0.74s): {"output": "bash: line 3: docker: command not found", "exit_code": 127, "error": null}
+2026-06-29 15:11:43,990 WARNING [66431e09668e] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-57 (_run_agent_streaming):140285749806784 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=Provider returned error
+2026-06-29 15:11:43,990 WARNING [66431e09668e] agent.conversation_loop: Retrying API call in 2.3984626488275116s (attempt 1/3) thread=Thread-57 (_run_agent_streaming):140285749806784 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Provider returned error
+2026-06-29 15:12:35,760 WARNING [66431e09668e] tools.environments.docker: Docker storage driver does not support per-container disk limits (requires overlay2 on XFS with pquota). Container will run without disk quota.
+2026-06-29 15:13:12,542 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 15:13:12,543 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:14:12.
+2026-06-29 15:13:21,504 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 15:13:21,504 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:14:21.
+2026-06-29 15:13:35,824 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 15:13:35,825 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:14:35.
+2026-06-29 15:13:35,833 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 15:13:35,833 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:14:35.
+2026-06-29 15:13:35,839 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 15:13:35,839 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:14:35.
+2026-06-29 15:13:35,845 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 15:13:35,845 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:14:35.
+2026-06-29 15:13:53,831 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:53,845 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:54,163 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:13:54,321 WARNING agent.auxiliary_client: resolve_provider_client: custom/main requested but no endpoint credentials found
+2026-06-29 15:13:54,328 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:54,329 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:54,348 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:54,349 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:54,350 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:54,629 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:13:54,794 WARNING agent.auxiliary_client: resolve_provider_client: custom/main requested but no endpoint credentials found
+2026-06-29 15:13:56,018 WARNING [66431e09668e] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-89 (_run_agent_streaming):140286248351424 provider=openrouter base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 400: @cf/moonshotai/kimi-k2.7-code is not a valid model ID
+2026-06-29 15:13:57,842 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:13:57,926 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:13:58,451 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:14:02,914 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:14:03,006 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:14:05,174 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:14:05,280 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)

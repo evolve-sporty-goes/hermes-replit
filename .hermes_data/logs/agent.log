@@ -19721,3 +19721,281 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
   → `copilot login` or `hermes model` to authenticate via OAuth
   → A fine-grained PAT (github_pat_*) with Copilot Requests permission
   → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:07:18,918 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-24 (_run_agent_streaming):140286214780608 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:07:18,927 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:18,931 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:19,240 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 15:07:19,241 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:19,243 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:19,352 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:19,353 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:19,353 INFO tools.terminal_tool: Ignoring TERMINAL_CWD='/home/runner/workspace' for docker backend (host/relative path won't work in sandbox). Using '/root' instead.
+2026-06-29 15:07:19,392 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:07:19,393 INFO tools.terminal_tool: Ignoring TERMINAL_CWD='/home/runner/workspace' for docker backend (host/relative path won't work in sandbox). Using '/root' instead.
+2026-06-29 15:07:19,822 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 15:07:20,142 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 15:07:20,142 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 15:07:20,780 INFO [66431e09668e] agent.turn_context: conversation turn: session=66431e09668e model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=0 msg='[Workspace::v1: /home/runner/workspace] Docker'
+2026-06-29 15:07:20,864 INFO [66431e09668e] tools.terminal_tool: Ignoring TERMINAL_CWD='/home/runner/workspace' for docker backend (host/relative path won't work in sandbox). Using '/root' instead.
+2026-06-29 15:07:20,882 INFO [66431e09668e] tools.environments.docker: DockerEnvironment volumes: []
+2026-06-29 15:07:54,715 WARNING [66431e09668e] tools.environments.docker: Docker storage driver does not support per-container disk limits (requires overlay2 on XFS with pquota). Container will run without disk quota.
+2026-06-29 15:07:54,725 INFO [66431e09668e] tools.environments.docker: Docker: mounting skills dir /home/runner/workspace/.hermes_data/skills -> /root/.hermes/skills
+2026-06-29 15:07:54,753 INFO [66431e09668e] tools.environments.docker: Docker volume_args: ['-v', '/home/runner/workspace/.hermes_data/skills:/root/.hermes/skills:ro']
+2026-06-29 15:07:54,753 INFO [66431e09668e] tools.environments.docker: Docker run_args: ['--cap-drop', 'ALL', '--cap-add', 'DAC_OVERRIDE', '--cap-add', 'CHOWN', '--cap-add', 'FOWNER', '--security-opt', 'no-new-privileges', '--tmpfs', '/tmp:rw,nosuid,size=512m', '--tmpfs', '/var/tmp:rw,noexec,nosuid,size=256m', '--tmpfs', '/run:rw,noexec,nosuid,size=64m', '--cap-add', 'SETUID', '--cap-add', 'SETGID', '-v', '/home/runner/workspace/.hermes_data/sandboxes/docker/prompt-backend-probe/home:/root', '-v', '/home/runner/workspace/.hermes_data/sandboxes/docker/prompt-backend-probe/workspace:/workspace', '--cpus', '1.0', '--memory', '5120m', '--pids-limit', '256', '-v', '/home/runner/workspace/.hermes_data/skills:/root/.hermes/skills:ro']
+2026-06-29 15:07:55,145 INFO [66431e09668e] tools.environments.docker: Started container hermes-a779e8c7 (981518d46d87)
+2026-06-29 15:07:55,256 INFO [66431e09668e] tools.environments.base: Session snapshot created (session=a072b24e8f93, cwd=/root)
+2026-06-29 15:07:55,579 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-30 (_call):140285762393792 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:07:56,117 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d3853eda-4e7c-461e-8061-b23ee32da976)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 15:07:56,119 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-30 (_call):140285762393792 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:07:56,121 WARNING [66431e09668e] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-24 (_run_agent_streaming):140286214780608 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d3853eda-4e7c-461e-8061-b23ee32da976)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:07:56,136 INFO [66431e09668e] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 15:07:56,289 INFO [66431e09668e] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 15:07:56,296 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-31 (_call):140285762393792 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:08:19,915 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-35 (_run_agent_streaming):140285749806784 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:08:20,061 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 15:08:20,062 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 15:08:20,579 INFO [0930078b188b] agent.turn_context: conversation turn: session=0930078b188b model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=0 msg='[Workspace::v1: /home/runner/workspace] Hi'
+2026-06-29 15:08:20,638 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-38 (_call):140285723580096 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:08:20,945 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (44e9b013-077a-4aca-a103-57b736a0e1f8)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 15:08:20,946 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-38 (_call):140285723580096 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:08:20,947 WARNING [0930078b188b] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-35 (_run_agent_streaming):140285749806784 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (44e9b013-077a-4aca-a103-57b736a0e1f8)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:08:20,970 INFO [0930078b188b] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 15:08:21,144 INFO [0930078b188b] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 15:08:21,159 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-39 (_call):140285723580096 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:08:25,793 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-39 (_call):140285723580096 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:08:25,794 INFO [0930078b188b] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=19272 out=13 total=19285 latency=5.2s cache=16896/19272 (88%)
+2026-06-29 15:08:25,855 INFO [0930078b188b] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=31 session=0930078b188b
+2026-06-29 15:08:25,862 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 15:08:25,862 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 15:08:26,311 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 15:08:26,311 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 15:08:26,706 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 15:08:26,706 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 15:08:47,186 INFO run_agent: Loaded environment variables from /home/runner/workspace/.hermes_data/.env
+2026-06-29 15:08:47,229 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-3 (process_loop):139654696228544 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:08:47,484 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 15:08:47,484 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 15:08:47,494 INFO [20260629_150612_fc775b] agent.turn_context: conversation turn: session=20260629_150612_fc775b model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=cli history=0 msg='docker'
+2026-06-29 15:08:47,543 INFO [20260629_150612_fc775b] tools.environments.docker: DockerEnvironment volumes: []
+2026-06-29 15:08:48,390 WARNING [20260629_150612_fc775b] tools.environments.docker: Docker storage driver does not support per-container disk limits (requires overlay2 on XFS with pquota). Container will run without disk quota.
+2026-06-29 15:08:48,405 INFO [20260629_150612_fc775b] tools.environments.docker: Docker: mounting skills dir /home/runner/workspace/.hermes_data/skills -> /root/.hermes/skills
+2026-06-29 15:08:48,422 INFO [20260629_150612_fc775b] tools.environments.docker: Docker volume_args: ['-v', '/home/runner/workspace/.hermes_data/skills:/root/.hermes/skills:ro']
+2026-06-29 15:08:48,422 INFO [20260629_150612_fc775b] tools.environments.docker: Docker run_args: ['--cap-drop', 'ALL', '--cap-add', 'DAC_OVERRIDE', '--cap-add', 'CHOWN', '--cap-add', 'FOWNER', '--security-opt', 'no-new-privileges', '--tmpfs', '/tmp:rw,nosuid,size=512m', '--tmpfs', '/var/tmp:rw,noexec,nosuid,size=256m', '--tmpfs', '/run:rw,noexec,nosuid,size=64m', '--cap-add', 'SETUID', '--cap-add', 'SETGID', '-v', '/home/runner/workspace/.hermes_data/sandboxes/docker/prompt-backend-probe/home:/root', '-v', '/home/runner/workspace/.hermes_data/sandboxes/docker/prompt-backend-probe/workspace:/workspace', '--cpus', '1.0', '--memory', '5120m', '--pids-limit', '256', '-v', '/home/runner/workspace/.hermes_data/skills:/root/.hermes/skills:ro']
+2026-06-29 15:08:48,439 INFO [20260629_150612_fc775b] tools.environments.docker: Reusing container 981518d46d87 (task=prompt-backend-probe, profile=default, prior state=running)
+2026-06-29 15:08:48,548 INFO [20260629_150612_fc775b] tools.environments.base: Session snapshot created (session=45962eb3bd95, cwd=/root)
+2026-06-29 15:08:48,808 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-8 (_call):139654584055488 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:08:49,281 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (416b0581-9c06-48c5-9d75-e2274fb3602b)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 15:08:49,281 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-8 (_call):139654584055488 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:08:49,283 WARNING [20260629_150612_fc775b] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-5 (run_agent):139654592448192 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (416b0581-9c06-48c5-9d75-e2274fb3602b)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:08:49,303 INFO [20260629_150612_fc775b] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 15:08:49,458 INFO [20260629_150612_fc775b] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 15:08:49,469 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-9 (_call):139654584055488 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:08:55,599 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-9 (_call):139654584055488 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:08:55,600 INFO [20260629_150612_fc775b] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=19325 out=17 total=19342 latency=6.8s cache=2688/19325 (14%)
+2026-06-29 15:08:55,691 INFO [20260629_150612_fc775b] agent.tool_executor: tool skill_view completed (0.05s, 53699 chars)
+2026-06-29 15:08:55,739 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-10 (_call):139654584055488 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:09:03,834 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-10 (_call):139654584055488 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:09:03,835 INFO [20260629_150612_fc775b] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=33274 out=62 total=33336 latency=8.1s cache=19200/33274 (58%)
+2026-06-29 15:09:03,856 INFO [20260629_150612_fc775b] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=2/90 budget=2/90 tool_turns=1 last_msg_role=assistant response_len=278 session=20260629_150612_fc775b
+2026-06-29 15:09:04,084 INFO agent.auxiliary_client: Auxiliary auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 15:09:04,086 INFO agent.auxiliary_client: Auxiliary title_generation: using auto (@cf/moonshotai/kimi-k2.7-code) at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1/
+2026-06-29 15:09:05,512 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 15:09:05,513 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 15:09:07,649 INFO agent.auxiliary_client: Auxiliary title_generation: rate limit on auto (Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (227b5e89-6261-4f99-831b-12bd053eb28a)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}), trying fallback
+2026-06-29 15:09:07,661 INFO agent.auxiliary_client: Auxiliary title_generation: rate limit on auto — main fallback chain to fallback_providers[0](openrouter) (owl-alpha)
+2026-06-29 15:09:09,946 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 15:09:09,946 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 15:09:10,369 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 15:09:10,370 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 15:09:10,751 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 15:09:10,752 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 15:09:20,490 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-31 (_call):140285762393792 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:09:20,490 INFO [66431e09668e] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=19272 out=259 total=19531 latency=85.0s cache=2688/19272 (14%)
+2026-06-29 15:09:20,512 INFO [66431e09668e] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=1054 session=66431e09668e
+2026-06-29 15:09:34,231 INFO api.streaming: title_status session=0930078b188b status=llm reason=llm title='Greeting and Assistance Offer' raw_preview=''
+2026-06-29 15:09:42,353 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 66431e09668e
+2026-06-29 15:09:42,393 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-57 (_run_agent_streaming):140285749806784 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:09:42,500 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 15:09:42,500 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 15:09:43,041 INFO [66431e09668e] agent.turn_context: conversation turn: session=66431e09668e model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=2 msg='[Workspace::v1: /home/runner/workspace] Check if it is installed'
+2026-06-29 15:09:43,080 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-59 (_call):140285741414080 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:09:43,223 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d3f48aea-17ae-412d-915b-5a8cf7e2b985)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 15:09:43,224 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-59 (_call):140285741414080 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:09:43,225 WARNING [66431e09668e] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-57 (_run_agent_streaming):140285749806784 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d3f48aea-17ae-412d-915b-5a8cf7e2b985)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 15:09:43,246 INFO [66431e09668e] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 15:09:43,432 INFO [66431e09668e] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 15:09:43,443 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-60 (_call):140285741414080 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:10:05,747 INFO api.streaming: title_status session=66431e09668e status=llm reason=llm title='Docker Help and Container Tasks' raw_preview=''
+2026-06-29 15:10:54,423 INFO [20260629_150612_fc775b] run_agent: OpenAI client created (restore_primary, shared=True) thread=Thread-11 (run_agent):139654584055488 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:10:54,432 INFO [20260629_150612_fc775b] run_agent: OpenAI client created (credential_rotation, shared=True) thread=Thread-11 (run_agent):139654584055488 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:10:54,432 INFO [20260629_150612_fc775b] run_agent: OpenAI client closed (replace:credential_rotation, shared=True, tcp_force_closed=0) thread=Thread-11 (run_agent):139654584055488 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:10:54,433 INFO [20260629_150612_fc775b] agent.agent_runtime_helpers: Restore re-selected pool entry 1c5bd4 (OPENROUTER_API_KEY)
+2026-06-29 15:10:54,434 INFO [20260629_150612_fc775b] agent.agent_runtime_helpers: Primary runtime restored for new turn: @cf/moonshotai/kimi-k2.7-code (custom)
+2026-06-29 15:10:54,434 INFO [20260629_150612_fc775b] agent.turn_context: conversation turn: session=20260629_150612_fc775b model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=cli history=4 msg='run docker ps'
+2026-06-29 15:10:54,494 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-12 (_call):139654568322752 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:10:54,628 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 400 - {'error': {'message': '@cf/moonshotai/kimi-k2.7-code is not a valid model ID', 'code': 400}, 'user_id': 'user_3FfUhRRRXZqyMrxoj5dzH0sXBNC'}
+2026-06-29 15:10:54,629 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-12 (_call):139654568322752 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:10:54,629 WARNING [20260629_150612_fc775b] run_agent: Credential pool provider mismatch: pool=openrouter, agent=custom — skipping pool mutation to avoid cross-provider contamination
+2026-06-29 15:10:54,630 WARNING [20260629_150612_fc775b] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-11 (run_agent):139654584055488 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 400: @cf/moonshotai/kimi-k2.7-code is not a valid model ID
+2026-06-29 15:10:54,821 INFO [20260629_150612_fc775b] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 15:10:54,831 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-13 (_call):139654568322752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:11:07,925 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-13 (_call):139654568322752 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:11:07,925 INFO [20260629_150612_fc775b] agent.conversation_loop: API call #3: model=owl-alpha provider=openrouter in=33349 out=15 total=33364 latency=13.4s cache=2688/33349 (8%)
+2026-06-29 15:11:07,940 INFO [20260629_150612_fc775b] tools.terminal_tool: Creating new docker environment for task default...
+2026-06-29 15:11:07,940 INFO [20260629_150612_fc775b] tools.environments.docker: DockerEnvironment volumes: []
+2026-06-29 15:11:07,971 WARNING [20260629_150612_fc775b] tools.environments.docker: Docker storage driver does not support per-container disk limits (requires overlay2 on XFS with pquota). Container will run without disk quota.
+2026-06-29 15:11:07,978 INFO [20260629_150612_fc775b] tools.environments.docker: Docker: mounting skills dir /home/runner/workspace/.hermes_data/skills -> /root/.hermes/skills
+2026-06-29 15:11:08,016 INFO [20260629_150612_fc775b] tools.environments.docker: Docker volume_args: ['-v', '/home/runner/workspace/.hermes_data/skills:/root/.hermes/skills:ro']
+2026-06-29 15:11:08,016 INFO [20260629_150612_fc775b] tools.environments.docker: Docker run_args: ['--cap-drop', 'ALL', '--cap-add', 'DAC_OVERRIDE', '--cap-add', 'CHOWN', '--cap-add', 'FOWNER', '--security-opt', 'no-new-privileges', '--tmpfs', '/tmp:rw,nosuid,size=512m', '--tmpfs', '/var/tmp:rw,noexec,nosuid,size=256m', '--tmpfs', '/run:rw,noexec,nosuid,size=64m', '--cap-add', 'SETUID', '--cap-add', 'SETGID', '-v', '/home/runner/workspace/.hermes_data/sandboxes/docker/default/home:/root', '-v', '/home/runner/workspace/.hermes_data/sandboxes/docker/default/workspace:/workspace', '--cpus', '1.0', '--memory', '5120m', '--pids-limit', '256', '-v', '/home/runner/workspace/.hermes_data/skills:/root/.hermes/skills:ro']
+2026-06-29 15:11:08,390 INFO [20260629_150612_fc775b] tools.environments.docker: Started container hermes-4de6396d (904ed195dcf4)
+2026-06-29 15:11:08,556 INFO [20260629_150612_fc775b] tools.environments.base: Session snapshot created (session=caad69071701, cwd=/root)
+2026-06-29 15:11:08,556 INFO [20260629_150612_fc775b] tools.terminal_tool: docker environment ready for task default
+2026-06-29 15:11:08,680 WARNING [20260629_150612_fc775b] agent.tool_executor: Tool terminal returned error (0.74s): {"output": "bash: line 3: docker: command not found", "exit_code": 127, "error": null}
+2026-06-29 15:11:08,705 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-17 (_call):139654149961408 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:11:20,120 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-17 (_call):139654149961408 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:11:20,120 INFO [20260629_150612_fc775b] agent.conversation_loop: API call #4: model=owl-alpha provider=openrouter in=33407 out=49 total=33456 latency=11.4s cache=2688/33407 (8%)
+2026-06-29 15:11:20,136 INFO [20260629_150612_fc775b] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=2/90 budget=2/90 tool_turns=2 last_msg_role=assistant response_len=255 session=20260629_150612_fc775b
+2026-06-29 15:11:43,988 INFO agent.chat_completion_helpers: Streaming failed before delivery: Provider returned error
+2026-06-29 15:11:43,988 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-60 (_call):140285741414080 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:11:43,990 WARNING [66431e09668e] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-57 (_run_agent_streaming):140285749806784 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=Provider returned error
+2026-06-29 15:11:43,990 WARNING [66431e09668e] agent.conversation_loop: Retrying API call in 2.3984626488275116s (attempt 1/3) thread=Thread-57 (_run_agent_streaming):140285749806784 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Provider returned error
+2026-06-29 15:11:46,409 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-70 (_call):140285741414080 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:12:35,638 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-70 (_call):140285741414080 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:12:35,639 INFO [66431e09668e] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=19546 out=66 total=19612 latency=172.6s cache=2688/19546 (14%)
+2026-06-29 15:12:35,726 INFO [66431e09668e] tools.terminal_tool: Ignoring TERMINAL_CWD='/home/runner/workspace' for docker backend (host/relative path won't work in sandbox). Using '/root' instead.
+2026-06-29 15:12:35,726 INFO tools.terminal_tool: Ignoring TERMINAL_CWD='/home/runner/workspace' for docker backend (host/relative path won't work in sandbox). Using '/root' instead.
+2026-06-29 15:12:35,726 INFO [66431e09668e] tools.terminal_tool: Creating new docker environment for task default...
+2026-06-29 15:12:35,727 INFO [66431e09668e] tools.environments.docker: DockerEnvironment volumes: []
+2026-06-29 15:12:35,760 WARNING [66431e09668e] tools.environments.docker: Docker storage driver does not support per-container disk limits (requires overlay2 on XFS with pquota). Container will run without disk quota.
+2026-06-29 15:12:35,770 INFO [66431e09668e] tools.environments.docker: Docker: mounting skills dir /home/runner/workspace/.hermes_data/skills -> /root/.hermes/skills
+2026-06-29 15:12:35,791 INFO [66431e09668e] tools.environments.docker: Docker volume_args: ['-v', '/home/runner/workspace/.hermes_data/skills:/root/.hermes/skills:ro']
+2026-06-29 15:12:35,791 INFO [66431e09668e] tools.environments.docker: Docker run_args: ['--cap-drop', 'ALL', '--cap-add', 'DAC_OVERRIDE', '--cap-add', 'CHOWN', '--cap-add', 'FOWNER', '--security-opt', 'no-new-privileges', '--tmpfs', '/tmp:rw,nosuid,size=512m', '--tmpfs', '/var/tmp:rw,noexec,nosuid,size=256m', '--tmpfs', '/run:rw,noexec,nosuid,size=64m', '--cap-add', 'SETUID', '--cap-add', 'SETGID', '-v', '/home/runner/workspace/.hermes_data/sandboxes/docker/default/home:/root', '-v', '/home/runner/workspace/.hermes_data/sandboxes/docker/default/workspace:/workspace', '--cpus', '1.0', '--memory', '5120m', '--pids-limit', '256', '-v', '/home/runner/workspace/.hermes_data/skills:/root/.hermes/skills:ro']
+2026-06-29 15:12:35,811 INFO [66431e09668e] tools.environments.docker: Reusing container 904ed195dcf4 (task=default, profile=default, prior state=running)
+2026-06-29 15:12:35,992 INFO [66431e09668e] tools.environments.base: Session snapshot created (session=ad9117d027fe, cwd=/root)
+2026-06-29 15:12:35,992 INFO [66431e09668e] tools.terminal_tool: docker environment ready for task default
+2026-06-29 15:12:36,120 INFO [66431e09668e] agent.tool_executor: tool terminal completed (0.39s, 134 chars)
+2026-06-29 15:12:36,127 INFO [66431e09668e] run_agent: Delivered /steer to agent after tool batch (37 chars): /reasoning show xhigh
+/reasoning show
+2026-06-29 15:12:36,162 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-77 (_call):140286248351424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:13:06,795 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 15:13:06,796 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 15:13:06,797 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 15:13:06,852 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 15:13:06,853 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 15:13:06,853 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 15:13:06,853 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 15:13:06,854 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 15:13:06,854 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 15:13:06,854 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 15:13:06,858 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 15:13:06,858 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 15:13:06,860 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 15:13:06,860 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 15:13:06,861 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 15:13:06,862 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 15:13:06,862 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 15:13:06,863 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 15:13:06,863 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 15:13:06,864 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 15:13:06,865 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 15:13:12,542 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 15:13:12,543 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:14:12.
+2026-06-29 15:13:21,504 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 15:13:21,504 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:14:21.
+2026-06-29 15:13:35,608 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 15:13:35,608 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 15:13:35,608 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 15:13:35,666 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 15:13:35,666 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 15:13:35,666 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 15:13:35,667 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 15:13:35,667 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 15:13:35,667 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 15:13:35,667 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 15:13:35,669 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 15:13:35,669 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 15:13:35,670 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 15:13:35,670 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 15:13:35,670 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 15:13:35,671 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 15:13:35,671 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 15:13:35,671 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 15:13:35,671 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 15:13:35,672 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 15:13:35,673 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 15:13:35,735 INFO tools.terminal_tool: Ignoring TERMINAL_CWD='/home/runner/workspace' for docker backend (host/relative path won't work in sandbox). Using '/root' instead.
+2026-06-29 15:13:35,824 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 15:13:35,825 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:14:35.
+2026-06-29 15:13:35,833 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 15:13:35,833 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:14:35.
+2026-06-29 15:13:35,839 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 15:13:35,839 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:14:35.
+2026-06-29 15:13:35,845 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-29 15:13:35,845 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 15:14:35.
+2026-06-29 15:13:40,467 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-77 (_call):140286248351424 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:13:40,467 INFO [66431e09668e] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=19717 out=134 total=19851 latency=64.3s cache=19456/19717 (99%)
+2026-06-29 15:13:40,493 INFO [66431e09668e] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=2/90 budget=2/90 tool_turns=1 last_msg_role=assistant response_len=620 session=66431e09668e
+2026-06-29 15:13:53,809 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-89 (_run_agent_streaming):140286248351424 provider=openrouter base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:13:53,831 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:53,845 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:54,163 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:13:54,321 WARNING agent.auxiliary_client: resolve_provider_client: custom/main requested but no endpoint credentials found
+2026-06-29 15:13:54,328 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:54,329 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:54,348 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:54,349 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:54,350 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 15:13:54,629 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:13:54,794 WARNING agent.auxiliary_client: resolve_provider_client: custom/main requested but no endpoint credentials found
+2026-06-29 15:13:55,882 INFO [66431e09668e] agent.turn_context: conversation turn: session=66431e09668e model=@cf/moonshotai/kimi-k2.7-code provider=openrouter platform=webui history=6 msg='[Workspace::v1: /home/runner/workspace] Check again'
+2026-06-29 15:13:55,883 INFO [66431e09668e] agent.conversation_loop: Stored system prompt for session 66431e09668e has stale runtime identity; rebuilding for model=@cf/moonshotai/kimi-k2.7-code provider=openrouter.
+2026-06-29 15:13:55,934 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-91 (_call):140286214780608 provider=openrouter base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:13:56,017 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 400 - {'error': {'message': '@cf/moonshotai/kimi-k2.7-code is not a valid model ID', 'code': 400}, 'user_id': 'user_3FfUhRRRXZqyMrxoj5dzH0sXBNC'}
+2026-06-29 15:13:56,018 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-91 (_call):140286214780608 provider=openrouter base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 15:13:56,018 WARNING [66431e09668e] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-89 (_run_agent_streaming):140286248351424 provider=openrouter base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 400: @cf/moonshotai/kimi-k2.7-code is not a valid model ID
+2026-06-29 15:13:56,183 INFO [66431e09668e] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 15:13:56,196 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-92 (_call):140286214780608 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:13:57,842 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:13:57,926 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:13:58,451 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:14:01,553 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-92 (_call):140286214780608 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:14:01,553 INFO [66431e09668e] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=19752 out=83 total=19835 latency=5.6s cache=2688/19752 (14%)
+2026-06-29 15:14:01,847 INFO [66431e09668e] agent.tool_executor: tool terminal completed (0.27s, 282 chars)
+2026-06-29 15:14:01,899 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-95 (_call):140286214780608 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:14:02,914 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:14:03,006 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:14:05,174 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:14:05,280 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 15:14:05,808 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-95 (_call):140286214780608 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 15:14:05,809 INFO [66431e09668e] agent.conversation_loop: API call #2: model=owl-alpha provider=openrouter in=19982 out=71 total=20053 latency=3.9s cache=19712/19982 (99%)
+2026-06-29 15:14:05,834 INFO [66431e09668e] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=2/90 budget=2/90 tool_turns=2 last_msg_role=assistant response_len=257 session=66431e09668e
+2026-06-29 15:14:38,226 INFO tools.terminal_tool: Manually cleaned up environment for task: default
+2026-06-29 15:14:38,259 INFO tools.terminal_tool: Cleaned 1 environments
+2026-06-29 15:14:38,262 INFO cli: CLI cleanup calling memory shutdown for session 20260629_150612_fc775b with 8 message(s)
