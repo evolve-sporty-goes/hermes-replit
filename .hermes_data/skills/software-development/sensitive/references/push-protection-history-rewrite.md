@@ -1,6 +1,12 @@
-# GitHub Push Protection & History Rewrite
+# GitHub Push Protection & History Rewrite (Manual Workflow)
 
-When pushing to a repo with GitHub Push Protection enabled, commits containing secrets (API keys, tokens) will be rejected. This guide covers removing secrets from git history.
+**This is now a MANUAL workflow** — the sync script no longer auto-rewrites history (removed in v3, 2026-06-29). When `git push` is rejected, the sync script reports `WARN: push failed` and the user runs this workflow explicitly.
+
+## When to Use
+
+- `git push` rejected by GitHub secret scanning
+- Secrets already in git history (`.gitignore` alone is insufficient)
+- You need to force-push rewritten history
 
 ## Critical Pitfall: `git filter-repo` Removes the `origin` Remote
 

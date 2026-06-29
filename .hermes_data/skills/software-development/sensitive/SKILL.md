@@ -1,7 +1,7 @@
 ---
 name: sensitive
 description: "Scan workspace for files containing secrets, tokens, API keys, and credentials. Update .gitignore sensitive block automatically. Sync script reads from .gitignore with auto-remediation for GitHub push protection blocks."
-version: 2.2.0
+version: 3.0.0
 author: Hermes Agent
 tags: [security, secrets, credentials, gitignore]
 ---
@@ -176,54 +176,47 @@ cd /home/runner/workspace && git check-ignore credentials/.pat
 
 The user explicitly wants `credentials/mail.txt` to remain tracked in git (not ignored). When updating `.gitignore`, do NOT include `mail.txt` unless the user explicitly asks. If a file was previously gitignored and the user wants it tracked, use `git add -f` to force-stage it.
 
-## GitHub Push Protection — Auto-Remediation in Sync Script
+## Sync Script Design (v3 — 2026-06-29 rewrite)
 
-The sync script (`scripts/sync`) now has **automatic push protection remediation** built into the workspace sync phase (Phase 2). When `git push` is rejected by GitHub secret scanning:
+The sync script (`scripts/sync`) was rewritten from scratch to be short (~90 lines), reliable, and fast. Key design decisions:
 
-1. Parse blocked file paths from the error output (pattern: `path: <filepath>:<line>`)
-2. Convert to relative paths from workspace root
-3. Check if each path is already in `.gitignore` sensitive block
-4. Append new entries to the end of the sensitive block
-5. Commit the updated `.gitignore` and retry the push
-
-**Important limitation:** `.gitignore` only prevents *future* tracking. If secrets are already in git **history** (previous commits), the push will still fail after adding to `.gitignore`. You must rewrite history to remove them. **Prefer `git filter-repo`** (install via `pip install git-filter-repo`) — it's dramatically faster and cleaner than `git filter-branch`.
-
-### filter-repo Pitfalls Learned in Practice
-
-1. **`filter-repo` removes the `origin` remote.** After rewriting, you MUST re-add it before pushing:
-   ```bash
-   git remote add origin <REPO_URL>
-   ```
-
-2. **Run filter-repo ONCE with all paths collected.** Don't loop over blocked files calling filter-repo individually. Collect all `--path` args into an array then invoke once with `--invert-paths`:
-   ```bash
-   filter_args=(--path "file1" --path "dir1/" --invert-paths)
-   git filter-repo "${filter_args[@]}" --force
-   ```
-
-3. **Local files are preserved.** `git filter-repo --invert-paths` removes paths from **git history only**, never from the working directory.
-
-4. **Directories that always contain secrets** (e.g. `.hermes_data/state-snapshots/`) should use a single directory-level entry with trailing slash: `--path ".hermes_data/state-snapshots" --invert-paths`. That strips the entire tree from history and you should also add the directory to `.gitignore`5. **After force-push**, remind the user the next normal push will succeed since secrets are permanently gone from history.
-
-6. **Long-term prevention**: for secrets that are generated snapshots (Hermes state snapshots, config dumps, sessionlogs), add the **parent directory** to `.gitignore` (e.g. `.hermes_data/state-snapshots/`) rather than individual files. This prevents future commits from being blocked repeatedly.
-
-See `references/push-protection-history-rewrite.md` for the full workflow.
-See `references/sync-commit-message-ai.md` for AI-generated commit message integration in the sync script.
+- **No AI commit messages** — single descriptive commit per run listing changed files. Eliminates API latency (8-10s per file) and JSON parse failures.
+- **No `set -e`** — aborts on loop EOF and non-critical failures. Uses `||` for explicit error handling.
+- **Single askpass** for both phases — secrets sync and workspace push share one `GIT_ASKPASS` script, cleaned up via EXIT trap.
+- **No per-file commits** — workspace changes are one commit: `auto: 2026-06-29T11:39:31Z — 3 file(s): foo bar baz`
+- **No auto filter-repo** — history rewrite is a manual, explicit operation, not baked into the sync loop.
 
 ### Sync Script Output Format
 
-The sync script uses **basename** (not full path) in its per-file output:
 ```
-OK (B): .pat — identical
-PUSH (C): state.db → local newer (1782719097 > 1782718651)
-PULL (A): .env ← bootstrapping from repo
-SKIP (A): .pat — neither local nor repo has content
-WARN: '/home/runner/workspace/brave-browser' not found, skipping
+[11:39:26] ═══ PHASE 1: secrets ═══
+  OK credentials/.pat
+  PUSH → .hermes_data/state.db (newer)
+  SKIP brave-browser
+  PULL ← .hermes_data/config.yaml (newer)
+[11:39:27] OK: secrets pushed
+[11:39:27] ═══ PHASE 2: workspace ═══
+[11:39:31] OK: workspace pushed
+[11:39:31] ═══ SYNC DONE ═══
 ```
 
-Format: `ACTION (Case): filename — details`
+Format: `ACTION →/← relative/path (reason)`
 
-User prefers basename (short filename) over full path in sync output.
+### Bash Pitfalls Learned During Rewrite
 
-See also: `references/sync-gitignore-integration.md` for how `scripts/sync` reads `.gitignore` and resolves bare directory/file names to full paths.
-See also: `references/push-protection-auto-remediation.md` for the auto-remediation logic that catches GitHub push protection errors and appends blocked files to `.gitignore`.
+1. **`set -e` + `while read` EOF** — `read` returns 1 at EOF; with `set -e` this kills the script even though the loop completed normally. Use `set -uo pipefail` (drop `-e`) and handle errors explicitly with `||`.
+
+2. **Function definition order** — Bash does NOT hoist functions. Define `_sync_one` BEFORE the `while` loop that calls it.
+
+3. **Subshell function return values** — `func && s=$? || s=$?` is fragile. Use `func || changed=1` for flag-setting patterns.
+
+4. **Trap RETURN from functions** — `trap "cleanup" RETURN` inside a function fires when the function returns, which can clean up resources still needed by the caller. Use a single EXIT trap in main scope instead.
+
+5. **Askpass lifecycle** — If Phase 1 creates an askpass in a function with RETURN-trap cleanup, it's gone before Phase 2's push. Create askpass once at script scope, clean up in EXIT trap.
+
+6. **`find ... -print0 | while read -r -d ''`** — when find matches nothing, the while body never runs but the overall pipeline exits 0. Safe to use. But combined with `set -e` and a `local` declaration inside the loop body, can cause issues — keep loop bodies simple.
+
+See `references/sync-gitignore-integration.md` for how `scripts/sync` reads `.gitignore` and resolves bare directory/file names to full paths.
+See `references/sync-commit-message-ai.md` for the rationale behind removing AI commit messages.
+See `references/sync-bash-pitfalls.md` for bash scripting pitfalls learned during the v3 rewrite.
+See `references/push-protection-history-rewrite.md` for the manual history-rewrite workflow (no longer auto-triggered).

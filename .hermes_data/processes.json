@@ -1,12 +1,12 @@
 [
   {
-    "session_id": "proc_fb038139b7e6",
+    "session_id": "proc_e6e09cf829d2",
     "command": "cd /home/runner/workspace && ./scripts/sync 2>&1",
-    "pid": 6132,
+    "pid": 6808,
     "pid_scope": "host",
-    "host_start_time": 139263,
+    "host_start_time": 174377,
     "cwd": "/home/runner/workspace",
-    "started_at": 1782733165.2214735,
+    "started_at": 1782733516.366834,
     "task_id": "default",
     "session_key": "bd3dda32973e",
     "watcher_platform": "",

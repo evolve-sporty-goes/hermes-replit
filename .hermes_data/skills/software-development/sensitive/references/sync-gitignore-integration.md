@@ -26,13 +26,15 @@ brave-browser/
 The sync script uses `awk` to extract entries from the sensitive block:
 
 ```bash
-awk 'BEGIN{flag=0} /# Sensitive/{flag=1; next} flag==1{ if(substr($0,1,1)=="#") next; if(length($0)>0) print}' "$GITIGNORE"
+awk '/^# Sensitive/{f=1;next} f&&/^#/{next} f&&/^---/{next} f&&length{print}' "$GITIGNORE"
 ```
 
 This:
-- Sets `flag=1` after matching a line containing `# Sensitive`
-- Skips comment-only lines within the block (`substr($0,1,1)=="#"`)
-- Prints non-blank, non-comment lines
+- Sets `f=1` after matching a line starting with `# Sensitive`
+- Skips comment-only lines within the block (`/^#/`)
+- Skips divider lines (`/^---/`)
+- Skips blank lines (`length`)
+- Prints everything else (the actual entries)
 - Runs to EOF (no blank-line terminator needed)
 
 ### Sync Script Resolution Logic

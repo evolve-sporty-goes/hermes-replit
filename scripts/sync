@@ -74,20 +74,52 @@ echo "$(LOG_TS) ═══ PHASE 2: workspace ═══"
 cd "$WORKSPACE"
 git config user.email "hermes@replit"
 git config user.name  "hermes-replit"
-git pull --quiet --rebase origin main 2>/dev/null || true
+GIT_ASKPASS="$ASKPASS" git pull --quiet --rebase origin main 2>/dev/null || true
 
 git add -A
 if git diff --cached --quiet; then
   echo "$(LOG_TS) OK: workspace clean"
+  echo "$(LOG_TS) ═══ SYNC DONE ═══"
+  return 0 2>/dev/null || exit 0
+fi
+
+staged=$(git diff --cached --name-only)
+git reset -q
+msg="auto: $(date -u +%Y-%m-%dT%H:%M:%SZ) — $(echo "$staged" | wc -l) file(s): $(echo "$staged" | tr '\n' ' ')"
+git add -A
+git commit -m "$msg" --quiet
+
+if GIT_ASKPASS="$ASKPASS" git push --quiet origin main 2>/dev/null; then
+  echo "$(LOG_TS) OK: workspace pushed"
 else
-  staged=$(git diff --cached --name-only)
-  git reset -q
-  msg="auto: $(date -u +%Y-%m-%dT%H:%M:%SZ) — $(echo "$staged" | wc -l) file(s): $(echo "$staged" | tr '\n' ' ')"
-  git add -A
-  git commit -m "$msg" --quiet \
-    && git push --quiet origin main 2>/dev/null \
-    && echo "$(LOG_TS) OK: workspace pushed" \
-    || echo "$(LOG_TS) WARN: push failed"
+  # Secret rule violation — GitHub rejects the push and names the offending file(s)
+  push_err=$(GIT_ASKPASS="$ASKPASS" git push origin main 2>&1 || true)
+  blocked=$(echo "$push_err" | grep -oP 'path:\s+\K\S+' | cut -d: -f1 | sort -u)
+  if [[ -z "$blocked" ]]; then
+    echo "$(LOG_TS) WARN: push failed (no secret paths detected)"
+    echo "$push_err" | head -5
+  else
+    echo "$(LOG_TS) SECRET BLOCK — adding to .gitignore sensitive block, stripping commit"
+    git reset --quiet HEAD~1   # unstage the commit, keep working tree
+    for p in $blocked; do
+      rel="${p#$WORKSPACE/}"
+      [[ -z "$rel" ]] && rel="$p"
+      # append to sensitive block
+      grep -qxF "$rel" "$WORKSPACE/.gitignore" 2>/dev/null \
+        || echo "$rel" >> "$WORKSPACE/.gitignore"
+      echo "  + gitignore: $rel"
+    done
+    git add -A
+    new_msg="auto: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+    if git diff --cached --quiet; then
+      echo "$(LOG_TS) commit now empty after stripping blocked files; nothing to push"
+    else
+      git commit -m "$new_msg" --quiet \
+        && GIT_ASKPASS="$ASKPASS" git push --quiet origin main 2>/dev/null \
+        && echo "$(LOG_TS) OK: re-pushed (blocked files excluded)" \
+        || echo "$(LOG_TS) WARN: re-push still failed"
+    fi
+  fi
 fi
 
 echo "$(LOG_TS) ═══ SYNC DONE ═══"
