@@ -1,6 +1,6 @@
 #!/bin/bash
-# Sync .env and .pat with hermes-secrets private repo based on modification history
-# Usage: ./sync-secrets.sh
+# Sync sensitive files (from .gitignore sensitive block) with hermes-secrets private repo
+# Usage: ./sync
 set -euo pipefail
 exec 200>/tmp/sync.lock
 flock -n 200 || ( echo "Already running" ; exit 1 )
@@ -87,17 +87,50 @@ sync_file_by_history() {
 # --- 4. Execute Decisions ---
 repo_changed=0
 
-# Sync all sensitive files from sensitive.txt to hermes-secrets repo
-SENSITIVE_LIST="/home/runner/workspace/sensitive.txt"
-if [ -f "$SENSITIVE_LIST" ]; then
-    while IFS= read -r local_path; do
-        [ -z "$local_path" ] && continue
-        repo_file=$(basename "$local_path")
-        sync_file_by_history "$local_path" "$repo_file" && s=$? || s=$?
-        [ "$s" -eq 1 ] && repo_changed=1
-    done < "$SENSITIVE_LIST"
+# Parse sensitive block from .gitignore (lines between "# Sensitive files" and next non-indented/non-comment/non-blank line)
+# Resolves bare names/paths against workspace root; expands directories to individual files.
+GITIGNORE="/home/runner/workspace/.gitignore"
+WORKSPACE=$(dirname "$GITIGNORE")
+if [ -f "$GITIGNORE" ]; then
+    in_block=0
+    while IFS= read -r line; do
+        if [ "$in_block" -eq 1 ]; then
+            # Stop at blank lines, non-comment, or unindented lines after block starts
+            [ -z "$line" ] && { in_block=0; continue; }
+            [[ "$line" =~ ^[^#] ]] && { in_block=0; continue; }
+            [[ "$line" =~ ^# ]] && continue  # skip comment-only lines within block
+            # Strip leading/trailing whitespace and trailing slash (directory marker)
+            path=$(echo "$line" | xargs)
+            path="${path%/}"
+            [ -z "$path" ] && continue
+
+            # Resolve against workspace root (handle both bare names and relative paths)
+            if [[ "$path" != /* ]]; then
+                full_path="$WORKSPACE/$path"
+            else
+                full_path="$path"
+            fi
+
+            if [ -d "$full_path" ]; then
+                # Expand directory: sync each file inside (non-recursive, skip hidden)
+                while IFS= read -r -d '' file; do
+                    repo_file=$(basename "$file")
+                    sync_file_by_history "$file" "$repo_file" && s=$? || s=$?
+                    [ "$s" -eq 1 ] && repo_changed=1
+                done < <(find "$full_path" -maxdepth 1 -type f -name "[!.]*" -print0)
+            elif [ -f "$full_path" ]; then
+                repo_file=$(basename "$full_path")
+                sync_file_by_history "$full_path" "$repo_file" && s=$? || s=$?
+                [ "$s" -eq 1 ] && repo_changed=1
+            else
+                echo "WARN: '$full_path' not found, skipping"
+            fi
+        elif printf '%s\n' "$line" | grep -q "# Sensitive"; then
+            in_block=1
+        fi
+    done < "$GITIGNORE"
 else
-    echo "WARN: sensitive.txt not found, skipping sensitive file sync"
+    echo "WARN: .gitignore not found, skipping sensitive file sync"
 fi
 
 # --- 5. Push Secrets if Repo fell behind ---

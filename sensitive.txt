@@ -13,3 +13,4 @@
 /home/runner/workspace/.hermes_data/webui/sessions
 /home/runner/workspace/.hermes_data/config.yaml
 /home/runner/workspace/credentials/cloudflare.txt
+/home/runner/workspace/.hermes_data/state.db

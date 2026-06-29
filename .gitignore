@@ -19,9 +19,8 @@ credentials/cloudflare.txt
 scripts/email.sh
 .hermes_data/.env
 .hermes_data/auth.json
-
+.hermes_data/state.db
 brave-browser/
-
 freellmapi
 .hermes_data/webui/sessions/
 .hermes_data/config.yaml

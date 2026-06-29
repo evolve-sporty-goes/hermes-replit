@@ -109,6 +109,46 @@ hermes config set model.display_name "cloudflare"
 
 See `references/cloudflare-file-pool.sh` for a complete template.
 
+### Single-File Credential Pool (User Choice)
+
+The user's final choice: **one file** holding all credential pairs. Pairs are consecutive lines (line 1+2, 3+4, …) selected by stepping through the file two lines at a time:
+
+**File layout:**
+```
+credentials/cloudflare.txt
+```
+
+Content — alternating lines (`ACCOUNT_ID` then `API_KEY`, no blank lines between pairs):
+```ini
+ACCOUNT_ID=d70ba859348c4d2da672ff5874f91b84
+API_KEY=3x-0NXXgbQIY_zh5BTM0d0VH14BrUy2uH2TSL9aPWq-Ut67PQBcItRkoa_X
+ACCOUNT_ID=a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6
+API_KEY=cfut_RANDSAMPLEKEY00000000000000000000000000000
+```
+
+**Why the user chose single-file over per-file pool:**
+- One file is faster to edit than creating a new `.txt` per account
+- Glob ordering concerns go away
+- Simpler mental model
+
+**Parsing pattern (place pairs by stepping +2 lines, NOT random byte offsets):**
+```bash
+mapfile -t LINES < <(grep -v '^[[:space:]]*$' "$CRED")
+PAIRS=()
+for ((i=0; i<${#LINES[@]}; i+=2)); do
+  A=$(echo "${LINES[$i]}" | cut -d= -f2)
+  K=$(echo "${LINES[$((i+1))]}" | cut -d= -f2)
+  PAIRS+=("$A:$K")
+done
+SEL="${PAIRS[$((RANDOM % ${#PAIRS[@]}))]}"
+ACCOUNT_ID="${SEL%%:*}"
+API_KEY="${SEL##*:}"
+```
+
+**Critical:** Always pair positions are known-indexed (line N + line N+1), never random selection from two separate sources. The user corrected this after a flawed parallel-array approach risked cross-matching wrong account/key pairs.
+
+See `references/cloudflare-single-file-pool.sh` for a complete template.
+
 ### Credential Pool / Random Selection (Parallel Arrays)
 
 For environments that need automatic credential rotation across N accounts, use parallel arrays indexed by `RANDOM % N`:
@@ -168,9 +208,10 @@ hermes config set model.default "${MODEL}"
 
 - User prefers **file-based scripts** over inline commands. Write to disk first, then `chmod +x` and run.
 - User wants **terse commands only, no preamble**.
-- Credentials in **service-specific .txt files** or positional args, never hardcoded inline in chat.
-- User dislikes **numbered variable patterns** (e.g. `ACCOUNT_ID_1`, `ACCOUNT_ID_2`) — prefer file-based or unnumbered array pools.
-- Keep scripts **short** (<50 lines), single-flow, no flags/options/menus/helper functions.
+- Credentials in **service-specific files**, never hardcoded inline in chat.
+- User dislikes **numbered variable patterns** (e.g. `ACCOUNT_ID_1`, `ACCOUNT_ID_2`) — prefer pools.
+- User prefers **one file per service** holding all credential pairs (not one file per account).
+- Keep scripts **short** (<30 lines), single-flow, no flags/options/menus/helper functions.
 
 ## Pitfalls
 
@@ -179,9 +220,10 @@ hermes config set model.default "${MODEL}"
 - **`model.api_compat openai`** = "Chat Completions" API mode. Other compat modes may exist per Hermes version.
 - `hermes config set` writes to `~/.hermes/config.yaml` — no `hermes` restart needed for the config to take effect on next session start.
 - **Parallel array pattern**: when using `ACCOUNT_IDS=(...)` + `API_KEYS=(...)`, ensure both arrays stay in sync (same length, same position = same credential pair). Prefer file-based pools to avoid this entirely.
-- **Do not verify config from `config.yaml` directly**: always verify the active model via `hermes config show` — this reads the live resolved config Hermes will actually use.
-- **`hermes model` is interactive-only**: fails in non-interactive shells with "requires an interactive terminal". Use `hermes config set` for all scripted configuration.
-- **File-based pool glob ordering**: `"$CRED_DIR"/cloudflare_*.txt` returns files in lexicographic order. Names like `cloudflare_001.txt` sort predictably; avoid names that sort inconsistently (e.g. `cloudflare_1.txt` vs `cloudflare_10.txt`).
+- **Credential pairing integrity**: when reading pairs from a single file, always select by known position (line N paired with line N+1), never by random index into two separate arrays — that risks cross-matching wrong account/key pairs.
+- **`hermes config set` writes to `~/.hermes/config.yaml** — no `hermes` restart needed for the config to take effect on next session start.
+- **Do not verify config from `config.yaml` directly**: always verify the active model via `hermes config show` — this reads the live resolved config Hermes will actually use. User explicitly corrected this.
+- **Glob pitfall**: `*$((RANDOM % N))` needs double `$((...))` arithmetic expansion. Single-layer `${POOL[RANDOM % N]}` is a syntax error in bash.
 
 ## state.db Corruption Repair
 
@@ -205,5 +247,6 @@ See `references/state-db-corruption-repair.sh` for the full repair script.
 
 - `references/cloudflare-ai-setup.sh` — single-account script template
 - `references/cloudflare-ai-pool.sh` — parallel-array pool script template
-- `references/cloudflare-file-pool.sh` — file-based credential pool (recommended)
+- `references/cloudflare-file-pool.sh` — file-based credential pool (one file per account)
+- `references/cloudflare-single-file-pool.sh` — single file holding all credential pairs (user choice)
 - `references/state-db-corruption-repair.sh` — recover from FTS b-tree page corruption
