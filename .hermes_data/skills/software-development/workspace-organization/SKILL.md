@@ -2,7 +2,7 @@
 name: workspace-organization
 description: Organize user-created files into logical directory structures on Replit NixOS while respecting system-managed directories.
 trigger: organizing files, restructuring workspace, moving files into directories, cleaning up project layout, file organization on Replit
-version: 2
+version: 3
 ---
 
 # Workspace Organization (Replit NixOS)
@@ -173,13 +173,75 @@ When moving multiple files with globs, verify each source file exists first. A g
 9. **Update `.gitignore` sensitive block** — all paths must point to new locations (sync.sh parses this block)
 10. Run verification script to confirm no broken references remain
 
+## Adding Files to an Existing Repo from Within the Workspace
+
+The most common repo operation is **not** cloning — it's adding or modifying files when the workspace is already a clone of the target repo.
+
+### Detect: Is this workspace already a repo clone?
+
+```bash
+git remote get-url origin    # shows the remote URL
+git status                   # shows branch and untracked files
+```
+
+If the remote points to the target GitHub repo, **do not clone again** — work in place.
+
+### Workflow: Add a file and push
+
+```bash
+# 1. Create or edit the file (write_file, heredoc, agent file tools)
+# 2. Stage, commit, push
+git add README.md
+git commit -m "Add README.md"
+git push origin main
+```
+
+### When gh auth is unavailable but you need read-only repo inspection
+
+`gh repo view` may fail if not authenticated, but the GitHub REST API works without auth for public repos:
+
+```bash
+# Repo metadata (description, language, default branch, topics)
+curl -s https://api.github.com/repos/owner/repo | python3 -c "..."
+
+# List files in a directory
+curl -s https://api.github.com/repos/owner/repo/contents/path | python3 -c "..."
+
+# Read a file's content (base64 encoded)
+curl -s https://api.github.com/repos/owner/repo/contents/path/to/file | python3 -c "
+import sys, json, base64
+r = json.load(sys.stdin)
+print(base64.b64decode(r['content']).decode())
+"
+```
+
+This lets you inspect the repo's structure to understand what kind of README or docs are appropriate before writing them.
+
+### Writing a README from scratch
+
+When adding a README to a repo with no description:
+1. Fetch repo structure via API `contents/` endpoint
+2. Read key files (`.replit`, `scripts/main.sh`, `docs/*.txt`) to understand purpose
+3. Read `.gitignore` to understand what's tracked vs sensitive
+4. Write README covering: overview, structure, getting started, ports/services, security
+5. Keep it concise but informative — the user's repos are automation-heavy workspaces
+
+### Pitfall: README goes in .gitignore sensitive block
+
+After adding README.md, the `sensitive` skill's scan should NOT include it. A README is documentation, not a secret. No `.gitignore` changes needed.
+
 ## Related Skills
 
 - **`sensitive`** — for scanning the workspace for secrets/tokens/credentials and keeping `.gitignore` sensitive block in sync. Use after completing workspace reorganization to re-scan sensitive credentials.
 - **`github-repo-management`** — for pushing to GitHub when push protection blocks due to secrets in git history (bundled skill — has cross-reference to `sensitive/references/push-protection-history-rewrite.md`).
+
+### Pitfall: commit + push without confirming remote
+
+Before pushing, always verify `git remote get-url origin` points to the intended target. In multi-remote setups (e.g., `gitsafe-backup` + `origin`), wrong remote causes pushes to nonexistent remotes.
 
 ## Reference
 
 - `references/replit-reorganization-example.md` — full session example with file mapping table and chain-effect documentation
 - `references/verify-paths.py` — reusable path-consistency verification script (checks old paths gone, new paths present, .gitignore sensitive block validity, git check-ignore)
 - `references/gitignore-sensitive-block-sync.md` — how sync reads .gitignore sensitive block instead of sensitive.txt (parsing logic, format rules, design decisions)
+- `references/github-api-read-only-inspection.md` — using GitHub REST API without auth to inspect repo structure (metadata, directory listings, file contents)
