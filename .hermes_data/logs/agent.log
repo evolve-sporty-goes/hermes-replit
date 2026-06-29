@@ -18510,3 +18510,91 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 2026-06-29 11:45:31,322 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-265 (_call):140129377031872 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
 2026-06-29 11:45:31,323 INFO [bd3dda32973e] agent.conversation_loop: API call #7: model=owl-alpha provider=openrouter in=71830 out=157 total=71987 latency=8.2s cache=71424/71830 (99%)
 2026-06-29 11:45:31,368 INFO [bd3dda32973e] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=6/90 budget=6/90 tool_turns=45 last_msg_role=assistant response_len=641 session=bd3dda32973e
+2026-06-29 11:46:51,985 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session bd3dda32973e
+2026-06-29 11:46:52,007 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-274 (_run_agent_streaming):140129848010432 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:46:52,330 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 11:46:52,334 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 11:46:53,310 INFO [bd3dda32973e] agent.turn_context: conversation turn: session=bd3dda32973e model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=98 msg='[Workspace::v1: /home/runner/workspace] Supabase anon key eyJhbG...IsIn...'
+2026-06-29 11:46:53,381 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-276 (_call):140129377031872 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:46:53,563 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (759eb6cc-c5ee-4347-944a-166c2518861a)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 11:46:53,564 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-276 (_call):140129377031872 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:46:53,565 WARNING [bd3dda32973e] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-274 (_run_agent_streaming):140129848010432 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (759eb6cc-c5ee-4347-944a-166c2518861a)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 11:46:53,585 INFO [bd3dda32973e] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 11:46:53,711 INFO [bd3dda32973e] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 11:46:53,722 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-277 (_call):140129377031872 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 11:47:00,697 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-277 (_call):140129377031872 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 11:47:00,698 INFO [bd3dda32973e] agent.conversation_loop: API call #1: model=owl-alpha provider=openrouter in=72145 out=20 total=72165 latency=7.3s cache=71168/72145 (99%)
+2026-06-29 11:47:00,721 INFO [bd3dda32973e] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=owl-alpha api_calls=1/90 budget=1/90 tool_turns=45 last_msg_role=assistant response_len=68 session=bd3dda32973e
+2026-06-29 11:47:10,868 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 11:47:10,870 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 11:47:10,871 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 11:47:10,941 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 11:47:10,942 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 11:47:10,943 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 11:47:10,944 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 11:47:10,945 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 11:47:10,946 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 11:47:10,946 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 11:47:10,951 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 11:47:10,952 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 11:47:10,954 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 11:47:10,955 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 11:47:10,955 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 11:47:10,955 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 11:47:10,956 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 11:47:10,957 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 11:47:10,957 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 11:47:10,958 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 11:47:10,960 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 11:47:11,788 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:47:12,306 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:47:30,301 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 11:48:12,685 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 11:48:12,685 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 11:48:12,685 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 11:48:12,819 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 11:48:12,820 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 11:48:12,821 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 11:48:12,822 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 11:48:12,822 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 11:48:12,822 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 11:48:12,823 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 11:48:12,825 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 11:48:12,826 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 11:48:12,827 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 11:48:12,828 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 11:48:12,828 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 11:48:12,828 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 11:48:12,829 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 11:48:12,829 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 11:48:12,829 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 11:48:12,830 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 11:48:12,832 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 11:48:13,436 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:48:14,701 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:48:28,491 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 11:48:28,491 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 11:48:28,491 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 11:48:28,563 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 11:48:28,563 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 11:48:28,564 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 11:48:28,564 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 11:48:28,565 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 11:48:28,565 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 11:48:28,565 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 11:48:28,567 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 11:48:28,567 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 11:48:28,568 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 11:48:28,569 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 11:48:28,569 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 11:48:28,569 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 11:48:28,570 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 11:48:28,570 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 11:48:28,570 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 11:48:28,571 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 11:48:28,573 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 11:48:29,184 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:48:30,484 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
