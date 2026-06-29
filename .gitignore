@@ -26,3 +26,6 @@ freellmapi
 .hermes_data/config.yaml
 scripts/setup_cloudflare.sh
 scripts/setup_cloudflare.sh.bak
+.hermes_data/state-snapshots/20260629-080554-pre-update/auth.json
+.hermes_data/state-snapshots/20260629-080554-pre-update/config.yaml
+.hermes_data/state-snapshots/20260629-080554-pre-update/.env
