@@ -6311,3 +6311,282 @@ openai.RateLimitError: Error code: 429 - {'errors': [{'message': "AiError: AiErr
 2026-06-29 22:16:18,073 WARNING [f9dca0438f24] agent.tool_executor: Tool vision_analyze returned error (2.69s): {
   "success": false,
   "error": "Error analyzing image: Error code: 429 - {'errors': [{'message': \"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to 
+2026-06-29 22:16:58,658 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:16:58,671 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:16:59,681 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:16:59,683 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:16:59,723 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:16:59,724 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:16:59,725 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:17:22,598 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:17:22,607 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:17:23,096 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:17:23,098 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:17:23,247 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:17:23,251 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:17:23,252 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:17:25,434 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-19 (_run_agent_streaming):140623310997184 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (efd648d0-6fcb-4d32-82d9-ed5756746bdb)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 22:17:48,420 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session f9dca0438f24
+2026-06-29 22:17:49,792 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-26 (_run_agent_streaming):140623302604480 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (45e06786-2120-444b-985b-50f563652145)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 22:18:44,441 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session f9dca0438f24
+2026-06-29 22:18:45,822 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-40 (_run_agent_streaming):140623302604480 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (04af4102-0ed4-4395-aa61-a98ef4fbeea1)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 22:20:09,657 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session f9dca0438f24
+2026-06-29 22:20:11,020 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-56 (_run_agent_streaming):140623319389888 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (f71c2f00-a2a9-47af-9ccd-b6411c5bede3)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 22:21:15,479 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-64 (_run_agent_streaming):140623319389888 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (91476e84-a575-48d6-a89a-dadb5243ba61)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 22:22:11,757 WARNING [f9dca0438f24] agent.auxiliary_client: Auxiliary vision: rate limit on custom and all fallbacks exhausted (fallback_chain + main agent model). Raising original error.
+2026-06-29 22:22:11,757 WARNING [f9dca0438f24] tools.browser_tool: browser_vision failed: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (aecb0b3f-6cbb-4bb8-b0d8-fce6a1975753)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/browser_tool.py", line 3845, in browser_vision
+    response = call_llm(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/agent/auxiliary_client.py", line 5784, in call_llm
+    client.chat.completions.create(**kwargs), task)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1204, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (aecb0b3f-6cbb-4bb8-b0d8-fce6a1975753)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 22:22:11,769 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_vision returned error (3.70s): {"success": false, "error": "Error during vision analysis: Error code: 429 - {'errors': [{'message': \"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade t
+2026-06-29 22:23:26,865 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (0.80s): {"success": false, "error": "Evaluation error: SyntaxError: Identifier 'buttons' has already been declared"}
+2026-06-29 22:25:34,854 WARNING [f9dca0438f24] tools.browser_tool: browser 'eval' timed out after 30s (task=f9dca0438f24, socket_dir=/tmp/agent-browser-h_503688052c)
+2026-06-29 22:25:34,855 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (30.03s): {"success": false, "error": "Command timed out after 30 seconds"}
+2026-06-29 22:27:16,510 WARNING [f9dca0438f24] agent.tool_executor: Tool terminal returned error (9.08s): {"output": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nKeyError: 'cookies'", "exit_code": 1, "error": null}
+2026-06-29 22:28:23,719 WARNING [f9dca0438f24] tools.browser_tool: browser 'eval' timed out after 30s (task=f9dca0438f24, socket_dir=/tmp/agent-browser-h_503688052c)
+2026-06-29 22:28:23,720 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (30.02s): {"success": false, "error": "Command timed out after 30 seconds"}
+2026-06-29 22:29:28,421 WARNING [f9dca0438f24] tools.browser_tool: browser 'eval' timed out after 30s (task=f9dca0438f24, socket_dir=/tmp/agent-browser-h_503688052c)
+2026-06-29 22:29:28,423 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (30.01s): {"success": false, "error": "Command timed out after 30 seconds"}
+2026-06-29 22:30:46,270 WARNING [f9dca0438f24] agent.tool_executor: Tool terminal returned error (0.13s): {"output": "", "exit_code": 1, "error": null}
+2026-06-29 22:31:01,241 WARNING [f9dca0438f24] agent.tool_executor: Tool terminal returned error (0.13s): {"output": "/home/runner/.cargo/bin/cargo\nerror: rustup could not choose a version of cargo to run, because one wasn't specified explicitly, and no default is configured.\nhelp: run 'rustup default s
+2026-06-29 22:31:29,842 WARNING [f9dca0438f24] agent.tool_executor: Tool terminal returned error (0.15s): {"output": "/home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rustc: error while loading shared libraries: /home/runner/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/librust
+2026-06-29 22:33:19,138 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 22:33:57,598 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (0.74s): {"success": false, "error": "Evaluation error: TypeError: Cannot read properties of undefined (reading 'render')\n    at <anonymous>:18:22\n    at new Promise (<anonymous>)\n    at <anonymous>:17:10\n
+2026-06-29 22:34:52,382 WARNING [f9dca0438f24] tools.browser_tool: browser 'eval' timed out after 30s (task=f9dca0438f24, socket_dir=/tmp/agent-browser-h_7e17a14353)
+2026-06-29 22:34:52,383 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (30.03s): {"success": false, "error": "Command timed out after 30 seconds"}
+2026-06-29 22:36:01,905 WARNING [f9dca0438f24] tools.browser_tool: browser 'eval' timed out after 30s (task=f9dca0438f24, socket_dir=/tmp/agent-browser-h_7e17a14353)
+2026-06-29 22:36:01,906 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (30.03s): {"success": false, "error": "Command timed out after 30 seconds"}
+2026-06-29 22:39:02,064 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (0.79s): {"success": false, "error": "Evaluation error: SyntaxError: Unexpected token ')'"}
+2026-06-29 22:39:36,388 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:39:36,392 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:39:36,833 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:39:36,847 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:39:36,906 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:39:36,912 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:39:36,913 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:40:01,638 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session f9dca0438f24
+2026-06-29 22:40:05,032 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-222 (_run_agent_streaming):140623310997184 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (2b271f83-cab5-41f0-a29f-2d3199bfdcd0)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 22:40:46,854 WARNING [f9dca0438f24] agent.auxiliary_client: Auxiliary vision: rate limit on custom and all fallbacks exhausted (fallback_chain + main agent model). Raising original error.
+2026-06-29 22:40:46,854 WARNING [f9dca0438f24] tools.browser_tool: browser_vision failed: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (cc7f2553-8751-46a0-922b-f1a627231817)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/browser_tool.py", line 3845, in browser_vision
+    response = call_llm(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/agent/auxiliary_client.py", line 5784, in call_llm
+    client.chat.completions.create(**kwargs), task)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1204, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1297, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1070, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (cc7f2553-8751-46a0-922b-f1a627231817)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 22:40:46,869 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_vision returned error (3.41s): {"success": false, "error": "Error during vision analysis: Error code: 429 - {'errors': [{'message': \"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade t
+2026-06-29 22:40:55,753 WARNING [f9dca0438f24] agent.auxiliary_client: Auxiliary vision (async): rate limit on custom and all fallbacks exhausted (fallback_chain + main agent model). Raising original error.
+2026-06-29 22:40:55,754 ERROR [f9dca0438f24] tools.vision_tools: Error analyzing image: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (8cf0dda8-ba86-42e8-b714-25dac0a4f93b)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+Traceback (most recent call last):
+  File "/home/runner/hermes-agent/tools/vision_tools.py", line 1116, in vision_analyze_tool
+    response = await async_call_llm(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/agent/auxiliary_client.py", line 6309, in async_call_llm
+    await client.chat.completions.create(**kwargs), task)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2700, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/hermes-agent/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (8cf0dda8-ba86-42e8-b714-25dac0a4f93b)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 22:40:55,765 WARNING [f9dca0438f24] agent.tool_executor: Tool vision_analyze returned error (2.35s): {
+  "success": false,
+  "error": "Error analyzing image: Error code: 429 - {'errors': [{'message': \"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to 
+2026-06-29 22:41:12,059 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (0.73s): {"success": false, "error": "Evaluation error: TypeError: Cannot read properties of undefined (reading 'render')\n    at <anonymous>:24:22\n    at new Promise (<anonymous>)\n    at <anonymous>:23:10\n
+2026-06-29 22:43:13,187 WARNING [f9dca0438f24] agent.tool_executor: Tool skill_manage returned error (0.34s): {"success": false, "error": "Could not find a match for old_string in the file\n\nDid you mean one of these sections?\n  83| | `proxy=\"socks5://...\"` (string) | Was: `proxy={\"server\": \"socks5://.
+2026-06-29 22:43:27,898 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (1.32s): {"success": false, "error": "Evaluation error: TypeError: Cannot read properties of undefined (reading 'client')\n    at <anonymous>:10:24\n    at <anonymous>:30:3"}
+2026-06-29 22:44:00,479 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_type returned error (4.40s): {"success": false, "error": "Unknown ref: e33"}
+2026-06-29 22:45:25,344 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 22:45:54,884 WARNING [f9dca0438f24] tools.browser_tool: browser 'eval' timed out after 30s (task=f9dca0438f24, socket_dir=/tmp/agent-browser-h_918f975514)
+2026-06-29 22:45:54,886 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (30.01s): {"success": false, "error": "Command timed out after 30 seconds"}
+2026-06-29 22:46:12,255 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (0.85s): {"success": true, "result": {"error": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"}, "result_type": "dict"}
+2026-06-29 22:46:34,637 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (0.99s): {"success": false, "error": "Evaluation error: TypeError: client.getFapiClient is not a function\n    at <anonymous>:6:23\n    at <anonymous>:19:3"}
+
+[Tool loop warning: same_tool_failure_warning; cou
+2026-06-29 22:51:36,629 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 22:51:39,318 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 22:51:39,424 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 22:52:50,554 WARNING [f9dca0438f24] agent.tool_executor: Tool terminal returned error (52.02s): {"output": "[Command interrupted]", "exit_code": 130, "error": null}
+2026-06-29 22:53:04,689 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 22:53:22,453 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session f9dca0438f24
+2026-06-29 22:53:22,525 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:53:22,529 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 22:53:22,955 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:53:22,961 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:53:23,047 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:53:23,052 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 22:53:23,053 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 22:53:25,049 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-379 (_run_agent_streaming):140622597977792 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (03bd15ac-f37f-4c11-8b55-6b083931c748)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 22:56:57,717 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 22:57:00,746 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 22:57:00,930 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 22:57:15,044 WARNING [f9dca0438f24] agent.tool_executor: Tool terminal returned error (0.00s): {"output": "", "exit_code": -1, "error": "Foreground command uses '&' backgrounding. Use terminal(background=true) for long-lived processes, then run health checks and tests in follow-up terminal call
+2026-06-29 22:59:36,758 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (0.78s): {"success": false, "error": "Evaluation error: TypeError: Cannot read properties of undefined (reading 'client')\n    at <anonymous>:13:24\n    at <anonymous>:26:3"}
+2026-06-29 23:01:35,471 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 23:01:35,486 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 23:01:35,905 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 23:01:35,911 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 23:01:35,970 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 23:01:35,975 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 23:01:35,975 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 23:01:38,137 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-432 (_run_agent_streaming):140623310997184 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (25fbdf3e-f66f-4995-87b6-5b621569e1a2)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 23:03:07,215 WARNING hermes.lint.lsp: lsp[rust-analyzer] server unavailable: rust-analyzer not found (install via `hermes lsp install <id>` or set lsp.servers.<id>.command)
+2026-06-29 23:03:40,951 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (0.99s): {"success": false, "error": "Evaluation error: SyntaxError: Unexpected token ')'"}
+2026-06-29 23:06:40,279 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (0.79s): {"success": false, "error": "Evaluation error: SecurityError: Failed to read the 'cookie' property from 'Document': Access is denied for this document.\n    at <anonymous>:4:19\n    at <anonymous>:5:3
+2026-06-29 23:07:33,009 WARNING [f9dca0438f24] agent.tool_executor: Tool terminal returned error (0.00s): {"output": "", "exit_code": -1, "error": "Foreground command uses '&' backgrounding. Use terminal(background=true) for long-lived processes, then run health checks and tests in follow-up terminal call
+2026-06-29 23:07:38,907 WARNING [f9dca0438f24] agent.tool_executor: Tool terminal returned error (0.17s): {"output": "", "exit_code": -15, "error": null}
+2026-06-29 23:09:39,073 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 23:09:39,345 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 23:09:40,218 WARNING [f9dca0438f24] tools.browser_tool: browser 'eval' timed out after 30s (task=f9dca0438f24, socket_dir=/tmp/agent-browser-h_02a721b7a2)
+2026-06-29 23:09:40,219 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (30.02s): {"success": false, "error": "Command timed out after 30 seconds"}
+2026-06-29 23:10:24,638 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 23:10:24,727 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 23:11:26,683 WARNING [f9dca0438f24] tools.browser_tool: browser 'eval' timed out after 30s (task=f9dca0438f24, socket_dir=/tmp/agent-browser-h_02a721b7a2)
+2026-06-29 23:11:26,684 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (30.04s): {"success": false, "error": "Command timed out after 30 seconds"}
+2026-06-29 23:11:41,143 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (0.80s): {"success": false, "error": "Evaluation error: TypeError: Cannot read properties of undefined (reading 'transfer')\n    at m.shouldBypassCaptchaForAttempt (https://clerk.openrouter.ai/npm/@clerk/clerk
+2026-06-29 23:15:34,628 WARNING [f9dca0438f24] agent.tool_executor: Tool terminal returned error (0.87s): {"output": "Traceback (most recent call last):\n  File \"<string>\", line 2, in <module>\nModuleNotFoundError: No module named 'websockets'", "exit_code": 1, "error": null}
+2026-06-29 23:20:39,816 WARNING [f9dca0438f24] tools.browser_tool: browser 'eval' timed out after 30s (task=f9dca0438f24, socket_dir=/tmp/agent-browser-h_02a721b7a2)
+2026-06-29 23:20:39,817 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (30.03s): {"success": false, "error": "Command timed out after 30 seconds"}
+2026-06-29 23:21:06,733 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session f9dca0438f24
+2026-06-29 23:21:09,420 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-617 (_run_agent_streaming):140623310997184 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (c97f1137-ea48-4d7b-b422-972536c4b9dc)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 23:21:23,674 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (1.50s): {"success": false, "error": "Evaluation error: SecurityError: Failed to read the 'sessionStorage' property from 'Window': Access is denied for this document.\n    at <anonymous>:28:3"}
+2026-06-29 23:21:50,017 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (0.74s): {"success": false, "error": "Evaluation error: TypeError: Cannot convert undefined or null to object\n    at Object.keys (<anonymous>)\n    at <anonymous>:9:27\n    at <anonymous>:26:3"}
+2026-06-29 23:22:04,805 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 23:22:05,044 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 23:23:40,263 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 23:24:20,599 WARNING [739433061428] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-652 (_run_agent_streaming):140622396651200 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (e030338e-cdd3-4f76-8599-912b0dbd4739)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 23:24:21,716 WARNING [f9dca0438f24] agent.tool_executor: Tool browser_console returned error (0.80s): {"success": false, "error": "Evaluation error: SyntaxError: Failed to execute 'querySelectorAll' on 'Document': 'input[type=checkbox\"]' is not a valid selector.\n    at <anonymous>:14:35\n    at <ano
+2026-06-29 23:24:39,204 WARNING [739433061428] agent.tool_executor: Tool terminal returned error (0.75s): {"output": "fatal: destination path 'rust-cf-turnstile-bypass' already exists and is not an empty directory.", "exit_code": 128, "error": null}
+2026-06-29 23:24:55,408 WARNING [739433061428] agent.tool_executor: Tool read_file returned error (0.18s): {"content": "", "total_lines": 0, "file_size": 0, "truncated": false, "is_binary": false, "is_image": false, "error": "File not found: /home/runner/workspace/rust-cf-turnstile-bypass/token-server/Carg
+2026-06-29 23:24:55,419 WARNING [739433061428] agent.tool_executor: Tool read_file returned error (0.15s): {"content": "", "total_lines": 0, "file_size": 0, "truncated": false, "is_binary": false, "is_image": false, "error": "File not found: /home/runner/workspace/rust-cf-turnstile-bypass/token-server/src/
+2026-06-29 23:24:55,427 WARNING [739433061428] agent.tool_executor: Tool read_file returned error (0.16s): {"content": "", "total_lines": 0, "file_size": 0, "truncated": false, "is_binary": false, "is_image": false, "error": "File not found: /home/runner/workspace/rust-cf-turnstile-bypass/turnstile-clicker
+2026-06-29 23:24:55,444 WARNING [739433061428] agent.tool_executor: Tool read_file returned error (0.16s): {"content": "", "total_lines": 0, "file_size": 0, "truncated": false, "is_binary": false, "is_image": false, "error": "File not found: /home/runner/workspace/rust-cf-turnstile-bypass/turnstile-clicker
+2026-06-29 23:27:15,160 WARNING [f9dca0438f24] agent.tool_executor: Tool terminal returned error (30.39s): {"output": "[Command timed out after 30s]", "exit_code": 124, "error": null}
+2026-06-29 23:28:24,612 WARNING [739433061428] agent.tool_executor: Tool terminal returned error (110.41s): {"output": "#0 building with \"default\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile\n#1 transferring dockerfile: 750B done\n#1 DONE 0.0s\n\n#2 [internal] load 
+2026-06-29 23:28:47,367 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 23:29:48,896 WARNING [f9dca0438f24] agent.tool_executor: Tool terminal returned error (0.00s): {"output": "", "exit_code": -1, "error": "Foreground command uses '&' backgrounding. Use terminal(background=true) for long-lived processes, then run health checks and tests in follow-up terminal call
+2026-06-29 23:29:53,010 WARNING [f9dca0438f24] agent.tool_executor: Tool terminal returned error (0.20s): {"output": "", "exit_code": -15, "error": null}
+2026-06-29 23:31:28,998 WARNING [739433061428] agent.tool_executor: Tool terminal returned error (170.52s): {"output": "#0 building with \"default\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile\n#1 transferring dockerfile: 768B done\n#1 DONE 0.0s\n\n#2 [internal] load 
+2026-06-29 23:33:17,733 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-617 (_run_agent_streaming):140623310997184 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:33:17,733 WARNING [f9dca0438f24] agent.conversation_loop: Retrying API call in 2.661832520891964s (attempt 1/3) thread=Thread-617 (_run_agent_streaming):140623310997184 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-stealth. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '1000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782777600000'}, 'provider_name': None}}, 'user_id': 'user_3Fjh6nX1JzxeMGJjhbgbZpuYRin'}
+2026-06-29 23:33:21,799 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 2/3) error_type=RateLimitError thread=Thread-617 (_run_agent_streaming):140623310997184 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:33:21,800 WARNING [f9dca0438f24] agent.conversation_loop: Retrying API call in 4.5165652679284465s (attempt 2/3) thread=Thread-617 (_run_agent_streaming):140623310997184 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-stealth. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '1000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782777600000'}, 'provider_name': None}}, 'user_id': 'user_3Fjh6nX1JzxeMGJjhbgbZpuYRin'}
+2026-06-29 23:33:27,041 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-617 (_run_agent_streaming):140623310997184 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:33:27,053 ERROR [f9dca0438f24] agent.conversation_loop: API call failed after 3 retries. HTTP 429: Rate limit exceeded: free-models-per-day-stealth.  | provider=openrouter model=owl-alpha msgs=270 tokens=~94,699
+2026-06-29 23:33:28,062 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session f9dca0438f24
+2026-06-29 23:33:29,721 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-837 (_run_agent_streaming):140623310997184 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (7112cdff-8afd-4fe6-bec5-749d5ba1b7dd)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 23:33:30,600 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-837 (_run_agent_streaming):140623310997184 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:33:30,601 WARNING [f9dca0438f24] agent.conversation_loop: Retrying API call in 2.0997592448405045s (attempt 1/3) thread=Thread-837 (_run_agent_streaming):140623310997184 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-stealth. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '1000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782777600000'}, 'provider_name': None}}, 'user_id': 'user_3Fjh6nX1JzxeMGJjhbgbZpuYRin'}
+2026-06-29 23:33:33,415 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 2/3) error_type=RateLimitError thread=Thread-837 (_run_agent_streaming):140623310997184 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:33:33,416 WARNING [f9dca0438f24] agent.conversation_loop: Retrying API call in 5.734535557023631s (attempt 2/3) thread=Thread-837 (_run_agent_streaming):140623310997184 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-stealth. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '1000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782777600000'}, 'provider_name': None}}, 'user_id': 'user_3Fjh6nX1JzxeMGJjhbgbZpuYRin'}
+2026-06-29 23:33:39,845 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-837 (_run_agent_streaming):140623310997184 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:33:39,847 ERROR [f9dca0438f24] agent.conversation_loop: API call failed after 3 retries. HTTP 429: Rate limit exceeded: free-models-per-day-stealth.  | provider=openrouter model=owl-alpha msgs=271 tokens=~94,757
+2026-06-29 23:33:52,335 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 23:34:28,574 WARNING [739433061428] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-652 (_run_agent_streaming):140622396651200 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:34:28,575 WARNING [739433061428] agent.conversation_loop: Retrying API call in 2.1463117516980628s (attempt 1/3) thread=Thread-652 (_run_agent_streaming):140622396651200 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-stealth. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '1000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782777600000'}, 'provider_name': None}}, 'user_id': 'user_3Fjh6nX1JzxeMGJjhbgbZpuYRin'}
+2026-06-29 23:34:31,384 WARNING [739433061428] agent.conversation_loop: API call failed (attempt 2/3) error_type=RateLimitError thread=Thread-652 (_run_agent_streaming):140622396651200 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:34:31,385 WARNING [739433061428] agent.conversation_loop: Retrying API call in 5.735506635382335s (attempt 2/3) thread=Thread-652 (_run_agent_streaming):140622396651200 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-stealth. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '1000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782777600000'}, 'provider_name': None}}, 'user_id': 'user_3Fjh6nX1JzxeMGJjhbgbZpuYRin'}
+2026-06-29 23:34:32,163 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-850 (_run_agent_streaming):140622237255360 provider=openrouter base_url=https://openrouter.ai/api/v1 model=openrouter/owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:34:33,147 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-850 (_run_agent_streaming):140622237255360 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:34:33,147 WARNING [f9dca0438f24] agent.conversation_loop: Retrying API call in 2.8442414979570434s (attempt 1/3) thread=Thread-850 (_run_agent_streaming):140622237255360 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-stealth. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '1000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782777600000'}, 'provider_name': None}}, 'user_id': 'user_3Fjh6nX1JzxeMGJjhbgbZpuYRin'}
+2026-06-29 23:34:36,838 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 2/3) error_type=RateLimitError thread=Thread-850 (_run_agent_streaming):140622237255360 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:34:36,839 WARNING [f9dca0438f24] agent.conversation_loop: Retrying API call in 4.362949818725006s (attempt 2/3) thread=Thread-850 (_run_agent_streaming):140622237255360 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-stealth. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '1000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782777600000'}, 'provider_name': None}}, 'user_id': 'user_3Fjh6nX1JzxeMGJjhbgbZpuYRin'}
+2026-06-29 23:34:37,711 WARNING [739433061428] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-652 (_run_agent_streaming):140622396651200 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:34:37,713 ERROR [739433061428] agent.conversation_loop: API call failed after 3 retries. HTTP 429: Rate limit exceeded: free-models-per-day-stealth.  | provider=openrouter model=owl-alpha msgs=49 tokens=~49,912
+2026-06-29 23:34:41,766 WARNING [f9dca0438f24] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-850 (_run_agent_streaming):140622237255360 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:34:41,767 ERROR [f9dca0438f24] agent.conversation_loop: API call failed after 3 retries. HTTP 429: Rate limit exceeded: free-models-per-day-stealth.  | provider=openrouter model=owl-alpha msgs=271 tokens=~94,757
+2026-06-29 23:35:24,289 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session 739433061428
+2026-06-29 23:35:24,891 WARNING [739433061428] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-864 (_run_agent_streaming):140622396651200 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (1700ea84-4127-4271-9eb4-1b207125afde)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 23:35:25,650 WARNING [739433061428] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-864 (_run_agent_streaming):140622396651200 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:35:25,650 WARNING [739433061428] agent.conversation_loop: Retrying API call in 2.0708177785968744s (attempt 1/3) thread=Thread-864 (_run_agent_streaming):140622396651200 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-stealth. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '1000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782777600000'}, 'provider_name': None}}, 'user_id': 'user_3Fjh6nX1JzxeMGJjhbgbZpuYRin'}
+2026-06-29 23:35:28,418 WARNING [739433061428] agent.conversation_loop: API call failed (attempt 2/3) error_type=RateLimitError thread=Thread-864 (_run_agent_streaming):140622396651200 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:35:28,419 WARNING [739433061428] agent.conversation_loop: Retrying API call in 5.364456412130064s (attempt 2/3) thread=Thread-864 (_run_agent_streaming):140622396651200 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-stealth. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '1000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782777600000'}, 'provider_name': None}}, 'user_id': 'user_3Fjh6nX1JzxeMGJjhbgbZpuYRin'}
+2026-06-29 23:35:34,754 WARNING [739433061428] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-864 (_run_agent_streaming):140622396651200 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 429: Rate limit exceeded: free-models-per-day-stealth. 
+2026-06-29 23:35:34,757 ERROR [739433061428] agent.conversation_loop: API call failed after 3 retries. HTTP 429: Rate limit exceeded: free-models-per-day-stealth.  | provider=openrouter model=owl-alpha msgs=50 tokens=~49,751

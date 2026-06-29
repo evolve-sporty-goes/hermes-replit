@@ -3,14 +3,14 @@
     "archived_at": null,
     "created_at": "2026-06-29T12:53:34.103264+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-06-29T21:04:18.545957+00:00",
-    "last_used_at": "2026-06-29T21:03:16.756429+00:00",
-    "last_viewed_at": "2026-06-29T21:03:16.743430+00:00",
-    "patch_count": 53,
+    "last_patched_at": "2026-06-29T22:43:37.930067+00:00",
+    "last_used_at": "2026-06-29T22:42:54.402015+00:00",
+    "last_viewed_at": "2026-06-29T22:42:54.398348+00:00",
+    "patch_count": 63,
     "pinned": false,
     "state": "active",
-    "use_count": 42,
-    "view_count": 42
+    "use_count": 47,
+    "view_count": 47
   },
   "computer-use": {
     "archived_at": null,
@@ -102,6 +102,19 @@
     "state": "active",
     "use_count": 29,
     "view_count": 29
+  },
+  "simplify-code": {
+    "archived_at": null,
+    "created_at": "2026-06-29T23:24:26.072444+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-06-29T23:24:26.087548+00:00",
+    "last_viewed_at": "2026-06-29T23:24:26.072459+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
   },
   "software-development:workspace-organization": {
     "archived_at": null,

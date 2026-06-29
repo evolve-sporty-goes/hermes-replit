@@ -168,3 +168,31 @@ curl "http://localhost:8000/cookies?url=https://protected-site.com"
 | Need cookies for own HTTP client | Extract via `context.cookies()` or `/cookies` endpoint |
 | High-volume scraping | Use the FastAPI server + cookie cache |
 | Any HTTP method through CF | Use request mirroring (`x-hostname` header) |
+
+### Known limitation: Clerk-managed Turnstile bypass fails
+
+The bypass server **cannot solve Clerk-managed Turnstile** challenges. When calling
+`/cookies?url=https://openrouter.ai/sign-up`, it returns:
+```json
+{"detail": "Failed to bypass Cloudflare protection"}
+```
+
+This is because Clerk renders Turnstile *after* form validation in React, and the
+server's headless navigation doesn't fill/submit the form to trigger the challenge.
+The Turnstile sitekey is also managed by Clerk (not visible in the page HTML).
+
+**Workaround**: Pre-warm cookies by navigating in a real browser (Hermes browser
+tool or Playwright) where form submission triggers Turnstile, then pass the resulting
+cookies to the bypass server for caching.
+
+### Clerk FAPI requires captcha token
+
+Direct API calls to Clerk's FAPI endpoint fail without a valid Turnstile token:
+```
+POST https://clerk.openrouter.ai/v1/client/sign_ups
+→ {"code": "captcha_missing_token"}
+```
+
+The token must come from a real browser solving the challenge. Cannot be forged,
+bypassed, or obtained from the bypass server. The form must be submitted in a
+browser environment where Turnstile can render and be solved.

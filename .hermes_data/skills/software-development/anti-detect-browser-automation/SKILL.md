@@ -183,6 +183,8 @@ of the bash script — subprocesses don't always inherit the parent's env.
 - **Bash+Python pattern (email.sh style)** — for complex browser automation, write standalone `.py` helper files to `~/` directory (e.g. `~/duckmail.py`, `~/fc_signup.py`), then call them from a bash script with `python3 ~/helper.py "$ARG1" "$ARG2"`. No nested heredocs — they break with quote escaping.
 - **Always headless=False** with CloakBrowser on this system.
 - **DISPLAY export** — if subprocess Python scripts fail with "Missing X server or $DISPLAY", add `export DISPLAY=:1` (or whatever display the user specifies) at the top of the bash script.
+- **Hermes browser tool for signup flows** — user prefers using the agent's built-in browser tools (`browser_navigate`, `browser_type`, `browser_click`, `browser_console`) over Playwright/CloakBrowser when possible. This avoids subprocess complexity and uses the already-authenticated browser session.
+- **Single browser for entire flow** — don't launch multiple browsers for multi-step signup flows. One persistent context (or Hermes browser session) for signup → inbox → verify → key extraction.
 
 ## Form handling: Clerk.js (OpenRouter, Firecrawl, etc.)
 
@@ -208,6 +210,11 @@ because it bypasses Playwright's actionability checks and fires the native click
 **Text input**: `.fill()` usually works for Clerk email/password fields. If the form
 doesn't submit after fill + checkbox + Continue, try `.type(text, delay=80)` instead
 to simulate real keystroke events that Clerk's React listeners catch.
+
+**Checkbox toggle trap**: A single `dispatchEvent(new Event('change'))` on
+`#legalAccepted-field` TOGGLES state. If the checkbox was already checked (from a
+prior `.click()`), the event reverts it to `false`. Always verify `.checked` after
+injection, or use the React fiber `onChange` method which sets state deterministically.
 
 **Detecting the silent block**: If clicking Continue produces zero Clerk POST requests
 but the page just resets to the empty form, Clerk is silently rejecting. Check with
@@ -379,6 +386,7 @@ so the JS walker can find and click the checkbox without any external patches.
 8. **License issues?**: Free tier v146 may be stale; check `python3 -m cloakbrowser update`
 9. **`headless=True` CRASHES with CloakBrowser v146** — `TargetClosedError`. Always use `headless=False`. If no display server, wrap with `xvfb-run`.
 10. **Clerk.js form fields need `dispatchEvent`** — `.fill()` and `.check()` do NOT trigger Clerk's internal React state. The button appears enabled but Clerk never POSTs to its API. Fix: use JS `dispatchEvent` after setting values, or `check(force=True)` for checkboxes.
+10b. **dispatchEvent TOGGLES checkbox state** — A single `dispatchEvent(new Event('change'))` on `#legalAccepted-field` flips the current state. If already checked (from a prior `.click()`), it reverts to `false`. Always verify `.checked` after injection, or use the React fiber `onChange` method (see `references/clerkjs-form-debugging.md`) which sets state deterministically.
 14. **Turnstile inline vs iframe** — OpenRouter embeds Turnstile inline on the main page (`.cf-turnstile`), not in a detectable iframe. Check main page first, then frames. See Cloudflare handling section for the correct detection pattern.
 15. **Success check gated behind turnstile detection** — If your `confirm-email` URL check is inside `if not turnstile:`, it never runs after Turnstile passes. Always check success condition on every loop iteration.
 16. **`pipefail` + `grep` kills script** — With `set -eo pipefail`, `grep` with no matches causes silent script death. Use `tail -1` not `head -1`, `sed` not `cut` for URLs, and `if` not `&&` for the empty check.
@@ -456,4 +464,5 @@ user_agent = page.evaluate("navigator.userAgent")
 - `references/proton-mail-automation.md` — Proton Mail inbox automation: persistent profile, search, extract verification links, bash integration
 - `references/cloudflare-bypass.md` — Full CloudflareBypassForScraping integration: server setup (FastAPI/Docker), API endpoints, request mirroring, FakeShadowRoot, solve flow, cookie extraction
 - `references/openrouter-signup-flow.md` — OpenRouter signup: Clerk.js form, inline Turnstile, Proton verification, API key extraction
+- `references/hermes-browser-tool-signup.md` — Using Hermes browser tools for signup flows, cross-origin iframe click limitation, Clerk credentials
 - `scripts/cloak_replace.sh` — One-liner bulk sed script to migrate playwright→cloakbrowser in all workspace scripts

@@ -15,7 +15,13 @@
 **Critical design decision**: signup (step 4) and verify (step 6) MUST share
 the **same persistent profile** (`~/or_profile`), not separate tmpdirs. The
 Cloudflare challenge state and session cookies earned during signup must carry
-over to the verify step.
+over to the verify step. Same for inbox check + verify steps — ideally ONE
+browser context does all three.
+
+**Optimization (2026-06-29)**: Use a **single persistent browser** for the entire
+flow (signup → proton inbox → verify → key extraction). This cuts Chromium
+processes from 4-5 down to 2 (bypass server + signup browser), saves ~600MB+ RAM,
+and naturally carries session state across steps.
 
 **Proton stays separate** — uses its own `~/proton_profile` (no CF bypass needed).
 
@@ -65,6 +71,39 @@ pip install git+https://github.com/sarperavci/CloudflareBypassForScraping.git -i
 
 Not on PyPI — must install from GitHub. Dependencies: `cloakbrowser`, `curl_cffi`,
 `fastapi`, `uvicorn`, `pydantic`, `pyvirtualdisplay`.
+
+### Single-browser pattern (recommended)
+
+```python
+from cloakbrowser import launch_persistent_context
+
+# ONE browser for the entire flow
+ctx = launch_persistent_context(
+    "/home/runner/or_profile",
+    headless=False,
+    humanize=True,
+    args=["--enable-blink-features=FakeShadowRoot"]
+)
+page = ctx.pages[0] if ctx.pages else ctx.new_page()
+
+# Step 1: Signup
+page.goto("https://openrouter.ai/sign-up", timeout=60000)
+# ... fill form, submit, handle Turnstile ...
+
+# Step 2: Proton inbox (same browser, new navigation)
+page.goto("https://account.proton.me/login", timeout=60000)
+# ... search inbox, extract verify URL ...
+
+# Step 3: Verify + extract key (same browser)
+page.goto(verify_url, timeout=30000)
+# ... click Individual, extract API key ...
+
+ctx.close()
+```
+
+**Why**: Each `launch_persistent_context` spawns a Chromium (~200MB+, 3-5s startup).
+Multiple launches waste resources and lose session cookies. One context preserves
+the full auth state across all steps.
 
 ## Key pitfalls discovered
 
