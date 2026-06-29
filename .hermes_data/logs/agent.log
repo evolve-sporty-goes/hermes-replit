@@ -18066,3 +18066,173 @@ urllib.error.URLError: <urlopen error [Errno 111] Connection refused>
 2026-06-29 10:13:22,467 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/4711b74d3cee06fbfe2381a4afb42a7d/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
 2026-06-29 10:13:22,468 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
 2026-06-29 10:13:23,260 WARNING api.models: get_cli_sessions() failed — check state.db schema or path (/home/runner/workspace/.hermes_data/state.db): disk I/O error
+2026-06-29 11:18:21,726 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 11:18:21,765 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 11:18:21,765 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 11:18:22,029 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 11:18:22,030 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 11:18:22,030 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 11:18:22,030 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 11:18:22,031 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 11:18:22,031 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 11:18:22,031 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 11:18:22,198 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 11:18:22,198 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 11:18:22,199 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 11:18:22,200 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 11:18:22,202 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 11:18:22,203 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 11:18:22,204 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 11:18:22,205 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 11:18:22,205 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 11:18:22,206 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 11:18:22,219 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 11:18:25,257 WARNING tools.registry: check_fn check_browser_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:18:25,343 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 11:18:25,345 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 11:18:25,346 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:18:25,346 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:18:25,388 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:18:25,685 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 11:18:25,686 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 11:18:25,686 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:18:25,724 INFO tools.lazy_deps: Lazy-installing edge-tts==7.2.7 for feature 'tts.edge'
+2026-06-29 11:18:25,977 INFO tools.lazy_deps: Lazy install complete for feature 'tts.edge'
+2026-06-29 11:18:28,674 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:18:29,745 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:18:30,374 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:18:32,370 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:18:32,967 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:18:33,958 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-29 11:21:22,488 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-29 11:21:22,490 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-29 11:21:22,491 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-29 11:21:22,584 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-29 11:21:22,585 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-29 11:21:22,585 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-29 11:21:22,585 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-29 11:21:22,586 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-29 11:21:22,586 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-29 11:21:22,587 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-29 11:21:22,609 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-29 11:21:22,610 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-29 11:21:22,611 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-29 11:21:22,612 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-29 11:21:22,613 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-29 11:21:22,614 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-29 11:21:22,614 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-29 11:21:22,616 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-29 11:21:22,617 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-29 11:21:22,618 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-29 11:21:22,628 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-29 11:21:24,759 WARNING tools.registry: check_fn check_browser_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:21:24,761 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 11:21:24,762 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 11:21:24,763 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:21:24,763 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:21:24,799 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:21:24,851 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 11:21:24,859 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 11:21:24,860 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:21:24,877 INFO tools.lazy_deps: Lazy-installing edge-tts==7.2.7 for feature 'tts.edge'
+2026-06-29 11:21:24,956 INFO tools.lazy_deps: Lazy install complete for feature 'tts.edge'
+2026-06-29 11:21:26,872 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:21:27,437 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:21:27,918 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:21:29,295 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:21:29,728 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:24:02,710 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-21 (_run_agent_streaming):140129831225024 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:24:02,713 WARNING tools.registry: check_fn check_browser_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:24:02,713 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-29 11:24:02,714 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-29 11:24:02,715 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:24:02,715 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:24:02,717 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:24:02,815 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 11:24:02,816 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-29 11:24:02,816 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-29 11:24:03,416 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-29 11:24:03,791 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 11:24:03,791 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 11:24:04,690 INFO [bd3dda32973e] agent.turn_context: conversation turn: session=bd3dda32973e model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=webui history=0 msg='[Workspace::v1: /home/runner/workspace] Run sync'
+2026-06-29 11:24:06,252 WARNING [bd3dda32973e] agent.prompt_builder: ⚠️  Context file AGENTS.md TRUNCATED: 72264 chars exceeds limit of 62914 — trim the file, pin a larger context_file_max_chars, or use a larger-context model!
+2026-06-29 11:24:06,443 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-24 (_call):140129365493440 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:24:32,632 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-06-29 11:24:32,633 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-06-29 11:24:51,866 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-24 (_call):140129365493440 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:24:51,867 INFO [bd3dda32973e] agent.conversation_loop: API call #1: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=29801 out=1078 total=30879 latency=45.6s
+2026-06-29 11:24:52,630 INFO tools.file_tools: Creating new local environment for task default...
+2026-06-29 11:24:52,723 INFO tools.environments.base: Session snapshot created (session=abad9444565c, cwd=/home/runner/hermes-agent)
+2026-06-29 11:24:52,724 INFO tools.file_tools: local environment ready for task default
+2026-06-29 11:24:52,815 INFO agent.tool_executor: tool search_files completed (0.19s, 68 chars)
+2026-06-29 11:24:52,888 INFO agent.tool_executor: tool read_file completed (0.26s, 9133 chars)
+2026-06-29 11:24:52,932 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-34 (_call):140129079391936 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:25:04,396 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-34 (_call):140129079391936 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:25:04,396 INFO [bd3dda32973e] agent.conversation_loop: API call #2: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=32759 out=80 total=32839 latency=11.5s
+2026-06-29 11:25:04,496 INFO [bd3dda32973e] agent.tool_executor: tool search_files completed (0.08s, 419 chars)
+2026-06-29 11:25:04,520 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-38 (_call):140129079391936 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:25:31,332 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-38 (_call):140129079391936 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:25:31,333 INFO [bd3dda32973e] agent.conversation_loop: API call #3: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=32907 out=49 total=32956 latency=26.8s
+2026-06-29 11:25:34,321 WARNING [bd3dda32973e] agent.tool_executor: Tool terminal returned error (2.66s): {"output": "OK (B): credentials/.pat — identical\nOK (B): credentials/.supabase_anon_key — identical\nOK (B): credentials/openrouter_credentials.txt — identical\nOK (B): credentials/firecrawl_credenti
+2026-06-29 11:25:34,351 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-40 (_call):140129079391936 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:25:57,753 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-40 (_call):140129079391936 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:25:57,754 INFO [bd3dda32973e] agent.conversation_loop: API call #4: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=33317 out=237 total=33554 latency=23.4s
+2026-06-29 11:25:58,345 INFO [bd3dda32973e] agent.tool_executor: tool terminal completed (0.16s, 644 chars)
+2026-06-29 11:25:58,371 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-42 (_call):140129079391936 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:26:34,027 INFO client_event: Client event from 127.0.0.1: {'event': 'sse_error', 'source': 'chat-response', 'session_id': 'bd3dda32973e', 'stream_id': 'b15c5b5efe6b46f49e2004ba37b402be', 'visibility_state': 'visible', 'url_path': '/session/bd3dda32973e', 'reason': 'chat EventSource.onerror', 'ready_state': 0, 'online': True}
+2026-06-29 11:27:02,148 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-42 (_call):140129079391936 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:27:02,149 INFO [bd3dda32973e] agent.conversation_loop: API call #5: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=33591 out=36 total=33627 latency=63.8s
+2026-06-29 11:27:04,063 WARNING [bd3dda32973e] agent.tool_executor: Tool terminal returned error (1.84s): {"output": "OK (B): credentials/.pat — identical\nOK (B): credentials/.supabase_anon_key — identical\nOK (B): credentials/openrouter_credentials.txt — identical\nOK (B): credentials/firecrawl_credenti
+2026-06-29 11:27:04,096 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-44 (_call):140129079391936 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:27:47,135 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-44 (_call):140129079391936 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:27:47,135 INFO [bd3dda32973e] agent.conversation_loop: API call #6: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=33988 out=225 total=34213 latency=43.1s
+2026-06-29 11:27:59,569 INFO [bd3dda32973e] agent.tool_executor: tool execute_code completed (12.06s, 665 chars)
+2026-06-29 11:27:59,594 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-49 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:28:08,866 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-49 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:28:08,867 INFO [bd3dda32973e] agent.conversation_loop: API call #7: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=34434 out=124 total=34558 latency=9.3s
+2026-06-29 11:28:10,445 INFO [bd3dda32973e] agent.tool_executor: tool execute_code completed (1.56s, 4200 chars)
+2026-06-29 11:28:10,493 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-53 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:28:20,682 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-53 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:28:20,683 INFO [bd3dda32973e] agent.conversation_loop: API call #8: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=35820 out=201 total=36021 latency=10.2s
+2026-06-29 11:28:22,738 INFO [bd3dda32973e] agent.tool_executor: tool execute_code completed (1.72s, 6180 chars)
+2026-06-29 11:28:22,765 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-57 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:29:20,349 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-57 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:29:20,350 INFO [bd3dda32973e] agent.conversation_loop: API call #9: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=37928 out=677 total=38605 latency=57.6s
+2026-06-29 11:29:21,056 INFO [bd3dda32973e] agent.tool_executor: tool execute_code completed (0.16s, 2082 chars)
+2026-06-29 11:29:21,080 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-62 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:29:38,993 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-62 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:29:38,993 INFO [bd3dda32973e] agent.conversation_loop: API call #10: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=39356 out=316 total=39672 latency=17.9s
+2026-06-29 11:29:40,742 INFO [bd3dda32973e] agent.tool_executor: tool execute_code completed (1.71s, 1293 chars)
+2026-06-29 11:29:40,769 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-66 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:29:56,221 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-66 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:29:56,222 INFO [bd3dda32973e] agent.conversation_loop: API call #11: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=39961 out=408 total=40369 latency=15.5s
+2026-06-29 11:29:56,732 INFO [bd3dda32973e] agent.tool_executor: tool execute_code completed (0.16s, 134 chars)
+2026-06-29 11:29:56,759 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-70 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:30:03,715 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-70 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:30:03,715 INFO [bd3dda32973e] agent.conversation_loop: API call #12: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=40439 out=148 total=40587 latency=7.0s
+2026-06-29 11:30:04,017 WARNING [bd3dda32973e] agent.tool_executor: Tool execute_code returned error (0.16s): {"status": "error", "output": "\n--- stderr ---\nTraceback (most recent call last):\n  File \"/tmp/hermes_sandbox_7xmyg9t5/script.py\", line 3, in <module>\n    proc = subprocess.run(['fuser', '/tmp/s
+2026-06-29 11:30:04,052 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-75 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:30:14,707 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-75 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:30:14,707 INFO [bd3dda32973e] agent.conversation_loop: API call #13: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=41261 out=234 total=41495 latency=10.7s
+2026-06-29 11:30:14,875 INFO [bd3dda32973e] agent.tool_executor: tool execute_code completed (0.16s, 459 chars)
+2026-06-29 11:30:14,897 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-79 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:30:28,996 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-79 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:30:28,997 INFO [bd3dda32973e] agent.conversation_loop: API call #14: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=41708 out=87 total=41795 latency=14.1s
+2026-06-29 11:30:29,154 INFO [bd3dda32973e] agent.tool_executor: tool terminal completed (0.11s, 58 chars)
+2026-06-29 11:30:29,178 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-81 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:31:01,280 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-81 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:31:01,282 INFO [bd3dda32973e] agent.conversation_loop: API call #15: model=@cf/moonshotai/kimi-k2.7-code provider=custom in=41786 out=273 total=42059 latency=32.1s
+2026-06-29 11:31:02,342 INFO [bd3dda32973e] agent.tool_executor: tool execute_code completed (0.91s, 193 chars)
+2026-06-29 11:31:02,363 INFO [bd3dda32973e] run_agent: Delivered /steer to agent after tool batch (18 chars): write script again
+2026-06-29 11:31:02,392 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-85 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:31:02,890 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (1f421bf1-d554-4425-9b8c-90dc309c44a3)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-06-29 11:31:02,891 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-85 (_call):140130097768128 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-29 11:31:02,893 WARNING [bd3dda32973e] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-21 (_run_agent_streaming):140129831225024 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (1f421bf1-d554-4425-9b8c-90dc309c44a3)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-29 11:31:02,917 INFO [bd3dda32973e] agent.chat_completion_helpers: Fallback to openrouter/owl-alpha: attached fallback credential pool
+2026-06-29 11:31:03,046 INFO [bd3dda32973e] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → owl-alpha (openrouter)
+2026-06-29 11:31:03,059 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-86 (_call):140130097768128 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 11:31:14,810 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-86 (_call):140130097768128 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha
+2026-06-29 11:31:14,811 INFO [bd3dda32973e] agent.conversation_loop: API call #16: model=owl-alpha provider=openrouter in=44658 out=229 total=44887 latency=12.4s cache=1408/44658 (3%)
