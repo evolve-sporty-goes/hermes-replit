@@ -2298,3 +2298,52 @@ Can you make the script short so that it is eas...
 2026-06-30 15:09:27,933 INFO [20260630_150709_c65fbc] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
 2026-06-30 15:09:27,935 WARNING [20260630_150709_c65fbc] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-8 (run_agent):140661719660224 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
 2026-06-30 15:09:27,978 ERROR [20260630_150709_c65fbc] agent.conversation_loop: API call failed after 3 retries. HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day | provider=openrouter model=nvidia/nemotron-3-ultra-550b-a55b:free msgs=2 tokens=~8,026
+2026-06-30 15:15:52,329 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-30 15:15:52,330 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-30 15:15:52,331 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-30 15:15:52,567 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-30 15:15:52,567 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-30 15:15:52,567 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-30 15:15:52,568 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-30 15:15:52,568 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-30 15:15:52,568 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-30 15:15:52,569 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-30 15:15:52,593 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-30 15:15:52,594 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-30 15:15:52,595 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-30 15:15:52,596 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-30 15:15:52,597 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-30 15:15:52,597 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-30 15:15:52,598 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-30 15:15:52,599 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-30 15:15:52,599 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-30 15:15:52,600 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-30 15:15:52,609 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-30 15:15:55,150 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:55,154 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:56,662 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-30 15:15:56,663 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:56,685 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:56,788 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:56,793 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:56,794 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:56,820 INFO tools.lazy_deps: Lazy-installing edge-tts==7.2.7 for feature 'tts.edge'
+2026-06-30 15:15:56,953 INFO tools.lazy_deps: Lazy install complete for feature 'tts.edge'
+2026-06-30 15:15:57,812 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-30 15:15:57,862 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:57,862 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:57,863 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:57,993 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:57,994 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:57,994 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:58,030 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:58,036 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:58,054 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 15:15:59,284 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 15:15:59,654 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)

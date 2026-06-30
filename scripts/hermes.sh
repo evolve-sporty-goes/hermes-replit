@@ -49,7 +49,7 @@ chmod +x $BIN/*
 
 script.sh >/dev/null 2>&1 &
 sync 
-setcfapi.sh
+#setcfapi.sh
 firecrawl_install.sh &
 # 8. Launch hermes
 hermes update
