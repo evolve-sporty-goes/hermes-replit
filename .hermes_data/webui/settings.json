@@ -5,6 +5,7 @@
   "show_token_usage": true,
   "show_quota_chip": true,
   "show_conversation_outline": false,
+  "show_busy_placeholder_hint": false,
   "hide_empty_state_suggestions": false,
   "virtualize_transcript": false,
   "virtualize_transcript_optin": false,
@@ -12,6 +13,7 @@
   "fade_text_effect": false,
   "show_cli_sessions": true,
   "show_cron_sessions": false,
+  "show_webhook_sessions": false,
   "show_previous_messaging_sessions": false,
   "sync_to_insights": false,
   "check_for_updates": true,
@@ -22,6 +24,7 @@
   "font_size": "large",
   "session_jump_buttons": true,
   "render_user_markdown": true,
+  "large_text_paste_as_attachment": true,
   "structured_code_default_view": "off",
   "structured_code_auto_tree_lines": 10,
   "session_endless_scroll": true,
@@ -68,5 +71,5 @@
   "busy_input_mode": "steer",
   "password_hash": null,
   "auth_disabled_acknowledged": false,
-  "default_model_provider": "custom"
+  "default_model_provider": "openrouter"
 }

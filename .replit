@@ -1,4 +1,4 @@
-modules = ["python-3.12", "web", "bash"]
+modules = ["python-3.12", "web", "bash", "nodejs_24"]
 
 [agent]
 expertMode = true
@@ -6,7 +6,7 @@ stack = "BEST_EFFORT_FALLBACK"
 
 [nix]
 channel = "stable-25_05"
-packages = ["alsa-lib", "at-spi2-atk", "at-spi2-core", "atk", "cairo", "chromium", "cups", "dbus-glib", "feh", "fluxbox", "gcc-unwrapped", "gdk-pixbuf", "gitFull", "glib", "gtk3", "gtk3-x11", "libGL", "libGLU", "libdrm", "libgbm", "libxkbcommon", "mesa", "nss", "pacmanfm", "pango", "pcmanfm", "playwright-driver", "procps", "python3", "tigervnc", "unzip", "xdotool", "xorg.libX11", "xorg.libXcomposite", "xorg.libXcursor", "xorg.libXdamage", "xorg.libXext", "xorg.libXi", "xorg.libXrandr", "xorg.libXrender", "xorg.libXt", "xorg.libXtst", "xorg.xauth", "xorg.xinit", "xorg.xorgserver", "xterm", "xvfb-run", "tor", "ollama", "llama-cpp", "nodejs-24", "nano", "lsof"]
+packages = ["alsa-lib", "at-spi2-atk", "at-spi2-core", "atk", "cairo", "chromium", "cups", "dbus-glib", "feh", "fluxbox", "gcc-unwrapped", "gdk-pixbuf", "gitFull", "glib", "gtk3", "gtk3-x11", "libGL", "libGLU", "libdrm", "libgbm", "libxkbcommon", "mesa", "nss", "pacmanfm", "pango", "pcmanfm", "playwright-driver", "procps", "python3", "tigervnc", "unzip", "xdotool", "xorg.libX11", "xorg.libXcomposite", "xorg.libXcursor", "xorg.libXdamage", "xorg.libXext", "xorg.libXi", "xorg.libXrandr", "xorg.libXrender", "xorg.libXt", "xorg.libXtst", "xorg.xauth", "xorg.xinit", "xorg.xorgserver", "xterm", "xvfb-run", "tor", "nodejs_24"]
 
 [startup] 
 startOn = "Project"

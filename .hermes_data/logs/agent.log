@@ -3032,3 +3032,355 @@ Can you make the script short so that it is eas...
   → `copilot login` or `hermes model` to authenticate via OAuth
   → A fine-grained PAT (github_pat_*) with Copilot Requests permission
   → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 19:58:26,989 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-30 19:58:26,991 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-30 19:58:26,992 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-30 19:58:27,143 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-30 19:58:27,143 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-30 19:58:27,144 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-30 19:58:27,144 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-30 19:58:27,145 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-30 19:58:27,145 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-30 19:58:27,147 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-30 19:58:27,178 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-30 19:58:27,179 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-30 19:58:27,180 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-30 19:58:27,181 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-30 19:58:27,181 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-30 19:58:27,182 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-30 19:58:27,183 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-30 19:58:27,184 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-30 19:58:27,186 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-30 19:58:27,187 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-30 19:58:27,202 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-30 19:58:28,818 WARNING tools.registry: check_fn check_browser_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:28,819 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:28,820 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:28,821 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:28,821 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:28,836 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:28,948 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 19:58:28,956 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:28,959 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:28,959 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:28,972 INFO tools.lazy_deps: Lazy-installing edge-tts==7.2.7 for feature 'tts.edge'
+2026-06-30 19:58:29,259 INFO tools.lazy_deps: Lazy install complete for feature 'tts.edge'
+2026-06-30 19:58:29,720 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 19:58:29,720 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 19:59:29.
+2026-06-30 19:58:29,751 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 19:58:29,751 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 19:59:29.
+2026-06-30 19:58:29,751 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:29,778 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:29,778 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:29,779 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:29,983 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:29,983 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:29,983 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:30,015 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:30,021 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:30,036 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 19:58:30,513 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 19:58:31,005 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 20:00:54,462 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-28 (_run_agent_streaming):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:00:54,464 WARNING tools.registry: check_fn check_browser_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 20:00:54,465 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 20:00:54,466 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 20:00:54,467 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 20:00:54,467 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 20:00:54,468 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 20:00:54,599 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 20:00:54,609 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 20:00:54,616 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 20:00:54,617 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 20:00:54,806 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 20:00:54,806 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 20:01:54.
+2026-06-30 20:00:54,837 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 20:00:54,837 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 20:01:54.
+2026-06-30 20:00:54,838 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 20:00:55,223 INFO [31ff4afe927b] agent.turn_context: conversation turn: session=31ff4afe927b model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=webui history=0 msg='[Workspace::v1: /home/runner/workspace] .'
+2026-06-30 20:00:56,014 WARNING [31ff4afe927b] agent.prompt_builder: ⚠️  Context file AGENTS.md TRUNCATED: 70678 chars exceeds limit of 31457 — trim the file, pin a larger context_file_max_chars, or use a larger-context model!
+2026-06-30 20:00:56,163 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-31 (_call):139952216651456 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:01:04,372 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-31 (_call):139952216651456 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:01:04,372 INFO [31ff4afe927b] agent.conversation_loop: API call #1: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=26840 out=36 total=26876 latency=8.3s
+2026-06-30 20:01:04,409 INFO [31ff4afe927b] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=nvidia/nemotron-3-ultra-550b-a55b:free api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=32 session=31ff4afe927b
+2026-06-30 20:01:09,381 INFO api.streaming: title_status session=31ff4afe927b status=llm_retry reason=llm_retry title='Greeting' raw_preview=''
+2026-06-30 20:01:19,753 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 20:01:19,789 INFO [31ff4afe927b] agent.turn_context: conversation turn: session=31ff4afe927b model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=webui history=2 msg='[Workspace::v1: /home/runner/workspace] What model are you'
+2026-06-30 20:01:19,816 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-35 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:01:43,420 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-35 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:01:43,421 INFO [31ff4afe927b] agent.conversation_loop: API call #2: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=26866 out=97 total=26963 latency=23.6s cache=26112/26866 (97%)
+2026-06-30 20:01:43,443 INFO [31ff4afe927b] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=nvidia/nemotron-3-ultra-550b-a55b:free api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=108 session=31ff4afe927b
+2026-06-30 20:02:30,644 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 20:02:30,750 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 20:02:30,874 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 20:04:41,952 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 20:04:42,032 INFO [31ff4afe927b] agent.turn_context: conversation turn: session=31ff4afe927b model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=webui history=4 msg='[Workspace::v1: /home/runner/workspace] Can you inspect images'
+2026-06-30 20:04:42,170 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-53 (_call):139952557901504 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:05:17,120 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-53 (_call):139952557901504 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:05:17,121 INFO [31ff4afe927b] agent.conversation_loop: API call #3: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=26924 out=380 total=27304 latency=35.0s
+2026-06-30 20:05:17,178 INFO [31ff4afe927b] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=nvidia/nemotron-3-ultra-550b-a55b:free api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=642 session=31ff4afe927b
+2026-06-30 20:05:19,320 INFO client_event: Client event from 127.0.0.1: {'event': 'sse_error', 'source': 'gateway-sessions', 'visibility_state': 'visible', 'url_path': '/session/31ff4afe927b', 'reason': 'gateway EventSource.onerror', 'ready_state': 0, 'online': True}
+2026-06-30 20:05:50,041 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 20:05:50,110 INFO [31ff4afe927b] agent.turn_context: conversation turn: session=31ff4afe927b model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=webui history=6 msg='[Workspace::v1: /home/runner/workspace] Download vision_analyse skill or anythin...'
+2026-06-30 20:05:50,150 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-60 (_call):139952940652224 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:05:55,249 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-60 (_call):139952940652224 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:05:55,250 INFO [31ff4afe927b] agent.conversation_loop: API call #4: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=27106 out=60 total=27166 latency=5.1s cache=26112/27106 (96%)
+2026-06-30 20:05:55,346 WARNING [31ff4afe927b] agent.tool_executor: Tool skill_view returned error (0.05s): {"success": false, "error": "Skill 'vision_analyze' not found.", "available_skills": ["computer-use", "dogfood", "yuanbao", "claude-code", "codex", "hermes-agent", "hermes-cli-automation", "opencode",
+2026-06-30 20:05:55,365 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-62 (_call):139952940652224 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:06:11,993 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-62 (_call):139952940652224 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:06:11,994 INFO [31ff4afe927b] agent.conversation_loop: API call #5: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=27289 out=113 total=27402 latency=16.6s
+2026-06-30 20:06:12,014 INFO [31ff4afe927b] tools.file_tools: Creating new local environment for task default...
+2026-06-30 20:06:12,094 INFO [31ff4afe927b] tools.environments.base: Session snapshot created (session=e98e89a4811a, cwd=/home/runner/workspace)
+2026-06-30 20:06:12,095 INFO [31ff4afe927b] tools.file_tools: local environment ready for task default
+2026-06-30 20:06:12,260 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.25s, 18 chars)
+2026-06-30 20:06:12,301 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-69 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:06:18,995 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-69 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:06:18,995 INFO [31ff4afe927b] agent.conversation_loop: API call #6: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=27363 out=66 total=27429 latency=6.7s
+2026-06-30 20:06:19,085 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.07s, 7754 chars)
+2026-06-30 20:06:19,114 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-73 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:06:35,871 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-73 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:06:35,877 INFO [31ff4afe927b] agent.conversation_loop: API call #7: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=30526 out=131 total=30657 latency=16.8s
+2026-06-30 20:06:36,511 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.52s, 4162 chars)
+2026-06-30 20:06:36,572 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-76 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:06:38,395 INFO agent.chat_completion_helpers: Streaming failed before delivery: Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (284/32)
+2026-06-30 20:06:38,401 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-76 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:06:38,406 WARNING [31ff4afe927b] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-58 (_run_agent_streaming):139952977340096 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (284/32)
+2026-06-30 20:06:38,409 WARNING [31ff4afe927b] agent.conversation_loop: Retrying API call in 2.0978818872188736s (attempt 1/3) thread=Thread-58 (_run_agent_streaming):139952977340096 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (284/32)
+2026-06-30 20:06:40,708 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-77 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:07:04,432 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-77 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:07:04,437 INFO [31ff4afe927b] agent.conversation_loop: API call #8: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=31970 out=194 total=32164 latency=27.9s cache=26112/31970 (82%)
+2026-06-30 20:07:04,629 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.16s, 18 chars)
+2026-06-30 20:07:04,668 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-80 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:07:09,235 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-80 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:07:09,236 INFO [31ff4afe927b] agent.conversation_loop: API call #9: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=32060 out=74 total=32134 latency=4.6s
+2026-06-30 20:07:09,340 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.08s, 18 chars)
+2026-06-30 20:07:09,367 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-84 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:07:13,652 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-84 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:07:13,653 INFO [31ff4afe927b] agent.conversation_loop: API call #10: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=32136 out=77 total=32213 latency=4.3s cache=30464/32136 (95%)
+2026-06-30 20:07:13,828 INFO [31ff4afe927b] agent.tool_executor: tool read_file completed (0.16s, 9420 chars)
+2026-06-30 20:07:13,863 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-89 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:07:19,504 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-89 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:07:19,505 INFO [31ff4afe927b] agent.conversation_loop: API call #11: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=35164 out=89 total=35253 latency=5.7s cache=30464/35164 (87%)
+2026-06-30 20:07:19,627 INFO [31ff4afe927b] agent.tool_executor: tool read_file completed (0.11s, 4702 chars)
+2026-06-30 20:07:19,649 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-94 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:07:39,189 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-94 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:07:39,189 INFO [31ff4afe927b] agent.conversation_loop: API call #12: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=36895 out=51 total=36946 latency=19.6s cache=30464/36895 (83%)
+2026-06-30 20:07:39,472 INFO [31ff4afe927b] agent.tool_executor: tool skills_list completed (0.22s, 2581 chars)
+2026-06-30 20:07:39,510 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-95 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:07:45,993 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-95 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:07:45,994 INFO [31ff4afe927b] agent.conversation_loop: API call #13: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=37632 out=86 total=37718 latency=6.5s
+2026-06-30 20:07:46,172 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.12s, 18 chars)
+2026-06-30 20:07:46,215 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-99 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:00,746 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-99 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:00,749 INFO [31ff4afe927b] agent.conversation_loop: API call #14: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=37710 out=65 total=37775 latency=14.6s cache=34816/37710 (92%)
+2026-06-30 20:08:00,870 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.09s, 18 chars)
+2026-06-30 20:08:00,892 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-103 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:04,928 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-103 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:04,929 INFO [31ff4afe927b] agent.conversation_loop: API call #15: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=37832 out=70 total=37902 latency=4.0s
+2026-06-30 20:08:05,050 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.07s, 4864 chars)
+2026-06-30 20:08:05,075 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-106 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:08,433 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-106 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:08,434 INFO [31ff4afe927b] agent.conversation_loop: API call #16: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=39130 out=83 total=39213 latency=3.4s cache=34816/39130 (89%)
+2026-06-30 20:08:08,737 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.10s, 18 chars)
+2026-06-30 20:08:09,054 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-110 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:14,342 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-110 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:14,343 INFO [31ff4afe927b] agent.conversation_loop: API call #17: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=39252 out=120 total=39372 latency=5.3s cache=34816/39252 (89%)
+2026-06-30 20:08:14,503 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.15s, 18 chars)
+2026-06-30 20:08:14,520 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-114 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:25,625 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-114 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:25,626 INFO [31ff4afe927b] agent.conversation_loop: API call #18: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=39327 out=74 total=39401 latency=11.1s cache=39168/39327 (100%)
+2026-06-30 20:08:25,742 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.10s, 4333 chars)
+2026-06-30 20:08:25,901 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-117 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:27,697 INFO agent.chat_completion_helpers: Streaming failed before delivery: Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (107/32)
+2026-06-30 20:08:27,697 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-117 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:27,698 WARNING [31ff4afe927b] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-58 (_run_agent_streaming):139952977340096 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (107/32)
+2026-06-30 20:08:27,699 WARNING [31ff4afe927b] agent.conversation_loop: Retrying API call in 2.130198668727336s (attempt 1/3) thread=Thread-58 (_run_agent_streaming):139952977340096 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (107/32)
+2026-06-30 20:08:29,913 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-118 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:34,352 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-118 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:08:34,353 INFO [31ff4afe927b] agent.conversation_loop: API call #19: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=40766 out=68 total=40834 latency=8.5s cache=39168/40766 (96%)
+2026-06-30 20:08:34,548 INFO [31ff4afe927b] agent.tool_executor: tool read_file completed (0.11s, 8696 chars)
+2026-06-30 20:08:34,583 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-123 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:09:35,642 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-123 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:09:35,643 INFO [31ff4afe927b] agent.conversation_loop: API call #20: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=43682 out=339 total=44021 latency=61.1s
+2026-06-30 20:09:43,970 INFO [31ff4afe927b] agent.tool_executor: tool execute_code completed (8.31s, 342 chars)
+2026-06-30 20:09:44,019 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-127 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:10:11,578 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-127 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:10:11,579 INFO [31ff4afe927b] agent.conversation_loop: API call #21: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=44007 out=126 total=44133 latency=27.6s
+2026-06-30 20:10:11,657 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.06s, 556 chars)
+2026-06-30 20:10:11,675 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-130 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:10:22,363 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-130 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:10:22,365 INFO [31ff4afe927b] agent.conversation_loop: API call #22: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=44261 out=87 total=44348 latency=10.7s
+2026-06-30 20:10:22,518 INFO [31ff4afe927b] agent.tool_executor: tool read_file completed (0.13s, 4847 chars)
+2026-06-30 20:10:23,208 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-135 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:10:27,865 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-135 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:10:27,867 INFO [31ff4afe927b] agent.conversation_loop: API call #23: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=46060 out=77 total=46137 latency=4.7s cache=43520/46060 (94%)
+2026-06-30 20:10:29,497 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (1.61s, 6339 chars)
+2026-06-30 20:10:29,523 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-138 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:10:43,861 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-138 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:10:43,862 INFO [31ff4afe927b] agent.conversation_loop: API call #24: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=48051 out=159 total=48210 latency=14.3s cache=43520/48051 (91%)
+2026-06-30 20:10:44,320 INFO [31ff4afe927b] agent.tool_executor: tool execute_code completed (0.36s, 466 chars)
+2026-06-30 20:10:44,346 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-142 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:10:53,424 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-142 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:10:53,425 INFO [31ff4afe927b] agent.conversation_loop: API call #25: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=48369 out=219 total=48588 latency=9.1s cache=43520/48369 (90%)
+2026-06-30 20:10:53,764 WARNING [31ff4afe927b] agent.tool_executor: Tool execute_code returned error (0.32s): {"status": "error", "output": "\n--- stderr ---\nTraceback (most recent call last):\n  File \"/tmp/hermes_sandbox_ndbeaqm2/script.py\", line 2, in <module>\n    from agent.image_routing import _model_
+2026-06-30 20:10:53,801 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-147 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:10:57,717 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-147 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:10:57,717 INFO [31ff4afe927b] agent.conversation_loop: API call #26: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=48787 out=96 total=48883 latency=3.9s cache=47872/48787 (98%)
+2026-06-30 20:10:57,803 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.07s, 18 chars)
+2026-06-30 20:10:57,824 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-150 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:11:19,075 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-150 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:11:19,076 INFO [31ff4afe927b] agent.conversation_loop: API call #27: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=48891 out=67 total=48958 latency=21.3s
+2026-06-30 20:11:19,270 INFO [31ff4afe927b] agent.tool_executor: tool read_file completed (0.11s, 4860 chars)
+2026-06-30 20:11:19,301 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-155 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:11:51,127 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-155 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:11:51,128 INFO [31ff4afe927b] agent.conversation_loop: API call #28: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=50522 out=76 total=50598 latency=31.8s cache=47872/50522 (95%)
+2026-06-30 20:11:51,339 INFO [31ff4afe927b] agent.tool_executor: tool read_file completed (0.11s, 9163 chars)
+2026-06-30 20:11:51,376 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-160 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:12:13,164 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-160 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:12:13,165 INFO [31ff4afe927b] agent.conversation_loop: API call #29: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=53689 out=73 total=53762 latency=21.8s
+2026-06-30 20:12:13,517 INFO [31ff4afe927b] agent.tool_executor: tool read_file completed (0.32s, 8712 chars)
+2026-06-30 20:12:13,656 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-165 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:12:17,517 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-165 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:12:17,518 INFO [31ff4afe927b] agent.conversation_loop: API call #30: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=56919 out=81 total=57000 latency=3.9s cache=47872/56919 (84%)
+2026-06-30 20:12:17,698 INFO [31ff4afe927b] agent.tool_executor: tool read_file completed (0.13s, 9338 chars)
+2026-06-30 20:12:17,767 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-170 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:12:21,866 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-170 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:12:21,867 INFO [31ff4afe927b] agent.conversation_loop: API call #31: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=60133 out=72 total=60205 latency=4.1s
+2026-06-30 20:12:22,007 INFO [31ff4afe927b] agent.tool_executor: tool read_file completed (0.12s, 1747 chars)
+2026-06-30 20:12:22,040 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-175 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:12:38,415 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-175 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:12:38,416 INFO [31ff4afe927b] agent.conversation_loop: API call #32: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=60824 out=472 total=61296 latency=16.4s
+2026-06-30 20:12:41,599 INFO [31ff4afe927b] agent.tool_executor: tool execute_code completed (2.92s, 362 chars)
+2026-06-30 20:12:41,637 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-179 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:12:45,934 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-179 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:12:45,935 INFO [31ff4afe927b] agent.conversation_loop: API call #33: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=61173 out=245 total=61418 latency=4.3s cache=56576/61173 (92%)
+2026-06-30 20:12:46,762 INFO [31ff4afe927b] agent.tool_executor: tool execute_code completed (0.81s, 186 chars)
+2026-06-30 20:12:46,783 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-183 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:12:51,649 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-183 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:12:51,650 INFO [31ff4afe927b] agent.conversation_loop: API call #34: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=61418 out=93 total=61511 latency=4.9s
+2026-06-30 20:12:51,784 INFO [31ff4afe927b] agent.tool_executor: tool read_file completed (0.11s, 7402 chars)
+2026-06-30 20:12:51,810 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-188 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:13:07,751 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-188 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:13:07,752 INFO [31ff4afe927b] agent.conversation_loop: API call #35: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=63890 out=94 total=63984 latency=16.0s cache=60928/63890 (95%)
+2026-06-30 20:13:07,848 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.07s, 891 chars)
+2026-06-30 20:13:07,881 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-191 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:13:11,898 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-191 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:13:11,899 INFO [31ff4afe927b] agent.conversation_loop: API call #36: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=64214 out=83 total=64297 latency=4.0s cache=60928/64214 (95%)
+2026-06-30 20:13:12,059 INFO [31ff4afe927b] agent.tool_executor: tool read_file completed (0.11s, 8648 chars)
+2026-06-30 20:13:12,088 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-196 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:13:54,103 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 20:13:57,539 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 20:13:57,583 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-200 (_run_agent_streaming):139952216651456 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:13:57,593 WARNING tools.registry: check_fn check_browser_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 20:13:57,594 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 20:13:57,595 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 20:13:57,596 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 20:13:57,597 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 20:13:57,603 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 20:13:57,667 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 20:13:57,676 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 20:13:57,680 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 20:13:57,681 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 20:13:57,697 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 20:13:57,697 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 20:14:57.
+2026-06-30 20:13:57,704 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 20:13:57,704 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 20:14:57.
+2026-06-30 20:13:57,705 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 20:13:58,284 INFO [f61d4f7aa38c] agent.turn_context: conversation turn: session=f61d4f7aa38c model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=webui history=0 msg='[Workspace::v1: /home/runner/workspace] Get code for installling latest npm'
+2026-06-30 20:13:58,373 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-204 (_call):139952029423296 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:14:00,128 INFO agent.chat_completion_helpers: Streaming failed before delivery: Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (32/32)
+2026-06-30 20:14:00,129 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-204 (_call):139952029423296 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:14:00,130 WARNING [f61d4f7aa38c] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-200 (_run_agent_streaming):139952216651456 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (32/32)
+2026-06-30 20:14:00,131 WARNING [f61d4f7aa38c] agent.conversation_loop: Retrying API call in 2.07624817379744s (attempt 1/3) thread=Thread-200 (_run_agent_streaming):139952216651456 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (32/32)
+2026-06-30 20:14:02,352 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-205 (_call):139952029423296 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:14:06,620 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-196 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:14:06,620 INFO [31ff4afe927b] agent.conversation_loop: API call #37: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=66871 out=137 total=67008 latency=54.5s
+2026-06-30 20:14:06,722 INFO [31ff4afe927b] agent.tool_executor: tool search_files completed (0.07s, 1094 chars)
+2026-06-30 20:14:06,743 INFO [31ff4afe927b] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 20:14:06,755 INFO [31ff4afe927b] agent.auxiliary_client: Auxiliary auto-detect: using main provider openrouter (nvidia/nemotron-3-ultra-550b-a55b:free)
+2026-06-30 20:14:06,937 INFO [31ff4afe927b] agent.conversation_compression: context compression started: session=31ff4afe927b messages=75 tokens=~66,871 model=nvidia/nemotron-3-ultra-550b-a55b:free focus=None
+2026-06-30 20:14:06,958 INFO [31ff4afe927b] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 20:14:06,964 INFO [31ff4afe927b] agent.auxiliary_client: Auxiliary auto-detect: using main provider openrouter (nvidia/nemotron-3-ultra-550b-a55b:free)
+2026-06-30 20:14:06,966 INFO [31ff4afe927b] agent.auxiliary_client: Auxiliary compression: using auto (nvidia/nemotron-3-ultra-550b-a55b:free)
+2026-06-30 20:14:28,386 INFO [31ff4afe927b] agent.conversation_compression: context compression done: session=31ff4afe927b messages=75->73 rough_tokens=~41,004 awaiting_real_usage=true
+2026-06-30 20:14:28,426 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-215 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:14:32,774 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-215 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:14:32,774 INFO [31ff4afe927b] agent.conversation_loop: API call #38: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=40265 out=75 total=40340 latency=4.4s
+2026-06-30 20:14:32,896 INFO [31ff4afe927b] agent.tool_executor: tool read_file completed (0.11s, 4263 chars)
+2026-06-30 20:14:32,925 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-222 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:14:33,911 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-205 (_call):139952029423296 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:14:33,911 INFO [f61d4f7aa38c] agent.conversation_loop: API call #1: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=19954 out=147 total=20101 latency=35.6s
+2026-06-30 20:14:33,944 INFO [f61d4f7aa38c] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=nvidia/nemotron-3-ultra-550b-a55b:free api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=338 session=f61d4f7aa38c
+2026-06-30 20:14:35,971 INFO agent.chat_completion_helpers: Streaming failed before delivery: Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (113/32)
+2026-06-30 20:14:35,972 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-222 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:14:35,972 WARNING [31ff4afe927b] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-58 (_run_agent_streaming):139952977340096 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (113/32)
+2026-06-30 20:14:35,973 WARNING [31ff4afe927b] agent.conversation_loop: Retrying API call in 2.3797466774536837s (attempt 1/3) thread=Thread-58 (_run_agent_streaming):139952977340096 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (113/32)
+2026-06-30 20:14:38,394 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-225 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:14:38,880 INFO api.streaming: title_status session=f61d4f7aa38c status=llm reason=llm title='Install Latest NPM Commands' raw_preview=''
+2026-06-30 20:15:10,786 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 20:15:10,844 INFO [f61d4f7aa38c] agent.turn_context: conversation turn: session=f61d4f7aa38c model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=webui history=2 msg='[Workspace::v1: /home/runner/workspace] Get code for latest node installation'
+2026-06-30 20:15:10,871 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-229 (_call):139952247535296 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:15:11,599 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-225 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:15:11,600 INFO [31ff4afe927b] agent.conversation_loop: API call #39: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=41756 out=72 total=41828 latency=38.7s cache=39168/41756 (94%)
+2026-06-30 20:15:11,738 INFO [31ff4afe927b] agent.tool_executor: tool read_file completed (0.12s, 1466 chars)
+2026-06-30 20:15:11,761 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-234 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:15:40,842 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-229 (_call):139952247535296 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:15:40,843 INFO [f61d4f7aa38c] agent.conversation_loop: API call #2: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=20074 out=305 total=20379 latency=30.0s
+2026-06-30 20:15:40,940 INFO [f61d4f7aa38c] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=nvidia/nemotron-3-ultra-550b-a55b:free api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=918 session=f61d4f7aa38c
+2026-06-30 20:15:46,699 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-234 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:15:46,700 INFO [31ff4afe927b] agent.conversation_loop: API call #40: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=42361 out=394 total=42755 latency=35.0s
+2026-06-30 20:15:47,249 INFO [31ff4afe927b] agent.tool_executor: tool execute_code completed (0.51s, 288 chars)
+2026-06-30 20:15:47,283 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-239 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:15:52,848 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-239 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:15:52,848 INFO [31ff4afe927b] agent.conversation_loop: API call #41: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=42576 out=277 total=42853 latency=5.6s cache=39168/42576 (92%)
+2026-06-30 20:15:53,697 INFO [31ff4afe927b] agent.tool_executor: tool execute_code completed (0.82s, 245 chars)
+2026-06-30 20:15:53,719 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-243 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:17:04,177 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-243 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:17:04,178 INFO [31ff4afe927b] agent.conversation_loop: API call #42: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=42845 out=196 total=43041 latency=70.5s
+2026-06-30 20:17:05,868 INFO [31ff4afe927b] agent.tool_executor: tool execute_code completed (1.67s, 308 chars)
+2026-06-30 20:17:05,986 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-247 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:17:52,996 INFO client_event: Client event from 127.0.0.1: {'event': 'sse_error', 'source': 'gateway-sessions', 'visibility_state': 'visible', 'url_path': '/session/f61d4f7aa38c', 'reason': 'gateway EventSource.onerror', 'ready_state': 0, 'online': True}
+2026-06-30 20:18:24,459 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-247 (_call):139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:18:24,460 INFO [31ff4afe927b] agent.conversation_loop: API call #43: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=43133 out=693 total=43826 latency=78.5s
+2026-06-30 20:18:24,501 INFO [31ff4afe927b] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=nvidia/nemotron-3-ultra-550b-a55b:free api_calls=40/90 budget=32/90 tool_turns=39 last_msg_role=assistant response_len=1807 session=31ff4afe927b
+2026-06-30 20:18:24,540 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=bg-review:139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:18:24,547 INFO [31ff4afe927b] api.streaming: [ANCHOR-FALLBACK] session=31ff4afe927b vis_before=6 anchor=5
+2026-06-30 20:18:24,801 INFO [31ff4afe927b] agent.turn_context: conversation turn: session=31ff4afe927b model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=webui history=84 msg='Review the conversation above and update the skill library. Be ACTIVE — most ses...'
+2026-06-30 20:18:24,818 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-256 (_call):139952557901504 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:18:37,873 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-256 (_call):139952557901504 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:18:37,874 INFO [31ff4afe927b] agent.conversation_loop: API call #1: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=44404 out=349 total=44753 latency=13.1s
+2026-06-30 20:18:38,338 INFO [31ff4afe927b] agent.tool_executor: tool skill_view completed (0.46s, 53699 chars)
+2026-06-30 20:18:38,358 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-260 (_call):139952557901504 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:18:46,261 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-260 (_call):139952557901504 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:18:46,262 INFO [31ff4afe927b] agent.conversation_loop: API call #2: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=58814 out=297 total=59111 latency=7.9s cache=43520/58814 (74%)
+2026-06-30 20:18:46,308 INFO [31ff4afe927b] agent.tool_executor: tool skill_view completed (0.04s, 12654 chars)
+2026-06-30 20:18:46,338 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-261 (_call):139952557901504 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:19:30,550 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-261 (_call):139952557901504 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:19:30,551 INFO [31ff4afe927b] agent.conversation_loop: API call #3: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=62237 out=836 total=63073 latency=44.2s
+2026-06-30 20:19:30,556 INFO [31ff4afe927b] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=nvidia/nemotron-3-ultra-550b-a55b:free api_calls=3/16 budget=3/16 tool_turns=41 last_msg_role=assistant response_len=551 session=31ff4afe927b
+2026-06-30 20:19:30,563 INFO [31ff4afe927b] run_agent: OpenAI client closed (agent_close, shared=True, tcp_force_closed=0) thread=bg-review:139952532731584 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:20:12,280 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
+2026-06-30 20:31:24,293 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 20:31:24,364 INFO [f61d4f7aa38c] agent.turn_context: conversation turn: session=f61d4f7aa38c model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=webui history=4 msg='[Workspace::v1: /home/runner/workspace] wget https://nodejs.org/dist/latest/node...'
+2026-06-30 20:31:24,393 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-289 (_call):139952228189888 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:31:29,924 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-289 (_call):139952228189888 provider=openrouter base_url=https://api.kilo.ai/api/gateway model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 20:31:29,925 INFO [f61d4f7aa38c] agent.conversation_loop: API call #3: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=20429 out=97 total=20526 latency=5.6s
+2026-06-30 20:31:29,975 INFO [f61d4f7aa38c] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=nvidia/nemotron-3-ultra-550b-a55b:free api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=226 session=f61d4f7aa38c
