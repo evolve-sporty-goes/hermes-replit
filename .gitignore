@@ -30,3 +30,4 @@ scripts/setup_cloudflare.sh.bak
 .hermes_data/state-snapshots/
 .hermes_data/config.yaml.bak.20260629_133829
 .hermes_data/config.yaml.bak.20260629_151236
+proton_profile

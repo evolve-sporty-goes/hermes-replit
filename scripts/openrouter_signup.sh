@@ -76,7 +76,7 @@ if not cf_box:
 
 cx, cy = cf_box["x"] + 30, cf_box["y"] + cf_box["height"] / 2
 p.mouse.click(cx, cy)
-p.wait_for_timeout(8000)
+p.wait_for_timeout(15000)
 print(f"TURNSTILE:SOLVED URL={p.url}", flush=True)
 ctx.close()
 PY
@@ -92,7 +92,7 @@ td = sys.argv[4] if len(sys.argv) > 4 else None
 ctx = launch_persistent_context("/home/runner/workspace/proton_profile", headless=False)
 page = ctx.pages[0] if ctx.pages else ctx.new_page()
 
-page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
+page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
 page.wait_for_timeout(5000)
 
 if "/login" not in page.url:
@@ -104,15 +104,10 @@ else:
     page.wait_for_timeout(15000)
 
 def find_verify():
-    # --- Focus on the Newest Email in Thread ---
     try:
-        # Proton groups threads using elements with class '.message-container' or '[data-testid="message-view"]'
-        # We target the absolute LAST message in the conversation stack
         messages = page.locator(".message-container, [data-testid='message-view']").all()
         if messages:
             latest_msg = messages[-1]
-
-            # If the latest email header is collapsed, click it to expand and expose the layout
             summary = latest_msg.locator(".message-header")
             if summary.count() > 0 and "is-expanded" not in (summary.get_attribute("class") or ""):
                 summary.click()
@@ -120,7 +115,6 @@ def find_verify():
     except Exception as e:
         print(f"Failed to expand latest thread message: {e}")
 
-    # Loop through all frames to find the email body iframe
     for frame in page.frames:
         try:
             raw_html = frame.content()
@@ -132,10 +126,9 @@ def find_verify():
         except Exception as e:
             pass           
 
-    # Fallback: Check elements in the main frame context (scoped to latest message if possible)
     try:
         links = page.locator("a[href*='clerk.openrouter.ai']").all()
-        for link in reversed(links): # Scan backward to find the newest link
+        for link in reversed(links):
             href = link.get_attribute("href")
             if href and "verify" in href:
                 return html.unescape(href)
@@ -148,7 +141,6 @@ checked = set()
 for attempt in range(15):
     page.wait_for_timeout(5000)
 
-    # Simple search handling
     page.keyboard.press("/")
     page.wait_for_timeout(1000)
     page.keyboard.type("openrouter", delay=80)
@@ -158,7 +150,7 @@ for attempt in range(15):
     items = page.locator(".item-container")
     count = items.count()
     if count == 0:
-        page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
+        page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
         page.wait_for_timeout(5000)
         continue
 
@@ -167,7 +159,7 @@ for attempt in range(15):
         if subj not in checked:
             checked.add(subj)
             items.nth(i).click()
-            page.wait_for_timeout(6000) # Give extra time to open thread stack
+            page.wait_for_timeout(6000)
 
             link = find_verify()
             if link:
@@ -179,7 +171,7 @@ for attempt in range(15):
     if len(checked) >= count:
         checked.clear()
 
-    page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
+    page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
     page.wait_for_timeout(5000)
 
 ctx.close()
@@ -203,29 +195,17 @@ for i in range(60):
     url = p.url
     time.sleep(2)
 
+    # Check explicitly for link expiration
+    if "expired" in url:
+        print("VERIFY_STATUS:EXPIRED", flush=True)
+        ctx.close()
+        sys.exit(2) # Exit with status code 2 to signify expiration
+
     # Route 1: Onboarding / Select Individual
     if "sign-up/verify" in url or "onboarding" in url:
         for sel in ["button:has-text('Individual')", "div[role='button']:has-text('Individual')"]:
             try: p.locator(sel).first.click(); break
             except: pass
-        try: p.get_by_role("button", name=re.compile("Continue|Next", re.IGNORECASE)).first.click()
-        except: pass
-
-    # Route 2 & 3: Clerk Handshakes / Fallback Login
-    elif "clerk" in url:
-        continue
-    elif "/sign-in" in url or "/signin" in url:
-        try:
-            p.locator("#emailAddress-field").fill(email)
-            p.locator("#password-field").fill(password)
-            p.get_by_role("button", name="Continue").click()
-        except: pass
-
-    # Route 4: Authenticated / Key Extraction
-    elif "openrouter.ai" in url and "/sign" not in url:
-        try: p.get_by_role("button", name="Continue").first.click()
-        except: pass
-
         # Strategy A: Scan token-flattened text elements
         for el in p.locator("pre, code, span, div[class*='code']").all():
             m = re.search(r'(?:sk-or-v1-|sk-)[a-zA-Z0-9_-]{30,}', el.inner_text())
@@ -249,24 +229,42 @@ print(f"API_KEY:{api_key or 'NOT_FOUND'}", flush=True)
 PY
 
 # ── MAIN ────────────────────────────────────────────────────────
+# Temporarily disable 'set -e' context behavior inside loop evaluations
+# so an exit code of 2 doesn't prematurely terminate the master script.
+set +e
+
 for ATTEMPT in 1 2 3; do
-  [ "$ATTEMPT" -gt 1 ] && {
+  if [ "$ATTEMPT" -gt 1 ]; then
     EMAIL=$(bash scripts/email.sh 2>/dev/null | tail -1 | tr -d '[:space:]')
     PASSWORD=$(python3 -c "import secrets,string; c=string.ascii_letters+string.digits+'!@#%'; print(secrets.choice(string.ascii_letters)+secrets.choice(string.digits)+secrets.choice('!@#%')+''.join(secrets.choice(c) for _ in range(12)))")
     rm -rf "$OR_PROFILE" && mkdir -p "$OR_PROFILE"
     echo "Retry $ATTEMPT: $EMAIL"
-  }
+  fi
+
   echo "=== Step 1: Signup ==="
-  python3 ~/or_signup.py "$EMAIL" "$PASSWORD" "$OR_PROFILE" || continue
+  python3 ~/or_signup.py "$EMAIL" "$PASSWORD" "$OR_PROFILE"
+  if [ $? -ne 0 ]; then echo "Signup failed, retrying..."; continue; fi
 
   echo "=== Step 2: Check inbox ==="
   VURL=$(python3 ~/or_proton.py "$PROTON_USER" "$PROTON_PASS" "$EMAIL" ~/proton_profile 2>&1 | grep '^VERIFY_URL:' | head -1 | cut -d: -f2-)
   echo "  Link: ${VURL:0:80}..."
-  [ -z "$VURL" ] || [ "$VURL" = "NOT_FOUND" ] && { echo "Not found, retrying..."; continue; }
+  if [ -z "$VURL" ] || [ "$VURL" = "NOT_FOUND" ]; then echo "Not found, retrying..."; continue; fi
 
   echo "=== Step 3: Verify + Extract Key ==="
   python3 ~/or_verify.py "$VURL" "$EMAIL" "$PASSWORD" "$CRED" "$OR_PROFILE"
+  STATUS=$?
+
+  if [ $STATUS -eq 2 ]; then
+    echo "Verification link expired! Restarting step 1 context..."
+    continue
+  elif [ $STATUS -ne 0 ]; then
+    echo "An unknown error occurred during verification, retrying..."
+    continue
+  fi
+
   echo "Done! Saved to $CRED"
   exit 0
 done
-echo "FAILED: 3 attempts exhausted"; exit 1
+
+echo "FAILED: 3 attempts exhausted"
+exit 1
