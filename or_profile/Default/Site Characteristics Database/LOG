@@ -1,3 +1,2 @@
-2026/06/30-09:14:48.256 2593 Reusing MANIFEST /home/runner/workspace/or_profile/Default/Site Characteristics Database/MANIFEST-000001
-2026/06/30-09:14:48.258 2593 Recovering log #3
-2026/06/30-09:14:48.258 2593 Reusing old log /home/runner/workspace/or_profile/Default/Site Characteristics Database/000003.log 
+2026/06/30-09:59:46.266 48bc Creating DB /home/runner/workspace/or_profile/Default/Site Characteristics Database since it was missing.
+2026/06/30-09:59:46.325 48bc Reusing MANIFEST /home/runner/workspace/or_profile/Default/Site Characteristics Database/MANIFEST-000001

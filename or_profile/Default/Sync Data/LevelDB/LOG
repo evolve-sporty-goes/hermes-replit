@@ -1,3 +1,2 @@
-2026/06/30-09:14:48.255 2582 Reusing MANIFEST /home/runner/workspace/or_profile/Default/Sync Data/LevelDB/MANIFEST-000001
-2026/06/30-09:14:48.258 2582 Recovering log #3
-2026/06/30-09:14:48.258 2582 Reusing old log /home/runner/workspace/or_profile/Default/Sync Data/LevelDB/000003.log 
+2026/06/30-09:59:46.237 48a0 Creating DB /home/runner/workspace/or_profile/Default/Sync Data/LevelDB since it was missing.
+2026/06/30-09:59:46.286 48a0 Reusing MANIFEST /home/runner/workspace/or_profile/Default/Sync Data/LevelDB/MANIFEST-000001

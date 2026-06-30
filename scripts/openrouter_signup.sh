@@ -149,21 +149,6 @@ if "/login" in page.url:
     page.locator("button[type='submit']").click()
     page.wait_for_timeout(15000)
 
-def find_verify():
-    for link in page.query_selector_all("a[href]"):
-        href = link.get_attribute("href")
-        if href and ("openrouter" in href or "clerk" in href) and ("verify" in href or "confirm" in href):
-            return href
-    for frame in page.frames:
-        try:
-            html = frame.content()
-            m = re.findall(r'https://[^\s"<>()]*(?:openrouter|clerk)[^\s"<>()]*(?:verify|confirm)[^\s"<>()]*', html, re.IGNORECASE)
-            if m:
-                return m[0].replace("&amp;", "&")
-        except:
-            pass
-    return None
-
 checked = set()
 for attempt in range(15):
     page.wait_for_timeout(8000)
@@ -198,6 +183,22 @@ for attempt in range(15):
     page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
     page.wait_for_timeout(5000)
 
+def find_verify():
+    for link in page.query_selector_all("a[href]"):
+        href = link.get_attribute("href")
+        if href and ("openrouter" in href or "clerk" in href) and ("verify" in href or "confirm" in href):
+            return href
+    for frame in page.frames:
+        try:
+            html = frame.content()
+            m = re.findall(r'https://[^\s"<>()]*(?:openrouter|clerk)[^\s"<>()]*(?:verify|confirm)[^\s"<>()]*', html, re.IGNORECASE)
+            if m:
+                return m[0].replace("&amp;", "&")
+        except:
+            pass
+    return None
+
+
 ctx.close()
 print("VERIFY_URL:NOT_FOUND", flush=True)
 PYEOF
@@ -230,46 +231,24 @@ for i in range(60):
         url = p.url
         print(f"  [{i}] URL: {url}", flush=True)
 
-        # Clerk verify redirect page — wait then click Individual
-        if "openrouter.ai" in url and "sign-up/verify" in url:
-            print(f"  On sign-up/verify page, waiting 3s...", flush=True)
-            time.sleep(3)
-            try:
-                ind = p.get_by_role("button", name="Individual")
-                if ind.is_visible(timeout=5000):
-                    print("  Clicking 'Individual'...", flush=True)
-                    ind.click()
-                    time.sleep(5)
-                    continue
-            except:
-                pass
-            # If no Individual button, just continue
-            time.sleep(3)
-            continue
-
-        # Wait for clerk verify redirect to complete
-        if "clerk" in url and ("verify" in url or "redirect" in url):
+        # Clerk verify on clerk.openrouter.ai domain — wait for redirect
+        if "clerk.openrouter.ai" in url and ("verify" in url or "redirect" in url):
+            print(f"  Clerk verify page, waiting 5s...", flush=True)
             time.sleep(5)
             continue
 
-        # After Clerk verify redirect — the account is created.
-        # MUST check BEFORE /sign-up login check (substring match)
+        # After Clerk redirect — sign-up/verify page
+        # Clerk SDK hangs here waiting for signUp.create() which needs Turnstile.
+        # The account IS already created (status=verified). Just go sign in.
         if "openrouter.ai" in url and "sign-up/verify" in url:
-            print(f"  Clerk verified! Account created. Going to sign-in...", flush=True)
+            print(f"  On sign-up/verify page — account created, going to sign-in...", flush=True)
+            time.sleep(2)
             p.goto("https://openrouter.ai/sign-in", wait_until="domcontentloaded", timeout=30000)
-            time.sleep(3)
-            p.locator("#emailAddress-field").click()
-            p.locator("#emailAddress-field").type(email, delay=50)
-            time.sleep(0.3)
-            p.locator("#password-field").click()
-            p.locator("#password-field").type(password, delay=50)
-            p.get_by_role("button", name="Continue").click()
-            time.sleep(10)
+            time.sleep(5)
             continue
 
-        # Login if on sign-in page (NOT sign-up/verify — handled above)
+        # Login if redirected to sign-in
         if "/sign-in" in url or "/signin" in url or ("/sign-up" in url and "verify" not in url):
-            print("  Logging in (Clerk)...", flush=True)
             p.goto("https://openrouter.ai/sign-in", wait_until="domcontentloaded", timeout=30000)
             time.sleep(3)
             p.locator("#emailAddress-field").click()
@@ -295,10 +274,7 @@ for i in range(60):
                     continue
             except:
                 pass
-
-            if "/keys" not in url:
-                p.goto("https://openrouter.ai/workspaces/default/keys", wait_until="domcontentloaded", timeout=30000)
-                time.sleep(5)
+            
 
             # API key extraction (same pattern as firecrawl_signup.sh)
             time.sleep(3)
