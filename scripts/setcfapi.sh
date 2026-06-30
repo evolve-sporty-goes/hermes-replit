@@ -27,6 +27,6 @@ hermes config set model.api_key "$K"
 hermes config set model.api_compat openai
 hermes config set model.default "@cf/moonshotai/kimi-k2.7-code"
 hermes config set model.display_name "cloudflare"
-hermes config set fallback_model.provider openrouter
-hermes config set fallback_model.model owl-alpha
+#hermes config set fallback_model.provider openrouter
+#hermes config set fallback_model.model owl-alpha
 echo "Done."
