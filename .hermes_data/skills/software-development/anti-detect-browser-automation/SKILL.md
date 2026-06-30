@@ -6,7 +6,7 @@ description: |
   humanize behavior, persistent profiles, and common pitfalls when
   automating bot-sensitive sites. CloakBrowser is a custom-compiled Chromium
   with 58+ C++ source-level stealth patches — passes 30/30 bot detection tests.
-version: 4.1.0
+version: 4.3.0
 platforms: [linux, macos, windows]
 metadata:
   hermes:
@@ -246,6 +246,40 @@ because it bypasses Playwright's actionability checks and fires the native click
 doesn't submit after fill + checkbox + Continue, try `.type(text, delay=80)` instead
 to simulate real keystroke events that Clerk's React listeners catch.
 
+**Working pattern that triggers Clerk Turnstile (confirmed 2026-07-01):**
+```python
+page.locator("#emailAddress-field").click()
+page.locator("#emailAddress-field").type(email, delay=50)
+page.wait_for_timeout(300)
+page.locator("#password-field").click()
+page.locator("#password-field").type(password, delay=50)
+page.wait_for_timeout(300)
+# Checkbox via React fiber onChange (deterministic, doesn't toggle)
+page.evaluate("""() => {
+    const el = document.querySelector('#legalAccepted-field');
+    if (!el) return;
+    const fk = Object.keys(el).find(k => k.startsWith('__reactFiber$'));
+    if (!fk) return;
+    let fiber = el[fk];
+    for (let i = 0; i < 30; i++) {
+        if (fiber?.memoizedProps?.onChange) {
+            fiber.memoizedProps.onChange({
+                target: { checked: true, type: 'checkbox' },
+                currentTarget: { checked: true },
+                nativeEvent: new Event('change', { bubbles: true }),
+                type: 'change', preventDefault(){}, stopPropagation(){}, persist(){}
+            });
+            break;
+        }
+        fiber = fiber.return;
+    }
+}""")
+page.wait_for_timeout(400)
+page.get_by_role("button", name="Continue").click()
+```
+After this sequence, `document.querySelector('[name="cf-turnstile-response"]')` will
+exist (Turnstile rendered), and CloakBrowser's auto-solve will attempt to solve it.
+
 **Checkbox toggle trap**: A single `dispatchEvent(new Event('change'))` on
 `#legalAccepted-field` TOGGLES state. If the checkbox was already checked (from a
 prior `.click()`), the event reverts it to `false`. Always verify `.checked` after
@@ -284,15 +318,38 @@ The challenge iframe doesn't appear until Clerk's React state is properly synced
 and zero Clerk POSTs, Clerk isn't submitting because it doesn't see the field values.
 Fix the form state first (dispatchEvent), then Turnstile will render and auto-solve.
 
-**Turnstile detection pitfall — inline vs iframe:**
-Some sites (OpenRouter) embed Turnstile **inline on the main page** (`.cf-turnstile` div or `#challenge-stage`), NOT inside a detectable iframe with `challenges.cloudflare.com` in the URL. The old pattern of only checking `frame.url` for cloudflare misses these entirely.
+**Self-hosted turnstile solver (icemellow-me/turnstile-solver) FAILS on Clerk-managed
+Turnstile.** The nodriver/camoufox engines return `ERROR_CAPTCHA_UNSOLVABLE` for
+Cloudflare-protected sites that detect non-residential browser environments.
+The solver works on standalone Turnstile widgets (demo.turnstile.workers.dev) but
+cannot produce tokens for OpenRouter's Clerk flow. Use CloakBrowser (stealth Chromium)
+for Clerk signup flows instead of trying to pass a solver-obtained token via the
+Clerk FAPI.
+
+**Turnstile detection pitfall — inline vs iframe vs invisible:**
+Clerk with `captchaWidgetType: "smart"` (OpenRouter) renders Turnstile as a **real
+`challenges.cloudflare.com` iframe** at ~`(478, 189)` with size `300x65` — NOT as an
+inline `.cf-turnstile` div. The iframe exists and has real dimensions, BUT it contains
+**no visible checkbox** (`input[type=checkbox]` returns empty inside the frame).
+
+Detection hierarchy (corrected 2026-06-30):
+```python
+# 1. Standard inline (most common)
+p.locator(".cf-turnstile").count()
+# 2. Challenge stage  
+p.locator("#challenge-stage").count()
+# 3. Frame-based Turnstile (OpenRouter/Clerk — this is what OpenRouter uses!)
+for f in p.frames:
+    if "challenges.cloudflare.com" in (f.url or ""):
+        fb = f.frame_element().bounding_box()
+        if fb and fb["width"] > 50:
+            # Found it! No checkbox inside, use page.mouse.click() only
+            break
+# 4. Invisible/smart (Clerk) — only the response input exists, no iframe at all
+p.locator('[name="cf-turnstile-response"]').count()
+```
 
 ```python
-# WRONG: only checks iframes — misses inline Turnstile
-for frame in p.frames:
-    if "challenges.cloudflare.com" in frame.url:
-        # ... click checkbox
-
 # CORRECT: check main page first, then frames
 # 1. Inline Turnstile on main page
 try:
@@ -315,10 +372,64 @@ if "confirm-email" in p.url or "verification" in p.inner_text("body")[:300].lowe
     break
 ```
 
-**Key insight**: The success-condition check (`confirm-email` in URL/body) must run on **every** loop iteration, not be gated behind `if not turnstile`. Otherwise the script loops 30× waiting for a turnstile that already passed.
+**Leave browser open for manual solve (2026-07-01 pattern):** If CloakBrowser's
+auto-solve doesn't handle the Turnstile within 30s and the challenge remains on
+screen, the script should leave the browser open on display 1 for the user to
+manually click the visible checkbox, then detect navigation:
 
-**Manual fallback (rare):** If CloakBrowser auto-solve fails on a non-Clerk site,
-use the `FakeShadowRoot` method documented in the Cloudflare handling section above
+```python
+# After form submit + Turnstile visible, poll for completion with long timeout
+start = time.time()
+while time.time() - start < 300:  # 5 minutes for manual interaction
+    page.wait_for_timeout(3000)
+    url = page.url
+    body = page.inner_text("body")[:400].lower()
+    if "confirm" in url or "verify" in url or "check your" in body:
+        print(f"SUCCESS: {url}")
+        break
+    if "key" in url or "/keys" in url:
+        print(f"ALREADY AUTHED: {url}")
+        break
+```
+
+This pattern is useful when: the challenge is "smart" (invisible until after
+bot-scoring) and may require a manual click.</｜DSML｜parameter>
+
+**Confirmed working click method for Turnstile (2026-06-30 — `or_full_attack.py`):**
+
+When `frame.locator("body").click()` and `frame.locator("input[type=checkbox]")` both FAIL (no checkbox inside the cross-origin iframe, managed/invisible Turnstile), **Playwright's native `page.mouse.click()` at page-absolute coordinates works**:
+
+```python
+# Find the CF Turnstile frame
+for f in page.frames:
+    if "challenges.cloudflare.com" in (f.url or ""):
+        fb = f.frame_element().bounding_box()
+        if fb and fb["width"] > 50:
+            # Checkbox is ~30px from left edge of the iframe, vertically centered
+            click_x = int(fb["x"] + 30)
+            click_y = int(fb["y"] + fb["height"] / 2)
+            page.mouse.click(click_x, click_y)
+            page.wait_for_timeout(5000)
+            break
+```
+
+**Why this works when others fail:**
+- `frame.locator("body").click()` — fires synthetic DOM event inside iframe, Turnstile ignores it (Cloudflare validates via CDP-level input pipeline, not JS events)
+- `xdotool click` — fires at OS/window-manager level, but CloakBrowser's event routing may not forward it to the iframe's rendering surface correctly
+- `page.mouse.click()` — fires through Playwright's CDP `Input.dispatchMouseEvent` which CloakBrowser's stealth patches forward correctly to the cross-origin iframe's input surface
+
+**Canonical click-attempt order for Turnstile (use in sequence):**
+1. **Wait 5-10s** after form submit for iframe to render (CloakBrowser auto-solve may handle non-interactive challenges silently)
+2. **`page.mouse.click(frame_x + 30, frame_y + height/2)`** — first attempt on the CF iframe at the standard checkbox offset
+3. **Repeat `page.mouse.click()` up to 10×** with 5s waits between attempts (managed challenges may need multiple passes)
+4. Check `page.url` after each click for navigation to `/verify-email-address` or `/keys`
+
+**Typical Turnstile iframe geometry (OpenRouter):**
+- Position: `x≈478, y≈189` (relative to browser viewport)
+- Size: `width=300, height=65`
+- Checkbox offset from left edge: `~30px`
+
+**Manual fallback (rare):**
 (`--enable-blink-features=FakeShadowRoot` launch arg + JS shadow-DOM walker).
 
 ```python
@@ -423,7 +534,7 @@ so the JS walker can find and click the checkbox without any external patches.
 10. **Clerk.js form fields need `dispatchEvent`** — `.fill()` and `.check()` do NOT trigger Clerk's internal React state. The button appears enabled but Clerk never POSTs to its API. Fix: use JS `dispatchEvent` after setting values, or `check(force=True)` for checkboxes.
 10b. **dispatchEvent TOGGLES checkbox state** — A single `dispatchEvent(new Event('change'))` on `#legalAccepted-field` flips the current state. If already checked (from a prior `.click()`), it reverts to `false`. Always verify `.checked` after injection, or use the React fiber `onChange` method (see `references/clerkjs-form-debugging.md`) which sets state deterministically.
 10c. **Clerk `client.signUp.create()` hangs indefinitely** — Calling `window.Clerk.client.signUp.create({emailAddress, password, legalAcceptedAt})` from browser JS returns a Promise that never resolves. It waits for the Turnstile challenge to complete in the background, which never happens if Turnstile can't load. **Cannot bypass via the Clerk SDK API** — must use the UI flow with a real browser that can solve Turnstile.
-14. **Turnstile inline vs iframe** — OpenRouter embeds Turnstile inline on the main page (`.cf-turnstile`), not in a detectable iframe. Check main page first, then frames. See Cloudflare handling section for the correct detection pattern.
+14. **Turnstile iframe on OpenRouter is real but has no visible checkbox** — The `challenges.cloudflare.com` iframe has real dimensions (300×65) but `input[type=checkbox]` returns empty. Use `page.mouse.click(frame_x + 30, frame_y + height/2)` not `frame.locator().click()` or `xdotool`. See "Confirmed working click method" section.
 15. **Success check gated behind turnstile detection** — If your `confirm-email` URL check is inside `if not turnstile:`, it never runs after Turnstile passes. Always check success condition on every loop iteration.
 16. **`pipefail` + `grep` kills script** — With `set -eo pipefail`, `grep` with no matches causes silent script death. Use `tail -1` not `head -1`, `sed` not `cut` for URLs, and `if` not `&&` for the empty check.
 17. **Python stdout not flushed before `ctx.close()` + `sys.exit(0)`** — Pipe capture gets empty string. Always `flush=True` and `sys.stdout.flush()` before closing. Break out of nested loops and print after, not inside.
@@ -561,8 +672,10 @@ and `references/hermes-browser-tool-signup.md` for Clerk config extraction and f
 - `references/proton-mail-automation.md` — Proton Mail inbox automation: persistent profile, search, extract verification links, bash integration
 - `references/cloudflare-bypass.md` — Full CloudflareBypassForScraping integration: server setup (FastAPI/Docker), API endpoints, request mirroring, FakeShadowRoot, solve flow, cookie extraction
 - `references/turnstile-solver-2captcha-api.md` — Self-hosted 2captcha-compatible Turnstile solver: setup, API usage, dual-engine (nodriver+camoufox), Docker deployment, troubleshooting
+- `references/turnstile-solver-vs-clerk.md` — Why the solver FAILS on Clerk-managed Turnstile and what to use instead (CloakBrowser)
 - `references/openrouter-signup-flow.md` — OpenRouter signup: Clerk.js form, inline Turnstile, Proton verification, API key extraction
 - `references/hermes-browser-tool-signup.md` — Using Hermes browser tools for signup flows, cross-origin iframe click limitation, Clerk credentials, Clerk FAPI direct HTTP calls, Turnstile token extraction
 - `references/openrouter-signup-debugging-2026-06-29.md` — Full debugging session for OpenRouter signup: all 5 attempts, what failed, key findings, credentials generated
+- `references/openrouter-turnstile-click-method-2026-06-30.md` — Confirmed `page.mouse.click()` method for Clerk-managed Turnstile; what failed, exact coordinates, debugging transcript
 - `references/rust-turnstile-infrastructure.md` — Rust token_server (WebSocket token routing) + turnstile-clicker (screen-capture auto-clicker) + token-harvester (iframe farm): setup, protocol, display requirements
 - `scripts/cloak_replace.sh` — One-liner bulk sed script to migrate playwright→cloakbrowser in all workspace scripts

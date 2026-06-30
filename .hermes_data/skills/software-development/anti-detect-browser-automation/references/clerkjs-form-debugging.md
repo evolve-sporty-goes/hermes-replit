@@ -34,20 +34,58 @@ so Clerk never sees the values and silently blocks submission.
 
 ## Working approaches
 
-### Approach 1: dispatchEvent (most reliable)
+### Approach 1: type() + React fiber onChange (CONFIRMED WORKING 2026-07-01)
+
+This is the most reliable pattern — it successfully triggers Clerk form submission
+and Turnstile rendering on OpenRouter:
+
+```python
+# Text fields: use type() NOT fill() — Clerk's React input handlers need keystroke events
+page.locator("#emailAddress-field").click()
+page.locator("#emailAddress-field").type(email, delay=50)
+page.wait_for_timeout(300)
+page.locator("#password-field").click()
+page.locator("#password-field").type(password, delay=50)
+page.wait_for_timeout(300)
+
+# Checkbox: React fiber onChange (deterministic - always sets to true, never toggles)
+page.evaluate("""() => {
+    const el = document.querySelector('#legalAccepted-field');
+    if (!el) return;
+    const fk = Object.keys(el).find(k => k.startsWith('__reactFiber$'));
+    if (!fk) return;
+    let fiber = el[fk];
+    for (let i = 0; i < 30; i++) {
+        if (fiber?.memoizedProps?.onChange) {
+            fiber.memoizedProps.onChange({
+                target: { checked: true, type: 'checkbox' },
+                currentTarget: { checked: true },
+                nativeEvent: new Event('change', { bubbles: true }),
+                type: 'change', preventDefault(){}, stopPropagation(){}, persist(){}
+            });
+            break;
+        }
+        fiber = fiber.return;
+    }
+}""")
+page.wait_for_timeout(400)
+
+# Submit with humanized mouse (real click events)
+page.get_by_role("button", name="Continue").click()
+# After ~8s, [name="cf-turnstile-response"] element appears = Clerk validated form
+```
+
+### Approach 2: dispatchEvent (less reliable — toggle trap)
 ```python
 page.locator("#emailAddress-field").fill(email)
 page.locator("#password-field").fill(password)
 
-page.evaluate("""() => {
+page.evaluate("""
     const cb = document.querySelector('#legalAccepted-field');
     cb.checked = true;
     cb.dispatchEvent(new Event('change', { bubbles: true }));
     cb.dispatchEvent(new Event('input', { bubbles: true }));
-}""")
-
-page.wait_for_timeout(500)
-page.get_by_role("button", name="Continue").click()
+""")
 ```
 
 ### Approach 2: check(force=True) (simpler, works for checkbox)
@@ -130,7 +168,22 @@ Playwright frame locators cannot penetrate it.
 
 ## New pitfalls discovered (2026-06-29 session)
 
-### 1. dispatchEvent can TOGGLE the checkbox off
+### 1. `.fill()` does NOT trigger Clerk's React input handlers
+Clerk's React component listens for `input`/`change` events to update internal state.
+Playwright `.fill()` sets `.value` directly and may not dispatch the events Clerk
+needs. **Use `.type(text, delay=50)` instead** — it simulates real keystrokes that
+Clerk's React listeners catch. This was the root cause of multiple failed attempts.
+
+```python
+# BROKEN: Clerk doesn't see the value
+page.locator("#emailAddress-field").fill("user@example.com")
+
+# WORKS: Clerk's React onChange fires for each keystroke
+page.locator("#emailAddress-field").click()
+page.locator("#emailAddress-field").type("user@example.com", delay=50)
+```
+
+### 2. dispatchEvent can TOGGLE the checkbox off
 A single `dispatchEvent(new Event('change'))` on `#legalAccepted-field` toggles state.
 If already checked (from a prior `.click()`), it reverts to `false`. **Always verify
 `checked` after injection** and only fire if currently unchecked.

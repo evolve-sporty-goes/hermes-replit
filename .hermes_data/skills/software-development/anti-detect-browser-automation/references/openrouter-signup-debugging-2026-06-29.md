@@ -59,17 +59,55 @@ OpenRouter uses Clerk.js for auth. The signup flow:
    contains "check your" / "verification". This check must run on EVERY loop iteration,
    not be gated behind turnstile detection.
 
-## The Unsolved Problem
+## The Unsolved Problem (as of 2026-06-29)
 We could not get CloakBrowser to submit the Clerk signup form despite having all
 fields correctly filled. The issue is likely that Clerk's React internal state
 requires a specific event sequence that we haven't reproduced.
 
-## Recommendation
-For Clerk signup flows, the most reliable approach is:
-1. Use CloakBrowser with `DISPLAY=:1` and `headless=False`
-2. Let CloakBrowser auto-solve Turnstile (it handles most CF challenges)
-3. If form still won't submit, try clicking the hidden submit button via JS
-4. If still stuck, the fallback is manual signup in a real browser
+## RESOLVED (2026-07-01)
+The working pattern that successfully triggers Clerk Turnstile:
+1. `page.locator("#emailAddress-field").type(email, delay=50)` — NOT `.fill()`
+2. `page.locator("#password-field").type(password, delay=50)` — NOT `.fill()`
+3. Checkbox via React fiber `onChange` (deterministic, doesn't toggle):
+   ```javascript
+   const el = document.querySelector('#legalAccepted-field');
+   const fk = Object.keys(el).find(k => k.startsWith('__reactFiber$'));
+   let fiber = el[fk];
+   for (let i = 0; i < 30; i++) {
+       if (fiber?.memoizedProps?.onChange) {
+           fiber.memoizedProps.onChange({
+               target: { checked: true, type: 'checkbox' },
+               currentTarget: { checked: true },
+               nativeEvent: new Event('change', { bubbles: true }),
+               type: 'change', preventDefault(){}, stopPropagation(){}, persist(){}
+           });
+           break;
+       }
+       fiber = fiber.return;
+   }
+   ```
+4. `page.get_by_role("button", name="Continue").click()` with `humanize=True`
+5. After ~8s, `document.querySelector('[name="cf-turnstile-response"])` EXISTS
+   (Turnstile rendered — Clerk saw the form values!)
+6. CloakBrowser auto-solves OR user clicks manually on display 1
+
+**Key insight**: `.fill()` doesn't trigger Clerk's React input handlers. `.type()`
+with delay simulates real keystrokes that Clerk's listeners catch. Combined with
+the deterministic React fiber checkbox approach, Clerk finally validates the form
+and renders Turnstile.
+
+**Turnstile solver (icemellow-me) does NOT work** for this sitekey — returns
+`ERROR_CAPTCHA_UNSOLVABLE`. Must use CloakBrowser's stealth Chromium.
+
+## Recommendation (updated 2026-07-01)
+For Clerk signup flows:
+1. Use CloakBrowser with `DISPLAY=:1`, `headless=False`, `humanize=True`
+2. Fill fields with `.type(delay=50)`, NOT `.fill()`
+3. Checkbox via React fiber `onChange` (deterministic)
+4. Click Continue with humanized mouse
+5. Wait for Turnstile to render (check `[name="cf-turnstile-response"]` exists)
+6. CloakBrowser auto-solves OR leave browser open for manual click on display 1
+7. Poll URL for `confirm-email` / `verify` / `check your`
 
 ## Credentials Generated During Session
 - Email: `ongoing-aliens-tug@duck.com` (Duck Address)

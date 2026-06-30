@@ -10,10 +10,10 @@ User prefers explicit scripts that they will execute themselves. Give file paths
 §
 When the user asks to modify Hermes config.yaml, provide the shell commands for them to run rather than editing the file directly — the patch tool blocks writes to the agent's own config. Use heredoc append or hermes config set commands.
 §
-Workspace: credentials/ docs/ scripts/ dirs. System dirs never moved. Replit startup=.replit [startup] startOn + wrapper with auto-restart (rate-limited).
-§
 Hermes non-interactive model config: `hermes model` is TUI-only, cannot be scripted. Set config.yaml directly via `hermes config set model.provider/base_url/api_key/api_compat/default/display_name`. For active config use `hermes config show | grep Model` — config.yaml grep shows stale creds.
 §
-Browser automation: CloakBrowser (2026-07-01). headless=True CRASHES on Replit/NixOS — use headless=False + xvfb-run. humanize=True. proxy as string not dict. Clerk.js checkbox: JS dispatchEvent needed. Free tier=v146, Pro=v148+.
+Browser: CloakBrowser, headless=False + DISPLAY=:1, no xvfb, humanize=True. Clerk forms: type() + React fiber onChange. Turnstile-solver FAILS on Clerk sitekeys — user clicks on screen. OpenRouter signup: scripts/email.sh → ~/or_signup_final.py
 §
 Dockerizing Rust: iterate linker errors by reading `-l<name>` → install `lib<name>-dev`. COPY paths relative to build context. Multi-binary repos need separate WORKDIR per cargo build.
+§
+OpenRouter Turnstile: iframe at ~(478,189) size 300x65 has NO visible checkbox. ONLY page.mouse.click(frame_x+30, frame_y+h/2) works (CDP-level). xdotool & frame.locator.click() FAIL.
