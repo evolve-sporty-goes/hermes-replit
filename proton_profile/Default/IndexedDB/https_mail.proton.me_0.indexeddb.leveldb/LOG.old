@@ -1,25 +1,25 @@
-2026/06/30-11:58:19.717 8efc Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
-2026/06/30-11:58:19.717 8efc Recovering log #943
-2026/06/30-11:58:19.717 8efc Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/000943.log 
-2026/06/30-11:58:19.721 8efc Delete type=2 #942
-2026/06/30-11:58:20.487 8efc Level-0 table #948: started
-2026/06/30-11:58:20.488 8efc Level-0 table #948: 515 bytes OK
-2026/06/30-11:58:20.492 8efc Delete type=0 #943
-2026/06/30-11:58:20.493 8f01 Manual compaction at level-0 from ' \x0e\x01\x00\x00\x00' @ 72057594037927935 : 1 .. ' \x0f\x01\x00\x00\x00' @ 0 : 0; will stop at ' \x0e\x01\x00\x00\x05' @ 5636 : 1
-2026/06/30-11:58:20.493 8f01 Compacting 1@0 + 1@1 files
-2026/06/30-11:58:20.510 8f01 Generated table #949@0: 104 keys, 3976 bytes
-2026/06/30-11:58:20.510 8f01 Compacted 1@0 + 1@1 files => 3976 bytes
-2026/06/30-11:58:20.515 8f01 compacted to: files[ 0 1 1 0 0 0 0 ]
-2026/06/30-11:58:20.515 8f01 Delete type=2 #948
-2026/06/30-11:58:20.515 8efc Manual compaction at level-0 from ' \x0e\x01\x00\x00\x05' @ 5636 : 1 .. ' \x0f\x01\x00\x00\x00' @ 0 : 0; will stop at (end)
-2026/06/30-11:58:21.288 8efc Level-0 table #951: started
-2026/06/30-11:58:21.290 8efc Level-0 table #951: 499 bytes OK
-2026/06/30-11:58:21.300 8efc Delete type=2 #945
-2026/06/30-11:58:21.300 8efc Delete type=0 #947
-2026/06/30-11:58:21.300 8efc Manual compaction at level-0 from ' \x0f\x01\x00\x00\x00' @ 72057594037927935 : 1 .. ' \x10\x01\x00\x00\x00' @ 0 : 0; will stop at ' \x0f\x01\x00\x00\x05' @ 5655 : 1
-2026/06/30-11:58:21.300 8efc Compacting 1@0 + 1@1 files
-2026/06/30-11:58:21.492 8efc Generated table #952@0: 104 keys, 3979 bytes
-2026/06/30-11:58:21.492 8efc Compacted 1@0 + 1@1 files => 3979 bytes
-2026/06/30-11:58:21.497 8efc compacted to: files[ 0 1 1 0 0 0 0 ]
-2026/06/30-11:58:21.497 8efc Delete type=2 #951
-2026/06/30-11:58:21.497 8efc Manual compaction at level-0 from ' \x0f\x01\x00\x00\x05' @ 5655 : 1 .. ' \x10\x01\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/06/30-12:46:21.152 a660 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/30-12:46:21.152 a660 Recovering log #1122
+2026/06/30-12:46:21.152 a660 Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/001122.log 
+2026/06/30-12:46:21.152 a660 Delete type=2 #1121
+2026/06/30-12:46:21.958 a660 Level-0 table #1127: started
+2026/06/30-12:46:21.962 a660 Level-0 table #1127: 510 bytes OK
+2026/06/30-12:46:21.974 a660 Delete type=0 #1122
+2026/06/30-12:46:21.975 a660 Manual compaction at level-0 from ' B\x01\x00\x00\x00' @ 72057594037927935 : 1 .. ' C\x01\x00\x00\x00' @ 0 : 0; will stop at ' B\x01\x00\x00\x05' @ 6624 : 1
+2026/06/30-12:46:21.975 a660 Compacting 1@0 + 1@1 files
+2026/06/30-12:46:21.989 a660 Generated table #1128@0: 104 keys, 3979 bytes
+2026/06/30-12:46:21.989 a660 Compacted 1@0 + 1@1 files => 3979 bytes
+2026/06/30-12:46:21.994 a660 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/06/30-12:46:21.994 a660 Delete type=2 #1127
+2026/06/30-12:46:21.995 a66b Manual compaction at level-0 from ' B\x01\x00\x00\x05' @ 6624 : 1 .. ' C\x01\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/06/30-12:46:22.687 a66b Level-0 table #1130: started
+2026/06/30-12:46:22.690 a66b Level-0 table #1130: 505 bytes OK
+2026/06/30-12:46:22.695 a66b Delete type=2 #1124
+2026/06/30-12:46:22.696 a66b Delete type=0 #1126
+2026/06/30-12:46:22.697 a660 Manual compaction at level-0 from ' C\x01\x00\x00\x00' @ 72057594037927935 : 1 .. ' D\x01\x00\x00\x00' @ 0 : 0; will stop at ' C\x01\x00\x00\x05' @ 6643 : 1
+2026/06/30-12:46:22.697 a660 Compacting 1@0 + 1@1 files
+2026/06/30-12:46:22.828 a660 Generated table #1131@0: 104 keys, 3979 bytes
+2026/06/30-12:46:22.828 a660 Compacted 1@0 + 1@1 files => 3979 bytes
+2026/06/30-12:46:22.835 a660 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/06/30-12:46:22.835 a660 Delete type=2 #1130
+2026/06/30-12:46:22.837 a660 Manual compaction at level-0 from ' C\x01\x00\x00\x05' @ 6643 : 1 .. ' D\x01\x00\x00\x00' @ 0 : 0; will stop at (end)

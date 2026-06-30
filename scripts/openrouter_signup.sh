@@ -103,55 +103,49 @@ if "/login" in page.url:
     page.locator("button[type='submit']").click()
     page.wait_for_timeout(15000)
 
-def find_verify():
-    # Only check main page content (frame.content() hangs on Proton encrypted iframes)
+def find_verify(p):
+    # Search via page content regex
     try:
-        html = page.content()
+        html = p.content()
         m = re.findall(r'https://[^\s"<>()]*(?:openrouter|clerk)[^\s"<>()]*(?:verify|confirm)[^\s"<>()]*', html, re.IGNORECASE)
         if m: return m[0].replace("&amp;", "&")
     except: pass
-    for link in page.query_selector_all("a[href]"):
-        href = link.get_attribute("href")
-        if href and ("openrouter" in href or "clerk" in href) and ("verify" in href or "confirm" in href):
-            return href.replace("&amp;", "&")
     return None
 
 for attempt in range(20):
     page.wait_for_timeout(8000)
-    # Search
+
+    # Open search: try search button, then / shortcut
     try:
-        page.locator("[data-testid='search-button'],button[aria-label='Search']").first.click()
+        page.locator("[data-testid='search-button'], button[aria-label='Search']").first.click()
     except:
         page.keyboard.press("/")
-    page.wait_for_timeout(500)
+    page.wait_for_timeout(800)
     page.keyboard.type(signup_email, delay=60)
     page.keyboard.press("Enter")
-    page.wait_for_timeout(5000)
+    page.wait_for_timeout(6000)
 
-    items = page.locator(".item-container")
-    if items.count() == 0:
-        page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
-        continue
-
-    # Open each email in new tab (middle-click), check for verify link
-    for i in range(min(items.count(), 10)):
-        try:
-            box = items.nth(i).bounding_box()
-            if not box: continue
-            page.mouse.click(box["x"]+box["width"]/2, box["y"]+box["height"]/2, button="middle")
-            time.sleep(3)
-            if len(ctx.pages) > 1:
-                p = ctx.pages[-1]
-                time.sleep(2)
-                link = find_verify()
-                if link:
-                    print(f"VERIFY_URL:{link}", flush=True); ctx.close(); sys.exit(0)
-                p.close(); time.sleep(1)
-                page = ctx.pages[0]
-        except Exception as e:
-            print(f"  err: {e}", flush=True)
-            if len(ctx.pages) > 1: ctx.pages[-1].close()
-            page = ctx.pages[0]
+    # Click the first item in results
+    try:
+        items = page.locator(".item-container")
+        if items.count() == 0:
+            page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
+            continue
+        items.nth(0).click()
+        page.wait_for_timeout(3000)
+        link = find_verify(page)
+        if link:
+            print(f"VERIFY_URL:{link}", flush=True)
+            ctx.close(); sys.exit(0)
+        # Try expanding quoted/loaded content by selecting all
+        page.keyboard.press("a")  # Proton shortcut select all/conversation
+        page.wait_for_timeout(2000)
+        link = find_verify(page)
+        if link:
+            print(f"VERIFY_URL:{link}", flush=True)
+            ctx.close(); sys.exit(0)
+    except Exception as e:
+        print(f"  err: {e}", flush=True)
 
     page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
 
@@ -170,7 +164,6 @@ p = ctx.pages[0] if ctx.pages else ctx.new_page()
 
 p.goto(verify_url, timeout=60000)
 time.sleep(5)
-if len(ctx.pages) > 1: p = ctx.pages[-1]
 
 api_key = None
 for i in range(60):
@@ -206,8 +199,8 @@ for i in range(60):
         if "/keys" not in url:
             p.goto("https://openrouter.ai/workspaces/default/keys", wait_until="domcontentloaded", timeout=30000)
             time.sleep(5)
-        # Try reveal buttons
-        for sel in ["button:has(.lucide-eye)","button:has(.lucide-eye-off)","button[aria-label='Reveal']","[aria-label='Copy']"]:
+        # Try reveal/copy buttons
+        for sel in ["button:has(.lucide-eye)","button:has(.lucide-eye-off)","button[aria-label='Reveal']"]:
             try: p.click(sel); time.sleep(2)
             except: pass
         text = p.inner_text("body")
@@ -216,6 +209,7 @@ for i in range(60):
         if not api_key:
             m2 = re.findall(r'(?:sk-or-v1-|sk-)[a-zA-Z0-9_-]{30,}', p.content())
             if m2: api_key = m2[0]
+        # If no key, try generate
         if not api_key:
             for sel in ["button:has-text('Generate')","button:has-text('Create')"]:
                 try: p.click(sel); time.sleep(3)

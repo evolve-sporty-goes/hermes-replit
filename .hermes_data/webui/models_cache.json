@@ -3,7 +3,7 @@
   "_source_fingerprint": {
     "config_yaml": {
       "path": "/home/runner/workspace/.hermes_data/config.yaml",
-      "mtime_ns": 1782811038421450510,
+      "mtime_ns": 1782821802089450510,
       "size": 1647
     },
     "auth_json": {
@@ -195,10 +195,6 @@
         {
           "id": "nvidia/nemotron-3-super-120b-a12b",
           "label": "nvidia/nemotron-3-super-120b-a12b"
-        },
-        {
-          "id": "openrouter/owl-alpha",
-          "label": "openrouter/owl-alpha"
         },
         {
           "id": "poolside/laguna-m.1:free",
