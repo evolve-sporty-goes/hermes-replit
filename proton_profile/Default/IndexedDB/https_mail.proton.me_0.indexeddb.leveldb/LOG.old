@@ -1,25 +1,25 @@
-2026/06/30-07:57:20.153 6b1d Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
-2026/06/30-07:57:20.153 6b1d Recovering log #467
-2026/06/30-07:57:20.153 6b1d Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/000467.log 
-2026/06/30-07:57:20.153 6b1d Delete type=2 #465
-2026/06/30-07:57:20.960 6b1d Level-0 table #472: started
-2026/06/30-07:57:20.967 6b1d Level-0 table #472: 486 bytes OK
-2026/06/30-07:57:20.996 6b1d Delete type=0 #467
-2026/06/30-07:57:20.997 6b16 Manual compaction at level-0 from '\x00\x88\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x89\x00\x00\x00' @ 0 : 0; will stop at '\x00\x88\x00\x00\x05' @ 2670 : 1
-2026/06/30-07:57:20.997 6b16 Compacting 1@0 + 1@1 files
-2026/06/30-07:57:21.010 6b16 Generated table #473@0: 46 keys, 978 bytes
-2026/06/30-07:57:21.010 6b16 Compacted 1@0 + 1@1 files => 978 bytes
-2026/06/30-07:57:21.019 6b16 compacted to: files[ 0 1 1 0 0 0 0 ]
-2026/06/30-07:57:21.019 6b16 Delete type=2 #472
-2026/06/30-07:57:21.019 6b16 Manual compaction at level-0 from '\x00\x88\x00\x00\x05' @ 2670 : 1 .. '\x00\x89\x00\x00\x00' @ 0 : 0; will stop at (end)
-2026/06/30-07:57:22.041 6b16 Level-0 table #475: started
-2026/06/30-07:57:22.043 6b16 Level-0 table #475: 507 bytes OK
-2026/06/30-07:57:22.049 6b16 Delete type=2 #469
-2026/06/30-07:57:22.049 6b16 Delete type=0 #471
-2026/06/30-07:57:22.049 6b16 Manual compaction at level-0 from '\x00\x89\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x8a\x00\x00\x00' @ 0 : 0; will stop at '\x00\x89\x00\x00\x05' @ 2689 : 1
-2026/06/30-07:57:22.049 6b16 Compacting 1@0 + 1@1 files
-2026/06/30-07:57:22.053 6b16 Generated table #476@0: 46 keys, 975 bytes
-2026/06/30-07:57:22.053 6b16 Compacted 1@0 + 1@1 files => 975 bytes
-2026/06/30-07:57:22.059 6b16 compacted to: files[ 0 1 1 0 0 0 0 ]
-2026/06/30-07:57:22.059 6b16 Delete type=2 #475
-2026/06/30-07:57:22.059 6b16 Manual compaction at level-0 from '\x00\x89\x00\x00\x05' @ 2689 : 1 .. '\x00\x8a\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/06/30-08:29:36.848 af3 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/30-08:29:36.851 af3 Recovering log #500
+2026/06/30-08:29:36.851 af3 Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/000500.log 
+2026/06/30-08:29:36.851 af3 Delete type=2 #498
+2026/06/30-08:29:37.567 af8 Level-0 table #505: started
+2026/06/30-08:29:37.590 af8 Level-0 table #505: 498 bytes OK
+2026/06/30-08:29:37.661 af8 Delete type=0 #500
+2026/06/30-08:29:37.661 af1 Manual compaction at level-0 from '\x00\x91\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x92\x00\x00\x00' @ 0 : 0; will stop at '\x00\x91\x00\x00\x05' @ 2841 : 1
+2026/06/30-08:29:37.661 af1 Compacting 1@0 + 1@1 files
+2026/06/30-08:29:37.670 af1 Generated table #506@0: 46 keys, 973 bytes
+2026/06/30-08:29:37.670 af1 Compacted 1@0 + 1@1 files => 973 bytes
+2026/06/30-08:29:37.675 af1 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/06/30-08:29:37.676 af1 Delete type=2 #505
+2026/06/30-08:29:37.679 af1 Manual compaction at level-0 from '\x00\x91\x00\x00\x05' @ 2841 : 1 .. '\x00\x92\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/06/30-08:29:38.576 af1 Level-0 table #508: started
+2026/06/30-08:29:38.582 af1 Level-0 table #508: 499 bytes OK
+2026/06/30-08:29:38.587 af1 Delete type=2 #502
+2026/06/30-08:29:38.587 af1 Delete type=0 #504
+2026/06/30-08:29:38.588 af1 Manual compaction at level-0 from '\x00\x92\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x93\x00\x00\x00' @ 0 : 0; will stop at '\x00\x92\x00\x00\x05' @ 2860 : 1
+2026/06/30-08:29:38.588 af1 Compacting 1@0 + 1@1 files
+2026/06/30-08:29:38.594 af1 Generated table #509@0: 46 keys, 974 bytes
+2026/06/30-08:29:38.594 af1 Compacted 1@0 + 1@1 files => 974 bytes
+2026/06/30-08:29:38.599 af1 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/06/30-08:29:38.599 af1 Delete type=2 #508
+2026/06/30-08:29:38.600 af1 Manual compaction at level-0 from '\x00\x92\x00\x00\x05' @ 2860 : 1 .. '\x00\x93\x00\x00\x00' @ 0 : 0; will stop at (end)

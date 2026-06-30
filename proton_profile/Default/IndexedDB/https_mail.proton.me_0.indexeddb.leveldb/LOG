@@ -1,14 +1,14 @@
-2026/06/30-07:57:26.356 6b16 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
-2026/06/30-07:57:26.356 6b16 Recovering log #474
-2026/06/30-07:57:26.356 6b16 Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/000474.log 
-2026/06/30-07:57:26.356 6b16 Delete type=2 #473
-2026/06/30-07:57:26.406 6b16 Level-0 table #479: started
-2026/06/30-07:57:26.410 6b16 Level-0 table #479: 497 bytes OK
-2026/06/30-07:57:26.434 6b16 Delete type=0 #474
-2026/06/30-07:57:26.435 6b16 Manual compaction at level-0 from '\x00\x8a\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x8b\x00\x00\x00' @ 0 : 0; will stop at '\x00\x8a\x00\x00\x05' @ 2708 : 1
-2026/06/30-07:57:26.435 6b16 Compacting 1@0 + 1@1 files
-2026/06/30-07:57:26.438 6b16 Generated table #480@0: 46 keys, 978 bytes
-2026/06/30-07:57:26.438 6b16 Compacted 1@0 + 1@1 files => 978 bytes
-2026/06/30-07:57:26.441 6b16 compacted to: files[ 0 1 1 0 0 0 0 ]
-2026/06/30-07:57:26.442 6b16 Delete type=2 #479
-2026/06/30-07:57:26.442 6b16 Manual compaction at level-0 from '\x00\x8a\x00\x00\x05' @ 2708 : 1 .. '\x00\x8b\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/06/30-08:29:44.826 af1 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/30-08:29:44.828 af1 Recovering log #507
+2026/06/30-08:29:44.828 af1 Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/000507.log 
+2026/06/30-08:29:44.828 af1 Delete type=2 #506
+2026/06/30-08:29:44.856 af9 Level-0 table #512: started
+2026/06/30-08:29:44.858 af9 Level-0 table #512: 499 bytes OK
+2026/06/30-08:29:44.865 af9 Delete type=0 #507
+2026/06/30-08:29:44.865 af1 Manual compaction at level-0 from '\x00\x93\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x94\x00\x00\x00' @ 0 : 0; will stop at '\x00\x93\x00\x00\x05' @ 2879 : 1
+2026/06/30-08:29:44.865 af1 Compacting 1@0 + 1@1 files
+2026/06/30-08:29:44.868 af1 Generated table #513@0: 46 keys, 977 bytes
+2026/06/30-08:29:44.868 af1 Compacted 1@0 + 1@1 files => 977 bytes
+2026/06/30-08:29:44.873 af1 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/06/30-08:29:44.873 af1 Delete type=2 #512
+2026/06/30-08:29:44.873 af1 Manual compaction at level-0 from '\x00\x93\x00\x00\x05' @ 2879 : 1 .. '\x00\x94\x00\x00\x00' @ 0 : 0; will stop at (end)
