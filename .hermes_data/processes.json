@@ -1,12 +1,12 @@
 [
   {
-    "session_id": "proc_48505ae410ee",
+    "session_id": "proc_f6fbeb149f07",
     "command": "bash ~/workspace/scripts/openrouter_signup.sh 2>&1",
-    "pid": 40237,
+    "pid": 6520,
     "pid_scope": "host",
-    "host_start_time": 1393062,
+    "host_start_time": 243036,
     "cwd": "/home/runner/workspace",
-    "started_at": 1782822275.5364873,
+    "started_at": 1782827025.502146,
     "task_id": "default",
     "session_key": "b807fcf1ed63",
     "watcher_platform": "",

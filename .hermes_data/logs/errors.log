@@ -7260,3 +7260,186 @@ openai.RateLimitError: Error code: 429 - {'errors': [{'message': "AiError: AiErr
   → `copilot login` or `hermes model` to authenticate via OAuth
   → A fine-grained PAT (github_pat_*) with Copilot Requests permission
   → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:18:59,969 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 13:18:59,988 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:01,467 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:01,481 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:01,590 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:01,597 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:01,598 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:02,489 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:02,489 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:02,490 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:02,633 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:02,634 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:02,634 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:02,662 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:02,684 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:02,715 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:03,963 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:19:04,263 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:19:32,081 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:32,085 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:32,949 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:32,951 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:33,009 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:33,011 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:33,011 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:33,420 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:33,420 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:33,420 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:33,431 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:33,431 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:33,432 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:33,439 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:33,440 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:33,445 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:19:34,001 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:19:34,091 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:19:42,663 WARNING [20260630_131931_a6b0fc] agent.conversation_loop: API call failed (attempt 1/3) error_type=NotFoundError thread=Thread-5 (run_agent):139951204828864 provider=openrouter base_url=https://openrouter.ai/api/v1 model=owl-alpha summary=HTTP 404: No endpoints found for owl-alpha.
+2026-06-30 13:19:42,663 WARNING [20260630_131931_a6b0fc] agent.conversation_loop: Retrying API call in 2.120824745980096s (attempt 1/3) thread=Thread-5 (run_agent):139951204828864 provider=openrouter base_url=https://openrouter.ai/api/v1 model=owl-alpha policy=default error=Error code: 404 - {'error': {'message': 'No endpoints found for owl-alpha.', 'code': 404}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 13:19:44,965 WARNING [20260630_131931_a6b0fc] agent.conversation_loop: API call failed (attempt 2/3) error_type=NotFoundError thread=Thread-5 (run_agent):139951204828864 provider=openrouter base_url=https://openrouter.ai/api/v1 model=owl-alpha summary=HTTP 404: No endpoints found for owl-alpha.
+2026-06-30 13:19:44,965 WARNING [20260630_131931_a6b0fc] agent.conversation_loop: Retrying API call in 5.487779506006225s (attempt 2/3) thread=Thread-5 (run_agent):139951204828864 provider=openrouter base_url=https://openrouter.ai/api/v1 model=owl-alpha policy=default error=Error code: 404 - {'error': {'message': 'No endpoints found for owl-alpha.', 'code': 404}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 13:19:50,699 WARNING [20260630_131931_a6b0fc] agent.conversation_loop: API call failed (attempt 3/3) error_type=NotFoundError thread=Thread-5 (run_agent):139951204828864 provider=openrouter base_url=https://openrouter.ai/api/v1 model=owl-alpha summary=HTTP 404: No endpoints found for owl-alpha.
+2026-06-30 13:19:50,700 WARNING [20260630_131931_a6b0fc] agent.chat_completion_helpers: Fallback skip: chain entry openrouter/owl-alpha matches current provider/model
+2026-06-30 13:19:50,710 ERROR [20260630_131931_a6b0fc] agent.conversation_loop: API call failed after 3 retries. HTTP 404: No endpoints found for owl-alpha. | provider=openrouter model=owl-alpha msgs=2 tokens=~16,294
+2026-06-30 13:25:25,516 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 13:25:25,527 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 13:25:25,558 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 13:25:25,558 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:26:25.
+2026-06-30 13:25:25,583 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 13:25:25,584 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:26:25.
+2026-06-30 13:25:25,584 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:25:25,584 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:25:25,587 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:25:25,745 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 13:25:25,753 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 13:25:25,753 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:25:25,857 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 13:25:25,857 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:26:25.
+2026-06-30 13:25:25,863 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 13:25:25,864 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:26:25.
+2026-06-30 13:25:25,864 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:25:27,743 WARNING [b807fcf1ed63] agent.prompt_builder: ⚠️  Context file AGENTS.md TRUNCATED: 70678 chars exceeds limit of 62914 — trim the file, pin a larger context_file_max_chars, or use a larger-context model!
+2026-06-30 13:25:28,304 WARNING [b807fcf1ed63] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-58 (_run_agent_streaming):139737253816000 provider=openrouter base_url=https://openrouter.ai/api/v1 model=custom/@cf/moonshotai/kimi-k2.7-code summary=HTTP 400: custom/@cf/moonshotai/kimi-k2.7-code is not a valid model ID
+2026-06-30 13:25:28,664 WARNING [b807fcf1ed63] agent.conversation_loop: API call failed (attempt 1/3) error_type=NotFoundError thread=Thread-58 (_run_agent_streaming):139737253816000 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 404: No endpoints found for owl-alpha.
+2026-06-30 13:25:28,665 WARNING [b807fcf1ed63] agent.conversation_loop: Retrying API call in 2.1861729985433382s (attempt 1/3) thread=Thread-58 (_run_agent_streaming):139737253816000 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 404 - {'error': {'message': 'No endpoints found for owl-alpha.', 'code': 404}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 13:25:31,028 WARNING [b807fcf1ed63] agent.conversation_loop: API call failed (attempt 2/3) error_type=NotFoundError thread=Thread-58 (_run_agent_streaming):139737253816000 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 404: No endpoints found for owl-alpha.
+2026-06-30 13:25:31,028 WARNING [b807fcf1ed63] agent.conversation_loop: Retrying API call in 5.869898544733108s (attempt 2/3) thread=Thread-58 (_run_agent_streaming):139737253816000 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 404 - {'error': {'message': 'No endpoints found for owl-alpha.', 'code': 404}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 13:25:37,170 WARNING [b807fcf1ed63] agent.conversation_loop: API call failed (attempt 3/3) error_type=NotFoundError thread=Thread-58 (_run_agent_streaming):139737253816000 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 404: No endpoints found for owl-alpha.
+2026-06-30 13:25:37,173 ERROR [b807fcf1ed63] agent.conversation_loop: API call failed after 3 retries. HTTP 404: No endpoints found for owl-alpha. | provider=openrouter model=owl-alpha msgs=237 tokens=~64,339
+2026-06-30 13:26:14,471 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,478 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,591 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 13:26:14,592 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:27:14.
+2026-06-30 13:26:14,603 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 13:26:14,603 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:27:14.
+2026-06-30 13:26:14,603 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,603 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,605 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,652 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,654 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,654 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,796 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 13:26:14,796 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:27:14.
+2026-06-30 13:26:14,809 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-06-30 13:26:14,809 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:27:14.
+2026-06-30 13:26:14,809 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,823 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,824 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,824 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,838 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,838 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,839 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,849 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,850 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:14,856 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 13:26:15,737 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:26:15,820 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:26:34,706 WARNING [b807fcf1ed63] agent.tool_executor: Tool process returned error (0.01s): {"status": "not_found", "error": "No process with ID proc_48505ae410ee"}
+2026-06-30 13:29:53,770 WARNING [b807fcf1ed63] agent.tool_executor: Tool terminal returned error (178.01s): {"output": "Email: dubbed-harsh-gag@duck.com\n=== Step 1: Signup ===\nTURNSTILE:SOLVED URL=https://openrouter.ai/sign-up/verify-email-address\n=== Step 2: Check inbox ===\n\n[Command interrupted]", "e
+2026-06-30 13:30:36,001 WARNING [b807fcf1ed63] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-86 (_run_agent_streaming):139736995837632 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (32/32)
+2026-06-30 13:30:36,002 WARNING [b807fcf1ed63] agent.conversation_loop: Retrying API call in 2.5621182207306195s (attempt 1/3) thread=Thread-86 (_run_agent_streaming):139736995837632 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (32/32)
+2026-06-30 13:31:10,941 WARNING agent.lsp.servers: bash-language-server: shellcheck not found on PATH — diagnostics will be empty until shellcheck is installed (apt: shellcheck, brew: shellcheck, scoop: shellcheck).
+2026-06-30 13:32:11,328 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:32:11,681 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:32:11,757 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:32:13,754 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:32:13,836 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:32:13,905 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:32:15,538 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:32:15,626 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:32:15,715 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:32:18,432 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:32:18,520 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:32:18,604 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:39:03,845 WARNING [b807fcf1ed63] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-86 (_run_agent_streaming):139736995837632 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (193/32)
+2026-06-30 13:39:03,848 WARNING [b807fcf1ed63] agent.conversation_loop: Retrying API call in 2.82452689472565s (attempt 1/3) thread=Thread-86 (_run_agent_streaming):139736995837632 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (193/32)
+2026-06-30 13:40:59,913 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 13:41:00,045 WARNING [eb1e099c6b5b] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-146 (_run_agent_streaming):139736693864128 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (68/32)
+2026-06-30 13:41:00,046 WARNING [eb1e099c6b5b] agent.conversation_loop: Retrying API call in 2.843339332913763s (attempt 1/3) thread=Thread-146 (_run_agent_streaming):139736693864128 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (68/32)
+2026-06-30 13:42:03,493 WARNING [b807fcf1ed63] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-86 (_run_agent_streaming):139736995837632 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (110/32)
+2026-06-30 13:42:03,494 WARNING [b807fcf1ed63] agent.conversation_loop: Retrying API call in 2.6694920173523666s (attempt 1/3) thread=Thread-86 (_run_agent_streaming):139736995837632 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (110/32)
+2026-06-30 13:45:13,862 WARNING [b807fcf1ed63] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=bg-review:139737004230336 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream idle timeout exceeded
+2026-06-30 13:45:13,863 WARNING [b807fcf1ed63] agent.conversation_loop: Retrying API call in 2.454898356134966s (attempt 1/3) thread=bg-review:139737004230336 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream idle timeout exceeded
+2026-06-30 13:48:53,423 WARNING [b807fcf1ed63] agent.tool_executor: Tool skill_manage returned error (0.23s): {"success": false, "error": "Could not find a match for old_string in the file\n\nDid you mean one of these sections?\n  12| ```bash\n  13| #!/bin/bash\n  14| set -eo pipefail\n  15| export DISPLAY=:1
+2026-06-30 13:49:02,523 WARNING [b807fcf1ed63] agent.tool_executor: Tool read_file returned error (0.00s): {"error": "Background review denied non-whitelisted tool: read_file. Only memory/skill tools are allowed."}
+2026-06-30 13:49:52,124 WARNING agent.chat_completion_helpers: Streaming failed after partial delivery, not retrying: Upstream idle timeout exceeded
+2026-06-30 13:49:52,127 WARNING [b807fcf1ed63] agent.chat_completion_helpers: Partial stream delivered before error; returning length-truncated stub with 42 chars of recovered content so the loop can continue from where the stream died: Upstream idle timeout exceeded

@@ -23,7 +23,7 @@ email, password = sys.argv[1], sys.argv[2]
 td = tempfile.mkdtemp()
 atexit.register(lambda: shutil.rmtree(td, ignore_errors=True))
 ctx = launch_persistent_context(td, headless=False, humanize=True)
-p = ctx.pages[0] if ctx.pages else ctx.new_page()
+p = ctx.pages[0] if ctx.pages else context.new_page()
 p.goto("https://example.com", timeout=60000)
 # ... do stuff ...
 ctx.close()
@@ -66,69 +66,31 @@ shutil.rmtree(td, ignore_errors=True)
 
 ## DISPLAY env for subprocesses
 
-If you get `Missing X server or $DISPLAY` errors when running Python from bash:
+If subprocess Python scripts fail with "Missing X server or $DISPLAY",
+add `export DISPLAY=:1` (or whatever display the user specifies) at the top
+of the bash script — subprocesses don't always inherit the parent's env.
+
+## CRITICAL: `pipefail` + `grep` kills script silently
+
+With `set -eo pipefail`, a `grep` with no matches (exit code 1) causes
+the entire pipeline to return 1, and `set -e` kills the script immediately
+with no visible error.
+
+**BROKEN:**
 ```bash
-export DISPLAY=:1   # or :0, or whatever the user specifies
+VURL=$(python3 ~/proton.py "$EMAIL" "$PROFILE" 2>/dev/null | grep '^VERIFY_URL:' | head -1 | cut -d: -f2-)
 ```
-Subprocesses don't always inherit the parent's DISPLAY.
 
-## Sed one-liner: bulk migrate playwright → cloakbrowser
-
+**FIXED:**
 ```bash
-grep -rl 'sync_playwright' scripts/ | xargs sed -i 's/from playwright.sync_api import sync_playwright/from cloakbrowser import launch, launch_persistent_context/g; s/p\.chromium\.launch_persistent_context/launch_persistent_context/g; /^with sync_playwright() as p:$/d; /executable_path=/d; s/headless=False,/headless=False, humanize=True,/g'
+# Remove pipefail, or use tail/sed instead of head/cut
+VURL=$(python3 ~/proton.py "$EMAIL" "$PROFILE" 2>&1 | grep '^VERIFY_URL:' | tail -1 | sed 's/^VERIFY_URL://')
 ```
 
-**After running sed**: you must manually:
-- Un-indent the body that was inside the `with` block (4 spaces → 0)
-- Remove `p.stop()` lines
+## CRITICAL: Python stdout not flushed before `ctx.close()` + `sys.exit(0)`
 
-## CRITICAL: `pipefail` + `grep` kills scripts silently
-
-With `set -eo pipefail`, if `grep` finds no matches the whole pipeline exits 1
-and the script dies. This is especially dangerous when capturing output:
-
-```bash
-# DANGEROUS: dies if grep finds nothing
-RESULT=$(python3 ~/helper.py | grep '^RESULT:' | head -1 | cut -d: -f2-)
-```
-
-**Fix 1**: Use `tail -1` instead of `head -1` (tail doesn't fail on empty input
-the same way), and `sed` instead of `cut` (URLs contain colons):
-
-```bash
-RESULT=$(python3 ~/helper.py 2>/dev/null | grep '^RESULT:' | tail -1 | sed 's/^RESULT://')
-```
-
-**Fix 2**: Use `if` instead of `&&` one-liner for the check:
-
-```bash
-# BAD: pipefail kills script if condition is false
-[ -z "$RESULT" ] && { echo "missing"; continue; }
-
-# GOOD: explicit if doesn't trigger pipefail
-if [ -z "$RESULT" ]; then echo "missing"; continue; fi
-```
-
-## CRITICAL: Python stdout flush before `sys.exit(0)` + `ctx.close()`
-
-When a Python helper prints a result then immediately closes the browser and exits,
-the pipe can be killed before stdout flushes. The bash capture gets empty string.
-
-```python
-# BAD: pipe may be killed before flush
-print(f"VERIFY_URL:{url}")
-ctx.close()
-sys.exit(0)
-
-# GOOD: flush explicitly, close, then exit
-print(f"VERIFY_URL:{url}", flush=True)
-sys.stdout.flush()
-ctx.close()
-sys.exit(0)
-```
-
-Also: break out of inner loops, set a variable, then print AFTER the loop — don't
-print+exit inside nested `for frame` loops where the break/close ordering matters.
+Pipe capture gets empty string. Always `flush=True` and `sys.stdout.flush()`
+before closing. Break out of nested loops and print after, not inside.
 
 ```python
 # BAD: print+exit inside nested loop
@@ -149,6 +111,58 @@ if result:
     ctx.close()
     sys.exit(0)
 ```
+
+## Common profile across signup+verify steps
+
+When a signup flow has multiple browser steps (signup → verify → extract),
+use the **same persistent profile** for all steps, not separate tmpdirs.
+Cloudflare challenge state and session cookies earned during signup must
+carry over to verify. Proton Mail gets its own separate profile.
+
+Example: `~/or_profile` shared between `or_signup.py` and `or_verify.py`.
+
+## Bash+Python helper pattern (canonical)
+
+```bash
+#!/bin/bash
+export DISPLAY=:1
+# ... config ...
+
+# Step 1: Generate .py helpers
+cat > ~/step1_signup.py << 'PYEOF'
+from cloakbrowser import launch_persistent_context
+import sys, tempfile, shutil, atexit
+# ... logic ...
+PYEOF
+
+cat > ~/step2_proton.py << 'PYEOF'
+from cloakbrowser import launch_persistent_context
+import sys, re, time
+# ... logic ...
+PYEOF
+
+cat > ~/step3_verify.py << 'PYEOF'
+from cloakbrowser import launch_persistent_context
+import sys, re, time
+# ... logic ...
+PYEOF
+
+# Step 2: Run with retry
+for ATTEMPT in 1 2 3; do
+    python3 ~/step1_signup.py "$EMAIL" "$PASSWORD" "$PROFILE" || continue
+    VURL=$(python3 ~/step2_proton.py "$EMAIL" "$PROTON_PROFILE" 2>&1 | grep '^VERIFY_URL:' | tail -1 | sed 's/^VERIFY_URL://')
+    [ -z "$VURL" ] && continue
+    python3 ~/step3_verify.py "$VURL" "$EMAIL" "$PASSWORD" "$CRED" "$PROFILE"
+    exit 0
+done
+```
+
+**Key rules:**
+- `headless=False` with CloakBrowser (no xvfb needed)
+- `humanize=True` for signup flows
+- One persistent profile per logical flow (signup/verify share; Proton separate)
+- `flush=True` on all print statements that must survive `sys.exit(0)`
+- `2>&1` not `2>/dev/null` for subprocesses you need to debug
 
 ## bash syntax check
 

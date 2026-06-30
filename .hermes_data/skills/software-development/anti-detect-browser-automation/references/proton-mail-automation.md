@@ -82,8 +82,10 @@ if not verify_url:
 In bash+, the `.py` scripts are generated in `~`. The verification pattern:
 ```bash
 VURL=$(python3 ~/fc_proton.py "$PROTON_USER" "$PROTON_PASS" ~/proton_profile "$EMAIL" \
-    2>/dev/null | grep '^VERIFY_URL:' | head -1 | cut -d: -f2-)
+    2>&1 | grep '^VERIFY_URL:' | tail -1 | sed 's/^VERIFY_URL://')
 ```
+
+**Note**: Use `2>&1` not `2>/dev/null` to preserve debug output. Use `tail -1` not `head -1` and `sed` not `cut` for URL extraction (avoids `pipefail` silent exit on no-match).
 
 ## Waiting for email
 
@@ -101,5 +103,55 @@ done
 
 - **Login persistence**: `~/proton_profile` persists Proton session. First run needs full login.
 - **Search selector**: `.item-container` is the email list item class
-- **Keyboard shortcut**: `/` opens Proton search box
-- **Go to inbox directly**: `https://mail.proton.me/u/0/inbox` skips redirect chain
+- **Keyboard shortcut**: `/` opens Proton search box **(but unreliable on u/3/inbox — see Pitfalls)**
+- **Go to inbox directly**: `https://mail.proton.me/u/0/inbox` skips redirect chain (but may land on `/u/3/` for some workspaces)
+
+## Pitfalls (2026-07-01 session findings)
+
+| Issue | Symptom | Fix |
+|-------|---------|-----|
+| `/` shortcut fails | Search box never opens, 0 results found | Click search button explicitly: `page.locator("[data-testid='search-button'], button[aria-label='Search']").first.click()` |
+| Workspace path is `/u/3/` not `/u/0/` | Navigation works but search results empty | Accept the redirect; don't hardcode `/u/0/` |
+| Search returns 0 results even when email exists | `.item-container` count is 0 | Wait longer (8s), try search button first, add debug logging |
+| Email content in encrypted iframe | `page.content()` doesn't show message body | Use `page.locator(".item-container").first.click()` to open message, then scan `page.content()` after 3s wait |
+| Proton search requires Enter to execute | Typing query + Enter works but results don't load | `page.wait_for_timeout(6000)` after Enter before checking results |
+| `pipefail` kills bash on grep no-match | Script exits silently at Proton step | Remove `pipefail` or use `sed`/`tail` pattern above |
+
+## Robust search pattern (updated 2026-07-01)
+
+```python
+for attempt in range(20):
+    page.wait_for_timeout(8000)  # wait for email to arrive
+
+    # Try search button first (more reliable than / shortcut)
+    try:
+        page.locator("[data-testid='search-button'], button[aria-label='Search']").first.click()
+    except:
+        page.keyboard.press("/")  # fallback
+    page.wait_for_timeout(800)
+    page.keyboard.type(signup_email, delay=60)
+    page.keyboard.press("Enter")
+    page.wait_for_timeout(6000)  # critical: wait for results to load
+
+    items = page.locator(".item-container")
+    if items.count() == 0:
+        page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
+        continue
+
+    items.nth(0).click()  # open first result
+    page.wait_for_timeout(3000)
+    link = find_verify(page)
+    if link:
+        print(f"VERIFY_URL:{link}", flush=True)
+        ctx.close(); sys.exit(0)
+    
+    # Force-load hidden/quoted content
+    page.keyboard.press("a")
+    page.wait_for_timeout(2000)
+    link = find_verify(page)
+    if link:
+        print(f"VERIFY_URL:{link}", flush=True)
+        ctx.close(); sys.exit(0)
+
+    page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
+```
