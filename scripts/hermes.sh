@@ -48,7 +48,7 @@ ln -sf $HOME/workspace/scripts/* "$BIN" 2>/dev/null
 chmod +x $BIN/*
 
 script.sh >/dev/null 2>&1 &
-sync 
+sync || true
 #setcfapi.sh
 firecrawl_install.sh &
 hermes config set model.provider  openrouter
