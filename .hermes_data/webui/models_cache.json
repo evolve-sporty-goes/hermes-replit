@@ -3,7 +3,7 @@
   "_source_fingerprint": {
     "config_yaml": {
       "path": "/home/runner/workspace/.hermes_data/config.yaml",
-      "mtime_ns": 1782776354116551631,
+      "mtime_ns": 1782795078611481177,
       "size": 1608
     },
     "auth_json": {
@@ -303,5 +303,5 @@
       ]
     }
   ],
-  "_webui_version": "v0.51.756"
+  "_webui_version": "v0.51.762"
 }

@@ -10,7 +10,7 @@ User prefers explicit scripts that they will execute themselves. Give file paths
 §
 When the user asks to modify Hermes config.yaml, provide the shell commands for them to run rather than editing the file directly — the patch tool blocks writes to the agent's own config. Use heredoc append or hermes config set commands.
 §
-Workspace organized: credentials/ docs/ scripts/ dirs created, system dirs (.hermes_data .git .cache .local .pythonlibs .config) must never be moved. subnet-proxy kept at root as standalone Go project.
+Workspace: credentials/ docs/ scripts/ dirs. System dirs never moved. Replit startup=.replit [startup] startOn + wrapper with auto-restart (rate-limited).
 §
 Hermes non-interactive model config: `hermes model` is TUI-only, cannot be scripted. Set config.yaml directly via `hermes config set model.provider/base_url/api_key/api_compat/default/display_name`. For active config use `hermes config show | grep Model` — config.yaml grep shows stale creds.
 §

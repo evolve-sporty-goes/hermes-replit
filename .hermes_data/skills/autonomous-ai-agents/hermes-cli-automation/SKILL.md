@@ -1,6 +1,6 @@
 ---
 name: hermes-cli-automation
-trigger: "non-interactive hermes, scripted hermes setup, hermes config set, custom endpoint script, hermes model automation, CI hermes, hermes without prompts"
+trigger: "non-interactive hermes, scripted hermes setup, hermes config set, custom endpoint script, hermes model automation, CI hermes, hermes without prompts, replit hermes, replit startup, replit workflow, hermes auto-restart, hermes crash recovery"
 description: "Automate Hermes Agent CLI configuration non-interactively — model selection, custom endpoints, credential pooling/rotation, and config editing via `hermes config set` instead of interactive wizards. Covers scripted setups, CI, Docker, and ephemeral environments."
 version: 1
 ---
@@ -246,6 +246,59 @@ Hermes sessions are gated behind `hermes doctor --fix` success. Hermes itself wo
 
 **Why this matters**: FTS corruption is not data loss. The sessions/messages/state_meta tables live on different b-tree pages than the FTS index. Corrupt FTS pages block `hermes doctor` from passing while your conversation history remains intact on healthy pages.
 
+## Replit Workflow with Auto-Restart
+
+On Replit, the `.replit` config controls workflows and startup behavior. To run Hermes on startup with crash recovery:
+
+### 1. Create a startup wrapper script
+
+`scripts/hermes-startup.sh` — wraps Hermes with:
+- Auto-restart on non-zero exit (crash recovery)
+- Rate limiting: max N restarts per time window (prevents infinite crash loops)
+- Single-instance guard via PID file
+- Structured logging to `logs/hermes-startup.log`
+- All install/setup phases (uv, repo clone, venv, PATH, wrapper creation, background services)
+
+See `references/replit-startup-wrapper.sh` for a complete template.
+
+### 2. Update `.replit` config
+
+```toml
+[workflows]
+runButton = "Project"
+
+[startup]
+startOn = "Project"
+
+[[workflows.workflow]]
+name = "Hermes"
+mode = "parallel"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash ~/workspace/scripts/hermes-startup.sh"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Hermes"
+```
+
+Key points:
+- `[startup] startOn = "Project"` tells Replit to auto-run on container start
+- The "Hermes" workflow runs the startup wrapper; "Project" workflow triggers it via `workflow.run`
+- Use `mode = "parallel"` so the workflow doesn't block the Replit UI
+- The wrapper handles install + launch + restart in one script — Replit only needs to call it once
+
+### Restart rate-limiting strategy
+
+Track restart timestamps in an array, count those within a sliding window (e.g. 5 min). If count exceeds threshold (e.g. 10), stop and log "manual intervention required" — prevents infinite crash loops from a persistent error (bad config, missing dep, etc.).
+
+Exit code 0 = clean user quit → no restart. Any other code → restart after delay.
+
 ## Reference
 
 - `references/cloudflare-ai-setup.sh` — single-account script template
@@ -253,3 +306,4 @@ Hermes sessions are gated behind `hermes doctor --fix` success. Hermes itself wo
 - `references/cloudflare-file-pool.sh` — file-based credential pool (one file per account)
 - `references/cloudflare-single-file-pool.sh` — single file holding all credential pairs (user's final choice)
 - `references/state-db-corruption-repair.py` — recover from FTS b-tree page corruption when `hermes sessions repair` fails
+- `references/replit-startup-wrapper.sh` — Replit startup wrapper with auto-restart and rate limiting

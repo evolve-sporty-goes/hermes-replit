@@ -1441,9 +1441,9 @@
 "max_completion_tokens":262144,
 "name":"MoonshotAI Kimi Latest",
 "pricing":{
-"prompt":"0.00000055",
-"completion":"0.0000032",
-"input_cache_read":"0.00000011"
+"prompt":"0.00000066",
+"completion":"0.00000341",
+"input_cache_read":"0.000000144"
 }
 },
 "kimi-latest":{
@@ -1451,9 +1451,9 @@
 "max_completion_tokens":262144,
 "name":"MoonshotAI Kimi Latest",
 "pricing":{
-"prompt":"0.00000055",
-"completion":"0.0000032",
-"input_cache_read":"0.00000011"
+"prompt":"0.00000066",
+"completion":"0.00000341",
+"input_cache_read":"0.000000144"
 }
 },
 "~google/gemini-flash-latest":{
@@ -2139,9 +2139,9 @@
 "max_completion_tokens":262144,
 "name":"MoonshotAI: Kimi K2.6",
 "pricing":{
-"prompt":"0.00000055",
-"completion":"0.0000032",
-"input_cache_read":"0.00000011"
+"prompt":"0.00000066",
+"completion":"0.00000341",
+"input_cache_read":"0.000000144"
 }
 },
 "kimi-k2.6":{
@@ -2149,9 +2149,9 @@
 "max_completion_tokens":262144,
 "name":"MoonshotAI: Kimi K2.6",
 "pricing":{
-"prompt":"0.00000055",
-"completion":"0.0000032",
-"input_cache_read":"0.00000011"
+"prompt":"0.00000066",
+"completion":"0.00000341",
+"input_cache_read":"0.000000144"
 }
 },
 "moonshotai/kimi-k2.6-20260420":{
@@ -2159,9 +2159,9 @@
 "max_completion_tokens":262144,
 "name":"MoonshotAI: Kimi K2.6",
 "pricing":{
-"prompt":"0.00000055",
-"completion":"0.0000032",
-"input_cache_read":"0.00000011"
+"prompt":"0.00000066",
+"completion":"0.00000341",
+"input_cache_read":"0.000000144"
 }
 },
 "kimi-k2.6-20260420":{
@@ -2169,9 +2169,9 @@
 "max_completion_tokens":262144,
 "name":"MoonshotAI: Kimi K2.6",
 "pricing":{
-"prompt":"0.00000055",
-"completion":"0.0000032",
-"input_cache_read":"0.00000011"
+"prompt":"0.00000066",
+"completion":"0.00000341",
+"input_cache_read":"0.000000144"
 }
 },
 "anthropic/claude-opus-4.7":{
@@ -2231,9 +2231,8 @@
 "max_completion_tokens":null,
 "name":"Z.ai: GLM 5.1",
 "pricing":{
-"prompt":"0.00000098",
-"completion":"0.00000308",
-"input_cache_read":"0.000000182"
+"prompt":"0.000000975",
+"completion":"0.0000043"
 }
 },
 "glm-5.1":{
@@ -2241,9 +2240,8 @@
 "max_completion_tokens":null,
 "name":"Z.ai: GLM 5.1",
 "pricing":{
-"prompt":"0.00000098",
-"completion":"0.00000308",
-"input_cache_read":"0.000000182"
+"prompt":"0.000000975",
+"completion":"0.0000043"
 }
 },
 "z-ai/glm-5.1-20260406":{
@@ -2251,9 +2249,8 @@
 "max_completion_tokens":null,
 "name":"Z.ai: GLM 5.1",
 "pricing":{
-"prompt":"0.00000098",
-"completion":"0.00000308",
-"input_cache_read":"0.000000182"
+"prompt":"0.000000975",
+"completion":"0.0000043"
 }
 },
 "glm-5.1-20260406":{
@@ -2261,9 +2258,8 @@
 "max_completion_tokens":null,
 "name":"Z.ai: GLM 5.1",
 "pricing":{
-"prompt":"0.00000098",
-"completion":"0.00000308",
-"input_cache_read":"0.000000182"
+"prompt":"0.000000975",
+"completion":"0.0000043"
 }
 },
 "google/gemma-4-26b-a4b-it:free":{
