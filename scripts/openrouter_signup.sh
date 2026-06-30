@@ -2,7 +2,7 @@
 # openrouter_signup.sh — OpenRouter signup + verify + extract API key
 # Follows firecrawl_signup.sh architecture (see docs/Instructions.txt)
 # Persistent profile for signup→verify flow (Clerk session must carry over)
-set -eo pipefail
+set -e
 export DISPLAY=:1
 cd /home/runner/workspace
 mkdir -p /home/runner/workspace/proton_profile credentials
@@ -166,7 +166,7 @@ def find_verify():
 
 checked = set()
 for attempt in range(15):
-    page.wait_for_timeout(5000)
+    page.wait_for_timeout(8000)
     page.keyboard.press("/")
     page.wait_for_timeout(1000)
     page.keyboard.type(signup_email, delay=80)
@@ -230,6 +230,23 @@ for i in range(60):
         url = p.url
         print(f"  [{i}] URL: {url}", flush=True)
 
+        # Clerk verify redirect page — wait then click Individual
+        if "openrouter.ai" in url and "sign-up/verify" in url:
+            print(f"  On sign-up/verify page, waiting 3s...", flush=True)
+            time.sleep(3)
+            try:
+                ind = p.get_by_role("button", name="Individual")
+                if ind.is_visible(timeout=5000):
+                    print("  Clicking 'Individual'...", flush=True)
+                    ind.click()
+                    time.sleep(5)
+                    continue
+            except:
+                pass
+            # If no Individual button, just continue
+            time.sleep(3)
+            continue
+
         # Wait for clerk verify redirect to complete
         if "clerk" in url and ("verify" in url or "redirect" in url):
             time.sleep(5)
@@ -267,34 +284,100 @@ for i in range(60):
         # On authenticated OpenRouter page (not sign-up or sign-in)
         if "openrouter.ai" in url and "/sign" not in url:
             print(f"  On OpenRouter: {url}", flush=True)
+
+            # Handle "Individual or Business" selection page (alternate location)
+            try:
+                individual_btn = p.get_by_role("button", name="Individual")
+                if individual_btn.is_visible(timeout=2000):
+                    print("  Clicking 'Individual' (dashboard)...", flush=True)
+                    individual_btn.click()
+                    time.sleep(5)
+                    continue
+            except:
+                pass
+
             if "/keys" not in url:
-                p.goto("https://openrouter.ai/keys", wait_until="domcontentloaded", timeout=30000)
+                p.goto("https://openrouter.ai/workspaces/default/keys", wait_until="domcontentloaded", timeout=30000)
                 time.sleep(5)
 
-            # Reveal + read API key
-            for sel in ["button[aria-label='Reveal']", "button:has(.eye)", "button svg+span", "[data-testid='reveal-button']"]:
+            # API key extraction (same pattern as firecrawl_signup.sh)
+            time.sleep(3)
+            all_text = p.inner_text("body")
+
+            # Method 1: key already visible
+            m = re.findall(r'(?:sk-or-v1-|sk-)[a-zA-Z0-9_-]{30,}', all_text)
+            if m:
+                api_key = m[0]
+
+            # Method 2: click eye icon to reveal, then read
+            if not api_key:
+                for sel in ["button:has(.lucide-eye)", "button:has(.lucide-eye-off)", "button[aria-label='Reveal']", "button[aria-label='Show']", "[data-testid='reveal-button']"]:
+                    try:
+                        p.click(sel)
+                        time.sleep(2)
+                        txt = p.locator("text=fc-,text=sk-or,input[value*='sk-or']").first.text_content(timeout=3000).strip()
+                        if txt.startswith("sk-or-") or txt.startswith("sk-"):
+                            api_key = txt
+                            break
+                    except:
+                        pass
+                    # Re-scan body text
+                    all_text = p.inner_text("body")
+                    m = re.findall(r'(?:sk-or-v1-|sk-)[a-zA-Z0-9_-]{30,}', all_text)
+                    if m:
+                        api_key = m[0]
+                        break
+
+            # Method 3: click copy button + read clipboard
+            if not api_key:
                 try:
-                    p.click(sel)
-                    time.sleep(2)
-                    break
+                    import subprocess
+                    p.click('[aria-label="Copy"]')
+                    time.sleep(1)
+                    result = subprocess.run(["xclip", "-o", "-selection", "clipboard"], capture_output=True, text=True)
+                    clip = result.stdout.strip()
+                    if clip.startswith("sk-or-") or clip.startswith("sk-"):
+                        api_key = clip
                 except:
                     pass
 
-            time.sleep(1)
-            all_text = p.inner_text("body")
-            m = re.findall(r'[a-zA-Z0-9_-]{40,}', all_text)
-            for candidate in m:
-                if ("sk-" in candidate or "or-" in candidate) and len(candidate) > 30:
-                    api_key = candidate
-                    break
-            if not api_key and m:
-                api_key = max(m, key=len)
-
+            # Method 4: HTML regex
             if not api_key:
                 html = p.content()
                 m2 = re.findall(r'(?:sk-or-v1-|sk-)[a-zA-Z0-9_-]{30,}', html)
                 if m2:
                     api_key = m2[0]
+
+            # Method 5: no key exists yet — click "Generate" / "Create"
+            if not api_key:
+                for gen_sel in ["button:has-text('Generate')", "button:has-text('Create')", "button:has-text('New')", "a:has-text('Generate')"]:
+                    try:
+                        p.click(gen_sel)
+                        time.sleep(3)
+                        text = p.inner_text("body")
+                        m = re.findall(r'(?:sk-or-v1-|sk-)[a-zA-Z0-9_-]{30,}', text)
+                        if m:
+                            api_key = m[0]
+                            break
+                        # Reveal buttons
+                        for rev_sel in ["button[aria-label='Reveal']", "button .lucide-eye", "button .lucide-eye-off"]:
+                            try:
+                                for btn in p.locator(rev_sel).all():
+                                    btn.click()
+                                    time.sleep(1.5)
+                                    text = p.inner_text("body")
+                                    m = re.findall(r'(?:sk-or-v1-|sk-)[a-zA-Z0-9_-]{30,}', text)
+                                    if m:
+                                        api_key = m[0]
+                                        break
+                            except:
+                                pass
+                            if api_key:
+                                break
+                    except:
+                        pass
+                if api_key:
+                    break
 
             if api_key:
                 break
@@ -334,7 +417,7 @@ for ATTEMPT in 1 2 3; do
   python3 ~/or_signup.py "$EMAIL" "$PASSWORD" "$OR_PROFILE" || continue
 
   echo "=== Step 2: Check inbox ==="
-  VURL=$(python3 ~/or_proton.py "$EMAIL" "$PROTON_PROFILE" 2>/dev/null | grep '^VERIFY_URL:' | head -1 | cut -d: -f2-)
+  VURL=$(python3 ~/or_proton.py "$EMAIL" "$PROTON_PROFILE" 2>&1 | grep '^VERIFY_URL:' | tail -1 | sed 's/^VERIFY_URL://')
   echo "  Verify URL: ${VURL:0:80}..."
   [ -z "$VURL" ] || [ "$VURL" = "NOT_FOUND" ] && { echo "Not found, retrying..."; continue; }
 

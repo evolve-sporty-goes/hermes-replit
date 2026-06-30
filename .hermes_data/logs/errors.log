@@ -7020,3 +7020,45 @@ openai.RateLimitError: Error code: 429 - {'errors': [{'message': "AiError: AiErr
 2026-06-30 08:26:04,679 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
 2026-06-30 08:26:04,679 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
 2026-06-30 08:26:07,000 WARNING [b807fcf1ed63] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-38 (_run_agent_streaming):140673966679744 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/59cec8e96c70ae69d4c4a2faf4e12eb2/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (ebb663b4-9d7c-490b-acd6-875ec95d33a2)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-30 08:40:05,985 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:06,006 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:07,549 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:07,571 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:07,602 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:07,604 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:07,604 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:23,465 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:23,487 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:23,852 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:23,854 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:24,022 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:24,023 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:24,024 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 08:40:26,866 WARNING [b807fcf1ed63] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-33 (_run_agent_streaming):140161602012864 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (b95a910c-5a25-494f-bce8-59822ac7dbfd)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-30 08:40:50,343 WARNING [b807fcf1ed63] agent.tool_executor: Tool process returned error (0.01s): {"status": "not_found", "error": "No process with ID proc_18c17371fb40"}
+2026-06-30 08:41:07,341 WARNING [b807fcf1ed63] agent.tool_executor: Tool terminal returned error (0.82s): {"output": "", "exit_code": -15, "error": null}
+2026-06-30 08:41:19,091 WARNING agent.chat_completion_helpers: Streaming failed after partial delivery, not retrying: peer closed connection without sending complete message body (incomplete chunked read)
+2026-06-30 08:41:19,093 WARNING [b807fcf1ed63] agent.chat_completion_helpers: Partial stream delivered before error; returning length-truncated stub with 25 chars of recovered content so the loop can continue from where the stream died: peer closed connection without sending complete message body (incomplete chunked read)
+2026-06-30 08:43:19,693 WARNING [b807fcf1ed63] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-33 (_run_agent_streaming):140161602012864 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=Provider returned error
+2026-06-30 08:43:19,694 WARNING [b807fcf1ed63] agent.conversation_loop: Retrying API call in 2.4856979012972924s (attempt 1/3) thread=Thread-33 (_run_agent_streaming):140161602012864 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Provider returned error
+2026-06-30 08:44:44,499 WARNING agent.lsp.servers: bash-language-server: shellcheck not found on PATH — diagnostics will be empty until shellcheck is installed (apt: shellcheck, brew: shellcheck, scoop: shellcheck).
+2026-06-30 08:45:02,631 WARNING [b807fcf1ed63] agent.tool_executor: Tool patch returned error (0.00s): {"error": "path required"}
+2026-06-30 08:50:56,205 WARNING agent.message_sanitization: Unrepairable tool_call arguments for patch — replaced with empty object (was: {"path": "/home/runner/workspace/scripts/openrouter_signup.sh", "old_string": " )
+2026-06-30 09:00:39,872 WARNING [b807fcf1ed63] agent.tool_executor: Tool patch returned error (0.00s): {"error": "Unknown mode: replace_all</longcat_arg_key>\n"}
+2026-06-30 09:09:47,525 WARNING [b807fcf1ed63] agent.tool_executor: Tool search_files returned error (0.08s): {"total_count": 0, "error": "Path not found: "}
+2026-06-30 09:11:22,692 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session b807fcf1ed63
+2026-06-30 09:12:21,329 WARNING [b807fcf1ed63] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-324 (_run_agent_streaming):140161602012864 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (d6f87cf3-4418-41e6-bd42-f74a1b9961bf)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-06-30 09:12:23,654 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 09:12:24,302 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 09:12:47,053 WARNING api.streaming: [webui] Cached agent runtime could not be safely refreshed; rebuilding agent for session b807fcf1ed63
+2026-06-30 09:13:33,448 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 09:16:29,688 WARNING [b807fcf1ed63] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-344 (_run_agent_streaming):140161602012864 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/02d927c1568933fbe4c6581ff9ea572c/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (f7b332ba-c62c-43b0-a066-ebed4fcdb9f0)","code":4006}],"success":false,"result":{},"messages":[]}

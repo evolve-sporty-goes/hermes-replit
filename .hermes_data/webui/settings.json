@@ -17,7 +17,7 @@
   "check_for_updates": true,
   "ignore_agent_updates": false,
   "whats_new_summary_enabled": true,
-  "theme": "dark",
+  "theme": "system",
   "skin": "ares",
   "font_size": "large",
   "session_jump_buttons": true,
