@@ -1,1 +1,1 @@
-{"pid":20961,"kind":"hermes-gateway","argv":["/home/runner/hermes-agent/hermes_cli/main.py","gateway","restart"],"start_time":853275,"gateway_state":"running","exit_reason":null,"restart_requested":false,"active_agents":0,"platforms":{},"updated_at":"2026-06-30T07:09:58.615256+00:00"}
+{"pid":36585,"kind":"hermes-gateway","argv":["/home/runner/hermes-agent/hermes_cli/main.py","gateway","restart"],"start_time":1058533,"gateway_state":"running","exit_reason":null,"restart_requested":false,"active_agents":0,"platforms":{},"updated_at":"2026-06-30T19:51:18.369738+00:00"}

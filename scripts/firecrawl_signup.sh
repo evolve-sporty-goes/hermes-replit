@@ -43,7 +43,7 @@ ctx = launch_persistent_context("/home/runner/workspace/proton_profile", headles
 page = ctx.pages[0] if ctx.pages else ctx.new_page()
 page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
 page.wait_for_timeout(5000)
-if "/login" not in page.url:
+if "account.proton.me" not in page.url:
     print("Already logged in")
 else:
     page.locator("#username").fill(PROTON_USER)

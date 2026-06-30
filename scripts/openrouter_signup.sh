@@ -95,7 +95,7 @@ page = ctx.pages[0] if ctx.pages else ctx.new_page()
 page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
 page.wait_for_timeout(5000)
 
-if "/login" not in page.url:
+if "account.proton.me" not in page.url:
     print("Already logged in")
 else:
     page.locator("#username").fill(PROTON_USER)
@@ -196,10 +196,13 @@ for i in range(60):
     time.sleep(2)
 
     # Check explicitly for link expiration
-    if "expired" in url:
+    if any(status in url for status in (
+        "verify?__clerk_status=expired",
+        "verify?__clerk_status=client_mismatch",
+    )):
         print("VERIFY_STATUS:EXPIRED", flush=True)
         ctx.close()
-        sys.exit(2) # Exit with status code 2 to signify expiration
+        sys.exit(2)
 
     # Route 1: Onboarding / Select Individual
     if "sign-up/verify" in url or "onboarding" in url:
