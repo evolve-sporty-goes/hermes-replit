@@ -1,3 +1,6 @@
-2026/06/29-21:10:37.178 ab5 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/Session Storage/MANIFEST-000001
-2026/06/29-21:10:37.180 ab5 Recovering log #3
-2026/06/29-21:10:37.200 ab5 Reusing old log /home/runner/workspace/proton_profile/Default/Session Storage/000003.log 
+2026/06/30-05:17:49.565 2517 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/Session Storage/MANIFEST-000001
+2026/06/30-05:17:49.566 2517 Recovering log #3
+2026/06/30-05:17:49.570 2517 Reusing old log /home/runner/workspace/proton_profile/Default/Session Storage/000003.log 
+2026/06/30-05:17:57.870 2517 Level-0 table #5: started
+2026/06/30-05:17:57.912 2517 Level-0 table #5: 33019 bytes OK
+2026/06/30-05:17:57.917 2517 Delete type=0 #3

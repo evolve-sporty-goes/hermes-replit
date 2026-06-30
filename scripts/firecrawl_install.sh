@@ -1,4 +1,9 @@
 #!/bin/bash
-npm install -g firecrawl-cli@1.19.6
+command -v firecrawl  >/dev/null 2>&1 || npm install -g firecrawl-cli@1.19.6
+email.sh
+firecrawl_signup.sh
+KEY=$(grep -E '^API_KEY=fc-' /home/runner/workspace/credentials/firecrawl_credentials.txt | shuf -n 1 | sed 's/API_KEY=//')
+sed -i "s|^FIRECRAWL_API_KEY=.*|FIRECRAWL_API_KEY=$KEY|" /home/runner/workspace/.hermes_data/.env
+echo "Updated to: $(grep FIRECRAWL_API_KEY /home/runner/workspace/.hermes_data/.env)"
 source /home/runner/workspace/.hermes_data/.env && firecrawl login --api-key "$FIRECRAWL_API_KEY"
 echo "Done: $(firecrawl --version), credits: $(firecrawl --status 2>&1 | grep Credits)"

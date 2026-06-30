@@ -1,4 +1,25 @@
-2026/06/29-23:45:17.602 f148 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
-2026/06/29-23:45:17.602 f148 Recovering log #369
-2026/06/29-23:45:17.602 f148 Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/000369.log 
-2026/06/29-23:45:17.602 f148 Delete type=2 #367
+2026/06/30-05:20:14.593 2a4c Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/30-05:20:14.594 2a4c Recovering log #383
+2026/06/30-05:20:14.594 2a4c Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/000383.log 
+2026/06/30-05:20:14.594 2a4c Delete type=2 #382
+2026/06/30-05:20:15.613 2a54 Level-0 table #388: started
+2026/06/30-05:20:15.646 2a54 Level-0 table #388: 509 bytes OK
+2026/06/30-05:20:15.673 2a54 Delete type=0 #383
+2026/06/30-05:20:15.673 2a4c Manual compaction at level-0 from '\x00p\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00q\x00\x00\x00' @ 0 : 0; will stop at '\x00p\x00\x00\x05' @ 2214 : 1
+2026/06/30-05:20:15.673 2a4c Compacting 1@0 + 1@1 files
+2026/06/30-05:20:15.687 2a4c Generated table #389@0: 46 keys, 972 bytes
+2026/06/30-05:20:15.687 2a4c Compacted 1@0 + 1@1 files => 972 bytes
+2026/06/30-05:20:15.698 2a4c compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/06/30-05:20:15.698 2a4c Delete type=2 #388
+2026/06/30-05:20:15.699 2a4c Manual compaction at level-0 from '\x00p\x00\x00\x05' @ 2214 : 1 .. '\x00q\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/06/30-05:20:17.217 2a53 Level-0 table #391: started
+2026/06/30-05:20:17.219 2a53 Level-0 table #391: 497 bytes OK
+2026/06/30-05:20:17.234 2a53 Delete type=2 #385
+2026/06/30-05:20:17.235 2a53 Delete type=0 #387
+2026/06/30-05:20:17.235 2a50 Manual compaction at level-0 from '\x00q\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00r\x00\x00\x00' @ 0 : 0; will stop at '\x00q\x00\x00\x05' @ 2233 : 1
+2026/06/30-05:20:17.235 2a50 Compacting 1@0 + 1@1 files
+2026/06/30-05:20:17.241 2a50 Generated table #392@0: 46 keys, 972 bytes
+2026/06/30-05:20:17.241 2a50 Compacted 1@0 + 1@1 files => 972 bytes
+2026/06/30-05:20:17.244 2a50 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/06/30-05:20:17.245 2a50 Delete type=2 #391
+2026/06/30-05:20:17.245 2a50 Manual compaction at level-0 from '\x00q\x00\x00\x05' @ 2233 : 1 .. '\x00r\x00\x00\x00' @ 0 : 0; will stop at (end)
