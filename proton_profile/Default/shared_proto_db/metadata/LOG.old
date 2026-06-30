@@ -1,3 +1,3 @@
-2026/06/30-13:58:44.408 274e Reusing MANIFEST /home/runner/workspace/proton_profile/Default/shared_proto_db/metadata/MANIFEST-000001
-2026/06/30-13:58:44.408 274e Recovering log #3
-2026/06/30-13:58:44.410 274e Reusing old log /home/runner/workspace/proton_profile/Default/shared_proto_db/metadata/000003.log 
+2026/06/30-14:31:56.653 3977 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/shared_proto_db/metadata/MANIFEST-000001
+2026/06/30-14:31:56.653 3977 Recovering log #3
+2026/06/30-14:31:56.655 3977 Reusing old log /home/runner/workspace/proton_profile/Default/shared_proto_db/metadata/000003.log 

@@ -7484,3 +7484,27 @@ openai.RateLimitError: Error code: 429 - {'errors': [{'message': "AiError: AiErr
 2026-06-30 14:03:52,338 WARNING [2b500269d4d6] agent.conversation_loop: Retrying API call in 5.835563747297885s (attempt 2/3) thread=Thread-46 (_run_agent_streaming):140403045299904 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha policy=default error=Error code: 404 - {'error': {'message': 'No endpoints found for owl-alpha.', 'code': 404}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
 2026-06-30 14:03:58,450 WARNING [2b500269d4d6] agent.conversation_loop: API call failed (attempt 3/3) error_type=NotFoundError thread=Thread-46 (_run_agent_streaming):140403045299904 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=owl-alpha summary=HTTP 404: No endpoints found for owl-alpha.
 2026-06-30 14:03:58,452 ERROR [2b500269d4d6] agent.conversation_loop: API call failed after 3 retries. HTTP 404: No endpoints found for owl-alpha. | provider=openrouter model=owl-alpha msgs=16 tokens=~7,574
+2026-06-30 14:48:07,045 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:07,053 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:08,872 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:08,888 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:09,010 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:09,016 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:09,017 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:10,559 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:10,560 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:10,560 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:10,771 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:10,773 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:10,774 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:10,803 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:10,804 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:10,815 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 14:48:12,166 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 14:48:12,506 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)

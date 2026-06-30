@@ -1,0 +1,12 @@
+docker run -d \
+  --name=opera \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Etc/UTC \
+  -e OPERA_CLI=https://www.linuxserver.io/ `#optional` \
+  -p 3000:3000 \
+  -p 3001:3001 \
+  -v ~~/config:/config \
+  --shm-size="1gb" \
+  --restart unless-stopped \
+  lscr.io/linuxserver/opera:latest
