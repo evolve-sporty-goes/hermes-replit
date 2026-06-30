@@ -6,7 +6,7 @@ description: |
   humanize behavior, persistent profiles, and common pitfalls when
   automating bot-sensitive sites. CloakBrowser is a custom-compiled Chromium
   with 58+ C++ source-level stealth patches — passes 30/30 bot detection tests.
-version: 4.0.0
+version: 4.1.0
 platforms: [linux, macos, windows]
 metadata:
   hermes:
@@ -178,12 +178,47 @@ of the bash script — subprocesses don't always inherit the parent's env.
 
 ## User preferences
 
+- **"Use cloak on display 1 without xvfb"** — user's explicit instruction for browser automation on this system. Use CloakBrowser (`from cloakbrowser import launch_persistent_context`) with `headless=False` and `DISPLAY=:1`. Do NOT use the Hermes browser tool (Browserbase headless) for signup flows that involve Cloudflare Turnstile or Clerk.js — it cannot solve them.
 - **Automation/replacement scripts: bash, minimal lines** — user explicitly said "just give me bash, minimum lines". Prefer `sed`/`awk` one-liners over Python scripts. Single-line bash commands over multi-file solutions.
 - **No xvfb-run** — display server is running. `headless=False` works directly.
 - **Bash+Python pattern (email.sh style)** — for complex browser automation, write standalone `.py` helper files to `~/` directory (e.g. `~/duckmail.py`, `~/fc_signup.py`), then call them from a bash script with `python3 ~/helper.py "$ARG1" "$ARG2"`. No nested heredocs — they break with quote escaping.
 - **Always headless=False** with CloakBrowser on this system.
 - **DISPLAY export** — if subprocess Python scripts fail with "Missing X server or $DISPLAY", add `export DISPLAY=:1` (or whatever display the user specifies) at the top of the bash script.
-- **Hermes browser tool for signup flows** — user prefers using the agent's built-in browser tools (`browser_navigate`, `browser_type`, `browser_click`, `browser_console`) over Playwright/CloakBrowser when possible. This avoids subprocess complexity and uses the already-authenticated browser session.
+### 6. Hermes browser tool CAN trigger Clerk form submit but CANNOT solve the resulting Turnstile
+Using `browser_console` to dispatch `mousedown`/`mouseup`/`click` events on the Continue
+button DOES trigger Clerk's form submission — the Turnstile iframe appears after.
+But clicking the resulting Turnstile checkbox via `browser_click` doesn't work because
+the Turnstile widget renders inside a **cross-origin iframe** (`challenges.cloudflare.com`)
+that the browser tool's click events cannot penetrate.
+
+**Symptom**: After clicking Continue, the page shows "The CAPTCHA failed to load" error
+inside the Turnstile iframe, and the form just resets. The checkbox appears in the
+accessibility tree (e.g. `ref=e30`, `checkbox "Verify you are human"`) but
+`browser_click(ref=e30)` has no effect — `checked` stays `false`.
+
+**Root cause**: Cloudflare Turnstile's checkbox is inside a closed shadow root within a
+cross-origin iframe. The browser tool's accessibility tree can SEE the element but
+click events don't reach the actual widget.
+
+**Workaround**: Use CloakBrowser (`launch_persistent_context`) instead of the Hermes
+browser tool for signup flows that trigger Clerk-managed Turnstile. CloakBrowser's
+stealth Chromium can auto-solve the challenge. Alternatively, pre-warm cookies via
+CloudflareBypassForScraping server before navigating.
+
+**Hidden submit button trick**: If the visible Continue button doesn't work, Clerk also
+renders a hidden `button[type="submit"]` inside the form. Clicking it via JS
+(`document.querySelector('form button[type="submit"]').click()`) triggers the same
+form submission flow and makes Turnstile appear.
+
+**When to use which tool:**
+| Tool | Good for | Fails on |
+|------|----------|----------|
+| Hermes browser tool | Simple form fills, page scraping, non-CF sites | Clerk Turnstile, cross-origin iframes |
+| CloakBrowser (`DISPLAY=:1`) | Signup/login flows, Turnstile, Clerk.js, bot-sensitive sites | — (works for all) |
+
+**Rule of thumb**: If the target site uses Clerk.js for auth, ALWAYS use CloakBrowser
+with `DISPLAY=:1` — the Hermes browser tool will waste time attempting interactions
+that cannot succeed.
 - **Single browser for entire flow** — don't launch multiple browsers for multi-step signup flows. One persistent context (or Hermes browser session) for signup → inbox → verify → key extraction.
 
 ## Form handling: Clerk.js (OpenRouter, Firecrawl, etc.)
@@ -387,12 +422,44 @@ so the JS walker can find and click the checkbox without any external patches.
 9. **`headless=True` CRASHES with CloakBrowser v146** — `TargetClosedError`. Always use `headless=False`. If no display server, wrap with `xvfb-run`.
 10. **Clerk.js form fields need `dispatchEvent`** — `.fill()` and `.check()` do NOT trigger Clerk's internal React state. The button appears enabled but Clerk never POSTs to its API. Fix: use JS `dispatchEvent` after setting values, or `check(force=True)` for checkboxes.
 10b. **dispatchEvent TOGGLES checkbox state** — A single `dispatchEvent(new Event('change'))` on `#legalAccepted-field` flips the current state. If already checked (from a prior `.click()`), it reverts to `false`. Always verify `.checked` after injection, or use the React fiber `onChange` method (see `references/clerkjs-form-debugging.md`) which sets state deterministically.
+10c. **Clerk `client.signUp.create()` hangs indefinitely** — Calling `window.Clerk.client.signUp.create({emailAddress, password, legalAcceptedAt})` from browser JS returns a Promise that never resolves. It waits for the Turnstile challenge to complete in the background, which never happens if Turnstile can't load. **Cannot bypass via the Clerk SDK API** — must use the UI flow with a real browser that can solve Turnstile.
 14. **Turnstile inline vs iframe** — OpenRouter embeds Turnstile inline on the main page (`.cf-turnstile`), not in a detectable iframe. Check main page first, then frames. See Cloudflare handling section for the correct detection pattern.
 15. **Success check gated behind turnstile detection** — If your `confirm-email` URL check is inside `if not turnstile:`, it never runs after Turnstile passes. Always check success condition on every loop iteration.
 16. **`pipefail` + `grep` kills script** — With `set -eo pipefail`, `grep` with no matches causes silent script death. Use `tail -1` not `head -1`, `sed` not `cut` for URLs, and `if` not `&&` for the empty check.
 17. **Python stdout not flushed before `ctx.close()` + `sys.exit(0)`** — Pipe capture gets empty string. Always `flush=True` and `sys.stdout.flush()` before closing. Break out of nested loops and print after, not inside.
 18. **Common profile across signup+verify steps** — When a signup flow has multiple browser steps (signup → verify → extract), use the **same persistent profile** for all steps, not separate tmpdirs. Cloudflare challenge state and session cookies earned during signup must carry over to verify. Proton Mail gets its own separate profile. Example: `~/or_profile` shared between `or_signup.py` and `or_verify.py`.
 19. **`CloakBypasser` (CloudflareBypassForScraping) for CF-heavy flows** — When CloakBrowser's auto-solve isn't enough, use the `CloakBypasser` class from `cf_bypasser`. It's async, uses `get_or_generate_html()` to solve challenges, and you bridge to a persistent context by restoring cookies. Install: `pip install git+https://github.com/sarperavci/CloudflareBypassForScraping.git -i https://pypi.org/simple/`. See `references/openrouter-signup-flow.md` for the full two-phase pattern.
+20. **Clerk FAPI `captcha_missing_token`** — Direct HTTP calls to Clerk's signup endpoint require a Turnstile token. cf_clearance cookies alone are NOT sufficient. You must solve Turnstile separately (via Rust clicker, localtunnel + public URL, or CloakBrowser auto-solve) and pass the token in `captcha_token` field. See `references/hermes-browser-tool-signup.md` and `references/rust-turnstile-infrastructure.md`.
+
+## Self-hosted Turnstile Solver (2captcha-compatible API)
+
+For a drop-in replacement for 2captcha/AntiCaptcha services, use
+[`icemellow-me/turnstile-solver`](https://github.com/icemellow-me/turnstile-solver).
+
+Unlike CloudflareBypassForScraping (which returns cookies/session for scraping),
+this server returns **Turnstile tokens** that can be pasted into forms (e.g. for
+Clerk-managed signup flows). See `references/turnstile-solver-2captcha-api.md`
+for full setup, API usage, and troubleshooting.
+
+```bash
+# Clone and run
+git clone https://github.com/icemellow-me/turnstile-solver /tmp/turnstile-solver
+cd /tmp/turnstile-solver && pip install -r requirements.txt
+python3 solver-server-v2.py --api-key YOUR_KEY --port 8878
+
+# Submit + poll
+TASK=$(curl -s -X POST http://localhost:8878/in.php \
+  -d 'key=YOUR_KEY&method=turnstile&sitekey=0x4AAAA...&pageurl=https://target.com' | cut -d'|' -f2)
+curl -s "http://localhost:8878/res.php?key=YOUR_KEY&id=$TASK"
+# OK|03AFcWeA...token...
+```
+
+Two engines: **nodriver** (Chromium/CDP, primary) + **camoufox** (Firefox, fallback).
+V1 (Playwright) still available but deprecated. Supports non-interactive, managed,
+and invisible challenges. No cloud detection evasion — just token extraction.
+
+Use when: your tooling supports 2captcha protocol, or you need raw Turnstile tokens
+rather than full session cookies.
 
 ## Cloudflare bypass flow (from sarperavci/CloudflareBypassForScraping)
 
@@ -455,6 +522,36 @@ user_agent = page.evaluate("navigator.userAgent")
 
 **Alternative: FastAPI server** — For a managed bypass proxy with cookie caching and request mirroring, use the [CloudflareBypassForScraping](https://github.com/sarperavci/CloudflareBypassForScraping) server (`pip install -e . && python server.py`). See `references/cloudflare-bypass.md` for full setup.
 
+## Clerk signup via FAPI + Turnstile token (2026-06-30)
+
+For Clerk-managed signups (OpenRouter, etc.), the UI flow requires solving Turnstile
+in a real browser. An alternative is to call Clerk's Frontend API directly with a
+pre-obtained Turnstile token:
+
+```
+POST https://<clerk-domain>/v1/client/sign_ups?__clerk_api_version=2025-11-10&_clerk_js_version=5.127.0
+Content-Type: application/json
+
+{
+  "email_address": "user@example.com",
+  "password": "SecureP@ss99!xQ",
+  "legal_accepted": true,
+  "captcha_token": "0x4AAAA..."  // Turnstile token — REQUIRED
+}
+```
+
+**Getting a Turnstile token** (Cloudflare rejects data: URIs and localhost):
+1. Extract sitekey from page: `window.Clerk.environment.displayConfig.captchaPublicKey`
+2. Serve a Turnstile widget page via `npx localtunnel --port <port>` (public URL required)
+3. Solve via Rust turnstile-clicker (screen capture + auto-click) or CloakBrowser auto-solve
+4. Extract token from `cf-turnstile-response` input or page title callback
+
+**Clerk SDK `signUp.create()` hangs indefinitely** — it waits for Turnstile which never
+completes in unsupported browsers. Use the HTTP FAPI with an externally-obtained token.
+
+See `references/rust-turnstile-infrastructure.md` for the token server + clicker setup,
+and `references/hermes-browser-tool-signup.md` for Clerk config extraction and full flow.
+
 ## Support files
 
 - `references/camoufox-playwright-cdp-compat.md` — historical Camoufox notes, `isMobile` CDP patch (no longer needed with CloakBrowser)
@@ -463,6 +560,9 @@ user_agent = page.evaluate("navigator.userAgent")
 - `references/cloakbrowser-bash-pattern.md` — bash+python helper pattern, nested heredoc pitfall, DISPLAY env, sed migration one-liner, pipefail+grep pitfall, stdout flush before exit
 - `references/proton-mail-automation.md` — Proton Mail inbox automation: persistent profile, search, extract verification links, bash integration
 - `references/cloudflare-bypass.md` — Full CloudflareBypassForScraping integration: server setup (FastAPI/Docker), API endpoints, request mirroring, FakeShadowRoot, solve flow, cookie extraction
+- `references/turnstile-solver-2captcha-api.md` — Self-hosted 2captcha-compatible Turnstile solver: setup, API usage, dual-engine (nodriver+camoufox), Docker deployment, troubleshooting
 - `references/openrouter-signup-flow.md` — OpenRouter signup: Clerk.js form, inline Turnstile, Proton verification, API key extraction
-- `references/hermes-browser-tool-signup.md` — Using Hermes browser tools for signup flows, cross-origin iframe click limitation, Clerk credentials
+- `references/hermes-browser-tool-signup.md` — Using Hermes browser tools for signup flows, cross-origin iframe click limitation, Clerk credentials, Clerk FAPI direct HTTP calls, Turnstile token extraction
+- `references/openrouter-signup-debugging-2026-06-29.md` — Full debugging session for OpenRouter signup: all 5 attempts, what failed, key findings, credentials generated
+- `references/rust-turnstile-infrastructure.md` — Rust token_server (WebSocket token routing) + turnstile-clicker (screen-capture auto-clicker) + token-harvester (iframe farm): setup, protocol, display requirements
 - `scripts/cloak_replace.sh` — One-liner bulk sed script to migrate playwright→cloakbrowser in all workspace scripts

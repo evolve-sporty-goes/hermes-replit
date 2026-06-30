@@ -14,6 +14,6 @@ Workspace organized: credentials/ docs/ scripts/ dirs created, system dirs (.her
 §
 Hermes non-interactive model config: `hermes model` is TUI-only, cannot be scripted. Set config.yaml directly via `hermes config set model.provider/base_url/api_key/api_compat/default/display_name`. For active config use `hermes config show | grep Model` — config.yaml grep shows stale creds.
 §
-Browser automation: CloakBrowser (2026-07-01). headless=True CRASHES on Replit/NixOS (TargetClosedError). Use headless=False + xvfb-run. humanize=True. proxy as string not dict. Clerk.js checkbox: JS dispatchEvent needed, .check() doesn't update React state. Free tier=v146, Pro=v148+.
+Browser automation: CloakBrowser (2026-07-01). headless=True CRASHES on Replit/NixOS — use headless=False + xvfb-run. humanize=True. proxy as string not dict. Clerk.js checkbox: JS dispatchEvent needed. Free tier=v146, Pro=v148+.
 §
-CloakBrowser headless=True crashes on Replit NixOS (TargetClosedError). Must use headless=False under xvfb-run.
+Dockerizing Rust: iterate linker errors by reading `-l<name>` → install `lib<name>-dev`. COPY paths relative to build context. Multi-binary repos need separate WORKDIR per cargo build.
