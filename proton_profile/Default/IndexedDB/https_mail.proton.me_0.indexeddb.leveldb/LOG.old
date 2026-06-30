@@ -1,25 +1,14 @@
-2026/06/30-18:12:07.283 3878 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
-2026/06/30-18:12:07.283 3878 Recovering log #2611
-2026/06/30-18:12:07.283 3878 Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/002611.log 
-2026/06/30-18:12:07.283 3878 Delete type=2 #2610
-2026/06/30-18:12:08.522 3883 Level-0 table #2616: started
-2026/06/30-18:12:08.531 3883 Level-0 table #2616: 506 bytes OK
-2026/06/30-18:12:08.550 3883 Delete type=0 #2611
-2026/06/30-18:12:08.553 3878 Manual compaction at level-0 from ' \xe1\x02\x00\x00\x00' @ 72057594037927935 : 1 .. ' \xe2\x02\x00\x00\x00' @ 0 : 0; will stop at ' \xe1\x02\x00\x00\x05' @ 14537 : 1
-2026/06/30-18:12:08.553 3878 Compacting 1@0 + 1@1 files
-2026/06/30-18:12:08.559 3878 Generated table #2617@0: 108 keys, 4326 bytes
-2026/06/30-18:12:08.559 3878 Compacted 1@0 + 1@1 files => 4326 bytes
-2026/06/30-18:12:08.564 3878 compacted to: files[ 0 1 1 0 0 0 0 ]
-2026/06/30-18:12:08.564 3878 Delete type=2 #2616
-2026/06/30-18:12:08.570 3878 Manual compaction at level-0 from ' \xe1\x02\x00\x00\x05' @ 14537 : 1 .. ' \xe2\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
-2026/06/30-18:12:10.948 387f Level-0 table #2619: started
-2026/06/30-18:12:11.003 387f Level-0 table #2619: 488 bytes OK
-2026/06/30-18:12:11.043 387f Delete type=2 #2613
-2026/06/30-18:12:11.043 387f Delete type=0 #2615
-2026/06/30-18:12:11.047 3878 Manual compaction at level-0 from ' \xe2\x02\x00\x00\x00' @ 72057594037927935 : 1 .. ' \xe3\x02\x00\x00\x00' @ 0 : 0; will stop at ' \xe2\x02\x00\x00\x05' @ 14556 : 1
-2026/06/30-18:12:11.047 3878 Compacting 1@0 + 1@1 files
-2026/06/30-18:12:11.052 3878 Generated table #2620@0: 108 keys, 4328 bytes
-2026/06/30-18:12:11.052 3878 Compacted 1@0 + 1@1 files => 4328 bytes
-2026/06/30-18:12:11.070 3878 compacted to: files[ 0 1 1 0 0 0 0 ]
-2026/06/30-18:12:11.070 3878 Delete type=2 #2619
-2026/06/30-18:12:11.070 3878 Manual compaction at level-0 from ' \xe2\x02\x00\x00\x05' @ 14556 : 1 .. ' \xe3\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/06/30-18:48:56.038 4de7 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/30-18:48:56.046 4de7 Recovering log #2629
+2026/06/30-18:48:56.047 4de7 Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/002629.log 
+2026/06/30-18:48:56.047 4de7 Delete type=2 #2628
+2026/06/30-18:48:56.151 4dee Level-0 table #2634: started
+2026/06/30-18:48:56.157 4dee Level-0 table #2634: 506 bytes OK
+2026/06/30-18:48:56.165 4dee Delete type=0 #2629
+2026/06/30-18:48:56.166 4de7 Manual compaction at level-0 from ' \xe6\x02\x00\x00\x00' @ 72057594037927935 : 1 .. ' \xe7\x02\x00\x00\x00' @ 0 : 0; will stop at ' \xe6\x02\x00\x00\x05' @ 14632 : 1
+2026/06/30-18:48:56.166 4de7 Compacting 1@0 + 1@1 files
+2026/06/30-18:48:56.169 4de7 Generated table #2635@0: 108 keys, 4331 bytes
+2026/06/30-18:48:56.169 4de7 Compacted 1@0 + 1@1 files => 4331 bytes
+2026/06/30-18:48:56.174 4de7 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/06/30-18:48:56.174 4de7 Delete type=2 #2634
+2026/06/30-18:48:56.175 4dee Manual compaction at level-0 from ' \xe6\x02\x00\x00\x05' @ 14632 : 1 .. ' \xe7\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
