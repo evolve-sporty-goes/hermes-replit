@@ -1,14 +1,25 @@
-2026/06/30-15:00:30.146 319a Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
-2026/06/30-15:00:30.147 319a Recovering log #1798
-2026/06/30-15:00:30.147 319a Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/001798.log 
-2026/06/30-15:00:30.147 319a Delete type=2 #1797
-2026/06/30-15:00:30.189 31a0 Level-0 table #1803: started
-2026/06/30-15:00:30.192 31a0 Level-0 table #1803: 508 bytes OK
-2026/06/30-15:00:30.197 31a0 Delete type=0 #1798
-2026/06/30-15:00:30.197 31a0 Manual compaction at level-0 from ' \x02\x02\x00\x00\x00' @ 72057594037927935 : 1 .. ' \x03\x02\x00\x00\x00' @ 0 : 0; will stop at ' \x02\x02\x00\x00\x05' @ 10272 : 1
-2026/06/30-15:00:30.197 31a0 Compacting 1@0 + 1@1 files
-2026/06/30-15:00:30.206 31a0 Generated table #1804@0: 104 keys, 3986 bytes
-2026/06/30-15:00:30.206 31a0 Compacted 1@0 + 1@1 files => 3986 bytes
-2026/06/30-15:00:30.211 31a0 compacted to: files[ 0 1 1 0 0 0 0 ]
-2026/06/30-15:00:30.211 31a0 Delete type=2 #1803
-2026/06/30-15:00:30.213 319a Manual compaction at level-0 from ' \x02\x02\x00\x00\x05' @ 10272 : 1 .. ' \x03\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/06/30-15:08:36.452 14a6 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/30-15:08:36.453 14a6 Recovering log #1820
+2026/06/30-15:08:36.453 14a6 Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/001820.log 
+2026/06/30-15:08:36.454 14a6 Delete type=2 #1818
+2026/06/30-15:08:37.155 14ac Level-0 table #1825: started
+2026/06/30-15:08:37.170 14ac Level-0 table #1825: 504 bytes OK
+2026/06/30-15:08:37.236 14ac Delete type=0 #1820
+2026/06/30-15:08:37.250 14a6 Manual compaction at level-0 from ' \x08\x02\x00\x00\x00' @ 72057594037927935 : 1 .. ' \x09\x02\x00\x00\x00' @ 0 : 0; will stop at ' \x08\x02\x00\x00\x05' @ 10386 : 1
+2026/06/30-15:08:37.250 14a6 Compacting 1@0 + 1@1 files
+2026/06/30-15:08:37.264 14a6 Generated table #1826@0: 104 keys, 3981 bytes
+2026/06/30-15:08:37.264 14a6 Compacted 1@0 + 1@1 files => 3981 bytes
+2026/06/30-15:08:37.275 14a6 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/06/30-15:08:37.275 14a6 Delete type=2 #1825
+2026/06/30-15:08:37.282 14a6 Manual compaction at level-0 from ' \x08\x02\x00\x00\x05' @ 10386 : 1 .. ' \x09\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/06/30-15:08:38.184 14a6 Level-0 table #1828: started
+2026/06/30-15:08:38.202 14a6 Level-0 table #1828: 502 bytes OK
+2026/06/30-15:08:38.223 14a6 Delete type=2 #1822
+2026/06/30-15:08:38.223 14a6 Delete type=0 #1824
+2026/06/30-15:08:38.224 14a6 Manual compaction at level-0 from ' \x09\x02\x00\x00\x00' @ 72057594037927935 : 1 .. ' \x0a\x02\x00\x00\x00' @ 0 : 0; will stop at ' \x09\x02\x00\x00\x05' @ 10405 : 1
+2026/06/30-15:08:38.224 14a6 Compacting 1@0 + 1@1 files
+2026/06/30-15:08:38.244 14a6 Generated table #1829@0: 104 keys, 3981 bytes
+2026/06/30-15:08:38.244 14a6 Compacted 1@0 + 1@1 files => 3981 bytes
+2026/06/30-15:08:38.255 14a6 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/06/30-15:08:38.255 14a6 Delete type=2 #1828
+2026/06/30-15:08:38.256 14a6 Manual compaction at level-0 from ' \x09\x02\x00\x00\x05' @ 10405 : 1 .. ' \x0a\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

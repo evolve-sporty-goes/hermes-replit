@@ -1,6 +1,10 @@
-2026/06/30-14:50:57.327 2a28 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/Local Storage/leveldb/MANIFEST-000001
-2026/06/30-14:50:57.349 2a28 Recovering log #23
-2026/06/30-14:50:57.350 2a28 Reusing old log /home/runner/workspace/proton_profile/Default/Local Storage/leveldb/000023.log 
-2026/06/30-14:52:58.355 2a28 Level-0 table #27: started
-2026/06/30-14:52:58.373 2a28 Level-0 table #27: 17995 bytes OK
-2026/06/30-14:52:58.389 2a28 Delete type=0 #23
+2026/06/30-14:56:43.604 31d0 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/Local Storage/leveldb/MANIFEST-000001
+2026/06/30-14:56:43.632 31d0 Recovering log #26
+2026/06/30-14:56:43.632 31d0 Level-0 table #29: started
+2026/06/30-14:56:43.657 31d0 Level-0 table #29: 15191 bytes OK
+2026/06/30-14:56:43.657 31d0 Recovering log #28
+2026/06/30-14:56:43.657 31d0 Reusing old log /home/runner/workspace/proton_profile/Default/Local Storage/leveldb/000028.log 
+2026/06/30-14:56:43.680 31d0 Delete type=0 #26
+2026/06/30-14:59:44.885 31d0 Level-0 table #31: started
+2026/06/30-14:59:44.891 31d0 Level-0 table #31: 15182 bytes OK
+2026/06/30-14:59:44.899 31d0 Delete type=0 #28
