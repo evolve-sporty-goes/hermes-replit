@@ -86,92 +86,65 @@ PY
 cat > ~/or_proton.py << 'PY'
 import sys, re, time
 from cloakbrowser import launch_persistent_context
-
-signup_email, profile = sys.argv[1], sys.argv[2]
-print(f"[PROTON] Start: email={signup_email} profile={profile}", flush=True)
-ctx = launch_persistent_context(profile, headless=False)
+PROTON_USER, PROTON_PASS, SIGNUP_EMAIL = sys.argv[1], sys.argv[2], sys.argv[3]
+td = sys.argv[4] if len(sys.argv) > 4 else None
+ctx = launch_persistent_context("/home/runner/workspace/proton_profile", headless=False) if td else launch_persistent_context("/home/runner/workspace/proton_profile", headless=False)
 page = ctx.pages[0] if ctx.pages else ctx.new_page()
-print("[PROTON] Browser launched", flush=True)
-
 page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
 page.wait_for_timeout(5000)
-print(f"[PROTON] Inbox loaded: {page.url}", flush=True)
-
-if "/login" in page.url:
-    print("[PROTON] Login required", flush=True)
-    spec = __import__('importlib').util.spec_from_file_location("c", "/home/runner/config.py")
-    mod = __import__('importlib').util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    page.locator("#username").fill(mod.PROTON_USERNAME)
-    page.locator("#password").fill(mod.PROTON_PASSWORD)
+if "/login" not in page.url:
+    print("Already logged in")
+else:
+    page.locator("#username").fill(PROTON_USER)
+    page.locator("#password").fill(PROTON_PASS)
     page.locator("button[type='submit']").click()
     page.wait_for_timeout(15000)
-    print(f"[PROTON] Logged in: {page.url}", flush=True)
-
-def find_verify(p):
-    try:
-        html = p.content()
-        m = re.findall(r'https://[^\s"<>()]*(?:openrouter|clerk)[^\s"<>()]*(?:verify|confirm)[^\s"<>()]*', html, re.IGNORECASE)
-        if m:
-            print(f"[PROTON] Found verify link in content: {m[0][:100]}", flush=True)
-            return m[0].replace("&", "&")
-    except Exception as e:
-        print(f"[PROTON] find_verify error: {e}", flush=True)
+def find_verify():
+    for frame in page.frames:
+        try:
+            html = frame.content()
+            m = re.findall(r'https://[^\s"<>()]*(?:openrouter|clerk)[^\s"<>()]*(?:verify|confirm)[^\s"<>()]*', html, re.IGNORECASE)
+        except: pass
+    for link in page.query_selector_all("a[href]"):
+        href = link.get_attribute("href")
+        if href and "verify" in href and "firecrawl" in href: return href
     return None
-
-for attempt in range(20):
-    print(f"[PROTON] Attempt {attempt+1}/20", flush=True)
-    page.wait_for_timeout(8000)
-    for attempt in range(20):
-        print(f"[PROTON] Attempt {attempt+1}/20", flush=True)
-        page.wait_for_timeout(8000)
-
-        # Open search: click search button directly
-        try:
-            page.locator("[data-testid='search-button'], button[aria-label='Search'], button:has-text('Search'), button:has(svg[aria-label='Search'])").first.click()
-            print("[PROTON] Clicked search button", flush=True)
-        except Exception as e:
-            print(f"[PROTON] Search button click failed: {e}", flush=True)
-            try:
-                page.keyboard.press("/")
-                print("[PROTON] Pressed / for search", flush=True)
-            except:
-                pass
-        page.wait_for_timeout(800)
-        page.keyboard.type(signup_email, delay=60)
-        page.keyboard.press("Enter")
-        page.wait_for_timeout(6000)
-        print(f"[PROTON] Search done, URL: {page.url}", flush=True)
-
-        # Click the first item in results
-        try:
-            items = page.locator(".item-container")
-            count = items.count()
-            print(f"[PROTON] Results: {count} items", flush=True)
-            if count == 0:
-                page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
-                continue
-            items.nth(0).click()
-            print("[PROTON] Clicked first item", flush=True)
-            page.wait_for_timeout(3000)
-            link = find_verify(page)
-            if link:
-                print(f"VERIFY_URL:{link}", flush=True)
-                ctx.close(); sys.exit(0)
-            page.keyboard.press("a")
-            page.wait_for_timeout(2000)
-            link = find_verify(page)
-            if link:
-                print(f"VERIFY_URL:{link}", flush=True)
-                ctx.close(); sys.exit(0)
-        except Exception as e:
-            print(f"[PROTON] err: {e}", flush=True)
-
+checked = set()
+for attempt in range(15):
+    page.wait_for_timeout(5000)
+    page.keyboard.press("/")
+    page.wait_for_timeout(1000)
+    page.keyboard.type(SIGNUP_EMAIL, delay=80)
+    page.keyboard.press("Enter")
+    page.wait_for_timeout(5000)
+    items = page.locator(".item-container")
+    count = items.count()
+    if count == 0:
         page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
-
+        page.wait_for_timeout(5000)
+        continue
+    # Click latest unchecked email
+    for i in range(min(count, 5)):
+        subj = items.nth(i).text_content().strip()[:80]
+        if subj not in checked:
+            checked.add(subj)
+            items.nth(i).click()
+            page.wait_for_timeout(4000)
+            link = find_verify()
+            if link:
+                print(f"VERIFY_URL:{link}")
+                ctx.close(); sys.exit(0)
+            # No verify in this one — try next
+            break
+    # All shown emails checked, reload for new ones
+    if len(checked) >= count:
+        checked.clear()
+    page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
+    page.wait_for_timeout(5000)
 ctx.close()
-print("VERIFY_URL:NOT_FOUND", flush=True)
+print("VERIFY_URL:NOT_FOUND")
 PY
+
 
 # ── STEP 3: Verify email + extract API key ──────────────────────
 cat > ~/or_verify.py << 'PY'
