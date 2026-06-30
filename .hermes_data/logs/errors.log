@@ -7571,3 +7571,100 @@ openai.RateLimitError: Error code: 429 - {'errors': [{'message': "AiError: AiErr
   → `copilot login` or `hermes model` to authenticate via OAuth
   → A fine-grained PAT (github_pat_*) with Copilot Requests permission
   → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 18:05:17,561 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:17,582 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:19,730 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:19,746 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:19,836 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:19,838 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:19,842 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:21,957 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:21,957 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:21,958 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:22,509 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:22,510 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:22,515 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:22,556 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:22,563 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:22,601 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:26,130 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 18:05:26,976 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 18:16:06,424 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:06,439 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:06,475 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:06,479 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:06,660 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:06,669 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:06,670 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:10,690 WARNING [20260630_180516_0ac686] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-13 (run_agent):140538949916352 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 400: @cf/moonshotai/kimi-k2.7-code is not a valid model ID
+2026-06-30 18:16:11,512 WARNING [20260630_180516_0ac686] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-13 (run_agent):140538949916352 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+2026-06-30 18:16:11,513 WARNING [20260630_180516_0ac686] agent.conversation_loop: Retrying API call in 2.7919111972397745s (attempt 1/3) thread=Thread-13 (run_agent):140538949916352 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:16:14,941 WARNING [20260630_180516_0ac686] agent.conversation_loop: API call failed (attempt 2/3) error_type=RateLimitError thread=Thread-13 (run_agent):140538949916352 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+2026-06-30 18:16:14,942 WARNING [20260630_180516_0ac686] agent.conversation_loop: Retrying API call in 5.642795500450156s (attempt 2/3) thread=Thread-13 (run_agent):140538949916352 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:16:21,432 WARNING [20260630_180516_0ac686] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-13 (run_agent):140538949916352 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+2026-06-30 18:16:21,439 ERROR [20260630_180516_0ac686] agent.conversation_loop: API call failed after 3 retries. HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day | provider=openrouter model=nvidia/nemotron-3-ultra-550b-a55b:free msgs=2 tokens=~10,667
+2026-06-30 18:18:38,883 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:38,903 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:39,765 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:39,769 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:39,951 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:39,959 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:39,959 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,304 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,305 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,305 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,398 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,399 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,400 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,428 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,431 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,439 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:41,459 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 18:18:41,580 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 18:18:51,672 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: API call failed (attempt 1/3) error_type=NotFoundError thread=Thread-5 (run_agent):140719424362176 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha summary=HTTP 404: No endpoints found for openrouter/owl-alpha.
+2026-06-30 18:18:51,673 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: Retrying API call in 2.6657028706733925s (attempt 1/3) thread=Thread-5 (run_agent):140719424362176 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha policy=default error=Error code: 404 - {'error': {'message': 'No endpoints found for openrouter/owl-alpha.', 'code': 404}, 'user_id': 'org_2uwFc1szZKyZweUX7pX97kXQf2O'}
+2026-06-30 18:18:55,313 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: API call failed (attempt 2/3) error_type=NotFoundError thread=Thread-5 (run_agent):140719424362176 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha summary=HTTP 404: No endpoints found for openrouter/owl-alpha.
+2026-06-30 18:18:55,314 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: Retrying API call in 5.7296203637810885s (attempt 2/3) thread=Thread-5 (run_agent):140719424362176 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha policy=default error=Error code: 404 - {'error': {'message': 'No endpoints found for openrouter/owl-alpha.', 'code': 404}, 'user_id': 'org_2uwFc1szZKyZweUX7pX97kXQf2O'}
+2026-06-30 18:19:02,028 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: API call failed (attempt 3/3) error_type=NotFoundError thread=Thread-5 (run_agent):140719424362176 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha summary=HTTP 404: No endpoints found for openrouter/owl-alpha.
+2026-06-30 18:19:03,388 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-5 (run_agent):140719424362176 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+2026-06-30 18:19:03,392 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: Retrying API call in 2.5250427410028427s (attempt 1/3) thread=Thread-5 (run_agent):140719424362176 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:19:06,510 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: API call failed (attempt 2/3) error_type=RateLimitError thread=Thread-5 (run_agent):140719424362176 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+2026-06-30 18:19:06,512 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: Retrying API call in 4.550894328136994s (attempt 2/3) thread=Thread-5 (run_agent):140719424362176 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:19:11,943 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-5 (run_agent):140719424362176 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+2026-06-30 18:19:11,956 ERROR [20260630_181838_6e9aa0] agent.conversation_loop: API call failed after 3 retries. HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day | provider=openrouter model=nvidia/nemotron-3-ultra-550b-a55b:free msgs=2 tokens=~10,604
+2026-06-30 18:21:17,211 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:17,219 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,059 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,070 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,178 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,181 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,183 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,721 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,725 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,726 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,848 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,849 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,850 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,890 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,892 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,906 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:21,097 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 18:21:21,625 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)

@@ -1,14 +1,14 @@
-2026/06/30-17:47:39.375 2445 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
-2026/06/30-17:47:39.376 2445 Recovering log #2436
-2026/06/30-17:47:39.376 2445 Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/002436.log 
-2026/06/30-17:47:39.376 2445 Delete type=2 #2435
-2026/06/30-17:47:39.522 2443 Level-0 table #2441: started
-2026/06/30-17:47:39.524 2443 Level-0 table #2441: 507 bytes OK
-2026/06/30-17:47:39.529 2443 Delete type=0 #2436
-2026/06/30-17:47:39.529 2443 Manual compaction at level-0 from ' \xb1\x02\x00\x00\x00' @ 72057594037927935 : 1 .. ' \xb2\x02\x00\x00\x00' @ 0 : 0; will stop at ' \xb1\x02\x00\x00\x05' @ 13625 : 1
-2026/06/30-17:47:39.529 2443 Compacting 1@0 + 1@1 files
-2026/06/30-17:47:39.533 2443 Generated table #2442@0: 108 keys, 4331 bytes
-2026/06/30-17:47:39.533 2443 Compacted 1@0 + 1@1 files => 4331 bytes
-2026/06/30-17:47:39.537 2443 compacted to: files[ 0 1 1 0 0 0 0 ]
-2026/06/30-17:47:39.537 2443 Delete type=2 #2441
-2026/06/30-17:47:39.537 2443 Manual compaction at level-0 from ' \xb1\x02\x00\x00\x05' @ 13625 : 1 .. ' \xb2\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2026/06/30-18:12:13.185 3878 Reusing MANIFEST /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/30-18:12:13.189 3878 Recovering log #2618
+2026/06/30-18:12:13.189 3878 Reusing old log /home/runner/workspace/proton_profile/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/002618.log 
+2026/06/30-18:12:13.189 3878 Delete type=2 #2617
+2026/06/30-18:12:13.347 3878 Level-0 table #2623: started
+2026/06/30-18:12:13.351 3878 Level-0 table #2623: 517 bytes OK
+2026/06/30-18:12:13.361 3878 Delete type=0 #2618
+2026/06/30-18:12:13.362 3878 Manual compaction at level-0 from ' \xe3\x02\x00\x00\x00' @ 72057594037927935 : 1 .. ' \xe4\x02\x00\x00\x00' @ 0 : 0; will stop at ' \xe3\x02\x00\x00\x05' @ 14575 : 1
+2026/06/30-18:12:13.362 3878 Compacting 1@0 + 1@1 files
+2026/06/30-18:12:13.365 3878 Generated table #2624@0: 108 keys, 4331 bytes
+2026/06/30-18:12:13.365 3878 Compacted 1@0 + 1@1 files => 4331 bytes
+2026/06/30-18:12:13.374 3878 compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/06/30-18:12:13.374 3878 Delete type=2 #2623
+2026/06/30-18:12:13.374 3878 Manual compaction at level-0 from ' \xe3\x02\x00\x00\x05' @ 14575 : 1 .. ' \xe4\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

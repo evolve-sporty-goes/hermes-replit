@@ -1,4 +1,44 @@
 {
+"google/gemini-3.1-flash-lite-image":{
+"context_length":65536,
+"max_completion_tokens":66000,
+"name":"Google: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+"pricing":{
+"prompt":"0.00000025",
+"completion":"0.0000015",
+"web_search":"0.014"
+}
+},
+"gemini-3.1-flash-lite-image":{
+"context_length":65536,
+"max_completion_tokens":66000,
+"name":"Google: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+"pricing":{
+"prompt":"0.00000025",
+"completion":"0.0000015",
+"web_search":"0.014"
+}
+},
+"google/gemini-3.1-flash-lite-image-20260630":{
+"context_length":65536,
+"max_completion_tokens":66000,
+"name":"Google: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+"pricing":{
+"prompt":"0.00000025",
+"completion":"0.0000015",
+"web_search":"0.014"
+}
+},
+"gemini-3.1-flash-lite-image-20260630":{
+"context_length":65536,
+"max_completion_tokens":66000,
+"name":"Google: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+"pricing":{
+"prompt":"0.00000025",
+"completion":"0.0000015",
+"web_search":"0.014"
+}
+},
 "sakana/fugu-ultra":{
 "context_length":1000000,
 "max_completion_tokens":128000,
@@ -9452,6 +9492,24 @@
 "completion":"0.0000005"
 }
 },
+"meta-llama/llama-3.2-11b-vision-instruct":{
+"context_length":131072,
+"max_completion_tokens":16384,
+"name":"Meta: Llama 3.2 11B Vision Instruct",
+"pricing":{
+"prompt":"0.000000345",
+"completion":"0.000000345"
+}
+},
+"llama-3.2-11b-vision-instruct":{
+"context_length":131072,
+"max_completion_tokens":16384,
+"name":"Meta: Llama 3.2 11B Vision Instruct",
+"pricing":{
+"prompt":"0.000000345",
+"completion":"0.000000345"
+}
+},
 "meta-llama/llama-3.2-1b-instruct":{
 "context_length":131072,
 "max_completion_tokens":60000,
@@ -9506,24 +9564,6 @@
 "completion":"0"
 }
 },
-"meta-llama/llama-3.2-11b-vision-instruct":{
-"context_length":131072,
-"max_completion_tokens":16384,
-"name":"Meta: Llama 3.2 11B Vision Instruct",
-"pricing":{
-"prompt":"0.000000345",
-"completion":"0.000000345"
-}
-},
-"llama-3.2-11b-vision-instruct":{
-"context_length":131072,
-"max_completion_tokens":16384,
-"name":"Meta: Llama 3.2 11B Vision Instruct",
-"pricing":{
-"prompt":"0.000000345",
-"completion":"0.000000345"
-}
-},
 "qwen/qwen-2.5-72b-instruct":{
 "context_length":131072,
 "max_completion_tokens":16384,
@@ -9542,24 +9582,6 @@
 "completion":"0.0000004"
 }
 },
-"cohere/command-r-08-2024":{
-"context_length":128000,
-"max_completion_tokens":4000,
-"name":"Cohere: Command R (08-2024)",
-"pricing":{
-"prompt":"0.00000015",
-"completion":"0.0000006"
-}
-},
-"command-r-08-2024":{
-"context_length":128000,
-"max_completion_tokens":4000,
-"name":"Cohere: Command R (08-2024)",
-"pricing":{
-"prompt":"0.00000015",
-"completion":"0.0000006"
-}
-},
 "cohere/command-r-plus-08-2024":{
 "context_length":128000,
 "max_completion_tokens":4000,
@@ -9576,6 +9598,24 @@
 "pricing":{
 "prompt":"0.0000025",
 "completion":"0.00001"
+}
+},
+"cohere/command-r-08-2024":{
+"context_length":128000,
+"max_completion_tokens":4000,
+"name":"Cohere: Command R (08-2024)",
+"pricing":{
+"prompt":"0.00000015",
+"completion":"0.0000006"
+}
+},
+"command-r-08-2024":{
+"context_length":128000,
+"max_completion_tokens":4000,
+"name":"Cohere: Command R (08-2024)",
+"pricing":{
+"prompt":"0.00000015",
+"completion":"0.0000006"
 }
 },
 "sao10k/l3.1-euryale-70b":{
@@ -9688,24 +9728,6 @@
 "input_cache_read":"0.00000125"
 }
 },
-"meta-llama/llama-3.1-8b-instruct":{
-"context_length":131072,
-"max_completion_tokens":16384,
-"name":"Meta: Llama 3.1 8B Instruct",
-"pricing":{
-"prompt":"0.00000002",
-"completion":"0.00000003"
-}
-},
-"llama-3.1-8b-instruct":{
-"context_length":131072,
-"max_completion_tokens":16384,
-"name":"Meta: Llama 3.1 8B Instruct",
-"pricing":{
-"prompt":"0.00000002",
-"completion":"0.00000003"
-}
-},
 "meta-llama/llama-3.1-70b-instruct":{
 "context_length":131072,
 "max_completion_tokens":16384,
@@ -9722,6 +9744,24 @@
 "pricing":{
 "prompt":"0.0000004",
 "completion":"0.0000004"
+}
+},
+"meta-llama/llama-3.1-8b-instruct":{
+"context_length":131072,
+"max_completion_tokens":16384,
+"name":"Meta: Llama 3.1 8B Instruct",
+"pricing":{
+"prompt":"0.00000002",
+"completion":"0.00000003"
+}
+},
+"llama-3.1-8b-instruct":{
+"context_length":131072,
+"max_completion_tokens":16384,
+"name":"Meta: Llama 3.1 8B Instruct",
+"pricing":{
+"prompt":"0.00000002",
+"completion":"0.00000003"
 }
 },
 "mistralai/mistral-nemo":{
@@ -9742,26 +9782,6 @@
 "completion":"0.00000003"
 }
 },
-"openai/gpt-4o-mini-2024-07-18":{
-"context_length":128000,
-"max_completion_tokens":16384,
-"name":"OpenAI: GPT-4o-mini (2024-07-18)",
-"pricing":{
-"prompt":"0.00000015",
-"completion":"0.0000006",
-"input_cache_read":"0.000000075"
-}
-},
-"gpt-4o-mini-2024-07-18":{
-"context_length":128000,
-"max_completion_tokens":16384,
-"name":"OpenAI: GPT-4o-mini (2024-07-18)",
-"pricing":{
-"prompt":"0.00000015",
-"completion":"0.0000006",
-"input_cache_read":"0.000000075"
-}
-},
 "openai/gpt-4o-mini":{
 "context_length":128000,
 "max_completion_tokens":16384,
@@ -9776,6 +9796,26 @@
 "context_length":128000,
 "max_completion_tokens":16384,
 "name":"OpenAI: GPT-4o-mini",
+"pricing":{
+"prompt":"0.00000015",
+"completion":"0.0000006",
+"input_cache_read":"0.000000075"
+}
+},
+"openai/gpt-4o-mini-2024-07-18":{
+"context_length":128000,
+"max_completion_tokens":16384,
+"name":"OpenAI: GPT-4o-mini (2024-07-18)",
+"pricing":{
+"prompt":"0.00000015",
+"completion":"0.0000006",
+"input_cache_read":"0.000000075"
+}
+},
+"gpt-4o-mini-2024-07-18":{
+"context_length":128000,
+"max_completion_tokens":16384,
+"name":"OpenAI: GPT-4o-mini (2024-07-18)",
 "pricing":{
 "prompt":"0.00000015",
 "completion":"0.0000006",
@@ -10100,24 +10140,6 @@
 "completion":"0.00000006"
 }
 },
-"openai/gpt-3.5-turbo":{
-"context_length":16385,
-"max_completion_tokens":4096,
-"name":"OpenAI: GPT-3.5 Turbo",
-"pricing":{
-"prompt":"0.0000005",
-"completion":"0.0000015"
-}
-},
-"gpt-3.5-turbo":{
-"context_length":16385,
-"max_completion_tokens":4096,
-"name":"OpenAI: GPT-3.5 Turbo",
-"pricing":{
-"prompt":"0.0000005",
-"completion":"0.0000015"
-}
-},
 "openai/gpt-4":{
 "context_length":8191,
 "max_completion_tokens":4096,
@@ -10134,6 +10156,24 @@
 "pricing":{
 "prompt":"0.00003",
 "completion":"0.00006"
+}
+},
+"openai/gpt-3.5-turbo":{
+"context_length":16385,
+"max_completion_tokens":4096,
+"name":"OpenAI: GPT-3.5 Turbo",
+"pricing":{
+"prompt":"0.0000005",
+"completion":"0.0000015"
+}
+},
+"gpt-3.5-turbo":{
+"context_length":16385,
+"max_completion_tokens":4096,
+"name":"OpenAI: GPT-3.5 Turbo",
+"pricing":{
+"prompt":"0.0000005",
+"completion":"0.0000015"
 }
 }
 }

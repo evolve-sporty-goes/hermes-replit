@@ -2347,3 +2347,269 @@ Can you make the script short so that it is eas...
   → `copilot login` or `hermes model` to authenticate via OAuth
   → A fine-grained PAT (github_pat_*) with Copilot Requests permission
   → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 18:05:15,177 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-30 18:05:15,179 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-30 18:05:15,180 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-30 18:05:15,318 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-30 18:05:15,319 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-30 18:05:15,320 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-30 18:05:15,321 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-30 18:05:15,322 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-30 18:05:15,322 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-30 18:05:15,323 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-30 18:05:15,352 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-30 18:05:15,352 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-30 18:05:15,354 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-30 18:05:15,355 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-30 18:05:15,355 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-30 18:05:15,356 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-30 18:05:15,357 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-30 18:05:15,357 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-30 18:05:15,359 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-30 18:05:15,360 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-30 18:05:15,374 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-30 18:05:17,561 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:17,582 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:19,729 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-30 18:05:19,730 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:19,746 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:19,836 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:19,838 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:19,842 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:19,860 INFO tools.lazy_deps: Lazy-installing edge-tts==7.2.7 for feature 'tts.edge'
+2026-06-30 18:05:20,593 INFO tools.lazy_deps: Lazy install complete for feature 'tts.edge'
+2026-06-30 18:05:21,592 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-06-30 18:05:21,957 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:21,957 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:21,958 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:22,509 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:22,510 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:22,515 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:22,556 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:22,563 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:22,601 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:05:26,130 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 18:05:26,976 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 18:16:06,202 INFO run_agent: Loaded environment variables from /home/runner/workspace/.hermes_data/.env
+2026-06-30 18:16:06,359 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-3 (process_loop):140539200521920 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-30 18:16:06,424 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:06,439 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:06,460 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:16:06,475 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:06,479 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:06,625 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:16:06,660 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:06,669 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:06,670 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:16:06,713 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:16:07,038 INFO [20260630_180516_0ac686] agent.turn_context: conversation turn: session=20260630_180516_0ac686 model=@cf/moonshotai/kimi-k2.7-code provider=custom platform=cli history=0 msg='hi'
+2026-06-30 18:16:09,643 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-14 (_call):140538939426496 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-30 18:16:10,688 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 400 - {'error': {'message': '@cf/moonshotai/kimi-k2.7-code is not a valid model ID', 'code': 400}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:16:10,689 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-14 (_call):140538939426496 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code
+2026-06-30 18:16:10,690 WARNING [20260630_180516_0ac686] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-13 (run_agent):140538949916352 provider=custom base_url=https://openrouter.ai/api/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 400: @cf/moonshotai/kimi-k2.7-code is not a valid model ID
+2026-06-30 18:16:10,707 INFO [20260630_180516_0ac686] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:16:10,743 INFO [20260630_180516_0ac686] agent.chat_completion_helpers: Fallback to openrouter/nvidia/nemotron-3-ultra-550b-a55b:free: attached fallback credential pool
+2026-06-30 18:16:10,968 INFO [20260630_180516_0ac686] agent.chat_completion_helpers: Fallback activated: @cf/moonshotai/kimi-k2.7-code → nvidia/nemotron-3-ultra-550b-a55b:free (openrouter)
+2026-06-30 18:16:10,991 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-15 (_call):140538939426496 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 18:16:11,510 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:16:11,511 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-15 (_call):140538939426496 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 18:16:11,512 WARNING [20260630_180516_0ac686] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-13 (run_agent):140538949916352 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+2026-06-30 18:16:11,513 WARNING [20260630_180516_0ac686] agent.conversation_loop: Retrying API call in 2.7919111972397745s (attempt 1/3) thread=Thread-13 (run_agent):140538949916352 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:16:14,368 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-16 (_call):140538939426496 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 18:16:14,939 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:16:14,940 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-16 (_call):140538939426496 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 18:16:14,941 INFO [20260630_180516_0ac686] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:16:14,941 WARNING [20260630_180516_0ac686] agent.conversation_loop: API call failed (attempt 2/3) error_type=RateLimitError thread=Thread-13 (run_agent):140538949916352 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+2026-06-30 18:16:14,942 WARNING [20260630_180516_0ac686] agent.conversation_loop: Retrying API call in 5.642795500450156s (attempt 2/3) thread=Thread-13 (run_agent):140538949916352 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:16:20,795 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-17 (_call):140538926839488 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 18:16:21,430 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:16:21,431 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-17 (_call):140538926839488 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 18:16:21,431 INFO [20260630_180516_0ac686] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:16:21,432 WARNING [20260630_180516_0ac686] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-13 (run_agent):140538949916352 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+2026-06-30 18:16:21,439 ERROR [20260630_180516_0ac686] agent.conversation_loop: API call failed after 3 retries. HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day | provider=openrouter model=nvidia/nemotron-3-ultra-550b-a55b:free msgs=2 tokens=~10,667
+2026-06-30 18:18:36,668 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-30 18:18:36,670 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-30 18:18:36,671 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-30 18:18:36,791 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-30 18:18:36,794 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-30 18:18:36,798 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-30 18:18:36,800 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-30 18:18:36,803 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-30 18:18:36,803 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-30 18:18:36,809 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-30 18:18:36,841 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-30 18:18:36,842 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-30 18:18:36,845 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-30 18:18:36,846 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-30 18:18:36,847 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-30 18:18:36,849 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-30 18:18:36,850 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-30 18:18:36,852 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-30 18:18:36,853 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-30 18:18:36,854 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-30 18:18:36,879 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-30 18:18:38,883 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:38,903 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:39,010 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:18:39,765 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:39,769 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:39,918 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:18:39,951 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:39,959 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:39,959 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,244 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:18:40,304 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,305 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,305 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,398 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,399 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,400 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,428 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,431 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:40,439 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:18:41,459 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 18:18:41,580 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 18:18:48,204 INFO run_agent: Loaded environment variables from /home/runner/workspace/.hermes_data/.env
+2026-06-30 18:18:48,285 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-3 (process_loop):140719268853440 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha
+2026-06-30 18:18:48,565 INFO [20260630_181838_6e9aa0] agent.turn_context: conversation turn: session=20260630_181838_6e9aa0 model=openrouter/owl-alpha provider=kilocode platform=cli history=0 msg='.'
+2026-06-30 18:18:49,979 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-6 (_call):140718890804928 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha
+2026-06-30 18:18:51,670 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 404 - {'error': {'message': 'No endpoints found for openrouter/owl-alpha.', 'code': 404}, 'user_id': 'org_2uwFc1szZKyZweUX7pX97kXQf2O'}
+2026-06-30 18:18:51,671 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-6 (_call):140718890804928 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha
+2026-06-30 18:18:51,672 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: API call failed (attempt 1/3) error_type=NotFoundError thread=Thread-5 (run_agent):140719424362176 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha summary=HTTP 404: No endpoints found for openrouter/owl-alpha.
+2026-06-30 18:18:51,673 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: Retrying API call in 2.6657028706733925s (attempt 1/3) thread=Thread-5 (run_agent):140719424362176 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha policy=default error=Error code: 404 - {'error': {'message': 'No endpoints found for openrouter/owl-alpha.', 'code': 404}, 'user_id': 'org_2uwFc1szZKyZweUX7pX97kXQf2O'}
+2026-06-30 18:18:54,509 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-7 (_call):140718890804928 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha
+2026-06-30 18:18:55,312 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 404 - {'error': {'message': 'No endpoints found for openrouter/owl-alpha.', 'code': 404}, 'user_id': 'org_2uwFc1szZKyZweUX7pX97kXQf2O'}
+2026-06-30 18:18:55,312 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-7 (_call):140718890804928 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha
+2026-06-30 18:18:55,313 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: API call failed (attempt 2/3) error_type=NotFoundError thread=Thread-5 (run_agent):140719424362176 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha summary=HTTP 404: No endpoints found for openrouter/owl-alpha.
+2026-06-30 18:18:55,314 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: Retrying API call in 5.7296203637810885s (attempt 2/3) thread=Thread-5 (run_agent):140719424362176 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha policy=default error=Error code: 404 - {'error': {'message': 'No endpoints found for openrouter/owl-alpha.', 'code': 404}, 'user_id': 'org_2uwFc1szZKyZweUX7pX97kXQf2O'}
+2026-06-30 18:19:01,164 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-8 (_call):140718890804928 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha
+2026-06-30 18:19:02,025 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 404 - {'error': {'message': 'No endpoints found for openrouter/owl-alpha.', 'code': 404}, 'user_id': 'org_2uwFc1szZKyZweUX7pX97kXQf2O'}
+2026-06-30 18:19:02,027 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-8 (_call):140718890804928 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha
+2026-06-30 18:19:02,028 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: API call failed (attempt 3/3) error_type=NotFoundError thread=Thread-5 (run_agent):140719424362176 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=openrouter/owl-alpha summary=HTTP 404: No endpoints found for openrouter/owl-alpha.
+2026-06-30 18:19:02,184 INFO [20260630_181838_6e9aa0] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:19:02,236 INFO [20260630_181838_6e9aa0] agent.chat_completion_helpers: Fallback to openrouter/nvidia/nemotron-3-ultra-550b-a55b:free: clearing primary credential pool (pool_provider=kilocode) to prevent cross-provider contamination
+2026-06-30 18:19:02,246 INFO [20260630_181838_6e9aa0] agent.chat_completion_helpers: Fallback to openrouter/nvidia/nemotron-3-ultra-550b-a55b:free: attached fallback credential pool
+2026-06-30 18:19:02,543 INFO [20260630_181838_6e9aa0] agent.chat_completion_helpers: Fallback activated: openrouter/owl-alpha → nvidia/nemotron-3-ultra-550b-a55b:free (openrouter)
+2026-06-30 18:19:02,577 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-9 (_call):140718890804928 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 18:19:03,385 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:19:03,387 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-9 (_call):140718890804928 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 18:19:03,388 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-5 (run_agent):140719424362176 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+2026-06-30 18:19:03,392 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: Retrying API call in 2.5250427410028427s (attempt 1/3) thread=Thread-5 (run_agent):140719424362176 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:19:06,009 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-10 (_call):140718890804928 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 18:19:06,508 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:19:06,509 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-10 (_call):140718890804928 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 18:19:06,510 INFO [20260630_181838_6e9aa0] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:19:06,510 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: API call failed (attempt 2/3) error_type=RateLimitError thread=Thread-5 (run_agent):140719424362176 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+2026-06-30 18:19:06,512 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: Retrying API call in 4.550894328136994s (attempt 2/3) thread=Thread-5 (run_agent):140719424362176 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:19:11,162 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-11 (_call):140718890804928 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 18:19:11,941 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1782864000000'}, 'provider_name': None}}, 'user_id': 'user_3FqnneD8MYpw850pP8GWaGEOMiI'}
+2026-06-30 18:19:11,942 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-11 (_call):140718890804928 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-06-30 18:19:11,943 INFO [20260630_181838_6e9aa0] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:19:11,943 WARNING [20260630_181838_6e9aa0] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-5 (run_agent):140719424362176 provider=openrouter base_url=https://openrouter.ai/api/v1/ model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+2026-06-30 18:19:11,956 ERROR [20260630_181838_6e9aa0] agent.conversation_loop: API call failed after 3 retries. HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day | provider=openrouter model=nvidia/nemotron-3-ultra-550b-a55b:free msgs=2 tokens=~10,604
+2026-06-30 18:20:19,973 INFO cli: CLI cleanup calling memory shutdown for session 20260630_181838_6e9aa0 with 1 message(s)
+2026-06-30 18:21:15,066 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-06-30 18:21:15,068 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-06-30 18:21:15,070 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-06-30 18:21:15,191 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-06-30 18:21:15,192 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-06-30 18:21:15,193 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-06-30 18:21:15,194 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-06-30 18:21:15,195 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-06-30 18:21:15,195 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-06-30 18:21:15,197 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-06-30 18:21:15,229 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-06-30 18:21:15,231 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-06-30 18:21:15,234 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-06-30 18:21:15,235 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-06-30 18:21:15,237 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-06-30 18:21:15,239 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-06-30 18:21:15,240 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-06-30 18:21:15,241 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-06-30 18:21:15,243 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-06-30 18:21:15,244 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-06-30 18:21:15,258 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-06-30 18:21:17,211 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:17,219 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:17,305 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:21:18,059 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,070 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,169 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:21:18,178 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,181 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,183 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,553 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-06-30 18:21:18,721 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,725 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,726 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,848 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,849 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,850 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,890 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,892 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:18,906 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-06-30 18:21:21,097 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 18:21:21,625 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-06-30 18:21:23,767 INFO run_agent: Loaded environment variables from /home/runner/workspace/.hermes_data/.env
+2026-06-30 18:21:23,871 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-3 (process_loop):140334281516736 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=kilo-auto/free
+2026-06-30 18:21:24,167 INFO [20260630_182116_4dd20b] agent.turn_context: conversation turn: session=20260630_182116_4dd20b model=kilo-auto/free provider=kilocode platform=cli history=0 msg='.'
+2026-06-30 18:21:29,383 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-6 (_call):140334247945920 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=kilo-auto/free
+2026-06-30 18:21:40,187 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-6 (_call):140334247945920 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=kilo-auto/free
+2026-06-30 18:21:40,187 INFO [20260630_182116_4dd20b] agent.conversation_loop: API call #1: model=kilo-auto/free provider=kilocode in=26405 out=47 total=26452 latency=10.9s cache=1152/26405 (4%)
+2026-06-30 18:21:40,954 INFO [20260630_182116_4dd20b] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=kilo-auto/free api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=25 session=20260630_182116_4dd20b
+2026-06-30 18:21:41,216 INFO agent.auxiliary_client: Auxiliary auto-detect: using main provider kilocode (kilo-auto/free)
+2026-06-30 18:21:41,217 INFO agent.auxiliary_client: Auxiliary title_generation: using auto (kilo-auto/free) at https://api.kilo.ai/api/gateway/
+2026-06-30 18:21:50,670 INFO [20260630_182116_4dd20b] agent.turn_context: conversation turn: session=20260630_182116_4dd20b model=kilo-auto/free provider=kilocode platform=cli history=2 msg='what model are you'
+2026-06-30 18:21:50,731 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-8 (_call):140333870466752 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=kilo-auto/free
+2026-06-30 18:21:56,299 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-8 (_call):140333870466752 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=kilo-auto/free
+2026-06-30 18:21:56,300 INFO [20260630_182116_4dd20b] agent.conversation_loop: API call #2: model=kilo-auto/free provider=kilocode in=26427 out=88 total=26515 latency=5.6s cache=1152/26427 (4%)
+2026-06-30 18:21:56,346 INFO [20260630_182116_4dd20b] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=kilo-auto/free api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=68 session=20260630_182116_4dd20b
+2026-06-30 18:22:10,606 INFO [20260630_182116_4dd20b] agent.turn_context: conversation turn: session=20260630_182116_4dd20b model=kilo-auto/free provider=kilocode platform=cli history=4 msg='what does this mean'
+2026-06-30 18:22:10,679 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-10 (_call):140333870466752 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=kilo-auto/free
+2026-06-30 18:22:31,475 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-10 (_call):140333870466752 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=kilo-auto/free
+2026-06-30 18:22:31,476 INFO [20260630_182116_4dd20b] agent.conversation_loop: API call #3: model=kilo-auto/free provider=kilocode in=26461 out=618 total=27079 latency=20.9s cache=26112/26461 (99%)
+2026-06-30 18:22:31,512 INFO [20260630_182116_4dd20b] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=kilo-auto/free api_calls=1/90 budget=1/90 tool_turns=0 last_msg_role=assistant response_len=427 session=20260630_182116_4dd20b
+2026-06-30 18:23:29,928 INFO [20260630_182116_4dd20b] agent.turn_context: conversation turn: session=20260630_182116_4dd20b model=kilo-auto/free provider=kilocode platform=cli history=6 msg='some knowledge about kilo-auto/free model'
+2026-06-30 18:23:29,996 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-12 (_call):140333862074048 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=kilo-auto/free
+2026-06-30 18:23:36,889 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-12 (_call):140333862074048 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=kilo-auto/free
+2026-06-30 18:23:36,891 INFO [20260630_182116_4dd20b] agent.conversation_loop: API call #4: model=kilo-auto/free provider=kilocode in=26587 out=178 total=26765 latency=6.9s cache=26112/26587 (98%)
+2026-06-30 18:23:37,005 INFO [20260630_182116_4dd20b] tools.web_tools: Web search via firecrawl: 'kilo-auto/free model kilocode provider LLM' (limit: 10)
+2026-06-30 18:23:37,005 INFO [20260630_182116_4dd20b] plugins.web.firecrawl.provider: Firecrawl search: 'kilo-auto/free model kilocode provider LLM' (limit=10)
+2026-06-30 18:23:37,009 INFO [20260630_182116_4dd20b] tools.lazy_deps: Lazy-installing firecrawl-py==4.17.0 for feature 'search.firecrawl'
+2026-06-30 18:23:38,738 INFO [20260630_182116_4dd20b] tools.lazy_deps: Lazy install complete for feature 'search.firecrawl'
+2026-06-30 18:23:40,919 INFO [20260630_182116_4dd20b] plugins.web.firecrawl.provider: Firecrawl: found 10 search results
+2026-06-30 18:23:40,920 INFO [20260630_182116_4dd20b] agent.tool_executor: tool web_search completed (3.96s, 3578 chars)
+2026-06-30 18:23:41,060 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-13 (_call):140333862074048 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=kilo-auto/free
+2026-06-30 18:23:49,847 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-13 (_call):140333862074048 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=kilo-auto/free
+2026-06-30 18:23:49,847 INFO [20260630_182116_4dd20b] agent.conversation_loop: API call #5: model=kilo-auto/free provider=kilocode in=27660 out=140 total=27800 latency=8.8s cache=1152/27660 (4%)
+2026-06-30 18:23:49,884 INFO [20260630_182116_4dd20b] tools.web_tools: Extracting content from 2 URL(s)
+2026-06-30 18:23:49,923 INFO [20260630_182116_4dd20b] tools.web_tools: Web extract via firecrawl: 2 URL(s)
+2026-06-30 18:23:49,927 INFO [20260630_182116_4dd20b] plugins.web.firecrawl.provider: Firecrawl scraping: https://kilo.ai/pricing
+2026-06-30 18:23:52,906 INFO [20260630_182116_4dd20b] plugins.web.firecrawl.provider: Firecrawl scraping: https://github.com/Kilo-Org/kilocode/issues/6686
+2026-06-30 18:23:55,469 INFO [20260630_182116_4dd20b] tools.web_tools: Extracted content from 2 pages
+2026-06-30 18:23:55,474 INFO [20260630_182116_4dd20b] tools.web_tools: https://kilo.ai/pricing (5717 chars, whole)
+2026-06-30 18:23:55,477 INFO [20260630_182116_4dd20b] tools.web_tools: https://github.com/Kilo-Org/kilocode/issues/6686 (11272 chars, whole)
+2026-06-30 18:23:55,480 INFO [20260630_182116_4dd20b] agent.tool_executor: tool web_extract completed (5.60s, 17979 chars)
+2026-06-30 18:23:55,925 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-14 (_call):140333853681344 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=kilo-auto/free
+2026-06-30 18:24:06,476 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-14 (_call):140333853681344 provider=kilocode base_url=https://api.kilo.ai/api/gateway model=kilo-auto/free
+2026-06-30 18:24:06,476 INFO [20260630_182116_4dd20b] agent.conversation_loop: API call #6: model=kilo-auto/free provider=kilocode in=33289 out=432 total=33721 latency=10.6s cache=27392/33289 (82%)
+2026-06-30 18:24:06,503 INFO [20260630_182116_4dd20b] agent.conversation_loop: Turn ended: reason=text_response(finish_reason=stop) model=kilo-auto/free api_calls=3/90 budget=3/90 tool_turns=2 last_msg_role=assistant response_len=780 session=20260630_182116_4dd20b
+2026-06-30 18:46:50,687 INFO cli: CLI cleanup calling memory shutdown for session 20260630_180516_0ac686 with 1 message(s)
