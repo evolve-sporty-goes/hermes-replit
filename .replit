@@ -1,9 +1,10 @@
 modules = ["python-3.12", "web", "bash", "nodejs_24", "nodejs-24"]
 onBoot = { args = ["bash ~/workspace/scripts/hermes.sh"] }
-run = "bash ~/workspace/scripts/hermes.sh"
+
 [agent]
 expertMode = true
 stack = "BEST_EFFORT_FALLBACK"
+run = "bash ~/workspace/scripts/hermes.sh"
 
 [nix]
 channel = "stable-25_05"
@@ -54,5 +55,6 @@ externalPort = 80
 exposeLocalhost = true
 
 [deployment]
+run = "bash ~/workspace/scripts/hermes.sh"
 deploymentTarget = "cloudrun"
 

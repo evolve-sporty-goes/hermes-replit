@@ -8621,3 +8621,623 @@ Use email from output of email.sh
 2026-07-01 16:02:08,429 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:02:08 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
 2026-07-01 16:02:12,050 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
 2026-07-01 16:02:12,063 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:02:12 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:03:03,467 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-07-01 16:03:03,475 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-07-01 16:03:03,475 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-07-01 16:03:03,688 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-07-01 16:03:03,689 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-07-01 16:03:03,689 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-07-01 16:03:03,690 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-07-01 16:03:03,690 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-07-01 16:03:03,690 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-07-01 16:03:03,694 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-07-01 16:03:03,781 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-07-01 16:03:03,782 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-07-01 16:03:03,794 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-07-01 16:03:03,795 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-07-01 16:03:03,795 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-07-01 16:03:03,797 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-07-01 16:03:03,798 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-07-01 16:03:03,798 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-07-01 16:03:03,799 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-07-01 16:03:03,800 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-07-01 16:03:03,812 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-07-01 16:03:03,998 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-07-01 16:03:04,006 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-07-01 16:03:04,006 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-07-01 16:03:04,344 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-07-01 16:03:04,345 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-07-01 16:03:04,345 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-07-01 16:03:04,345 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-07-01 16:03:04,346 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-07-01 16:03:04,346 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-07-01 16:03:04,351 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-07-01 16:03:04,412 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-07-01 16:03:04,413 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-07-01 16:03:04,414 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-07-01 16:03:04,419 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-07-01 16:03:04,420 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-07-01 16:03:04,421 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-07-01 16:03:04,422 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-07-01 16:03:04,422 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-07-01 16:03:04,427 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-07-01 16:03:04,429 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-07-01 16:03:04,460 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-07-01 16:03:09,236 INFO gateway.run: Starting Hermes Gateway...
+2026-07-01 16:03:09,240 INFO gateway.run: Session storage: /home/runner/workspace/.hermes_data/sessions
+2026-07-01 16:03:09,247 INFO gateway.run: Agent budget: max_iterations=90 (agent.max_turns from config.yaml, or HERMES_MAX_ITERATIONS from .env, or default 90)
+2026-07-01 16:03:09,250 INFO gateway.run: Secret redaction: ENABLED (tool output, logs, and chat responses are scrubbed before delivery)
+2026-07-01 16:03:09,281 WARNING gateway.run: No env user allowlists configured. Messaging platforms default to pairing/allowlist policies and will deny unknown senders unless you configure platform allowlists (e.g., TELEGRAM_ALLOWED_USERS=your_id) or explicitly opt in with GATEWAY_ALLOW_ALL_USERS=true plus dm_policy/group_policy: open on the platform.
+2026-07-01 16:03:09,471 INFO gateway.run: Connecting to api_server...
+2026-07-01 16:03:09,641 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:09,703 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:09,725 INFO gateway.platforms.api_server: [Api_Server] API server listening on http://127.0.0.1:8642 (model: hermes-agent)
+2026-07-01 16:03:09,741 INFO gateway.run: ✓ api_server connected
+2026-07-01 16:03:09,746 INFO gateway.run: Gateway running with 1 platform(s)
+2026-07-01 16:03:09,963 INFO gateway.run: Channel directory built: 0 target(s)
+2026-07-01 16:03:10,048 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 16:03:10,049 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 16:04:10.
+2026-07-01 16:03:10,057 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 16:03:10,057 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 16:04:10.
+2026-07-01 16:03:10,057 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:10,058 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:10,077 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:10,211 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-01 16:03:10,218 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:10,222 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:10,223 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:10,980 INFO gateway.run: Press Ctrl+C to stop
+2026-07-01 16:03:10,987 INFO cron.scheduler_provider: In-process cron scheduler started (interval=60s)
+2026-07-01 16:03:11,067 INFO gateway.run: Gateway housekeeping started (interval=60s)
+2026-07-01 16:03:11,297 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 16:03:11,297 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 16:04:11.
+2026-07-01 16:03:11,315 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 16:03:11,315 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 16:04:11.
+2026-07-01 16:03:11,315 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:11,332 INFO gateway.run: kanban dispatcher: holding singleton dispatcher lock (/home/runner/.hermes/kanban/.dispatcher.lock)
+2026-07-01 16:03:11,376 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:11,377 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:11,377 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:11,407 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:11,408 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:11,409 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:11,420 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:11,421 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:11,429 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 16:03:13,282 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-01 16:03:13,879 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-01 16:03:14,754 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-01 16:03:16,334 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)
+2026-07-01 16:24:23,848 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:24:23 +0000] "GET /health HTTP/1.1" 200 526 "-" "node"
+2026-07-01 16:46:56,542 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:46:56 +0000] "GET /health HTTP/1.1" 200 526 "-" "node"
+2026-07-01 16:46:56,552 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:46:56 +0000] "GET /v1/chat/completions HTTP/1.1" 405 205 "-" "node"
+2026-07-01 16:46:56,553 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/v1/models' user_agent='node'
+2026-07-01 16:46:56,558 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:46:56 +0000] "GET /v1/models HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:46:56,562 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions' user_agent='node'
+2026-07-01 16:46:56,571 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:46:56 +0000] "GET /api/sessions HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:46:56,571 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:46:56 +0000] "GET /api/skills HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:46:56,575 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:46:56 +0000] "GET /api/config HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:46:56,575 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/jobs' user_agent='node'
+2026-07-01 16:46:56,580 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:46:56 +0000] "GET /api/jobs HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:46:56,580 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='POST' path='/api/sessions/__probe__/chat/stream' user_agent='node'
+2026-07-01 16:46:56,584 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:46:56 +0000] "POST /api/sessions/__probe__/chat/stream HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:46:56,635 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:46:56 +0000] "GET /api/mcp HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:47:52,527 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:47:52,535 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:52 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:47:52,816 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:52 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:47:52,818 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:47:52,820 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:52 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:47:58,241 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:58 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:47:58,250 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:47:58,263 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:58 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:47:58,595 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:47:58,607 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:58 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:47:58,702 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:58 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:47:58,712 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:47:58,722 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:58 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:47:58,859 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/v1/models' user_agent='node'
+2026-07-01 16:47:58,867 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:58 +0000] "GET /v1/models HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:47:58,889 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:47:58,904 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:58 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:47:58,909 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:47:58,912 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:58 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:47:58,914 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:58 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:47:58,915 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:47:58,918 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:58 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:47:59,264 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:59 +0000] "GET /v1/commands HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:47:59,997 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:00,000 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:47:59 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:00,620 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:48:00,627 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:00 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:00,636 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:00 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:00,645 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:48:00,652 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:00 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:00,952 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/v1/models' user_agent='node'
+2026-07-01 16:48:00,955 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:00 +0000] "GET /v1/models HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:01,004 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:01 +0000] "GET /v1/commands HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:01,304 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:01,307 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:01 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:01,342 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:01 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:01,350 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:48:01,352 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:01 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:01,633 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:01 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:01,635 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:48:01,637 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:01 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:01,962 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:01,968 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:01 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:04,069 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:04 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:04,070 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:48:04,073 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:04 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:07,955 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:07,958 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:07 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:11,086 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:11,098 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:11 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:13,962 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:13 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:13,963 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:48:13,980 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:13 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:16,027 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:48:16,029 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:16 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:16,033 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:48:16,036 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:16 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:16,039 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:16 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:16,044 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:48:16,047 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:16 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:16,393 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/v1/models' user_agent='node'
+2026-07-01 16:48:16,397 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:16 +0000] "GET /v1/models HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:17,061 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:17,064 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:17 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:18,566 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:18 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:18,569 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:48:18,576 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:18 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:24,071 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:24 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:24,072 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:48:24,075 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:24 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:24,426 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:24,430 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:24 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:25,261 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:25 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:25,262 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:48:25,266 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:25 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:27,186 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:27,189 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:27 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:28,386 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:28,390 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:28 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:29,062 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:29,065 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:29 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:30,051 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:30,055 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:30 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:31,231 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:31 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:31,232 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:48:31,235 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:31 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:32,708 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:32 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:32,709 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:48:32,711 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:32 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:33,220 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:33,223 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:33 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:34,367 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:34,370 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:34 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:38,594 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:38,597 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:38 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:40,366 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:40,368 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:40 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:41,507 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:41,510 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:41 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:42,861 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:42 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:42,862 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:48:42,864 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:42 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:44,082 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:44,085 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:44 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:44,492 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:44,494 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:44 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:45,897 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:45 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:45,899 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:48:45,901 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:45 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:46,401 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:48:46,407 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:46 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:46,410 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:48:46,412 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:46 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:46,420 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:46 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:46,423 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:48:46,427 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:46 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:49,004 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:49,007 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:49 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:49,403 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:49 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:49,407 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:48:49,410 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:49 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:49,765 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:49,768 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:49 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:53,343 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:53 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:53,345 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:48:53,347 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:53 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:55,820 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:55,823 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:55 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:56,251 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:48:56,254 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:56 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:56,255 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:48:56,258 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:56 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:56,260 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:56 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:56,263 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:48:56,267 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:56 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:56,765 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:56 +0000] "GET /health HTTP/1.1" 200 526 "-" "node"
+2026-07-01 16:48:56,765 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:56 +0000] "GET /v1/chat/completions HTTP/1.1" 405 205 "-" "node"
+2026-07-01 16:48:56,770 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/v1/models' user_agent='node'
+2026-07-01 16:48:56,774 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:56 +0000] "GET /v1/models HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:56,774 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions' user_agent='node'
+2026-07-01 16:48:56,780 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:56 +0000] "GET /api/sessions HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:56,782 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:56 +0000] "GET /api/skills HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:56,788 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:56 +0000] "GET /api/config HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:56,791 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/jobs' user_agent='node'
+2026-07-01 16:48:56,798 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:56 +0000] "GET /api/jobs HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:56,800 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='POST' path='/api/sessions/__probe__/chat/stream' user_agent='node'
+2026-07-01 16:48:56,808 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:56 +0000] "POST /api/sessions/__probe__/chat/stream HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:48:56,810 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:56 +0000] "GET /api/mcp HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:48:59,704 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:48:59,706 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:48:59 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:12,360 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:49:12,363 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:12 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:13,196 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:13 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:13,197 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:49:13,203 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:13 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:14,199 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:14,204 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:14 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:14,211 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:14,219 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:14 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:14,220 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:14 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:14,221 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:49:14,228 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:14 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:14,833 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:14 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:14,833 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:49:14,835 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:14 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:15,816 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:49:15,819 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:15 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:16,154 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:16,157 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:16 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:16,172 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:16,185 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:16 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:16,187 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:16 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:16,188 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:49:16,198 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:16 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:25,940 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:25,947 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:25 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:25,952 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:25,957 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:25 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:25,962 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:25 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:25,963 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:49:25,968 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:25 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:26,298 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:26 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:26,301 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:49:26,306 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:26 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:26,958 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:26 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:26,959 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:49:26,963 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:26 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:27,472 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:49:27,479 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:27 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:27,997 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:28,002 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:27 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:28,005 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:28,009 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:28 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:28,015 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:28 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:28,017 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:49:28,019 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:28 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:28,785 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/v1/models' user_agent='node'
+2026-07-01 16:49:28,787 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:28 +0000] "GET /v1/models HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:32,896 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:32,898 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:32 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:32,921 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:32 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:32,930 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:49:32,938 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:32 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:33,685 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:33 +0000] "GET /v1/commands HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:34,955 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:34,958 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:34 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:36,415 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:36,417 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:36 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:36,427 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:36,439 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:36 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:36,440 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:36 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:36,444 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:36 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:36,445 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:49:36,455 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:36 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:36,458 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:49:36,463 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:36 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:37,943 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:49:37,945 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:37 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:39,368 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:39,374 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:39 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:39,377 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:39 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:39,377 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:49:39,380 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:39 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:39,648 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:39 +0000] "GET /v1/commands HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:39,652 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:49:39,654 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:39 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:39,716 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:39 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:39,718 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:49:39,721 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:39 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:39,988 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:39,990 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:39 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:39,991 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:39,993 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:39 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:39,994 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:39 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:39,996 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:49:40,024 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:39 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:40,389 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:49:40,393 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:40 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:40,734 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:49:40,743 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:40 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:41,422 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:41 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:41,423 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:41,425 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:41 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:41,426 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:49:41,433 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:41 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:41,433 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:41,435 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:41 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:41,436 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:41 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:41,437 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:49:41,440 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:41 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:41,831 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:49:41,833 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:41 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:42,003 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:42,007 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:42 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:42,019 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:42 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:42,021 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:49:42,028 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:42 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:42,523 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:49:42,525 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:42 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:42,581 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:42,583 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:42 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:42,584 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:42 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:42,586 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:49:42,591 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:42 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:43,902 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:43 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:43,920 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:49:43,926 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:43 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:44,768 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:44 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:44,769 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:49:44,772 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:44 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:45,186 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:45 +0000] "GET /v1/commands HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:45,191 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/v1/models' user_agent='node'
+2026-07-01 16:49:45,196 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:45 +0000] "GET /v1/models HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:45,607 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:45,614 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:45 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:45,615 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:49:45,620 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:45 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:45,622 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:45 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:49:45,623 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:49:45,626 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:45 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:49:47,660 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:49:47,662 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:49:47 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:22,197 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:22,208 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:22 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:22,217 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:22,220 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:22 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:22,221 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:22,224 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:22 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:22,244 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:22 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:22,245 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:50:22,248 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:22 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:25,005 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:25,011 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:25 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:25,014 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:25,016 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:25 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:25,017 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:25 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:25,021 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:50:25,023 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:25 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:25,052 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:25,057 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:25 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:25,343 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:25,349 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:25 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:25,370 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:25 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:25,375 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/v1/models' user_agent='node'
+2026-07-01 16:50:25,380 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:25 +0000] "GET /v1/models HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:25,395 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:50:25,403 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:25 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:26,043 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:26 +0000] "GET /v1/commands HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:26,083 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:26,088 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:26 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:26,991 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:26,995 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:26 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:27,003 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:27,006 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:27,013 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:27,014 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:50:27,022 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:27,053 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:27,055 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:27,197 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/v1/models' user_agent='node'
+2026-07-01 16:50:27,201 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /v1/models HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:27,303 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:27,310 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:27,312 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:27,313 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:50:27,316 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:27,337 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /v1/commands HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:27,390 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:27,393 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:27,526 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:27,528 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:50:27,541 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:27,680 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:27,682 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:50:27,685 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:27,863 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:27,866 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:28,000 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:28,005 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:27 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:28,005 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:28 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:28,015 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:50:28,025 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:28 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:28,026 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:28 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:28,027 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:50:28,035 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:28 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:28,346 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:28,348 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:28 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:28,380 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:28,382 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:28 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:28,383 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:28 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:28,386 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:50:28,388 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:28 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:28,674 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:28,680 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:28 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:30,756 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:30,759 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:30 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:32,438 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:32,443 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:32 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:32,456 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:32,461 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:32 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:32,463 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:32 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:32,469 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:50:32,473 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:32 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:33,074 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:33,179 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:33 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:33,180 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:33,190 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:33 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:35,125 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:35,128 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:35 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:37,914 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:37,917 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:37 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:38,541 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:38,543 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:38 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:40,514 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:40,517 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:40 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:41,751 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:41 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:41,752 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:50:41,756 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:41 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:41,963 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:41,968 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:41 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:42,083 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:42 +0000] "GET /api/sessions/new/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:42,086 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/new' user_agent='node'
+2026-07-01 16:50:42,088 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:42 +0000] "GET /api/sessions/new HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:42,304 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:42,306 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:42 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:42,323 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:42,326 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:42 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:42,333 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:42 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:42,341 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:50:42,348 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:42 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:42,895 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:42,901 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:42 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:43,935 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:43,938 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:43 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:44,363 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:44,367 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:44 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:47,936 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:47,943 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:47 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:48,792 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:48,795 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:48 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:49,456 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:49,459 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:49 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:52,269 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:52,272 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:52 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:52,274 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:52,278 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:52 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:52,280 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:52 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:50:52,282 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:50:52,291 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:52 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:52,890 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:52,893 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:52 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:54,238 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:50:54,243 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:54 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:50:54,805 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:50:54,810 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:50:54 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:16,720 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:16 +0000] "GET /health HTTP/1.1" 200 526 "-" "node"
+2026-07-01 16:51:16,721 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:16 +0000] "GET /v1/chat/completions HTTP/1.1" 405 205 "-" "node"
+2026-07-01 16:51:16,721 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/v1/models' user_agent='node'
+2026-07-01 16:51:16,725 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:16 +0000] "GET /v1/models HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:16,725 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions' user_agent='node'
+2026-07-01 16:51:16,727 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:16 +0000] "GET /api/sessions HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:16,729 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:16 +0000] "GET /api/skills HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:51:16,732 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:16 +0000] "GET /api/config HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:51:16,733 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/jobs' user_agent='node'
+2026-07-01 16:51:16,736 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:16 +0000] "GET /api/jobs HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:16,736 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='POST' path='/api/sessions/__probe__/chat/stream' user_agent='node'
+2026-07-01 16:51:16,739 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:16 +0000] "POST /api/sessions/__probe__/chat/stream HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:16,740 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:16 +0000] "GET /api/mcp HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:51:17,545 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/v1/models' user_agent='node'
+2026-07-01 16:51:17,562 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:17 +0000] "GET /v1/models HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:17,565 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:51:17,567 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:17 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:18,088 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:51:18,098 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:18 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:18,113 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:51:18,123 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:18 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:20,255 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:20 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:51:20,259 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:51:20,261 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:20 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:20,308 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/v1/models' user_agent='node'
+2026-07-01 16:51:20,324 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:20 +0000] "GET /v1/models HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:20,667 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:51:20,669 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:20 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:20,957 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:51:20,960 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:20 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:20,962 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:51:20,967 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:20 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:20,969 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:20 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:51:20,970 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:51:20,972 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:20 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:22,139 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:51:22,141 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:22 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:23,688 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:51:23,690 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:23 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:26,111 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:51:26,114 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:26 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:27,731 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:51:27,740 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:27 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:27,741 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:51:27,744 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:27 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:27,751 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:27 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:51:27,752 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:51:27,757 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:27 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:30,485 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:51:30,491 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:30 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:36,019 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:51:36,023 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:36 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:37,459 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:51:37,461 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:37 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:37,714 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:51:37,722 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:37 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:37,731 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:51:37,734 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:37 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:37,736 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:37 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:51:37,737 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:51:37,740 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:37 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:39,822 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=50&offset=0' user_agent='node'
+2026-07-01 16:51:39,827 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:39 +0000] "GET /api/sessions?limit=50&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:48,010 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:51:48,014 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:48 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:48,024 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:51:48,039 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:48 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:48,042 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:48 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:51:48,044 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:51:48,047 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:48 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:58,064 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:51:58,069 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:58 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:58,082 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:51:58,084 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:58 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:51:58,088 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:58 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:51:58,089 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:51:58,092 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:51:58 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:52:08,071 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:52:08,076 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:52:08 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:52:08,079 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:52:08,083 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:52:08 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:52:08,086 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:52:08 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:52:08,101 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:52:08,105 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:52:08 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:52:18,060 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:52:18,071 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:52:18 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:52:18,077 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:52:18,082 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:52:18 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:52:18,090 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:52:18 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:52:18,095 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:52:18,100 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:52:18 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:52:28,050 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:52:28,053 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:52:28 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:52:28,064 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions?limit=30&offset=0' user_agent='node'
+2026-07-01 16:52:28,071 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:52:28 +0000] "GET /api/sessions?limit=30&offset=0 HTTP/1.1" 401 573 "-" "node"
+2026-07-01 16:52:28,073 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:52:28 +0000] "GET /api/sessions/main/runtime HTTP/1.1" 404 174 "-" "node"
+2026-07-01 16:52:28,074 WARNING gateway.platforms.api_server: API server rejected invalid API key: remote='127.0.0.1' peer_ip='127.0.0.1' method='GET' path='/api/sessions/main' user_agent='node'
+2026-07-01 16:52:28,078 INFO aiohttp.access: 127.0.0.1 [01/Jul/2026:16:52:28 +0000] "GET /api/sessions/main HTTP/1.1" 401 573 "-" "node"
