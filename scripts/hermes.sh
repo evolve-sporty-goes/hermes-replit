@@ -62,12 +62,16 @@ hermes config set model.provider  openrouter
 hermes config set model.default  nvidia/nemotron-3-ultra-550b-a55b:free
 hermes config set fallback_model.provider kilo-code
 hermes config set fallback_model.model kilo-auto/free
+hermes gateway run &
+(
+export HERMES_HOME="$HOME/workspace/.hermes_data"
+curl -fsSL https://hermes-workspace.com/install.sh | bash
 cd $HOME/hermes-workspace
 npm install 
-hermes gateway run &
-cp .env.example .env
+#cp .env.example .env
 printf '\nHERMES_API_URL=http://127.0.0.1:8642\n' >> .env
-npm run dev &
+npm run dev 
+) &
 } >"$LOGFILE" 2>&1 &
 pid=$!
 spinner=('⠋' '⠙' '⠹' '⠸' '⠼' '⠴' '⠦' '⠧' '⠇' '⠏')
