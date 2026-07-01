@@ -3,10 +3,8 @@ set -euo pipefail
 LOGFILE="$HOME/workspace/setup.log"
 mkdir -p "$(dirname "$LOGFILE")"
 {
-TOKEN="${GITHUB_TOKEN:-$(cat "$HOME/workspace/credentials/.pat" 2>/dev/null)}" || true
-[[ -z "$TOKEN" ]] && { echo " ERROR: no GitHub token found (set GITHUB_TOKEN secret or write credentials/.pat)"; exit 1; }
-mkdir -p "$HOME/workspace/credentials"
-echo "$TOKEN" > "$HOME/workspace/credentials/.pat"
+TOKEN=$(cat "$HOME/workspace/credentials/.pat" 2>/dev/null) || true
+[[ -z "$TOKEN" ]] && { echo " ERROR: empty .pat"; exit 1; }
 
 export UV_PYTHON_DOWNLOADS=manual
 # 1. Install uv
