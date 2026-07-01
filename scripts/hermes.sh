@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-LOGFILE="$HOME/workspace/.hermes_data/setup.log"
+LOGFILE="$HOME/workspace/setup.log"
 mkdir -p "$(dirname "$LOGFILE")"
 {
 TOKEN=$(cat "$HOME/workspace/credentials/.pat" 2>/dev/null) || true
