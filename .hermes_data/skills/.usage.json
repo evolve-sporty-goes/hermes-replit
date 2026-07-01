@@ -12,6 +12,19 @@
     "use_count": 71,
     "view_count": 71
   },
+  "bash-background-job-patterns": {
+    "archived_at": null,
+    "created_at": "2026-07-01T05:27:17.907410+00:00",
+    "created_by": "agent",
+    "last_patched_at": "2026-07-01T05:27:25.180375+00:00",
+    "last_used_at": null,
+    "last_viewed_at": null,
+    "patch_count": 1,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 0
+  },
   "computer-use": {
     "archived_at": null,
     "created_at": "2026-06-29T12:52:38.203619+00:00",
@@ -69,22 +82,22 @@
     "created_at": "2026-06-28T19:49:40.899043+00:00",
     "created_by": null,
     "last_patched_at": null,
-    "last_used_at": "2026-06-30T20:18:46.305206+00:00",
-    "last_viewed_at": "2026-06-30T20:18:46.302214+00:00",
+    "last_used_at": "2026-07-01T05:27:30.707986+00:00",
+    "last_viewed_at": "2026-07-01T05:27:30.703878+00:00",
     "patch_count": 0,
     "pinned": false,
     "state": "active",
-    "use_count": 13,
-    "view_count": 13
+    "use_count": 14,
+    "view_count": 14
   },
   "hermes-cli-automation": {
     "archived_at": null,
     "created_at": "2026-06-29T04:46:36.485301+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-06-30T04:57:56.491048+00:00",
+    "last_patched_at": "2026-07-01T05:16:20.077193+00:00",
     "last_used_at": "2026-07-01T05:13:36.496921+00:00",
     "last_viewed_at": "2026-07-01T05:13:36.490733+00:00",
-    "patch_count": 31,
+    "patch_count": 34,
     "pinned": false,
     "state": "active",
     "use_count": 21,

@@ -299,6 +299,42 @@ Track restart timestamps in an array, count those within a sliding window (e.g. 
 
 Exit code 0 = clean user quit → no restart. Any other code → restart after delay.
 
+## Silent Setup with Progress Counter (User-Facing Entry Point)
+
+For the main user-facing script (e.g. `scripts/hermes.sh`), the user wants:
+- **All setup output suppressed** — nothing prints during install/clone/venv/pip
+- **Single-line counter** — "installing 1", "installing 2"... updating in place with `\r`
+- **Stops when `hermes` launches** — background subshell `exec`s into hermes, counter exits
+- **Waits for hermes to exit** — script blocks until user quits hermes
+
+Pattern:
+```bash
+# Background subshell runs ALL setup, then exec hermes
+(
+    # ... all setup commands, output redirected to /dev/null ...
+    exec hermes "$@"
+) >/dev/null 2>&1 &
+setup_pid=$!
+
+# Foreground: show counter while background job lives
+i=1
+while kill -0 "$setup_pid" 2>/dev/null; do
+    printf "\rinstalling %d" "$i"
+    i=$((i + 1))
+    sleep 1
+done
+
+wait "$setup_pid"
+```
+
+Key points:
+- `exec hermes` replaces the subshell PID — `kill -0` on that PID returns false, ending the counter
+- All setup output goes to `/dev/null` (the `>/dev/null 2>&1` on the subshell)
+- User sees only the counter, then hermes takes over the terminal
+- When user quits hermes, `wait` returns and script exits
+
+See `references/silent-setup-with-counter.sh` for the complete working script used in this session.
+
 ## Reference
 
 - `references/cloudflare-ai-setup.sh` — single-account script template
@@ -307,3 +343,4 @@ Exit code 0 = clean user quit → no restart. Any other code → restart after d
 - `references/cloudflare-single-file-pool.sh` — single file holding all credential pairs (user's final choice)
 - `references/state-db-corruption-repair.py` — recover from FTS b-tree page corruption when `hermes sessions repair` fails
 - `references/replit-startup-wrapper.sh` — Replit startup wrapper with auto-restart and rate limiting
+- `references/silent-setup-with-counter.sh` — silent background setup with single-line progress counter until hermes launches

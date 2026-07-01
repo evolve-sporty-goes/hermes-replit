@@ -1,12 +1,8 @@
 Obsidian vault (.hermes_data/obsidian-vault or OBSIDIAN_VAULT_PATH): write session notes whenever new info arrives (decisions, preferences, corrections, facts). Check vault FIRST as memory source before answering. Resolve path at session start.
 §
-User prefers file-based token/credential passing. Explicit commands/scripts they execute themselves (terse, no preamble). Firecrawl: prefer CLI over SDK/web_extract.
+User: file-based creds (~/config.py, workspace/credentials/). Terse bash scripts they run themselves — no preamble, no markdown. Unredacted output. Iterates scripts incrementally (counter → spinner). Background silent setup + foreground spinner pattern. Save to workspace/scripts/, chmod +x.
 §
-GitHub org: evolve-sporty-goes. Secrets in private repo hermes-secrets (simplest approach, no git-crypt/SOPS). HTTPS push fails on Replit (askpass bug).
-§
-Sensitive files: bare paths in sensitive.txt, no labels. Hardcoded secrets=sensitive, runtime refs=not, indirect callers=not, emails in code=sensitive, dumps=not. Workspace-only. sync.sh syncs all to hermes-secrets repo.
-§
-User prefers explicit scripts that they will execute themselves. Give file paths + chmod +x + run commands. Wants terse commands only, no preamble.
+Scripts: terse, no preamble, no markdown. Give file path + chmod +x + run command. Short (<50 lines).
 §
 When the user asks to modify Hermes config.yaml, provide the shell commands for them to run rather than editing the file directly — the patch tool blocks writes to the agent's own config. Use heredoc append or hermes config set commands.
 §
