@@ -68,6 +68,8 @@ for attempt in range(15):
     page.wait_for_timeout(1000)
     page.keyboard.type("firecrawl signup", delay=80)
     page.keyboard.press("Enter")
+    page.wait_for_timeout(1000)
+    page.keyboard.press("Escape")
     page.wait_for_timeout(5000)
     items = page.locator(".item-container")
     count = items.count()

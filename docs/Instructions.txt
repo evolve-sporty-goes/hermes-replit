@@ -1,5 +1,5 @@
-CloakBrowser Automation Scripts — Detailed Instructions
-======================================================
+CloakBrowser Automation Scripts — General Flow & Methods
+=========================================================
 
 All scripts use CloakBrowser (anti-detect Chromium) instead of raw Playwright.
 headless=False always (headless=True crashes CloakBrowser on this system).
@@ -21,96 +21,81 @@ RUN ANY SCRIPT WITH:
 (No xvfb-run needed — display server is running)
 
 =================================================================
-SCRIPT: firecrawl_signup.sh
+GENERAL AUTOMATION FLOW (3-STEP PATTERN)
 =================================================================
-Purpose: Firecrawl account signup + email verification + API key extraction
-Output: credentials/firecrawl_credentials.txt
 
-Architecture:
-- Generates ~/fc_signup.py, ~/fc_proton.py, ~/fc_verify.py at runtime
-  (same pattern as email.sh generating ~/duckmail.py)
-- Each .py helper is a standalone CloakBrowser script called via python3
-- Main bash orchestrates the flow with retry logic
+All signup/verification scripts follow this pattern:
 
-STEP-BY-STEP FLOW
------------------
-
-STEP 1: Generate Duck Email + Load Config
-  - Runs: bash scripts/email.sh
-  - Captures email from stdout (last line, whitespace stripped)
-  - Loads PROTON_USER, PROTON_PASS from ~/config.py via importlib
-  - Generates random 16-char password (letters + digits + !@#$%)
-
-STEP 2: Sign Up on Firecrawl (fc_signup.py)
+  STEP 1: SIGNUP (fc_signup.py / or_signup.py)
   - Opens fresh tmpdir browser profile (CloakBrowser, headless=False, humanize=True)
-  - Navigates to https://www.firecrawl.dev/signin
-  - Clicks "Sign Up" tab
-  - Fills email + password
-  - Clicks "Create Account"
-  - Waits 10s, prints resulting URL
-  - Expects redirect to /signin/confirm-email
+  - Navigates to target signup URL
+  - Fills email + generated password
+  - Handles site-specific quirks (Turnstile, Clerk checkboxes, etc.)
+  - Submits form, waits for verification-email-sent state
+  - Prints resulting URL for debugging
 
-STEP 3: Check Proton Mail for Verification Link (fc_proton.py)
-  - Opens persistent profile at ~/proton_profile (headless=False)
-  - Navigates to https://mail.proton.me/u/0/inbox
-  - If redirected to /login, fills credentials and submits
-  - Search loop (up to 15 attempts):
-    - Waits 5s for inbox to load
-    - Presses "/" to open Proton search
-    - Types signup email, presses Enter
-    - Waits 5s for results
-    - If no results: navigates to inbox URL again (page.goto, not reload)
-    - If results found:
-      - Iterates through up to 5 emails (skips already-checked by subject)
-      - Clicks each email, searches frames + links for verify URL
-      - If verify link found: prints VERIFY_URL:<url> and exits
-      - If not found in any: clears checked set, navigates to inbox again
-  - If loop exhausts: prints VERIFY_URL:NOT_FOUND
+  STEP 2: FETCH VERIFICATION LINK (fc_proton.py / or_proton.py)
+  - Opens persistent Proton profile at ~/proton_profile (headless=False)
+  - Navigates to Proton inbox (u/0 or u/1)
+  - Logs in if needed (credentials from ~/config.py)
+  - Search loop (15 attempts, ~5s each):
+    - Press "/" to open search
+    - Type signup email, press Enter
+    - Wait for results
+    - Iterate up to 5 emails (skip already-checked by subject)
+    - Click email, scan frames + links for verify URL matching target domain
+    - If found: print VERIFY_URL:<url> and exit
+    - If not found: clear checked set, reload inbox
+  - If loop exhausts: print VERIFY_URL:NOT_FOUND
 
-STEP 4: Verify Email + Extract API Key (fc_verify.py)
+  STEP 3: VERIFY + EXTRACT CREDENTIAL (fc_verify.py / or_verify.py)
   - Opens fresh tmpdir browser profile
   - Navigates to verify_url (PKCE token link)
   - If new tab opened by redirect, switches to it
-  - Polls for page to land on firecrawl.dev (up to 40 iterations, 2s each)
-  - If lands on /signin or /login:
-    - Fills email + password, clicks "Sign In"
-    - Continues polling
-  - Once on dashboard: navigates to /api-keys
-  - API key extraction (3 methods, tried in order):
-    1. Click eye icon (button:has(.lucide-eye)), read revealed text
-    2. Click eye-off icon (button:has(.lucide-eye-off))
-    3. Click copy button + read clipboard
-    4. HTML regex: scan full page HTML for fc-[a-zA-Z0-9]{20,}
-  - Saves to credentials/firecrawl_credentials.txt
+  - Polls for page to land on target domain (40 iterations, 2s each)
+  - Handles intermediate states:
+    - If lands on /signin or /login: fills credentials, submits, continues polling
+    - If link expired (Clerk status=expired): exits with code 2
+  - Once on dashboard: navigates to API keys page
+  - API key extraction (multiple strategies, tried in order):
+    1. Click reveal button (eye icon), read revealed text
+    2. Click copy button, read clipboard
+    3. Scan page HTML/relevant elements via regex
+  - Saves to credentials/<service>_credentials.txt (EMAIL, PASSWORD, API_KEY)
 
-RETRY LOGIC
------------
-- Main loop: 3 attempts
-- If Step 3 returns NOT_FOUND:
-  - Generates fresh email + password
-  - Restarts from Step 2
+RETRY LOGIC (Main Bash Loop)
+----------------------------
+- 3 attempts maximum
+- On failure at any step: generate fresh email + password, restart from Step 1
+- OpenRouter special case: verification link expiry (exit code 2) triggers immediate retry
 - After 3 failed attempts: prints "FAILED: 3 attempts exhausted"
 
 =================================================================
-SCRIPT: email.sh
+SERVICE-SPECIFIC EXAMPLES
 =================================================================
-Purpose: Generate a Duck Address email via Duck Login API
-Output: prints email to stdout, appends to credentials/mail.txt
 
-Flow:
-  - Checks if cloakbrowser is installed, installs if not
-  - Generates ~/config.py with credential pools (Duck + Proton + Firecrawl)
-  - Generates ~/duckmail.py (CloakBrowser script)
-  - Runs ~/duckmail.py:
-    - Opens Duck login page (ddgeep.vercel.app/login)
-    - Fills Duck username + access token (random pair from config)
-    - Clicks "Generate Private Duck Address"
-    - Reads generated email from page
-    - Prints email to stdout
-  - Appends email to credentials/mail.txt
+--- OpenRouter (openrouter_signup.sh) ---
+Signup URL: https://openrouter.ai/sign-up
+Quirks:
+  - Clerk form: checkbox must be toggled via React fiber onChange (direct click fails)
+  - Turnstile: Cloudflare iframe at ~(478,189) size 300x65, NO visible checkbox
+    - Only CDP-level mouse.click(frame_x+30, frame_y+h/2) works
+    - xdotool & frame.locator.click() FAIL
+  - Verification link: clerk.openrouter.ai/v1/verify?...
+  - Dashboard: https://openrouter.ai/keys (select "Individual" on first visit)
+  - API key format: sk-or-v1-... or sk-... (30+ chars)
+
+--- Firecrawl (firecrawl_signup.sh) ---
+Signup URL: https://www.firecrawl.dev/signin → click "Sign Up" tab
+Quirks:
+  - Standard email/password form (no Clerk/Turnstile)
+  - Verification link: contains "firecrawl" + "verify"
+  - Dashboard: https://www.firecrawl.dev/app → /api-keys
+  - API key format: fc-[a-zA-Z0-9]{20,}
+  - Key reveal: lucide-eye / lucide-eye-off icons, or copy button
 
 =================================================================
-CLOAKBROWSER PATTERNS
+CLOAKBROWSER PATTERNS (Canonical)
 =================================================================
 
 Launch (always use this):
@@ -130,17 +115,47 @@ Key differences from Playwright:
 - No xvfb-run needed (display server running)
 - Stealth is built into the binary (no JS injection needed)
 
+Common Helpers:
+- p.wait_for_timeout(ms) — prefer over time.sleep for page interactions
+- p.evaluate(js) — run JS in page context (React fiber, clipboard, etc.)
+- p.mouse.click(x, y) — CDP-level click (bypasses frame restrictions)
+- frame = p.frames[i] — access iframes (Turnstile, Proton message frames)
+- frame.frame_element().bounding_box() — get iframe screen coords for mouse.click
+
+=================================================================
+EMAIL GENERATION (email.sh)
+=================================================================
+Purpose: Generate a Duck Address email via Duck Login API
+Output: prints email to stdout, appends to credentials/mail.txt
+
+Flow:
+  - Checks if cloakbrowser is installed, installs if not
+  - Generates ~/config.py with credential pools (Duck + Proton + Firecrawl)
+  - Generates ~/duckmail.py (CloakBrowser script)
+  - Runs ~/duckmail.py:
+    - Opens Duck login page (ddgeep.vercel.app/login)
+    - Fills Duck username + access token (random pair from config)
+    - Clicks "Generate Private Duck Address"
+    - Reads generated email from page
+    - Prints email to stdout
+  - Appends email to credentials/mail.txt
+
+config.py structure:
+  PROTON_USERNAME, PROTON_PASSWORD
+  DUCK_CREDENTIALS = [{"username": "...", "access_token": "..."}, ...]
+  FIRECRAWL_CREDENTIALS = []  # populated after successful signup
+
 =================================================================
 TROUBLESHOOTING
 =================================================================
 
 "Missing X server or $DISPLAY":
   - Ensure DISPLAY is exported: export DISPLAY=:1
-  - firecrawl_signup.sh sets this automatically
+  - All scripts set this automatically
 
 "TargetClosedError":
   - Page/tab was closed (common with PKCE verify links)
-  - Scripts now catch this and check for new tabs
+  - Scripts now catch this and check for new tabs (ctx.pages[-1])
 
 Proton not finding email:
   - Email may take 30-60s to arrive
@@ -150,3 +165,9 @@ Proton not finding email:
 Checkbox not registering (Clerk/OpenRouter):
   - Use .check(force=True) instead of .click()
   - JS dispatchEvent doesn't update React/Clerk internal state
+  - Current solution: evaluate() to find React fiber and call onChange directly
+
+Turnstile not solving:
+  - iframe has NO visible checkbox — standard solvers fail
+  - Must use CDP mouse.click at frame center (x+30, y+h/2)
+  - Wait 15s after click for challenge completion

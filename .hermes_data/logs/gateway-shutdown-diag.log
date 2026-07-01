@@ -28,3 +28,26 @@ runner     47615  100  0.0  11204  5644 ?        R    19:33   0:00              
 0.78 0.24 0.32 5/383 47619
 --- recent dmesg (oom/killed) ---
 === end ===
+=== shutdown diagnostic @ SIGINT ===
+--- date ---
+2026-07-01T15:24:29Z
+--- ps auxf (top 60 by cpu) ---
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0 1820456 4436 ?        Ssl  13:11   0:00 /nix/store/45sz521slvpbvcpyzh5qnrw6kx081zfc-pid1-0.0.1/bin/pid0 -vsock-port=2000 -pid2-vsock-port=2001 -host-services-vsock-port=2002 -portauthority-vsock-port=2003 -setup-cgroups=true -manage-pseudo-fs=true -metrics-to-conman=false -pid2-pooling
+runner        13  1.2  0.7 2491244 59752 ?       Ssl  13:11   1:37 /nix/store/45sz521slvpbvcpyzh5qnrw6kx081zfc-pid1-0.0.1/bin/pid1 -vsock-port=2000 -pid2-vsock-port=2001 -host-services-vsock-port=2002 -portauthority-vsock-port=2003 -setup-cgroups=true -manage-pseudo-fs=true -metrics-to-conman=false -pid2-pooling
+runner        25  1.2  4.9 23377400 407856 ?     Sl   13:11   1:37  \_ pid2 --no-deprecation --disable-warning=ExperimentalWarning --use-openssl-ca /mnt/pid2/server.cjs --start-timestamp=1782911476610 --socket-listener-fd=3 --pinger-socket-path=/run/replit/socks/pid2ping.0.sock --pooled-fd=4
+runner     27604  0.0  0.0  10304  6612 pts/3    Ss   15:18   0:00      \_ /nix/store/smkzrg2vvp3lng3hq7v9svfni5mnqjh2-bash-interactive-5.2p37/bin/bash -rcfile /nix/store/lsgsb0ar7rdwa09d1z2dnfjh4188pddk-replit-bashrc/bashrc --rcfile /nix/store/lsgsb0ar7rdwa09d1z2dnfjh4188pddk-replit-bashrc/bashrc
+runner     27633  1.0  1.5 808808 128696 pts/3   Dl+  15:18   0:03      |   \_ /home/runner/hermes-agent/.venv/bin/python -m hermes_cli.main gateway run
+runner     28472  3.7  0.0   8016  2624 ?        Ss   15:24   0:00      |       \_ timeout 5 bash -c echo '=== shutdown diagnostic @ SIGINT ==='; echo '--- date ---'; date -u +%Y-%m-%dT%H:%M:%SZ; echo '--- ps auxf (top 60 by cpu) ---'; ps auxf --sort=-pcpu 2>/dev/null | head -60; echo '--- pstree of self ---'; pstree -plau 27633 2>/dev/null | head -40 || true; echo '--- /proc/loadavg ---'; cat /proc/loadavg 2>/dev/null || true; echo '--- recent dmesg (oom/killed) ---'; dmesg -T 2>/dev/null | tail -20 || journalctl --user -n 20 --no-pager 2>/dev/null | tail -20 || true; echo '=== end ==='
+runner     28473  0.0  0.0   8144  4116 ?        S    15:24   0:00      |           \_ /nix/store/smkzrg2vvp3lng3hq7v9svfni5mnqjh2-bash-interactive-5.2p37/bin/bash -rcfile /nix/store/lsgsb0ar7rdwa09d1z2dnfjh4188pddk-replit-bashrc/bashrc -c echo '=== shutdown diagnostic @ SIGINT ==='; echo '--- date ---'; date -u +%Y-%m-%dT%H:%M:%SZ; echo '--- ps auxf (top 60 by cpu) ---'; ps auxf --sort=-pcpu 2>/dev/null | head -60; echo '--- pstree of self ---'; pstree -plau 27633 2>/dev/null | head -40 || true; echo '--- /proc/loadavg ---'; cat /proc/loadavg 2>/dev/null || true; echo '--- recent dmesg (oom/killed) ---'; dmesg -T 2>/dev/null | tail -20 || journalctl --user -n 20 --no-pager 2>/dev/null | tail -20 || true; echo '=== end ==='
+runner     28475 27.7  0.0  12696  7212 ?        R    15:24   0:00      |               \_ ps auxf --sort=-pcpu
+runner     24556  0.0  0.0  11092  7328 pts/1    Ss   14:53   0:00      \_ /nix/store/smkzrg2vvp3lng3hq7v9svfni5mnqjh2-bash-interactive-5.2p37/bin/bash -rcfile /nix/store/lsgsb0ar7rdwa09d1z2dnfjh4188pddk-replit-bashrc/bashrc --rcfile /nix/store/lsgsb0ar7rdwa09d1z2dnfjh4188pddk-replit-bashrc/bashrc
+runner     26262  0.0  0.9 1520916 77908 pts/1   Sl+  15:05   0:00          \_ npm run dev
+runner     26273  0.0  0.0   2988   956 pts/1    S+   15:05   0:00              \_ sh -c vite dev
+runner     26274  3.7  7.3 28537696 595728 pts/1 Sl+  15:05   0:41                  \_ node /home/runner/hermes-workspace/node_modules/.bin/vite dev
+runner     26281  1.1  0.5 2039344 41176 pts/1   Sl+  15:05   0:13                      \_ /home/runner/hermes-workspace/node_modules/@esbuild/linux-x64/bin/esbuild --service=0.27.7 --ping
+--- pstree of self ---
+--- /proc/loadavg ---
+0.07 0.10 0.30 1/501 28479
+--- recent dmesg (oom/killed) ---
+=== end ===

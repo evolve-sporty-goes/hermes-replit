@@ -12,9 +12,12 @@ command -v uv >/dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # 2. Clone or update hermes-agent
 if [ ! -d "$HOME/hermes-agent" ]; then
+    git clone https://github.com/outsourc-e/hermes-workspace.git "$HOME/hermes-workspace" &
     git clone https://github.com/NousResearch/hermes-agent.git "$HOME/hermes-agent"
+    
 else
     git -C "$HOME/hermes-agent" pull
+    git -C "$HOME/hermes-workspace" pull
 fi
 
 # 3. Create venv + install deps
@@ -59,6 +62,12 @@ hermes config set model.provider  openrouter
 hermes config set model.default  nvidia/nemotron-3-ultra-550b-a55b:free
 hermes config set fallback_model.provider kilo-code
 hermes config set fallback_model.model kilo-auto/free
+cd $HOME/hermes-workspace
+npm install 
+hermes gateway run &
+cp .env.example .env
+printf '\nHERMES_API_URL=http://127.0.0.1:8642\n' >> .env
+npm run dev &
 } >"$LOGFILE" 2>&1 &
 pid=$!
 spinner=('⠋' '⠙' '⠹' '⠸' '⠼' '⠴' '⠦' '⠧' '⠇' '⠏')
@@ -69,4 +78,6 @@ while kill -0 "$pid" 2>/dev/null; do
     sleep 0.1
 done
 wait "$pid"
+
 hermes
+

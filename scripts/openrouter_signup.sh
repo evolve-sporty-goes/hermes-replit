@@ -139,12 +139,14 @@ def find_verify():
 
 checked = set()
 for attempt in range(15):
-    page.wait_for_timeout(10000)
+    page.wait_for_timeout(15000)
 
     page.keyboard.press("/")
     page.wait_for_timeout(1000)
     page.keyboard.type("openrouter sign up", delay=80)
     page.keyboard.press("Enter")
+    page.wait_for_timeout(1000)
+    page.keyboard.press("Escape")
     page.wait_for_timeout(5000)
 
     items = page.locator(".item-container")
@@ -251,7 +253,7 @@ for ATTEMPT in 1 2 3; do
   if [ $? -ne 0 ]; then echo "Signup failed, retrying..."; continue; fi
 
   echo "=== Step 2: Check inbox ==="
-  VURL=$(python3 ~/or_proton.py "$PROTON_USER" "$PROTON_PASS" "$EMAIL" ~/proton_profile 2>&1 | grep '^VERIFY_URL:' | head -1 | cut -d: -f2-)
+  VURL=$(python3 ~/or_proton.py "$PROTON_USER" "$PROTON_PASS" "$EMAIL" "$PROTON_PROFILE" 2>&1 | grep '^VERIFY_URL:' | head -1 | cut -d: -f2-)
   echo "  Link: ${VURL:0:80}..."
   if [ -z "$VURL" ] || [ "$VURL" = "NOT_FOUND" ]; then echo "Not found, retrying..."; continue; fi
 
