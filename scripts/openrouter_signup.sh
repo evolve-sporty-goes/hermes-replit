@@ -143,7 +143,7 @@ for attempt in range(15):
 
     page.keyboard.press("/")
     page.wait_for_timeout(1000)
-    page.keyboard.type("openrouter", delay=80)
+    page.keyboard.type("openrouter sign up", delay=80)
     page.keyboard.press("Enter")
     page.wait_for_timeout(5000)
 
