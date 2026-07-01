@@ -391,3 +391,28 @@
 06:28:08 interrupt fired: msg='maybe ii does not know ~/workspace/.hermes_data is home for ', children=0, parent._interrupt=True
 06:43:01 interrupt fired: msg='warkspace/install.sh', children=0, parent._interrupt=True
 06:43:01 ENTER: queued interrupt msg='warkspace/install.sh', agent_running=True
+12:39:49 ENTER: queued interrupt msg='"data": {', agent_running=True
+12:39:49 interrupt fired: msg='"data": {', children=0, parent._interrupt=True
+12:39:49 ENTER: queued interrupt msg='"label": "sk-or-v1-828...cd0",', agent_running=True
+12:39:49 ENTER: queued interrupt msg='"is_management_key": false,', agent_running=True
+12:39:49 ENTER: queued interrupt msg='"is_provisioning_key": false,', agent_running=True
+12:39:49 ENTER: queued interrupt msg='"limit": null,', agent_running=True
+12:39:49 ENTER: queued interrupt msg='"limit_reset": null,', agent_running=True
+12:39:49 ENTER: queued interrupt msg='"limit_remaining": null,', agent_running=True
+12:39:49 ENTER: queued interrupt msg='"include_byok_in_limit": false,', agent_running=True
+12:39:49 ENTER: queued interrupt msg='"usage": 0,', agent_running=True
+12:39:49 ENTER: queued interrupt msg='"usage_daily": 0,', agent_running=True
+12:39:49 ENTER: queued interrupt msg='"usage_weekly": 0,', agent_running=True
+12:39:49 ENTER: queued interrupt msg='"usage_monthly": 0,', agent_running=True
+12:39:49 ENTER: queued interrupt msg='"byok_usage": 0,', agent_running=True
+12:39:50 ENTER: queued interrupt msg='"byok_usage_daily": 0,', agent_running=True
+12:39:50 ENTER: queued interrupt msg='"byok_usage_weekly": 0,', agent_running=True
+12:39:50 ENTER: queued interrupt msg='"byok_usage_monthly": 0,', agent_running=True
+12:39:50 ENTER: queued interrupt msg='"is_free_tier": true,', agent_running=True
+12:39:50 ENTER: queued interrupt msg='"expires_at": null,', agent_running=True
+12:39:50 ENTER: queued interrupt msg='"creator_user_id": "user_3FswnK3gkakxWkSi8Q9QXtRYJQy",', agent_running=True
+12:39:50 ENTER: queued interrupt msg='"rate_limit": {', agent_running=True
+12:39:50 ENTER: queued interrupt msg='"requests": -1,', agent_running=True
+12:39:50 ENTER: queued interrupt msg='"interval": "10s",', agent_running=False
+12:40:34 ENTER: queued interrupt msg='i want just usage output', agent_running=True
+12:40:34 interrupt fired: msg='i want just usage output', children=0, parent._interrupt=True

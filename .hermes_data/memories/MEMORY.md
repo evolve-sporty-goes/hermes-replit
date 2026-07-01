@@ -1,6 +1,6 @@
 Obsidian vault (.hermes_data/obsidian-vault or OBSIDIAN_VAULT_PATH): write session notes whenever new info arrives (decisions, preferences, corrections, facts). Check vault FIRST as memory source before answering. Resolve path at session start.
 §
-User: file-based creds (~/config.py, workspace/credentials/). Terse bash scripts they run themselves — no preamble, no markdown. Unredacted output. Iterates scripts incrementally (counter → spinner). Background silent setup + foreground spinner pattern. Save to workspace/scripts/, chmod +x.
+User: file-based creds (~/config.py, workspace/credentials/). Terse bash scripts they run themselves — no preamble, no markdown. Unredacted output. Iterates scripts incrementally (counter → spinner → one-liner). Background silent setup + foreground spinner pattern. Save to workspace/scripts/, chmod +x.
 §
 When the user asks to modify Hermes config.yaml, provide the shell commands for them to run rather than editing the file directly — the patch tool blocks writes to the agent's own config. Use heredoc append or hermes config set commands.
 §
