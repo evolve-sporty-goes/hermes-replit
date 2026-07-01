@@ -6039,3 +6039,166 @@ Just generate code. Dont do anything
   → `copilot login` or `hermes model` to authenticate via OAuth
   → A fine-grained PAT (github_pat_*) with Copilot Requests permission
   → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-01 13:52:46,264 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-07-01 13:52:46,265 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-07-01 13:52:46,266 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-07-01 13:52:46,365 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-07-01 13:52:46,366 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-07-01 13:52:46,366 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-07-01 13:52:46,367 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-07-01 13:52:46,368 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-07-01 13:52:46,368 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-07-01 13:52:46,369 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-07-01 13:52:46,397 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-07-01 13:52:46,398 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-07-01 13:52:46,401 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-07-01 13:52:46,406 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-07-01 13:52:46,406 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-07-01 13:52:46,408 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-07-01 13:52:46,409 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-07-01 13:52:46,411 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-07-01 13:52:46,412 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-07-01 13:52:46,414 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-07-01 13:52:46,429 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-07-01 13:52:48,128 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,143 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,223 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 13:52:48,223 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:53:48.
+2026-07-01 13:52:48,233 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 13:52:48,233 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:53:48.
+2026-07-01 13:52:48,233 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,233 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,251 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,368 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-01 13:52:48,386 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,389 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,389 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,705 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 13:52:48,705 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:53:48.
+2026-07-01 13:52:48,716 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 13:52:48,716 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 13:53:48.
+2026-07-01 13:52:48,716 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,728 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,729 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,729 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,755 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,755 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,756 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,767 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,769 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:48,775 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 13:52:49,808 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-01 13:52:50,193 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-01 13:52:50,522 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-01 14:02:18,610 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-07-01 14:02:18,612 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-07-01 14:02:18,613 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-07-01 14:02:18,812 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-07-01 14:02:18,818 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-07-01 14:02:18,821 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-07-01 14:02:18,822 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-07-01 14:02:18,825 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-07-01 14:02:18,825 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-07-01 14:02:18,826 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-07-01 14:02:18,866 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-07-01 14:02:18,866 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-07-01 14:02:18,867 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-07-01 14:02:18,868 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-07-01 14:02:18,869 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-07-01 14:02:18,873 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-07-01 14:02:18,874 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-07-01 14:02:18,874 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-07-01 14:02:18,875 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-07-01 14:02:18,876 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-07-01 14:02:18,888 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-07-01 14:02:21,406 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:21,624 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:22,487 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 14:02:22,503 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:03:22.
+2026-07-01 14:02:22,564 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 14:02:22,564 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:03:22.
+2026-07-01 14:02:22,564 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:22,565 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:22,694 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:22,944 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-01 14:02:22,982 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:22,994 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:22,995 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:23,654 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 14:02:23,654 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:03:23.
+2026-07-01 14:02:23,669 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 14:02:23,669 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:03:23.
+2026-07-01 14:02:23,673 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:23,733 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:23,734 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:23,734 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:23,779 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:23,779 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:23,780 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:23,810 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:23,812 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:23,826 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:23,863 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-01 14:02:24,701 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-01 14:02:25,587 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-01 14:02:47,572 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-07-01 14:02:47,577 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-07-01 14:02:47,578 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-07-01 14:02:47,797 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-07-01 14:02:47,798 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-07-01 14:02:47,801 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-07-01 14:02:47,802 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-07-01 14:02:47,802 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-07-01 14:02:47,802 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-07-01 14:02:47,805 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-07-01 14:02:47,856 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-07-01 14:02:47,858 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-07-01 14:02:47,865 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-07-01 14:02:47,866 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-07-01 14:02:47,867 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-07-01 14:02:47,871 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-07-01 14:02:47,874 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-07-01 14:02:47,875 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-07-01 14:02:47,877 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-07-01 14:02:47,878 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-07-01 14:02:47,912 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-07-01 14:02:49,517 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:49,541 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:49,647 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 14:02:49,648 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:03:49.
+2026-07-01 14:02:49,686 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 14:02:49,686 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:03:49.
+2026-07-01 14:02:49,687 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:49,687 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:49,690 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:49,803 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-01 14:02:49,828 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:49,834 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:49,835 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:50,023 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 14:02:50,023 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:03:50.
+2026-07-01 14:02:50,074 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 14:02:50,074 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 14:03:50.
+2026-07-01 14:02:50,074 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:50,104 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:50,105 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:50,105 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:50,121 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:50,121 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:50,122 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:50,167 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:50,175 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:50,203 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 14:02:50,829 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider

@@ -63,7 +63,7 @@ def find_verify():
     return None
 checked = set()
 for attempt in range(15):
-    page.wait_for_timeout(5000)
+    page.wait_for_timeout(10000)
     page.keyboard.press("/")
     page.wait_for_timeout(1000)
     page.keyboard.type("firecrawl signup", delay=80)
