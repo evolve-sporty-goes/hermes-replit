@@ -371,20 +371,74 @@
 },
 "~anthropic/claude-fable-latest":{
 "context_length":1000000,
-"max_completion_tokens":null,
+"max_completion_tokens":128000,
 "name":"Anthropic: Claude Fable Latest",
 "pricing":{
-"prompt":"-1",
-"completion":"-1"
+"prompt":"0.00001",
+"completion":"0.00005",
+"web_search":"0.01",
+"input_cache_read":"0.000001",
+"input_cache_write":"0.0000125"
 }
 },
 "claude-fable-latest":{
 "context_length":1000000,
-"max_completion_tokens":null,
+"max_completion_tokens":128000,
 "name":"Anthropic: Claude Fable Latest",
 "pricing":{
-"prompt":"-1",
-"completion":"-1"
+"prompt":"0.00001",
+"completion":"0.00005",
+"web_search":"0.01",
+"input_cache_read":"0.000001",
+"input_cache_write":"0.0000125"
+}
+},
+"anthropic/claude-fable-5":{
+"context_length":1000000,
+"max_completion_tokens":128000,
+"name":"Anthropic: Claude Fable 5",
+"pricing":{
+"prompt":"0.00001",
+"completion":"0.00005",
+"web_search":"0.01",
+"input_cache_read":"0.000001",
+"input_cache_write":"0.0000125"
+}
+},
+"claude-fable-5":{
+"context_length":1000000,
+"max_completion_tokens":128000,
+"name":"Anthropic: Claude Fable 5",
+"pricing":{
+"prompt":"0.00001",
+"completion":"0.00005",
+"web_search":"0.01",
+"input_cache_read":"0.000001",
+"input_cache_write":"0.0000125"
+}
+},
+"anthropic/claude-5-fable-20260609":{
+"context_length":1000000,
+"max_completion_tokens":128000,
+"name":"Anthropic: Claude Fable 5",
+"pricing":{
+"prompt":"0.00001",
+"completion":"0.00005",
+"web_search":"0.01",
+"input_cache_read":"0.000001",
+"input_cache_write":"0.0000125"
+}
+},
+"claude-5-fable-20260609":{
+"context_length":1000000,
+"max_completion_tokens":128000,
+"name":"Anthropic: Claude Fable 5",
+"pricing":{
+"prompt":"0.00001",
+"completion":"0.00005",
+"web_search":"0.01",
+"input_cache_read":"0.000001",
+"input_cache_write":"0.0000125"
 }
 },
 "nex-agi/nex-n2-pro":{
@@ -8355,8 +8409,8 @@
 "max_completion_tokens":16384,
 "name":"DeepSeek: DeepSeek V3 0324",
 "pricing":{
-"prompt":"0.0000002",
-"completion":"0.00000077",
+"prompt":"0.00000024",
+"completion":"0.0000009",
 "input_cache_read":"0.000000135"
 }
 },
@@ -8365,8 +8419,8 @@
 "max_completion_tokens":16384,
 "name":"DeepSeek: DeepSeek V3 0324",
 "pricing":{
-"prompt":"0.0000002",
-"completion":"0.00000077",
+"prompt":"0.00000024",
+"completion":"0.0000009",
 "input_cache_read":"0.000000135"
 }
 },

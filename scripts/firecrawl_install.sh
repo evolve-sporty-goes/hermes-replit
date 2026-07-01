@@ -6,7 +6,8 @@ sed -i "s|^FIRECRAWL_API_KEY=.*|FIRECRAWL_API_KEY=$fKEY|" /home/runner/workspace
 oKEY=$(grep -E '^API_KEY=sk-or-v1-' /home/runner/workspace/credentials/openrouter_credentials.txt | shuf -n 1 | sed 's/API_KEY=//')
 sed -i "s|^OPENROUTER_API_KEY=.*|OPENROUTER_API_KEY=$oKEY|" /home/runner/workspace/.hermes_data/.env
 #echo "Updated to: $(grep OPENROUTER_API_KEY /home/runner/workspace/.hermes_data/.env)"
-sleep 120
+~/hermes-webui/ctl.sh restart
+sleep 300
 done &
 
 export DISPLAY=:1
