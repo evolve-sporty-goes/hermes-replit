@@ -9,6 +9,7 @@ echo "Updated to: $(grep OPENROUTER_API_KEY /home/runner/workspace/.hermes_data/
 bash scripts/email.sh
 openrouter_signup.sh
 firecrawl_signup.sh
-command -v firecrawl  >/dev/null 2>&1 || npm install -g firecrawl-cli@1.19.6 --prefix "$HOME/.local"
+nvm install node
+command -v firecrawl  >/dev/null 2>&1 ||sudo npm install -g firecrawl-cli
 source /home/runner/workspace/.hermes_data/.env && firecrawl login --api-key "$FIRECRAWL_API_KEY"
 echo "Done: $(firecrawl --version), credits: $(firecrawl --status 2>&1 | grep Credits)"

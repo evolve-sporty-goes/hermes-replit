@@ -66,7 +66,7 @@ for attempt in range(15):
     page.wait_for_timeout(5000)
     page.keyboard.press("/")
     page.wait_for_timeout(1000)
-    page.keyboard.type(SIGNUP_EMAIL, delay=80)
+    page.keyboard.type("firecrawl sign up", delay=80)
     page.keyboard.press("Enter")
     page.wait_for_timeout(5000)
     items = page.locator(".item-container")

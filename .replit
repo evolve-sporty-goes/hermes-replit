@@ -1,4 +1,4 @@
-modules = ["python-3.12", "web", "bash", "nodejs_24"]
+modules = ["python-3.12", "web", "bash", "nodejs_24", "nodejs-24"]
 onBoot = { args = ["bash ~/workspace/scripts/hermes.sh"] }
 [agent]
 expertMode = true

@@ -206,6 +206,8 @@ for i in range(60):
 
     # Route 1: Onboarding / Select Individual
     if "sign-up/verify" in url or "onboarding" in url:
+        p.goto("https://openrouter.ai/keys")
+        p.wait_for_timeout(3000)
         for sel in ["button:has-text('Individual')", "div[role='button']:has-text('Individual')"]:
             try: p.locator(sel).first.click(); break
             except: pass
