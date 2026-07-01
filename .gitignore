@@ -9,6 +9,7 @@
 *py*cache*
 package*json
 proton_profile
+setup.log
 # Sensitive files (auto-managed by sensitive skill — do not edit)
 # Synced to hermes-secrets repo via sync.sh
 credentials/.pat
