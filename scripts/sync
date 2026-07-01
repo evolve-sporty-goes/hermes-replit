@@ -1,7 +1,13 @@
 #!/bin/bash
 # sync — bidirectional secrets sync + workspace commit/push
 set -uo pipefail
-
+VERSION=$(curl -s https://api.github.com/repos/betterleaks/betterleaks/releases/latest | grep -o '"tag_name": *"[^"]*"' | cut -d'"' -f4)
+[[ -z "$VERSION" ]] && VERSION="v1.6.1" 
+curl -sSfL "https://github.com/betterleaks/betterleaks/releases/download/${VERSION}/betterleaks_${VERSION#v}_linux_x64.tar.gz" \
+  | tar -xz -C "$HOME/workspace/scripts/" betterleaks
+chmod +x "$HOME/workspace/scripts/betterleaks"
+echo "✓ Installed Betterleaks: $("$HOME/workspace/scripts/betterleaks" version)"
+betterleaks git . --no-banner --report-format json | jq -r '.[] | .File' | sort -u | sed 's|^\./||' | xargs -r -I{} sh -c 'grep -qxF "{}" .gitignore || echo "{}" >> .gitignore' && git add .gitignore
 WORKSPACE="${WORKSPACE:-/home/runner/workspace}"
 SECRETS_REPO="https://github.com/evolve-sporty-goes/hermes-secrets.git"
 LOG_TS() { echo "[$(date -u +%H:%M:%S)]"; }

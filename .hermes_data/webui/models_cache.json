@@ -3,12 +3,12 @@
   "_source_fingerprint": {
     "config_yaml": {
       "path": "/home/runner/workspace/.hermes_data/config.yaml",
-      "mtime_ns": 1782892483477268867,
-      "size": 142
+      "mtime_ns": 1782893774182552065,
+      "size": 1021
     },
     "auth_json": {
       "path": "/home/runner/workspace/.hermes_data/auth.json",
-      "semantic_sha256": "6afae1632311bf662f5080bd1c458260474f92571633fd8071f1baa696459bea"
+      "semantic_sha256": "847116a719fa3c79acb26b3e10d979161fb4f0dbe544f6833e7c8660847f95e4"
     },
     "catalog": {
       "provider_catalog_sha256": "c78b4580f32777a81923975cb53e8b76f43c14a51cb5c95ea1b222150d670f8d",
@@ -1628,5 +1628,5 @@
       ]
     }
   ],
-  "_webui_version": "v0.51.792"
+  "_webui_version": "v0.51.792-1-g66851eac"
 }

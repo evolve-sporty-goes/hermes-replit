@@ -77,6 +77,15 @@ Created `workspace/scripts/hermes.sh` using this pattern:
 - Spinner runs until `exec hermes` replaces the subshell
 - Script waits for hermes to exit
 
+Created `scripts/betterleaks-gitignore.sh` for secret scanning + auto-gitignore:
+```bash
+betterleaks git . --no-banner --report-format json \
+  | jq -r '.[] | .File' | sort -u | sed 's|^\./||' \
+  | xargs -r -I{} sh -c 'grep -qxF "{}" .gitignore || echo "{}" >> .gitignore' \
+  && git add .gitignore
+```
+
 ## References
 
 - `references/hermes-setup-spinner.sh` — the concrete script from this session
+- `references/betterleaks-gitignore.sh` — secret scan + auto-gitignore pattern

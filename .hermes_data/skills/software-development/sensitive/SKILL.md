@@ -24,6 +24,23 @@ Scan all files and folders within the user's active workspace for secrets, token
 
 Run a comprehensive scan across the entire workspace (excluding `.git/`, `.cache/`, `.local/`, `.pythonlibs/`, `.config/`, and similar system directories):
 
+**Primary: gitleaks (recommended)**
+```bash
+# Install gitleaks if not present
+curl -sSfL https://github.com/gitleaks/gitleaks/releases/download/v8.21.0/gitleaks_8.21.0_linux_x64.tar.gz | tar -xz -C ~/.local/bin/ gitleaks
+chmod +x ~/.local/bin/gitleaks
+
+# Scan entire repo (history + working dir)
+gitleaks detect --source /home/runner/workspace --verbose
+
+# Scan working directory only (no history)
+gitleaks detect --source /home/runner/workspace --no-git
+
+# Scan specific files/dirs
+gitleaks detect --source /home/runner/workspace/path/to/file
+```
+
+**Fallback: grep patterns (if gitleaks unavailable)**
 ```bash
 # Find files matching common secret patterns by name
 find /home/runner/workspace \
@@ -156,6 +173,7 @@ done < <(sed -n '/^# Sensitive/,/^[^#]/p' /home/runner/workspace/.gitignore | gr
 - Exclude `*.log`, `*.lock`, `*_check`, `auth.json.corrupt`
 - **`.hermes_data/config.yaml`** — Hermes config may contain API keys set via `hermes config set`. Include in sensitive block if it contains literal credentials (cloudflare.apiKey, etc.)
 - **`.hermes_data/webui/sessions/`** — session logs capture ALL conversation content including secrets mentioned in chat. Always include the directory in `.gitignore` sensitive block
+- **gitleaks vs betterleaks** — betterleaks (github.com/betterleaks/betterleaks) is a faster, modern Rust rewrite with built-in validation. Use `betterleaks git --source .` for repo scan, `betterleaks git --source . --staged` for pre-commit. Both support gitleaks config (`.gitleaks.toml` / `.betterleaks.toml`)
 
 ## Handling Already-Tracked Files
 
