@@ -3,12 +3,12 @@
   "_source_fingerprint": {
     "config_yaml": {
       "path": "/home/runner/workspace/.hermes_data/config.yaml",
-      "mtime_ns": 1782921780180660700,
+      "mtime_ns": 1782932776857902119,
       "size": 490
     },
     "auth_json": {
       "path": "/home/runner/workspace/.hermes_data/auth.json",
-      "semantic_sha256": "7d25a4e81006f4645c68a674e69701b1b103a4c16d7670841a9a2d02cc505c7a"
+      "semantic_sha256": "9ed7be9452e2d4cf8ec148fba075a3020ad0aa630908fb710d651a6c4dd83a9d"
     },
     "catalog": {
       "provider_catalog_sha256": "c78b4580f32777a81923975cb53e8b76f43c14a51cb5c95ea1b222150d670f8d",
@@ -362,10 +362,6 @@
         {
           "id": "~anthropic/claude-fable-latest",
           "label": "Claude Fable Latest"
-        },
-        {
-          "id": "anthropic/claude-fable-5",
-          "label": "Claude Fable 5"
         },
         {
           "id": "nex-agi/nex-n2-pro",
@@ -1636,5 +1632,5 @@
       ]
     }
   ],
-  "_webui_version": "v0.51.793"
+  "_webui_version": "v0.51.801"
 }
