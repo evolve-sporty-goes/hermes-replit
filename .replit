@@ -1,5 +1,5 @@
 modules = ["python-3.12", "web", "bash", "nodejs_24"]
-
+onBoot = { args = ["bash ~/workspace/scripts/hermes.sh"] }
 [agent]
 expertMode = true
 stack = "BEST_EFFORT_FALLBACK"
@@ -20,7 +20,7 @@ mode = "parallel"
 author = "agent"
 
 [workflows.workflow.metadata]
-outputType = "console"
+outputType = "webview"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"

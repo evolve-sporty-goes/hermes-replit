@@ -7945,3 +7945,31 @@ openai.RateLimitError: Error code: 429 - {'errors': [{'message': "AiError: AiErr
 2026-06-30 20:38:24,638 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
 2026-06-30 20:38:24,640 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
 2026-06-30 20:38:24,652 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:23,561 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:23,567 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,004 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 03:26:24,004 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 03:27:24.
+2026-07-01 03:26:24,018 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 03:26:24,018 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 03:27:24.
+2026-07-01 03:26:24,018 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,018 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,035 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,104 WARNING tools.registry: check_fn check_image_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,105 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,105 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,106 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,497 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 03:26:24,498 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 03:27:24.
+2026-07-01 03:26:24,516 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-01 03:26:24,517 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 03:27:24.
+2026-07-01 03:26:24,517 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,521 WARNING tools.registry: check_fn check_web_api_key returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,756 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,756 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,756 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,826 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,826 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,827 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,833 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,834 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-07-01 03:26:24,839 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
