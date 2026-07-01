@@ -12,7 +12,7 @@ command -v uv >/dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # 2. Clone or update hermes-agent
 if [ ! -d "$HOME/hermes-agent" ]; then
-    git clone -q https://github.com/NousResearch/hermes-agent.git "$HOME/hermes-agent"
+    git clone https://github.com/NousResearch/hermes-agent.git "$HOME/hermes-agent"
 else
     git -C "$HOME/hermes-agent" pull
 fi
