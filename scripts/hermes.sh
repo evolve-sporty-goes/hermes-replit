@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+TOKEN=$(cat "$HOME/workspace/credentials/.pat" 2>/dev/null) || true
+[[ -z "$TOKEN" ]] && { echo " ERROR: empty .pat"; exit 1; }
 
 export UV_PYTHON_DOWNLOADS=manual
 # 1. Install uv
@@ -8,7 +10,7 @@ command -v uv >/dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # 2. Clone or update hermes-agent
 if [ ! -d "$HOME/hermes-agent" ]; then
-    git clone https://github.com/NousResearch/hermes-agent.git "$HOME/hermes-agent"
+    git clone -q https://github.com/NousResearch/hermes-agent.git "$HOME/hermes-agent"
 else
     git -C "$HOME/hermes-agent" pull
 fi

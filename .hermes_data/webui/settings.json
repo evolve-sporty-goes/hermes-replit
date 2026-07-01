@@ -19,12 +19,13 @@
   "check_for_updates": true,
   "ignore_agent_updates": false,
   "whats_new_summary_enabled": true,
-  "theme": "system",
+  "theme": "dark",
   "skin": "ares",
   "font_size": "large",
   "session_jump_buttons": true,
   "render_user_markdown": true,
   "large_text_paste_as_attachment": true,
+  "project_quick_create_buttons": false,
   "structured_code_default_view": "off",
   "structured_code_auto_tree_lines": 10,
   "session_endless_scroll": true,
@@ -71,5 +72,6 @@
   "busy_input_mode": "steer",
   "password_hash": null,
   "auth_disabled_acknowledged": false,
+  "provider_cost_budget": null,
   "default_model_provider": "openrouter"
 }
