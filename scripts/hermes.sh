@@ -60,4 +60,13 @@ hermes config set model.default  nvidia/nemotron-3-ultra-550b-a55b:free
 hermes config set fallback_model.provider kilo-code
 hermes config set fallback_model.model kilo-auto/free
 } >"$LOGFILE" 2>&1 &
+pid=$!
+spinner=('⠋' '⠙' '⠹' '⠸' '⠼' '⠴' '⠦' '⠧' '⠇' '⠏')
+i=0
+while kill -0 "$pid" 2>/dev/null; do
+    printf "\r${spinner[i%10]}"
+    i=$((i+1))
+    sleep 0.1
+done
+wait "$pid"
 hermes
