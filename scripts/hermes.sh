@@ -55,8 +55,8 @@ chmod +x $BIN/*
 
 script.sh >/dev/null 2>&1 &
 sync || true &
-#change-model
-cfapi.sh &
+change-model &
+#cfapi.sh &
 #firecrawl_install.sh &
 } >"$LOGFILE" 2>&1 &
 pid=$!

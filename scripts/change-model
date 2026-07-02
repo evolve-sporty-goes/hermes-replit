@@ -41,7 +41,7 @@ LOG="$LOG_DIR/agent.log"
 PIDFILE="/tmp/hermes-watcher.pid"
 
 [[ -f "$PIDFILE" ]] && { kill "$(cat "$PIDFILE")" 2>/dev/null || true; sleep 0.5; rm -f "$PIDFILE"; }
-
+rm -rf "$LOG_DIR"
 mkdir -p "$LOG_DIR"
 > "$LOG"
 
