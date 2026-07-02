@@ -1132,3 +1132,13 @@
       "content": "[Skip to content](
 2026-07-02 09:16:45,649 WARNING [20260702_074732_e9e96f] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-211 (run_agent):140281369306816 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream idle timeout exceeded
 2026-07-02 09:16:45,651 WARNING [20260702_074732_e9e96f] agent.conversation_loop: Retrying API call in 2.1742149242773308s (attempt 1/3) thread=Thread-211 (run_agent):140281369306816 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream idle timeout exceeded
+2026-07-02 09:19:15,176 WARNING [20260702_074732_e9e96f] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIError thread=Thread-211 (run_agent):140281369306816 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream idle timeout exceeded
+2026-07-02 09:19:15,177 WARNING [20260702_074732_e9e96f] agent.conversation_loop: Retrying API call in 5.380633985738294s (attempt 2/3) thread=Thread-211 (run_agent):140281369306816 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream idle timeout exceeded
+2026-07-02 09:21:27,967 WARNING [20260702_074732_e9e96f] agent.conversation_loop: API call failed (attempt 3/3) error_type=APIError thread=Thread-211 (run_agent):140281369306816 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream idle timeout exceeded
+2026-07-02 09:21:27,982 WARNING [20260702_074732_e9e96f] hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:21:27,982 WARNING [20260702_074732_e9e96f] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 09:21:27,991 ERROR [20260702_074732_e9e96f] agent.conversation_loop: API call failed after 3 retries. Upstream idle timeout exceeded | provider=openrouter model=nvidia/nemotron-3-ultra-550b-a55b:free msgs=30 tokens=~20,887
+2026-07-02 09:26:52,690 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)

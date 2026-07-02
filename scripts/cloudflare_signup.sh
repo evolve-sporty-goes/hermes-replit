@@ -16,7 +16,7 @@ EMAIL=$(bash scripts/email.sh 2>/dev/null | tail -1 | tr -d '[:space:]')
 source <(python3 -c "import importlib.util; s=importlib.util.spec_from_file_location('c','$HOME/config.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); print(f'export PROTON_USER={m.PROTON_USERNAME}'); print(f'export PROTON_PASS={m.PROTON_PASSWORD}')")
 PASSWORD=$(python3 -c "import secrets,string; c=string.ascii_letters+string.digits+'!@#%'; print(secrets.choice(string.ascii_letters)+secrets.choice(string.digits)+secrets.choice('!@#%')+''.join(secrets.choice(c) for _ in range(12)))")
 echo "Email: $EMAIL"
-rm -rf "$OR_PROFILE" && mkdir -p "$OR_PROFILE"
+rm -rf "$CF_PROFILE" && mkdir -p "$CF_PROFILE"
 
 # ── STEP 1: Signup ──────────────────────────────────────────────
 cat > ~/or_signup.py << 'PY'
@@ -27,7 +27,7 @@ email, password, profile = sys.argv[1], sys.argv[2], sys.argv[3]
 ctx = launch_persistent_context(profile, headless=False, humanize=True,
     args=["--enable-blink-features=FakeShadowRoot"])
 p = ctx.pages[0] if ctx.pages else ctx.new_page()
-p.goto("https://openrouter.ai/sign-up", timeout=60000, wait_until="domcontentloaded")
+p.goto("https://dash.cloudflare.com/sign-up", timeout=60000, wait_until="domcontentloaded")
 p.wait_for_timeout(4000)
 # Fill form
 p.locator("#emailAddress-field").click()
@@ -36,27 +36,10 @@ p.wait_for_timeout(300)
 p.locator("#password-field").click()
 p.locator("#password-field").type(password, delay=50)
 p.wait_for_timeout(300)
-
-# Checkbox via React fiber
-p.evaluate("""() => {
-    const el = document.querySelector('#legalAccepted-field');
-    if (!el) return;
-    const fk = Object.keys(el).find(k => k.startsWith('__reactFiber$'));
-    if (!fk) return;
-    let f = el[fk];
-    for (let i = 0; i < 30; i++) {
-        if (f?.memoizedProps?.onChange) {
-            f.memoizedProps.onChange({target:{checked:true},currentTarget:{checked:true},
-                nativeEvent:new Event('change'),type:'change',preventDefault(){},stopPropagation(){},persist(){}});
-            break;
-        }
-        f = f.return;
-    }
-}""")
 p.wait_for_timeout(500)
 
 # Submit
-p.get_by_role("button", name="Continue").click()
+p.get_by_role("button", name="Signup").click()
 p.wait_for_timeout(8000)
 
 # Find Turnstile & click
