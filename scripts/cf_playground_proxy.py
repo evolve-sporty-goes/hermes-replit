@@ -94,12 +94,23 @@ def chat(messages: list[dict], timeout: int = 120) -> str:
         prompt_text = "\n\n".join(
             f"{m['role'].upper()}: {m['content']}" for m in messages
         )
-        input_el.fill(prompt_text, timeout=5000)
+
+        # Set React textarea value the way React expects.
+        page.evaluate("""
+            ([text]) => {
+                const ta = document.querySelector('textarea');
+                if (!ta) return;
+                const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value').set;
+                nativeInputValueSetter.call(ta, text);
+                ta.dispatchEvent(new Event('input', { bubbles: true }));
+                ta.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+        """, [prompt_text])
         time.sleep(0.5)
 
-        # Click the send button: the rightmost visible button inside the composer area.
-        send_clicked = False
+        # Click the send button directly by coordinates inside the composer.
         ibb = input_el.bounding_box() or {"x": 0, "y": 0, "width": 0, "height": 0}
+        send_btn = None
         for b in page.locator("button").all():
             try:
                 if not b.is_visible(timeout=500):
@@ -109,13 +120,16 @@ def chat(messages: list[dict], timeout: int = 120) -> str:
                     continue
                 # Must be to the right of the textarea center and vertically near the composer.
                 if bb["x"] > ibb["x"] + ibb["width"] * 0.5 and abs(bb["y"] - ibb["y"]) < 80:
-                    b.click(timeout=5000)
-                    send_clicked = True
+                    send_btn = b
                     break
             except Exception:
                 continue
 
-        if not send_clicked:
+        if send_btn:
+            send_btn.hover()
+            time.sleep(0.2)
+            send_btn.click(timeout=5000)
+        else:
             input_el.press("Enter")
 
         deadline = time.time() + timeout
