@@ -15451,3 +15451,97 @@ Xpra installed
 2026-07-02 07:37:38,943 INFO client_event: Client event from 127.0.0.1: {'event': 'sse_error', 'source': 'chat-response', 'session_id': '8d541fc855c7', 'stream_id': '650705de69154ea4b13278f760ee5688', 'visibility_state': 'visible', 'url_path': '/session/8d541fc855c7', 'reason': 'chat EventSource.onerror', 'ready_state': 0, 'online': True}
 2026-07-02 07:38:03,250 INFO agent.model_metadata: Could not detect context length for model 'nvidia/nemotron-3-ultra-550b-a55b:free' at https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
 2026-07-02 07:38:03,257 INFO agent.model_metadata: Using hardcoded context length 131,072 for model 'nvidia/nemotron-3-ultra-550b-a55b:free' (custom endpoint, catalog match on 'nemotron')
+2026-07-02 07:47:29,372 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-07-02 07:47:29,380 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-07-02 07:47:29,380 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-07-02 07:47:29,492 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-07-02 07:47:29,493 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-07-02 07:47:29,494 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-07-02 07:47:29,655 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-07-02 07:47:29,656 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-07-02 07:47:29,656 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-07-02 07:47:29,656 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-07-02 07:47:29,657 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-07-02 07:47:29,657 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-07-02 07:47:29,657 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-07-02 07:47:29,720 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-07-02 07:47:29,721 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-07-02 07:47:29,722 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-07-02 07:47:29,722 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-07-02 07:47:29,723 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-07-02 07:47:29,724 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-07-02 07:47:29,725 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-07-02 07:47:29,725 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-07-02 07:47:29,726 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-07-02 07:47:29,727 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-07-02 07:47:29,740 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-07-02 07:47:29,823 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-07-02 07:47:29,823 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-07-02 07:47:29,824 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-07-02 07:47:29,824 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-07-02 07:47:29,824 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-07-02 07:47:29,825 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-07-02 07:47:29,828 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-07-02 07:47:29,901 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-07-02 07:47:29,909 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-07-02 07:47:29,919 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-07-02 07:47:29,920 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-07-02 07:47:29,920 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-07-02 07:47:29,929 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-07-02 07:47:29,930 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-07-02 07:47:29,930 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-07-02 07:47:29,931 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-07-02 07:47:29,932 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-07-02 07:47:29,959 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-07-02 07:47:33,968 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:33,990 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:34,176 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 07:47:34,176 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 07:48:34.
+2026-07-02 07:47:34,236 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 07:47:34,237 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 07:48:34.
+2026-07-02 07:47:34,238 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:34,238 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:34,274 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:34,513 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-02 07:47:34,553 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:34,563 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:34,563 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:34,603 INFO tools.lazy_deps: Lazy-installing edge-tts==7.2.7 for feature 'tts.edge'
+2026-07-02 07:47:35,009 INFO tools.lazy_deps: Lazy install complete for feature 'tts.edge'
+2026-07-02 07:47:35,567 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 07:47:35,567 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 07:48:35.
+2026-07-02 07:47:35,632 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 07:47:35,632 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 07:48:35.
+2026-07-02 07:47:35,632 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:35,691 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:35,692 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:35,692 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:35,807 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:35,808 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:35,808 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:35,866 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:35,872 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:35,905 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 07:47:38,609 INFO gateway.run: Starting Hermes Gateway...
+2026-07-02 07:47:38,610 INFO gateway.run: Session storage: /home/runner/workspace/.hermes_data/sessions
+2026-07-02 07:47:38,621 INFO gateway.run: Agent budget: max_iterations=90 (agent.max_turns from config.yaml, or HERMES_MAX_ITERATIONS from .env, or default 90)
+2026-07-02 07:47:38,624 INFO gateway.run: Secret redaction: ENABLED (tool output, logs, and chat responses are scrubbed before delivery)
+2026-07-02 07:47:38,646 WARNING gateway.run: No env user allowlists configured. Messaging platforms default to pairing/allowlist policies and will deny unknown senders unless you configure platform allowlists (e.g., TELEGRAM_ALLOWED_USERS=your_id) or explicitly opt in with GATEWAY_ALLOW_ALL_USERS=true plus dm_policy/group_policy: open on the platform.
+2026-07-02 07:47:38,878 INFO gateway.run: Connecting to api_server...
+2026-07-02 07:47:38,903 INFO gateway.platforms.api_server: [Api_Server] API server listening on http://127.0.0.1:8642 (model: hermes-agent)
+2026-07-02 07:47:38,920 INFO gateway.run: ✓ api_server connected
+2026-07-02 07:47:38,927 INFO gateway.run: Gateway running with 1 platform(s)
+2026-07-02 07:47:38,948 INFO gateway.run: Channel directory built: 0 target(s)
+2026-07-02 07:47:39,009 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 07:47:39,477 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 07:47:39,872 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 07:47:39,952 INFO gateway.run: Press Ctrl+C to stop
+2026-07-02 07:47:39,964 INFO cron.scheduler_provider: In-process cron scheduler started (interval=60s)
+2026-07-02 07:47:40,006 INFO gateway.run: Gateway housekeeping started (interval=60s)
+2026-07-02 07:47:40,025 INFO gateway.run: kanban dispatcher: holding singleton dispatcher lock (/home/runner/.hermes/kanban/.dispatcher.lock)
