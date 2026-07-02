@@ -7,7 +7,7 @@ cd /home/runner/workspace
 mkdir -p proton_profile credentials
 
 CF_PROFILE="/home/runner/cf_profile"
-PROTON_PROFILE="/home/runner/workspace/proton_profile"
+PROTON_PROFILE="/tmp/proton_profile"
 CRED="/home/runner/workspace/credentials/cloudflare.txt"
 EMAIL=$(bash scripts/email.sh 2>/dev/null | tail -1 | tr -d '[:space:]')
 
@@ -46,6 +46,7 @@ print(f"SIGNUP_RESULT URL={p.url}", flush=True)
 # Submit
 p.locator("button[type='submit']").filter(has_text="Sign up").first.click()
 p.wait_for_timeout(10000)
+ctx.close()
 PY
 
 # ── STEP 2: Proton link extractor ─────────────────────────────────────────
@@ -65,21 +66,82 @@ if "account.proton.me" in page.url:
     page.locator("input#password, input[name='password']").first.fill(proton_pass)
     page.locator("button[type='submit']").first.click()
     page.wait_for_timeout(15000)
+def find_verify():
+    try:
+        messages = page.locator(".message-container, [data-testid='message-view']").all()
+        if messages:
+            latest_msg = messages[-1]
+            summary = latest_msg.locator(".message-header")
+            if summary.count() > 0 and "is-expanded" not in (summary.get_attribute("class") or ""):
+                summary.click()
+                page.wait_for_timeout(2000)
+    except Exception as e:
+        print(f"Failed to expand latest thread message: {e}")
 
-def extract_verify():
-    links = page.locator("a[href*='cloudflare.com/email-verification']").all()
-    for link in reversed(links):
-        href = link.get_attribute("href")
-        if href and "email-verification" in href:
-            return html.unescape(href)
     for frame in page.frames:
         try:
-            raw = html.unescape(frame.content())
-            m = re.search(r'https://dash\.cloudflare\.com/email-verification\?[^\s"<>()]+', raw)
-            if m:
-                return m.group(0)
-        except: pass
+            raw_html = frame.content()
+            if "clerk.openrouter.ai" in raw_html:
+                clean_html = html.unescape(raw_html)
+                matches = re.findall(r'https://clerk\.openrouter\.ai/v1/verify\?[^\s"<>()]+', clean_html)
+                if matches:
+                    return matches[0]
+        except Exception as e:
+            pass           
+
+    try:
+        links = page.locator("a[href*='clerk.openrouter.ai']").all()
+        for link in reversed(links):
+            href = link.get_attribute("href")
+            if href and "verify" in href:
+                return html.unescape(href)
+    except Exception as e:
+        pass
+
     return None
+
+checked = set()
+for attempt in range(15):
+    page.wait_for_timeout(15000)
+
+    page.keyboard.press("/")
+    page.wait_for_timeout(1000)
+    page.keyboard.type("openrouter sign up", delay=80)
+    page.keyboard.press("Enter")
+    page.wait_for_timeout(1000)
+    page.keyboard.press("Escape")
+    page.wait_for_timeout(5000)
+
+    items = page.locator(".item-container")
+    count = items.count()
+    if count == 0:
+        page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
+        page.wait_for_timeout(5000)
+        continue
+
+    for i in range(min(count, 5)):
+        subj = items.nth(i).text_content().strip()[:80]
+        if subj not in checked:
+            checked.add(subj)
+            items.nth(i).click()
+            page.wait_for_timeout(6000)
+
+            link = find_verify()
+            if link:
+                print(f"VERIFY_URL:{link}")
+                ctx.close()
+                sys.exit(0)
+            break
+
+    if len(checked) >= count:
+        checked.clear()
+
+    page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
+    page.wait_for_timeout(5000)
+
+ctx.close()
+print("VERIFY_URL:NOT_FOUND")
+
 
 for attempt in range(20):
     link = extract_verify()
