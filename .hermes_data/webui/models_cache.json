@@ -3,12 +3,12 @@
   "_source_fingerprint": {
     "config_yaml": {
       "path": "/home/runner/workspace/.hermes_data/config.yaml",
-      "mtime_ns": 1782976446472837320,
-      "size": 517
+      "mtime_ns": 1782977825786124490,
+      "size": 722
     },
     "auth_json": {
       "path": "/home/runner/workspace/.hermes_data/auth.json",
-      "semantic_sha256": "6c3ee7a6b258325c996a0ab9c76a8e8551158059781721b4541eadbe4e08f114"
+      "semantic_sha256": "e6b74a248ce56de083966281a0fc7949932101108f5a1bcd20d809788469475d"
     },
     "catalog": {
       "provider_catalog_sha256": "cc24c2895d6f559b2df0651f07196003417525b4611ae98c2ed6b06417f9d0d7",
@@ -18,26 +18,50 @@
       }
     }
   },
-  "active_provider": "kilocode",
-  "default_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "active_provider": "custom",
+  "default_model": "@cf/moonshotai/kimi-k2.7-code",
   "configured_model_badges": {
-    "nvidia/nemotron-3-ultra-550b-a55b:free": {
+    "@cf/moonshotai/kimi-k2.7-code": {
       "role": "primary",
       "label": "Primary",
-      "provider": "kilocode"
+      "provider": "custom"
     },
-    "kilocode/nvidia/nemotron-3-ultra-550b-a55b:free": {
+    "custom/@cf/moonshotai/kimi-k2.7-code": {
       "role": "primary",
       "label": "Primary",
-      "provider": "kilocode"
+      "provider": "custom"
     },
-    "@kilocode:nvidia/nemotron-3-ultra-550b-a55b:free": {
+    "@custom:@cf/moonshotai/kimi-k2.7-code": {
       "role": "primary",
       "label": "Primary",
-      "provider": "kilocode"
+      "provider": "custom"
     }
   },
   "groups": [
+    {
+      "provider": "Custom",
+      "provider_id": "custom",
+      "models": [
+        {
+          "id": "@cf/moonshotai/kimi-k2.7-code",
+          "label": "Moonshotai/kimi K2.7 Code"
+        }
+      ]
+    },
+    {
+      "provider": "HuggingFace",
+      "provider_id": "huggingface",
+      "models": [
+        {
+          "id": "Qwen/Qwen3.5-72B-Instruct",
+          "label": "Qwen3.5 72B Instruct"
+        },
+        {
+          "id": "deepseek-ai/DeepSeek-V3.2",
+          "label": "Deepseek V3.2"
+        }
+      ]
+    },
     {
       "provider": "kilocode",
       "provider_id": "kilocode",
@@ -99,8 +123,8 @@
           "label": "Claude Opus 4.7"
         },
         {
-          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-          "label": "Nemotron 3 Ultra 550b A55b:free"
+          "id": "stealth/claude-sonnet-4.6",
+          "label": "Claude Sonnet 4.6"
         }
       ],
       "extra_models": [
@@ -177,8 +201,8 @@
           "label": "Nemotron 3.5 Content Safety:free"
         },
         {
-          "id": "stealth/claude-sonnet-4.6",
-          "label": "Claude Sonnet 4.6"
+          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "label": "Nemotron 3 Ultra 550b A55b:free"
         },
         {
           "id": "nvidia/nemotron-3-ultra-550b-a55b",
@@ -1391,20 +1415,6 @@
       ]
     },
     {
-      "provider": "HuggingFace",
-      "provider_id": "huggingface",
-      "models": [
-        {
-          "id": "Qwen/Qwen3.5-72B-Instruct",
-          "label": "Qwen3.5 72B Instruct"
-        },
-        {
-          "id": "deepseek-ai/DeepSeek-V3.2",
-          "label": "Deepseek V3.2"
-        }
-      ]
-    },
-    {
       "provider": "OpenAI API",
       "provider_id": "openai-api",
       "models": [
@@ -1511,8 +1521,8 @@
           "label": "qwen/qwen3.7-max (OpenRouter)"
         },
         {
-          "id": "@openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
-          "label": "nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)"
+          "id": "@openrouter:qwen/qwen3.7-plus",
+          "label": "qwen/qwen3.7-plus (OpenRouter)"
         }
       ],
       "extra_models": [
@@ -1569,8 +1579,8 @@
           "label": "nvidia/nemotron-3-super-120b-a12b:free (OpenRouter)"
         },
         {
-          "id": "@openrouter:qwen/qwen3.7-plus",
-          "label": "qwen/qwen3.7-plus (OpenRouter)"
+          "id": "@openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+          "label": "nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)"
         },
         {
           "id": "@openrouter:cohere/north-mini-code:free",
