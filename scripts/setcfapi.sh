@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
-cloudflare_signup.sh
+while : 
+do 
+update-data.sh
+sync
+done &
 CRED="${WORKSPACE:-$HOME/workspace}/credentials/cloudflare.txt"
 mkdir -p "$(dirname "$CRED")"
 touch "$CRED"
