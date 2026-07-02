@@ -1886,40 +1886,40 @@
 },
 "deepseek/deepseek-v4-flash":{
 "context_length":1048576,
-"max_completion_tokens":16384,
+"max_completion_tokens":null,
 "name":"DeepSeek: DeepSeek V4 Flash",
 "pricing":{
-"prompt":"0.00000009",
+"prompt":"0.000000089",
 "completion":"0.00000018",
 "input_cache_read":"0.000000018"
 }
 },
 "deepseek-v4-flash":{
 "context_length":1048576,
-"max_completion_tokens":16384,
+"max_completion_tokens":null,
 "name":"DeepSeek: DeepSeek V4 Flash",
 "pricing":{
-"prompt":"0.00000009",
+"prompt":"0.000000089",
 "completion":"0.00000018",
 "input_cache_read":"0.000000018"
 }
 },
 "deepseek/deepseek-v4-flash-20260423":{
 "context_length":1048576,
-"max_completion_tokens":16384,
+"max_completion_tokens":null,
 "name":"DeepSeek: DeepSeek V4 Flash",
 "pricing":{
-"prompt":"0.00000009",
+"prompt":"0.000000089",
 "completion":"0.00000018",
 "input_cache_read":"0.000000018"
 }
 },
 "deepseek-v4-flash-20260423":{
 "context_length":1048576,
-"max_completion_tokens":16384,
+"max_completion_tokens":null,
 "name":"DeepSeek: DeepSeek V4 Flash",
 "pricing":{
-"prompt":"0.00000009",
+"prompt":"0.000000089",
 "completion":"0.00000018",
 "input_cache_read":"0.000000018"
 }

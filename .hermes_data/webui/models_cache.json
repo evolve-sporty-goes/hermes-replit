@@ -3,12 +3,12 @@
   "_source_fingerprint": {
     "config_yaml": {
       "path": "/home/runner/workspace/.hermes_data/config.yaml",
-      "mtime_ns": 1782978499769895802,
-      "size": 722
+      "mtime_ns": 1782982683447762427,
+      "size": 733
     },
     "auth_json": {
       "path": "/home/runner/workspace/.hermes_data/auth.json",
-      "semantic_sha256": "f87c2e64a69b089682d12631eb9e833254cdad1aa066fac64fb9d82a79e89d9b"
+      "semantic_sha256": "5c47fec5d33aa1a2df5f86ddd866d59c88666e0978ac6d99a5b83e192dc994a4"
     },
     "catalog": {
       "provider_catalog_sha256": "cc24c2895d6f559b2df0651f07196003417525b4611ae98c2ed6b06417f9d0d7",
@@ -18,33 +18,230 @@
       }
     }
   },
-  "active_provider": "custom",
-  "default_model": "@cf/moonshotai/kimi-k2.7-code",
+  "active_provider": "openrouter",
+  "default_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
   "configured_model_badges": {
-    "@cf/moonshotai/kimi-k2.7-code": {
+    "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free": {
       "role": "primary",
       "label": "Primary",
-      "provider": "custom"
+      "provider": "openrouter"
     },
-    "custom/@cf/moonshotai/kimi-k2.7-code": {
+    "@openrouter:nvidia/nemotron-3-ultra-550b-a55b:free": {
       "role": "primary",
       "label": "Primary",
-      "provider": "custom"
-    },
-    "@custom:@cf/moonshotai/kimi-k2.7-code": {
-      "role": "primary",
-      "label": "Primary",
-      "provider": "custom"
+      "provider": "openrouter"
     }
   },
   "groups": [
     {
-      "provider": "Custom",
-      "provider_id": "custom",
+      "provider": "OpenRouter",
+      "provider_id": "openrouter",
       "models": [
         {
-          "id": "@cf/moonshotai/kimi-k2.7-code",
-          "label": "Moonshotai/kimi K2.7 Code"
+          "id": "@openrouter:anthropic/claude-fable-5",
+          "label": "anthropic/claude-fable-5 (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:anthropic/claude-opus-4.8",
+          "label": "anthropic/claude-opus-4.8 (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:anthropic/claude-opus-4.8-fast",
+          "label": "anthropic/claude-opus-4.8-fast (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:anthropic/claude-sonnet-5",
+          "label": "anthropic/claude-sonnet-5 (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:anthropic/claude-haiku-4.5",
+          "label": "anthropic/claude-haiku-4.5 (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:openai/gpt-5.5",
+          "label": "openai/gpt-5.5 (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:openai/gpt-5.5-pro",
+          "label": "openai/gpt-5.5-pro (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:openai/gpt-5.4-mini",
+          "label": "openai/gpt-5.4-mini (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:google/gemini-3.1-pro-preview",
+          "label": "google/gemini-3.1-pro-preview (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:google/gemini-3.5-flash",
+          "label": "google/gemini-3.5-flash (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:x-ai/grok-4.3",
+          "label": "x-ai/grok-4.3 (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:deepseek/deepseek-v4-pro",
+          "label": "deepseek/deepseek-v4-pro (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:deepseek/deepseek-v4-flash",
+          "label": "deepseek/deepseek-v4-flash (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:qwen/qwen3.7-max",
+          "label": "qwen/qwen3.7-max (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+          "label": "nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)"
+        }
+      ],
+      "extra_models": [
+        {
+          "id": "@openrouter:qwen/qwen3.6-35b-a3b",
+          "label": "qwen/qwen3.6-35b-a3b (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:moonshotai/kimi-k2.6",
+          "label": "moonshotai/kimi-k2.6 (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:moonshotai/kimi-k2.7-code",
+          "label": "moonshotai/kimi-k2.7-code (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:minimax/minimax-m3",
+          "label": "minimax/minimax-m3 (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:z-ai/glm-5.2",
+          "label": "z-ai/glm-5.2 (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:z-ai/glm-5.1",
+          "label": "z-ai/glm-5.1 (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:xiaomi/mimo-v2.5-pro",
+          "label": "xiaomi/mimo-v2.5-pro (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:tencent/hy3-preview",
+          "label": "tencent/hy3-preview (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:stepfun/step-3.7-flash",
+          "label": "stepfun/step-3.7-flash (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:nvidia/nemotron-3-super-120b-a12b",
+          "label": "nvidia/nemotron-3-super-120b-a12b (OpenRouter)"
+        },
+        {
+          "id": "sakana/fugu-ultra",
+          "label": "sakana/fugu-ultra"
+        },
+        {
+          "id": "@openrouter:poolside/laguna-m.1:free",
+          "label": "poolside/laguna-m.1:free (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:nvidia/nemotron-3-super-120b-a12b:free",
+          "label": "nvidia/nemotron-3-super-120b-a12b:free (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:qwen/qwen3.7-plus",
+          "label": "qwen/qwen3.7-plus (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:cohere/north-mini-code:free",
+          "label": "Cohere: North Mini Code (free) (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:nvidia/nemotron-3.5-content-safety:free",
+          "label": "NVIDIA: Nemotron 3.5 Content Safety (free) (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+          "label": "NVIDIA: Nemotron 3 Nano Omni (free) (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:poolside/laguna-xs.2:free",
+          "label": "Poolside: Laguna XS.2 (free) (OpenRouter)"
+        },
+        {
+          "id": "google/gemma-4-26b-a4b-it:free",
+          "label": "Google: Gemma 4 26B A4B  (free)"
+        },
+        {
+          "id": "google/gemma-4-31b-it:free",
+          "label": "Google: Gemma 4 31B (free)"
+        },
+        {
+          "id": "@openrouter:google/lyria-3-pro-preview",
+          "label": "Google: Lyria 3 Pro Preview (free) (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:google/lyria-3-clip-preview",
+          "label": "Google: Lyria 3 Clip Preview (free) (OpenRouter)"
+        },
+        {
+          "id": "@openrouter:openrouter/free",
+          "label": "Free Models Router (free) (OpenRouter)"
+        },
+        {
+          "id": "liquid/lfm-2.5-1.2b-thinking:free",
+          "label": "LiquidAI: LFM2.5-1.2B-Thinking (free)"
+        },
+        {
+          "id": "liquid/lfm-2.5-1.2b-instruct:free",
+          "label": "LiquidAI: LFM2.5-1.2B-Instruct (free)"
+        },
+        {
+          "id": "nvidia/nemotron-3-nano-30b-a3b:free",
+          "label": "NVIDIA: Nemotron 3 Nano 30B A3B (free)"
+        },
+        {
+          "id": "nvidia/nemotron-nano-12b-v2-vl:free",
+          "label": "NVIDIA: Nemotron Nano 12B 2 VL (free)"
+        },
+        {
+          "id": "qwen/qwen3-next-80b-a3b-instruct:free",
+          "label": "Qwen: Qwen3 Next 80B A3B Instruct (free)"
+        },
+        {
+          "id": "nvidia/nemotron-nano-9b-v2:free",
+          "label": "NVIDIA: Nemotron Nano 9B V2 (free)"
+        },
+        {
+          "id": "openai/gpt-oss-120b:free",
+          "label": "OpenAI: gpt-oss-120b (free)"
+        },
+        {
+          "id": "openai/gpt-oss-20b:free",
+          "label": "OpenAI: gpt-oss-20b (free)"
+        },
+        {
+          "id": "qwen/qwen3-coder:free",
+          "label": "Qwen: Qwen3 Coder 480B A35B (free)"
+        },
+        {
+          "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+          "label": "Venice: Uncensored (free)"
+        },
+        {
+          "id": "meta-llama/llama-3.3-70b-instruct:free",
+          "label": "Meta: Llama 3.3 70B Instruct (free)"
+        },
+        {
+          "id": "meta-llama/llama-3.2-3b-instruct:free",
+          "label": "Meta: Llama 3.2 3B Instruct (free)"
+        },
+        {
+          "id": "nousresearch/hermes-3-llama-3.1-405b:free",
+          "label": "Nous: Hermes 3 405B Instruct (free)"
         }
       ]
     },
@@ -123,8 +320,8 @@
           "label": "Claude Opus 4.7"
         },
         {
-          "id": "stealth/claude-sonnet-4.6",
-          "label": "Claude Sonnet 4.6"
+          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "label": "Nemotron 3 Ultra 550b A55b:free"
         }
       ],
       "extra_models": [
@@ -201,8 +398,8 @@
           "label": "Nemotron 3.5 Content Safety:free"
         },
         {
-          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-          "label": "Nemotron 3 Ultra 550b A55b:free"
+          "id": "stealth/claude-sonnet-4.6",
+          "label": "Claude Sonnet 4.6"
         },
         {
           "id": "nvidia/nemotron-3-ultra-550b-a55b",
@@ -1457,218 +1654,6 @@
         {
           "id": "@openai-api:gpt-4o-mini",
           "label": "GPT 4O Mini"
-        }
-      ]
-    },
-    {
-      "provider": "OpenRouter",
-      "provider_id": "openrouter",
-      "models": [
-        {
-          "id": "@openrouter:anthropic/claude-fable-5",
-          "label": "anthropic/claude-fable-5 (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:anthropic/claude-opus-4.8",
-          "label": "anthropic/claude-opus-4.8 (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:anthropic/claude-opus-4.8-fast",
-          "label": "anthropic/claude-opus-4.8-fast (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:anthropic/claude-sonnet-5",
-          "label": "anthropic/claude-sonnet-5 (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:anthropic/claude-haiku-4.5",
-          "label": "anthropic/claude-haiku-4.5 (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:openai/gpt-5.5",
-          "label": "openai/gpt-5.5 (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:openai/gpt-5.5-pro",
-          "label": "openai/gpt-5.5-pro (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:openai/gpt-5.4-mini",
-          "label": "openai/gpt-5.4-mini (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:google/gemini-3.1-pro-preview",
-          "label": "google/gemini-3.1-pro-preview (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:google/gemini-3.5-flash",
-          "label": "google/gemini-3.5-flash (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:x-ai/grok-4.3",
-          "label": "x-ai/grok-4.3 (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:deepseek/deepseek-v4-pro",
-          "label": "deepseek/deepseek-v4-pro (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:deepseek/deepseek-v4-flash",
-          "label": "deepseek/deepseek-v4-flash (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:qwen/qwen3.7-max",
-          "label": "qwen/qwen3.7-max (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:qwen/qwen3.7-plus",
-          "label": "qwen/qwen3.7-plus (OpenRouter)"
-        }
-      ],
-      "extra_models": [
-        {
-          "id": "@openrouter:qwen/qwen3.6-35b-a3b",
-          "label": "qwen/qwen3.6-35b-a3b (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:moonshotai/kimi-k2.6",
-          "label": "moonshotai/kimi-k2.6 (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:moonshotai/kimi-k2.7-code",
-          "label": "moonshotai/kimi-k2.7-code (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:minimax/minimax-m3",
-          "label": "minimax/minimax-m3 (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:z-ai/glm-5.2",
-          "label": "z-ai/glm-5.2 (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:z-ai/glm-5.1",
-          "label": "z-ai/glm-5.1 (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:xiaomi/mimo-v2.5-pro",
-          "label": "xiaomi/mimo-v2.5-pro (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:tencent/hy3-preview",
-          "label": "tencent/hy3-preview (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:stepfun/step-3.7-flash",
-          "label": "stepfun/step-3.7-flash (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:nvidia/nemotron-3-super-120b-a12b",
-          "label": "nvidia/nemotron-3-super-120b-a12b (OpenRouter)"
-        },
-        {
-          "id": "sakana/fugu-ultra",
-          "label": "sakana/fugu-ultra"
-        },
-        {
-          "id": "@openrouter:poolside/laguna-m.1:free",
-          "label": "poolside/laguna-m.1:free (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:nvidia/nemotron-3-super-120b-a12b:free",
-          "label": "nvidia/nemotron-3-super-120b-a12b:free (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
-          "label": "nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:cohere/north-mini-code:free",
-          "label": "Cohere: North Mini Code (free) (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:nvidia/nemotron-3.5-content-safety:free",
-          "label": "NVIDIA: Nemotron 3.5 Content Safety (free) (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
-          "label": "NVIDIA: Nemotron 3 Nano Omni (free) (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:poolside/laguna-xs.2:free",
-          "label": "Poolside: Laguna XS.2 (free) (OpenRouter)"
-        },
-        {
-          "id": "google/gemma-4-26b-a4b-it:free",
-          "label": "Google: Gemma 4 26B A4B  (free)"
-        },
-        {
-          "id": "google/gemma-4-31b-it:free",
-          "label": "Google: Gemma 4 31B (free)"
-        },
-        {
-          "id": "@openrouter:google/lyria-3-pro-preview",
-          "label": "Google: Lyria 3 Pro Preview (free) (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:google/lyria-3-clip-preview",
-          "label": "Google: Lyria 3 Clip Preview (free) (OpenRouter)"
-        },
-        {
-          "id": "@openrouter:openrouter/free",
-          "label": "Free Models Router (free) (OpenRouter)"
-        },
-        {
-          "id": "liquid/lfm-2.5-1.2b-thinking:free",
-          "label": "LiquidAI: LFM2.5-1.2B-Thinking (free)"
-        },
-        {
-          "id": "liquid/lfm-2.5-1.2b-instruct:free",
-          "label": "LiquidAI: LFM2.5-1.2B-Instruct (free)"
-        },
-        {
-          "id": "nvidia/nemotron-3-nano-30b-a3b:free",
-          "label": "NVIDIA: Nemotron 3 Nano 30B A3B (free)"
-        },
-        {
-          "id": "nvidia/nemotron-nano-12b-v2-vl:free",
-          "label": "NVIDIA: Nemotron Nano 12B 2 VL (free)"
-        },
-        {
-          "id": "qwen/qwen3-next-80b-a3b-instruct:free",
-          "label": "Qwen: Qwen3 Next 80B A3B Instruct (free)"
-        },
-        {
-          "id": "nvidia/nemotron-nano-9b-v2:free",
-          "label": "NVIDIA: Nemotron Nano 9B V2 (free)"
-        },
-        {
-          "id": "openai/gpt-oss-120b:free",
-          "label": "OpenAI: gpt-oss-120b (free)"
-        },
-        {
-          "id": "openai/gpt-oss-20b:free",
-          "label": "OpenAI: gpt-oss-20b (free)"
-        },
-        {
-          "id": "qwen/qwen3-coder:free",
-          "label": "Qwen: Qwen3 Coder 480B A35B (free)"
-        },
-        {
-          "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
-          "label": "Venice: Uncensored (free)"
-        },
-        {
-          "id": "meta-llama/llama-3.3-70b-instruct:free",
-          "label": "Meta: Llama 3.3 70B Instruct (free)"
-        },
-        {
-          "id": "meta-llama/llama-3.2-3b-instruct:free",
-          "label": "Meta: Llama 3.2 3B Instruct (free)"
-        },
-        {
-          "id": "nousresearch/hermes-3-llama-3.1-405b:free",
-          "label": "Nous: Hermes 3 405B Instruct (free)"
         }
       ]
     }
