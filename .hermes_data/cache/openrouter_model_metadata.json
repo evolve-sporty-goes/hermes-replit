@@ -1,4 +1,61 @@
 {
+"poolside/laguna-xs-2.1:free":{
+"context_length":262144,
+"max_completion_tokens":32768,
+"name":"Poolside: Laguna XS 2.1 (free)",
+"pricing":{
+"prompt":"0",
+"completion":"0"
+}
+},
+"laguna-xs-2.1:free":{
+"context_length":262144,
+"max_completion_tokens":32768,
+"name":"Poolside: Laguna XS 2.1 (free)",
+"pricing":{
+"prompt":"0",
+"completion":"0"
+}
+},
+"poolside/laguna-xs-2.1-20260625":{
+"context_length":262144,
+"max_completion_tokens":32768,
+"name":"Poolside: Laguna XS 2.1",
+"pricing":{
+"prompt":"0.00000006",
+"completion":"0.00000012",
+"input_cache_read":"0.00000003"
+}
+},
+"laguna-xs-2.1-20260625":{
+"context_length":262144,
+"max_completion_tokens":32768,
+"name":"Poolside: Laguna XS 2.1 (free)",
+"pricing":{
+"prompt":"0",
+"completion":"0"
+}
+},
+"poolside/laguna-xs-2.1":{
+"context_length":262144,
+"max_completion_tokens":32768,
+"name":"Poolside: Laguna XS 2.1",
+"pricing":{
+"prompt":"0.00000006",
+"completion":"0.00000012",
+"input_cache_read":"0.00000003"
+}
+},
+"laguna-xs-2.1":{
+"context_length":262144,
+"max_completion_tokens":32768,
+"name":"Poolside: Laguna XS 2.1",
+"pricing":{
+"prompt":"0.00000006",
+"completion":"0.00000012",
+"input_cache_read":"0.00000003"
+}
+},
 "anthropic/claude-sonnet-5":{
 "context_length":1000000,
 "max_completion_tokens":128000,
@@ -9460,24 +9517,6 @@
 "completion":"0.0000001"
 }
 },
-"inflection/inflection-3-pi":{
-"context_length":8000,
-"max_completion_tokens":1024,
-"name":"Inflection: Inflection 3 Pi",
-"pricing":{
-"prompt":"0.0000025",
-"completion":"0.00001"
-}
-},
-"inflection-3-pi":{
-"context_length":8000,
-"max_completion_tokens":1024,
-"name":"Inflection: Inflection 3 Pi",
-"pricing":{
-"prompt":"0.0000025",
-"completion":"0.00001"
-}
-},
 "inflection/inflection-3-productivity":{
 "context_length":8000,
 "max_completion_tokens":1024,
@@ -9491,6 +9530,24 @@
 "context_length":8000,
 "max_completion_tokens":1024,
 "name":"Inflection: Inflection 3 Productivity",
+"pricing":{
+"prompt":"0.0000025",
+"completion":"0.00001"
+}
+},
+"inflection/inflection-3-pi":{
+"context_length":8000,
+"max_completion_tokens":1024,
+"name":"Inflection: Inflection 3 Pi",
+"pricing":{
+"prompt":"0.0000025",
+"completion":"0.00001"
+}
+},
+"inflection-3-pi":{
+"context_length":8000,
+"max_completion_tokens":1024,
+"name":"Inflection: Inflection 3 Pi",
 "pricing":{
 "prompt":"0.0000025",
 "completion":"0.00001"
@@ -9512,42 +9569,6 @@
 "pricing":{
 "prompt":"0.00000025",
 "completion":"0.0000005"
-}
-},
-"meta-llama/llama-3.2-1b-instruct":{
-"context_length":131072,
-"max_completion_tokens":60000,
-"name":"Meta: Llama 3.2 1B Instruct",
-"pricing":{
-"prompt":"0.000000027",
-"completion":"0.000000201"
-}
-},
-"llama-3.2-1b-instruct":{
-"context_length":131072,
-"max_completion_tokens":60000,
-"name":"Meta: Llama 3.2 1B Instruct",
-"pricing":{
-"prompt":"0.000000027",
-"completion":"0.000000201"
-}
-},
-"meta-llama/llama-3.2-11b-vision-instruct":{
-"context_length":131072,
-"max_completion_tokens":16384,
-"name":"Meta: Llama 3.2 11B Vision Instruct",
-"pricing":{
-"prompt":"0.000000345",
-"completion":"0.000000345"
-}
-},
-"llama-3.2-11b-vision-instruct":{
-"context_length":131072,
-"max_completion_tokens":16384,
-"name":"Meta: Llama 3.2 11B Vision Instruct",
-"pricing":{
-"prompt":"0.000000345",
-"completion":"0.000000345"
 }
 },
 "meta-llama/llama-3.2-3b-instruct:free":{
@@ -9584,6 +9605,42 @@
 "pricing":{
 "prompt":"0",
 "completion":"0"
+}
+},
+"meta-llama/llama-3.2-1b-instruct":{
+"context_length":131072,
+"max_completion_tokens":60000,
+"name":"Meta: Llama 3.2 1B Instruct",
+"pricing":{
+"prompt":"0.000000027",
+"completion":"0.000000201"
+}
+},
+"llama-3.2-1b-instruct":{
+"context_length":131072,
+"max_completion_tokens":60000,
+"name":"Meta: Llama 3.2 1B Instruct",
+"pricing":{
+"prompt":"0.000000027",
+"completion":"0.000000201"
+}
+},
+"meta-llama/llama-3.2-11b-vision-instruct":{
+"context_length":131072,
+"max_completion_tokens":16384,
+"name":"Meta: Llama 3.2 11B Vision Instruct",
+"pricing":{
+"prompt":"0.000000345",
+"completion":"0.000000345"
+}
+},
+"llama-3.2-11b-vision-instruct":{
+"context_length":131072,
+"max_completion_tokens":16384,
+"name":"Meta: Llama 3.2 11B Vision Instruct",
+"pricing":{
+"prompt":"0.000000345",
+"completion":"0.000000345"
 }
 },
 "qwen/qwen-2.5-72b-instruct":{
@@ -9804,26 +9861,6 @@
 "completion":"0.00000003"
 }
 },
-"openai/gpt-4o-mini-2024-07-18":{
-"context_length":128000,
-"max_completion_tokens":16384,
-"name":"OpenAI: GPT-4o-mini (2024-07-18)",
-"pricing":{
-"prompt":"0.00000015",
-"completion":"0.0000006",
-"input_cache_read":"0.000000075"
-}
-},
-"gpt-4o-mini-2024-07-18":{
-"context_length":128000,
-"max_completion_tokens":16384,
-"name":"OpenAI: GPT-4o-mini (2024-07-18)",
-"pricing":{
-"prompt":"0.00000015",
-"completion":"0.0000006",
-"input_cache_read":"0.000000075"
-}
-},
 "openai/gpt-4o-mini":{
 "context_length":128000,
 "max_completion_tokens":16384,
@@ -9838,6 +9875,26 @@
 "context_length":128000,
 "max_completion_tokens":16384,
 "name":"OpenAI: GPT-4o-mini",
+"pricing":{
+"prompt":"0.00000015",
+"completion":"0.0000006",
+"input_cache_read":"0.000000075"
+}
+},
+"openai/gpt-4o-mini-2024-07-18":{
+"context_length":128000,
+"max_completion_tokens":16384,
+"name":"OpenAI: GPT-4o-mini (2024-07-18)",
+"pricing":{
+"prompt":"0.00000015",
+"completion":"0.0000006",
+"input_cache_read":"0.000000075"
+}
+},
+"gpt-4o-mini-2024-07-18":{
+"context_length":128000,
+"max_completion_tokens":16384,
+"name":"OpenAI: GPT-4o-mini (2024-07-18)",
 "pricing":{
 "prompt":"0.00000015",
 "completion":"0.0000006",
@@ -9862,24 +9919,6 @@
 "completion":"0.00000065"
 }
 },
-"openai/gpt-4o-2024-05-13":{
-"context_length":128000,
-"max_completion_tokens":4096,
-"name":"OpenAI: GPT-4o (2024-05-13)",
-"pricing":{
-"prompt":"0.000005",
-"completion":"0.000015"
-}
-},
-"gpt-4o-2024-05-13":{
-"context_length":128000,
-"max_completion_tokens":4096,
-"name":"OpenAI: GPT-4o (2024-05-13)",
-"pricing":{
-"prompt":"0.000005",
-"completion":"0.000015"
-}
-},
 "openai/gpt-4o":{
 "context_length":128000,
 "max_completion_tokens":16384,
@@ -9896,6 +9935,24 @@
 "pricing":{
 "prompt":"0.0000025",
 "completion":"0.00001"
+}
+},
+"openai/gpt-4o-2024-05-13":{
+"context_length":128000,
+"max_completion_tokens":4096,
+"name":"OpenAI: GPT-4o (2024-05-13)",
+"pricing":{
+"prompt":"0.000005",
+"completion":"0.000015"
+}
+},
+"gpt-4o-2024-05-13":{
+"context_length":128000,
+"max_completion_tokens":4096,
+"name":"OpenAI: GPT-4o (2024-05-13)",
+"pricing":{
+"prompt":"0.000005",
+"completion":"0.000015"
 }
 },
 "meta-llama/llama-3-8b-instruct":{
@@ -10162,24 +10219,6 @@
 "completion":"0.00000006"
 }
 },
-"openai/gpt-3.5-turbo":{
-"context_length":16385,
-"max_completion_tokens":4096,
-"name":"OpenAI: GPT-3.5 Turbo",
-"pricing":{
-"prompt":"0.0000005",
-"completion":"0.0000015"
-}
-},
-"gpt-3.5-turbo":{
-"context_length":16385,
-"max_completion_tokens":4096,
-"name":"OpenAI: GPT-3.5 Turbo",
-"pricing":{
-"prompt":"0.0000005",
-"completion":"0.0000015"
-}
-},
 "openai/gpt-4":{
 "context_length":8191,
 "max_completion_tokens":4096,
@@ -10196,6 +10235,24 @@
 "pricing":{
 "prompt":"0.00003",
 "completion":"0.00006"
+}
+},
+"openai/gpt-3.5-turbo":{
+"context_length":16385,
+"max_completion_tokens":4096,
+"name":"OpenAI: GPT-3.5 Turbo",
+"pricing":{
+"prompt":"0.0000005",
+"completion":"0.0000015"
+}
+},
+"gpt-3.5-turbo":{
+"context_length":16385,
+"max_completion_tokens":4096,
+"name":"OpenAI: GPT-3.5 Turbo",
+"pricing":{
+"prompt":"0.0000005",
+"completion":"0.0000015"
 }
 }
 }

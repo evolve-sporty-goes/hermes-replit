@@ -1,0 +1,15 @@
+2026-07-02 18:42:34,981 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-02 18:42:35,006 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-02 18:42:35,641 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 18:42:35,654 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 18:42:36,099 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 18:42:36,100 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 18:42:36,101 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 18:42:47,207 WARNING [540adfa4d131] agent.prompt_builder: ⚠️  Context file AGENTS.md TRUNCATED: 70678 chars exceeds limit of 62914 — trim the file, pin a larger context_file_max_chars, or use a larger-context model!
+2026-07-02 18:42:48,822 WARNING [540adfa4d131] agent.conversation_loop: API call failed (attempt 1/3) error_type=AuthenticationError thread=Thread-295 (_run_agent_streaming):140597916571328 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/4711b74d3cee06fbfe2381a4afb42a7d/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 401: {"result":null,"success":false,"errors":[{"code":10000,"message":"Authentication error"}],"messages":[]}
+2026-07-02 18:42:48,837 WARNING [540adfa4d131] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 18:42:48,917 ERROR [540adfa4d131] agent.conversation_loop: Non-retryable client error: Error code: 401 - {'result': None, 'success': False, 'errors': [{'code': 10000, 'message': 'Authentication error'}], 'messages': []}
+2026-07-02 18:42:50,586 WARNING [540adfa4d131] agent.prompt_builder: ⚠️  Context file AGENTS.md TRUNCATED: 70678 chars exceeds limit of 62914 — trim the file, pin a larger context_file_max_chars, or use a larger-context model!
+2026-07-02 18:42:51,188 WARNING [540adfa4d131] agent.conversation_loop: API call failed (attempt 1/3) error_type=AuthenticationError thread=Thread-295 (_run_agent_streaming):140597916571328 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/4711b74d3cee06fbfe2381a4afb42a7d/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 401: {"result":null,"success":false,"errors":[{"code":10000,"message":"Authentication error"}],"messages":[]}
+2026-07-02 18:42:51,212 WARNING [540adfa4d131] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 18:42:51,296 ERROR [540adfa4d131] agent.conversation_loop: Non-retryable client error: Error code: 401 - {'result': None, 'success': False, 'errors': [{'code': 10000, 'message': 'Authentication error'}], 'messages': []}
