@@ -1669,3 +1669,29 @@
 2026-07-02 11:49:37,224 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
 2026-07-02 11:49:37,224 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 11:50:37.
 2026-07-02 11:49:37,224 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 12:25:57,758 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-02 12:25:57,778 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-02 12:25:58,842 WARNING gateway.run: No env user allowlists configured. Messaging platforms default to pairing/allowlist policies and will deny unknown senders unless you configure platform allowlists (e.g., TELEGRAM_ALLOWED_USERS=your_id) or explicitly opt in with GATEWAY_ALLOW_ALL_USERS=true plus dm_policy/group_policy: open on the platform.
+2026-07-02 12:25:59,372 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 12:25:59,382 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 12:25:59,461 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 12:25:59,465 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 12:25:59,466 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 12:26:00,206 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 12:26:00,207 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-02 12:26:00,209 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-02 12:26:00,271 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-07-02 12:26:00,271 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-07-02 12:26:00,272 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-07-02 12:26:00,301 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 12:26:00,303 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 12:26:00,329 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 12:26:00,823 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 12:26:01,146 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 12:42:18,706 WARNING [20260702_122556_8cc3ea] agent.tool_executor: Tool read_file returned error (0.36s): {"content": "", "total_lines": 0, "file_size": 0, "truncated": false, "is_binary": false, "is_image": false, "error": "File not found: /home/runner/workspace/scripts/cloudflare_signup.py", "similar_fi

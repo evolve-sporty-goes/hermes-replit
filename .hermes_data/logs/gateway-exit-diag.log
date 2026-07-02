@@ -29,3 +29,4 @@
 {"ts": "2026-07-02T10:09:38.734361+00:00", "tag": "gateway.exit_clean", "pid": 35175, "python": "3.12.11", "platform": "linux"}
 {"ts": "2026-07-02T10:09:38.735496+00:00", "tag": "atexit.hook", "pid": 35175, "python": "3.12.11", "platform": "linux", "sys_exc": "(None, None, None)"}
 {"ts": "2026-07-02T10:09:39.644924+00:00", "tag": "gateway.start", "pid": 45690, "python": "3.12.11", "platform": "linux", "replace": false, "argv": ["/home/runner/hermes-agent/hermes_cli/main.py", "gateway", "restart"], "stdin_is_tty": false, "absorb_windows_console_controls": false}
+{"ts": "2026-07-02T12:25:56.684754+00:00", "tag": "gateway.start", "pid": 87754, "python": "3.12.11", "platform": "linux", "replace": false, "argv": ["/home/runner/hermes-agent/hermes_cli/main.py", "gateway", "run"], "stdin_is_tty": false, "absorb_windows_console_controls": false}

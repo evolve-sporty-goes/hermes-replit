@@ -162,6 +162,8 @@ if verify_url and "cloudflare.com" in verify_url:
     p.wait_for_timeout(10000)
 
 # Step 13-14: Workers AI API Quick Start
+p.goto("https://dash.cloudflare.com/?to=/:account/workers-and-pages", timeout=60000)
+p.wait_for_timeout(4000)
 p.goto("https://dash.cloudflare.com/?to=/:account/ai/workers-ai/api-quick-start", timeout=60000)
 p.wait_for_timeout(7000)
 

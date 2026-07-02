@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 cloudflare_signup.sh
 sync
 CRED="${WORKSPACE:-$HOME/workspace}/credentials/cloudflare.txt"
