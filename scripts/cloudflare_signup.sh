@@ -44,7 +44,7 @@ def click_turnstile(page):
     return False
 
 result = "FAILED"
-for attempt in range(20):
+for attempt in range(5):
     print(f"SIGNUP_ATTEMPT {attempt+1} URL={p.url}", flush=True)
     if "sign-up" not in p.url:
         result = "SUCCESS"
