@@ -3531,3 +3531,11 @@ Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*)
 [webui] {"ts": "2026-07-02T12:20:46Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/logs?file=agent&tail=200", "status": 200, "ms": 34.1, "forwarded_for": "152.58.128.13"}
 [webui] {"ts": "2026-07-02T12:20:47Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=20260702_103038_b86007", "status": 200, "ms": 1.9, "forwarded_for": "152.58.128.13"}
 [webui] {"ts": "2026-07-02T12:20:50Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/logs?file=agent&tail=200", "status": 200, "ms": 7.0, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T12:20:54Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 0.5}
+[webui] {"ts": "2026-07-02T12:20:55Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 4.6}
+[webui] {"ts": "2026-07-02T12:20:55Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.1}
+[webui] {"ts": "2026-07-02T12:20:56Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.2}
+[webui] {"ts": "2026-07-02T12:20:57Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.3}
+[webui] {"ts": "2026-07-02T12:20:57Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.0}
+[webui] {"ts": "2026-07-02T12:21:01Z", "remote": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "ms": 7.2, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T12:21:03Z", "remote": "127.0.0.1", "method": "GET", "path": "/sw.js?v=v0.51.823", "status": 200, "ms": 0.6, "forwarded_for": "152.58.128.13"}
