@@ -1,6 +1,0 @@
-ANON_KEY=$(cat /home/runner/workspace/credentials/.supabase_anon_key)
-curl -s -X POST 'https://db.torbox.app/auth/v1/signup' \
-  -H 'Content-Type: application/json' \
-  -H "apikey: $ANON_KEY"\
-  -d '{"email":"bavmin+faltu1@proton.me","password":"Satyana@1234"}'
-
