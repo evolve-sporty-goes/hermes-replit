@@ -55,12 +55,8 @@ chmod +x $BIN/*
 
 script.sh >/dev/null 2>&1 &
 sync || true
-#setcfapi.sh
-firecrawl_install.sh &
-hermes config set model.provider  openrouter
-hermes config set model.default  nvidia/nemotron-3-ultra-550b-a55b:free
-hermes config set fallback_model.provider kilo-code
-hermes config set fallback_model.model kilo-auto/free
+setcfapi.sh
+#firecrawl_install.sh &
 hermes gateway run &
 } >"$LOGFILE" 2>&1 &
 pid=$!

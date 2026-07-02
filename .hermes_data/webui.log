@@ -2962,3 +2962,6 @@ Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*)
   Remote access: ssh -N -L 8787:127.0.0.1:8787 <user>@<your-server>
   Then open:     http://localhost:8787
 
+[webui] {"ts": "2026-07-02T11:12:30Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=20260702_103038_b86007", "status": 200, "ms": 2.2, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T11:12:30Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/dashboard/status", "status": 200, "ms": 22.2, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T11:13:30Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=20260702_103038_b86007", "status": 200, "ms": 3.9, "forwarded_for": "152.58.128.13"}

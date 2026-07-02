@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+hermes config set model.provider openrouter
+hermes config set model.default  nvidia/nemotron-3-ultra-550b-a55b:free
+hermes config set fallback_model.provider kilo-code
+hermes config set fallback_model.model kilo-auto/free
 while : 
 do fKEY=$(grep -E '^API_KEY=fc-' /home/runner/workspace/credentials/firecrawl_credentials.txt | shuf -n 1 | sed 's/API_KEY=//')
 sed -i "s|^FIRECRAWL_API_KEY=.*|FIRECRAWL_API_KEY=$fKEY|" /home/runner/workspace/.hermes_data/.env
