@@ -5834,8 +5834,8 @@
 "max_completion_tokens":32768,
 "name":"Qwen: Qwen3 VL 8B Instruct",
 "pricing":{
-"prompt":"0.00000008",
-"completion":"0.0000005"
+"prompt":"0.000000117",
+"completion":"0.000000455"
 }
 },
 "qwen3-vl-8b-instruct":{
@@ -5843,8 +5843,8 @@
 "max_completion_tokens":32768,
 "name":"Qwen: Qwen3 VL 8B Instruct",
 "pricing":{
-"prompt":"0.00000008",
-"completion":"0.0000005"
+"prompt":"0.000000117",
+"completion":"0.000000455"
 }
 },
 "openai/gpt-5-image":{
