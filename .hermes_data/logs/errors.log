@@ -830,3 +830,9 @@
   → `copilot login` or `hermes model` to authenticate via OAuth
   → A fine-grained PAT (github_pat_*) with Copilot Requests permission
   → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 07:26:55,893 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 07:26:55,925 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 07:26:58,246 WARNING [8d541fc855c7] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-221 (_run_agent_streaming):139793132418752 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 429: Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day
+2026-07-02 07:26:58,248 WARNING [8d541fc855c7] hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 07:26:58,248 WARNING [8d541fc855c7] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 07:26:58,249 WARNING [8d541fc855c7] agent.conversation_loop: Retrying API call in 600s (attempt 1/3) thread=Thread-221 (_run_agent_streaming):139793132418752 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1783036800000', 'Retry-After': '59582'}, 'provider_name': None}}, 'user_id': 'user_3FuBpOuCx2dyJSyoo2ZYGkfOoXF'}
