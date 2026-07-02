@@ -18333,3 +18333,88 @@ Xpra installed
 2026-07-02 14:40:15,526 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
 2026-07-02 14:40:22,476 INFO agent.model_metadata: Could not detect context length for model '@cf/moonshotai/kimi-k2.7-code' at https://api.cloudflare.com/client/v4/accounts/de078d759918a2c32a06d9a7c74312cf/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
 2026-07-02 14:40:22,477 INFO agent.model_metadata: Using hardcoded context length 262,144 for model '@cf/moonshotai/kimi-k2.7-code' (custom endpoint, catalog match on 'kimi')
+2026-07-02 15:19:25,769 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-07-02 15:19:25,778 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-07-02 15:19:25,780 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-07-02 15:19:27,630 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-07-02 15:19:27,660 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-07-02 15:19:27,676 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-07-02 15:19:27,697 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-07-02 15:19:27,713 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-07-02 15:19:27,714 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-07-02 15:19:27,731 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-07-02 15:19:28,114 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-07-02 15:19:28,218 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-07-02 15:19:28,312 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-07-02 15:19:28,323 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-07-02 15:19:28,348 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-07-02 15:19:28,412 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-07-02 15:19:28,420 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-07-02 15:19:28,433 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-07-02 15:19:28,488 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-07-02 15:19:28,510 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-07-02 15:19:28,847 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-07-02 15:19:35,801 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:35,831 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:39,401 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-07-02 15:19:39,404 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:39,441 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:39,681 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:39,689 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:39,689 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:39,729 INFO tools.lazy_deps: Lazy-installing edge-tts==7.2.7 for feature 'tts.edge'
+2026-07-02 15:19:40,661 INFO tools.lazy_deps: Lazy install complete for feature 'tts.edge'
+2026-07-02 15:19:41,458 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-07-02 15:19:41,459 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-07-02 15:19:41,462 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-07-02 15:19:41,664 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-07-02 15:19:41,666 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-07-02 15:19:41,667 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-07-02 15:19:41,669 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-07-02 15:19:41,671 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-07-02 15:19:41,671 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-07-02 15:19:41,674 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-07-02 15:19:41,703 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-07-02 15:19:41,704 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-07-02 15:19:41,707 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-07-02 15:19:41,708 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-07-02 15:19:41,709 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-07-02 15:19:41,710 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-07-02 15:19:41,712 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-07-02 15:19:41,713 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-07-02 15:19:41,713 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-07-02 15:19:41,714 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-07-02 15:19:41,728 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-07-02 15:19:41,848 INFO agent.auxiliary_client: Vision auto-detect: using main provider custom (@cf/moonshotai/kimi-k2.7-code)
+2026-07-02 15:19:42,075 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:42,080 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:42,080 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:42,390 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:42,396 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:42,397 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:42,421 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:42,425 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:42,438 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 15:19:45,163 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 15:19:46,015 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 15:19:46,645 INFO gateway.run: Starting Hermes Gateway...
+2026-07-02 15:19:46,647 INFO gateway.run: Session storage: /home/runner/workspace/.hermes_data/sessions
+2026-07-02 15:19:46,655 INFO gateway.run: Agent budget: max_iterations=90 (agent.max_turns from config.yaml, or HERMES_MAX_ITERATIONS from .env, or default 90)
+2026-07-02 15:19:46,658 INFO gateway.run: Secret redaction: ENABLED (tool output, logs, and chat responses are scrubbed before delivery)
+2026-07-02 15:19:46,690 WARNING gateway.run: No env user allowlists configured. Messaging platforms default to pairing/allowlist policies and will deny unknown senders unless you configure platform allowlists (e.g., TELEGRAM_ALLOWED_USERS=your_id) or explicitly opt in with GATEWAY_ALLOW_ALL_USERS=true plus dm_policy/group_policy: open on the platform.
+2026-07-02 15:19:46,795 INFO gateway.run: Connecting to api_server...
+2026-07-02 15:19:46,920 INFO gateway.platforms.api_server: [Api_Server] API server listening on http://127.0.0.1:8642 (model: hermes-agent)
+2026-07-02 15:19:46,932 INFO gateway.run: ✓ api_server connected
+2026-07-02 15:19:46,935 INFO gateway.run: Gateway running with 1 platform(s)
+2026-07-02 15:19:46,941 INFO gateway.run: Channel directory built: 0 target(s)
+2026-07-02 15:19:47,944 INFO gateway.run: Press Ctrl+C to stop
+2026-07-02 15:19:47,964 INFO cron.scheduler_provider: In-process cron scheduler started (interval=60s)
+2026-07-02 15:19:47,994 INFO gateway.run: Gateway housekeeping started (interval=60s)
+2026-07-02 15:19:47,998 INFO gateway.run: kanban dispatcher: holding singleton dispatcher lock (/home/runner/.hermes/kanban/.dispatcher.lock)
+2026-07-02 15:19:53,005 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)

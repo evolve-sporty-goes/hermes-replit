@@ -54,9 +54,9 @@ ln -sf $HOME/workspace/scripts/* "$BIN" 2>/dev/null
 chmod +x $BIN/*
 
 script.sh >/dev/null 2>&1 &
-sync || true
+sync || true &
 #change-model
-setcfapi.sh
+setcfapi.sh &
 #firecrawl_install.sh &
 hermes gateway run &
 } >"$LOGFILE" 2>&1 &
