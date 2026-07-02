@@ -609,6 +609,59 @@ and invisible challenges. No cloud detection evasion — just token extraction.
 Use when: your tooling supports 2captcha protocol, or you need raw Turnstile tokens
 rather than full session cookies.
 
+## When the user asks to sign up via curl
+
+Some services (notably Cloudflare's own dashboard) protect `/sign-up` with a
+managed challenge. A raw `curl` will receive `HTTP 403` with
+`cf-mitigated: challenge` and an HTML page that immediately loads JS from
+`challenges.cloudflare.com` — unparseable by curl.
+
+**Do not spend time trying to POST the visible signup form fields directly.**
+Cloudflare has no public unauthenticated signup API; the registration state is
+created only after the browser challenge completes.
+
+### What curl can observe
+
+```bash
+curl -sSL -D - -A "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 ..." \
+  https://dash.cloudflare.com/sign-up -o /tmp/cf-signup.html
+```
+
+Headers to confirm:
+- `HTTP/2 403`
+- `cf-mitigated: challenge`
+- Body contains `<title>Just a moment...</title>` and `window._cf_chl_opt`
+
+This is the stop signal. The rest of the flow must run in a real browser.
+
+### Hybrid pattern: browser clears challenge → cookies → curl API calls
+
+1. **Use CloakBrowser** (`launch_persistent_context`, `headless=False`,
+   `humanize=True`) to navigate to `dash.cloudflare.com/sign-up` and clear the
+   challenge.
+2. **Complete or assist** the registration in the browser (signup form, email
+   verification, etc.).
+3. **Dump session cookies** and useful headers:
+   ```python
+   cookies = context.cookies()  # list of {name, value, domain, ...}
+   user_agent = page.evaluate("navigator.userAgent")
+   ```
+4. **Use curl for subsequent API calls** with the same cookie jar + UA pair:
+   ```bash
+   curl -sSL -A "$UA" -c cookies.txt -b cookies.txt \
+     -H "accept: application/json" \
+     https://dash.cloudflare.com/api/v4/user/tokens/verify
+   ```
+
+**Rule of thumb for this workspace:** If the user says "use curl" for a
+bot-protected signup page, first verify with curl that the endpoint isn't
+challenge-walled. If it is, tell them curl can't solve the challenge and
+switch to CloakBrowser for the challenge + browser state, then return to curl
+for API calls once cookies are warm.
+
+See `references/cloudflare-signup-curl-diagnostics.md` for the concrete
+diagnostic transcript from `dash.cloudflare.com/sign-up`.
+
 ## Cloudflare bypass flow (from sarperavci/CloudflareBypassForScraping)
 
 The reference implementation at
