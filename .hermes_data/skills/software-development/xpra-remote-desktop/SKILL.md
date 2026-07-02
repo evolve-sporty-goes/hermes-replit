@@ -93,21 +93,20 @@ function init_touch_keyboard(client) {
     setTimeout(function() { pasteboard.prop("readonly", true); }, 100);
   });
 }
+## HTML5 Client Customization
 
-// Call in init_page():
-init_touch_keyboard(client);
+The default HTML5 client is at `/nix/store/<hash>-xpra-<version>/share/xpra/www/`. Copy to a writable location for patching:
+
+```bash
+mkdir -p /home/runner/workspace/xpra-www
+cp -r /nix/store/<hash>-xpra-<version>/share/xpra/www/* /home/runner/workspace/xpra-www/
+chmod -R u+w /home/runner/workspace/xpra-www/
 ```
-
-**Better approach**: Replace the entire keyboard implementation with a complete
-virtual-keyboard.js loaded from CDN (see references/virtual-keyboard-complete.js).
-This provides proper sticky modifier keys (Control, Alt, Meta) and context menu
-right-click support.
 
 ### Complete Virtual Keyboard Replacement
 
-The default `simple-keyboard` library only has "default" and "shift" layouts and no modifier key support. **Replace the entire keyboard implementation** with a complete virtual-keyboard.js loaded from CDN (see `references/virtual-keyboard-complete.js`).
+See the **xpra-virtual-keyboard** skill for a complete replacement of the default simple-keyboard implementation. This provides:
 
-This provides:
 - **Full modifier keys**: **Control**, **Alt**, **Meta** (⌘/Windows key)
 - **Sticky/locking modifiers** - tap once to lock, tap again to release
 - Visual feedback: green highlight when active, blue when locked
@@ -115,13 +114,13 @@ This provides:
 - **Context Menu** (☰) key that triggers right-click on focused element
 - Proper modifier state tracking included in all key events sent to xpra server (Ctrl+C works correctly)
 
-Implementation:
-1. Load `simple-keyboard` from CDN (`unpkg.com/simple-keyboard@latest`)
-2. Custom layout with modifier keys in bottom row
-3. Track modifier state globally, send in every key-action packet
+The replacement is done by:
+1. Loading `simple-keyboard` from CDN (`unpkg.com/simple-keyboard@latest`)
+2. Creating a custom layout with all modifier keys
+3. Tracking modifier state globally, send in every key-action packet
 4. Visual feedback via CSS classes (`.active-modifier`, `.modifier-locked`)
 
-See `references/virtual-keyboard-complete.js` for the complete implementation.
+See `references/virtual-keyboard-complete.js` in the xpra-virtual-keyboard skill for the complete implementation.
 
 ### Unlimited Viewport / Screen
 
