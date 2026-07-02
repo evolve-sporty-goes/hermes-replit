@@ -448,3 +448,21 @@
 2026-07-02 05:31:46,714 WARNING [8d541fc855c7] hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
 2026-07-02 05:31:46,714 WARNING [8d541fc855c7] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
 2026-07-02 05:31:46,715 ERROR [8d541fc855c7] agent.conversation_loop: API call failed after 3 retries. Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (37/32) | provider=openrouter model=nvidia/nemotron-3-ultra-550b-a55b:free msgs=256 tokens=~196,719
+2026-07-02 05:33:16,377 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 05:33:46,403 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 05:33:46,425 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 05:36:19,966 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 05:37:04,610 WARNING [8d541fc855c7] agent.conversation_loop: API call failed (attempt 1/3) error_type=RuntimeError thread=Thread-1264 (_run_agent_streaming):140612506470080 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Provider returned an empty stream with no finish_reason (possible upstream error or malformed SSE response).
+2026-07-02 05:37:04,611 WARNING [8d541fc855c7] agent.conversation_loop: Retrying API call in 2.1333739602742448s (attempt 1/3) thread=Thread-1264 (_run_agent_streaming):140612506470080 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Provider returned an empty stream with no finish_reason (possible upstream error or malformed SSE response).
+2026-07-02 05:37:09,734 WARNING [8d541fc855c7] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIError thread=Thread-1264 (_run_agent_streaming):140612506470080 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (36/32)
+2026-07-02 05:37:09,735 WARNING [8d541fc855c7] agent.conversation_loop: Retrying API call in 5.809916216554136s (attempt 2/3) thread=Thread-1264 (_run_agent_streaming):140612506470080 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (36/32)
+2026-07-02 05:37:18,633 WARNING [8d541fc855c7] agent.conversation_loop: API call failed (attempt 3/3) error_type=APIError thread=Thread-1264 (_run_agent_streaming):140612506470080 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (36/32)
+2026-07-02 05:37:18,646 WARNING [8d541fc855c7] hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 05:37:18,646 WARNING [8d541fc855c7] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 05:37:18,647 ERROR [8d541fc855c7] agent.conversation_loop: API call failed after 3 retries. Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (36/32) | provider=openrouter model=nvidia/nemotron-3-ultra-550b-a55b:free msgs=258 tokens=~197,901
