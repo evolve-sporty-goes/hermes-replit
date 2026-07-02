@@ -78,35 +78,27 @@ def find_verify():
     except Exception as e:
         print(f"Failed to expand latest thread message: {e}")
 
+    links = page.locator("a[href*='cloudflare.com/email-verification']").all()
+    for link in reversed(links):
+        href = link.get_attribute("href")
+        if href and "email-verification" in href:
+            return html.unescape(href)
     for frame in page.frames:
         try:
-            raw_html = frame.content()
-            if "clerk.openrouter.ai" in raw_html:
-                clean_html = html.unescape(raw_html)
-                matches = re.findall(r'https://clerk\.openrouter\.ai/v1/verify\?[^\s"<>()]+', clean_html)
-                if matches:
-                    return matches[0]
-        except Exception as e:
-            pass           
-
-    try:
-        links = page.locator("a[href*='clerk.openrouter.ai']").all()
-        for link in reversed(links):
-            href = link.get_attribute("href")
-            if href and "verify" in href:
-                return html.unescape(href)
-    except Exception as e:
-        pass
-
+            raw = html.unescape(frame.content())
+            m = re.search(r'https://dash\.cloudflare\.com/email-verification\?[^\s"<>()]+', raw)
+            if m:
+                return m.group(0)
+        except: pass
     return None
-
+    
 checked = set()
 for attempt in range(15):
     page.wait_for_timeout(15000)
 
     page.keyboard.press("/")
     page.wait_for_timeout(1000)
-    page.keyboard.type("openrouter sign up", delay=80)
+    page.keyboard.type("cloudflare verify", delay=80)
     page.keyboard.press("Enter")
     page.wait_for_timeout(1000)
     page.keyboard.press("Escape")
@@ -141,32 +133,6 @@ for attempt in range(15):
 
 ctx.close()
 print("VERIFY_URL:NOT_FOUND")
-
-
-for attempt in range(20):
-    link = extract_verify()
-    if link:
-        print(f"VERIFY_URL:{link}", flush=True)
-        ctx.close()
-        sys.exit(0)
-    # Search fallback
-    try:
-        srch = page.locator("input[placeholder*='Search'], input[type='search']").first
-        if srch.is_visible(timeout=500):
-            srch.fill("cloudflare verify")
-            page.keyboard.press("Enter")
-            page.wait_for_timeout(3000)
-            link = extract_verify()
-            if link:
-                print(f"VERIFY_URL:{link}", flush=True)
-                ctx.close()
-                sys.exit(0)
-    except: pass
-    page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
-    page.wait_for_timeout(8000)
-
-ctx.close()
-print("VERIFY_URL:NOT_FOUND", flush=True)
 PY
 
 # ── STEP 3: Verify + create Workers AI API token ──────────────────────────
