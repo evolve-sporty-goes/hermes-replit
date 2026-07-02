@@ -1226,3 +1226,4 @@
 2026-07-02 07:47:39,952 INFO gateway.run: Press Ctrl+C to stop
 2026-07-02 07:47:40,006 INFO gateway.run: Gateway housekeeping started (interval=60s)
 2026-07-02 07:47:40,025 INFO gateway.run: kanban dispatcher: holding singleton dispatcher lock (/home/runner/.hermes/kanban/.dispatcher.lock)
+2026-07-02 07:47:45,027 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)

@@ -22,11 +22,10 @@ email = sys.argv[3]
 
 PROFILE = os.path.expanduser("~/proton_profile")
 
-
-    ctx = launch_persistent_context(PROFILE, headless=True, humanize=True)
-    pg = ctx.new_page()
-    pg.goto("https://torbox.app", timeout=30000)
-    pg.wait_for_timeout(2000)
+ctx = launch_persistent_context(PROFILE, headless=True, humanize=True)
+pg = ctx.new_page()
+pg.goto("https://torbox.app", timeout=30000)
+pg.wait_for_timeout(2000)
 
     result = pg.evaluate('''async () => {
         const key = "''' + key + '''";
@@ -58,11 +57,10 @@ C = importlib.import_module("config")
 email = sys.argv[1]
 PROFILE = os.path.expanduser("~/proton_profile")
 
-
-    ctx = launch_persistent_context(PROFILE, headless=True, humanize=True)
-    pg = ctx.new_page()
-    pg.goto("https://account.proton.me/login", timeout=60000)
-    pg.wait_for_timeout(3000)
+ctx = launch_persistent_context(PROFILE, headless=True, humanize=True)
+pg = ctx.new_page()
+pg.goto("https://account.proton.me/login", timeout=60000)
+pg.wait_for_timeout(3000)
 
     logged_in = False
     try:
