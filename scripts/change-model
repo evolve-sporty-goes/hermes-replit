@@ -32,8 +32,8 @@ hermes config set model.api_compat openai
 hermes config set model.default "@cf/moonshotai/kimi-k2.7-code"
 hermes config set model.display_name "cloudflare"
 
-cloudflare_signup.sh
-sync
+#cloudflare_signup.sh
+#sync
 
 SCRIPT=$(realpath "$0")
 LOG_DIR="$HOME/.hermes_data/logs"
