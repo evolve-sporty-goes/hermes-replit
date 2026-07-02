@@ -3,15 +3,15 @@
   "_source_fingerprint": {
     "config_yaml": {
       "path": "/home/runner/workspace/.hermes_data/config.yaml",
-      "mtime_ns": 1782933851811509004,
+      "mtime_ns": 1782944525477640959,
       "size": 490
     },
     "auth_json": {
       "path": "/home/runner/workspace/.hermes_data/auth.json",
-      "semantic_sha256": "9a0805e43b0c1406550f8c1be278a11e0b6dcff86eff0fbac659f0ac9f3c1712"
+      "semantic_sha256": "b5e2430ce2dbe68997e705d31cafe27f8facceb675362e1c61ea422ad38912d5"
     },
     "catalog": {
-      "provider_catalog_sha256": "c78b4580f32777a81923975cb53e8b76f43c14a51cb5c95ea1b222150d670f8d",
+      "provider_catalog_sha256": "7083de5b3858d7842540a180520c23a4a94928f029edc2919dbcb9cbaefcc759",
       "codex_models_cache": {
         "path": "/home/runner/.codex/models_cache.json",
         "missing": true
@@ -38,6 +38,10 @@
       "provider_id": "openrouter",
       "models": [
         {
+          "id": "@openrouter:anthropic/claude-fable-5",
+          "label": "anthropic/claude-fable-5 (OpenRouter)"
+        },
+        {
           "id": "@openrouter:anthropic/claude-opus-4.8",
           "label": "anthropic/claude-opus-4.8 (OpenRouter)"
         },
@@ -46,8 +50,8 @@
           "label": "anthropic/claude-opus-4.8-fast (OpenRouter)"
         },
         {
-          "id": "@openrouter:anthropic/claude-sonnet-4.6",
-          "label": "anthropic/claude-sonnet-4.6 (OpenRouter)"
+          "id": "@openrouter:anthropic/claude-sonnet-5",
+          "label": "anthropic/claude-sonnet-5 (OpenRouter)"
         },
         {
           "id": "@openrouter:anthropic/claude-haiku-4.5",
@@ -90,15 +94,15 @@
           "label": "qwen/qwen3.7-max (OpenRouter)"
         },
         {
-          "id": "@openrouter:qwen/qwen3.7-plus",
-          "label": "qwen/qwen3.7-plus (OpenRouter)"
-        },
-        {
           "id": "@openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
           "label": "nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)"
         }
       ],
       "extra_models": [
+        {
+          "id": "@openrouter:qwen/qwen3.6-35b-a3b",
+          "label": "qwen/qwen3.6-35b-a3b (OpenRouter)"
+        },
         {
           "id": "@openrouter:moonshotai/kimi-k2.6",
           "label": "moonshotai/kimi-k2.6 (OpenRouter)"
@@ -136,6 +140,10 @@
           "label": "nvidia/nemotron-3-super-120b-a12b (OpenRouter)"
         },
         {
+          "id": "sakana/fugu-ultra",
+          "label": "sakana/fugu-ultra"
+        },
+        {
           "id": "@openrouter:poolside/laguna-m.1:free",
           "label": "poolside/laguna-m.1:free (OpenRouter)"
         },
@@ -144,8 +152,8 @@
           "label": "nvidia/nemotron-3-super-120b-a12b:free (OpenRouter)"
         },
         {
-          "id": "@openrouter:qwen/qwen3.6-35b-a3b",
-          "label": "qwen/qwen3.6-35b-a3b (OpenRouter)"
+          "id": "@openrouter:qwen/qwen3.7-plus",
+          "label": "qwen/qwen3.7-plus (OpenRouter)"
         },
         {
           "id": "@openrouter:cohere/north-mini-code:free",
@@ -1636,5 +1644,5 @@
       ]
     }
   ],
-  "_webui_version": "v0.51.802"
+  "_webui_version": "v0.51.809"
 }

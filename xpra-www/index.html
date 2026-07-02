@@ -1069,29 +1069,6 @@ var packet = ["key-action", wid, keyname, true, modifiers, keyval, str, keycode,
 
       function init_clipboard(client) {
 
-      // Touch-to-keyboard: focus pasteboard on canvas tap (triggers Android keyboard)
-      function init_touch_keyboard(client) {
-        var screen = $("#screen");
-        var pasteboard = $("#pasteboard");
-
-        screen.on("click touchstart", function(e) {
-          // Don't interfere with menu/button clicks
-          if ($(e.target).closest("#float_menu, .menu-content, #about, #sessioninfo, #window_preview").length) {
-            return;
-          }
-
-          // Focus the pasteboard to trigger virtual keyboard
-          pasteboard.focus();
-          pasteboard.prop("readonly", false);
-
-          // Re-enable readonly after a short delay to allow keyboard input
-          setTimeout(function() {
-            pasteboard.prop("readonly", true);
-          }, 100);
-        });
-      }
-
-
         client.init_clipboard();
       }
 
@@ -1108,6 +1085,28 @@ var kb = new Keyboard({
             "{bksp}": "bksp",
             "{space}": "space",
             "{enter}": "return",
+            "{control}": "ctrl",
+            "{alt}": "alt",
+            "{meta}": "meta",
+            "{pageup}": "pgup",
+            "{pagedown}": "pgdn",
+            "{contextmenu}": "menu",
+          },
+          layout: {
+            default: [
+              "` 1 2 3 4 5 6 7 8 9 0 - = {bksp}",
+              "{tab} q w e r t y u i o p [ ] \\",
+              "{lock} a s d f g h j k l ; ' {enter}",
+              "{shift} z x c v b n m , . / {shift}",
+              "{control} {alt} {meta} .com @ {space} {meta} {alt} {control} {pageup} {pagedown} {contextmenu}"
+            ],
+            shift: [
+              "~ ! @ # $ % ^ & * ( ) _ + {bksp}",
+              "{tab} Q W E R T Y U I O P { } |",
+              '{lock} A S D F G H J K L : " {enter}',
+              "{shift} Z X C V B N M < > ? {shift}",
+              "{control} {alt} {meta} .com @ {space} {meta} {alt} {control} {pageup} {pagedown} {contextmenu}"
+            ]
           },
         });
         window.kb = kb;
@@ -1145,6 +1144,12 @@ var key = {
             "{tab}": "Tab",
             "{lock}": "CapsLock",
             "{shift}": "Shift",
+            "{control}": "Control",
+            "{alt}": "Alt",
+            "{meta}": "Meta",
+            "{pageup}": "PageUp",
+            "{pagedown}": "PageDown",
+            "{contextmenu}": "ContextMenu",
             ".com": "|",
           } [button] || button;
 var e = {
@@ -1539,8 +1544,7 @@ var sane_host = client.host.replace(/[^A-Za-z0-9\.\:]/g, "");
         };
         clog("initializing subsystems");
         init_tablet_input(client);
-        init_touch_keyboard(client);
-        init_clipboard(client);
+                init_clipboard(client);
         init_file_transfer(client);
         init_keyboard(client);
         init_clock(client, getboolparam("clock", true));
