@@ -84,7 +84,7 @@ PY
 
 python3 ~/torbox_signup_otp.py "$EMAIL" "$PASSWORD" "$SUPABASE_KEY" "$OR_PROFILE"
 
-# ── STEP 2: Check Proton inbox for awstrack.me link ─────────────────
+# ── STEP 2: Check Proton inbox for awstrack.me link (OpenRouter style) ──
 cat > ~/torbox_proton.py << 'PY'
 import sys, re, urllib.parse, html
 from cloakbrowser import launch_persistent_context
@@ -94,7 +94,7 @@ PROTON_USER, PROTON_PASS, SIGNUP_EMAIL = sys.argv[1], sys.argv[2], sys.argv[3]
 ctx = launch_persistent_context("/home/runner/workspace/proton_profile", headless=False)
 page = ctx.pages[0] if ctx.pages else ctx.new_page()
 
-page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
+page.goto("https://mail.proton.me/u/0/inbox#filter=unread", timeout=60000)
 page.wait_for_timeout(5000)
 
 if "account.proton.me" in page.url:
@@ -138,7 +138,7 @@ for attempt in range(15):
     items = page.locator(".item-container")
     count = items.count()
     if count == 0:
-        page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
+        page.goto("https://mail.proton.me/u/0/inbox#filter=unread", timeout=60000)
         page.wait_for_timeout(5000)
         continue
     
@@ -160,7 +160,7 @@ for attempt in range(15):
     if len(checked) >= count:
         checked.clear()
     
-    page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
+    page.goto("https://mail.proton.me/u/0/inbox#filter=unread", timeout=60000)
     page.wait_for_timeout(5000)
 
 ctx.close()
@@ -174,84 +174,83 @@ if [ -z "$VURL" ] || [ "$VURL" = "NOT_FOUND" ]; then
     exit 1
 fi
 
-# ── STEP 3: Click verify link + extract API key ────────────────────
+# ── STEP 3: Click verify link + extract API key from Supabase ──────
+# Adapted from openrouter_signup.sh verify pattern
 cat > ~/torbox_verify.py << 'PY'
-import sys, re, time
+import sys, re, time, json, subprocess
+os.environ["DISPLAY"] = ":1"
+sys.path.insert(0, os.path.expanduser("~"))
 from cloakbrowser import launch_persistent_context
 
+if "config" in sys.modules: del sys.modules["config"]
+import importlib
+C = importlib.import_module("config")
+
 verify_url, email, password, cred_path, profile = sys.argv[1:6]
+
 ctx = launch_persistent_context(profile, headless=False, humanize=True)
-ctx.grant_permissions(["clipboard-read", "clipboard-write"])
 p = ctx.pages[0] if ctx.pages else ctx.new_page()
 
 p.goto(verify_url, timeout=60000)
 api_key = None
 
-for i in range(60):
+# Wait for redirect to dashboard (success) or error page
+for i in range(30):
     url = p.url
     time.sleep(2)
     
-    # Check for expired link
-    if any(status in url for status in (
-        "verify?__clerk_status=expired",
-        "verify?__clerk_status=client_mismatch",
-        "error=access_denied",
-        "otp_expired"
-    )):
+    # Check for error/expiration
+    if "error=" in url and ("otp_expired" in url or "access_denied" in url):
         print("VERIFY_STATUS:EXPIRED", flush=True)
         ctx.close()
         sys.exit(2)
     
-    # Check if we're on dashboard (success)
-    if "torbox.app/dashboard" in url:
-        # Try to extract API key from page
-        try:
-            # Look for API key in page elements
-            for sel in ["pre", "code", "span", "div[class*='key']"]:
-                elements = p.locator(sel).all()
-                for el in elements:
-                    m = re.search(r'[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}', el.inner_text())
-                    if m:
-                        api_key = m.group(0)
-                        break
-                if api_key: break
-        except: pass
+    # Success: redirected to dashboard
+    if "torbox.app/dashboard" in url or "torbox.app/#" in url:
+        print(f"VERIFY_REDIRECT: {url}", flush=True)
         break
 
-# If no API key on page, query Supabase
-if not api_key:
-    import subprocess, json
-    SUPABASE_KEY = open('/home/runner/workspace/credentials/.supabase_anon_key').read().read().strip()
-    
-    # Login to get access token
-    login_res = subprocess.run([
-        'curl', '-s', '-X', 'POST',
-        'https://db.torbox.app/auth/v1/token?grant_type=password',
-        '-H', f'apikey: {SUPABASE_KEY}',
-        '-H', 'Content-Type: application/json',
-        '-d', json.dumps({'email': email, 'password': password})
-    ], capture_output=True, text=True)
-    login_data = json.loads(login_res.stdout)
-    access_token = login_data.get('access_token')
-    user_id = login_data.get('user', {}).get('id')
-    
-    if access_token and user_id:
-        api_res = subprocess.run([
-            'curl', '-s',
-            f'https://db.torbox.app/rest/v1/api_tokens?auth_id=eq.{user_id}&select=token',
-            '-H', f'apikey: {SUPABASE_KEY}',
-            '-H', f'Authorization: Bearer {access_token}',
-            '-H', 'User-Agent: Mozilla/5.0'
-        ], capture_output=True, text=True)
-        try:
-            api_data = json.loads(api_res.stdout)
-            if api_data:
-                api_key = api_data[0]['token']
-        except: pass
+# Query Supabase for API key
+SUPABASE_KEY = open('/home/runner/workspace/credentials/.supabase_anon_key').read().strip()
 
-with open(cred_path, "a") as f:
-    f.write(f"\nEMAIL={email}\nPASSWORD={password}\nAPI_KEY={api_key or 'NOT_FOUND'}\n")
-print(f"API_KEY:{api_key or 'NOT_FOUND'}", flush=True)
+# Login to get access token
+login_res = subprocess.run([
+    'curl', '-s', '-X', 'POST',
+    'https://db.torbox.app/auth/v1/token?grant_type=password',
+    '-H', f'apikey: {SUPABASE_KEY}',
+    '-H', 'Content-Type: application/json',
+    '-d', json.dumps({'email': email, 'password': password})
+], capture_output=True, text=True)
+login_data = json.loads(login_res.stdout)
+access_token = login_data.get('access_token')
+user_data = login_data.get('user', {})
+user_id = user_data.get('id')
+
+if not access_token:
+    print("API_KEY:NOT_FOUND")
+    ctx.close()
+    sys.exit(1)
+
+# Query api_tokens table using auth_id
+api_res = subprocess.run([
+    'curl', '-s',
+    f'https://db.torbox.app/rest/v1/api_tokens?auth_id=eq.{user_id}&select=token',
+    '-H', f'apikey: {SUPABASE_KEY}',
+    '-H', f'Authorization: Bearer {access_token}',
+    '-H', 'User-Agent: Mozilla/5.0'
+], capture_output=True, text=True)
+
+try:
+    api_data = json.loads(api_res.stdout)
+    if api_data:
+        api_key = api_data[0]['token']
+        print(f"API_KEY:{api_key}")
+        with open(cred_path, "a") as f:
+            f.write(f"\nEMAIL={email}\nPASSWORD={password}\nAPI_KEY={api_key}\n\n")
+    else:
+        print("API_KEY:NOT_FOUND")
+except:
+    print("API_KEY:NOT_FOUND")
 
 ctx.close()
 PY
@@ -261,7 +260,6 @@ STATUS=$?
 
 if [ $STATUS -eq 2 ]; then
     echo "Verification link expired! Retrying..."
-    # Would need to re-request OTP
     exit 2
 elif [ $STATUS -ne 0 ]; then
     echo "Verification failed"
