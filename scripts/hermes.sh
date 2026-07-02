@@ -16,7 +16,7 @@ if [ ! -d "$HOME/hermes-agent" ]; then
     git clone https://github.com/NousResearch/hermes-agent.git "$HOME/hermes-agent"
     
 else
-    git -C "$HOME/hermes-workspace" pull
+    git -C "$HOME/hermes-agent" pull
 fi
 
 # 3. Create venv + install deps
