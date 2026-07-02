@@ -16,4 +16,41 @@ PersistentKeepalive = 25
 [Socks5]
 BindAddress = 127.0.0.1:40000
 mEOF
-~/wireproxy -c ~/wireproxy.conf & sleep 3 && curl --socks5 127.0.0.1:40000 https://api.ipify.org
+cat > ~/wireproxy40001.conf <<'mEOF'
+[Interface]
+PrivateKey = mJmUDNywLjLmlrp+aXok4zdUu1F0tTrqnvlsNpqZFU4=
+Address = 10.2.0.2/32, 2a07:b944::2:2/128
+DNS = 10.2.0.1, 2a07:b944::2:1
+[Peer]
+# US-FREE#101
+PublicKey = R0RqfuJtC/XoV7AoVJLE4Mut7awnOfdaAOyupja9HXk=
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint = 149.88.18.233:51820
+PersistentKeepalive = 25
+[Socks5]
+BindAddress = 127.0.0.1:40001
+mEOF
+
+cat > ~/wireproxy40002.conf <<'mEOF'
+[Interface]
+PrivateKey = OLVWs2QhnuWqhzXpL8aunLQqwN12Jz8BFZTJ71c5G2s=
+Address = 10.2.0.2/32, 2a07:b944::2:2/128
+DNS = 10.2.0.1, 2a07:b944::2:1
+
+[Peer]
+# CA-FREE#13
+PublicKey = KiCvg9+bh7/ssQDALW3uXSTLaURS3mgZdi/O9CxlFXo=
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint = 79.127.254.65:51820
+PersistentKeepalive = 25
+
+[Socks5]
+BindAddress = 127.0.0.1:40002
+mEOF
+
+
+
+~/wireproxy -c ~/wireproxy.conf &
+~/wireproxy -c ~/wireproxy40001.conf &
+~/wireproxy -c ~/wireproxy40002.conf &
+#sleep 3 && curl --socks5 127.0.0.1:40001 https://api.ipify.org

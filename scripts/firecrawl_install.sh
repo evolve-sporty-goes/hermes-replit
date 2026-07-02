@@ -19,6 +19,7 @@ do openrouter_signup.sh
 sleep 300
 firecrawl_signup.sh
 sleep 300
+cloudflare_signup.sh
 done &
 nvm install node
 command -v firecrawl  >/dev/null 2>&1 ||sudo npm install -g firecrawl-cli

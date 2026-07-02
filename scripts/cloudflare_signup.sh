@@ -5,7 +5,7 @@ export DISPLAY=:1
 cd /home/runner/workspace
 mkdir -p proton_profile credentials
 
-CF_PROFILE="/home/runner/cf_profile"
+CF_PROFILE="/tmp/cf_profile"
 PROTON_PROFILE="/tmp/proton_profile"
 CRED="/home/runner/workspace/credentials/cloudflare.txt"
 EMAIL=$(bash scripts/email.sh 2>/dev/null | tail -1 | tr -d '[:space:]')
@@ -17,10 +17,18 @@ rm -rf "$CF_PROFILE" && mkdir -p "$CF_PROFILE"
 
 # ── STEP 1: Cloudflare Signup ────────────────────────────────────────────
 cat > ~/cf_signup.py << 'PY'
-import sys
+import sys, random
 from cloakbrowser import launch_persistent_context
+proxies = [
+    "socks5://127.0.0.1:9050",   # Tor
+    "socks5://127.0.0.1:40000", #USA
+    "socks5://127.0.0.1:40001", #USA
+    "socks5://127.0.0.1:40002",
+]
+selected_proxy = random.choice(proxies)
 email, password, profile = sys.argv[1], sys.argv[2], sys.argv[3]
-ctx = launch_persistent_context(profile, headless=False, humanize=True, proxy="socks5://127.0.0.1:40000", geoip=True)
+ctx = launch_persistent_context(profile,headless=False,humanize=True,  proxy=selected_proxy,geoip=True,)
+#ctx = launch_persistent_context(profile, headless=False, humanize=True, proxy="socks5://127.0.0.1:40000", geoip=True)
 p = ctx.pages[0] if ctx.pages else ctx.new_page()
 p.goto("https://dash.cloudflare.com/sign-up", timeout=120000, wait_until="domcontentloaded")
 p.wait_for_timeout(5000)
@@ -43,7 +51,7 @@ def click_turnstile(page):
     return False
 
 result = "FAILED"
-for attempt in range(5):
+for attempt in range(3):
     print(f"SIGNUP_ATTEMPT {attempt+1} URL={p.url}", flush=True)
     if "sign-up" not in p.url:
         result = "SUCCESS"
@@ -61,6 +69,9 @@ for attempt in range(5):
 print(f"SIGNUP_RESULT {result} URL={p.url}", flush=True)
 p.wait_for_timeout(10000)
 ctx.close()
+if result == "FAILED":
+    raise RuntimeError("Signup failed after 5 attempts")
+    sys.exit(1)
 PY
 
 # ── STEP 2: Proton link extractor ─────────────────────────────────────────
@@ -69,7 +80,7 @@ import sys, re, html
 from cloakbrowser import launch_persistent_context
 
 proton_user, proton_pass, signup_email, proton_profile = sys.argv[1:5]
-ctx = launch_persistent_context(proton_profile, headless=False, proxy="socks5://127.0.0.1:40000", geoip=True)
+ctx = launch_persistent_context(proton_profile, headless=False, geoip=True)
 page = ctx.pages[0] if ctx.pages else ctx.new_page()
 
 page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
@@ -155,7 +166,7 @@ import sys, re
 from cloakbrowser import launch_persistent_context
 
 verify_url, email, password, cred_path, profile = sys.argv[1:6]
-ctx = launch_persistent_context(profile, headless=False, humanize=True, proxy="socks5://127.0.0.1:40000", geoip=True)
+ctx = launch_persistent_context(profile, headless=False, humanize=True, geoip=True)
 p = ctx.pages[0] if ctx.pages else ctx.new_page()
 
 def click_turnstile(page):
