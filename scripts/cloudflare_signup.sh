@@ -26,14 +26,12 @@ p = ctx.pages[0] if ctx.pages else ctx.new_page()
 p.goto("https://dash.cloudflare.com/sign-up", timeout=120000, wait_until="domcontentloaded")
 p.wait_for_timeout(5000)
 # Fill email
-p.locator("input[type='text'][name='email']").fill(email)
+p.locator("[data-testid='signup-input-email']").fill(email)
 p.wait_for_timeout(300)
 # Fill password
-p.locator("input[type='password'][name='password']").fill(password)
+p.locator("[data-testid='signup-input-password']").fill(password)
 p.wait_for_timeout(500)
-# Submit
-p.locator("button[type='submit']").filter(has_text="Sign up").first.click()
-p.wait_for_timeout(10000)
+
 # Turnstile fallback click
 for f in p.frames:
     if "challenges.cloudflare" in (f.url or ""):
@@ -45,7 +43,9 @@ for f in p.frames:
                 break
         except: pass
 print(f"SIGNUP_RESULT URL={p.url}", flush=True)
-ctx.close()
+# Submit
+p.locator("button[type='submit']").filter(has_text="Sign up").first.click()
+p.wait_for_timeout(10000)
 PY
 
 # ── STEP 2: Proton link extractor ─────────────────────────────────────────
