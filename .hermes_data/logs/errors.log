@@ -1444,3 +1444,51 @@
 2026-07-02 10:07:09,759 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
 2026-07-02 10:07:09,832 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
 2026-07-02 10:07:09,861 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:09:38,370 WARNING gateway.run: Shutdown context: signal=SIGTERM under_systemd=yes parent_pid=1 parent_name=pid0 loadavg_1m=0.47 parent_cmdline='/nix/store/si4wrnr3ggvdx6nj4ahyx332dwl0wcs4-pid1-0.0.1/bin/pid0 -vsock-port=2000 -pid2-vsock-port=2001 -host-services-vsock-port=2002 -portauthority-vsock-port=2003 -setup-cgroups=true -manage-pseudo-fs=true -metrics-to-conman=false -pid2-pooling'
+2026-07-02 10:09:40,896 WARNING gateway.run: No env user allowlists configured. Messaging platforms default to pairing/allowlist policies and will deny unknown senders unless you configure platform allowlists (e.g., TELEGRAM_ALLOWED_USERS=your_id) or explicitly opt in with GATEWAY_ALLOW_ALL_USERS=true plus dm_policy/group_policy: open on the platform.
+2026-07-02 10:09:57,582 WARNING agent.lsp.servers: bash-language-server: shellcheck not found on PATH — diagnostics will be empty until shellcheck is installed (apt: shellcheck, brew: shellcheck, scoop: shellcheck).
+2026-07-02 10:13:33,549 WARNING [20260702_100651_da2ddb] agent.conversation_loop: API call failed (attempt 1/3) error_type=RateLimitError thread=Thread-5 (run_agent):140334021469888 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/59cec8e96c70ae69d4c4a2faf4e12eb2/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (8198f7db-e990-4f13-8f7a-b02059854d16)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-07-02 10:13:33,563 WARNING [20260702_100651_da2ddb] hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:13:33,563 WARNING [20260702_100651_da2ddb] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 10:13:33,564 WARNING [20260702_100651_da2ddb] agent.conversation_loop: Retrying API call in 2.286413985556901s (attempt 1/3) thread=Thread-5 (run_agent):140334021469888 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/59cec8e96c70ae69d4c4a2faf4e12eb2/ai/v1 model=@cf/moonshotai/kimi-k2.7-code policy=default error=Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (8198f7db-e990-4f13-8f7a-b02059854d16)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-07-02 10:13:36,164 WARNING [20260702_100651_da2ddb] agent.conversation_loop: API call failed (attempt 2/3) error_type=RateLimitError thread=Thread-5 (run_agent):140334021469888 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/59cec8e96c70ae69d4c4a2faf4e12eb2/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (6f37559e-5fb1-48b4-95bf-ee1cdfecf6ad)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-07-02 10:13:36,167 WARNING [20260702_100651_da2ddb] agent.conversation_loop: Retrying API call in 5.742624711774946s (attempt 2/3) thread=Thread-5 (run_agent):140334021469888 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/59cec8e96c70ae69d4c4a2faf4e12eb2/ai/v1 model=@cf/moonshotai/kimi-k2.7-code policy=default error=Error code: 429 - {'errors': [{'message': "AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (6f37559e-5fb1-48b4-95bf-ee1cdfecf6ad)", 'code': 4006}], 'success': False, 'result': {}, 'messages': []}
+2026-07-02 10:13:42,286 WARNING [20260702_100651_da2ddb] agent.conversation_loop: API call failed (attempt 3/3) error_type=RateLimitError thread=Thread-5 (run_agent):140334021469888 provider=custom base_url=https://api.cloudflare.com/client/v4/accounts/59cec8e96c70ae69d4c4a2faf4e12eb2/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (eec9d591-5968-4a65-ae76-a724c9a36ff8)","code":4006}],"success":false,"result":{},"messages":[]}
+2026-07-02 10:13:42,290 ERROR [20260702_100651_da2ddb] agent.conversation_loop: API call failed after 3 retries. HTTP 429: {"errors":[{"message":"AiError: AiError: you have used up your daily free allocation of 10,000 neurons, please upgrade to Cloudflare's Workers Paid plan if you would like to continue usage. (eec9d591-5968-4a65-ae76-a724c9a36ff8)","code":4006}],"success":false,"result":{},"messages":[]} | provider=custom model=@cf/moonshotai/kimi-k2.7-code msgs=31 tokens=~33,512
+2026-07-02 10:14:44,515 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:44,529 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:45,053 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:14:45,059 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:14:45,063 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:14:46,133 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:46,147 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:46,241 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:46,246 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:46,248 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:47,017 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:14:47,039 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:14:47,045 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:14:47,085 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:47,088 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:47,089 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:47,243 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:47,243 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:47,244 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:47,254 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:47,256 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:47,263 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 10:14:48,076 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:14:48,400 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 10:14:48,481 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 10:14:58,935 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:14:58,940 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:14:58,944 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:14:58,950 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:14:59,035 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 10:14:59,067 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider

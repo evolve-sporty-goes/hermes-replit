@@ -9,8 +9,6 @@ mkdir -p proton_profile credentials
 CF_PROFILE="/home/runner/cf_profile"
 PROTON_PROFILE="/home/runner/workspace/proton_profile"
 CRED="/home/runner/workspace/credentials/cloudflare.txt"
-
-bash scripts/email.sh > /dev/null 2>&1
 EMAIL=$(bash scripts/email.sh 2>/dev/null | tail -1 | tr -d '[:space:]')
 
 source <(python3 -c "import importlib.util; s=importlib.util.spec_from_file_location('c','$HOME/config.py'); m=importlib.util.module_from_spec(s); s.loader.exec_module(m); print(f'export PROTON_USER={m.PROTON_USERNAME}'); print(f'export PROTON_PASS={m.PROTON_PASSWORD}')")
@@ -20,8 +18,7 @@ rm -rf "$CF_PROFILE" && mkdir -p "$CF_PROFILE"
 
 # ── STEP 1: Cloudflare Signup ────────────────────────────────────────────
 cat > ~/cf_signup.py << 'PY'
-import sys, os
-os.environ["DISPLAY"] = ":1"
+import sys
 from cloakbrowser import launch_persistent_context
 email, password, profile = sys.argv[1], sys.argv[2], sys.argv[3]
 ctx = launch_persistent_context(profile, headless=False, humanize=True, proxy="socks5://127.0.0.1:40000", geoip=True)
@@ -29,35 +26,24 @@ p = ctx.pages[0] if ctx.pages else ctx.new_page()
 p.goto("https://dash.cloudflare.com/sign-up", timeout=60000, wait_until="domcontentloaded")
 p.wait_for_timeout(4000)
 # Fill form
-p.locator("#emailAddress-field").click()
 p.locator("#emailAddress-field").type(email, delay=50)
 p.wait_for_timeout(300)
-p.locator("#password-field").click()
 p.locator("#password-field").type(password, delay=50)
 p.wait_for_timeout(500)
 # Submit
 p.get_by_role("button", name="Signup").click()
 p.wait_for_timeout(8000)
-# Find Turnstile & click
-cf_box = None
-for _ in range(30):
-    for f in p.frames:
-        if "challenges.cloudflare" in (f.url or ""):
-            try:
-                fb = f.frame_element().bounding_box()
-                if fb and fb["width"] > 50:
-                    cf_box = fb; break
-            except: pass
-    if cf_box: break
-    p.wait_for_timeout(2000)
-
-if not cf_box:
-    print("TURNSTILE:NOT_FOUND", flush=True); ctx.close(); sys.exit(1)
-
-cx, cy = cf_box["x"] + 30, cf_box["y"] + cf_box["height"] / 2
-p.mouse.click(cx, cy)
-p.wait_for_timeout(15000)
-print(f"TURNSTILE:SOLVED URL={p.url}", flush=True)
+# Solve Turnstile if visible
+for f in p.frames:
+    if "challenges.cloudflare" in (f.url or ""):
+        try:
+            fb = f.frame_element().bounding_box()
+            if fb and fb["width"] > 50:
+                p.mouse.click(fb["x"] + 30, fb["y"] + fb["height"] / 2)
+                p.wait_for_timeout(15000)
+                break
+        except: pass
+print(f"TURNSTILE:RESULT URL={p.url}", flush=True)
 ctx.close()
 PY
 
@@ -146,6 +132,17 @@ p = ctx.pages[0] if ctx.pages else ctx.new_page()
 
 p.goto(verify_url, timeout=60000)
 p.wait_for_timeout(5000)
+
+# Solve Turnstile if visible
+for f in p.frames:
+    if "challenges.cloudflare" in (f.url or ""):
+        try:
+            fb = f.frame_element().bounding_box()
+            if fb and fb["width"] > 50:
+                p.mouse.click(fb["x"] + 30, fb["y"] + fb["height"] / 2)
+                p.wait_for_timeout(15000)
+                break
+        except: pass
 
 # Step 2: Workers and Pages
 p.goto("https://dash.cloudflare.com/?to=/:account/workers-and-pages", timeout=60000)
