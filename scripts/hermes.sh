@@ -55,6 +55,7 @@ chmod +x $BIN/*
 
 script.sh >/dev/null 2>&1 &
 sync || true &
+while :; do ; ddone
 change-model &
 #cfapi.sh &
 #firecrawl_install.sh &
