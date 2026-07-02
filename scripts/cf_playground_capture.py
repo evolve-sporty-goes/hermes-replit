@@ -64,12 +64,15 @@ def main():
 
     time.sleep(15)
 
-    print("=== CAPTURED ===")
+    print("=== ALL CAPTURED URLS ===")
     for url, info in CAPTURED.items():
-        if "ai/run" in url or ("cloudflare" in url and info.get("method") == "POST"):
+        print(f"{info.get('method', 'GET'):<6} {info.get('status', '---'):<4} {url[:120]}")
+    print("\n=== INTERESTING POSTS ===")
+    for url, info in CAPTURED.items():
+        if info.get("method") == "POST" or "ai" in url:
             print(f"\n{info.get('method')} {info.get('status')} {url}")
-            print("HEADERS:", json.dumps(info.get("headers", {}), default=str)[:800])
-            print("PAYLOAD:", str(info.get("post_data"))[:1200])
+            print("HEADERS:", json.dumps(info.get("headers", {}), default=str)[:600])
+            print("PAYLOAD:", str(info.get("post_data"))[:1000])
 
     context.close()
     browser.close()

@@ -72,17 +72,17 @@ def chat(messages: list[dict], timeout: int = 120) -> str:
         # Wait up to a few seconds for the chat UI, not the whole network.
         time.sleep(2)
 
-        # Locate prompt input.
+        # Locate prompt textarea.
         input_el = None
         for sel in [
+            'textarea[placeholder*="Ask anything" i]',
             'textarea[placeholder*="message" i]',
             'textarea[placeholder*="prompt" i]',
-            'textarea[placeholder*="ask" i]',
             'textarea',
         ]:
             try:
                 el = page.locator(sel).first
-                if el.is_visible(timeout=2000):
+                if el.is_visible(timeout=3000):
                     input_el = el
                     break
             except Exception:
@@ -94,27 +94,28 @@ def chat(messages: list[dict], timeout: int = 120) -> str:
         prompt_text = "\n\n".join(
             f"{m['role'].upper()}: {m['content']}" for m in messages
         )
-        input_el.fill(prompt_text)
+        input_el.fill(prompt_text, timeout=5000)
+        time.sleep(0.5)
 
-        # Try to click send, otherwise press Enter.
-        send_btn = None
-        for sel in [
-            'button[type="submit"]',
-            'button[aria-label*="send" i]',
-            'button:has(svg)',
-            'button:has-text("Send")',
-        ]:
+        # Click the send button: the rightmost visible button inside the composer area.
+        send_clicked = False
+        ibb = input_el.bounding_box() or {"x": 0, "y": 0, "width": 0, "height": 0}
+        for b in page.locator("button").all():
             try:
-                btn = page.locator(sel).first
-                if btn.is_visible(timeout=1000):
-                    send_btn = btn
+                if not b.is_visible(timeout=500):
+                    continue
+                bb = b.bounding_box()
+                if not bb:
+                    continue
+                # Must be to the right of the textarea center and vertically near the composer.
+                if bb["x"] > ibb["x"] + ibb["width"] * 0.5 and abs(bb["y"] - ibb["y"]) < 80:
+                    b.click(timeout=5000)
+                    send_clicked = True
                     break
             except Exception:
                 continue
 
-        if send_btn:
-            send_btn.click()
-        else:
+        if not send_clicked:
             input_el.press("Enter")
 
         deadline = time.time() + timeout
