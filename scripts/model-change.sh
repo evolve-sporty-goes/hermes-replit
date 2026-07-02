@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cloudflare_signup.sh
+sync
+CRED="${WORKSPACE:-$HOME/workspace}/credentials/cloudflare.txt"
+mkdir -p "$(dirname "$CRED")"
+touch "$CRED"
+
+if [[ $# -ge 2 ]]; then
+  printf 'ACCOUNT_ID=%s\nAPI_KEY=%s\n\n' "$1" "$2" >> "$CRED"
+  echo "Added: ${1:0:8}..."
+fi
+
+[[ -f "$CRED" ]] || { echo "No $CRED"; exit 1; }
+
+mapfile -t L < <(grep -v '^[[:space:]]*$' "$CRED")
+N=$((${#L[@]} / 2))
+I=$((RANDOM % N * 2))
+A=$(echo "${L[$I]}" | cut -d= -f2)
+K=$(echo "${L[$((I+1))]}" | cut -d= -f2)
+U="https://api.cloudflare.com/client/v4/accounts/${A}/ai/v1"
+
+echo "Using: ${A:0:8}..."
+hermes config set model.provider custom
+hermes config set model.base_url "$U"
+hermes config set model.api_key "$K"
+hermes config set model.api_compat openai
+hermes config set model.default "@cf/moonshotai/kimi-k2.7-code"
+hermes config set model.display_name "cloudflare"
+
+# --- self-contained watcher ---
+SCRIPT="$(realpath "$0")"
+LOG="$HOME/.hermes_data/logs/errors.log"
+PIDFILE="/tmp/hermes-watcher.pid"
+
+# stop any watcher left from a previous run
+if [[ -f "$PIDFILE" ]]; then
+  OLD_PID=$(cat "$PIDFILE")
+  if kill -0 "$OLD_PID" 2>/dev/null; then
+    kill "$OLD_PID" 2>/dev/null || true
+    sleep 0.5
+  fi
+  rm -f "$PIDFILE"
+fi
+
+mkdir -p "$(dirname "$LOG")"
+touch "$LOG"
+
+# start watcher; it survives when this script exits
+(
+  tail -F -n 0 "$LOG" 2>/dev/null | while read -r line; do
+    if echo "$line" | grep -q "HTTP 429"; then
+      "$SCRIPT" &            # rerun this script in background
+      break                   # then this watcher exits
+    fi
+  done
+) >/dev/null 2>&1 &
+
+NEW_PID=$!
+echo "$NEW_PID" > "$PIDFILE"
+disown "$NEW_PID" 2>/dev/null || true
+
+echo "Done. watcher PID: $NEW_PID"
