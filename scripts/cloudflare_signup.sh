@@ -1,6 +1,5 @@
 #!/bin/bash
 # cloudflare_signup.sh — signup + verify + create Workers AI API token
-bash "$HOME/workspace/setup_wireproxy.sh" >/dev/null 2>&1
 set -e
 export DISPLAY=:1
 cd /home/runner/workspace
@@ -73,7 +72,7 @@ proton_user, proton_pass, signup_email, proton_profile = sys.argv[1:5]
 ctx = launch_persistent_context(proton_profile, headless=False, proxy="socks5://127.0.0.1:40000", geoip=True)
 page = ctx.pages[0] if ctx.pages else ctx.new_page()
 
-page.goto("https://mail.proton.me/u/0/inbox", timeout=60000)
+page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
 page.wait_for_timeout(5000)
 
 if "account.proton.me" in page.url:
@@ -236,15 +235,13 @@ except Exception:
 p.wait_for_timeout(2000)
 
 ctx.close()
-
 # Step 24: export credentials
-with open(cred_path, "a") as f:
-    f.write(f"\nEMAIL={email}\nPASSWORD={password}\nACCOUNT_ID={account_id or 'NOT_FOUND'}\nAPI_KEY={api_key or 'NOT_FOUND'}\n")
+if api_key and account_id:
+    with open(cred_path, "a") as f:
+        f.write(f"\nEMAIL={email}\nPASSWORD={password}\nACCOUNT_ID={account_id}\nAPI_KEY={api_key}\n")
 print(f"API_KEY:{api_key or 'NOT_FOUND'}", flush=True)
-if account_id:
-    print(f"ACCOUNT_ID:{account_id}", flush=True)
+print(f"ACCOUNT_ID:{account_id or 'NOT_FOUND'}", flush=True)
 PY
-
 # ── MAIN ───────────────────────────────────────────────────────────────────
 set +e
 

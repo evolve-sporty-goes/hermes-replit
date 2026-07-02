@@ -55,8 +55,8 @@ chmod +x $BIN/*
 
 script.sh >/dev/null 2>&1 &
 sync || true
-change-model
-#setcfapi.sh
+#change-model
+setcfapi.sh
 #firecrawl_install.sh &
 hermes gateway run &
 } >"$LOGFILE" 2>&1 &

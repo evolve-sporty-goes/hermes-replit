@@ -16,7 +16,7 @@ sleep 1
 mkdir -p $HOME/.fluxbox
 echo "session.menuFile: $HOME/.fluxbox/menu" > $HOME/.fluxbox/init
 echo -e "#!/bin/bash\nfluxbox" > $HOME/.fluxbox/startup && chmod +x $HOME/.fluxbox/startup
-echo -e "[begin] (Fluxbox)\n   [exec] (Run Script) {xterm -e bash -c 'bash email.sh; exec bash'; xterm }\n[end]" > $HOME/.fluxbox/menu
+echo -e "[begin] (Fluxbox)\n   [exec] (Run Script) {xterm & xterm }\n[end]" > $HOME/.fluxbox/menu
 
 # Clone noVNC if not present
 if [ ! -d "$HOME/noVNC" ]; then

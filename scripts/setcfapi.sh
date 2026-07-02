@@ -4,12 +4,7 @@ cloudflare_signup.sh
 CRED="${WORKSPACE:-$HOME/workspace}/credentials/cloudflare.txt"
 mkdir -p "$(dirname "$CRED")"
 touch "$CRED"
-
-# Add new credentials if args provided
-if [[ $# -ge 2 ]]; then
-  printf 'ACCOUNT_ID=%s\nAPI_KEY=%s\n\n' "$1" "$2" >> "$CRED"
-  echo "Added: ${1:0:8}..."
-fi
+python3 -c "import re,random; text=open('$CRED').read(); blocks=[b.strip() for b in re.split(r'\n\s*\n', text) if b.strip()]; random.shuffle(blocks); open('$CRED','w').write('\n\n'.join(blocks)+'\n\n')"
 
 [[ -f "$CRED" ]] || { echo "No $CRED"; exit 1; }
 
