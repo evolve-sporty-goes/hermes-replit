@@ -142,3 +142,41 @@ npm notice
 2026-07-02 20:07:37,551 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
 2026-07-02 20:07:37,554 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
 2026-07-02 20:07:37,554 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 20:13:28,258 WARNING [2fae8f4277af] agent.tool_executor: Tool terminal returned error (175.44s): {"output": "[Command interrupted]", "exit_code": 130, "error": null}
+2026-07-02 20:13:32,853 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-02 20:13:32,857 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-02 20:13:33,460 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 20:13:33,973 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 20:13:33,974 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 20:13:34,063 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 20:13:34,067 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 20:13:34,067 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 20:13:34,630 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 20:13:38,859 WARNING [2fae8f4277af] agent.conversation_loop: API call failed (attempt 1/3) error_type=AuthenticationError thread=Thread-420 (_run_agent_streaming):139695306712768 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/5b0dcc2bddad438b04d8d10e8dbd54da/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 401: {"result":null,"success":false,"errors":[{"code":10000,"message":"Authentication error"}],"messages":[]}
+2026-07-02 20:13:38,867 WARNING [2fae8f4277af] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 20:13:39,052 ERROR [2fae8f4277af] agent.conversation_loop: Non-retryable client error: Error code: 401 - {'result': None, 'success': False, 'errors': [{'code': 10000, 'message': 'Authentication error'}], 'messages': []}
+2026-07-02 20:13:41,717 WARNING [2fae8f4277af] agent.conversation_loop: API call failed (attempt 1/3) error_type=AuthenticationError thread=Thread-420 (_run_agent_streaming):139695306712768 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/5b0dcc2bddad438b04d8d10e8dbd54da/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 401: {"result":null,"success":false,"errors":[{"code":10000,"message":"Authentication error"}],"messages":[]}
+2026-07-02 20:13:41,724 WARNING [2fae8f4277af] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 20:13:41,891 ERROR [2fae8f4277af] agent.conversation_loop: Non-retryable client error: Error code: 401 - {'result': None, 'success': False, 'errors': [{'code': 10000, 'message': 'Authentication error'}], 'messages': []}
+2026-07-02 20:14:08,380 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 20:14:33,640 WARNING [2fae8f4277af] agent.conversation_loop: API call failed (attempt 1/3) error_type=AuthenticationError thread=Thread-433 (_run_agent_streaming):139695306712768 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/5b0dcc2bddad438b04d8d10e8dbd54da/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 401: {"result":null,"success":false,"errors":[{"code":10000,"message":"Authentication error"}],"messages":[]}
+2026-07-02 20:14:33,769 ERROR [2fae8f4277af] agent.conversation_loop: Non-retryable client error: Error code: 401 - {'result': None, 'success': False, 'errors': [{'code': 10000, 'message': 'Authentication error'}], 'messages': []}
+2026-07-02 20:14:35,404 WARNING [2fae8f4277af] agent.conversation_loop: API call failed (attempt 1/3) error_type=AuthenticationError thread=Thread-433 (_run_agent_streaming):139695306712768 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/5b0dcc2bddad438b04d8d10e8dbd54da/ai/v1 model=@cf/moonshotai/kimi-k2.7-code summary=HTTP 401: {"result":null,"success":false,"errors":[{"code":10000,"message":"Authentication error"}],"messages":[]}
+2026-07-02 20:14:35,410 WARNING [2fae8f4277af] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 20:14:35,529 ERROR [2fae8f4277af] agent.conversation_loop: Non-retryable client error: Error code: 401 - {'result': None, 'success': False, 'errors': [{'code': 10000, 'message': 'Authentication error'}], 'messages': []}
+2026-07-02 20:17:54,709 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-02 20:17:54,774 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-02 20:17:55,531 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 20:17:55,610 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 20:17:55,789 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 20:17:55,807 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 20:17:55,807 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
