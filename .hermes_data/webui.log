@@ -2512,3 +2512,90 @@ Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*)
 [webui] {"ts": "2026-07-02T10:26:05Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 2.6, "forwarded_for": "152.58.128.13"}
 [webui] {"ts": "2026-07-02T10:26:11Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.9, "forwarded_for": "152.58.128.13"}
 [webui] {"ts": "2026-07-02T10:26:17Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.7, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:26:23Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:26:29Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:26:35Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:26:41Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.7, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:26:47Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:26:53Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:26:59Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:27:05Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.7, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:27:11Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.7, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:27:17Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 1.1, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:27:20Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 0.5}
+[webui] {"ts": "2026-07-02T10:27:20Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.6}
+[webui] {"ts": "2026-07-02T10:27:21Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.2}
+[webui] {"ts": "2026-07-02T10:27:21Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.2}
+[webui] {"ts": "2026-07-02T10:27:22Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 4.0}
+[webui] {"ts": "2026-07-02T10:27:22Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.1}
+[webui] {"ts": "2026-07-02T10:27:23Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:27:28Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 3.1}
+[webui] {"ts": "2026-07-02T10:27:29Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:27:35Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:27:41Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.9, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:27:47Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.7, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:27:50Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/dashboard/status", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:27:53Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:27:59Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:28:05Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 1.0, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:28:11Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:28:17Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:28:23Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:28:29Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:28:35Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:28:41Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.9, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:28:47Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.7, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:28:53Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 4.3, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:28:59Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 1.1, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:29:05Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:29:11Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 1.1, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:29:17Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 1.4, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:29:23Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.7, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:29:29Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 1.1, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:29:35Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 4.4, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:29:41Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:29:47Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.9, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:29:50Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/dashboard/status", "status": 200, "ms": 0.7, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:29:53Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:29:59Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.9, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:30:05Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:30:11Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 1.4, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:30:17Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:30:23Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 5.9, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:30:29Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 0.3}
+[webui] {"ts": "2026-07-02T10:30:29Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 1.1, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:30:29Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.6}
+[webui] {"ts": "2026-07-02T10:30:30Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.4}
+[webui] {"ts": "2026-07-02T10:30:30Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.1}
+[webui] {"ts": "2026-07-02T10:30:31Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.4}
+[webui] {"ts": "2026-07-02T10:30:31Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 3.6}
+[webui] {"ts": "2026-07-02T10:30:35Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 6.4, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:30:36Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 0.3}
+[webui] {"ts": "2026-07-02T10:30:41Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:31:30Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 1.2, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:31:30Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/dashboard/status", "status": 200, "ms": 0.7, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:32:30Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:33:30Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 3.8, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:33:30Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/dashboard/status", "status": 200, "ms": 0.7, "forwarded_for": "152.58.128.13"}
+[webui] {"ts": "2026-07-02T10:34:30Z", "remote": "127.0.0.1", "method": "GET", "path": "/api/session/status?session_id=2646bb123675", "status": 200, "ms": 0.8, "forwarded_for": "152.58.128.13"}
+[bootstrap] Starting Hermes Web UI on http://127.0.0.1:8787 (foreground mode: --foreground)
+
+  Hermes Web UI -- startup config
+  --------------------------------
+  repo root   : /home/runner/hermes-webui
+  agent dir   : /home/runner/hermes-agent  [32m[ok][0m
+  python      : /home/runner/hermes-agent/.venv/bin/python
+  state dir   : /home/runner/workspace/.hermes_data/webui
+  workspace   : /home/runner/workspace
+  host:port   : 127.0.0.1:8787
+  config file : /home/runner/.hermes/config.yaml  (found)
+
+  [tip] No password set. Any process on this machine can read sessions
+        and memory via the local API. Set HERMES_WEBUI_PASSWORD to
+        enable authentication.
+[ok] bg_task_complete drain thread started
+[ok] SessionChannel reaper thread started
+  Hermes Web UI listening on http://127.0.0.1:8787
+  Remote access: ssh -N -L 8787:127.0.0.1:8787 <user>@<your-server>
+  Then open:     http://localhost:8787
+
