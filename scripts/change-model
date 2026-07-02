@@ -32,24 +32,3 @@ hermes config set model.api_compat openai
 hermes config set model.default "@cf/moonshotai/kimi-k2.7-code"
 hermes config set model.display_name "cloudflare"
 
-#cloudflare_signup.sh
-#sync
-
-SCRIPT=$(realpath "$0")
-LOG_DIR="$HOME/.hermes_data/logs"
-LOG="$LOG_DIR/agent.log"
-PIDFILE="/tmp/hermes-watcher.pid"
-
-[[ -f "$PIDFILE" ]] && { kill "$(cat "$PIDFILE")" 2>/dev/null || true; sleep 0.5; rm -f "$PIDFILE"; }
-rm -rf "$LOG_DIR"
-mkdir -p "$LOG_DIR"
-> "$LOG"
-
-(
-  tail -F -n 0 "$LOG" 2>/dev/null | grep -q "HTTP 429" && "$SCRIPT" &
-) >/dev/null 2>&1 &
-
-echo "$!" > "$PIDFILE"
-disown 2>/dev/null || true
-
-echo "Done. watcher PID: $(cat "$PIDFILE")"
