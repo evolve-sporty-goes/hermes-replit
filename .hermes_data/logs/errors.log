@@ -242,3 +242,9 @@ npm notice
   → `copilot login` or `hermes model` to authenticate via OAuth
   → A fine-grained PAT (github_pat_*) with Copilot Requests permission
   → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 20:39:58,814 WARNING [2fae8f4277af] agent.conversation_loop: API call failed (attempt 1/3) error_type=AuthenticationError thread=Thread-639 (_run_agent_streaming):139695306712768 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/9d6aa63a437b5e29b737c431c02e95bc/ai/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 401: {"result":null,"success":false,"errors":[{"code":10000,"message":"Authentication error"}],"messages":[]}
+2026-07-02 20:39:58,819 WARNING [2fae8f4277af] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 20:39:59,142 ERROR [2fae8f4277af] agent.conversation_loop: Non-retryable client error: Error code: 401 - {'result': None, 'success': False, 'errors': [{'code': 10000, 'message': 'Authentication error'}], 'messages': []}
+2026-07-02 20:40:03,254 WARNING [2fae8f4277af] agent.conversation_loop: API call failed (attempt 1/3) error_type=AuthenticationError thread=Thread-639 (_run_agent_streaming):139695306712768 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/9d6aa63a437b5e29b737c431c02e95bc/ai/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 401: {"result":null,"success":false,"errors":[{"code":10000,"message":"Authentication error"}],"messages":[]}
+2026-07-02 20:40:03,256 WARNING [2fae8f4277af] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 20:40:03,431 ERROR [2fae8f4277af] agent.conversation_loop: Non-retryable client error: Error code: 401 - {'result': None, 'success': False, 'errors': [{'code': 10000, 'message': 'Authentication error'}], 'messages': []}
