@@ -74,3 +74,17 @@
   → `copilot login` or `hermes model` to authenticate via OAuth
   → A fine-grained PAT (github_pat_*) with Copilot Requests permission
   → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 19:14:50,076 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-02 19:14:50,091 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-02 19:14:50,648 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 19:14:50,651 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 19:14:50,899 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 19:14:50,904 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 19:14:50,905 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 19:15:53,965 WARNING [2fae8f4277af] tools.browser_tool: browser 'click' stderr: npm warn exec The following package was not found and will be installed: agent-browser@0.31.1
+npm notice
+npm notice New minor version of npm available! 11.4.2 -> 11.18.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.18.0
+npm notice To update run: npm install -g npm@11.18.0
+npm notice
+2026-07-02 19:15:53,967 WARNING [2fae8f4277af] agent.tool_executor: Tool browser_click returned error (21.07s): {"success": false, "error": "Unknown ref: e5"}
