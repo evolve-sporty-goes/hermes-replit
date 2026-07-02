@@ -107,9 +107,17 @@ def find_awstrack():
     for frame in page.frames:
         try:
             raw_html = frame.content()
-            if "awstrack.me" in raw_html and "verify" in raw_html.lower():
+            if "verify" in raw_html.lower():
                 clean_html = html.unescape(raw_html)
+                # Look for awstrack.me
                 matches = re.findall(r'https://[^/]+\.awstrack\.me/L0/[^\s"<>]+', clean_html)
+                if matches:
+                    return matches[0]
+                # Look for other torbox tracking domains
+                matches = re.findall(r'https://[^/]*torbox\.app/[^\s"<>]+verify[^\s"<>]*', clean_html)
+                if matches:
+                    return matches[0]
+                matches = re.findall(r'https://[^/]*torbox\.app/[^\s"<>]+', clean_html)
                 if matches:
                     return matches[0]
         except Exception as e:
@@ -117,10 +125,14 @@ def find_awstrack():
     return None
 
 def decode_awstrack(url):
+    # Handle awstrack.me format
     parts = url.split('/L0/')
     if len(parts) > 1:
         encoded = parts[1].rsplit('/', 1)[0]
         return urllib.parse.unquote(encoded)
+    # Handle other tracking domains with similar pattern
+    if 'torbox.app/' in url and '/verify' in url:
+        return url
     return url
 
 checked = set()
