@@ -704,3 +704,17 @@
 2026-07-02 06:46:07,034 WARNING [8d541fc855c7] agent.conversation_loop: Retrying API call in 5.636129726967303s (attempt 2/3) thread=Thread-27 (_run_agent_streaming):139793132418752 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (33/32)
 2026-07-02 06:53:13,824 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
 2026-07-02 06:53:13,867 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 06:54:39,488 WARNING [8d541fc855c7] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-69 (_run_agent_streaming):139793098847936 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (33/32)
+2026-07-02 06:54:39,489 WARNING [8d541fc855c7] agent.conversation_loop: Retrying API call in 2.203499770021123s (attempt 1/3) thread=Thread-69 (_run_agent_streaming):139793098847936 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (33/32)
+2026-07-02 06:56:08,841 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 06:56:08,857 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 06:56:09,700 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 06:56:12,751 WARNING api.config: live provider-catalog rebuild exceeded 4.0s budget — serving fallback, refreshing catalog out-of-band
+2026-07-02 06:56:44,340 WARNING [8d541fc855c7] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIError thread=Thread-69 (_run_agent_streaming):139793098847936 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream idle timeout exceeded
+2026-07-02 06:56:44,346 WARNING [8d541fc855c7] agent.conversation_loop: Retrying API call in 4.309991280032218s (attempt 2/3) thread=Thread-69 (_run_agent_streaming):139793098847936 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream idle timeout exceeded

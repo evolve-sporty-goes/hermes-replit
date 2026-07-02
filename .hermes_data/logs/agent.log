@@ -15205,3 +15205,44 @@ Xpra installed
 2026-07-02 06:53:36,536 INFO [8d541fc855c7] tools.terminal_tool: local environment ready for task default
 2026-07-02 06:53:37,277 INFO [8d541fc855c7] agent.tool_executor: tool terminal completed (0.85s, 143 chars)
 2026-07-02 06:53:37,518 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-76 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:54:03,275 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-76 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:54:03,276 INFO [8d541fc855c7] agent.conversation_loop: API call #2: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=296575 out=119 total=296694 latency=25.8s
+2026-07-02 06:54:03,864 INFO [8d541fc855c7] agent.tool_executor: tool terminal completed (0.53s, 930 chars)
+2026-07-02 06:54:03,963 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-78 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:54:13,972 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-78 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:54:13,976 INFO [8d541fc855c7] agent.conversation_loop: API call #3: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=297071 out=218 total=297289 latency=10.0s cache=295936/297071 (100%)
+2026-07-02 06:54:14,361 INFO [8d541fc855c7] agent.tool_executor: tool terminal completed (0.32s, 158 chars)
+2026-07-02 06:54:14,422 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-80 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:54:20,615 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-80 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:54:20,616 INFO [8d541fc855c7] agent.conversation_loop: API call #4: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=297258 out=87 total=297345 latency=6.2s cache=295936/297258 (100%)
+2026-07-02 06:54:21,197 INFO [8d541fc855c7] agent.tool_executor: tool terminal completed (0.52s, 141 chars)
+2026-07-02 06:54:21,263 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-82 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:54:35,544 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-82 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:54:35,545 INFO [8d541fc855c7] agent.conversation_loop: API call #5: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=297426 out=211 total=297637 latency=14.3s cache=295936/297426 (99%)
+2026-07-02 06:54:35,849 INFO [8d541fc855c7] agent.tool_executor: tool terminal completed (0.26s, 158 chars)
+2026-07-02 06:54:35,899 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-84 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:54:39,487 INFO agent.chat_completion_helpers: Streaming failed before delivery: Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (33/32)
+2026-07-02 06:54:39,487 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-84 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:54:39,488 WARNING [8d541fc855c7] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-69 (_run_agent_streaming):139793098847936 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (33/32)
+2026-07-02 06:54:39,489 WARNING [8d541fc855c7] agent.conversation_loop: Retrying API call in 2.203499770021123s (attempt 1/3) thread=Thread-69 (_run_agent_streaming):139793098847936 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (33/32)
+2026-07-02 06:54:41,910 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-85 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:56:08,841 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 06:56:08,857 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 06:56:09,700 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 06:56:09,929 INFO tools.lazy_deps: Lazy-installing boto3==1.42.89 for feature 'provider.bedrock'
+2026-07-02 06:56:12,409 INFO tools.lazy_deps: Lazy install complete for feature 'provider.bedrock'
+2026-07-02 06:56:12,751 WARNING api.config: live provider-catalog rebuild exceeded 4.0s budget — serving fallback, refreshing catalog out-of-band
+2026-07-02 06:56:44,316 INFO agent.chat_completion_helpers: Streaming failed before delivery: Upstream idle timeout exceeded
+2026-07-02 06:56:44,323 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-85 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:56:44,340 WARNING [8d541fc855c7] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIError thread=Thread-69 (_run_agent_streaming):139793098847936 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream idle timeout exceeded
+2026-07-02 06:56:44,346 WARNING [8d541fc855c7] agent.conversation_loop: Retrying API call in 4.309991280032218s (attempt 2/3) thread=Thread-69 (_run_agent_streaming):139793098847936 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream idle timeout exceeded
+2026-07-02 06:56:48,815 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-91 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:58:44,434 INFO [8d541fc855c7] run_agent: OpenAI client aborted (stream_interrupt_abort, shared=False, tcp_force_closed=1, deferred_close=stranger_thread) thread=Thread-69 (_run_agent_streaming):139793098847936 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:58:44,436 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-91 (_call):139792452937408 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:58:45,533 INFO [8d541fc855c7] agent.conversation_loop: Turn ended: reason=interrupted_during_api_call model=nvidia/nemotron-3-ultra-550b-a55b:free api_calls=6/90 budget=6/90 tool_turns=147 last_msg_role=assistant response_len=67 session=8d541fc855c7
