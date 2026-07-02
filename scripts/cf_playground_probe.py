@@ -22,7 +22,7 @@ def click_turnstile(page):
 
 
 def main():
-    browser = launch(headless=False, humanize=True)
+    browser = launch(headless=False, humanize=True, proxy="socks5://127.0.0.1:40000")
     context = browser.new_context()
     page = context.new_page()
     page.goto(PLAYGROUND_URL, wait_until="domcontentloaded", timeout=60000)

@@ -3539,3 +3539,22 @@ Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*)
 [webui] {"ts": "2026-07-02T12:20:57Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.0}
 [webui] {"ts": "2026-07-02T12:21:01Z", "remote": "127.0.0.1", "method": "GET", "path": "/", "status": 200, "ms": 7.2, "forwarded_for": "152.58.128.13"}
 [webui] {"ts": "2026-07-02T12:21:03Z", "remote": "127.0.0.1", "method": "GET", "path": "/sw.js?v=v0.51.823", "status": 200, "ms": 0.6, "forwarded_for": "152.58.128.13"}
+[bootstrap] Starting Hermes Web UI on http://127.0.0.1:8787 (foreground mode: --foreground)
+
+  Hermes Web UI -- startup config
+  --------------------------------
+  repo root   : /home/runner/hermes-webui
+  agent dir   : /home/runner/hermes-agent  [32m[ok][0m
+  python      : /home/runner/hermes-agent/.venv/bin/python
+  state dir   : /home/runner/workspace/.hermes_data/webui
+  workspace   : /home/runner/workspace
+  host:port   : 127.0.0.1:8787
+  config file : /home/runner/.hermes/config.yaml  (found)
+
+  [tip] No password set. Any process on this machine can read sessions
+        and memory via the local API. Set HERMES_WEBUI_PASSWORD to
+        enable authentication.
+[ok] bg_task_complete drain thread started
+[ok] SessionChannel reaper thread started
+[!!] FATAL: Another server is already responding on 127.0.0.1:8787. Stop the existing instance first.
+[crash-visibility] process exit pid=23457 thread=MainThread

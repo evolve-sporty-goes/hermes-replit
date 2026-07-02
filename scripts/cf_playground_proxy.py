@@ -57,7 +57,7 @@ def chat(messages: list[dict], timeout: int = 120) -> str:
             except Exception:
                 pass
 
-    browser = launch(headless=False, humanize=True)
+    browser = launch(headless=False, humanize=True, proxy="socks5://127.0.0.1:40000")
     try:
         context = browser.new_context()
         page = context.new_page()
