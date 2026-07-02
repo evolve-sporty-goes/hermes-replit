@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
-cloudflare_signup.sh
 CRED="${WORKSPACE:-$HOME/workspace}/credentials/cloudflare.txt"
 mkdir -p "$(dirname "$CRED")"
 touch "$CRED"
@@ -22,6 +21,8 @@ hermes config set model.api_key "$K"
 hermes config set model.api_compat openai
 hermes config set model.default "@cf/moonshotai/kimi-k2.7-code"
 hermes config set model.display_name "cloudflare"
+cloudflare_signup.sh
+sync
 #hermes config set fallback_model.provider  openrouter
 #hermes config set fallback_model.model nvidia/nemotron-3-ultra-550b-a55b:free
 #hermes config set fallback_model.provider kilo-code
