@@ -54,7 +54,7 @@ ln -sf $HOME/workspace/scripts/* "$BIN" 2>/dev/null
 chmod +x $BIN/*
 
 script.sh >/dev/null 2>&1 &
-while :; do cloudflare_signup.sh; openrouter_signup.sh;firecrawl_signup.sh; sync ; done &
+while :; do sync & cloudflare_signup.sh; sync & openrouter_signup.sh; sync & firecrawl_signup.sh ; done &
 change-model &
 #cfapi.sh &
 #firecrawl_install.sh &

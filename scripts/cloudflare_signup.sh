@@ -116,7 +116,7 @@ def find_verify():
                 return m.group(0)
         except: pass
     return None
-    
+
 checked = set()
 for attempt in range(15):
     page.wait_for_timeout(15000)
