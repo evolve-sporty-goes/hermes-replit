@@ -3,12 +3,12 @@
   "_source_fingerprint": {
     "config_yaml": {
       "path": "/home/runner/workspace/.hermes_data/config.yaml",
-      "mtime_ns": 1782971928560275981,
-      "size": 1363
+      "mtime_ns": 1782972187724275981,
+      "size": 1377
     },
     "auth_json": {
       "path": "/home/runner/workspace/.hermes_data/auth.json",
-      "semantic_sha256": "f5ce6a1d391863f773bee3bcb733c03bd0f4654455f03d44ce3e0b70e93547a9"
+      "semantic_sha256": "9f83ca6a14ae4dcba5511799b5fc1e3ab21a94e4503dfb6c5ccf7962679db837"
     },
     "catalog": {
       "provider_catalog_sha256": "cc24c2895d6f559b2df0651f07196003417525b4611ae98c2ed6b06417f9d0d7",
@@ -19,14 +19,14 @@
     }
   },
   "active_provider": "openrouter",
-  "default_model": "poolside/laguna-m.1:free",
+  "default_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
   "configured_model_badges": {
-    "openrouter/poolside/laguna-m.1:free": {
+    "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free": {
       "role": "primary",
       "label": "Primary",
       "provider": "openrouter"
     },
-    "@openrouter:poolside/laguna-m.1:free": {
+    "@openrouter:nvidia/nemotron-3-ultra-550b-a55b:free": {
       "role": "primary",
       "label": "Primary",
       "provider": "openrouter"
@@ -94,8 +94,8 @@
           "label": "qwen/qwen3.7-max (OpenRouter)"
         },
         {
-          "id": "@openrouter:poolside/laguna-m.1:free",
-          "label": "poolside/laguna-m.1:free (OpenRouter)"
+          "id": "@openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+          "label": "nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)"
         }
       ],
       "extra_models": [
@@ -144,16 +144,16 @@
           "label": "sakana/fugu-ultra"
         },
         {
-          "id": "@openrouter:qwen/qwen3.7-plus",
-          "label": "qwen/qwen3.7-plus (OpenRouter)"
+          "id": "@openrouter:poolside/laguna-m.1:free",
+          "label": "poolside/laguna-m.1:free (OpenRouter)"
         },
         {
           "id": "@openrouter:nvidia/nemotron-3-super-120b-a12b:free",
           "label": "nvidia/nemotron-3-super-120b-a12b:free (OpenRouter)"
         },
         {
-          "id": "@openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
-          "label": "nvidia/nemotron-3-ultra-550b-a55b:free (OpenRouter)"
+          "id": "@openrouter:qwen/qwen3.7-plus",
+          "label": "qwen/qwen3.7-plus (OpenRouter)"
         },
         {
           "id": "@openrouter:cohere/north-mini-code:free",
@@ -320,8 +320,8 @@
           "label": "Claude Opus 4.7"
         },
         {
-          "id": "stealth/claude-sonnet-4.6",
-          "label": "Claude Sonnet 4.6"
+          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "label": "Nemotron 3 Ultra 550b A55b:free"
         }
       ],
       "extra_models": [
@@ -398,8 +398,8 @@
           "label": "Nemotron 3.5 Content Safety:free"
         },
         {
-          "id": "nvidia/nemotron-3-ultra-550b-a55b:free",
-          "label": "Nemotron 3 Ultra 550b A55b:free"
+          "id": "stealth/claude-sonnet-4.6",
+          "label": "Claude Sonnet 4.6"
         },
         {
           "id": "nvidia/nemotron-3-ultra-550b-a55b",
