@@ -1,78 +1,50 @@
 #!/usr/bin/env bash
+set -euo pipefail
+
 CRED="${WORKSPACE:-$HOME/workspace}/credentials/cloudflare.txt"
 mkdir -p "$(dirname "$CRED")"
 touch "$CRED"
 
-if [[ $# -ge 2 ]]; then
-  printf 'ACCOUNT_ID=%s\nAPI_KEY=%s\nEMAIL=\nPASSWORD=\n\n' "$1" "$2" >> "$CRED"
-  echo "Added: ${1:0:8}..."
-fi
+[[ $# -ge 2 ]] && printf 'ACCOUNT_ID=%s\nAPI_KEY=%s\n\n' "$1" "$2" >> "$CRED"
 
-[[ -f "$CRED" ]] || { echo "No $CRED"; exit 1; }
-
-# Pair ACCOUNT_ID and API_KEY by index.
-mapfile -t ACCT < <(grep '^ACCOUNT_ID=' "$CRED")
-mapfile -t KEY  < <(grep '^API_KEY='  "$CRED")
-
+mapfile -t ACCT < <(grep '^ACCOUNT_ID=' "$CRED" | cut -d= -f2-)
+mapfile -t KEY  < <(grep '^API_KEY='  "$CRED" | cut -d= -f2-)
 N=${#ACCT[@]}
-if (( N == 0 )); then
-  echo "No credentials in $CRED" >&2
-  exit 1
-fi
-if (( N != ${#KEY[@]} )); then
-  echo "Mismatched ACCOUNT_ID/API_KEY count in $CRED" >&2
-  exit 1
-fi
+
+(( N == 0 )) && { echo "No credentials"; exit 1; }
+(( N == ${#KEY[@]} )) || { echo "Mismatched keys"; exit 1; }
 
 I=$((RANDOM % N))
+A=${ACCT[$I]//[[:space:]]/}
+K=${KEY[$I]//[[:space:]]/}
 
-A=$(printf '%s' "${ACCT[$I]}" | cut -d= -f2-)
-K=$(printf '%s' "${KEY[$I]}"  | cut -d= -f2-)
+echo "Using account: ${A:0:8}..."
 
-# Trim whitespace
-A=$(printf '%s' "$A" | xargs)
-K=$(printf '%s' "$K" | xargs)
-
-U="https://api.cloudflare.com/client/v4/accounts/${A}/ai/v1"
-
-echo "Using account: ${A:0:8}... key: ${K:0:8}..."
 hermes config set model.provider custom
-hermes config set model.base_url "$U"
+hermes config set model.base_url "https://api.cloudflare.com/client/v4/accounts/$A/ai/v1"
 hermes config set model.api_key "$K"
 hermes config set model.api_compat openai
 hermes config set model.default "@cf/moonshotai/kimi-k2.7-code"
 hermes config set model.display_name "cloudflare"
+
 cloudflare_signup.sh
 sync
 
-# --- self-contained watcher ---
-SCRIPT="$(realpath "$0")"
-LOG="$HOME/.hermes_data/logs/errors.log"
+SCRIPT=$(realpath "$0")
+LOG_DIR="$HOME/.hermes_data/logs"
+LOG="$LOG_DIR/agent.log"
 PIDFILE="/tmp/hermes-watcher.pid"
 
-if [[ -f "$PIDFILE" ]]; then
-  OLD_PID=$(cat "$PIDFILE")
-  if kill -0 "$OLD_PID" 2>/dev/null; then
-    kill "$OLD_PID" 2>/dev/null || true
-    sleep 0.5
-  fi
-  rm -f "$PIDFILE"
-fi
+[[ -f "$PIDFILE" ]] && { kill "$(cat "$PIDFILE")" 2>/dev/null || true; sleep 0.5; rm -f "$PIDFILE"; }
 
-mkdir -p "$(dirname "$LOG")"
-touch "$LOG"
+mkdir -p "$LOG_DIR"
+> "$LOG"
 
 (
-  tail -F -n 0 "$LOG" 2>/dev/null | while read -r line; do
-    if echo "$line" | grep -q "HTTP 429"; then
-      "$SCRIPT" &
-      break
-    fi
-  done
+  tail -F -n 0 "$LOG" 2>/dev/null |
+    grep -q "HTTP 429" && "$SCRIPT" &
 ) >/dev/null 2>&1 &
+echo "$!" > "$PIDFILE"
+disown 2>/dev/null || true
 
-NEW_PID=$!
-echo "$NEW_PID" > "$PIDFILE"
-disown "$NEW_PID" 2>/dev/null || true
-
-echo "Done. watcher PID: $NEW_PID"
+echo "Done. watcher PID: $(cat "$PIDFILE")"
