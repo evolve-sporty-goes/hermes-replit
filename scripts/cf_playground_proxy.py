@@ -53,8 +53,9 @@ def chat(messages: list[dict], timeout: int = 120) -> str:
                 pass
 
     with sync_playwright() as p:
-        browser, context = launch(p, headless=False, humanize=True)
+        browser = launch(headless=False, humanize=True)
         try:
+            context = browser.new_context()
             page = context.new_page()
             page.on("response", _handle)
 
@@ -126,7 +127,10 @@ def chat(messages: list[dict], timeout: int = 120) -> str:
 
             return "".join(_strip_stream_json(response_text))
         finally:
-            context.close()
+            try:
+                context.close()
+            except Exception:
+                pass
             browser.close()
 
 

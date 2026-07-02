@@ -1,0 +1,1 @@
+python3 /home/runner/workspace/scripts/cf_playground_proxy.py "$@"
