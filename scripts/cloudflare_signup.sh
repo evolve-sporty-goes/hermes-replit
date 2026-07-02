@@ -34,7 +34,7 @@ p.goto("https://dash.cloudflare.com/sign-up", timeout=120000, wait_until="domcon
 p.wait_for_timeout(5000)
 # Fill email
 p.locator("[data-testid='signup-input-email']").fill(email)
-p.wait_for_timeout(300)
+p.wait_for_timeout(1000)
 # Fill password
 p.locator("[data-testid='signup-input-password']").fill(password)
 p.wait_for_timeout(500)
@@ -58,7 +58,7 @@ for attempt in range(3):
         break
     # attempt Turnstile click if iframe is present
     click_turnstile(p)
-    p.wait_for_timeout(5000)
+    p.wait_for_timeout(10000)
     # submit form
     try:
         p.locator("button[type='submit']").filter(has_text="Sign up").first.click()
@@ -154,7 +154,7 @@ for attempt in range(15):
         checked.clear()
 
     page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
-    page.wait_for_timeout(5000)
+    page.wait_for_timeout(15000)
 
 ctx.close()
 print("VERIFY_URL:NOT_FOUND")
