@@ -109,15 +109,16 @@ def find_awstrack():
             raw_html = frame.content()
             if "verify" in raw_html.lower():
                 clean_html = html.unescape(raw_html)
-                # Look for awstrack.me
+                # PRIMARY: Look for direct db.torbox.app verify link
+                matches = re.findall(r'https://db\.torbox\.app/auth/v1/verify[^\s"<>]+', clean_html)
+                if matches:
+                    return matches[0]
+                # Fallback: awstrack.me
                 matches = re.findall(r'https://[^/]+\.awstrack\.me/L0/[^\s"<>]+', clean_html)
                 if matches:
                     return matches[0]
-                # Look for other torbox tracking domains
+                # Fallback: other torbox tracking domains
                 matches = re.findall(r'https://[^/]*torbox\.app/[^\s"<>]+verify[^\s"<>]*', clean_html)
-                if matches:
-                    return matches[0]
-                matches = re.findall(r'https://[^/]*torbox\.app/[^\s"<>]+', clean_html)
                 if matches:
                     return matches[0]
         except Exception as e:
@@ -130,9 +131,7 @@ def decode_awstrack(url):
     if len(parts) > 1:
         encoded = parts[1].rsplit('/', 1)[0]
         return urllib.parse.unquote(encoded)
-    # Handle other tracking domains with similar pattern
-    if 'torbox.app/' in url and '/verify' in url:
-        return url
+    # Already a direct verify URL
     return url
 
 checked = set()

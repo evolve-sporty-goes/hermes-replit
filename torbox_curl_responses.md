@@ -451,3 +451,28 @@ api_key = api_res[0]['token']  # e.g., "329b7cd1-43ff-4b31-8fd0-7db6fa3accfd"
 **Key advantage:** Uses the awstrack.me tracking link (arrives instantly in Proton) instead of waiting for the direct `db.torbox.app/auth/v1/verify` link which may be delayed or filtered. The decoded URL contains the full token and redirect to `torbox.app/`.
 
 **Script:** `/home/runner/workspace/scripts/torbox_openrouter_style.sh` — full end-to-end automation.
+
+---
+
+## Working Test Result (2026-07-02)
+
+Successfully created TorBox account and retrieved API key:
+
+```
+Email: starlit-boxer-neon@duck.com
+API Key: 6423b13b-3a8a-43c7-80ba-9bd911556c90
+User ID: 822010
+Auth ID: 4078541b-aee0-43ce-bc4e-97a929e861e9
+```
+
+**API Key Test:**
+```bash
+curl -s "https://api.torbox.app/v1/api/user/me" \
+  -H "Authorization: Bearer 6423b13b-3a8a-43c7-80ba-9bd911556c90" \
+  -H "User-Agent: Mozilla/5.0"
+# Returns: {"success":true,"data":{"id":822010,"email":"starlit-boxer-neon@duck.com",...}}
+```
+
+**Files created:**
+- `/home/runner/workspace/credentials/torbox_credentials.txt` — appended new account
+- `/home/runner/workspace/scripts/torbox_openrouter_style.sh` — complete automation script
