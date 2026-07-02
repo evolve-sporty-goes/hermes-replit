@@ -8,7 +8,7 @@
     },
     "auth_json": {
       "path": "/home/runner/workspace/.hermes_data/auth.json",
-      "semantic_sha256": "5c47fec5d33aa1a2df5f86ddd866d59c88666e0978ac6d99a5b83e192dc994a4"
+      "semantic_sha256": "ce99b1eed9f9f5b6b86fe63cdc74bfdd77b2154329e39d4ddde31d2e79ca0cfa"
     },
     "catalog": {
       "provider_catalog_sha256": "cc24c2895d6f559b2df0651f07196003417525b4611ae98c2ed6b06417f9d0d7",
