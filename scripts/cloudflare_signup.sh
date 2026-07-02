@@ -34,10 +34,10 @@ p.goto("https://dash.cloudflare.com/sign-up", timeout=120000, wait_until="domcon
 p.wait_for_timeout(5000)
 # Fill email
 p.locator("[data-testid='signup-input-email']").fill(email)
-p.wait_for_timeout(1000)
+p.wait_for_timeout(2000)
 # Fill password
 p.locator("[data-testid='signup-input-password']").fill(password)
-p.wait_for_timeout(500)
+p.wait_for_timeout(1500)
 
 def click_turnstile(page):
     for f in page.frames:
