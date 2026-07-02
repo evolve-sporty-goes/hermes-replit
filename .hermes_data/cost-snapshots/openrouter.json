@@ -25,6 +25,11 @@
       "date": "2026-07-01",
       "used": 0,
       "limit": null
+    },
+    {
+      "date": "2026-07-02",
+      "used": 0,
+      "limit": null
     }
   ]
 }

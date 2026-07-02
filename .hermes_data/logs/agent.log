@@ -15284,3 +15284,35 @@ Xpra installed
 2026-07-02 07:04:56,597 WARNING [8d541fc855c7] agent.tool_executor: Tool terminal returned error (37.67s): {"output": "Traceback (most recent call last):\n  File \"/home/runner/workspace/.pythonlibs/lib/python3.12/site-packages/cloakbrowser/human/actionability.py\", line 118, in ensure_actionable\n    loc.
 2026-07-02 07:04:56,692 INFO [8d541fc855c7] run_agent: Delivered /steer to agent after tool batch (1 chars): .
 2026-07-02 07:04:56,792 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-138 (_call):139792419366592 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 07:07:27,964 INFO [8d541fc855c7] run_agent: OpenAI client aborted (stream_interrupt_abort, shared=False, tcp_force_closed=1, deferred_close=stranger_thread) thread=Thread-101 (_run_agent_streaming):139792444544704 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 07:07:27,971 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-138 (_call):139792419366592 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 07:07:28,187 INFO [8d541fc855c7] agent.conversation_loop: Turn ended: reason=interrupted_during_api_call model=nvidia/nemotron-3-ultra-550b-a55b:free api_calls=5/90 budget=5/90 tool_turns=151 last_msg_role=assistant response_len=67 session=8d541fc855c7
+2026-07-02 07:08:16,250 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-02 07:08:16,406 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 07:08:16,438 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-160 (_run_agent_streaming):139792427759296 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 07:08:16,459 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 07:08:17,752 INFO [8d541fc855c7] agent.turn_context: conversation turn: session=8d541fc855c7 model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=webui history=324 msg='[Workspace::v1: /home/runner/workspace] Login using magiclink method'
+2026-07-02 07:08:17,889 INFO [8d541fc855c7] agent.conversation_loop: Repaired 2 message-alternation violations before request (session=8d541fc855c7)
+2026-07-02 07:08:17,939 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-162 (_call):139793115633344 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 07:08:21,672 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 07:08:24,145 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 07:08:24,237 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 07:08:24,304 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 07:10:02,034 INFO tools.terminal_tool: Cleaned up inactive environment for task: default
+2026-07-02 07:10:34,163 INFO agent.chat_completion_helpers: Streaming failed before delivery: Upstream idle timeout exceeded
+2026-07-02 07:10:34,164 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-162 (_call):139793115633344 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 07:10:34,167 WARNING [8d541fc855c7] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-160 (_run_agent_streaming):139792427759296 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream idle timeout exceeded
+2026-07-02 07:10:34,167 WARNING [8d541fc855c7] agent.conversation_loop: Retrying API call in 2.6300116538319047s (attempt 1/3) thread=Thread-160 (_run_agent_streaming):139792427759296 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream idle timeout exceeded
+2026-07-02 07:10:37,010 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-169 (_call):139793115633344 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
