@@ -8,7 +8,6 @@ from typing import Optional
 from cloakbrowser import launch
 from playwright.sync_api import Response
 
-
 PLAYGROUND_URL = "https://playground.ai.cloudflare.com/?model=@cf/moonshotai/kimi-k2.7-code"
 
 
@@ -67,10 +66,11 @@ def chat(messages: list[dict], timeout: int = 120) -> str:
         page.goto(PLAYGROUND_URL, wait_until="domcontentloaded", timeout=60000)
 
         # Give Turnstile time to render, then click if present.
-        time.sleep(2)
+        time.sleep(3)
         click_turnstile(page)
 
-        page.wait_for_load_state("networkidle", timeout=60000)
+        # Wait up to a few seconds for the chat UI, not the whole network.
+        time.sleep(2)
 
         # Locate prompt input.
         input_el = None
