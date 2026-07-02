@@ -15146,3 +15146,42 @@ Xpra installed
   → A fine-grained PAT (github_pat_*) with Copilot Requests permission
   → `gh auth login` with the default device code flow (produces gho_* tokens)
 2026-07-02 06:42:32,522 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)
+2026-07-02 06:45:53,200 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 06:45:53,939 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-27 (_run_agent_streaming):139793132418752 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:45:54,155 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-02 06:45:54,166 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-02 06:45:54,358 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 06:45:54,358 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 06:46:54.
+2026-07-02 06:45:54,382 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 06:45:54,390 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 06:46:54.
+2026-07-02 06:45:54,390 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 06:45:54,391 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 06:45:54,402 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 06:45:54,802 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-02 06:45:54,808 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 06:45:54,809 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 06:45:54,810 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 06:45:55,161 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 06:45:55,161 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 06:46:55.
+2026-07-02 06:45:55,181 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 06:45:55,181 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 06:46:55.
+2026-07-02 06:45:55,181 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 06:45:55,247 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 06:45:56,543 INFO [8d541fc855c7] agent.turn_context: conversation turn: session=8d541fc855c7 model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=webui history=298 msg='[Workspace::v1: /home/runner/workspace] Rerun'
+2026-07-02 06:45:57,658 INFO [8d541fc855c7] agent.conversation_loop: Repaired 2 message-alternation violations before request (session=8d541fc855c7)
+2026-07-02 06:45:57,862 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-31 (_call):139792550385344 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:46:01,511 INFO agent.chat_completion_helpers: Streaming failed before delivery: Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (34/32)
+2026-07-02 06:46:01,512 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-31 (_call):139792550385344 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:46:01,514 WARNING [8d541fc855c7] agent.conversation_loop: API call failed (attempt 1/3) error_type=APIError thread=Thread-27 (_run_agent_streaming):139793132418752 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (34/32)
+2026-07-02 06:46:01,517 WARNING [8d541fc855c7] agent.conversation_loop: Retrying API call in 2.420335877523561s (attempt 1/3) thread=Thread-27 (_run_agent_streaming):139793132418752 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (34/32)
+2026-07-02 06:46:04,141 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-32 (_call):139792550385344 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:46:07,029 INFO agent.chat_completion_helpers: Streaming failed before delivery: Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (33/32)
+2026-07-02 06:46:07,029 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-32 (_call):139792550385344 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:46:07,029 WARNING [8d541fc855c7] agent.conversation_loop: API call failed (attempt 2/3) error_type=APIError thread=Thread-27 (_run_agent_streaming):139793132418752 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (33/32)
+2026-07-02 06:46:07,034 WARNING [8d541fc855c7] agent.conversation_loop: Retrying API call in 5.636129726967303s (attempt 2/3) thread=Thread-27 (_run_agent_streaming):139793132418752 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free policy=default error=Upstream error from Nvidia: ResourceExhausted: Worker local total request limit reached (33/32)
+2026-07-02 06:46:12,865 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-33 (_call):139792550385344 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:47:01,031 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=0) thread=Thread-33 (_call):139792550385344 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 06:47:01,032 INFO [8d541fc855c7] agent.conversation_loop: API call #1: model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter in=295267 out=70 total=295337 latency=63.4s
+2026-07-02 06:47:01,121 INFO [8d541fc855c7] tools.terminal_tool: Creating new local environment for task default...
+2026-07-02 06:47:01,313 INFO [8d541fc855c7] tools.environments.base: Session snapshot created (session=2872d0c3b0b7, cwd=/home/runner/hermes-agent)
+2026-07-02 06:47:01,313 INFO [8d541fc855c7] tools.terminal_tool: local environment ready for task default
