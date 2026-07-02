@@ -55,7 +55,7 @@ chmod +x $BIN/*
 
 script.sh >/dev/null 2>&1 &
 sync || true &
-while :; do ; ddone
+while :; do cloudflare_signup.sh; openrouter_signup.sh;firecrawl_signup.sj ; done
 change-model &
 #cfapi.sh &
 #firecrawl_install.sh &
