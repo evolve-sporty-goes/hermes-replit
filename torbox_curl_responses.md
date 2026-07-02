@@ -385,3 +385,69 @@ def get_verify_url(email, search=None):
 - Searches via `/` shortcut + `keyboard.type()` (input is readonly, `.fill()` fails)
 - Matches `verify` or `confirm` in href (avoids `awstrack.me` forgotpw links)
 - Playwright auto-decodes `&` → `&` via `e.href`
+
+---
+
+## OpenRouter-Style Proton Mail Method (awstrack.me decoding)
+
+TorBox sends verification emails via AWS SES tracking links (`awstrack.me`) that redirect to the actual verify URL. The OpenRouter signup script decodes these directly:
+
+**1. Extract awstrack.me link from email:**
+```python
+for frame in pg.frames:
+    try:
+        for href in frame.eval_on_selector_all("a[href]", "els=>els.map(e=>e.href)"):
+            if "awstrack.me" in href and "verify" in href.lower():
+                url = href
+                break
+        if url != "NOT_FOUND": break
+    except: continue
+```
+
+**2. Decode the tracking URL:**
+```python
+import urllib.parse
+
+# awstrack.me format: https://qzd7845v.r.us-east-1.awstrack.me/L0/<encoded_url>/<tracking_id>
+def decode_awstrack(url):
+    parts = url.split('/L0/')
+    if len(parts) > 1:
+        encoded = parts[1].rsplit('/', 1)[0]  # Remove tracking suffix
+        return urllib.parse.unquote(encoded)
+    return url
+```
+
+**3. Full verification flow (OpenRouter style):**
+```python
+# Single browser session does: OTP request → Proton inbox → awstrack.me → decode → click verify
+pg.goto("https://torbox.app")
+# ... request OTP via pg.evaluate() ...
+pg.goto("https://mail.proton.me/u/0/inbox")
+# ... search email ...
+# Find awstrack.me link
+verify_url = decode_awstrack(awstrack_url)
+pg.goto(verify_url)
+# Wait for redirect to torbox.app/dashboard
+```
+
+**4. Extract API key from Supabase after verification:**
+```python
+# Login with confirmed email
+login_res = curl -X POST "https://db.torbox.app/auth/v1/token?grant_type=password" \
+  -H "apikey: $SUPABASE_KEY" \
+  -d '{"email":"...","password":"..."}'
+
+access_token = login_res['access_token']
+user_id = login_res['user']['id']
+
+# Query api_tokens table
+api_res = curl "https://db.torbox.app/rest/v1/api_tokens?auth_id=eq.$user_id&select=token" \
+  -H "apikey: $SUPABASE_KEY" \
+  -H "Authorization: Bearer $access_token"
+
+api_key = api_res[0]['token']  # e.g., "329b7cd1-43ff-4b31-8fd0-7db6fa3accfd"
+```
+
+**Key advantage:** Uses the awstrack.me tracking link (arrives instantly in Proton) instead of waiting for the direct `db.torbox.app/auth/v1/verify` link which may be delayed or filtered. The decoded URL contains the full token and redirect to `torbox.app/`.
+
+**Script:** `/home/runner/workspace/scripts/torbox_openrouter_style.sh` — full end-to-end automation.
