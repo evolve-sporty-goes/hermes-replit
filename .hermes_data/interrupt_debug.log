@@ -420,3 +420,5 @@
 09:47:17 ENTER: queued interrupt msg='.', agent_running=True
 09:51:22 interrupt fired: msg='during signupnand verify use geoip=Tue and socks5 proxy 127.', children=0, parent._interrupt=True
 09:51:22 ENTER: queued interrupt msg='during signupnand verify use geoip=Tue and socks5 proxy 127.', agent_running=True
+10:20:05 ENTER: queued interrupt msg='use browser-agent to get correct elements', agent_running=True
+10:20:05 interrupt fired: msg='use browser-agent to get correct elements', children=0, parent._interrupt=True
