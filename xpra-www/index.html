@@ -15,7 +15,7 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <link rel="shortcut icon" type="image/png" href="favicon.png" id="favicon" />
     <link rel="stylesheet" href="css/client.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.1, maximum-scale=10, user-scalable=yes" />
     <link rel="stylesheet" href="css/spinner.css" />
 
     <script type="text/javascript" src="js/lib/jquery.js"></script>
@@ -1073,93 +1073,23 @@ var packet = ["key-action", wid, keyname, true, modifiers, keyval, str, keycode,
       }
 
       function init_keyboard(client) {
-var Keyboard = window.SimpleKeyboard.default;
-var kb = new Keyboard({
-          onKeyPress: (button) => onKeyPress(button),
-          onKeyReleased: (button) => onKeyReleased(button),
-          display: {
-            ".com": "|",
-            "{tab}": "tab",
-            "{lock}": "lock",
-            "{shift}": "shift",
-            "{bksp}": "bksp",
-            "{space}": "space",
-            "{enter}": "return",
-            "{control}": "ctrl",
-            "{alt}": "alt",
-            "{meta}": "meta",
-            "{pageup}": "pgup",
-            "{pagedown}": "pgdn",
-            "{contextmenu}": "menu",
-          },
-          layout: {
-            default: [
-              "` 1 2 3 4 5 6 7 8 9 0 - = {bksp}",
-              "{tab} q w e r t y u i o p [ ] \\",
-              "{lock} a s d f g h j k l ; ' {enter}",
-              "{shift} z x c v b n m , . / {shift}",
-              "{control} {alt} {meta} .com @ {space} {meta} {alt} {control} {pageup} {pagedown} {contextmenu}"
-            ],
-            shift: [
-              "~ ! @ # $ % ^ & * ( ) _ + {bksp}",
-              "{tab} Q W E R T Y U I O P { } |",
-              '{lock} A S D F G H J K L : " {enter}',
-              "{shift} Z X C V B N M < > ? {shift}",
-              "{control} {alt} {meta} .com @ {space} {meta} {alt} {control} {pageup} {pagedown} {contextmenu}"
-            ]
-          },
-        });
-        window.kb = kb;
-        window.keyboardShifted = false;
-
-        function onChange(input) {
-          clog("Input changed", input);
+        // Load and initialize the complete virtual keyboard replacement
+        if (window.initVirtualKeyboard) {
+            window.initVirtualKeyboard(client);
+        } else {
+            console.error('[VK] initVirtualKeyboard not available, loading script...');
+            // Fallback: load script dynamically
+            var script = document.createElement('script');
+            script.src = '/virtual-keyboard-complete.js';
+            script.onload = function() {
+                if (window.initVirtualKeyboard) {
+                    window.initVirtualKeyboard(client);
+                }
+            };
+            document.head.appendChild(script);
         }
 
-        function onKeyPress(button) {
-          forward_key(true, button);
-          if (button == "{shift}" || button == "{lock}") {
-            if (window.keyboardShifted) {
-              window.kb.setOptions({
-                layoutName: "default"
-              });
-            } else {
-              window.kb.setOptions({
-                layoutName: "shift"
-              });
-            }
-            window.keyboardShifted = !window.keyboardShifted;
-          }
-        }
-
-        function onKeyReleased(button) {
-          forward_key(false, button);
-        }
-
-        function forward_key(pressed, button) {
-var key = {
-            "{bksp}": "Backspace",
-            "{enter}": "Return",
-            "{space}": "Space",
-            "{tab}": "Tab",
-            "{lock}": "CapsLock",
-            "{shift}": "Shift",
-            "{control}": "Control",
-            "{alt}": "Alt",
-            "{meta}": "Meta",
-            "{pageup}": "PageUp",
-            "{pagedown}": "PageDown",
-            "{contextmenu}": "ContextMenu",
-            ".com": "|",
-          } [button] || button;
-var e = {
-            which: 0,
-            keyCode: 0,
-            key: key,
-            code: key,
-          };
-          client._keyb_process(pressed, e);
-        }
+        // Show/hide keyboard based on param
 var keyboard = getboolparam("keyboard", Utilities.isMobile());
         if (!keyboard) {
           $(".simple-keyboard").hide();
@@ -1709,6 +1639,10 @@ for(var key in tmp_default_settings) {
       });
 
     </script>
-  </body>
+  
+    <!-- Complete Virtual Keyboard Replacement -->
+    <script src="/virtual-keyboard-complete.js"></script>
+
+</body>
 
 </html>

@@ -7,12 +7,18 @@ oKEY=$(grep -E '^API_KEY=sk-or-v1-' /home/runner/workspace/credentials/openroute
 sed -i "s|^OPENROUTER_API_KEY=.*|OPENROUTER_API_KEY=$oKEY|" /home/runner/workspace/.hermes_data/.env
 #echo "Updated to: $(grep OPENROUTER_API_KEY /home/runner/workspace/.hermes_data/.env)"
 ~/hermes-webui/ctl.sh restart
-openrouter_signup.sh
-firecrawl_signup.sh
+sync
+sleep 300
 done &
-
-
+while :
+do openrouter_signup.sh
+sleep 300
+firecrawl_signup.sh
+sleep 300
+done &
 nvm install node
 command -v firecrawl  >/dev/null 2>&1 ||sudo npm install -g firecrawl-cli
 source /home/runner/workspace/.hermes_data/.env && firecrawl login --api-key "$FIRECRAWL_API_KEY"
 echo "Done: $(firecrawl --version), credits: $(firecrawl --status 2>&1 | grep Credits)"
+
+# pkill -f ~/workspace/firecrawl_install.sh

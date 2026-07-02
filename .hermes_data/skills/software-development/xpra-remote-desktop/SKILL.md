@@ -26,14 +26,17 @@ extended on-screen keyboard keys.
 # Install xpra via nix
 nix-env -iA nixpkgs.xpra
 
-# Start server with HTML5 on port 14500
+# Start server with HTML5 on port 14500 + unlimited viewport
 export PATH="/nix/store/jbi45gv4q60f4ynsqwjgda0c8m7vyimd-xpra-6.3/bin:$PATH"
 xpra start :100 \
   --bind-tcp=0.0.0.0:14500 \
   --html=/home/runner/workspace/xpra-www \
   --daemon=yes \
   --exit-with-children=no \
-  --start-child=xterm
+  --start-child=xterm \
+  --min-size=1x1 \
+  --max-size=16384x16384 \
+  --desktop-scaling=no
 ```
 
 ## Installation on Replit/NixOS
@@ -95,57 +98,59 @@ function init_touch_keyboard(client) {
 init_touch_keyboard(client);
 ```
 
-### Extended On-Screen Keyboard Layout
+**Better approach**: Replace the entire keyboard implementation with a complete
+virtual-keyboard.js loaded from CDN (see references/virtual-keyboard-complete.js).
+This provides proper sticky modifier keys (Control, Alt, Meta) and context menu
+right-click support.
 
-The `simple-keyboard` library only has "default" and "shift" layouts by default.
-Add Control, Alt, Meta, PageUp, PageDown, ContextMenu keys:
+### Complete Virtual Keyboard Replacement
 
-```javascript
-var kb = new Keyboard({
-  display: {
-    "{tab}": "tab", "{lock",
-    "{shift}": "shift",
-    "{bksp}": "bksp",
-    "{space}": "space",
-    "{enter}": "return",
-    "{control}": "ctrl",
-    "{alt}": "alt",
-    "{meta}": "meta",
-    "{pageup}": "pgup",
-    "{pagedown}": "pgdn",
-    "{contextmenu}": "menu",
-  },
-  layout: {
-    default: [
-      "` 1 2 3 4 5 6 7 8 9 0 - = {bksp}",
-      "{tab} q w e r t y u i o p [ ] \\\\",
-      "{lock} a s d f g h j k l ; ' {enter}",
-      "{shift} z x c v b n m , . / {shift}",
-      "{control} {alt} {meta} .com @ {space} {meta} {alt} {control} {pageup} {pagedown} {contextmenu}"
-    ],
-    shift: [ ... ]
-  }
-});
+The default `simple-keyboard` library only has "default" and "shift" layouts and no modifier key support. **Replace the entire keyboard implementation** with a complete virtual-keyboard.js loaded from CDN (see `references/virtual-keyboard-complete.js`).
+
+This provides:
+- **Full modifier keys**: **Control**, **Alt**, **Meta** (⌘/Windows key)
+- **Sticky/locking modifiers** - tap once to lock, tap again to release
+- Visual feedback: green highlight when active, blue when locked
+- **Page Up**, **Page Down** keys
+- **Context Menu** (☰) key that triggers right-click on focused element
+- Proper modifier state tracking included in all key events sent to xpra server (Ctrl+C works correctly)
+
+Implementation:
+1. Load `simple-keyboard` from CDN (`unpkg.com/simple-keyboard@latest`)
+2. Custom layout with modifier keys in bottom row
+3. Track modifier state globally, send in every key-action packet
+4. Visual feedback via CSS classes (`.active-modifier`, `.modifier-locked`)
+
+See `references/virtual-keyboard-complete.js` for the complete implementation.
+
+### Unlimited Viewport / Screen
+
+To enable unlimited vertical and horizontal viewport dimensions:
+
+**Server-side (xpra start options):**
+```bash
+xpra start :100 \
+  --min-size=1x1 \
+  --max-size=16384x16384 \
+  --desktop-scaling=no \
+  ...
 ```
 
-Update `forward_key()` to map new keys:
-```javascript
-var key = {
-  "{bksp}": "Backspace",
-  "{enter}": "Return",
-  "{space}": "Space",
-  "{tab}": "Tab",
-  "{lock}": "CapsLock",
-  "{shift}": "Shift",
-  "{control}": "Control",
-  "{alt}": "Alt",
-  "{meta}": "Meta",
-  "{pageup}": "PageUp",
-  "{pagedown}": "PageDown",
-  "{contextmenu}": "ContextMenu",
-  ".com": "|",
-} [button] || button;
+**Client-side (HTML5 viewport):**
+Update `index.html` and `connect.html` viewport meta:
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.1, maximum-scale=10, user-scalable=yes" />
 ```
+
+**Client-side (CSS):**
+Update `css/client.css`:
+```css
+html, body {
+  overflow: auto;  /* was: overflow: hidden; */
+}
+```
+
+This allows the virtual desktop to be scrolled infinitely in both directions.
 
 ## Server Management
 
@@ -181,4 +186,5 @@ xpra control :100 screenshot /tmp/shot.png
 - `references/xpra-install-replit.sh` — Install script for Replit
 - `references/touch-keyboard-patch.js` — Touch handler for pasteboard focus
 - `references/keyboard-layout-extended.js` — Extended simple-keyboard config
+- `references/virtual-keyboard-complete.js` — Complete simple-keyboard CDN replacement with sticky modifiers
 - `scripts/restart-xpra.sh` — Restart with custom HTML5 dir
