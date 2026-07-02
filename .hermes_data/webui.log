@@ -1574,3 +1574,22 @@ nohup: ignoring input
 [ok] SessionChannel reaper thread started
 [!!] FATAL: Another server is already responding on 127.0.0.1:8787. Stop the existing instance first.
 [crash-visibility] process exit pid=10656 thread=MainThread
+[bootstrap] Starting Hermes Web UI on http://127.0.0.1:8787 (foreground mode: --foreground)
+
+  Hermes Web UI -- startup config
+  --------------------------------
+  repo root   : /home/runner/hermes-webui
+  agent dir   : /home/runner/hermes-agent  [32m[ok][0m
+  python      : /home/runner/hermes-agent/.venv/bin/python
+  state dir   : /home/runner/workspace/.hermes_data/webui
+  workspace   : /home/runner/workspace
+  host:port   : 127.0.0.1:8787
+  config file : /home/runner/.hermes/config.yaml  (found)
+
+  [tip] No password set. Any process on this machine can read sessions
+        and memory via the local API. Set HERMES_WEBUI_PASSWORD to
+        enable authentication.
+[ok] bg_task_complete drain thread started
+[ok] SessionChannel reaper thread started
+[!!] FATAL: Another server is already responding on 127.0.0.1:8787. Stop the existing instance first.
+[crash-visibility] process exit pid=13127 thread=MainThread
