@@ -1,5 +1,8 @@
 #!/bin/bash
-curl -sL "https://github.com/windtf/wireproxy/releases/latest/download/wireproxy_linux_amd64.tar.gz" | tar xz && chmod +x ~/wireproxy
+(
+cd 
+curl -sL "https://github.com/windtf/wireproxy/releases/latest/download/wireproxy_linux_amd64.tar.gz" | tar xz && chmod +x ~/wireproxy 
+)
 cat > ~/wireproxy.conf <<'mEOF'
 [Interface]
 PrivateKey = gOCDqyj4jMGJPnykTSjLoDAXjd6bD0XBPc+VwRwIE0w=

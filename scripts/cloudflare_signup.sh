@@ -60,6 +60,7 @@ for attempt in range(20):
     p.wait_for_timeout(10000)
 
 print(f"SIGNUP_RESULT {result} URL={p.url}", flush=True)
+p.wait_for_timeout(10000)
 ctx.close()
 PY
 
