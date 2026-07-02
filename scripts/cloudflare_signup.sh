@@ -122,18 +122,18 @@ for attempt in range(15):
     page.wait_for_timeout(15000)
 
     page.keyboard.press("/")
-    page.wait_for_timeout(1000)
+    page.wait_for_timeout(4000)
     page.keyboard.type("cloudflare verify", delay=80)
     page.keyboard.press("Enter")
-    page.wait_for_timeout(1000)
+    page.wait_for_timeout(4000)
     page.keyboard.press("Escape")
-    page.wait_for_timeout(5000)
+    page.wait_for_timeout(10000)
 
     items = page.locator(".item-container")
     count = items.count()
     if count == 0:
         page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
-        page.wait_for_timeout(5000)
+        page.wait_for_timeout(10000)
         continue
 
     for i in range(min(count, 5)):
@@ -141,7 +141,7 @@ for attempt in range(15):
         if subj not in checked:
             checked.add(subj)
             items.nth(i).click()
-            page.wait_for_timeout(6000)
+            page.wait_for_timeout(10000)
 
             link = find_verify()
             if link:
