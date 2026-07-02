@@ -177,7 +177,7 @@ fi
 # ── STEP 3: Click verify link + extract API key from Supabase ──────
 # Adapted from openrouter_signup.sh verify pattern
 cat > ~/torbox_verify.py << 'PY'
-import sys, re, time, json, subprocess
+import sys, re, time, json, subprocess, os
 os.environ["DISPLAY"] = ":1"
 sys.path.insert(0, os.path.expanduser("~"))
 from cloakbrowser import launch_persistent_context
