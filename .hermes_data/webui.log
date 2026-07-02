@@ -2127,3 +2127,37 @@ Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*)
   Remote access: ssh -N -L 8787:127.0.0.1:8787 <user>@<your-server>
   Then open:     http://localhost:8787
 
+[webui] {"ts": "2026-07-02T09:56:18Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 0.7}
+[webui] {"ts": "2026-07-02T09:56:19Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.8}
+[webui] {"ts": "2026-07-02T09:56:20Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.1}
+[webui] {"ts": "2026-07-02T09:56:20Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 3.7}
+[webui] {"ts": "2026-07-02T09:56:21Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.4}
+[webui] {"ts": "2026-07-02T09:56:22Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.3}
+[webui] {"ts": "2026-07-02T09:56:34Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.2}
+[webui] {"ts": "2026-07-02T09:56:35Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.2}
+[webui] {"ts": "2026-07-02T09:56:37Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 4.2}
+[webui] {"ts": "2026-07-02T09:56:38Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.1}
+[webui] {"ts": "2026-07-02T09:56:39Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.4}
+[webui] {"ts": "2026-07-02T09:56:39Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 2.3}
+[webui] {"ts": "2026-07-02T09:56:50Z", "remote": "127.0.0.1", "method": "GET", "path": "/health", "status": 200, "ms": 5.4}
+[bootstrap] Starting Hermes Web UI on http://127.0.0.1:8787 (foreground mode: --foreground)
+
+  Hermes Web UI -- startup config
+  --------------------------------
+  repo root   : /home/runner/hermes-webui
+  agent dir   : /home/runner/hermes-agent  [32m[ok][0m
+  python      : /home/runner/hermes-agent/.venv/bin/python
+  state dir   : /home/runner/workspace/.hermes_data/webui
+  workspace   : /home/runner/workspace
+  host:port   : 127.0.0.1:8787
+  config file : /home/runner/.hermes/config.yaml  (found)
+
+  [tip] No password set. Any process on this machine can read sessions
+        and memory via the local API. Set HERMES_WEBUI_PASSWORD to
+        enable authentication.
+[ok] bg_task_complete drain thread started
+[ok] SessionChannel reaper thread started
+  Hermes Web UI listening on http://127.0.0.1:8787
+  Remote access: ssh -N -L 8787:127.0.0.1:8787 <user>@<your-server>
+  Then open:     http://localhost:8787
+

@@ -1355,3 +1355,41 @@
 2026-07-02 09:42:38,069 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
 2026-07-02 09:47:18,043 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
 2026-07-02 09:48:11,514 WARNING agent.lsp.servers: bash-language-server: shellcheck not found on PATH — diagnostics will be empty until shellcheck is installed (apt: shellcheck, brew: shellcheck, scoop: shellcheck).
+2026-07-02 09:56:55,139 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:55,150 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:55,758 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:56:55,792 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:56:55,810 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:56:57,036 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:57,046 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:57,089 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:57,091 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:57,091 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:58,006 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:56:58,036 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:56:58,055 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:56:58,126 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:58,127 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:58,128 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:58,167 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:58,167 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:58,168 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:58,184 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:58,186 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:58,193 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:56:59,626 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:57:00,742 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 09:57:01,171 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 09:57:15,691 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:57:15,710 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:57:15,712 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:57:15,723 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:57:15,829 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:57:15,865 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:58:07,345 WARNING agent.lsp.servers: bash-language-server: shellcheck not found on PATH — diagnostics will be empty until shellcheck is installed (apt: shellcheck, brew: shellcheck, scoop: shellcheck).

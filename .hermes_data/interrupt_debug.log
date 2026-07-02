@@ -418,3 +418,5 @@
 12:40:34 interrupt fired: msg='i want just usage output', children=0, parent._interrupt=True
 09:47:17 interrupt fired: msg='.', children=0, parent._interrupt=True
 09:47:17 ENTER: queued interrupt msg='.', agent_running=True
+09:51:22 interrupt fired: msg='during signupnand verify use geoip=Tue and socks5 proxy 127.', children=0, parent._interrupt=True
+09:51:22 ENTER: queued interrupt msg='during signupnand verify use geoip=Tue and socks5 proxy 127.', agent_running=True

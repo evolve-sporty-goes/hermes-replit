@@ -24,7 +24,7 @@ import sys, os
 os.environ["DISPLAY"] = ":1"
 from cloakbrowser import launch_persistent_context
 email, password, profile = sys.argv[1], sys.argv[2], sys.argv[3]
-ctx = launch_persistent_context(profile, headless=False, humanize=True)
+ctx = launch_persistent_context(profile, headless=False, humanize=True, proxy="socks5://127.0.0.1:40000", geoip=True)
 p = ctx.pages[0] if ctx.pages else ctx.new_page()
 p.goto("https://dash.cloudflare.com/sign-up", timeout=60000, wait_until="domcontentloaded")
 p.wait_for_timeout(4000)
@@ -69,7 +69,7 @@ from cloakbrowser import launch_persistent_context
 PROTON_USER, PROTON_PASS, SIGNUP_EMAIL = sys.argv[1], sys.argv[2], sys.argv[3]
 td = sys.argv[4] if len(sys.argv) > 4 else None
 
-ctx = launch_persistent_context("/home/runner/workspace/proton_profile", headless=False)
+ctx = launch_persistent_context("/home/runner/workspace/proton_profile", headless=False, proxy="socks5://127.0.0.1:40000", geoip=True)
 page = ctx.pages[0] if ctx.pages else ctx.new_page()
 
 page.goto("https://mail.proton.me/u/1/inbox#filter=unread", timeout=60000)
@@ -140,35 +140,38 @@ import sys, re, time
 from cloakbrowser import launch_persistent_context
 
 verify_url, email, password, cred_path, profile = sys.argv[1:6]
-ctx = launch_persistent_context(profile, headless=False, humanize=True)
+ctx = launch_persistent_context(profile, headless=False, humanize=True, proxy="socks5://127.0.0.1:40000", geoip=True)
 ctx.grant_permissions(["clipboard-read", "clipboard-write"])
 p = ctx.pages[0] if ctx.pages else ctx.new_page()
 
 p.goto(verify_url, timeout=60000)
 p.wait_for_timeout(5000)
 
-# Extract account ID from dashboard URL after verification
+# Step 2: Workers and Pages
+p.goto("https://dash.cloudflare.com/?to=/:account/workers-and-pages", timeout=60000)
 p.wait_for_timeout(5000)
 
-# Navigate to Workers AI API Quick Start
+# Step 3: Workers AI API Quick Start
 p.goto("https://dash.cloudflare.com/?to=/:account/ai/workers-ai/api-quick-start", timeout=60000)
 p.wait_for_timeout(5000)
 
-# Extract account ID from URL
+# Step 4: extract account ID from URL path
 account_id = None
 for m in re.findall(r'/([a-f0-9]{32})/', p.url):
     account_id = m
     break
 
-# Click Create API Token button
+# Step 5: click Create a Workers AI API Token button
 p.locator("button:has-text('Create a Workers AI API Token')").first.click()
+
+# Step 6: wait 2s
 p.wait_for_timeout(2000)
 
-# Click Create API Token (confirm)
+# Step 7: click Create API Token
 p.locator("button:has-text('Create API Token')").first.click()
 p.wait_for_timeout(3000)
 
-# Extract API key from page
+# Step 8: extract API token from page
 api_key = None
 for el in p.locator("pre, code, span, div").all():
     text = el.inner_text() or ""
@@ -177,6 +180,13 @@ for el in p.locator("pre, code, span, div").all():
         break
     if api_key:
         break
+
+# Step 9: click Finish
+try:
+    p.locator("button:has-text('Finish')").first.click()
+except Exception:
+    pass
+p.wait_for_timeout(2000)
 
 ctx.close()
 with open(cred_path, "a") as f:
