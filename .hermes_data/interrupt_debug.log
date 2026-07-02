@@ -416,3 +416,5 @@
 12:39:50 ENTER: queued interrupt msg='"interval": "10s",', agent_running=False
 12:40:34 ENTER: queued interrupt msg='i want just usage output', agent_running=True
 12:40:34 interrupt fired: msg='i want just usage output', children=0, parent._interrupt=True
+09:47:17 interrupt fired: msg='.', children=0, parent._interrupt=True
+09:47:17 ENTER: queued interrupt msg='.', agent_running=True
