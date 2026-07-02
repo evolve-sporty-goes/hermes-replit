@@ -8,7 +8,7 @@ sed -i "s|^OPENROUTER_API_KEY=.*|OPENROUTER_API_KEY=$oKEY|" /home/runner/workspa
 #echo "Updated to: $(grep OPENROUTER_API_KEY /home/runner/workspace/.hermes_data/.env)"
 ~/hermes-webui/ctl.sh restart
 sync
-sleep 300
+sleep 500
 done &
 while :
 do openrouter_signup.sh
