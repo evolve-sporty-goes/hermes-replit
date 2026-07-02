@@ -418,6 +418,43 @@ for f in page.frames:
 - `xdotool click` — fires at OS/window-manager level, but CloakBrowser's event routing may not forward it to the iframe's rendering surface correctly
 - `page.mouse.click()` — fires through Playwright's CDP `Input.dispatchMouseEvent` which CloakBrowser's stealth patches forward correctly to the cross-origin iframe's input surface
 
+**Canonical signup retry pattern — solve + submit until URL changes (2026-07-02):**
+
+For signup forms guarded by Turnstile, do not click once and hope. Loop: detect the
+CF iframe, click it, submit the form, then check whether the browser has left the
+sign-up page. Repeat until the URL no longer contains `/sign-up` (or equivalent):
+
+```python
+def click_turnstile(page):
+    for f in page.frames:
+        if "challenges.cloudflare.com" in (f.url or ""):
+            try:
+                fb = f.frame_element().bounding_box()
+                if fb and fb["width"] > 50:
+                    page.mouse.click(fb["x"] + 30, fb["y"] + fb["height"] / 2)
+                    return True
+            except Exception:
+                pass
+    return False
+
+for attempt in range(20):
+    if "sign-up" not in page.url:
+        break
+    click_turnstile(page)
+    page.wait_for_timeout(5000)
+    try:
+        page.locator("button[type='submit']").filter(has_text="Sign up").first.click()
+    except Exception as e:
+        print(f"submit click error: {e}", flush=True)
+    page.wait_for_timeout(10000)
+```
+
+Key points:
+- Check the URL **before** doing any work each iteration
+- Click the Turnstile iframe even if it was already clicked before — managed challenges may need multiple attempts
+- Keep clicking the submit button after each attempt; some forms only POST once the challenge token is ready
+- Stop as soon as the URL leaves the signup route
+
 **Canonical click-attempt order for Turnstile (use in sequence):**
 1. **Wait 5-10s** after form submit for iframe to render (CloakBrowser auto-solve may handle non-interactive challenges silently)
 2. **`page.mouse.click(frame_x + 30, frame_y + height/2)`** — first attempt on the CF iframe at the standard checkbox offset

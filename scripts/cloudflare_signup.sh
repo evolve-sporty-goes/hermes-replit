@@ -32,20 +32,34 @@ p.wait_for_timeout(300)
 p.locator("[data-testid='signup-input-password']").fill(password)
 p.wait_for_timeout(500)
 
-# Turnstile fallback click
-for f in p.frames:
-    if "challenges.cloudflare" in (f.url or ""):
-        try:
-            fb = f.frame_element().bounding_box()
-            if fb and fb["width"] > 50:
-                p.mouse.click(fb["x"] + 30, fb["y"] + fb["height"] / 2)
-                p.wait_for_timeout(15000)
-                break
-        except: pass
-print(f"SIGNUP_RESULT URL={p.url}", flush=True)
-# Submit
-p.locator("button[type='submit']").filter(has_text="Sign up").first.click()
-p.wait_for_timeout(10000)
+def click_turnstile(page):
+    for f in page.frames:
+        if "challenges.cloudflare" in (f.url or ""):
+            try:
+                fb = f.frame_element().bounding_box()
+                if fb and fb["width"] > 50:
+                    page.mouse.click(fb["x"] + 30, fb["y"] + fb["height"] / 2)
+                    return True
+            except: pass
+    return False
+
+result = "FAILED"
+for attempt in range(20):
+    print(f"SIGNUP_ATTEMPT {attempt+1} URL={p.url}", flush=True)
+    if "sign-up" not in p.url:
+        result = "SUCCESS"
+        break
+    # attempt Turnstile click if iframe is present
+    click_turnstile(p)
+    p.wait_for_timeout(5000)
+    # submit form
+    try:
+        p.locator("button[type='submit']").filter(has_text="Sign up").first.click()
+    except Exception as e:
+        print(f"SIGNUP_CLICK_ERROR {e}", flush=True)
+    p.wait_for_timeout(10000)
+
+print(f"SIGNUP_RESULT {result} URL={p.url}", flush=True)
 ctx.close()
 PY
 
