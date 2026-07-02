@@ -5,20 +5,25 @@ CRED="${WORKSPACE:-$HOME/workspace}/credentials/cloudflare.txt"
 mkdir -p "$(dirname "$CRED")"
 touch "$CRED"
 
-[[ $# -ge 2 ]] && printf 'ACCOUNT_ID=%s\nAPI_KEY=%s\n\n' "$1" "$2" >> "$CRED"
+[[ $# -ge 2 ]] && printf 'ACCOUNT_ID=%s\nAPI_KEY=%s\nEMAIL=%s\nPASSWORD=%s\n\n' "$1" "$2" "${3:-fake@duck.com}" "${4:-fakepass123}" >> "$CRED"
 
-mapfile -t ACCT < <(grep '^ACCOUNT_ID=' "$CRED" | cut -d= -f2-)
-mapfile -t KEY  < <(grep '^API_KEY='  "$CRED" | cut -d= -f2-)
-N=${#ACCT[@]}
+# Read blank-line-separated blocks as NUL-delimited array, keeping cfut_ keys only.
+mapfile -t -d '' BLOCKS < <(awk -v RS='' -v ORS='\0' '$0 ~ /API_KEY=cfut_/' "$CRED")
+N=${#BLOCKS[@]}
+(( N == 0 )) && { echo "No valid credentials"; exit 1; }
 
-(( N == 0 )) && { echo "No credentials"; exit 1; }
-(( N == ${#KEY[@]} )) || { echo "Mismatched keys"; exit 1; }
+# Shuffle blocks.
+for ((i = N - 1; i > 0; i--)); do
+  j=$((RANDOM % (i + 1)))
+  t=${BLOCKS[$i]}; BLOCKS[$i]=${BLOCKS[$j]}; BLOCKS[$j]=$t
+done
 
-I=$((RANDOM % N))
-A=${ACCT[$I]//[[:space:]]/}
-K=${KEY[$I]//[[:space:]]/}
+printf '%s\n\n' "${BLOCKS[@]}" > "$CRED"
 
-echo "Using account: ${A:0:8}..."
+A=$(awk -F= '/^ACCOUNT_ID=/{print $2}' <<<"${BLOCKS[0]}" | xargs)
+K=$(awk -F= '/^API_KEY=/{print $2}' <<<"${BLOCKS[0]}" | xargs)
+
+echo "Using account: ${A:0:8}... ($N total)"
 
 hermes config set model.provider custom
 hermes config set model.base_url "https://api.cloudflare.com/client/v4/accounts/$A/ai/v1"
@@ -41,9 +46,9 @@ mkdir -p "$LOG_DIR"
 > "$LOG"
 
 (
-  tail -F -n 0 "$LOG" 2>/dev/null |
-    grep -q "HTTP 429" && "$SCRIPT" &
+  tail -F -n 0 "$LOG" 2>/dev/null | grep -q "HTTP 429" && "$SCRIPT" &
 ) >/dev/null 2>&1 &
+
 echo "$!" > "$PIDFILE"
 disown 2>/dev/null || true
 

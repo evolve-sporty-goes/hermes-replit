@@ -1515,9 +1515,9 @@
 "max_completion_tokens":262144,
 "name":"MoonshotAI Kimi Latest",
 "pricing":{
-"prompt":"0.00000055",
-"completion":"0.0000032",
-"input_cache_read":"0.00000011"
+"prompt":"0.00000066",
+"completion":"0.00000341",
+"input_cache_read":"0.00000014"
 }
 },
 "kimi-latest":{
@@ -1525,9 +1525,9 @@
 "max_completion_tokens":262144,
 "name":"MoonshotAI Kimi Latest",
 "pricing":{
-"prompt":"0.00000055",
-"completion":"0.0000032",
-"input_cache_read":"0.00000011"
+"prompt":"0.00000066",
+"completion":"0.00000341",
+"input_cache_read":"0.00000014"
 }
 },
 "~google/gemini-flash-latest":{
@@ -2213,9 +2213,9 @@
 "max_completion_tokens":262144,
 "name":"MoonshotAI: Kimi K2.6",
 "pricing":{
-"prompt":"0.00000055",
-"completion":"0.0000032",
-"input_cache_read":"0.00000011"
+"prompt":"0.00000066",
+"completion":"0.00000341",
+"input_cache_read":"0.00000014"
 }
 },
 "kimi-k2.6":{
@@ -2223,9 +2223,9 @@
 "max_completion_tokens":262144,
 "name":"MoonshotAI: Kimi K2.6",
 "pricing":{
-"prompt":"0.00000055",
-"completion":"0.0000032",
-"input_cache_read":"0.00000011"
+"prompt":"0.00000066",
+"completion":"0.00000341",
+"input_cache_read":"0.00000014"
 }
 },
 "moonshotai/kimi-k2.6-20260420":{
@@ -2233,9 +2233,9 @@
 "max_completion_tokens":262144,
 "name":"MoonshotAI: Kimi K2.6",
 "pricing":{
-"prompt":"0.00000055",
-"completion":"0.0000032",
-"input_cache_read":"0.00000011"
+"prompt":"0.00000066",
+"completion":"0.00000341",
+"input_cache_read":"0.00000014"
 }
 },
 "kimi-k2.6-20260420":{
@@ -2243,9 +2243,9 @@
 "max_completion_tokens":262144,
 "name":"MoonshotAI: Kimi K2.6",
 "pricing":{
-"prompt":"0.00000055",
-"completion":"0.0000032",
-"input_cache_read":"0.00000011"
+"prompt":"0.00000066",
+"completion":"0.00000341",
+"input_cache_read":"0.00000014"
 }
 },
 "anthropic/claude-opus-4.7":{

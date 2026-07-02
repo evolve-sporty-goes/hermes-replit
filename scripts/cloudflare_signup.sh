@@ -266,8 +266,12 @@ for ATTEMPT in 1 2 3; do
   if [ -z "$VURL" ] || [ "$VURL" = "NOT_FOUND" ]; then echo "Not found, retrying..."; continue; fi
 
   echo "=== Step 3: Verify + Create Workers AI API Token ==="
-  python3 ~/cf_verify_token.py "$VURL" "$EMAIL" "$PASSWORD" "$CRED" "$CF_PROFILE"
-  if [ $? -ne 0 ]; then echo "Verify/token step failed, retrying..."; continue; fi
+  STEP3_OUT=$(python3 ~/cf_verify_token.py "$VURL" "$EMAIL" "$PASSWORD" "$CRED" "$CF_PROFILE")
+  STEP3_STATUS=$?
+  echo "$STEP3_OUT"
+  if [ $STEP3_STATUS -ne 0 ]; then echo "Verify/token step failed, retrying..."; continue; fi
+  API_KEY=$(echo "$STEP3_OUT" | grep '^API_KEY:' | tail -1 | cut -d: -f2-)
+  if [ -z "$API_KEY" ] || [ "$API_KEY" = "NOT_FOUND" ]; then echo "API key not found, retrying from step 1..."; continue; fi
 
   echo "Done! Saved to $CRED"
   exit 0
