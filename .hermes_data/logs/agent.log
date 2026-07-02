@@ -16411,3 +16411,165 @@ Xpra installed
   → A fine-grained PAT (github_pat_*) with Copilot Requests permission
   → `gh auth login` with the default device code flow (produces gho_* tokens)
 2026-07-02 09:31:31,655 INFO gateway.run: kanban dispatcher: embedded in gateway (interval=60.0s)
+2026-07-02 09:32:50,934 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:32:51,801 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-17 (_run_agent_streaming):139682660742848 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 09:32:51,816 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-02 09:32:51,822 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-02 09:32:51,837 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 09:32:51,838 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 09:33:51.
+2026-07-02 09:32:51,848 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 09:32:51,848 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 09:33:51.
+2026-07-02 09:32:51,848 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:32:51,849 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:32:51,850 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:32:52,043 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-02 09:32:52,048 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 09:32:52,050 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 09:32:52,050 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:32:52,276 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 09:32:52,277 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 09:33:52.
+2026-07-02 09:32:52,330 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 09:32:52,333 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 09:33:52.
+2026-07-02 09:32:52,335 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:32:52,395 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:32:52,601 INFO agent.model_metadata: Could not detect context length for model 'nvidia/nemotron-3-ultra-550b-a55b:free' at https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-07-02 09:32:52,601 INFO agent.model_metadata: Using hardcoded context length 131,072 for model 'nvidia/nemotron-3-ultra-550b-a55b:free' (custom endpoint, catalog match on 'nemotron')
+2026-07-02 09:32:52,646 INFO [51b167f32d1a] agent.turn_context: conversation turn: session=51b167f32d1a model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=webui history=3 msg='[Workspace::v1: /home/runner/workspace] .'
+2026-07-02 09:32:52,669 INFO [51b167f32d1a] agent.conversation_loop: Repaired 3 message-alternation violations before request (session=51b167f32d1a)
+2026-07-02 09:32:52,779 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-20 (_call):139682628708032 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 09:32:53,288 INFO agent.model_metadata: Could not detect context length for model 'nvidia/nemotron-3-ultra-550b-a55b:free' at https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-07-02 09:32:53,288 INFO agent.model_metadata: Using hardcoded context length 131,072 for model 'nvidia/nemotron-3-ultra-550b-a55b:free' (custom endpoint, catalog match on 'nemotron')
+2026-07-02 09:32:53,334 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 401 - {'result': None, 'success': False, 'errors': [{'code': 10000, 'message': 'Authentication error'}], 'messages': []}
+2026-07-02 09:32:53,335 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-20 (_call):139682628708032 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 09:32:53,336 WARNING [51b167f32d1a] agent.conversation_loop: API call failed (attempt 1/3) error_type=AuthenticationError thread=Thread-17 (_run_agent_streaming):139682660742848 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 401: {"result":null,"success":false,"errors":[{"code":10000,"message":"Authentication error"}],"messages":[]}
+2026-07-02 09:32:53,345 WARNING [51b167f32d1a] hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:32:53,345 WARNING [51b167f32d1a] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 09:32:53,396 ERROR [51b167f32d1a] agent.conversation_loop: Non-retryable client error: Error code: 401 - {'result': None, 'success': False, 'errors': [{'code': 10000, 'message': 'Authentication error'}], 'messages': []}
+2026-07-02 09:32:53,446 INFO [51b167f32d1a] agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-02 09:32:53,447 INFO [51b167f32d1a] api.streaming: [webui] self-heal: credential refresh succeeded for provider=openrouter session=51b167f32d1a
+2026-07-02 09:32:53,448 INFO [51b167f32d1a] api.streaming: [webui] self-heal: retrying stream after credential refresh
+2026-07-02 09:32:53,457 WARNING [51b167f32d1a] hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:32:53,493 INFO [51b167f32d1a] run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-17 (_run_agent_streaming):139682660742848 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 09:32:53,509 WARNING [51b167f32d1a] hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:32:53,658 INFO [51b167f32d1a] agent.model_metadata: Could not detect context length for model 'nvidia/nemotron-3-ultra-550b-a55b:free' at https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 — defaulting to 256,000 tokens (probe-down). Set model.context_length in config.yaml to override.
+2026-07-02 09:32:53,658 INFO [51b167f32d1a] agent.model_metadata: Using hardcoded context length 131,072 for model 'nvidia/nemotron-3-ultra-550b-a55b:free' (custom endpoint, catalog match on 'nemotron')
+2026-07-02 09:32:53,659 INFO [51b167f32d1a] agent.turn_context: conversation turn: session=51b167f32d1a model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=webui history=3 msg='[Workspace::v1: /home/runner/workspace] .'
+2026-07-02 09:32:53,679 INFO [51b167f32d1a] agent.conversation_loop: Repaired 3 message-alternation violations before request (session=51b167f32d1a)
+2026-07-02 09:32:53,699 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-21 (_call):139683157743296 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 09:32:53,807 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 401 - {'result': None, 'success': False, 'errors': [{'code': 10000, 'message': 'Authentication error'}], 'messages': []}
+2026-07-02 09:32:53,807 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-21 (_call):139683157743296 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 09:32:53,808 WARNING [51b167f32d1a] agent.conversation_loop: API call failed (attempt 1/3) error_type=AuthenticationError thread=Thread-17 (_run_agent_streaming):139682660742848 provider=openrouter base_url=https://api.cloudflare.com/client/v4/accounts/66cf2d72c2b6d2a5773455666118096c/ai/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 401: {"result":null,"success":false,"errors":[{"code":10000,"message":"Authentication error"}],"messages":[]}
+2026-07-02 09:32:53,813 WARNING [51b167f32d1a] hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:32:53,813 WARNING [51b167f32d1a] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 09:32:53,868 ERROR [51b167f32d1a] agent.conversation_loop: Non-retryable client error: Error code: 401 - {'result': None, 'success': False, 'errors': [{'code': 10000, 'message': 'Authentication error'}], 'messages': []}
+2026-07-02 09:33:37,577 INFO client_event: Client event from 127.0.0.1: {'event': 'sse_error', 'source': 'gateway-sessions', 'visibility_state': 'visible', 'url_path': '/session/51b167f32d1a', 'reason': 'gateway EventSource.onerror', 'ready_state': 0, 'online': True}
+2026-07-02 09:34:01,107 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:34:01,109 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:34:24,575 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 09:34:53,073 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-02 09:34:53,110 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:34:53,134 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-36 (_run_agent_streaming):139683174528704 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 09:34:53,177 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-02 09:34:53,195 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-02 09:34:53,210 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 09:34:53,210 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 09:35:53.
+2026-07-02 09:34:53,218 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 09:34:53,218 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 09:35:53.
+2026-07-02 09:34:53,218 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:34:53,219 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:34:53,219 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:34:53,246 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-02 09:34:53,252 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 09:34:53,254 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 09:34:53,254 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:34:53,263 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 09:34:53,263 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 09:35:53.
+2026-07-02 09:34:53,270 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 09:34:53,270 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 09:35:53.
+2026-07-02 09:34:53,271 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:34:53,284 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:34:53,451 INFO [2646bb123675] agent.turn_context: conversation turn: session=2646bb123675 model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=webui history=0 msg='[Workspace::v1: /home/runner/workspace] Hi'
+2026-07-02 09:34:54,918 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-38 (_call):139682383247040 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 09:34:55,143 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"status":400,"title":"Bad Request","detail":"Function id \'948fe171-ce7a-4332-8bc0-5e14e90259f9\': DEGRADED function cannot be invoked"}', 'provider_name': 'Nvidia', 'is_byok': False}}, 'user_id': 'user_3FtDMTMWXQVLJullBpyLzc9kodG'}
+2026-07-02 09:34:55,144 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-38 (_call):139682383247040 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 09:34:55,144 WARNING [2646bb123675] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-36 (_run_agent_streaming):139683174528704 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 400: Provider returned error
+2026-07-02 09:34:55,147 WARNING [2646bb123675] hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:34:55,147 WARNING [2646bb123675] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 09:34:55,192 ERROR [2646bb123675] agent.conversation_loop: Non-retryable client error: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"status":400,"title":"Bad Request","detail":"Function id \'948fe171-ce7a-4332-8bc0-5e14e90259f9\': DEGRADED function cannot be invoked"}', 'provider_name': 'Nvidia', 'is_byok': False}}, 'user_id': 'user_3FtDMTMWXQVLJullBpyLzc9kodG'}
+2026-07-02 09:36:44,918 INFO hermes_cli.plugins: Plugin 'browser-browser-use' registered browser provider: browser-use
+2026-07-02 09:36:44,919 INFO hermes_cli.plugins: Plugin 'browser-browserbase' registered browser provider: browserbase
+2026-07-02 09:36:44,921 INFO hermes_cli.plugins: Plugin 'browser-firecrawl' registered browser provider: firecrawl
+2026-07-02 09:36:45,114 INFO hermes_cli.plugins: Plugin 'fal' registered image_gen provider: fal
+2026-07-02 09:36:45,116 INFO hermes_cli.plugins: Plugin 'krea' registered image_gen provider: krea
+2026-07-02 09:36:45,117 INFO hermes_cli.plugins: Plugin 'openai' registered image_gen provider: openai
+2026-07-02 09:36:45,120 INFO hermes_cli.plugins: Plugin 'openai-codex' registered image_gen provider: openai-codex
+2026-07-02 09:36:45,122 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: openrouter
+2026-07-02 09:36:45,122 INFO hermes_cli.plugins: Plugin 'openrouter' registered image_gen provider: nous
+2026-07-02 09:36:45,125 INFO hermes_cli.plugins: Plugin 'xai' registered image_gen provider: xai
+2026-07-02 09:36:45,174 INFO hermes_cli.plugins: Plugin 'fal' registered video_gen provider: fal
+2026-07-02 09:36:45,175 INFO hermes_cli.plugins: Plugin 'xai' registered video_gen provider: xai
+2026-07-02 09:36:45,178 INFO hermes_cli.plugins: Plugin 'web-brave-free' registered web provider: brave-free
+2026-07-02 09:36:45,179 INFO hermes_cli.plugins: Plugin 'web-ddgs' registered web provider: ddgs
+2026-07-02 09:36:45,181 INFO hermes_cli.plugins: Plugin 'web-exa' registered web provider: exa
+2026-07-02 09:36:45,184 INFO hermes_cli.plugins: Plugin 'web-firecrawl' registered web provider: firecrawl
+2026-07-02 09:36:45,185 INFO hermes_cli.plugins: Plugin 'web-parallel' registered web provider: parallel
+2026-07-02 09:36:45,187 INFO hermes_cli.plugins: Plugin 'web-searxng' registered web provider: searxng
+2026-07-02 09:36:45,188 INFO hermes_cli.plugins: Plugin 'web-tavily' registered web provider: tavily
+2026-07-02 09:36:45,189 INFO hermes_cli.plugins: Plugin 'web-xai' registered web provider: xai
+2026-07-02 09:36:45,207 INFO hermes_cli.plugins: Plugin discovery complete: 51 found, 44 enabled
+2026-07-02 09:36:47,368 WARNING tools.registry: check_fn _browser_cdp_check returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:47,376 WARNING tools.registry: check_fn _browser_dialog_check returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:47,537 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 09:36:47,537 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 09:37:47.
+2026-07-02 09:36:47,546 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 09:36:47,546 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 09:37:47.
+2026-07-02 09:36:47,546 WARNING tools.registry: check_fn check_browser_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:47,547 WARNING tools.registry: check_fn check_close_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:47,558 WARNING tools.registry: check_fn check_computer_use_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:47,593 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-02 09:36:47,599 WARNING tools.registry: check_fn _check_kanban_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:47,600 WARNING tools.registry: check_fn _check_kanban_orchestrator_mode returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:47,600 WARNING tools.registry: check_fn check_read_terminal_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:47,926 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 09:36:47,927 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 09:37:47.
+2026-07-02 09:36:47,935 WARNING agent.auxiliary_client: Auxiliary Nous client unavailable: no Nous authentication found (run: hermes auth).
+2026-07-02 09:36:47,935 WARNING agent.auxiliary_client: Auxiliary: marking nous unhealthy for 60s (payment / credit error). Subsequent auxiliary calls will skip it until 09:37:47.
+2026-07-02 09:36:47,935 WARNING tools.registry: check_fn check_vision_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:47,967 WARNING tools.registry: check_fn check_discord_tool_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:47,967 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:47,968 WARNING tools.registry: check_fn _check_feishu returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:47,998 WARNING tools.registry: check_fn _check_yuanbao returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:47,999 WARNING tools.registry: check_fn _check_ha_available returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:48,000 WARNING tools.registry: check_fn _check_spotify_available returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:48,029 WARNING tools.registry: check_fn check_video_generation_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:48,033 WARNING tools.registry: check_fn _check_xai_video_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:48,053 WARNING tools.registry: check_fn check_x_search_requirements returned False; dependent tools will be unavailable this turn
+2026-07-02 09:36:48,978 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:36:49,437 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 09:36:49,766 WARNING hermes_cli.copilot_auth: Token from GITHUB_TOKEN is not supported: Classic Personal Access Tokens (ghp_*) are not supported by the Copilot API. Use one of:
+  → `copilot login` or `hermes model` to authenticate via OAuth
+  → A fine-grained PAT (github_pat_*) with Copilot Requests permission
+  → `gh auth login` with the default device code flow (produces gho_* tokens)
+2026-07-02 09:38:07,468 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-02 09:38:07,476 INFO agent.credential_pool: credential pool: no available entries (all exhausted or empty)
+2026-07-02 09:38:07,489 INFO run_agent: Loaded environment variables from /home/runner/workspace/.hermes_data/.env
+2026-07-02 09:38:07,559 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:38:08,117 INFO run_agent: OpenAI client created (agent_init, shared=True) thread=Thread-3 (process_loop):139883691624128 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 09:38:08,132 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:38:08,359 INFO [20260702_093646_805374] agent.turn_context: conversation turn: session=20260702_093646_805374 model=nvidia/nemotron-3-ultra-550b-a55b:free provider=openrouter platform=cli history=0 msg='read Cfinstructions.md and edit scripts/cloudflare_signup.sh'
+2026-07-02 09:38:10,467 INFO run_agent: OpenAI client created (chat_completion_stream_request, shared=False) thread=Thread-6 (_call):139883410593472 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 09:38:10,954 INFO agent.chat_completion_helpers: Streaming failed before delivery: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"status":400,"title":"Bad Request","detail":"Function id \'948fe171-ce7a-4332-8bc0-5e14e90259f9\': DEGRADED function cannot be invoked"}', 'provider_name': 'Nvidia', 'is_byok': False}}, 'user_id': 'user_3FtDMTMWXQVLJullBpyLzc9kodG'}
+2026-07-02 09:38:10,954 INFO run_agent: OpenAI client closed (stream_request_complete, shared=False, tcp_force_closed=1) thread=Thread-6 (_call):139883410593472 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free
+2026-07-02 09:38:10,956 WARNING [20260702_093646_805374] agent.conversation_loop: API call failed (attempt 1/3) error_type=BadRequestError thread=Thread-5 (run_agent):139883418986176 provider=openrouter base_url=https://openrouter.ai/api/v1 model=nvidia/nemotron-3-ultra-550b-a55b:free summary=HTTP 400: Provider returned error
+2026-07-02 09:38:10,959 WARNING [20260702_093646_805374] hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:38:10,960 WARNING [20260702_093646_805374] agent.chat_completion_helpers: Fallback to kilo-code failed: provider not configured
+2026-07-02 09:38:11,016 ERROR [20260702_093646_805374] agent.conversation_loop: Non-retryable client error: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"status":400,"title":"Bad Request","detail":"Function id \'948fe171-ce7a-4332-8bc0-5e14e90259f9\': DEGRADED function cannot be invoked"}', 'provider_name': 'Nvidia', 'is_byok': False}}, 'user_id': 'user_3FtDMTMWXQVLJullBpyLzc9kodG'}
+2026-07-02 09:40:26,513 INFO cli: CLI cleanup calling memory shutdown for session 20260702_093646_805374 with 1 message(s)
+2026-07-02 09:40:32,728 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
+2026-07-02 09:40:32,736 WARNING hermes_cli.config: providers.freellmapi: unknown config keys ignored: provider
